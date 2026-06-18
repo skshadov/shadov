@@ -634,10 +634,6 @@ const ACTIVATED_CONSTRUCTION_ROUTES = [
   "/kirpichnye-doma",
   "/monolitnye-doma",
   "/kombinirovannye-doma",
-] as const;
-
-const STUB_CONSTRUCTION_ROUTES = [
-  "/stroitelstvo",
   "/mnogokvartirnye-doma",
   "/generalnyy-podryad",
   "/monolitnye-raboty",
@@ -645,6 +641,10 @@ const STUB_CONSTRUCTION_ROUTES = [
   "/kladochnye-raboty",
   "/krovelnye-raboty",
   "/fasadnye-raboty",
+] as const;
+
+const STUB_CONSTRUCTION_ROUTES = [
+  "/stroitelstvo",
 ] as const;
 
 function readRoute(route: string): string {
