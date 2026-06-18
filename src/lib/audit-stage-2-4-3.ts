@@ -19,6 +19,7 @@ const STAGE_ROUTES = [
 ] as const;
 
 const ACTIVE_CONSTRUCTION_ROUTES = [
+  "/stroitelstvo",
   "/stroitelstvo-domov-pod-klyuch",
   "/karkasnye-doma",
   "/doma-iz-sip-paneley",
@@ -32,7 +33,7 @@ const ACTIVE_CONSTRUCTION_ROUTES = [
   ...STAGE_ROUTES,
 ] as const;
 
-const STUB_CONSTRUCTION_ROUTES = ["/stroitelstvo"] as const;
+const STUB_CONSTRUCTION_ROUTES: readonly string[] = [];
 
 const EXPECTED_H1: Record<string, string> = {
   "/mnogokvartirnye-doma":
@@ -366,10 +367,10 @@ const totals = {
   stubConstructionRoutes: stubConstructionRoutes.length,
   stageRoutes: pages.length,
 };
-if (totals.activeConstructionRoutes !== 17)
-  errors.push(`activeConstructionRoutes ≠ 17 (${totals.activeConstructionRoutes})`);
-if (totals.stubConstructionRoutes !== 1)
-  errors.push(`stubConstructionRoutes ≠ 1 (${totals.stubConstructionRoutes})`);
+if (totals.activeConstructionRoutes !== 18)
+  errors.push(`activeConstructionRoutes ≠ 18 (${totals.activeConstructionRoutes})`);
+if (totals.stubConstructionRoutes !== 0)
+  errors.push(`stubConstructionRoutes ≠ 0 (${totals.stubConstructionRoutes})`);
 if (totals.stageRoutes !== 7) errors.push(`stageRoutes ≠ 7 (${totals.stageRoutes})`);
 
 const report = {
