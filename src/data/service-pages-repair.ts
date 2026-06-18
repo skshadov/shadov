@@ -1,21 +1,36 @@
 /**
- * Подэтап 2.3 — наполнение десяти страниц ремонта.
- * Десять утверждённых маршрутов раздела «Ремонт». Отдельный маршрут для
- * эксклюзивного ремонта не создаётся: пакет «Эксклюзивный — от 65 000 ₽/м²»
+ * Подэтап 2.3A — наполнение десяти страниц ремонта (утверждённые формулировки).
+ *
+ * Десять маршрутов раздела «Ремонт». Отдельный маршрут для эксклюзивного
+ * ремонта не создаётся: пакет «Эксклюзивный ремонт — от 65 000 ₽/м²»
  * показывается только на /remont, /remont-pod-klyuch и /prices.
  *
- * Данные ниже используют исключительно утверждённые формулировки ТЗ §6–§17.
- * Цены не дублируются: стартовая цена берётся из repair-packages.ts по
- * соответствующему пакету; точные расценки строк формирует prices.ts.
+ * Источники цен:
+ *   - repair_packages — комплексные пакеты;
+ *   - additional_repairs — черновой ремонт и чистовая отделка.
+ *
+ * Примеры структуры сметы формируются ТОЛЬКО через estimateExampleItemIds
+ * по явному перечню релевантных позиций из prices.ts. Автоматический выбор
+ * первых строк ценовой категории запрещён.
  */
 
 import type { ServicePageData } from "@/types/services";
 import { REPAIR_PACKAGES } from "./repair-packages";
 
-function priceLabel(id: string): string {
+const NBSP = "\u00A0";
+
+function pkgPriceLabel(id: string, unitLabel?: string): string {
   const pkg = REPAIR_PACKAGES.find((p) => p.id === id);
   if (!pkg) return "";
-  return `от ${pkg.priceFrom.toLocaleString("ru-RU").replace(/\s/g, "\u00A0")} ₽/${pkg.unit}`;
+  const price = pkg.priceFrom.toLocaleString("ru-RU").replace(/\s/g, NBSP);
+  const unit = unitLabel ?? pkg.unit;
+  return `от${NBSP}${price}${NBSP}₽/${unit} за работы`;
+}
+
+/** Стартовая цена для /chernovoy-remont и /chistovaya-otdelka — из категории
+ *  additional_repairs (см. prices.ts: 10 000 и 8 000 ₽/м² пола соответственно). */
+function additionalStartingPrice(value: number, unitLabel: string): string {
+  return `от${NBSP}${value.toLocaleString("ru-RU").replace(/\s/g, NBSP)}${NBSP}₽/${unitLabel} за работы`;
 }
 
 const SHARED_STAGES = [
@@ -52,6 +67,14 @@ const SHARED_TIMELINE = [
   "Согласование заказчиком этапов и решений",
 ];
 
+const DEMO: "Демонстрационный объём" = "Демонстрационный объём";
+type DemoVolumes = Record<string, { value: number; label: "Демонстрационный объём" }>;
+const v = (entries: Array<[string, number]>): DemoVolumes => {
+  const out: DemoVolumes = {};
+  for (const [id, value] of entries) out[id] = { value, label: DEMO };
+  return out;
+};
+
 function packageBased(opts: {
   slug: string;
   packageId: string;
@@ -64,6 +87,9 @@ function packageBased(opts: {
   benefits: string[];
   technology: string[];
   related: string[];
+  estimateExampleItemIds: string[];
+  estimateExampleVolumes?: DemoVolumes;
+  estimateExampleNotes?: Record<string, string>;
 }): ServicePageData {
   const pkg = REPAIR_PACKAGES.find((p) => p.id === opts.packageId)!;
   return {
@@ -75,7 +101,7 @@ function packageBased(opts: {
     metaDescription: opts.metaDescription,
     h1: opts.h1,
     description: opts.description,
-    startingPrice: priceLabel(opts.packageId),
+    startingPrice: pkgPriceLabel(opts.packageId),
     suitableFor: opts.suitableFor,
     benefits: opts.benefits,
     included: pkg.included,
@@ -96,6 +122,9 @@ function packageBased(opts: {
       "hidden-works",
     ],
     relatedSlugs: opts.related,
+    estimateExampleItemIds: opts.estimateExampleItemIds,
+    estimateExampleVolumes: opts.estimateExampleVolumes,
+    estimateExampleNotes: opts.estimateExampleNotes,
   };
 }
 
@@ -106,13 +135,13 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
     route: "/remont",
     category: "repair",
     title: "Ремонт",
-    metaTitle: "Ремонт квартир и помещений под ключ — Шадов и партнёры",
+    metaTitle: "Ремонт квартир и частных домов — Шадов и партнёры",
     metaDescription:
-      "Комплексный ремонт квартир, домов и коммерческих помещений по прямому договору. Семь пакетов от 6 500 до 65 000 ₽/м², поэтапная оплата, ежедневная отчётность.",
-    h1: "Ремонт квартир, домов и помещений",
+      "Ремонт квартир и частных домов в Москве и Московской области. Семь пакетов от 6 500 до 65 000 ₽/м² за работы, прямой договор, поэтапная оплата.",
+    h1: "Ремонт квартир и частных домов в Москве и Московской области",
     description:
       "Полный цикл ремонтных работ от обследования и подготовки сметы до сдачи объекта. Прямой договор с заказчиком, поэтапная оплата и контроль скрытых работ по актам.",
-    startingPrice: "от 6 500 ₽/м²",
+    startingPrice: pkgPriceLabel("cosmetic"),
     suitableFor: [
       "Квартиры в новостройках и вторичном жилье",
       "Частные дома и таунхаусы",
@@ -143,15 +172,7 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "Эксклюзивные материалы по индивидуальному заказу",
       "Стоимость отделочных и инженерных материалов",
     ],
-    packages: [
-      "cosmetic",
-      "econom",
-      "standard",
-      "euro",
-      "business",
-      "premium",
-      "exclusive",
-    ],
+    packages: ["cosmetic", "econom", "standard", "euro", "business", "premium", "exclusive"],
     technology: [
       "Стандартные строительные технологии с применением профессионального инструмента",
       "Электромонтаж по правилам устройства электроустановок",
@@ -180,22 +201,38 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "elektromontazh",
       "santehnika",
     ],
+    // Пример без пакетных тарифов — только реальные операции сметы.
+    estimateExampleItemIds: [
+      "demolition-kompleksnyy",
+      "finishing_walls-shtukaturka-mayaki",
+      "finishing_floors-polusukhaya",
+      "electrical-chernovaya-tochka",
+      "plumbing-kompleksnaya-tochka",
+      "tiling-standart-keram",
+    ],
+    estimateExampleVolumes: v([
+      ["demolition-kompleksnyy", 60],
+      ["finishing_walls-shtukaturka-mayaki", 180],
+      ["finishing_floors-polusukhaya", 60],
+      ["electrical-chernovaya-tochka", 40],
+      ["plumbing-kompleksnaya-tochka", 8],
+      ["tiling-standart-keram", 25],
+    ]),
   },
 
-  // 2) /remont-pod-klyuch — все семь пакетов
+  // 2) /remont-pod-klyuch
   {
     slug: "remont-pod-klyuch",
     route: "/remont-pod-klyuch",
     category: "repair",
     title: "Ремонт под ключ",
-    metaTitle:
-      "Ремонт под ключ — семь пакетов от косметического до эксклюзивного",
+    metaTitle: "Ремонт под ключ — комплексный подряд | Шадов и партнёры",
     metaDescription:
-      "Семь пакетов комплексного ремонта от 6 500 до 65 000 ₽/м². Прямой договор, поэтапная оплата, ежедневные отчёты, контроль скрытых работ по актам.",
-    h1: "Ремонт квартиры и дома под ключ",
+      "Комплексный ремонт квартиры или дома с единым ответственным подрядчиком. Семь пакетов, фиксированная смета, поэтапная оплата.",
+    h1: "Комплексный ремонт квартиры или дома с единым ответственным подрядчиком",
     description:
       "Полный комплекс ремонтных работ с фиксированной сметой и поэтапной оплатой. Семь утверждённых пакетов с разным уровнем инженерных систем и отделки.",
-    startingPrice: "от 6 500 ₽/м²",
+    startingPrice: pkgPriceLabel("econom"),
     suitableFor: [
       "Новые квартиры без отделки и предчистовые объекты",
       "Вторичное жильё с полной заменой инженерных систем",
@@ -225,15 +262,7 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "Эксклюзивные отделочные материалы по индивидуальному заказу",
       "Стоимость отделочных и инженерных материалов",
     ],
-    packages: [
-      "cosmetic",
-      "econom",
-      "standard",
-      "euro",
-      "business",
-      "premium",
-      "exclusive",
-    ],
+    packages: ["cosmetic", "econom", "standard", "euro", "business", "premium", "exclusive"],
     technology: [
       "Стандартные строительные технологии",
       "Электромонтаж по правилам устройства электроустановок",
@@ -263,6 +292,22 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "biznes-remont",
       "premialnyy-remont",
     ],
+    estimateExampleItemIds: [
+      "demolition-kompleksnyy",
+      "finishing_walls-shtukaturka-mayaki",
+      "finishing_floors-polusukhaya",
+      "electrical-chernovaya-tochka",
+      "plumbing-kompleksnaya-tochka",
+      "finishing_walls-shpaklevka-pokraska",
+    ],
+    estimateExampleVolumes: v([
+      ["demolition-kompleksnyy", 60],
+      ["finishing_walls-shtukaturka-mayaki", 180],
+      ["finishing_floors-polusukhaya", 60],
+      ["electrical-chernovaya-tochka", 40],
+      ["plumbing-kompleksnaya-tochka", 8],
+      ["finishing_walls-shpaklevka-pokraska", 180],
+    ]),
   },
 
   // 3) /kosmeticheskiy-remont
@@ -270,7 +315,7 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
     slug: "kosmeticheskiy-remont",
     packageId: "cosmetic",
     title: "Косметический ремонт",
-    h1: "Косметический ремонт",
+    h1: "Косметический ремонт квартиры или помещения",
     metaTitle: "Косметический ремонт — от 6 500 ₽/м² | Шадов и партнёры",
     metaDescription:
       "Косметический ремонт квартир и помещений: подготовка стен, окраска, обои, замена напольных покрытий. Без замены инженерных систем.",
@@ -294,6 +339,26 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "Окраска стен и потолков либо поклейка обоев",
     ],
     related: ["remont-pod-klyuch", "ekonom-remont", "chistovaya-otdelka"],
+    estimateExampleItemIds: [
+      "finishing_walls-gruntovanie",
+      "finishing_walls-shpaklevka-oboi",
+      "finishing_walls-pokraska",
+      "finishing_walls-oboi",
+      "finishing_floors-laminat",
+      "finishing_floors-plintus",
+    ],
+    estimateExampleVolumes: v([
+      ["finishing_walls-gruntovanie", 180],
+      ["finishing_walls-shpaklevka-oboi", 180],
+      ["finishing_walls-pokraska", 180],
+      ["finishing_walls-oboi", 180],
+      ["finishing_floors-laminat", 60],
+      ["finishing_floors-plintus", 50],
+    ]),
+    estimateExampleNotes: {
+      "finishing_walls-pokraska": "Вариант отделки: покраска или обои",
+      "finishing_walls-oboi": "Вариант отделки: покраска или обои",
+    },
   }),
 
   // 4) /ekonom-remont
@@ -301,7 +366,7 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
     slug: "ekonom-remont",
     packageId: "econom",
     title: "Эконом-ремонт",
-    h1: "Эконом-ремонт",
+    h1: "Эконом-ремонт квартиры или помещения",
     metaTitle: "Эконом-ремонт — от 12 000 ₽/м² | Шадов и партнёры",
     metaDescription:
       "Эконом-ремонт квартир и помещений с базовой заменой отделки, выравниванием стен и заменой сантехнических приборов в существующих точках.",
@@ -325,6 +390,22 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "Финишная отделка по выбранному пакету",
     ],
     related: ["kosmeticheskiy-remont", "standartnyy-remont", "remont-pod-klyuch"],
+    estimateExampleItemIds: [
+      "demolition-plitka",
+      "finishing_walls-shpaklevka-oboi",
+      "finishing_walls-oboi",
+      "finishing_floors-laminat",
+      "tiling-standart-keram",
+      "finishing_doors-standart",
+    ],
+    estimateExampleVolumes: v([
+      ["demolition-plitka", 20],
+      ["finishing_walls-shpaklevka-oboi", 180],
+      ["finishing_walls-oboi", 180],
+      ["finishing_floors-laminat", 60],
+      ["tiling-standart-keram", 20],
+      ["finishing_doors-standart", 4],
+    ]),
   }),
 
   // 5) /standartnyy-remont
@@ -332,7 +413,7 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
     slug: "standartnyy-remont",
     packageId: "standard",
     title: "Стандартный ремонт",
-    h1: "Стандартный ремонт",
+    h1: "Стандартный ремонт квартиры или дома",
     metaTitle: "Стандартный ремонт — от 18 000 ₽/м² | Шадов и партнёры",
     metaDescription:
       "Стандартный ремонт квартир и домов с полной заменой электропроводки, труб водоснабжения и отопления, выравниванием стен по маякам.",
@@ -358,6 +439,22 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "Финишная отделка по выбранному пакету",
     ],
     related: ["ekonom-remont", "evroremont", "remont-pod-klyuch"],
+    estimateExampleItemIds: [
+      "demolition-kompleksnyy",
+      "finishing_walls-shtukaturka-mayaki",
+      "finishing_floors-polusukhaya",
+      "electrical-chernovaya-tochka",
+      "plumbing-kompleksnaya-tochka",
+      "tiling-keramogranit-600",
+    ],
+    estimateExampleVolumes: v([
+      ["demolition-kompleksnyy", 60],
+      ["finishing_walls-shtukaturka-mayaki", 180],
+      ["finishing_floors-polusukhaya", 60],
+      ["electrical-chernovaya-tochka", 40],
+      ["plumbing-kompleksnaya-tochka", 8],
+      ["tiling-keramogranit-600", 25],
+    ]),
   }),
 
   // 6) /evroremont
@@ -365,7 +462,7 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
     slug: "evroremont",
     packageId: "euro",
     title: "Евроремонт",
-    h1: "Евроремонт / комфорт",
+    h1: "Евроремонт квартиры или дома уровня комфорт",
     metaTitle: "Евроремонт — от 25 000 ₽/м² | Шадов и партнёры",
     metaDescription:
       "Евроремонт квартир и домов с расширенным комплектом инженерных систем, коллекторной разводкой водоснабжения, многоуровневыми потолками.",
@@ -391,6 +488,22 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "Многоуровневые потолки и финишная отделка",
     ],
     related: ["standartnyy-remont", "biznes-remont", "remont-pod-klyuch"],
+    estimateExampleItemIds: [
+      "finishing_walls-shpaklevka-pokraska",
+      "finishing_walls-proyavochnyy-svet",
+      "finishing_ceilings-skrytyy-karniz",
+      "electrical-svetodiodnaya-lenta",
+      "tiling-krupnoformat",
+      "plumbing-zashchita-protechek",
+    ],
+    estimateExampleVolumes: v([
+      ["finishing_walls-shpaklevka-pokraska", 180],
+      ["finishing_walls-proyavochnyy-svet", 60],
+      ["finishing_ceilings-skrytyy-karniz", 30],
+      ["electrical-svetodiodnaya-lenta", 30],
+      ["tiling-krupnoformat", 25],
+      ["plumbing-zashchita-protechek", 1],
+    ]),
   }),
 
   // 7) /biznes-remont
@@ -398,7 +511,7 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
     slug: "biznes-remont",
     packageId: "business",
     title: "Бизнес-ремонт",
-    h1: "Бизнес-ремонт",
+    h1: "Ремонт квартиры или дома бизнес-класса",
     metaTitle: "Бизнес-ремонт — от 35 000 ₽/м² | Шадов и партнёры",
     metaDescription:
       "Бизнес-ремонт квартир и домов с проектным электрическим щитом, коллекторной разводкой водоснабжения, тёплым полом и шумоизоляцией.",
@@ -425,6 +538,22 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "Многоуровневые потолки и декоративная отделка",
     ],
     related: ["evroremont", "premialnyy-remont", "remont-pod-klyuch"],
+    estimateExampleItemIds: [
+      "finishing_walls-proyavochnyy-svet",
+      "finishing_ceilings-tenevoe",
+      "finishing_ceilings-skrytyy-karniz",
+      "finishing_floors-inzhenernaya",
+      "tiling-krupnoformat",
+      "finishing_doors-skrytyy-montazh",
+    ],
+    estimateExampleVolumes: v([
+      ["finishing_walls-proyavochnyy-svet", 120],
+      ["finishing_ceilings-tenevoe", 30],
+      ["finishing_ceilings-skrytyy-karniz", 30],
+      ["finishing_floors-inzhenernaya", 60],
+      ["tiling-krupnoformat", 25],
+      ["finishing_doors-skrytyy-montazh", 4],
+    ]),
   }),
 
   // 8) /premialnyy-remont
@@ -432,7 +561,7 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
     slug: "premialnyy-remont",
     packageId: "premium",
     title: "Премиальный ремонт",
-    h1: "Премиальный ремонт",
+    h1: "Премиальный ремонт квартиры или частного дома",
     metaTitle: "Премиальный ремонт — от 48 000 ₽/м² | Шадов и партнёры",
     metaDescription:
       "Премиальный ремонт квартир и домов с авторским дизайн-проектом, мультизональным кондиционированием, базовой интеграцией умного дома.",
@@ -460,6 +589,22 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "Эксклюзивные финишные материалы и скрытые двери",
     ],
     related: ["biznes-remont", "remont-pod-klyuch", "evroremont"],
+    estimateExampleItemIds: [
+      "finishing_walls-mikrocement",
+      "finishing_walls-proyavochnyy-svet",
+      "finishing_ceilings-tenevoe",
+      "finishing_floors-skrytyy-plintus",
+      "tiling-plity-3200",
+      "finishing_doors-skrytyy-montazh",
+    ],
+    estimateExampleVolumes: v([
+      ["finishing_walls-mikrocement", 30],
+      ["finishing_walls-proyavochnyy-svet", 120],
+      ["finishing_ceilings-tenevoe", 40],
+      ["finishing_floors-skrytyy-plintus", 50],
+      ["tiling-plity-3200", 20],
+      ["finishing_doors-skrytyy-montazh", 4],
+    ]),
   }),
 
   // 9) /chernovoy-remont
@@ -471,10 +616,11 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
     metaTitle: "Черновой ремонт квартир и домов — Шадов и партнёры",
     metaDescription:
       "Черновой этап ремонта: подготовка стен, полов, потолков и инженерных систем под последующую чистовую отделку. Контроль скрытых работ по актам.",
-    h1: "Черновой ремонт",
+    h1: "Черновой ремонт квартиры или частного дома",
     description:
       "Подготовка помещения под чистовую отделку: демонтаж, выравнивание стен и потолков, стяжка пола, замена инженерных систем, приёмка скрытых работ по актам.",
-    startingPrice: "от 4 500 ₽/м²",
+    // Источник: additional_repairs.chernovoy-kvartiry = 10 000 ₽/м² пола.
+    startingPrice: additionalStartingPrice(10000, "м² пола"),
     suitableFor: [
       "Новые квартиры без отделки",
       "Помещения после демонтажа",
@@ -529,6 +675,22 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "elektromontazh",
       "santehnika",
     ],
+    estimateExampleItemIds: [
+      "demolition-kompleksnyy",
+      "finishing_walls-peregorodka-gkl",
+      "finishing_walls-shtukaturka-mayaki",
+      "finishing_floors-polusukhaya",
+      "electrical-chernovaya-tochka",
+      "plumbing-kompleksnaya-tochka",
+    ],
+    estimateExampleVolumes: v([
+      ["demolition-kompleksnyy", 60],
+      ["finishing_walls-peregorodka-gkl", 30],
+      ["finishing_walls-shtukaturka-mayaki", 180],
+      ["finishing_floors-polusukhaya", 60],
+      ["electrical-chernovaya-tochka", 40],
+      ["plumbing-kompleksnaya-tochka", 8],
+    ]),
   },
 
   // 10) /chistovaya-otdelka
@@ -540,10 +702,11 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
     metaTitle: "Чистовая отделка стен, полов и потолков — Шадов и партнёры",
     metaDescription:
       "Чистовая отделка: окраска и обои, плитка и керамогранит, ламинат и паркетная доска, потолки и установка дверей. Поэтапная приёмка по актам.",
-    h1: "Чистовая отделка",
+    h1: "Чистовая отделка квартиры или частного дома",
     description:
       "Финишные работы и установка отделочных элементов на подготовленные основания. Окраска и обои, плитка и керамогранит, потолки, ламинат и паркетная доска, установка дверей.",
-    startingPrice: "от 3 500 ₽/м²",
+    // Источник: additional_repairs.chistovaya-otdelka = 8 000 ₽/м² пола.
+    startingPrice: additionalStartingPrice(8000, "м² пола"),
     suitableFor: [
       "Помещения после чернового ремонта",
       "Объекты с подготовленными основаниями",
@@ -601,5 +764,25 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "ukladka-plitki",
       "remont-pod-klyuch",
     ],
+    estimateExampleItemIds: [
+      "finishing_walls-pokraska",
+      "finishing_walls-oboi",
+      "finishing_floors-laminat",
+      "tiling-standart-keram",
+      "finishing_floors-plintus",
+      "finishing_doors-standart",
+    ],
+    estimateExampleVolumes: v([
+      ["finishing_walls-pokraska", 180],
+      ["finishing_walls-oboi", 180],
+      ["finishing_floors-laminat", 60],
+      ["tiling-standart-keram", 20],
+      ["finishing_floors-plintus", 50],
+      ["finishing_doors-standart", 4],
+    ]),
+    estimateExampleNotes: {
+      "finishing_walls-oboi": "Альтернативный вариант: поклейка обоев вместо покраски",
+      "finishing_floors-laminat": "Альтернатива: укладка кварцвинила",
+    },
   },
 ];
