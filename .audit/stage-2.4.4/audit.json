@@ -1,0 +1,616 @@
+{
+  "stage": "2.4.4",
+  "specificationCheck": {
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  "constructionRoutes": [
+    {
+      "route": "/stroitelstvo",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/stroitelstvo-domov-pod-klyuch",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/karkasnye-doma",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/doma-iz-sip-paneley",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/doma-iz-brusa",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/doma-iz-kleenogo-brusa",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/doma-iz-gazobetona",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/doma-iz-keramicheskih-blokov",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/kirpichnye-doma",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/monolitnye-doma",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/kombinirovannye-doma",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/mnogokvartirnye-doma",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/generalnyy-podryad",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/monolitnye-raboty",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/fundamenty",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/kladochnye-raboty",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/krovelnye-raboty",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/fasadnye-raboty",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    }
+  ],
+  "overviewPage": {
+    "route": "/stroitelstvo",
+    "h1": "Строительство частных и многоквартирных домов в Москве и Московской области",
+    "startingPrice": null,
+    "metaTitle": "Строительство домов и зданий в Москве и Московской области — Шадов и партнёры",
+    "metaDescription": "Строительство частных и многоквартирных домов, генеральный подряд, монолитные, фундаментные, кладочные, кровельные и фасадные работы в Москве и Московской области.",
+    "canonical": "https://shadov.pro/stroitelstvo",
+    "usesConstructionServicePage": true,
+    "hasRouteStub": false,
+    "hasNoindex": false,
+    "directionRoutes": [
+      "/stroitelstvo-domov-pod-klyuch",
+      "/mnogokvartirnye-doma",
+      "/generalnyy-podryad",
+      "/monolitnye-raboty",
+      "/fundamenty",
+      "/kladochnye-raboty",
+      "/krovelnye-raboty",
+      "/fasadnye-raboty"
+    ],
+    "technologyRoutes": [
+      "/karkasnye-doma",
+      "/doma-iz-sip-paneley",
+      "/doma-iz-brusa",
+      "/doma-iz-kleenogo-brusa",
+      "/doma-iz-gazobetona",
+      "/doma-iz-keramicheskih-blokov",
+      "/kirpichnye-doma",
+      "/monolitnye-doma",
+      "/kombinirovannye-doma"
+    ],
+    "illustrationKeys": [
+      "hero-construction"
+    ],
+    "faqIds": [
+      "calc-without-visit",
+      "exact-estimate-needs",
+      "existing-project",
+      "payment-stages",
+      "materials-procurement",
+      "remote-control",
+      "hidden-works",
+      "documents-handover",
+      "additional-works",
+      "single-works",
+      "intermediaries",
+      "sro-confirmation",
+      "after-handover"
+    ]
+  },
+  "technologies": [
+    {
+      "slug": "karkasnye-doma",
+      "name": "Каркасный дом",
+      "prices": {
+        "shell": 18000,
+        "warmShell": 26000,
+        "preFinish": 36000,
+        "turnkey": 45000,
+        "turnkeyWithBasicMaterials": 95000
+      }
+    },
+    {
+      "slug": "doma-iz-sip-paneley",
+      "name": "Дом из СИП-панелей",
+      "prices": {
+        "shell": 17000,
+        "warmShell": 25000,
+        "preFinish": 35000,
+        "turnkey": 44000,
+        "turnkeyWithBasicMaterials": 90000
+      }
+    },
+    {
+      "slug": "doma-iz-brusa",
+      "name": "Дом из профилированного бруса",
+      "prices": {
+        "shell": 20000,
+        "warmShell": 28000,
+        "preFinish": 38000,
+        "turnkey": 48000,
+        "turnkeyWithBasicMaterials": 105000
+      }
+    },
+    {
+      "slug": "doma-iz-kleenogo-brusa",
+      "name": "Дом из клееного бруса",
+      "prices": {
+        "shell": 24000,
+        "warmShell": 34000,
+        "preFinish": 46000,
+        "turnkey": 58000,
+        "turnkeyWithBasicMaterials": 125000
+      }
+    },
+    {
+      "slug": "doma-iz-gazobetona",
+      "name": "Дом из газобетона",
+      "prices": {
+        "shell": 25000,
+        "warmShell": 36000,
+        "preFinish": 50000,
+        "turnkey": 65000,
+        "turnkeyWithBasicMaterials": 125000
+      }
+    },
+    {
+      "slug": "doma-iz-keramicheskih-blokov",
+      "name": "Дом из керамических блоков",
+      "prices": {
+        "shell": 28000,
+        "warmShell": 40000,
+        "preFinish": 55000,
+        "turnkey": 72000,
+        "turnkeyWithBasicMaterials": 145000
+      }
+    },
+    {
+      "slug": "kirpichnye-doma",
+      "name": "Кирпичный дом",
+      "prices": {
+        "shell": 32000,
+        "warmShell": 45000,
+        "preFinish": 62000,
+        "turnkey": 80000,
+        "turnkeyWithBasicMaterials": 165000
+      }
+    },
+    {
+      "slug": "monolitnye-doma",
+      "name": "Монолитный железобетонный дом",
+      "prices": {
+        "shell": 35000,
+        "warmShell": 50000,
+        "preFinish": 70000,
+        "turnkey": 90000,
+        "turnkeyWithBasicMaterials": 180000
+      }
+    },
+    {
+      "slug": "kombinirovannye-doma",
+      "name": "Комбинированный дом",
+      "prices": {
+        "shell": 40000,
+        "warmShell": 55000,
+        "preFinish": 75000,
+        "turnkey": 95000,
+        "turnkeyWithBasicMaterials": 190000
+      }
+    }
+  ],
+  "completionLevels": [
+    {
+      "id": "shell",
+      "name": "Коробка",
+      "included": [
+        "Фундамент",
+        "Несущие стены",
+        "Внутренние несущие конструкции",
+        "Перекрытия",
+        "Лестница в конструктиве, если предусмотрена проектом",
+        "Стропильная система или конструкция кровли",
+        "Кровельное покрытие"
+      ],
+      "excluded": [
+        "Окна",
+        "Наружные двери",
+        "Фасадная отделка",
+        "Инженерные системы",
+        "Внутренняя отделка"
+      ]
+    },
+    {
+      "id": "warmShell",
+      "name": "Тёплый контур",
+      "included": [
+        "Коробка",
+        "Утеплённая кровля",
+        "Окна",
+        "Наружные двери",
+        "Закрытие внешних проёмов",
+        "Базовая защита фасада",
+        "Гидроизоляционные и теплоизоляционные работы по проекту"
+      ],
+      "excluded": [
+        "Внутренние инженерные системы",
+        "Штукатурка",
+        "Стяжка",
+        "Чистовая отделка",
+        "Сантехнические приборы"
+      ]
+    },
+    {
+      "id": "preFinish",
+      "name": "Под чистовую отделку",
+      "included": [
+        "Тёплый контур",
+        "Черновая электрика",
+        "Водоснабжение",
+        "Канализация",
+        "Отопление",
+        "Штукатурка",
+        "Стяжка",
+        "Подготовка поверхностей",
+        "Базовая котельная по проекту"
+      ],
+      "excluded": [
+        "Чистовые покрытия",
+        "Чистовая сантехника",
+        "Светильники",
+        "Межкомнатные двери, если они отдельно не предусмотрены",
+        "Мебель и оборудование"
+      ]
+    },
+    {
+      "id": "turnkey",
+      "name": "Под ключ",
+      "included": [
+        "Конструктив",
+        "Фасад",
+        "Кровля",
+        "Окна",
+        "Наружные двери",
+        "Электрика",
+        "Сантехника",
+        "Отопление",
+        "Водоснабжение",
+        "Канализация",
+        "Черновая отделка",
+        "Чистовая отделка базового уровня",
+        "Сантехнические приборы базовой комплектации",
+        "Розетки и выключатели базовой комплектации",
+        "Проверка инженерных систем",
+        "Сдача готового дома"
+      ],
+      "excluded": [
+        "Мебель рассчитывается отдельно",
+        "Кухня рассчитывается отдельно",
+        "Бытовая техника рассчитывается отдельно",
+        "Благоустройство рассчитывается отдельно",
+        "Дорогостоящее оборудование рассчитывается отдельно"
+      ]
+    }
+  ],
+  "directionCards": [
+    {
+      "route": "/stroitelstvo-domov-pod-klyuch",
+      "present": true
+    },
+    {
+      "route": "/mnogokvartirnye-doma",
+      "present": true
+    },
+    {
+      "route": "/generalnyy-podryad",
+      "present": true
+    },
+    {
+      "route": "/monolitnye-raboty",
+      "present": true
+    },
+    {
+      "route": "/fundamenty",
+      "present": true
+    },
+    {
+      "route": "/kladochnye-raboty",
+      "present": true
+    },
+    {
+      "route": "/krovelnye-raboty",
+      "present": true
+    },
+    {
+      "route": "/fasadnye-raboty",
+      "present": true
+    }
+  ],
+  "relatedServices": [
+    {
+      "route": "/stroitelstvo",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch",
+        "/mnogokvartirnye-doma",
+        "/generalnyy-podryad",
+        "/monolitnye-raboty",
+        "/fundamenty",
+        "/kladochnye-raboty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/stroitelstvo-domov-pod-klyuch",
+      "displayedRelatedRoutes": [
+        "/karkasnye-doma",
+        "/doma-iz-gazobetona",
+        "/kirpichnye-doma",
+        "/monolitnye-doma",
+        "/fundamenty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/karkasnye-doma",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch",
+        "/fundamenty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/doma-iz-sip-paneley",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch",
+        "/fundamenty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/doma-iz-brusa",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch",
+        "/fundamenty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/doma-iz-kleenogo-brusa",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch",
+        "/fundamenty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/doma-iz-gazobetona",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch",
+        "/fundamenty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/doma-iz-keramicheskih-blokov",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch",
+        "/fundamenty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/kirpichnye-doma",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch",
+        "/fundamenty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/monolitnye-doma",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch",
+        "/fundamenty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/kombinirovannye-doma",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch",
+        "/fundamenty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/mnogokvartirnye-doma",
+      "displayedRelatedRoutes": [
+        "/generalnyy-podryad",
+        "/monolitnye-raboty",
+        "/fundamenty",
+        "/kladochnye-raboty"
+      ]
+    },
+    {
+      "route": "/generalnyy-podryad",
+      "displayedRelatedRoutes": [
+        "/mnogokvartirnye-doma",
+        "/stroitelstvo-domov-pod-klyuch",
+        "/monolitnye-raboty"
+      ]
+    },
+    {
+      "route": "/monolitnye-raboty",
+      "displayedRelatedRoutes": [
+        "/fundamenty",
+        "/monolitnye-doma",
+        "/generalnyy-podryad",
+        "/kladochnye-raboty"
+      ]
+    },
+    {
+      "route": "/fundamenty",
+      "displayedRelatedRoutes": [
+        "/monolitnye-raboty",
+        "/kladochnye-raboty",
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    },
+    {
+      "route": "/kladochnye-raboty",
+      "displayedRelatedRoutes": [
+        "/fundamenty",
+        "/monolitnye-raboty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/krovelnye-raboty",
+      "displayedRelatedRoutes": [
+        "/fasadnye-raboty",
+        "/kladochnye-raboty",
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    },
+    {
+      "route": "/fasadnye-raboty",
+      "displayedRelatedRoutes": [
+        "/krovelnye-raboty",
+        "/kladochnye-raboty",
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    }
+  ],
+  "metadata": {
+    "route": "/stroitelstvo",
+    "hasOgTitle": true,
+    "hasOgDescription": true,
+    "hasOgUrl": true,
+    "hasOgType": true,
+    "hasCanonical": true
+  },
+  "structuredData": {
+    "breadcrumbList": true,
+    "service": true,
+    "noOffer": true,
+    "noReview": true,
+    "noAggregateRating": true
+  },
+  "illustrations": {
+    "overviewKey": "hero-construction",
+    "allowed": true
+  },
+  "accessibility": {
+    "usesAriaPressed": true,
+    "containsRadioRole": false,
+    "containsRadioGroupRole": false,
+    "containsMinHeight44": true
+  },
+  "forbiddenSearch": {
+    "patterns": [
+      "Строительство новых домов под ключ",
+      "Строительство первых домов под ключом",
+      "Строительство любых зданий",
+      "Строительство жилых объектов",
+      "Строительство домов всех типов",
+      "собственная лаборатория",
+      "собственный проектный институт",
+      "собственный парк техники"
+    ],
+    "matchesOutsideValidator": []
+  },
+  "regressionChecks": {
+    "pricesNonEmpty": true,
+    "technologiesNine": true,
+    "completionLevelsFour": true,
+    "constructionPagesEighteen": true
+  },
+  "totals": {
+    "constructionRoutes": 18,
+    "activeConstructionRoutes": 18,
+    "stubConstructionRoutes": 0,
+    "technologies": 9,
+    "comparedTechnologyPrices": 45,
+    "overviewDirections": 8,
+    "overviewIllustrations": 1
+  }
+}
