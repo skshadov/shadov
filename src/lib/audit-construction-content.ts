@@ -37,8 +37,11 @@ function readRouteSrc(route: string): string {
 }
 
 function findCanonical(src: string): string | null {
-  const m = src.match(/rel:\s*"canonical",\s*href:\s*"([^"]+)"/);
-  return m ? m[1] : null;
+  if (!/rel:\s*"canonical"/.test(src)) return null;
+  const urlMatch = src.match(/const\s+URL\s*=\s*"([^"]+)"/);
+  if (urlMatch) return urlMatch[1];
+  const literal = src.match(/rel:\s*"canonical",\s*href:\s*"([^"]+)"/);
+  return literal ? literal[1] : null;
 }
 
 function findH1ForRoute(route: string): string | null {
