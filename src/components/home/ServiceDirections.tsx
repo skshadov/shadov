@@ -7,29 +7,19 @@ import { ArrowUpRight } from "lucide-react";
 import { Illustration } from "@/components/common/Illustration";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { HOME_DIRECTIONS } from "@/data/home-services";
+import {
+  housesPicture,
+  renovationPicture,
+  monolithPicture,
+  engineeringPicture,
+} from "@/assets/illustrations/sources";
 
-import housesImg from "@/assets/illustrations/direction-houses.jpg";
-import renovationImg from "@/assets/illustrations/direction-renovation.jpg";
-import monolithImg from "@/assets/illustrations/direction-monolith.jpg";
-import engineeringImg from "@/assets/illustrations/direction-engineering.jpg";
-
-const ILLUSTRATIONS: Record<string, { src: string; description: string } | undefined> = {
-  "Строительство домов": {
-    src: housesImg,
-    description: "современный двухэтажный частный дом из газобетона с фальцевой кровлей",
-  },
-  "Ремонт под ключ": {
-    src: renovationImg,
-    description: "интерьер квартиры на этапе подготовки под чистовую отделку",
-  },
-  "Монолитные работы": {
-    src: monolithImg,
-    description: "монолитное перекрытие с армированием и бетонированием",
-  },
-  "Электрика": {
-    src: engineeringImg,
-    description: "инженерное помещение с коллектором, электрощитом и трассами",
-  },
+type PicBundle = typeof housesPicture;
+const ILLUSTRATIONS: Record<string, { pic: PicBundle; description: string } | undefined> = {
+  "Строительство домов": { pic: housesPicture, description: "современный двухэтажный частный дом из газобетона с фальцевой кровлей" },
+  "Ремонт под ключ": { pic: renovationPicture, description: "интерьер квартиры на этапе подготовки под чистовую отделку" },
+  "Монолитные работы": { pic: monolithPicture, description: "монолитное перекрытие с армированием и бетонированием" },
+  "Электрика": { pic: engineeringPicture, description: "инженерное помещение с коллектором, электрощитом и трассами" },
 };
 
 export function ServiceDirections() {
@@ -53,10 +43,13 @@ export function ServiceDirections() {
                   <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                     {ill ? (
                       <Illustration
-                        src={ill.src}
+                        src={ill.pic.src}
+                        sources={ill.pic.sources}
+                        imgSrcSet={ill.pic.imgSrcSet}
+                        imgSizes={ill.pic.imgSizes}
                         description={ill.description}
-                        width={1280}
-                        height={960}
+                        width={ill.pic.width}
+                        height={ill.pic.height}
                         imgClassName="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                         className="h-full w-full"
                         rounded={false}
