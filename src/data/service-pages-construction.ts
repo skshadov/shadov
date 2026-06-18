@@ -669,8 +669,7 @@ const TECH_PAGES: ServicePageData[] = TECH_RULES.map((rule): ServicePageData => 
       ...relatedFor(rule.slug),
       
     ],
-    illustrationKey:
-      rule.slug === "monolitnye-doma" ? "direction-monolith" : "direction-houses",
+    illustrationKey: "direction-houses",
     estimateExampleItemIds: rule.estimateIds,
     estimateExampleVolumes: rule.estimateVol,
     estimateExampleNotes: rule.estimateNotes,
