@@ -420,6 +420,11 @@ export type HouseCompletionLevel = {
   excluded: string[];
 };
 
+export const HOUSE_TURNKEY_WITH_BASIC_MATERIALS_LABEL = "Под ключ с базовыми материалами";
+
+export const HOUSE_COMPLETION_DISCLAIMER =
+  "Точный состав комплектации фиксируется в смете и договоре с учётом проекта выбранного дома.";
+
 /**
  * Подэтап 2.4.1 — полный состав четырёх уровней готовности дома (§5 ТЗ 2.4.1).
  * Не использовать формулировку ««включено всё без исключения»».

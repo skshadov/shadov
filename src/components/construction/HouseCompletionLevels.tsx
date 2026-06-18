@@ -2,7 +2,7 @@
  * Подэтап 2.4.1 — состав четырёх уровней готовности дома.
  * Доступные <details> с описанием, included и excluded.
  */
-import { HOUSE_COMPLETION_LEVELS } from "@/data/house-technologies";
+import { HOUSE_COMPLETION_DISCLAIMER, HOUSE_COMPLETION_LEVELS } from "@/data/house-technologies";
 
 export function HouseCompletionLevels() {
   return (
@@ -58,9 +58,7 @@ export function HouseCompletionLevels() {
             </details>
           ))}
         </div>
-        <p className="text-xs text-muted-foreground">
-          Точный состав комплектации фиксируется в смете и договоре с учётом проекта выбранного дома.
-        </p>
+        <p className="text-xs text-muted-foreground">{HOUSE_COMPLETION_DISCLAIMER}</p>
       </div>
     </section>
   );
