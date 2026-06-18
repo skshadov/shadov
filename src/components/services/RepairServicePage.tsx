@@ -14,12 +14,11 @@ import { ServicePageLayout } from "./ServicePageLayout";
 import { resolveServicePage } from "@/lib/get-service-data";
 import type { EstimateExampleRow } from "./ServiceEstimateExample";
 import type { BreadcrumbItem } from "@/components/common/Breadcrumbs";
+import { getPriceById } from "@/data/prices";
 
 interface RepairServicePageProps {
   slug: string;
 }
-
-const EXAMPLE_VOLUMES = [40, 25, 18, 12, 8];
 
 export function RepairServicePage({ slug }: RepairServicePageProps) {
   const resolved = resolveServicePage(slug);
@@ -36,15 +35,23 @@ export function RepairServicePage({ slug }: RepairServicePageProps) {
   }
   const { data } = resolved;
 
-  // Пример структуры сметы — первые позиции первой ценовой категории.
-  // Демонстрационные объёмы, не итог объекта (см. ServiceEstimateExample).
-  const exampleSource = resolved.prices
-    .filter((p) => typeof p.priceFrom === "number" && p.priceFrom > 0)
-    .slice(0, 5);
-  const estimateExample: EstimateExampleRow[] = exampleSource.map((item, i) => ({
-    item,
-    volume: EXAMPLE_VOLUMES[i] ?? 10,
-  }));
+  // Подэтап 2.3A — пример структуры сметы формируется ТОЛЬКО по явному
+  // перечню estimateExampleItemIds. Автоматический slice(0, 5) запрещён.
+  const ids = data.estimateExampleItemIds ?? [];
+  const estimateExample: EstimateExampleRow[] = ids
+    .map((id) => {
+      const item = getPriceById(id);
+      if (!item) return null;
+      const vol = data.estimateExampleVolumes?.[id];
+      const note = data.estimateExampleNotes?.[id];
+      return {
+        item,
+        volume: vol?.value,
+        volumeLabel: vol?.label,
+        note,
+      } satisfies EstimateExampleRow;
+    })
+    .filter((r): r is EstimateExampleRow => r !== null);
 
   const breadcrumbs: BreadcrumbItem[] = [
     { label: "Главная", to: "/" },
