@@ -15,6 +15,7 @@
     "audit:construction": "bun src/lib/audit-construction-content.ts"
     ,"audit:stage-2.4.2": "bun src/lib/audit-stage-2-4-2.ts"
     ,"audit:stage-2.4.3": "bun src/lib/audit-stage-2-4-3.ts"
+    ,"audit:stage-2.4.4": "bun src/lib/audit-stage-2-4-4.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
