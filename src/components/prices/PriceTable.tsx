@@ -1,9 +1,8 @@
 /**
- * Подэтап 2.1 — таблица цен. Доступная семантика, мобильный скролл,
- * корректный вывод диапазонов, процентов и priceLabel.
+ * Подэтап 2.1A — таблица цен. unitLabel из данных выводится в столбце «Единица».
  */
 import type { PriceItem } from "@/types/pricing";
-import { formatPriceItem, formatActualDate } from "@/lib/format-price";
+import { formatPriceItem, formatActualDate, getUnitDisplay } from "@/lib/format-price";
 
 interface PriceTableProps {
   caption: string;
@@ -32,7 +31,7 @@ export function PriceTable({ caption, items, showActualDate = true, className }:
           {items.map((item) => (
             <tr key={item.id} className="border-t border-border">
               <th scope="row" className="px-4 py-3 font-medium">{item.name}</th>
-              <td className="px-4 py-3 text-muted-foreground">{item.unit ?? "—"}</td>
+              <td className="px-4 py-3 text-muted-foreground">{getUnitDisplay(item)}</td>
               <td className="px-4 py-3 font-semibold">{formatPriceItem(item) || "—"}</td>
               {hasNotes ? <td className="px-4 py-3 text-xs text-muted-foreground">{item.note ?? ""}</td> : null}
             </tr>
