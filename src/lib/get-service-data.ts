@@ -16,6 +16,7 @@ import type { RepairPackage } from "@/data/repair-packages";
  * «Связанные услуги» как готовые услуги.
  */
 export const ACTIVE_CONSTRUCTION_SLUGS = new Set<string>([
+  "stroitelstvo",
   "stroitelstvo-domov-pod-klyuch",
   "karkasnye-doma",
   "doma-iz-sip-paneley",

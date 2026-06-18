@@ -624,6 +624,7 @@ try {
 // ─────────────────────────────────────────────────────────────────────────
 
 const ACTIVATED_CONSTRUCTION_ROUTES = [
+  "/stroitelstvo",
   "/stroitelstvo-domov-pod-klyuch",
   "/karkasnye-doma",
   "/doma-iz-sip-paneley",
@@ -643,9 +644,7 @@ const ACTIVATED_CONSTRUCTION_ROUTES = [
   "/fasadnye-raboty",
 ] as const;
 
-const STUB_CONSTRUCTION_ROUTES = [
-  "/stroitelstvo",
-] as const;
+const STUB_CONSTRUCTION_ROUTES: readonly string[] = [];
 
 function readRoute(route: string): string {
   const file = `src/routes${route}.tsx`;
@@ -808,18 +807,15 @@ const STAGE_2_4_3_ROUTES = [
   "/fasadnye-raboty",
 ] as const;
 
-if (ACTIVATED_CONSTRUCTION_ROUTES.length !== 17) {
+if (ACTIVATED_CONSTRUCTION_ROUTES.length !== 18) {
   fail(
-    `ожидается 17 активных строительных маршрутов, найдено ${ACTIVATED_CONSTRUCTION_ROUTES.length}`,
+    `ожидается 18 активных строительных маршрутов, найдено ${ACTIVATED_CONSTRUCTION_ROUTES.length}`,
   );
 }
-if (STUB_CONSTRUCTION_ROUTES.length !== 1) {
+if (STUB_CONSTRUCTION_ROUTES.length !== 0) {
   fail(
-    `ожидается 1 строительная заглушка, найдено ${STUB_CONSTRUCTION_ROUTES.length}`,
+    `ожидается 0 строительных заглушек, найдено ${STUB_CONSTRUCTION_ROUTES.length}`,
   );
-}
-if (STUB_CONSTRUCTION_ROUTES[0] !== "/stroitelstvo") {
-  fail("единственная строительная заглушка должна быть /stroitelstvo");
 }
 
 // Каждая страница 2.4.3 использует ConstructionServicePage без noindex и без RouteStub.

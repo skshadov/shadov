@@ -16,6 +16,7 @@ import { resolveServicePage } from "@/lib/get-service-data";
 import { getPriceById } from "@/data/prices";
 
 const ACTIVE_ROUTES = [
+  "/stroitelstvo",
   "/stroitelstvo-domov-pod-klyuch",
   "/karkasnye-doma",
   "/doma-iz-sip-paneley",
@@ -26,10 +27,6 @@ const ACTIVE_ROUTES = [
   "/kirpichnye-doma",
   "/monolitnye-doma",
   "/kombinirovannye-doma",
-] as const;
-
-const STUB_ROUTES = [
-  "/stroitelstvo",
   "/mnogokvartirnye-doma",
   "/generalnyy-podryad",
   "/monolitnye-raboty",
@@ -38,6 +35,8 @@ const STUB_ROUTES = [
   "/krovelnye-raboty",
   "/fasadnye-raboty",
 ] as const;
+
+const STUB_ROUTES: readonly string[] = [];
 
 const EXPECTED_TURNKEY_H1 =
   "Строительство частных домов под ключ в Москве и Московской области";
@@ -380,8 +379,8 @@ const totals = {
   technologies: technologies.length,
   comparedPrices,
 };
-if (totals.activeRoutes !== 10) errors.push(`activeRoutes ≠ 10 (${totals.activeRoutes})`);
-if (totals.stubRoutes !== 8) errors.push(`stubRoutes ≠ 8 (${totals.stubRoutes})`);
+if (totals.activeRoutes !== 18) errors.push(`activeRoutes ≠ 18 (${totals.activeRoutes})`);
+if (totals.stubRoutes !== 0) errors.push(`stubRoutes ≠ 0 (${totals.stubRoutes})`);
 if (totals.technologies !== 9) errors.push(`technologies ≠ 9 (${totals.technologies})`);
 if (totals.comparedPrices !== 45) errors.push(`comparedPrices ≠ 45 (${totals.comparedPrices})`);
 
