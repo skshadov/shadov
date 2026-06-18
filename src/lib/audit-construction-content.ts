@@ -5,6 +5,7 @@ import {
   HOUSE_TURNKEY_WITH_BASIC_MATERIALS_LABEL,
 } from "@/data/house-technologies";
 import { CONSTRUCTION_SERVICE_PAGES as constructionPages } from "@/data/service-pages-construction";
+import { resolveServicePage } from "@/lib/get-service-data";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 
@@ -106,6 +107,15 @@ const audit = {
       hasRouteStub: /RouteStub/.test(src),
       hasNoindexFollow: /noindex,\s*follow/.test(src),
       usesConstructionServicePage: /ConstructionServicePage/.test(src),
+    };
+  }),
+
+  relatedServices: ACTIVE_ROUTES.map((route) => {
+    const slug = route.replace(/^\//, "");
+    const resolved = resolveServicePage(slug);
+    return {
+      route,
+      related: resolved ? resolved.related.map((r) => r.slug) : [],
     };
   }),
 };
