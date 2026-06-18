@@ -1,0 +1,842 @@
+{
+  "stage": "2.5.1",
+  "specificationCheck": {
+    "passed": true,
+    "errors": []
+  },
+  "engineeringRoutes": [
+    "/inzhenernye-sistemy",
+    "/elektromontazh",
+    "/santehnika",
+    "/vodosnabzhenie-kanalizatsiya",
+    "/otoplenie",
+    "/teplyy-pol"
+  ],
+  "pageData": [
+    {
+      "route": "/inzhenernye-sistemy",
+      "slug": "inzhenernye-sistemy",
+      "h1": "Инженерные системы",
+      "metaTitle": "Инженерные системы — Шадов и партнёры",
+      "metaDescription": "Электромонтаж, сантехника, водоснабжение и канализация, отопление, тёплый пол: проект, монтаж, испытания и пусконаладка.",
+      "intro": "Раздел объединяет пять инженерных направлений. Состав и стоимость каждого направления определяются отдельно по объекту и проекту.",
+      "startingPrice": null,
+      "startingPriceItemId": null,
+      "startingPriceNote": "Стоимость рассчитывается по составу работ",
+      "priceCategoryIds": [
+        "electrical_packages",
+        "electrical",
+        "plumbing_packages",
+        "plumbing",
+        "water_supply",
+        "heating_packages",
+        "heating",
+        "underfloor_heating"
+      ],
+      "packageCategoryIds": [
+        "electrical_packages",
+        "plumbing_packages",
+        "heating_packages"
+      ],
+      "serviceGroupsCount": 1,
+      "processStepsCount": 0,
+      "qualityControlCount": 0,
+      "documentsCount": 0,
+      "costFactorsCount": 0,
+      "estimateExampleItemIds": [],
+      "faqIds": [
+        "calc-without-visit",
+        "exact-estimate-needs",
+        "contract-price",
+        "hidden-works",
+        "documents-handover"
+      ],
+      "relatedSlugs": [
+        "elektromontazh",
+        "santehnika",
+        "vodosnabzhenie-kanalizatsiya",
+        "otoplenie",
+        "teplyy-pol",
+        "remont-pod-klyuch",
+        "stroitelstvo-domov-pod-klyuch"
+      ],
+      "illustrationKey": "direction-engineering"
+    },
+    {
+      "route": "/elektromontazh",
+      "slug": "elektromontazh",
+      "h1": "Электромонтаж",
+      "metaTitle": "Электромонтаж — Шадов и партнёры",
+      "metaDescription": "Электромонтаж под ключ: обследование сети, проект, ввод, электрощит, кабельные линии, освещение, заземление, проверки и исполнительная схема.",
+      "intro": "Полный цикл электромонтажа: обследование, проект или схема, монтаж и проверка.",
+      "startingPrice": "от 2 500 ₽/м²",
+      "startingPriceItemId": "electrical_packages-basic",
+      "startingPriceNote": "По пакету «Электромонтаж — базовый»",
+      "priceCategoryIds": [
+        "electrical_packages",
+        "electrical"
+      ],
+      "packageCategoryIds": [
+        "electrical_packages"
+      ],
+      "serviceGroupsCount": 1,
+      "processStepsCount": 7,
+      "qualityControlCount": 10,
+      "documentsCount": 12,
+      "costFactorsCount": 5,
+      "estimateExampleItemIds": [
+        "electrical_packages-basic",
+        "electrical-elektroproekt",
+        "electrical-chernovaya-tochka",
+        "electrical-sborka-shchit-24",
+        "electrical-proverka"
+      ],
+      "faqIds": [
+        "calc-without-visit",
+        "exact-estimate-needs",
+        "contract-price",
+        "hidden-works",
+        "documents-handover"
+      ],
+      "relatedSlugs": [
+        "inzhenernye-sistemy",
+        "santehnika",
+        "otoplenie",
+        "teplyy-pol",
+        "remont-pod-klyuch"
+      ],
+      "illustrationKey": "direction-engineering"
+    },
+    {
+      "route": "/santehnika",
+      "slug": "santehnika",
+      "h1": "Сантехника",
+      "metaTitle": "Сантехника — Шадов и партнёры",
+      "metaDescription": "Сантехнические работы в квартирах и домах: разводка, точки водоснабжения и канализации, коллекторные узлы, скрытый монтаж, испытания.",
+      "intro": "Сантехнические работы: разводка, точки водоснабжения и канализации, коллекторные узлы, скрытый монтаж и испытания.",
+      "startingPrice": "от 2 500 ₽/м²",
+      "startingPriceItemId": "plumbing_packages-chastnyy-dom",
+      "startingPriceNote": "По пакету «Сантехника частного дома»",
+      "priceCategoryIds": [
+        "plumbing_packages",
+        "plumbing"
+      ],
+      "packageCategoryIds": [
+        "plumbing_packages"
+      ],
+      "serviceGroupsCount": 1,
+      "processStepsCount": 8,
+      "qualityControlCount": 10,
+      "documentsCount": 12,
+      "costFactorsCount": 5,
+      "estimateExampleItemIds": [
+        "plumbing_packages-2kkv",
+        "plumbing-tochka-vody",
+        "plumbing-tochka-kanalizatsii",
+        "plumbing-kollektornyy-uzel",
+        "plumbing-opressovka"
+      ],
+      "faqIds": [
+        "calc-without-visit",
+        "exact-estimate-needs",
+        "contract-price",
+        "hidden-works",
+        "documents-handover"
+      ],
+      "relatedSlugs": [
+        "inzhenernye-sistemy",
+        "vodosnabzhenie-kanalizatsiya",
+        "otoplenie",
+        "teplyy-pol",
+        "remont-pod-klyuch"
+      ],
+      "illustrationKey": "direction-engineering"
+    },
+    {
+      "route": "/vodosnabzhenie-kanalizatsiya",
+      "slug": "vodosnabzhenie-kanalizatsiya",
+      "h1": "Водоснабжение и канализация",
+      "metaTitle": "Водоснабжение и канализация — Шадов и партнёры",
+      "metaDescription": "Водоснабжение и канализация частного дома: ввод воды, насосное оборудование, фильтрация, разводка, наружные сети, испытания.",
+      "intro": "Полный комплекс работ по водоснабжению и водоотведению с проектом, монтажом и испытаниями.",
+      "startingPrice": null,
+      "startingPriceItemId": null,
+      "startingPriceNote": "Стоимость рассчитывается по составу работ",
+      "priceCategoryIds": [
+        "water_supply"
+      ],
+      "packageCategoryIds": [],
+      "serviceGroupsCount": 1,
+      "processStepsCount": 7,
+      "qualityControlCount": 11,
+      "documentsCount": 12,
+      "costFactorsCount": 6,
+      "estimateExampleItemIds": [
+        "water_supply-vvod-vody",
+        "water_supply-nasos",
+        "water_supply-vodoochistka",
+        "water_supply-naruzh-vodoprovod",
+        "water_supply-naruzh-kanaliz"
+      ],
+      "faqIds": [
+        "calc-without-visit",
+        "exact-estimate-needs",
+        "contract-price",
+        "hidden-works",
+        "documents-handover"
+      ],
+      "relatedSlugs": [
+        "inzhenernye-sistemy",
+        "santehnika",
+        "otoplenie",
+        "stroitelstvo-domov-pod-klyuch"
+      ],
+      "illustrationKey": "direction-engineering"
+    },
+    {
+      "route": "/otoplenie",
+      "slug": "otoplenie",
+      "h1": "Отопление",
+      "metaTitle": "Отопление — Шадов и партнёры",
+      "metaDescription": "Системы отопления для квартир и частных домов: теплотехнический расчёт, котельная, трубопроводы, радиаторы, автоматика, опрессовка, пусконаладка.",
+      "intro": "Системы отопления для квартир и частных домов: проект, монтаж и пусконаладка.",
+      "startingPrice": "от 1 800 ₽/м²",
+      "startingPriceItemId": "heating_packages-bazovoe",
+      "startingPriceNote": "По пакету «Базовое отопление частного дома»",
+      "priceCategoryIds": [
+        "heating_packages",
+        "heating"
+      ],
+      "packageCategoryIds": [
+        "heating_packages"
+      ],
+      "serviceGroupsCount": 1,
+      "processStepsCount": 8,
+      "qualityControlCount": 11,
+      "documentsCount": 12,
+      "costFactorsCount": 5,
+      "estimateExampleItemIds": [
+        "heating_packages-bazovoe",
+        "heating-teplotekhnicheskiy",
+        "heating-radiator",
+        "heating-truba",
+        "heating-opressovka"
+      ],
+      "faqIds": [
+        "calc-without-visit",
+        "exact-estimate-needs",
+        "contract-price",
+        "hidden-works",
+        "documents-handover"
+      ],
+      "relatedSlugs": [
+        "inzhenernye-sistemy",
+        "teplyy-pol",
+        "santehnika",
+        "vodosnabzhenie-kanalizatsiya",
+        "stroitelstvo-domov-pod-klyuch"
+      ],
+      "illustrationKey": "direction-engineering"
+    },
+    {
+      "route": "/teplyy-pol",
+      "slug": "teplyy-pol",
+      "h1": "Тёплый пол",
+      "metaTitle": "Тёплый пол — Шадов и партнёры",
+      "metaDescription": "Водяной и электрический тёплый пол: подготовка основания, теплоизоляция, контуры, коллектор, опрессовка, настройка.",
+      "intro": "Водяной и электрический тёплый пол: подготовка, монтаж и пусконаладка. Тёплый пол не во всех случаях может быть единственным источником отопления — необходимость дополнительного отопления определяется по проекту.",
+      "startingPrice": null,
+      "startingPriceItemId": null,
+      "startingPriceNote": "Стоимость рассчитывается по составу работ",
+      "priceCategoryIds": [
+        "underfloor_heating"
+      ],
+      "packageCategoryIds": [],
+      "serviceGroupsCount": 1,
+      "processStepsCount": 8,
+      "qualityControlCount": 9,
+      "documentsCount": 12,
+      "costFactorsCount": 5,
+      "estimateExampleItemIds": [
+        "underfloor_heating-proekt-vodyanogo",
+        "underfloor_heating-utepl",
+        "underfloor_heating-truba-tp",
+        "underfloor_heating-kollektor",
+        "underfloor_heating-opressovka"
+      ],
+      "faqIds": [
+        "calc-without-visit",
+        "exact-estimate-needs",
+        "contract-price",
+        "hidden-works",
+        "documents-handover"
+      ],
+      "relatedSlugs": [
+        "inzhenernye-sistemy",
+        "otoplenie",
+        "santehnika",
+        "elektromontazh"
+      ],
+      "illustrationKey": "direction-engineering"
+    }
+  ],
+  "routeStatus": [
+    {
+      "route": "/inzhenernye-sistemy",
+      "isRouteStub": true,
+      "noindexFollow": true,
+      "noEngineeringServicePage": true
+    },
+    {
+      "route": "/elektromontazh",
+      "isRouteStub": true,
+      "noindexFollow": true,
+      "noEngineeringServicePage": true
+    },
+    {
+      "route": "/santehnika",
+      "isRouteStub": true,
+      "noindexFollow": true,
+      "noEngineeringServicePage": true
+    },
+    {
+      "route": "/vodosnabzhenie-kanalizatsiya",
+      "isRouteStub": true,
+      "noindexFollow": true,
+      "noEngineeringServicePage": true
+    },
+    {
+      "route": "/otoplenie",
+      "isRouteStub": true,
+      "noindexFollow": true,
+      "noEngineeringServicePage": true
+    },
+    {
+      "route": "/teplyy-pol",
+      "isRouteStub": true,
+      "noindexFollow": true,
+      "noEngineeringServicePage": true
+    }
+  ],
+  "priceCategories": {
+    "electrical_packages": 3,
+    "electrical": 22,
+    "plumbing_packages": 5,
+    "plumbing": 21,
+    "water_supply": 13,
+    "heating_packages": 6,
+    "heating": 18,
+    "underfloor_heating": 10
+  },
+  "priceCounts": {
+    "electrical_packages": 3,
+    "electrical": 22,
+    "plumbing_packages": 5,
+    "plumbing": 21,
+    "water_supply": 13,
+    "heating_packages": 6,
+    "heating": 18,
+    "underfloor_heating": 10
+  },
+  "priceMappings": {
+    "/inzhenernye-sistemy": [
+      "electrical_packages",
+      "electrical",
+      "plumbing_packages",
+      "plumbing",
+      "water_supply",
+      "heating_packages",
+      "heating",
+      "underfloor_heating"
+    ],
+    "/elektromontazh": [
+      "electrical_packages",
+      "electrical"
+    ],
+    "/santehnika": [
+      "plumbing_packages",
+      "plumbing"
+    ],
+    "/vodosnabzhenie-kanalizatsiya": [
+      "water_supply"
+    ],
+    "/otoplenie": [
+      "heating_packages",
+      "heating"
+    ],
+    "/teplyy-pol": [
+      "underfloor_heating"
+    ]
+  },
+  "startingPriceCandidates": [
+    {
+      "route": "/inzhenernye-sistemy",
+      "startingPriceItemId": null,
+      "startingPrice": null,
+      "unit": null,
+      "category": null,
+      "sourcePositionName": null,
+      "publicNoteWhenNoPrice": "Стоимость рассчитывается по составу работ"
+    },
+    {
+      "route": "/elektromontazh",
+      "startingPriceItemId": "electrical_packages-basic",
+      "startingPrice": "от 2 500 ₽/м²",
+      "unit": "м²",
+      "category": "electrical_packages",
+      "sourcePositionName": "Электромонтаж — базовый",
+      "publicNoteWhenNoPrice": null
+    },
+    {
+      "route": "/santehnika",
+      "startingPriceItemId": "plumbing_packages-chastnyy-dom",
+      "startingPrice": "от 2 500 ₽/м²",
+      "unit": "м²",
+      "category": "plumbing_packages",
+      "sourcePositionName": "Сантехника частного дома",
+      "publicNoteWhenNoPrice": null
+    },
+    {
+      "route": "/vodosnabzhenie-kanalizatsiya",
+      "startingPriceItemId": null,
+      "startingPrice": null,
+      "unit": null,
+      "category": null,
+      "sourcePositionName": null,
+      "publicNoteWhenNoPrice": "Стоимость рассчитывается по составу работ"
+    },
+    {
+      "route": "/otoplenie",
+      "startingPriceItemId": "heating_packages-bazovoe",
+      "startingPrice": "от 1 800 ₽/м²",
+      "unit": "м²",
+      "category": "heating_packages",
+      "sourcePositionName": "Базовое отопление частного дома",
+      "publicNoteWhenNoPrice": null
+    },
+    {
+      "route": "/teplyy-pol",
+      "startingPriceItemId": null,
+      "startingPrice": null,
+      "unit": null,
+      "category": null,
+      "sourcePositionName": null,
+      "publicNoteWhenNoPrice": "Стоимость рассчитывается по составу работ"
+    }
+  ],
+  "estimateExamples": [
+    {
+      "route": "/inzhenernye-sistemy",
+      "itemIds": [],
+      "allExist": true
+    },
+    {
+      "route": "/elektromontazh",
+      "itemIds": [
+        "electrical_packages-basic",
+        "electrical-elektroproekt",
+        "electrical-chernovaya-tochka",
+        "electrical-sborka-shchit-24",
+        "electrical-proverka"
+      ],
+      "allExist": true
+    },
+    {
+      "route": "/santehnika",
+      "itemIds": [
+        "plumbing_packages-2kkv",
+        "plumbing-tochka-vody",
+        "plumbing-tochka-kanalizatsii",
+        "plumbing-kollektornyy-uzel",
+        "plumbing-opressovka"
+      ],
+      "allExist": true
+    },
+    {
+      "route": "/vodosnabzhenie-kanalizatsiya",
+      "itemIds": [
+        "water_supply-vvod-vody",
+        "water_supply-nasos",
+        "water_supply-vodoochistka",
+        "water_supply-naruzh-vodoprovod",
+        "water_supply-naruzh-kanaliz"
+      ],
+      "allExist": true
+    },
+    {
+      "route": "/otoplenie",
+      "itemIds": [
+        "heating_packages-bazovoe",
+        "heating-teplotekhnicheskiy",
+        "heating-radiator",
+        "heating-truba",
+        "heating-opressovka"
+      ],
+      "allExist": true
+    },
+    {
+      "route": "/teplyy-pol",
+      "itemIds": [
+        "underfloor_heating-proekt-vodyanogo",
+        "underfloor_heating-utepl",
+        "underfloor_heating-truba-tp",
+        "underfloor_heating-kollektor",
+        "underfloor_heating-opressovka"
+      ],
+      "allExist": true
+    }
+  ],
+  "faqMappings": {
+    "/inzhenernye-sistemy": [
+      "calc-without-visit",
+      "exact-estimate-needs",
+      "contract-price",
+      "hidden-works",
+      "documents-handover"
+    ],
+    "/elektromontazh": [
+      "calc-without-visit",
+      "exact-estimate-needs",
+      "contract-price",
+      "hidden-works",
+      "documents-handover"
+    ],
+    "/santehnika": [
+      "calc-without-visit",
+      "exact-estimate-needs",
+      "contract-price",
+      "hidden-works",
+      "documents-handover"
+    ],
+    "/vodosnabzhenie-kanalizatsiya": [
+      "calc-without-visit",
+      "exact-estimate-needs",
+      "contract-price",
+      "hidden-works",
+      "documents-handover"
+    ],
+    "/otoplenie": [
+      "calc-without-visit",
+      "exact-estimate-needs",
+      "contract-price",
+      "hidden-works",
+      "documents-handover"
+    ],
+    "/teplyy-pol": [
+      "calc-without-visit",
+      "exact-estimate-needs",
+      "contract-price",
+      "hidden-works",
+      "documents-handover"
+    ]
+  },
+  "relatedServices": {
+    "/inzhenernye-sistemy": [
+      "elektromontazh",
+      "santehnika",
+      "vodosnabzhenie-kanalizatsiya",
+      "otoplenie",
+      "teplyy-pol",
+      "remont-pod-klyuch",
+      "stroitelstvo-domov-pod-klyuch"
+    ],
+    "/elektromontazh": [
+      "inzhenernye-sistemy",
+      "santehnika",
+      "otoplenie",
+      "teplyy-pol",
+      "remont-pod-klyuch"
+    ],
+    "/santehnika": [
+      "inzhenernye-sistemy",
+      "vodosnabzhenie-kanalizatsiya",
+      "otoplenie",
+      "teplyy-pol",
+      "remont-pod-klyuch"
+    ],
+    "/vodosnabzhenie-kanalizatsiya": [
+      "inzhenernye-sistemy",
+      "santehnika",
+      "otoplenie",
+      "stroitelstvo-domov-pod-klyuch"
+    ],
+    "/otoplenie": [
+      "inzhenernye-sistemy",
+      "teplyy-pol",
+      "santehnika",
+      "vodosnabzhenie-kanalizatsiya",
+      "stroitelstvo-domov-pod-klyuch"
+    ],
+    "/teplyy-pol": [
+      "inzhenernye-sistemy",
+      "otoplenie",
+      "santehnika",
+      "elektromontazh"
+    ]
+  },
+  "componentStatus": [
+    {
+      "path": "src/components/services/EngineeringServicePage.tsx",
+      "exists": true,
+      "bytes": 6436
+    },
+    {
+      "path": "src/components/engineering/EngineeringDirections.tsx",
+      "exists": true,
+      "bytes": 1786
+    },
+    {
+      "path": "src/components/engineering/EngineeringPriceGroups.tsx",
+      "exists": true,
+      "bytes": 3026
+    },
+    {
+      "path": "src/components/engineering/EngineeringSystemDetails.tsx",
+      "exists": true,
+      "bytes": 1344
+    },
+    {
+      "path": "src/components/engineering/EngineeringPackageCard.tsx",
+      "exists": true,
+      "bytes": 1171
+    }
+  ],
+  "illustrations": [
+    {
+      "route": "/inzhenernye-sistemy",
+      "illustrationKey": "direction-engineering"
+    },
+    {
+      "route": "/elektromontazh",
+      "illustrationKey": "direction-engineering"
+    },
+    {
+      "route": "/santehnika",
+      "illustrationKey": "direction-engineering"
+    },
+    {
+      "route": "/vodosnabzhenie-kanalizatsiya",
+      "illustrationKey": "direction-engineering"
+    },
+    {
+      "route": "/otoplenie",
+      "illustrationKey": "direction-engineering"
+    },
+    {
+      "route": "/teplyy-pol",
+      "illustrationKey": "direction-engineering"
+    }
+  ],
+  "calculatorInventory": {
+    "calculatorRoute": null,
+    "routeFileExists": false,
+    "inRoutesTs": false,
+    "inNavigationTs": false,
+    "componentsFound": [
+      "src/components/ui/sidebar.tsx",
+      "src/components/common/RouteStub.tsx",
+      "src/components/layout/MobileNavigation.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/forms/EstimateForm.tsx",
+      "src/components/home/EstimateSection.tsx",
+      "src/components/home/ContactsSection.tsx",
+      "src/components/home/HeroSection.tsx",
+      "src/components/prices/PriceCoefficients.tsx",
+      "src/components/content/EmptyPortfolioState.tsx"
+    ],
+    "formulasFound": [
+      "src/components/prices/PriceCoefficients.tsx"
+    ],
+    "requirementsFound": [
+      "§13 коэффициенты — src/data/calculator-rules.ts (только данные, без UI)"
+    ],
+    "priceCategoriesPlanned": [],
+    "fieldsExisting": [
+      "CALCULATOR_RULES (13 правил, см. src/data/calculator-rules.ts)"
+    ],
+    "rawHits": [
+      {
+        "file": "src/routes/__root.tsx",
+        "lines": [
+          46
+        ]
+      },
+      {
+        "file": "src/routes/prices.tsx",
+        "lines": [
+          144,
+          234,
+          545,
+          571
+        ]
+      },
+      {
+        "file": "src/components/ui/sidebar.tsx",
+        "lines": [
+          229,
+          237,
+          238,
+          241
+        ]
+      },
+      {
+        "file": "src/components/common/RouteStub.tsx",
+        "lines": [
+          54
+        ]
+      },
+      {
+        "file": "src/components/layout/MobileNavigation.tsx",
+        "lines": [
+          122
+        ]
+      },
+      {
+        "file": "src/components/layout/Header.tsx",
+        "lines": [
+          59
+        ]
+      },
+      {
+        "file": "src/components/forms/EstimateForm.tsx",
+        "lines": [
+          36
+        ]
+      },
+      {
+        "file": "src/components/home/EstimateSection.tsx",
+        "lines": [
+          10
+        ]
+      },
+      {
+        "file": "src/components/home/ContactsSection.tsx",
+        "lines": [
+          56
+        ]
+      },
+      {
+        "file": "src/components/home/HeroSection.tsx",
+        "lines": [
+          46
+        ]
+      },
+      {
+        "file": "src/components/prices/PriceCoefficients.tsx",
+        "lines": [
+          4
+        ]
+      },
+      {
+        "file": "src/components/content/EmptyPortfolioState.tsx",
+        "lines": [
+          16
+        ]
+      },
+      {
+        "file": "src/data/service-faq.ts",
+        "lines": [
+          10,
+          11
+        ]
+      },
+      {
+        "file": "src/data/service-pages-repair.ts",
+        "lines": [
+          117,
+          188,
+          189,
+          279
+        ]
+      },
+      {
+        "file": "src/data/service-pages-construction.ts",
+        "lines": [
+          197,
+          198
+        ]
+      },
+      {
+        "file": "src/data/service-pages-engineering.ts",
+        "lines": [
+          82,
+          83,
+          194,
+          195,
+          303
+        ]
+      },
+      {
+        "file": "src/lib/validate-prices.ts",
+        "lines": [
+          75
+        ]
+      },
+      {
+        "file": "src/lib/audit-stage-2-4-3.ts",
+        "lines": [
+          209
+        ]
+      },
+      {
+        "file": "src/lib/audit-stage-2-4-4.ts",
+        "lines": [
+          72,
+          73,
+          221
+        ]
+      },
+      {
+        "file": "src/lib/audit-stage-2-5-1.ts",
+        "lines": [
+          257,
+          280,
+          282,
+          287,
+          288
+        ]
+      }
+    ],
+    "implementationStatus": "not-started"
+  },
+  "forbiddenSearch": {
+    "matchesOutsideValidator": []
+  },
+  "regressionChecks": {
+    "constructionPages": 18,
+    "repairPages": 10,
+    "engineeringPagesInServicePages": 7,
+    "pricesRouteExists": true
+  },
+  "conflicts": [
+    {
+      "route": "/santehnika",
+      "field": "h1",
+      "sources": {
+        "routes.ts": "Сантехника",
+        "navigation.ts": "Сантехника",
+        "service-pages.ts(2.4.x)": "Сантехнические работы",
+        "resolved": "Сантехника"
+      }
+    },
+    {
+      "route": "/vodosnabzhenie-kanalizatsiya",
+      "field": "h1",
+      "sources": {
+        "routes.ts": "Водоснабжение и канализация",
+        "navigation.ts": "Водоснабжение и канализация",
+        "service-pages.ts(2.4.x)": "Водоснабжение и канализация частного дома",
+        "resolved": "Водоснабжение и канализация"
+      }
+    }
+  ],
+  "totals": {
+    "engineeringRoutes": 6,
+    "activeEngineeringRoutes": 0,
+    "stubEngineeringRoutes": 6,
+    "priceCategories": 8,
+    "priceItems": 98,
+    "engineeringSlugs": 6,
+    "componentsCreated": 5
+  }
+}
