@@ -609,4 +609,84 @@ try {
   console.warn("validate-content: не удалось прочитать ConstructionServicePage.tsx", e);
 }
 
+// ─────────────────────────────────────────────────────────────────────────
+// Подэтап 2.4.2 — проверка route-файлов строительного раздела.
+// 10 утверждённых маршрутов должны быть подключены к ConstructionServicePage
+// и не содержать noindex. Оставшиеся 8 — RouteStub с noindex, follow.
+// ─────────────────────────────────────────────────────────────────────────
+
+const ACTIVATED_CONSTRUCTION_ROUTES = [
+  "/stroitelstvo-domov-pod-klyuch",
+  "/karkasnye-doma",
+  "/doma-iz-sip-paneley",
+  "/doma-iz-brusa",
+  "/doma-iz-kleenogo-brusa",
+  "/doma-iz-gazobetona",
+  "/doma-iz-keramicheskih-blokov",
+  "/kirpichnye-doma",
+  "/monolitnye-doma",
+  "/kombinirovannye-doma",
+] as const;
+
+const STUB_CONSTRUCTION_ROUTES = [
+  "/stroitelstvo",
+  "/mnogokvartirnye-doma",
+  "/generalnyy-podryad",
+  "/monolitnye-raboty",
+  "/fundamenty",
+  "/kladochnye-raboty",
+  "/krovelnye-raboty",
+  "/fasadnye-raboty",
+] as const;
+
+function readRoute(route: string): string {
+  const file = `src/routes${route}.tsx`;
+  return readFileSync(resolve(process.cwd(), file), "utf8");
+}
+
+for (const route of ACTIVATED_CONSTRUCTION_ROUTES) {
+  let src: string;
+  try {
+    src = readRoute(route);
+  } catch (e) {
+    fail(`route-файл ${route} не найден: ${e}`);
+  }
+  if (/RouteStub/.test(src)) {
+    fail(`route-файл ${route}: всё ещё использует RouteStub`);
+  }
+  if (/noindex/i.test(src)) {
+    fail(`route-файл ${route}: содержит noindex`);
+  }
+  if (!/ConstructionServicePage/.test(src)) {
+    fail(`route-файл ${route}: не подключён ConstructionServicePage`);
+  }
+  if (!/rel:\s*"canonical"/.test(src)) {
+    fail(`route-файл ${route}: отсутствует canonical`);
+  }
+  if (!/og:url/.test(src) || !/og:title/.test(src) || !/og:description/.test(src)) {
+    fail(`route-файл ${route}: отсутствуют Open Graph метатеги`);
+  }
+  if (!/BreadcrumbList/.test(src)) {
+    fail(`route-файл ${route}: отсутствует BreadcrumbList`);
+  }
+  if (/\bas\s+any\b/.test(src)) {
+    fail(`route-файл ${route}: запрещён as any`);
+  }
+}
+
+for (const route of STUB_CONSTRUCTION_ROUTES) {
+  let src: string;
+  try {
+    src = readRoute(route);
+  } catch (e) {
+    fail(`route-файл ${route} не найден: ${e}`);
+  }
+  if (!/RouteStub/.test(src)) {
+    fail(`route-файл ${route}: должен оставаться RouteStub`);
+  }
+  if (!/noindex,\s*follow/.test(src)) {
+    fail(`route-файл ${route}: должен сохранять noindex, follow`);
+  }
+}
+
 console.log("✓ validate-content: пройдена.");
