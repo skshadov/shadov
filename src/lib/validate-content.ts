@@ -579,7 +579,7 @@ for (const id of EXPECTED_LEVEL_IDS) {
   if (!lvl!.description) fail(`уровень ${id}: description пустое`);
 }
 const turnkeyLevel = HOUSE_COMPLETION_LEVELS.find((l) => l.id === "turnkey");
-assert(Boolean(turnkeyLevel), "отсутствует уровень готовности turnkey");
+if (!turnkeyLevel) fail("отсутствует уровень готовности turnkey");
 assert(
   JSON.stringify(turnkeyLevel.included) === JSON.stringify(EXPECTED_TURNKEY_INCLUDED),
   `состав уровня «Под ключ» не совпадает с утверждённым.\n  ожидается: ${JSON.stringify(EXPECTED_TURNKEY_INCLUDED)}\n  найдено:   ${JSON.stringify(turnkeyLevel.included)}`,
