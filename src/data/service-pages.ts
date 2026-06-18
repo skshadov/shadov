@@ -8,6 +8,7 @@
 
 import type { ServicePageData } from "@/types/services";
 import { REPAIR_SERVICE_PAGES } from "./service-pages-repair";
+import { CONSTRUCTION_SERVICE_PAGES } from "./service-pages-construction";
 
 function empty<T>(): T[] {
   return [] as T[];
@@ -17,8 +18,11 @@ export const SERVICE_PAGES: ServicePageData[] = [
   // ── Ремонт ────────────────────────────────────────────────────────────────
   ...REPAIR_SERVICE_PAGES,
 
-  // ── Строительство ────────────────────────────────────────────────────────
-  { slug: "stroitelstvo", route: "/stroitelstvo", category: "construction",
+  // ── Строительство (подэтап 2.4.1 — полные данные 18 страниц) ─────────────
+  ...CONSTRUCTION_SERVICE_PAGES,
+
+  // ── Инженерные системы ───────────────────────────────────────────────────
+  { slug: "inzhenernye-sistemy", route: "/inzhenernye-sistemy", category: "engineering",
     title: "Строительство", metaTitle: "Строительство домов под ключ — Шадов и партнёры",
     metaDescription: "Полный цикл строительства домов по девяти технологиям. Уровни готовности от коробки до под ключ.",
     h1: "Строительство домов и зданий", description: "Полный цикл от фундамента до сдачи объекта.",
