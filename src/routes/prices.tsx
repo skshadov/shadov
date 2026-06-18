@@ -335,7 +335,7 @@ function PricesPage() {
                   {HOUSE_TECHNOLOGIES.map((t) => (
                     <tr key={t.id} className="border-t border-border">
                       <th scope="row" className="px-4 py-3 font-medium">
-                        <Link to={`/${t.slug}`} className="hover:text-primary">{t.name}</Link>
+                        <Link to={`/${t.slug}` as string as never} className="hover:text-primary">{t.name}</Link>
                       </th>
                       <td className="px-4 py-3 font-semibold">от {formatRubles(t.workPrices.shell)}/м² площади дома</td>
                       <td className="px-4 py-3 font-semibold">от {formatRubles(t.workPrices.warmShell)}/м² площади дома</td>
@@ -360,7 +360,7 @@ function PricesPage() {
                   {HOUSE_TECHNOLOGIES.map((t) => (
                     <tr key={t.id} className="border-t border-border">
                       <th scope="row" className="px-4 py-3 font-medium">
-                        <Link to={`/${t.slug}`} className="hover:text-primary">{t.name}</Link>
+                        <Link to={`/${t.slug}` as string as never} className="hover:text-primary">{t.name}</Link>
                       </th>
                       <td className="px-4 py-3 font-semibold">от {formatRubles(t.turnkeyWithBasicMaterials)}/м² площади дома</td>
                     </tr>
