@@ -21,6 +21,7 @@ import { getHouseTechnology } from "@/data/house-technologies";
 import { HouseTechnologyMatrix } from "@/components/construction/HouseTechnologyMatrix";
 import { HouseCompletionLevels } from "@/components/construction/HouseCompletionLevels";
 import { HouseTechnologyDetails } from "@/components/construction/HouseTechnologyDetails";
+import { HouseTechnologyPrices } from "@/components/construction/HouseTechnologyPrices";
 import { ConstructionDirections } from "@/components/construction/ConstructionDirections";
 
 interface Props {
@@ -89,6 +90,7 @@ export function ConstructionServicePage({ slug }: Props) {
         {showMatrix ? (
           <HouseTechnologyMatrix heading="Технологии и уровни готовности" />
         ) : null}
+        {tech ? <HouseTechnologyPrices tech={tech} /> : null}
         {showLevels ? <HouseCompletionLevels /> : null}
         {tech ? <HouseTechnologyDetails tech={tech} /> : null}
         <section className="border-b border-border py-10">
