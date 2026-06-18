@@ -5,6 +5,46 @@ import {
   HOUSE_TURNKEY_WITH_BASIC_MATERIALS_LABEL,
 } from "@/data/house-technologies";
 import { CONSTRUCTION_SERVICE_PAGES as constructionPages } from "@/data/service-pages-construction";
+import { readFileSync } from "fs";
+import { resolve } from "path";
+
+const ACTIVE_ROUTES = [
+  "/stroitelstvo-domov-pod-klyuch",
+  "/karkasnye-doma",
+  "/doma-iz-sip-paneley",
+  "/doma-iz-brusa",
+  "/doma-iz-kleenogo-brusa",
+  "/doma-iz-gazobetona",
+  "/doma-iz-keramicheskih-blokov",
+  "/kirpichnye-doma",
+  "/monolitnye-doma",
+  "/kombinirovannye-doma",
+];
+
+const STUB_ROUTES = [
+  "/stroitelstvo",
+  "/mnogokvartirnye-doma",
+  "/generalnyy-podryad",
+  "/monolitnye-raboty",
+  "/fundamenty",
+  "/kladochnye-raboty",
+  "/krovelnye-raboty",
+  "/fasadnye-raboty",
+];
+
+function readRouteSrc(route: string): string {
+  return readFileSync(resolve(process.cwd(), `src/routes${route}.tsx`), "utf8");
+}
+
+function findCanonical(src: string): string | null {
+  const m = src.match(/rel:\s*"canonical",\s*href:\s*"([^"]+)"/);
+  return m ? m[1] : null;
+}
+
+function findH1ForRoute(route: string): string | null {
+  const page = constructionPages.find((p) => p.route === route);
+  return page ? page.h1 : null;
+}
 
 const audit = {
   routes: constructionPages.map(({ route, h1, startingPrice }) => ({
@@ -43,6 +83,28 @@ const audit = {
   ),
 
   completionDisclaimer: HOUSE_COMPLETION_DISCLAIMER,
+
+  activeRouteStatus: ACTIVE_ROUTES.map((route) => {
+    const src = readRouteSrc(route);
+    return {
+      route,
+      usesConstructionServicePage: /ConstructionServicePage/.test(src),
+      hasRouteStub: /RouteStub/.test(src),
+      hasNoindex: /noindex/i.test(src),
+      canonical: findCanonical(src),
+      h1: findH1ForRoute(route),
+    };
+  }),
+
+  stubRouteStatus: STUB_ROUTES.map((route) => {
+    const src = readRouteSrc(route);
+    return {
+      route,
+      hasRouteStub: /RouteStub/.test(src),
+      hasNoindexFollow: /noindex,\s*follow/.test(src),
+      usesConstructionServicePage: /ConstructionServicePage/.test(src),
+    };
+  }),
 };
 
 console.log(JSON.stringify(audit, null, 2));
