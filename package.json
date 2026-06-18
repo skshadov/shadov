@@ -11,6 +11,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "validate:prices": "bun src/lib/validate-prices.ts"
+    ,
+    "validate:content": "bun src/lib/validate-content.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
