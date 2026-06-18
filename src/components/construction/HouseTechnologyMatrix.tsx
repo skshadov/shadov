@@ -24,22 +24,20 @@ export function HouseTechnologyMatrix({ heading }: Props) {
             {heading}
           </h2>
         ) : null}
-        <div role="radiogroup" aria-label="Режим отображения цен" className="flex flex-wrap gap-2">
+        <div aria-label="Режим отображения цен" className="flex flex-wrap gap-2">
           <button
             type="button"
-            role="radio"
-            aria-checked={mode === "work"}
+            aria-pressed={mode === "work"}
             onClick={() => setMode("work")}
-            className={`rounded-md border px-4 py-2 text-sm ${mode === "work" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card"}`}
+            className={`inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border px-4 py-2 text-sm ${mode === "work" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card"}`}
           >
             Только работы
           </button>
           <button
             type="button"
-            role="radio"
-            aria-checked={mode === "materials"}
+            aria-pressed={mode === "materials"}
             onClick={() => setMode("materials")}
-            className={`rounded-md border px-4 py-2 text-sm ${mode === "materials" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card"}`}
+            className={`inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border px-4 py-2 text-sm ${mode === "materials" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card"}`}
           >
             Работы и базовые материалы
           </button>

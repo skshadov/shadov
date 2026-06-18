@@ -9,6 +9,37 @@ import type { ServicePageData, ServiceFaqItem } from "@/types/services";
 import type { PriceItem } from "@/types/pricing";
 import type { RepairPackage } from "@/data/repair-packages";
 
+/**
+ * Подэтап 2.4.2A — список slug'ов строительных страниц, для которых
+ * `ConstructionServicePage` уже подключён к маршруту. Остальные восемь
+ * строительных маршрутов остаются `RouteStub` и не должны попадать в блок
+ * «Связанные услуги» как готовые услуги.
+ */
+export const ACTIVE_CONSTRUCTION_SLUGS = new Set<string>([
+  "stroitelstvo-domov-pod-klyuch",
+  "karkasnye-doma",
+  "doma-iz-sip-paneley",
+  "doma-iz-brusa",
+  "doma-iz-kleenogo-brusa",
+  "doma-iz-gazobetona",
+  "doma-iz-keramicheskih-blokov",
+  "kirpichnye-doma",
+  "monolitnye-doma",
+  "kombinirovannye-doma",
+]);
+
+/**
+ * Категория считается активной, если у страницы есть заполненный контент
+ * (included/stages непустые). Для строительства дополнительно требуется
+ * принадлежность к ACTIVE_CONSTRUCTION_SLUGS, поскольку 8 заглушек ещё
+ * подключаются на следующих подэтапах.
+ */
+function isActiveServicePage(p: ServicePageData): boolean {
+  if (p.included.length === 0 || p.stages.length === 0) return false;
+  if (p.category === "construction") return ACTIVE_CONSTRUCTION_SLUGS.has(p.slug);
+  return true;
+}
+
 export type ResolvedServicePage = {
   data: ServicePageData;
   prices: PriceItem[];
@@ -28,7 +59,8 @@ export function resolveServicePage(slug: string): ResolvedServicePage | undefine
     .filter((p): p is RepairPackage => Boolean(p));
   const related = data.relatedSlugs
     .map(getServicePage)
-    .filter((p): p is ServicePageData => Boolean(p));
+    .filter((p): p is ServicePageData => Boolean(p))
+    .filter(isActiveServicePage);
 
   return { data, prices, faq, packages, related };
 }
