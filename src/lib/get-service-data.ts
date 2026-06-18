@@ -26,6 +26,13 @@ export const ACTIVE_CONSTRUCTION_SLUGS = new Set<string>([
   "kirpichnye-doma",
   "monolitnye-doma",
   "kombinirovannye-doma",
+  "mnogokvartirnye-doma",
+  "generalnyy-podryad",
+  "monolitnye-raboty",
+  "fundamenty",
+  "kladochnye-raboty",
+  "krovelnye-raboty",
+  "fasadnye-raboty",
 ]);
 
 /**
