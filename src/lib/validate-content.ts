@@ -7,7 +7,12 @@ import { REPAIR_PACKAGES } from "@/data/repair-packages";
 import { ALL_PRICE_CATEGORIES } from "@/types/pricing";
 import { SERVICE_FAQ } from "@/data/service-faq";
 import { PRICES, getPriceById } from "@/data/prices";
-import { HOUSE_TECHNOLOGIES, HOUSE_COMPLETION_LEVELS } from "@/data/house-technologies";
+import {
+  HOUSE_COMPLETION_DISCLAIMER,
+  HOUSE_COMPLETION_LEVELS,
+  HOUSE_TECHNOLOGIES,
+  HOUSE_TURNKEY_WITH_BASIC_MATERIALS_LABEL,
+} from "@/data/house-technologies";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 
@@ -78,6 +83,9 @@ const WARRANTY_TERM_RX = /гаранти[а-я]+\s+\d+\s*(год|года|лет
 function fail(msg: string): never {
   console.error("validate-content:", msg);
   process.exit(1);
+}
+function assert(condition: unknown, msg: string): asserts condition {
+  if (!condition) fail(msg);
 }
 function uniq<T>(arr: T[]): T[] {
   return Array.from(new Set(arr));
