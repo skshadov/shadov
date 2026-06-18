@@ -20,6 +20,7 @@ import { Route as SroIDokumentyRouteImport } from './routes/sro-i-dokumenty'
 import { Route as SantehnikaRouteImport } from './routes/santehnika'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as RequisitesRouteImport } from './routes/requisites'
+import { Route as RemontRouteImport } from './routes/remont'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricesRouteImport } from './routes/prices'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
@@ -111,6 +112,11 @@ const ReviewsRoute = ReviewsRouteImport.update({
 const RequisitesRoute = RequisitesRouteImport.update({
   id: '/requisites',
   path: '/requisites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemontRoute = RemontRouteImport.update({
+  id: '/remont',
+  path: '/remont',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -324,6 +330,7 @@ export interface FileRoutesByFullPath {
   '/portfolio': typeof PortfolioRouteWithChildren
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
+  '/remont': typeof RemontRoute
   '/requisites': typeof RequisitesRoute
   '/reviews': typeof ReviewsRoute
   '/santehnika': typeof SantehnikaRoute
@@ -372,6 +379,7 @@ export interface FileRoutesByTo {
   '/portfolio': typeof PortfolioRouteWithChildren
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
+  '/remont': typeof RemontRoute
   '/requisites': typeof RequisitesRoute
   '/reviews': typeof ReviewsRoute
   '/santehnika': typeof SantehnikaRoute
@@ -421,6 +429,7 @@ export interface FileRoutesById {
   '/portfolio': typeof PortfolioRouteWithChildren
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
+  '/remont': typeof RemontRoute
   '/requisites': typeof RequisitesRoute
   '/reviews': typeof ReviewsRoute
   '/santehnika': typeof SantehnikaRoute
@@ -471,6 +480,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/prices'
     | '/privacy'
+    | '/remont'
     | '/requisites'
     | '/reviews'
     | '/santehnika'
@@ -519,6 +529,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/prices'
     | '/privacy'
+    | '/remont'
     | '/requisites'
     | '/reviews'
     | '/santehnika'
@@ -567,6 +578,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/prices'
     | '/privacy'
+    | '/remont'
     | '/requisites'
     | '/reviews'
     | '/santehnika'
@@ -616,6 +628,7 @@ export interface RootRouteChildren {
   PortfolioRoute: typeof PortfolioRouteWithChildren
   PricesRoute: typeof PricesRoute
   PrivacyRoute: typeof PrivacyRoute
+  RemontRoute: typeof RemontRoute
   RequisitesRoute: typeof RequisitesRoute
   ReviewsRoute: typeof ReviewsRoute
   SantehnikaRoute: typeof SantehnikaRoute
@@ -706,6 +719,13 @@ declare module '@tanstack/react-router' {
       path: '/requisites'
       fullPath: '/requisites'
       preLoaderRoute: typeof RequisitesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/remont': {
+      id: '/remont'
+      path: '/remont'
+      fullPath: '/remont'
+      preLoaderRoute: typeof RemontRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -1013,6 +1033,7 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioRoute: PortfolioRouteWithChildren,
   PricesRoute: PricesRoute,
   PrivacyRoute: PrivacyRoute,
+  RemontRoute: RemontRoute,
   RequisitesRoute: RequisitesRoute,
   ReviewsRoute: ReviewsRoute,
   SantehnikaRoute: SantehnikaRoute,
