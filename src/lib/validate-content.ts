@@ -527,6 +527,10 @@ for (const p of constructionPages) {
 if (HOUSE_TECHNOLOGIES.length !== 9) {
   fail(`ожидается 9 технологий, найдено ${HOUSE_TECHNOLOGIES.length}`);
 }
+assert(
+  JSON.stringify(HOUSE_TECHNOLOGIES.map((t) => t.name)) === JSON.stringify(EXPECTED_TECHNOLOGY_NAMES),
+  `названия технологий не совпадают с утверждёнными.\n  ожидается: ${JSON.stringify(EXPECTED_TECHNOLOGY_NAMES)}\n  найдено:   ${JSON.stringify(HOUSE_TECHNOLOGIES.map((t) => t.name))}`,
+);
 for (const t of HOUSE_TECHNOLOGIES) {
   for (const k of ["shell", "warmShell", "preFinish", "turnkey"] as const) {
     if (!t.workPrices[k] || t.workPrices[k] <= 0) {
@@ -559,6 +563,14 @@ const EXPECTED_LEVEL_IDS = ["shell", "warmShell", "preFinish", "turnkey"];
 if (HOUSE_COMPLETION_LEVELS.length !== 4) {
   fail(`ожидается 4 уровня готовности, найдено ${HOUSE_COMPLETION_LEVELS.length}`);
 }
+assert(
+  JSON.stringify(HOUSE_COMPLETION_LEVELS.map((l) => l.name)) === JSON.stringify(EXPECTED_COMPLETION_LEVELS),
+  `названия уровней готовности не совпадают с утверждёнными.\n  ожидается: ${JSON.stringify(EXPECTED_COMPLETION_LEVELS)}\n  найдено:   ${JSON.stringify(HOUSE_COMPLETION_LEVELS.map((l) => l.name))}`,
+);
+assert(
+  HOUSE_TURNKEY_WITH_BASIC_MATERIALS_LABEL === "Под ключ с базовыми материалами",
+  `заголовок цены с материалами не совпадает: ${HOUSE_TURNKEY_WITH_BASIC_MATERIALS_LABEL}`,
+);
 for (const id of EXPECTED_LEVEL_IDS) {
   const lvl = HOUSE_COMPLETION_LEVELS.find((l) => l.id === id);
   if (!lvl) fail(`отсутствует уровень готовности ${id}`);
@@ -566,6 +578,23 @@ for (const id of EXPECTED_LEVEL_IDS) {
   if (!lvl!.excluded.length) fail(`уровень ${id}: excluded пустой`);
   if (!lvl!.description) fail(`уровень ${id}: description пустое`);
 }
+const turnkeyLevel = HOUSE_COMPLETION_LEVELS.find((l) => l.id === "turnkey");
+assert(Boolean(turnkeyLevel), "отсутствует уровень готовности turnkey");
+assert(
+  JSON.stringify(turnkeyLevel.included) === JSON.stringify(EXPECTED_TURNKEY_INCLUDED),
+  `состав уровня «Под ключ» не совпадает с утверждённым.\n  ожидается: ${JSON.stringify(EXPECTED_TURNKEY_INCLUDED)}\n  найдено:   ${JSON.stringify(turnkeyLevel.included)}`,
+);
+for (const forbidden of FORBIDDEN_TURNKEY_INCLUDED) {
+  assert(
+    !turnkeyLevel.included.includes(forbidden),
+    `уровень «Под ключ»: запрещённое значение included: ${forbidden}`,
+  );
+}
+assert(
+  HOUSE_COMPLETION_DISCLAIMER ===
+    "Точный состав комплектации фиксируется в смете и договоре с учётом проекта выбранного дома.",
+  `подпись уровней готовности не совпадает: ${HOUSE_COMPLETION_DISCLAIMER}`,
+);
 
 // Проверка отсутствия автоматического slice(0, 5) в строительном каркасе.
 try {
