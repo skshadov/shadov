@@ -16,16 +16,12 @@ import { Route as TeplyyPolRouteImport } from './routes/teplyy-pol'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as StroitelstvoDomovPodKlyuchRouteImport } from './routes/stroitelstvo-domov-pod-klyuch'
 import { Route as StroitelstvoRouteImport } from './routes/stroitelstvo'
-import { Route as StandartnyyRemontRouteImport } from './routes/standartnyy-remont'
 import { Route as SroIDokumentyRouteImport } from './routes/sro-i-dokumenty'
 import { Route as SantehnikaRouteImport } from './routes/santehnika'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as RequisitesRouteImport } from './routes/requisites'
-import { Route as RemontPodKlyuchRouteImport } from './routes/remont-pod-klyuch'
-import { Route as RemontRouteImport } from './routes/remont'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricesRouteImport } from './routes/prices'
-import { Route as PremialnyyRemontRouteImport } from './routes/premialnyy-remont'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PersonalDataConsentRouteImport } from './routes/personal-data-consent'
 import { Route as OtoplenieRouteImport } from './routes/otoplenie'
@@ -34,7 +30,6 @@ import { Route as MonolitnyeDomaRouteImport } from './routes/monolitnye-doma'
 import { Route as MnogokvartirnyeDomaRouteImport } from './routes/mnogokvartirnye-doma'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as KrovelnyeRabotyRouteImport } from './routes/krovelnye-raboty'
-import { Route as KosmeticheskiyRemontRouteImport } from './routes/kosmeticheskiy-remont'
 import { Route as KontrolKachestvaRouteImport } from './routes/kontrol-kachestva'
 import { Route as KombinirovannyeDomaRouteImport } from './routes/kombinirovannye-doma'
 import { Route as KladochnyeRabotyRouteImport } from './routes/kladochnye-raboty'
@@ -46,9 +41,7 @@ import { Route as GeneralnyyPodryadRouteImport } from './routes/generalnyy-podry
 import { Route as FundamentyRouteImport } from './routes/fundamenty'
 import { Route as FasadnyeRabotyRouteImport } from './routes/fasadnye-raboty'
 import { Route as FaqRouteImport } from './routes/faq'
-import { Route as EvroremontRouteImport } from './routes/evroremont'
 import { Route as ElektromontazhRouteImport } from './routes/elektromontazh'
-import { Route as EkonomRemontRouteImport } from './routes/ekonom-remont'
 import { Route as DomaIzSipPaneleyRouteImport } from './routes/doma-iz-sip-paneley'
 import { Route as DomaIzKleenogoBrusaRouteImport } from './routes/doma-iz-kleenogo-brusa'
 import { Route as DomaIzKeramicheskihBlokovRouteImport } from './routes/doma-iz-keramicheskih-blokov'
@@ -57,9 +50,6 @@ import { Route as DomaIzBrusaRouteImport } from './routes/doma-iz-brusa'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as ContactsRouteImport } from './routes/contacts'
 import { Route as ClientRouteImport } from './routes/client'
-import { Route as ChistovayaOtdelkaRouteImport } from './routes/chistovaya-otdelka'
-import { Route as ChernovoyRemontRouteImport } from './routes/chernovoy-remont'
-import { Route as BiznesRemontRouteImport } from './routes/biznes-remont'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -103,11 +93,6 @@ const StroitelstvoRoute = StroitelstvoRouteImport.update({
   path: '/stroitelstvo',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StandartnyyRemontRoute = StandartnyyRemontRouteImport.update({
-  id: '/standartnyy-remont',
-  path: '/standartnyy-remont',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SroIDokumentyRoute = SroIDokumentyRouteImport.update({
   id: '/sro-i-dokumenty',
   path: '/sro-i-dokumenty',
@@ -128,16 +113,6 @@ const RequisitesRoute = RequisitesRouteImport.update({
   path: '/requisites',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RemontPodKlyuchRoute = RemontPodKlyuchRouteImport.update({
-  id: '/remont-pod-klyuch',
-  path: '/remont-pod-klyuch',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RemontRoute = RemontRouteImport.update({
-  id: '/remont',
-  path: '/remont',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -146,11 +121,6 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const PricesRoute = PricesRouteImport.update({
   id: '/prices',
   path: '/prices',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PremialnyyRemontRoute = PremialnyyRemontRouteImport.update({
-  id: '/premialnyy-remont',
-  path: '/premialnyy-remont',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRoute = PortfolioRouteImport.update({
@@ -191,11 +161,6 @@ const LoginRoute = LoginRouteImport.update({
 const KrovelnyeRabotyRoute = KrovelnyeRabotyRouteImport.update({
   id: '/krovelnye-raboty',
   path: '/krovelnye-raboty',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KosmeticheskiyRemontRoute = KosmeticheskiyRemontRouteImport.update({
-  id: '/kosmeticheskiy-remont',
-  path: '/kosmeticheskiy-remont',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KontrolKachestvaRoute = KontrolKachestvaRouteImport.update({
@@ -253,19 +218,9 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EvroremontRoute = EvroremontRouteImport.update({
-  id: '/evroremont',
-  path: '/evroremont',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ElektromontazhRoute = ElektromontazhRouteImport.update({
   id: '/elektromontazh',
   path: '/elektromontazh',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EkonomRemontRoute = EkonomRemontRouteImport.update({
-  id: '/ekonom-remont',
-  path: '/ekonom-remont',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DomaIzSipPaneleyRoute = DomaIzSipPaneleyRouteImport.update({
@@ -309,21 +264,6 @@ const ClientRoute = ClientRouteImport.update({
   path: '/client',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ChistovayaOtdelkaRoute = ChistovayaOtdelkaRouteImport.update({
-  id: '/chistovaya-otdelka',
-  path: '/chistovaya-otdelka',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ChernovoyRemontRoute = ChernovoyRemontRouteImport.update({
-  id: '/chernovoy-remont',
-  path: '/chernovoy-remont',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BiznesRemontRoute = BiznesRemontRouteImport.update({
-  id: '/biznes-remont',
-  path: '/biznes-remont',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -354,9 +294,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admin': typeof AdminRoute
-  '/biznes-remont': typeof BiznesRemontRoute
-  '/chernovoy-remont': typeof ChernovoyRemontRoute
-  '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
   '/client': typeof ClientRouteWithChildren
   '/contacts': typeof ContactsRoute
   '/cookies': typeof CookiesRoute
@@ -365,9 +302,7 @@ export interface FileRoutesByFullPath {
   '/doma-iz-keramicheskih-blokov': typeof DomaIzKeramicheskihBlokovRoute
   '/doma-iz-kleenogo-brusa': typeof DomaIzKleenogoBrusaRoute
   '/doma-iz-sip-paneley': typeof DomaIzSipPaneleyRoute
-  '/ekonom-remont': typeof EkonomRemontRoute
   '/elektromontazh': typeof ElektromontazhRoute
-  '/evroremont': typeof EvroremontRoute
   '/faq': typeof FaqRoute
   '/fasadnye-raboty': typeof FasadnyeRabotyRoute
   '/fundamenty': typeof FundamentyRoute
@@ -379,7 +314,6 @@ export interface FileRoutesByFullPath {
   '/kladochnye-raboty': typeof KladochnyeRabotyRoute
   '/kombinirovannye-doma': typeof KombinirovannyeDomaRoute
   '/kontrol-kachestva': typeof KontrolKachestvaRoute
-  '/kosmeticheskiy-remont': typeof KosmeticheskiyRemontRoute
   '/krovelnye-raboty': typeof KrovelnyeRabotyRoute
   '/login': typeof LoginRoute
   '/mnogokvartirnye-doma': typeof MnogokvartirnyeDomaRoute
@@ -388,16 +322,12 @@ export interface FileRoutesByFullPath {
   '/otoplenie': typeof OtoplenieRoute
   '/personal-data-consent': typeof PersonalDataConsentRoute
   '/portfolio': typeof PortfolioRouteWithChildren
-  '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
-  '/remont': typeof RemontRoute
-  '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
   '/requisites': typeof RequisitesRoute
   '/reviews': typeof ReviewsRoute
   '/santehnika': typeof SantehnikaRoute
   '/sro-i-dokumenty': typeof SroIDokumentyRoute
-  '/standartnyy-remont': typeof StandartnyyRemontRoute
   '/stroitelstvo': typeof StroitelstvoRoute
   '/stroitelstvo-domov-pod-klyuch': typeof StroitelstvoDomovPodKlyuchRoute
   '/team': typeof TeamRoute
@@ -412,9 +342,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admin': typeof AdminRoute
-  '/biznes-remont': typeof BiznesRemontRoute
-  '/chernovoy-remont': typeof ChernovoyRemontRoute
-  '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
   '/client': typeof ClientRouteWithChildren
   '/contacts': typeof ContactsRoute
   '/cookies': typeof CookiesRoute
@@ -423,9 +350,7 @@ export interface FileRoutesByTo {
   '/doma-iz-keramicheskih-blokov': typeof DomaIzKeramicheskihBlokovRoute
   '/doma-iz-kleenogo-brusa': typeof DomaIzKleenogoBrusaRoute
   '/doma-iz-sip-paneley': typeof DomaIzSipPaneleyRoute
-  '/ekonom-remont': typeof EkonomRemontRoute
   '/elektromontazh': typeof ElektromontazhRoute
-  '/evroremont': typeof EvroremontRoute
   '/faq': typeof FaqRoute
   '/fasadnye-raboty': typeof FasadnyeRabotyRoute
   '/fundamenty': typeof FundamentyRoute
@@ -437,7 +362,6 @@ export interface FileRoutesByTo {
   '/kladochnye-raboty': typeof KladochnyeRabotyRoute
   '/kombinirovannye-doma': typeof KombinirovannyeDomaRoute
   '/kontrol-kachestva': typeof KontrolKachestvaRoute
-  '/kosmeticheskiy-remont': typeof KosmeticheskiyRemontRoute
   '/krovelnye-raboty': typeof KrovelnyeRabotyRoute
   '/login': typeof LoginRoute
   '/mnogokvartirnye-doma': typeof MnogokvartirnyeDomaRoute
@@ -446,16 +370,12 @@ export interface FileRoutesByTo {
   '/otoplenie': typeof OtoplenieRoute
   '/personal-data-consent': typeof PersonalDataConsentRoute
   '/portfolio': typeof PortfolioRouteWithChildren
-  '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
-  '/remont': typeof RemontRoute
-  '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
   '/requisites': typeof RequisitesRoute
   '/reviews': typeof ReviewsRoute
   '/santehnika': typeof SantehnikaRoute
   '/sro-i-dokumenty': typeof SroIDokumentyRoute
-  '/standartnyy-remont': typeof StandartnyyRemontRoute
   '/stroitelstvo': typeof StroitelstvoRoute
   '/stroitelstvo-domov-pod-klyuch': typeof StroitelstvoDomovPodKlyuchRoute
   '/team': typeof TeamRoute
@@ -471,9 +391,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admin': typeof AdminRoute
-  '/biznes-remont': typeof BiznesRemontRoute
-  '/chernovoy-remont': typeof ChernovoyRemontRoute
-  '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
   '/client': typeof ClientRouteWithChildren
   '/contacts': typeof ContactsRoute
   '/cookies': typeof CookiesRoute
@@ -482,9 +399,7 @@ export interface FileRoutesById {
   '/doma-iz-keramicheskih-blokov': typeof DomaIzKeramicheskihBlokovRoute
   '/doma-iz-kleenogo-brusa': typeof DomaIzKleenogoBrusaRoute
   '/doma-iz-sip-paneley': typeof DomaIzSipPaneleyRoute
-  '/ekonom-remont': typeof EkonomRemontRoute
   '/elektromontazh': typeof ElektromontazhRoute
-  '/evroremont': typeof EvroremontRoute
   '/faq': typeof FaqRoute
   '/fasadnye-raboty': typeof FasadnyeRabotyRoute
   '/fundamenty': typeof FundamentyRoute
@@ -496,7 +411,6 @@ export interface FileRoutesById {
   '/kladochnye-raboty': typeof KladochnyeRabotyRoute
   '/kombinirovannye-doma': typeof KombinirovannyeDomaRoute
   '/kontrol-kachestva': typeof KontrolKachestvaRoute
-  '/kosmeticheskiy-remont': typeof KosmeticheskiyRemontRoute
   '/krovelnye-raboty': typeof KrovelnyeRabotyRoute
   '/login': typeof LoginRoute
   '/mnogokvartirnye-doma': typeof MnogokvartirnyeDomaRoute
@@ -505,16 +419,12 @@ export interface FileRoutesById {
   '/otoplenie': typeof OtoplenieRoute
   '/personal-data-consent': typeof PersonalDataConsentRoute
   '/portfolio': typeof PortfolioRouteWithChildren
-  '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
-  '/remont': typeof RemontRoute
-  '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
   '/requisites': typeof RequisitesRoute
   '/reviews': typeof ReviewsRoute
   '/santehnika': typeof SantehnikaRoute
   '/sro-i-dokumenty': typeof SroIDokumentyRoute
-  '/standartnyy-remont': typeof StandartnyyRemontRoute
   '/stroitelstvo': typeof StroitelstvoRoute
   '/stroitelstvo-domov-pod-klyuch': typeof StroitelstvoDomovPodKlyuchRoute
   '/team': typeof TeamRoute
@@ -531,9 +441,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/admin'
-    | '/biznes-remont'
-    | '/chernovoy-remont'
-    | '/chistovaya-otdelka'
     | '/client'
     | '/contacts'
     | '/cookies'
@@ -542,9 +449,7 @@ export interface FileRouteTypes {
     | '/doma-iz-keramicheskih-blokov'
     | '/doma-iz-kleenogo-brusa'
     | '/doma-iz-sip-paneley'
-    | '/ekonom-remont'
     | '/elektromontazh'
-    | '/evroremont'
     | '/faq'
     | '/fasadnye-raboty'
     | '/fundamenty'
@@ -556,7 +461,6 @@ export interface FileRouteTypes {
     | '/kladochnye-raboty'
     | '/kombinirovannye-doma'
     | '/kontrol-kachestva'
-    | '/kosmeticheskiy-remont'
     | '/krovelnye-raboty'
     | '/login'
     | '/mnogokvartirnye-doma'
@@ -565,16 +469,12 @@ export interface FileRouteTypes {
     | '/otoplenie'
     | '/personal-data-consent'
     | '/portfolio'
-    | '/premialnyy-remont'
     | '/prices'
     | '/privacy'
-    | '/remont'
-    | '/remont-pod-klyuch'
     | '/requisites'
     | '/reviews'
     | '/santehnika'
     | '/sro-i-dokumenty'
-    | '/standartnyy-remont'
     | '/stroitelstvo'
     | '/stroitelstvo-domov-pod-klyuch'
     | '/team'
@@ -589,9 +489,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/admin'
-    | '/biznes-remont'
-    | '/chernovoy-remont'
-    | '/chistovaya-otdelka'
     | '/client'
     | '/contacts'
     | '/cookies'
@@ -600,9 +497,7 @@ export interface FileRouteTypes {
     | '/doma-iz-keramicheskih-blokov'
     | '/doma-iz-kleenogo-brusa'
     | '/doma-iz-sip-paneley'
-    | '/ekonom-remont'
     | '/elektromontazh'
-    | '/evroremont'
     | '/faq'
     | '/fasadnye-raboty'
     | '/fundamenty'
@@ -614,7 +509,6 @@ export interface FileRouteTypes {
     | '/kladochnye-raboty'
     | '/kombinirovannye-doma'
     | '/kontrol-kachestva'
-    | '/kosmeticheskiy-remont'
     | '/krovelnye-raboty'
     | '/login'
     | '/mnogokvartirnye-doma'
@@ -623,16 +517,12 @@ export interface FileRouteTypes {
     | '/otoplenie'
     | '/personal-data-consent'
     | '/portfolio'
-    | '/premialnyy-remont'
     | '/prices'
     | '/privacy'
-    | '/remont'
-    | '/remont-pod-klyuch'
     | '/requisites'
     | '/reviews'
     | '/santehnika'
     | '/sro-i-dokumenty'
-    | '/standartnyy-remont'
     | '/stroitelstvo'
     | '/stroitelstvo-domov-pod-klyuch'
     | '/team'
@@ -647,9 +537,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/admin'
-    | '/biznes-remont'
-    | '/chernovoy-remont'
-    | '/chistovaya-otdelka'
     | '/client'
     | '/contacts'
     | '/cookies'
@@ -658,9 +545,7 @@ export interface FileRouteTypes {
     | '/doma-iz-keramicheskih-blokov'
     | '/doma-iz-kleenogo-brusa'
     | '/doma-iz-sip-paneley'
-    | '/ekonom-remont'
     | '/elektromontazh'
-    | '/evroremont'
     | '/faq'
     | '/fasadnye-raboty'
     | '/fundamenty'
@@ -672,7 +557,6 @@ export interface FileRouteTypes {
     | '/kladochnye-raboty'
     | '/kombinirovannye-doma'
     | '/kontrol-kachestva'
-    | '/kosmeticheskiy-remont'
     | '/krovelnye-raboty'
     | '/login'
     | '/mnogokvartirnye-doma'
@@ -681,16 +565,12 @@ export interface FileRouteTypes {
     | '/otoplenie'
     | '/personal-data-consent'
     | '/portfolio'
-    | '/premialnyy-remont'
     | '/prices'
     | '/privacy'
-    | '/remont'
-    | '/remont-pod-klyuch'
     | '/requisites'
     | '/reviews'
     | '/santehnika'
     | '/sro-i-dokumenty'
-    | '/standartnyy-remont'
     | '/stroitelstvo'
     | '/stroitelstvo-domov-pod-klyuch'
     | '/team'
@@ -706,9 +586,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AdminRoute: typeof AdminRoute
-  BiznesRemontRoute: typeof BiznesRemontRoute
-  ChernovoyRemontRoute: typeof ChernovoyRemontRoute
-  ChistovayaOtdelkaRoute: typeof ChistovayaOtdelkaRoute
   ClientRoute: typeof ClientRouteWithChildren
   ContactsRoute: typeof ContactsRoute
   CookiesRoute: typeof CookiesRoute
@@ -717,9 +594,7 @@ export interface RootRouteChildren {
   DomaIzKeramicheskihBlokovRoute: typeof DomaIzKeramicheskihBlokovRoute
   DomaIzKleenogoBrusaRoute: typeof DomaIzKleenogoBrusaRoute
   DomaIzSipPaneleyRoute: typeof DomaIzSipPaneleyRoute
-  EkonomRemontRoute: typeof EkonomRemontRoute
   ElektromontazhRoute: typeof ElektromontazhRoute
-  EvroremontRoute: typeof EvroremontRoute
   FaqRoute: typeof FaqRoute
   FasadnyeRabotyRoute: typeof FasadnyeRabotyRoute
   FundamentyRoute: typeof FundamentyRoute
@@ -731,7 +606,6 @@ export interface RootRouteChildren {
   KladochnyeRabotyRoute: typeof KladochnyeRabotyRoute
   KombinirovannyeDomaRoute: typeof KombinirovannyeDomaRoute
   KontrolKachestvaRoute: typeof KontrolKachestvaRoute
-  KosmeticheskiyRemontRoute: typeof KosmeticheskiyRemontRoute
   KrovelnyeRabotyRoute: typeof KrovelnyeRabotyRoute
   LoginRoute: typeof LoginRoute
   MnogokvartirnyeDomaRoute: typeof MnogokvartirnyeDomaRoute
@@ -740,16 +614,12 @@ export interface RootRouteChildren {
   OtoplenieRoute: typeof OtoplenieRoute
   PersonalDataConsentRoute: typeof PersonalDataConsentRoute
   PortfolioRoute: typeof PortfolioRouteWithChildren
-  PremialnyyRemontRoute: typeof PremialnyyRemontRoute
   PricesRoute: typeof PricesRoute
   PrivacyRoute: typeof PrivacyRoute
-  RemontRoute: typeof RemontRoute
-  RemontPodKlyuchRoute: typeof RemontPodKlyuchRoute
   RequisitesRoute: typeof RequisitesRoute
   ReviewsRoute: typeof ReviewsRoute
   SantehnikaRoute: typeof SantehnikaRoute
   SroIDokumentyRoute: typeof SroIDokumentyRoute
-  StandartnyyRemontRoute: typeof StandartnyyRemontRoute
   StroitelstvoRoute: typeof StroitelstvoRoute
   StroitelstvoDomovPodKlyuchRoute: typeof StroitelstvoDomovPodKlyuchRoute
   TeamRoute: typeof TeamRoute
@@ -810,13 +680,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StroitelstvoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/standartnyy-remont': {
-      id: '/standartnyy-remont'
-      path: '/standartnyy-remont'
-      fullPath: '/standartnyy-remont'
-      preLoaderRoute: typeof StandartnyyRemontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sro-i-dokumenty': {
       id: '/sro-i-dokumenty'
       path: '/sro-i-dokumenty'
@@ -845,20 +708,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RequisitesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/remont-pod-klyuch': {
-      id: '/remont-pod-klyuch'
-      path: '/remont-pod-klyuch'
-      fullPath: '/remont-pod-klyuch'
-      preLoaderRoute: typeof RemontPodKlyuchRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/remont': {
-      id: '/remont'
-      path: '/remont'
-      fullPath: '/remont'
-      preLoaderRoute: typeof RemontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -871,13 +720,6 @@ declare module '@tanstack/react-router' {
       path: '/prices'
       fullPath: '/prices'
       preLoaderRoute: typeof PricesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/premialnyy-remont': {
-      id: '/premialnyy-remont'
-      path: '/premialnyy-remont'
-      fullPath: '/premialnyy-remont'
-      preLoaderRoute: typeof PremialnyyRemontRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio': {
@@ -934,13 +776,6 @@ declare module '@tanstack/react-router' {
       path: '/krovelnye-raboty'
       fullPath: '/krovelnye-raboty'
       preLoaderRoute: typeof KrovelnyeRabotyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/kosmeticheskiy-remont': {
-      id: '/kosmeticheskiy-remont'
-      path: '/kosmeticheskiy-remont'
-      fullPath: '/kosmeticheskiy-remont'
-      preLoaderRoute: typeof KosmeticheskiyRemontRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kontrol-kachestva': {
@@ -1020,25 +855,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/evroremont': {
-      id: '/evroremont'
-      path: '/evroremont'
-      fullPath: '/evroremont'
-      preLoaderRoute: typeof EvroremontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/elektromontazh': {
       id: '/elektromontazh'
       path: '/elektromontazh'
       fullPath: '/elektromontazh'
       preLoaderRoute: typeof ElektromontazhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ekonom-remont': {
-      id: '/ekonom-remont'
-      path: '/ekonom-remont'
-      fullPath: '/ekonom-remont'
-      preLoaderRoute: typeof EkonomRemontRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/doma-iz-sip-paneley': {
@@ -1095,27 +916,6 @@ declare module '@tanstack/react-router' {
       path: '/client'
       fullPath: '/client'
       preLoaderRoute: typeof ClientRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/chistovaya-otdelka': {
-      id: '/chistovaya-otdelka'
-      path: '/chistovaya-otdelka'
-      fullPath: '/chistovaya-otdelka'
-      preLoaderRoute: typeof ChistovayaOtdelkaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/chernovoy-remont': {
-      id: '/chernovoy-remont'
-      path: '/chernovoy-remont'
-      fullPath: '/chernovoy-remont'
-      preLoaderRoute: typeof ChernovoyRemontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/biznes-remont': {
-      id: '/biznes-remont'
-      path: '/biznes-remont'
-      fullPath: '/biznes-remont'
-      preLoaderRoute: typeof BiznesRemontRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin': {
@@ -1183,9 +983,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AdminRoute: AdminRoute,
-  BiznesRemontRoute: BiznesRemontRoute,
-  ChernovoyRemontRoute: ChernovoyRemontRoute,
-  ChistovayaOtdelkaRoute: ChistovayaOtdelkaRoute,
   ClientRoute: ClientRouteWithChildren,
   ContactsRoute: ContactsRoute,
   CookiesRoute: CookiesRoute,
@@ -1194,9 +991,7 @@ const rootRouteChildren: RootRouteChildren = {
   DomaIzKeramicheskihBlokovRoute: DomaIzKeramicheskihBlokovRoute,
   DomaIzKleenogoBrusaRoute: DomaIzKleenogoBrusaRoute,
   DomaIzSipPaneleyRoute: DomaIzSipPaneleyRoute,
-  EkonomRemontRoute: EkonomRemontRoute,
   ElektromontazhRoute: ElektromontazhRoute,
-  EvroremontRoute: EvroremontRoute,
   FaqRoute: FaqRoute,
   FasadnyeRabotyRoute: FasadnyeRabotyRoute,
   FundamentyRoute: FundamentyRoute,
@@ -1208,7 +1003,6 @@ const rootRouteChildren: RootRouteChildren = {
   KladochnyeRabotyRoute: KladochnyeRabotyRoute,
   KombinirovannyeDomaRoute: KombinirovannyeDomaRoute,
   KontrolKachestvaRoute: KontrolKachestvaRoute,
-  KosmeticheskiyRemontRoute: KosmeticheskiyRemontRoute,
   KrovelnyeRabotyRoute: KrovelnyeRabotyRoute,
   LoginRoute: LoginRoute,
   MnogokvartirnyeDomaRoute: MnogokvartirnyeDomaRoute,
@@ -1217,16 +1011,12 @@ const rootRouteChildren: RootRouteChildren = {
   OtoplenieRoute: OtoplenieRoute,
   PersonalDataConsentRoute: PersonalDataConsentRoute,
   PortfolioRoute: PortfolioRouteWithChildren,
-  PremialnyyRemontRoute: PremialnyyRemontRoute,
   PricesRoute: PricesRoute,
   PrivacyRoute: PrivacyRoute,
-  RemontRoute: RemontRoute,
-  RemontPodKlyuchRoute: RemontPodKlyuchRoute,
   RequisitesRoute: RequisitesRoute,
   ReviewsRoute: ReviewsRoute,
   SantehnikaRoute: SantehnikaRoute,
   SroIDokumentyRoute: SroIDokumentyRoute,
-  StandartnyyRemontRoute: StandartnyyRemontRoute,
   StroitelstvoRoute: StroitelstvoRoute,
   StroitelstvoDomovPodKlyuchRoute: StroitelstvoDomovPodKlyuchRoute,
   TeamRoute: TeamRoute,
