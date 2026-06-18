@@ -1,6 +1,8 @@
 /**
- * Подэтап 2.1 — типы ценовой базы.
- * Все цены хранятся числом, без пробелов и символа ₽. Форматирование — только через src/lib/format-price.ts.
+ * Подэтап 2.1A — типы ценовой базы.
+ * Все цены — числа, без пробелов и валютного символа. Форматирование только через src/lib/format-price.ts.
+ * unitLabel выводится в интерфейсе вместо unit, когда требуется уточнить основание расчёта
+ * (например, «м² пола», «м³ бетона»).
  */
 
 export type PriceUnit =
@@ -15,7 +17,8 @@ export type PriceUnit =
   | "%"
   | "контур"
   | "отверстие"
-  | "контейнер";
+  | "контейнер"
+  | "модуль";
 
 export type PriceMode =
   | "work"
@@ -48,12 +51,40 @@ export type PriceCategory =
   | "finishing_doors"
   | "demolition";
 
+export const ALL_PRICE_CATEGORIES: PriceCategory[] = [
+  "repair_packages",
+  "additional_repairs",
+  "house_construction_work",
+  "house_construction_materials",
+  "monolithic",
+  "foundations",
+  "masonry",
+  "roofing",
+  "facades",
+  "general_contracting",
+  "electrical_packages",
+  "electrical",
+  "plumbing_packages",
+  "plumbing",
+  "water_supply",
+  "heating_packages",
+  "heating",
+  "underfloor_heating",
+  "tiling",
+  "finishing_walls",
+  "finishing_floors",
+  "finishing_ceilings",
+  "finishing_doors",
+  "demolition",
+];
+
 export type PriceItem = {
   id: string;
   category: PriceCategory;
   serviceSlug?: string;
   name: string;
   unit?: PriceUnit;
+  unitLabel?: string;
   priceFrom?: number;
   priceTo?: number;
   percentageFrom?: number;
@@ -68,7 +99,6 @@ export type PriceItem = {
 
 export const PRICE_ACTUAL_DATE = "2026-06" as const;
 
-/** Человекочитаемые названия категорий — для навигации по /prices. */
 export const PRICE_CATEGORY_LABELS: Record<PriceCategory, string> = {
   repair_packages: "Пакеты комплексного ремонта",
   additional_repairs: "Дополнительные варианты ремонта",
