@@ -285,7 +285,7 @@ if (PRICES.length === 0) fail("prices.ts пуст");
 // валидатор не проверяет; данные проверяются как готовая база.
 // ─────────────────────────────────────────────────────────────────────────
 
-const REQUIRED_CONSTRUCTION_ROUTES = [
+const EXPECTED_CONSTRUCTION_ROUTES = [
   "/stroitelstvo",
   "/stroitelstvo-domov-pod-klyuch",
   "/karkasnye-doma",
@@ -305,6 +305,8 @@ const REQUIRED_CONSTRUCTION_ROUTES = [
   "/krovelnye-raboty",
   "/fasadnye-raboty",
 ] as const;
+
+const CYRILLIC_PATTERN = /[А-Яа-яЁё]/;
 
 const EXPECTED_CONSTRUCTION_H1: Record<string, string> = {
   "/stroitelstvo": "Строительство частных и многоквартирных домов в Москве и Московской области",
@@ -349,6 +351,51 @@ const EXPECTED_CONSTRUCTION_PRICE: Record<string, string | null> = {
   "/krovelnye-raboty": "3 500",
   "/fasadnye-raboty": "1 800",
 };
+
+const EXPECTED_TECHNOLOGY_NAMES = [
+  "Каркасный дом",
+  "Дом из СИП-панелей",
+  "Дом из профилированного бруса",
+  "Дом из клееного бруса",
+  "Дом из газобетона",
+  "Дом из керамических блоков",
+  "Кирпичный дом",
+  "Монолитный железобетонный дом",
+  "Комбинированный дом",
+] as const;
+
+const EXPECTED_COMPLETION_LEVELS = [
+  "Коробка",
+  "Тёплый контур",
+  "Под чистовую отделку",
+  "Под ключ",
+] as const;
+
+const EXPECTED_TURNKEY_INCLUDED = [
+  "Конструктив",
+  "Фасад",
+  "Кровля",
+  "Окна",
+  "Наружные двери",
+  "Электрика",
+  "Сантехника",
+  "Отопление",
+  "Водоснабжение",
+  "Канализация",
+  "Черновая отделка",
+  "Чистовая отделка базового уровня",
+  "Сантехнические приборы базовой комплектации",
+  "Розетки и выключатели базовой комплектации",
+  "Проверка инженерных систем",
+  "Сдача готового дома",
+] as const;
+
+const FORBIDDEN_TURNKEY_INCLUDED = [
+  "Черная отделка",
+  "Чёрная отделка",
+  "Сантехнические приборы комплектации",
+  "Розетки и выключатели комплектации",
+] as const;
 
 const FORBIDDEN_CONSTRUCTION = [
   /\bлучший\b/i,
