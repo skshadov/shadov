@@ -4,7 +4,7 @@
  */
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ShieldCheck, Building2, Wrench } from "lucide-react";
-import heroImage from "@/assets/illustrations/hero-construction.jpg";
+import { heroPicture } from "@/assets/illustrations/sources";
 import { Illustration } from "@/components/common/Illustration";
 import { Button } from "@/components/ui/button";
 
@@ -13,10 +13,13 @@ export function HeroSection() {
     <section className="relative overflow-hidden border-b border-border bg-background">
       <div className="absolute inset-0 -z-10">
         <Illustration
-          src={heroImage}
+          src={heroPicture.src}
+          sources={heroPicture.sources}
+          imgSrcSet={heroPicture.imgSrcSet}
+          imgSizes={heroPicture.imgSizes}
           description="туманное утро на стройплощадке частного многоквартирного дома, монолитный каркас, бригада в касках"
-          width={1920}
-          height={1280}
+          width={heroPicture.width}
+          height={heroPicture.height}
           priority
           caption={false}
           rounded={false}
