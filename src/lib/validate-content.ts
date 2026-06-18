@@ -410,14 +410,15 @@ const constructionRoutes = constructionPages.map((p) => p.route);
 
 console.log("validate-content: строительных страниц", constructionPages.length);
 
-if (constructionPages.length !== REQUIRED_CONSTRUCTION_ROUTES.length) {
+if (constructionPages.length !== EXPECTED_CONSTRUCTION_ROUTES.length) {
   fail(
-    `ожидается ${REQUIRED_CONSTRUCTION_ROUTES.length} строительных страниц, найдено ${constructionPages.length}`,
+    `ожидается ${EXPECTED_CONSTRUCTION_ROUTES.length} строительных страниц, найдено ${constructionPages.length}`,
   );
 }
-for (const r of REQUIRED_CONSTRUCTION_ROUTES) {
-  if (!constructionRoutes.includes(r)) fail(`отсутствует строительный маршрут ${r}`);
-}
+assert(
+  JSON.stringify(constructionRoutes) === JSON.stringify(EXPECTED_CONSTRUCTION_ROUTES),
+  `массив строительных route не совпадает с утверждённым.\n  ожидается: ${JSON.stringify(EXPECTED_CONSTRUCTION_ROUTES)}\n  найдено:   ${JSON.stringify(constructionRoutes)}`,
+);
 
 const cSlugSet = new Set<string>();
 const cRouteSet = new Set<string>();
@@ -425,6 +426,15 @@ const cH1Set = new Set<string>();
 const cMetaSet = new Set<string>();
 
 for (const p of constructionPages) {
+  assert(
+    !CYRILLIC_PATTERN.test(p.route),
+    `Кириллица в route: ${p.route}`,
+  );
+  assert(
+    !CYRILLIC_PATTERN.test(p.slug),
+    `Кириллица в slug: ${p.slug}`,
+  );
+
   if (cSlugSet.has(p.slug)) fail(`дублированный slug строительства: ${p.slug}`);
   if (cRouteSet.has(p.route)) fail(`дублированный route строительства: ${p.route}`);
   if (cH1Set.has(p.h1)) fail(`дублированный H1 строительства: ${p.h1}`);
