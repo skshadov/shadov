@@ -6,7 +6,10 @@ import { formatPriceItem, formatRubles } from "@/lib/format-price";
 
 export type EstimateExampleRow = {
   item: PriceItem;
-  volume: number;
+  /** Демонстрационный объём; не итог объекта. Может отсутствовать. */
+  volume?: number;
+  /** Подпись к объёму, всегда «Демонстрационный объём» (подэтап 2.3A). */
+  volumeLabel?: "Демонстрационный объём";
   note?: string;
 };
 
@@ -35,11 +38,31 @@ export function ServiceEstimateExample({ rows }: ServiceEstimateExampleProps) {
             </thead>
             <tbody>
               {rows.map((r) => {
-                const sum = r.item.priceFrom ? r.item.priceFrom * r.volume : undefined;
+                const vol = r.volume;
+                const sum =
+                  r.item.priceFrom && typeof vol === "number"
+                    ? r.item.priceFrom * vol
+                    : undefined;
+                const volLabel =
+                  r.volumeLabel ??
+                  (typeof vol === "number" ? "Демонстрационный объём" : undefined);
                 return (
                   <tr key={r.item.id} className="border-t border-border">
                     <th scope="row" className="px-4 py-3 font-medium">{r.item.name}</th>
-                    <td className="px-4 py-3">{r.volume}</td>
+                    <td className="px-4 py-3">
+                      {typeof vol === "number" ? (
+                        <span className="flex flex-col">
+                          <span>{vol}</span>
+                          {volLabel ? (
+                            <span className="text-[11px] uppercase tracking-wide text-muted-foreground">
+                              {volLabel}
+                            </span>
+                          ) : null}
+                        </span>
+                      ) : (
+                        <span className="text-muted-foreground">—</span>
+                      )}
+                    </td>
                     <td className="px-4 py-3 text-muted-foreground">{r.item.unit ?? "—"}</td>
                     <td className="px-4 py-3">{formatPriceItem(r.item) || "—"}</td>
                     <td className="px-4 py-3 font-semibold">{sum ? `от ${formatRubles(sum)}` : "—"}</td>
