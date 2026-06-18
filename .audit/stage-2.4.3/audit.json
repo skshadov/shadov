@@ -1,0 +1,569 @@
+$ bun src/lib/audit-stage-2-4-3.ts
+{
+  "stage": "2.4.3",
+  "specificationCheck": {
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  "activeConstructionRoutes": [
+    {
+      "route": "/stroitelstvo-domov-pod-klyuch",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/karkasnye-doma",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/doma-iz-sip-paneley",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/doma-iz-brusa",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/doma-iz-kleenogo-brusa",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/doma-iz-gazobetona",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/doma-iz-keramicheskih-blokov",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/kirpichnye-doma",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/monolitnye-doma",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/kombinirovannye-doma",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/mnogokvartirnye-doma",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/generalnyy-podryad",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/monolitnye-raboty",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/fundamenty",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/kladochnye-raboty",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/krovelnye-raboty",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    },
+    {
+      "route": "/fasadnye-raboty",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false
+    }
+  ],
+  "stubConstructionRoutes": [
+    {
+      "route": "/stroitelstvo",
+      "hasRouteStub": true,
+      "hasNoindexFollow": true,
+      "usesConstructionServicePage": false
+    }
+  ],
+  "pages": [
+    {
+      "route": "/mnogokvartirnye-doma",
+      "slug": "mnogokvartirnye-doma",
+      "h1": "Строительство многоквартирных домов в качестве генерального подрядчика",
+      "startingPrice": null,
+      "priceCategoryIds": [
+        "general_contracting",
+        "monolithic"
+      ],
+      "estimateExampleItemIds": [
+        "general_contracting-coordination",
+        "general_contracting-pm",
+        "general_contracting-qa-engineer",
+        "general_contracting-docs",
+        "monolithic-fundament-plita"
+      ],
+      "illustrationKey": "hero-construction",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false,
+      "canonical": "https://shadov.pro/mnogokvartirnye-doma"
+    },
+    {
+      "route": "/generalnyy-podryad",
+      "slug": "generalnyy-podryad",
+      "h1": "Генеральный подряд с единым центром ответственности",
+      "startingPrice": "от 3% стоимости СМР",
+      "priceCategoryIds": [
+        "general_contracting"
+      ],
+      "estimateExampleItemIds": [
+        "general_contracting-coordination",
+        "general_contracting-full",
+        "general_contracting-pm",
+        "general_contracting-qa-engineer",
+        "general_contracting-docs"
+      ],
+      "illustrationKey": "hero-construction",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false,
+      "canonical": "https://shadov.pro/generalnyy-podryad"
+    },
+    {
+      "route": "/monolitnye-raboty",
+      "slug": "monolitnye-raboty",
+      "h1": "Монолитные работы с инженерным, геодезическим и документальным контролем",
+      "startingPrice": "от 18 000 ₽/м³ за комплексные работы по фундаментной плите",
+      "priceCategoryIds": [
+        "monolithic"
+      ],
+      "estimateExampleItemIds": [
+        "monolithic-fundament-plita",
+        "monolithic-armatura",
+        "monolithic-opalubka-montazh",
+        "monolithic-priem-betona",
+        "monolithic-uhod-za-betonom"
+      ],
+      "illustrationKey": "direction-monolith",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false,
+      "canonical": "https://shadov.pro/monolitnye-raboty"
+    },
+    {
+      "route": "/fundamenty",
+      "slug": "fundamenty",
+      "h1": "Устройство фундаментов для частных и многоквартирных зданий",
+      "startingPrice": null,
+      "priceCategoryIds": [
+        "foundations"
+      ],
+      "estimateExampleItemIds": [
+        "foundations-razrabotka-ekskavator",
+        "foundations-pesok",
+        "foundations-betonnaya-podgotovka",
+        "foundations-plita",
+        "foundations-obmazochnaya-gidro",
+        "foundations-pristennyy-drenazh"
+      ],
+      "illustrationKey": "direction-monolith",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false,
+      "canonical": "https://shadov.pro/fundamenty"
+    },
+    {
+      "route": "/kladochnye-raboty",
+      "slug": "kladochnye-raboty",
+      "h1": "Кладочные работы с контролем геометрии, перевязки и конструктивных узлов",
+      "startingPrice": "от 7 000 ₽/м³",
+      "priceCategoryIds": [
+        "masonry"
+      ],
+      "estimateExampleItemIds": [
+        "masonry-gazobeton-naruzh",
+        "masonry-peregorodki-gazobeton",
+        "masonry-armirovanie",
+        "masonry-gazobeton-peremychka",
+        "masonry-armopoyas"
+      ],
+      "illustrationKey": "direction-houses",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false,
+      "canonical": "https://shadov.pro/kladochnye-raboty"
+    },
+    {
+      "route": "/krovelnye-raboty",
+      "slug": "krovelnye-raboty",
+      "h1": "Кровельные работы для частных домов и зданий",
+      "startingPrice": "от 3 500 ₽/м² за комплекс холодной скатной кровли",
+      "priceCategoryIds": [
+        "roofing"
+      ],
+      "estimateExampleItemIds": [
+        "roofing-stropilka",
+        "roofing-paroizolyatsiya",
+        "roofing-uteplenie",
+        "roofing-gidrovetrozaschita",
+        "roofing-metallocherepitsa",
+        "roofing-vodostok"
+      ],
+      "illustrationKey": "direction-houses",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false,
+      "canonical": "https://shadov.pro/krovelnye-raboty"
+    },
+    {
+      "route": "/fasadnye-raboty",
+      "slug": "fasadnye-raboty",
+      "h1": "Фасадные работы и наружная отделка зданий",
+      "startingPrice": "от 1 800 ₽/м² за монтаж винилового сайдинга",
+      "priceCategoryIds": [
+        "facades"
+      ],
+      "estimateExampleItemIds": [
+        "facades-podgotovka",
+        "facades-uteplenie-min-vata",
+        "facades-mokryy",
+        "facades-pokraska"
+      ],
+      "illustrationKey": "direction-houses",
+      "usesConstructionServicePage": true,
+      "hasRouteStub": false,
+      "hasNoindex": false,
+      "canonical": "https://shadov.pro/fasadnye-raboty"
+    }
+  ],
+  "priceCategories": [
+    "general_contracting",
+    "monolithic",
+    "foundations",
+    "masonry",
+    "facades",
+    "roofing"
+  ],
+  "priceCounts": {
+    "general_contracting": 7,
+    "monolithic": 20,
+    "foundations": 20,
+    "masonry": 18,
+    "facades": 15,
+    "roofingSeparate": 21,
+    "roofingComplex": 7
+  },
+  "estimateExamples": [
+    {
+      "route": "/mnogokvartirnye-doma",
+      "ids": [
+        "general_contracting-coordination",
+        "general_contracting-pm",
+        "general_contracting-qa-engineer",
+        "general_contracting-docs",
+        "monolithic-fundament-plita"
+      ],
+      "allIdsResolved": true
+    },
+    {
+      "route": "/generalnyy-podryad",
+      "ids": [
+        "general_contracting-coordination",
+        "general_contracting-full",
+        "general_contracting-pm",
+        "general_contracting-qa-engineer",
+        "general_contracting-docs"
+      ],
+      "allIdsResolved": true
+    },
+    {
+      "route": "/monolitnye-raboty",
+      "ids": [
+        "monolithic-fundament-plita",
+        "monolithic-armatura",
+        "monolithic-opalubka-montazh",
+        "monolithic-priem-betona",
+        "monolithic-uhod-za-betonom"
+      ],
+      "allIdsResolved": true
+    },
+    {
+      "route": "/fundamenty",
+      "ids": [
+        "foundations-razrabotka-ekskavator",
+        "foundations-pesok",
+        "foundations-betonnaya-podgotovka",
+        "foundations-plita",
+        "foundations-obmazochnaya-gidro",
+        "foundations-pristennyy-drenazh"
+      ],
+      "allIdsResolved": true
+    },
+    {
+      "route": "/kladochnye-raboty",
+      "ids": [
+        "masonry-gazobeton-naruzh",
+        "masonry-peregorodki-gazobeton",
+        "masonry-armirovanie",
+        "masonry-gazobeton-peremychka",
+        "masonry-armopoyas"
+      ],
+      "allIdsResolved": true
+    },
+    {
+      "route": "/krovelnye-raboty",
+      "ids": [
+        "roofing-stropilka",
+        "roofing-paroizolyatsiya",
+        "roofing-uteplenie",
+        "roofing-gidrovetrozaschita",
+        "roofing-metallocherepitsa",
+        "roofing-vodostok"
+      ],
+      "allIdsResolved": true
+    },
+    {
+      "route": "/fasadnye-raboty",
+      "ids": [
+        "facades-podgotovka",
+        "facades-uteplenie-min-vata",
+        "facades-mokryy",
+        "facades-pokraska"
+      ],
+      "allIdsResolved": true
+    }
+  ],
+  "relatedServices": [
+    {
+      "route": "/mnogokvartirnye-doma",
+      "displayedRelatedRoutes": [
+        "/generalnyy-podryad",
+        "/monolitnye-raboty",
+        "/fundamenty",
+        "/kladochnye-raboty"
+      ]
+    },
+    {
+      "route": "/generalnyy-podryad",
+      "displayedRelatedRoutes": [
+        "/mnogokvartirnye-doma",
+        "/stroitelstvo-domov-pod-klyuch",
+        "/monolitnye-raboty"
+      ]
+    },
+    {
+      "route": "/monolitnye-raboty",
+      "displayedRelatedRoutes": [
+        "/fundamenty",
+        "/monolitnye-doma",
+        "/generalnyy-podryad",
+        "/kladochnye-raboty"
+      ]
+    },
+    {
+      "route": "/fundamenty",
+      "displayedRelatedRoutes": [
+        "/monolitnye-raboty",
+        "/kladochnye-raboty",
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    },
+    {
+      "route": "/kladochnye-raboty",
+      "displayedRelatedRoutes": [
+        "/fundamenty",
+        "/monolitnye-raboty",
+        "/krovelnye-raboty",
+        "/fasadnye-raboty"
+      ]
+    },
+    {
+      "route": "/krovelnye-raboty",
+      "displayedRelatedRoutes": [
+        "/fasadnye-raboty",
+        "/kladochnye-raboty",
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    },
+    {
+      "route": "/fasadnye-raboty",
+      "displayedRelatedRoutes": [
+        "/krovelnye-raboty",
+        "/kladochnye-raboty",
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    }
+  ],
+  "metadata": [
+    {
+      "route": "/mnogokvartirnye-doma",
+      "hasOgTitle": true,
+      "hasOgDescription": true,
+      "hasOgUrl": true,
+      "hasOgType": true,
+      "hasCanonical": true,
+      "hasBreadcrumbList": true,
+      "hasServiceJsonLd": true
+    },
+    {
+      "route": "/generalnyy-podryad",
+      "hasOgTitle": true,
+      "hasOgDescription": true,
+      "hasOgUrl": true,
+      "hasOgType": true,
+      "hasCanonical": true,
+      "hasBreadcrumbList": true,
+      "hasServiceJsonLd": true
+    },
+    {
+      "route": "/monolitnye-raboty",
+      "hasOgTitle": true,
+      "hasOgDescription": true,
+      "hasOgUrl": true,
+      "hasOgType": true,
+      "hasCanonical": true,
+      "hasBreadcrumbList": true,
+      "hasServiceJsonLd": true
+    },
+    {
+      "route": "/fundamenty",
+      "hasOgTitle": true,
+      "hasOgDescription": true,
+      "hasOgUrl": true,
+      "hasOgType": true,
+      "hasCanonical": true,
+      "hasBreadcrumbList": true,
+      "hasServiceJsonLd": true
+    },
+    {
+      "route": "/kladochnye-raboty",
+      "hasOgTitle": true,
+      "hasOgDescription": true,
+      "hasOgUrl": true,
+      "hasOgType": true,
+      "hasCanonical": true,
+      "hasBreadcrumbList": true,
+      "hasServiceJsonLd": true
+    },
+    {
+      "route": "/krovelnye-raboty",
+      "hasOgTitle": true,
+      "hasOgDescription": true,
+      "hasOgUrl": true,
+      "hasOgType": true,
+      "hasCanonical": true,
+      "hasBreadcrumbList": true,
+      "hasServiceJsonLd": true
+    },
+    {
+      "route": "/fasadnye-raboty",
+      "hasOgTitle": true,
+      "hasOgDescription": true,
+      "hasOgUrl": true,
+      "hasOgType": true,
+      "hasCanonical": true,
+      "hasBreadcrumbList": true,
+      "hasServiceJsonLd": true
+    }
+  ],
+  "illustrations": [
+    {
+      "route": "/mnogokvartirnye-doma",
+      "illustrationKey": "hero-construction",
+      "allowedKey": true,
+      "matchesRecommendation": true
+    },
+    {
+      "route": "/generalnyy-podryad",
+      "illustrationKey": "hero-construction",
+      "allowedKey": true,
+      "matchesRecommendation": true
+    },
+    {
+      "route": "/monolitnye-raboty",
+      "illustrationKey": "direction-monolith",
+      "allowedKey": true,
+      "matchesRecommendation": true
+    },
+    {
+      "route": "/fundamenty",
+      "illustrationKey": "direction-monolith",
+      "allowedKey": true,
+      "matchesRecommendation": true
+    },
+    {
+      "route": "/kladochnye-raboty",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true,
+      "matchesRecommendation": true
+    },
+    {
+      "route": "/krovelnye-raboty",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true,
+      "matchesRecommendation": true
+    },
+    {
+      "route": "/fasadnye-raboty",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true,
+      "matchesRecommendation": true
+    }
+  ],
+  "accessibility": {
+    "usesAriaPressed": true,
+    "containsRadioRole": false,
+    "containsRadioGroupRole": false,
+    "containsMinHeight44": true,
+    "containsMinWidth44": true
+  },
+  "forbiddenSearch": {
+    "patterns": [
+      "Строительство новых домов под ключ",
+      "Строительство первых домов под ключом",
+      "собственная лаборатория",
+      "собственный проектный институт",
+      "собственный парк техники",
+      "застройщик объекта"
+    ],
+    "matchesOutsideValidator": []
+  },
+  "totals": {
+    "activeConstructionRoutes": 17,
+    "stubConstructionRoutes": 1,
+    "stageRoutes": 7
+  }
+}
