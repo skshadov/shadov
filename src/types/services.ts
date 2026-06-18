@@ -39,6 +39,18 @@ export type ServicePageData = {
   relatedSlugs: string[];
   illustrationKey?: string;
   /**
+   * Подэтап 2.5.1 — поля для инженерных страниц. Используются
+   * EngineeringServicePage. Опциональны для совместимости со страницами
+   * ремонта и строительства.
+   */
+  intro?: string;
+  startingPriceItemId?: string | null;
+  startingPriceNote?: string;
+  packageCategoryIds?: PriceCategory[];
+  serviceGroups?: Array<{ title: string; items: string[] }>;
+  processSteps?: string[];
+  costFactors?: string[];
+  /**
    * Подэтап 2.3A — явный перечень ID позиций из prices.ts для блока «Пример
    * структуры сметы». Автоматический выбор первых строк категории запрещён.
    */
