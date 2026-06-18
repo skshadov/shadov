@@ -7,6 +7,7 @@ import { REPAIR_PACKAGES } from "@/data/repair-packages";
 import { ALL_PRICE_CATEGORIES } from "@/types/pricing";
 import { SERVICE_FAQ } from "@/data/service-faq";
 import { PRICES, getPriceById } from "@/data/prices";
+import { HOUSE_TECHNOLOGIES, HOUSE_COMPLETION_LEVELS } from "@/data/house-technologies";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 
