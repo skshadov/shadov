@@ -40,6 +40,7 @@ export const Route = createFileRoute("/generalnyy-podryad")({
             areaServed: "Москва и Московская область",
             provider: { "@type": "Organization", name: "Шадов и партнёры" },
             url: URL,
+            ...(p.startingPrice ? { offers: { "@type": "Offer", priceCurrency: "RUB", description: p.startingPrice } } : {}),
           }),
         },
       ],

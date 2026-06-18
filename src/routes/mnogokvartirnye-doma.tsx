@@ -40,6 +40,7 @@ export const Route = createFileRoute("/mnogokvartirnye-doma")({
             areaServed: "Москва и Московская область",
             provider: { "@type": "Organization", name: "Шадов и партнёры" },
             url: URL,
+
           }),
         },
       ],
