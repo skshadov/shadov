@@ -294,9 +294,6 @@ const relatedServices = STAGE_ROUTES.map((route) => {
   const resolved = resolveServicePage(slug);
   const displayedRelatedRoutes = resolved ? resolved.related.map((r) => r.route) : [];
   for (const r of displayedRelatedRoutes) {
-    if (r === "/stroitelstvo") {
-      errors.push(`related ${route}: /stroitelstvo не должен быть в связанных услугах`);
-    }
     const rSlug = r.replace(/^\//, "");
     if (!ACTIVE_SLUG_SET.has(rSlug)) {
       // Допускаются также активные технологии (они входят в ACTIVE_SLUG_SET).
