@@ -342,7 +342,7 @@ const PAGE_STROITELSTVO: ServicePageData = {
     "kladochnye-raboty",
     "krovelnye-raboty",
     "fasadnye-raboty",
-    "prices",
+    
   ],
   illustrationKey: "direction-houses",
   estimateExampleItemIds: [
@@ -436,7 +436,7 @@ const PAGE_HOUSES_TURNKEY: ServicePageData = {
     "fundamenty",
     "krovelnye-raboty",
     "fasadnye-raboty",
-    "prices",
+    
   ],
   illustrationKey: "direction-houses",
   estimateExampleItemIds: HOUSE_MASONRY_ESTIMATE_IDS,
@@ -667,7 +667,7 @@ const TECH_PAGES: ServicePageData[] = TECH_RULES.map((rule): ServicePageData => 
     relatedSlugs: [
       "stroitelstvo-domov-pod-klyuch",
       ...relatedFor(rule.slug),
-      "prices",
+      
     ],
     illustrationKey:
       rule.slug === "monolitnye-doma" ? "direction-monolith" : "direction-houses",
@@ -749,7 +749,7 @@ const PAGE_MKD: ServicePageData = {
     "monolitnye-raboty",
     "fundamenty",
     "kladochnye-raboty",
-    "prices",
+    
   ],
   illustrationKey: "hero-construction",
   estimateExampleItemIds: [
@@ -838,7 +838,7 @@ const PAGE_GP: ServicePageData = {
     "mnogokvartirnye-doma",
     "stroitelstvo-domov-pod-klyuch",
     "monolitnye-raboty",
-    "prices",
+    
   ],
   illustrationKey: "hero-construction",
   estimateExampleItemIds: [
@@ -918,7 +918,7 @@ const PAGE_MONOLITH: ServicePageData = {
     "monolitnye-doma",
     "generalnyy-podryad",
     "kladochnye-raboty",
-    "prices",
+    
   ],
   illustrationKey: "direction-monolith",
   estimateExampleItemIds: [
@@ -1003,7 +1003,7 @@ const PAGE_FOUNDATIONS: ServicePageData = {
     "monolitnye-raboty",
     "kladochnye-raboty",
     "stroitelstvo-domov-pod-klyuch",
-    "prices",
+    
   ],
   illustrationKey: "direction-monolith",
   estimateExampleItemIds: [
@@ -1096,7 +1096,7 @@ const PAGE_MASONRY: ServicePageData = {
     "monolitnye-raboty",
     "krovelnye-raboty",
     "fasadnye-raboty",
-    "prices",
+    
   ],
   illustrationKey: "direction-houses",
   estimateExampleItemIds: [
@@ -1177,7 +1177,7 @@ const PAGE_ROOFING: ServicePageData = {
     "fasadnye-raboty",
     "kladochnye-raboty",
     "stroitelstvo-domov-pod-klyuch",
-    "prices",
+    
   ],
   illustrationKey: "direction-houses",
   estimateExampleItemIds: [
@@ -1261,7 +1261,7 @@ const PAGE_FACADES: ServicePageData = {
     "krovelnye-raboty",
     "kladochnye-raboty",
     "stroitelstvo-domov-pod-klyuch",
-    "prices",
+    
   ],
   illustrationKey: "direction-houses",
   estimateExampleItemIds: [
