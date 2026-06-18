@@ -270,7 +270,7 @@ function houseTech(slug: string) {
 }
 
 function relatedFor(slug: string): string[] {
-  return RELATED_HOUSE.filter((s) => s !== slug);
+  return RELATED_HOUSE.filter((s) => s !== slug && s !== "stroitelstvo-domov-pod-klyuch");
 }
 
 // ─────────────────────────────────────────────────────────────────────────
