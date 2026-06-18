@@ -883,3 +883,145 @@ for (const route of STAGE_2_4_3_ROUTES) {
 }
 
 console.log("✓ validate-content 2.4.3: пройдена.");
+
+// ─────────────────────────────────────────────────────────────────────────
+// Подэтап 2.5.1 — инженерный раздел.
+// Все 6 маршрутов остаются RouteStub с noindex, follow. EngineeringServicePage
+// к route-файлам не подключён. Сверка количества категорий и позиций.
+// ─────────────────────────────────────────────────────────────────────────
+
+import { ENGINEERING_SERVICE_PAGES } from "@/data/service-pages-engineering";
+
+const ENGINEERING_STUB_ROUTES = [
+  "/inzhenernye-sistemy",
+  "/elektromontazh",
+  "/santehnika",
+  "/vodosnabzhenie-kanalizatsiya",
+  "/otoplenie",
+  "/teplyy-pol",
+] as const;
+
+if (ENGINEERING_SERVICE_PAGES.length !== 6) {
+  fail(
+    `ожидается 6 инженерных записей, найдено ${ENGINEERING_SERVICE_PAGES.length}`,
+  );
+}
+
+const ENG_ROUTES = ENGINEERING_SERVICE_PAGES.map((p) => p.route);
+assert(
+  JSON.stringify(ENG_ROUTES) === JSON.stringify(ENGINEERING_STUB_ROUTES),
+  `массив инженерных route не совпадает с утверждённым.\n  ожидается: ${JSON.stringify(ENGINEERING_STUB_ROUTES)}\n  найдено:   ${JSON.stringify(ENG_ROUTES)}`,
+);
+
+for (const p of ENGINEERING_SERVICE_PAGES) {
+  if (CYRILLIC_PATTERN.test(p.route)) fail(`кириллица в route: ${p.route}`);
+  if (CYRILLIC_PATTERN.test(p.slug)) fail(`кириллица в slug: ${p.slug}`);
+}
+
+for (const route of ENGINEERING_STUB_ROUTES) {
+  let src: string;
+  try {
+    src = readRoute(route);
+  } catch (e) {
+    fail(`route-файл ${route} не найден: ${e}`);
+  }
+  if (!/RouteStub/.test(src)) {
+    fail(`инженерный route ${route}: должен оставаться RouteStub`);
+  }
+  if (!/noindex,\s*follow/.test(src)) {
+    fail(`инженерный route ${route}: должен сохранять noindex, follow`);
+  }
+  if (/EngineeringServicePage/.test(src)) {
+    fail(`инженерный route ${route}: EngineeringServicePage подключаться не должен на 2.5.1`);
+  }
+}
+
+const EXPECTED_ENGINEERING_CATEGORY_COUNTS: Record<string, number> = {
+  electrical_packages: 3,
+  electrical: 22,
+  plumbing_packages: 5,
+  plumbing: 21,
+  water_supply: 13,
+  heating_packages: 6,
+  heating: 18,
+  underfloor_heating: 10,
+};
+let engineeringTotalItems = 0;
+for (const [cat, expected] of Object.entries(EXPECTED_ENGINEERING_CATEGORY_COUNTS)) {
+  const count = PRICES.filter((x) => x.category === (cat as never)).length;
+  if (count !== expected) {
+    fail(`инженерная категория ${cat}: ожидается ${expected}, найдено ${count}`);
+  }
+  engineeringTotalItems += count;
+}
+if (engineeringTotalItems !== 98) {
+  fail(`инженерные позиции: ожидается 98, найдено ${engineeringTotalItems}`);
+}
+
+const SMALL_OPERATION_RX = /штроб|отверсти|крепление|соединени|демонтаж|подготовительн/i;
+for (const p of ENGINEERING_SERVICE_PAGES) {
+  if (p.startingPriceItemId != null) {
+    const item = getPriceById(p.startingPriceItemId);
+    if (!item) fail(`страница ${p.route}: startingPriceItemId ${p.startingPriceItemId} не найден в prices.ts`);
+    if (SMALL_OPERATION_RX.test(item!.name)) {
+      fail(`страница ${p.route}: стартовая позиция «${item!.name}» — мелкая операция`);
+    }
+    // Цена в Hero (если есть) должна содержать число позиции.
+    if (p.startingPrice && typeof item!.priceFrom === "number") {
+      const expectedNum = item!.priceFrom.toLocaleString("ru-RU").replace(/\u00A0/g, " ");
+      if (!normalizeSpaces(p.startingPrice).includes(expectedNum)) {
+        fail(`страница ${p.route}: startingPrice не совпадает с prices.ts (${expectedNum})`);
+      }
+    }
+  }
+  // /inzhenernye-sistemy не должен иметь startingPrice.
+  if (p.route === "/inzhenernye-sistemy" && p.startingPrice) {
+    fail(`/inzhenernye-sistemy: общая числовая стартовая цена запрещена`);
+  }
+  for (const c of p.priceCategoryIds) {
+    if (!ALL_PRICE_CATEGORIES.includes(c)) fail(`страница ${p.route}: неизвестная ценовая категория ${c}`);
+  }
+  for (const id of p.faqIds) {
+    if (!SERVICE_FAQ.some((f) => f.id === id)) fail(`страница ${p.route}: FAQ ${id} не найден`);
+  }
+  for (const s of p.relatedSlugs) {
+    if (!SERVICE_PAGES.some((x) => x.slug === s)) fail(`страница ${p.route}: relatedSlug ${s} не найден`);
+  }
+  for (const id of p.estimateExampleItemIds ?? []) {
+    if (!getPriceById(id)) fail(`страница ${p.route}: estimateExampleItemIds ${id} не найден`);
+  }
+  const blob = JSON.stringify(p);
+  if (SRO_NUMBER_RX.test(blob)) fail(`инженерная страница ${p.route}: упоминание номера СРО недопустимо`);
+  if (OWN_LAB_RX.test(blob)) fail(`инженерная страница ${p.route}: заявление о собственной лаборатории недопустимо`);
+  if (WARRANTY_TERM_RX.test(blob)) fail(`инженерная страница ${p.route}: конкретный гарантийный срок недопустим`);
+  for (const rx of FORBIDDEN) {
+    if (rx.test(blob)) fail(`инженерная страница ${p.route}: запрещённая строка ${rx}`);
+  }
+}
+
+// Утверждение «тёплый пол как единственный источник отопления» запрещено.
+const TP_ONLY_RX = /тёплый\s+пол[^.]{0,80}единственн[а-я]+\s+источник/i;
+const tpBlob = JSON.stringify(ENGINEERING_SERVICE_PAGES.find((p) => p.slug === "teplyy-pol"));
+if (TP_ONLY_RX.test(tpBlob)) {
+  fail("/teplyy-pol: утверждение о единственном источнике отопления недопустимо");
+}
+
+// Запрет slice(0, 5) в инженерных компонентах.
+for (const f of [
+  "src/components/services/EngineeringServicePage.tsx",
+  "src/components/engineering/EngineeringPriceGroups.tsx",
+  "src/components/engineering/EngineeringDirections.tsx",
+  "src/components/engineering/EngineeringSystemDetails.tsx",
+  "src/components/engineering/EngineeringPackageCard.tsx",
+]) {
+  try {
+    const src = readFileSync(resolve(process.cwd(), f), "utf8");
+    if (/\.slice\(\s*0\s*,\s*5\s*\)/.test(src)) {
+      fail(`${f}: обнаружен запрещённый slice(0, 5)`);
+    }
+  } catch {
+    fail(`${f}: файл не найден`);
+  }
+}
+
+console.log("✓ validate-content 2.5.1: пройдена.");
