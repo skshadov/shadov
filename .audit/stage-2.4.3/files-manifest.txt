@@ -1,0 +1,9 @@
+audit-construction.log
+audit-exit-code.txt
+audit-source.ts
+audit.json
+build.log
+files-manifest.txt
+typescript.log
+validate-content.log
+validate-prices.log

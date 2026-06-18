@@ -634,10 +634,6 @@ const ACTIVATED_CONSTRUCTION_ROUTES = [
   "/kirpichnye-doma",
   "/monolitnye-doma",
   "/kombinirovannye-doma",
-] as const;
-
-const STUB_CONSTRUCTION_ROUTES = [
-  "/stroitelstvo",
   "/mnogokvartirnye-doma",
   "/generalnyy-podryad",
   "/monolitnye-raboty",
@@ -645,6 +641,10 @@ const STUB_CONSTRUCTION_ROUTES = [
   "/kladochnye-raboty",
   "/krovelnye-raboty",
   "/fasadnye-raboty",
+] as const;
+
+const STUB_CONSTRUCTION_ROUTES = [
+  "/stroitelstvo",
 ] as const;
 
 function readRoute(route: string): string {
@@ -790,3 +790,100 @@ for (const p of constructionPages) {
 }
 
 console.log("✓ validate-content: пройдена.");
+
+// ─────────────────────────────────────────────────────────────────────────
+// Подэтап 2.4.3 — семь специализированных строительных страниц.
+// Сверяем количество цен по категориям, разделение кровли на отдельные
+// работы и комплексные решения, отсутствие номера СРО, заявлений
+// о собственной лаборатории и сохранность ровно одной заглушки.
+// ─────────────────────────────────────────────────────────────────────────
+
+const STAGE_2_4_3_ROUTES = [
+  "/mnogokvartirnye-doma",
+  "/generalnyy-podryad",
+  "/monolitnye-raboty",
+  "/fundamenty",
+  "/kladochnye-raboty",
+  "/krovelnye-raboty",
+  "/fasadnye-raboty",
+] as const;
+
+if (ACTIVATED_CONSTRUCTION_ROUTES.length !== 17) {
+  fail(
+    `ожидается 17 активных строительных маршрутов, найдено ${ACTIVATED_CONSTRUCTION_ROUTES.length}`,
+  );
+}
+if (STUB_CONSTRUCTION_ROUTES.length !== 1) {
+  fail(
+    `ожидается 1 строительная заглушка, найдено ${STUB_CONSTRUCTION_ROUTES.length}`,
+  );
+}
+if (STUB_CONSTRUCTION_ROUTES[0] !== "/stroitelstvo") {
+  fail("единственная строительная заглушка должна быть /stroitelstvo");
+}
+
+// Каждая страница 2.4.3 использует ConstructionServicePage без noindex и без RouteStub.
+for (const route of STAGE_2_4_3_ROUTES) {
+  const src = readRoute(route);
+  if (/RouteStub/.test(src)) fail(`2.4.3 ${route}: всё ещё RouteStub`);
+  if (/noindex/i.test(src)) fail(`2.4.3 ${route}: содержит noindex`);
+  if (!/ConstructionServicePage/.test(src)) {
+    fail(`2.4.3 ${route}: не подключён ConstructionServicePage`);
+  }
+  if (!/BreadcrumbList/.test(src)) fail(`2.4.3 ${route}: отсутствует BreadcrumbList`);
+  if (!/rel:\s*"canonical"/.test(src)) fail(`2.4.3 ${route}: отсутствует canonical`);
+  if (!/og:url/.test(src) || !/og:title/.test(src) || !/og:description/.test(src)) {
+    fail(`2.4.3 ${route}: отсутствуют Open Graph метатеги`);
+  }
+  if (/\bas\s+any\b/.test(src)) fail(`2.4.3 ${route}: запрещён as any`);
+}
+
+// Запрещено выводить общую стартовую цену на /fundamenty и /mnogokvartirnye-doma.
+for (const route of ["/fundamenty", "/mnogokvartirnye-doma"] as const) {
+  const p = constructionPages.find((x) => x.route === route);
+  if (!p) fail(`страница ${route}: не найдена`);
+  if (p!.startingPrice) {
+    fail(`страница ${route}: общая стартовая цена недопустима, найдено "${p!.startingPrice}"`);
+  }
+}
+
+// Количество цен по строительным категориям 2.4.3.
+const EXPECTED_CATEGORY_COUNTS: Record<string, number> = {
+  general_contracting: 7,
+  monolithic: 20,
+  foundations: 20,
+  masonry: 18,
+  facades: 15,
+};
+for (const [cat, expected] of Object.entries(EXPECTED_CATEGORY_COUNTS)) {
+  const count = PRICES.filter((x) => x.category === (cat as never)).length;
+  if (count !== expected) {
+    fail(`категория ${cat}: ожидается ${expected} позиций, найдено ${count}`);
+  }
+}
+
+// Кровля: 21 отдельная работа + 7 комплексных решений (id содержит "roofing-complex-").
+const roofingAll = PRICES.filter((x) => x.category === ("roofing" as never));
+const roofingComplex = roofingAll.filter((x) => x.id.startsWith("roofing-complex-"));
+const roofingSeparate = roofingAll.filter((x) => !x.id.startsWith("roofing-complex-"));
+if (roofingSeparate.length !== 21) {
+  fail(`кровля: ожидается 21 отдельная работа, найдено ${roofingSeparate.length}`);
+}
+if (roofingComplex.length !== 7) {
+  fail(`кровля: ожидается 7 комплексных решений, найдено ${roofingComplex.length}`);
+}
+
+// На семи страницах 2.4.3 запрещены заявления о номере СРО и собственной лаборатории.
+const SRO_NUMBER_RX = /СРО[\s-]*[№N]?\s*\d/i;
+const OWN_LAB_RX = /собственн[а-я]*\s+лаборатори[а-я]+/i;
+for (const route of STAGE_2_4_3_ROUTES) {
+  const p = constructionPages.find((x) => x.route === route)!;
+  const blob = JSON.stringify(p);
+  if (SRO_NUMBER_RX.test(blob)) fail(`страница ${route}: упоминание номера СРО недопустимо`);
+  if (OWN_LAB_RX.test(blob)) fail(`страница ${route}: заявление о собственной лаборатории недопустимо`);
+  const src = readRoute(route);
+  if (SRO_NUMBER_RX.test(src)) fail(`route ${route}: упоминание номера СРО недопустимо`);
+  if (OWN_LAB_RX.test(src)) fail(`route ${route}: заявление о собственной лаборатории недопустимо`);
+}
+
+console.log("✓ validate-content 2.4.3: пройдена.");
