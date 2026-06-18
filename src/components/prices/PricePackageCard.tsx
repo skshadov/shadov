@@ -18,7 +18,7 @@ export function PricePackageCard({ pkg }: PricePackageCardProps) {
     </article>
   );
   if (pkg.slug) {
-    return <Link to={`/${pkg.slug}`}>{inner}</Link>;
+    return <Link to={`/${pkg.slug}` as string as never}>{inner}</Link>;
   }
   return inner;
 }
