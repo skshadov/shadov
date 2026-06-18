@@ -689,4 +689,91 @@ for (const route of STUB_CONSTRUCTION_ROUTES) {
   }
 }
 
+// ─────────────────────────────────────────────────────────────────────────
+// Подэтап 2.4.2A — единый источник истины: сверка 45 цен между prices.ts и
+ // HOUSE_TECHNOLOGIES, точное совпадение стартовой цены страницы с уровнем
+ // turnkey, контроль materialsIncluded и обязательное отсутствие пяти
+ // запрещённых пунктов в составе «Под ключ».
+// ─────────────────────────────────────────────────────────────────────────
+
+const TURNKEY_FORBIDDEN_IN_INCLUDED = [
+  "Мебель",
+  "Кухня",
+  "Бытовая техника",
+  "Благоустройство",
+  "Дорогостоящее оборудование",
+] as const;
+const TURNKEY_REQUIRED_IN_EXCLUDED = [
+  "Мебель рассчитывается отдельно",
+  "Кухня рассчитывается отдельно",
+  "Бытовая техника рассчитывается отдельно",
+  "Благоустройство рассчитывается отдельно",
+  "Дорогостоящее оборудование рассчитывается отдельно",
+] as const;
+for (const v of TURNKEY_FORBIDDEN_IN_INCLUDED) {
+  if (turnkeyLevel.included.includes(v)) {
+    fail(`уровень «Под ключ»: запрещённое значение в included: ${v}`);
+  }
+}
+for (const v of TURNKEY_REQUIRED_IN_EXCLUDED) {
+  if (!turnkeyLevel.excluded.includes(v)) {
+    fail(`уровень «Под ключ»: отсутствует обязательный excluded: ${v}`);
+  }
+}
+if (turnkeyLevel.included.length !== 16) {
+  fail(`уровень «Под ключ»: ожидается 16 included, найдено ${turnkeyLevel.included.length}`);
+}
+
+// Сверка 45 цен между prices.ts и HOUSE_TECHNOLOGIES.
+let priceMatches = 0;
+for (const t of HOUSE_TECHNOLOGIES) {
+  const pairs: Array<[string, number]> = [
+    [`house_construction_work-${t.slug}-shell`, t.workPrices.shell],
+    [`house_construction_work-${t.slug}-warm`, t.workPrices.warmShell],
+    [`house_construction_work-${t.slug}-prefinish`, t.workPrices.preFinish],
+    [`house_construction_work-${t.slug}-turnkey`, t.workPrices.turnkey],
+    [`house_construction_materials-${t.slug}-turnkey-materials`, t.turnkeyWithBasicMaterials],
+  ];
+  for (const [id, expected] of pairs) {
+    const item = getPriceById(id);
+    if (!item) fail(`prices.ts: отсутствует позиция ${id}`);
+    if (item!.priceFrom !== expected) {
+      fail(
+        `несоответствие цены ${id}: prices.ts=${item!.priceFrom}, HOUSE_TECHNOLOGIES=${expected}`,
+      );
+    }
+    priceMatches++;
+  }
+}
+if (priceMatches !== 45) {
+  fail(`ожидается 45 проверок цен, выполнено ${priceMatches}`);
+}
+
+// materialsIncluded=true только у 9 строк категории house_construction_materials.
+const materialsTrue = PRICES.filter((p) => p.materialsIncluded === true);
+if (materialsTrue.length !== 9) {
+  fail(`materialsIncluded=true должен быть у 9 строк, найдено ${materialsTrue.length}`);
+}
+for (const p of materialsTrue) {
+  if (p.category !== "house_construction_materials") {
+    fail(`materialsIncluded=true вне house_construction_materials: ${p.id}`);
+  }
+}
+
+// Стартовая цена технологической страницы должна точно соответствовать turnkey.
+const TECH_SLUG_TO_TURNKEY: Record<string, number> = Object.fromEntries(
+  HOUSE_TECHNOLOGIES.map((t) => [t.slug, t.workPrices.turnkey]),
+);
+for (const p of constructionPages) {
+  const turnkey = TECH_SLUG_TO_TURNKEY[p.slug];
+  if (turnkey === undefined) continue;
+  const expected = turnkey.toLocaleString("ru-RU").replace(/\u00A0/g, " ");
+  const got = normalizeSpaces(p.startingPrice ?? "");
+  if (!got.includes(expected)) {
+    fail(
+      `страница ${p.route}: startingPrice должна содержать ${expected} (turnkey), найдено "${p.startingPrice}"`,
+    );
+  }
+}
+
 console.log("✓ validate-content: пройдена.");
