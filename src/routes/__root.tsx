@@ -104,6 +104,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Шадов и партнёры" },
       { property: "og:locale", content: "ru_RU" },
       { name: "twitter:card", content: "summary_large_image" },
+      { title: "Lovable App" },
+      { property: "og:title", content: "Lovable App" },
+      { name: "twitter:title", content: "Lovable App" },
+      { name: "description", content: "Pixel Perfect Replica creates an exact visual match of a provided screenshot, implementing all specified elements and features." },
+      { property: "og:description", content: "Pixel Perfect Replica creates an exact visual match of a provided screenshot, implementing all specified elements and features." },
+      { name: "twitter:description", content: "Pixel Perfect Replica creates an exact visual match of a provided screenshot, implementing all specified elements and features." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fb65e97b-6ec6-45bf-90aa-4cc8e09e17dd/id-preview-08811cd4--8fa6e8cc-201f-4ed8-9f71-597d02cd00c0.lovable.app-1781806890058.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fb65e97b-6ec6-45bf-90aa-4cc8e09e17dd/id-preview-08811cd4--8fa6e8cc-201f-4ed8-9f71-597d02cd00c0.lovable.app-1781806890058.png" },
     ],
     links: [
       {
