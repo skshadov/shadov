@@ -38,20 +38,20 @@ export function RepairServicePage({ slug }: RepairServicePageProps) {
   // Подэтап 2.3A — пример структуры сметы формируется ТОЛЬКО по явному
   // перечню estimateExampleItemIds. Автоматический slice(0, 5) запрещён.
   const ids = data.estimateExampleItemIds ?? [];
-  const estimateExample: EstimateExampleRow[] = ids
-    .map((id) => {
-      const item = getPriceById(id);
-      if (!item) return null;
-      const vol = data.estimateExampleVolumes?.[id];
-      const note = data.estimateExampleNotes?.[id];
-      return {
-        item,
-        volume: vol?.value,
-        volumeLabel: vol?.label,
-        note,
-      } satisfies EstimateExampleRow;
-    })
-    .filter((r): r is EstimateExampleRow => r !== null);
+  const estimateExample: EstimateExampleRow[] = [];
+  for (const id of ids) {
+    const item = getPriceById(id);
+    if (!item) continue;
+    const vol = data.estimateExampleVolumes?.[id];
+    const row: EstimateExampleRow = { item };
+    if (vol) {
+      row.volume = vol.value;
+      row.volumeLabel = vol.label;
+    }
+    const note = data.estimateExampleNotes?.[id];
+    if (note) row.note = note;
+    estimateExample.push(row);
+  }
 
   const breadcrumbs: BreadcrumbItem[] = [
     { label: "Главная", to: "/" },
