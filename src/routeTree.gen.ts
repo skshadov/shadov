@@ -9,38 +9,1129 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VodosnabzhenieKanalizatsiyaRouteImport } from './routes/vodosnabzhenie-kanalizatsiya'
+import { Route as UkladkaPlitkiRouteImport } from './routes/ukladka-plitki'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TeplyyPolRouteImport } from './routes/teplyy-pol'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as StroitelstvoDomovPodKlyuchRouteImport } from './routes/stroitelstvo-domov-pod-klyuch'
+import { Route as StroitelstvoRouteImport } from './routes/stroitelstvo'
+import { Route as StandartnyyRemontRouteImport } from './routes/standartnyy-remont'
+import { Route as SroIDokumentyRouteImport } from './routes/sro-i-dokumenty'
+import { Route as SantehnikaRouteImport } from './routes/santehnika'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as RequisitesRouteImport } from './routes/requisites'
+import { Route as RemontPodKlyuchRouteImport } from './routes/remont-pod-klyuch'
+import { Route as RemontRouteImport } from './routes/remont'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PricesRouteImport } from './routes/prices'
+import { Route as PremialnyyRemontRouteImport } from './routes/premialnyy-remont'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as PersonalDataConsentRouteImport } from './routes/personal-data-consent'
+import { Route as OtoplenieRouteImport } from './routes/otoplenie'
+import { Route as MonolitnyeRabotyRouteImport } from './routes/monolitnye-raboty'
+import { Route as MonolitnyeDomaRouteImport } from './routes/monolitnye-doma'
+import { Route as MnogokvartirnyeDomaRouteImport } from './routes/mnogokvartirnye-doma'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as KrovelnyeRabotyRouteImport } from './routes/krovelnye-raboty'
+import { Route as KosmeticheskiyRemontRouteImport } from './routes/kosmeticheskiy-remont'
+import { Route as KontrolKachestvaRouteImport } from './routes/kontrol-kachestva'
+import { Route as KombinirovannyeDomaRouteImport } from './routes/kombinirovannye-doma'
+import { Route as KladochnyeRabotyRouteImport } from './routes/kladochnye-raboty'
+import { Route as KirpichnyeDomaRouteImport } from './routes/kirpichnye-doma'
+import { Route as KarkasnyeDomaRouteImport } from './routes/karkasnye-doma'
+import { Route as InzhenernyeSistemyRouteImport } from './routes/inzhenernye-sistemy'
+import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
+import { Route as GeneralnyyPodryadRouteImport } from './routes/generalnyy-podryad'
+import { Route as FundamentyRouteImport } from './routes/fundamenty'
+import { Route as FasadnyeRabotyRouteImport } from './routes/fasadnye-raboty'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as EvroremontRouteImport } from './routes/evroremont'
+import { Route as ElektromontazhRouteImport } from './routes/elektromontazh'
+import { Route as EkonomRemontRouteImport } from './routes/ekonom-remont'
+import { Route as DomaIzSipPaneleyRouteImport } from './routes/doma-iz-sip-paneley'
+import { Route as DomaIzKleenogoBrusaRouteImport } from './routes/doma-iz-kleenogo-brusa'
+import { Route as DomaIzKeramicheskihBlokovRouteImport } from './routes/doma-iz-keramicheskih-blokov'
+import { Route as DomaIzGazobetonaRouteImport } from './routes/doma-iz-gazobetona'
+import { Route as DomaIzBrusaRouteImport } from './routes/doma-iz-brusa'
+import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as ContactsRouteImport } from './routes/contacts'
+import { Route as ClientRouteImport } from './routes/client'
+import { Route as ChistovayaOtdelkaRouteImport } from './routes/chistovaya-otdelka'
+import { Route as ChernovoyRemontRouteImport } from './routes/chernovoy-remont'
+import { Route as BiznesRemontRouteImport } from './routes/biznes-remont'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as ClientProjectIdRouteImport } from './routes/client.project.$id'
 
+const VodosnabzhenieKanalizatsiyaRoute =
+  VodosnabzhenieKanalizatsiyaRouteImport.update({
+    id: '/vodosnabzhenie-kanalizatsiya',
+    path: '/vodosnabzhenie-kanalizatsiya',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const UkladkaPlitkiRoute = UkladkaPlitkiRouteImport.update({
+  id: '/ukladka-plitki',
+  path: '/ukladka-plitki',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeplyyPolRoute = TeplyyPolRouteImport.update({
+  id: '/teplyy-pol',
+  path: '/teplyy-pol',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StroitelstvoDomovPodKlyuchRoute =
+  StroitelstvoDomovPodKlyuchRouteImport.update({
+    id: '/stroitelstvo-domov-pod-klyuch',
+    path: '/stroitelstvo-domov-pod-klyuch',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const StroitelstvoRoute = StroitelstvoRouteImport.update({
+  id: '/stroitelstvo',
+  path: '/stroitelstvo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StandartnyyRemontRoute = StandartnyyRemontRouteImport.update({
+  id: '/standartnyy-remont',
+  path: '/standartnyy-remont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SroIDokumentyRoute = SroIDokumentyRouteImport.update({
+  id: '/sro-i-dokumenty',
+  path: '/sro-i-dokumenty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SantehnikaRoute = SantehnikaRouteImport.update({
+  id: '/santehnika',
+  path: '/santehnika',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequisitesRoute = RequisitesRouteImport.update({
+  id: '/requisites',
+  path: '/requisites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemontPodKlyuchRoute = RemontPodKlyuchRouteImport.update({
+  id: '/remont-pod-klyuch',
+  path: '/remont-pod-klyuch',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemontRoute = RemontRouteImport.update({
+  id: '/remont',
+  path: '/remont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricesRoute = PricesRouteImport.update({
+  id: '/prices',
+  path: '/prices',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PremialnyyRemontRoute = PremialnyyRemontRouteImport.update({
+  id: '/premialnyy-remont',
+  path: '/premialnyy-remont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PersonalDataConsentRoute = PersonalDataConsentRouteImport.update({
+  id: '/personal-data-consent',
+  path: '/personal-data-consent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OtoplenieRoute = OtoplenieRouteImport.update({
+  id: '/otoplenie',
+  path: '/otoplenie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MonolitnyeRabotyRoute = MonolitnyeRabotyRouteImport.update({
+  id: '/monolitnye-raboty',
+  path: '/monolitnye-raboty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MonolitnyeDomaRoute = MonolitnyeDomaRouteImport.update({
+  id: '/monolitnye-doma',
+  path: '/monolitnye-doma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MnogokvartirnyeDomaRoute = MnogokvartirnyeDomaRouteImport.update({
+  id: '/mnogokvartirnye-doma',
+  path: '/mnogokvartirnye-doma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KrovelnyeRabotyRoute = KrovelnyeRabotyRouteImport.update({
+  id: '/krovelnye-raboty',
+  path: '/krovelnye-raboty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KosmeticheskiyRemontRoute = KosmeticheskiyRemontRouteImport.update({
+  id: '/kosmeticheskiy-remont',
+  path: '/kosmeticheskiy-remont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontrolKachestvaRoute = KontrolKachestvaRouteImport.update({
+  id: '/kontrol-kachestva',
+  path: '/kontrol-kachestva',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KombinirovannyeDomaRoute = KombinirovannyeDomaRouteImport.update({
+  id: '/kombinirovannye-doma',
+  path: '/kombinirovannye-doma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KladochnyeRabotyRoute = KladochnyeRabotyRouteImport.update({
+  id: '/kladochnye-raboty',
+  path: '/kladochnye-raboty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KirpichnyeDomaRoute = KirpichnyeDomaRouteImport.update({
+  id: '/kirpichnye-doma',
+  path: '/kirpichnye-doma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KarkasnyeDomaRoute = KarkasnyeDomaRouteImport.update({
+  id: '/karkasnye-doma',
+  path: '/karkasnye-doma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InzhenernyeSistemyRoute = InzhenernyeSistemyRouteImport.update({
+  id: '/inzhenernye-sistemy',
+  path: '/inzhenernye-sistemy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowWeWorkRoute = HowWeWorkRouteImport.update({
+  id: '/how-we-work',
+  path: '/how-we-work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GeneralnyyPodryadRoute = GeneralnyyPodryadRouteImport.update({
+  id: '/generalnyy-podryad',
+  path: '/generalnyy-podryad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FundamentyRoute = FundamentyRouteImport.update({
+  id: '/fundamenty',
+  path: '/fundamenty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FasadnyeRabotyRoute = FasadnyeRabotyRouteImport.update({
+  id: '/fasadnye-raboty',
+  path: '/fasadnye-raboty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EvroremontRoute = EvroremontRouteImport.update({
+  id: '/evroremont',
+  path: '/evroremont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ElektromontazhRoute = ElektromontazhRouteImport.update({
+  id: '/elektromontazh',
+  path: '/elektromontazh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EkonomRemontRoute = EkonomRemontRouteImport.update({
+  id: '/ekonom-remont',
+  path: '/ekonom-remont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DomaIzSipPaneleyRoute = DomaIzSipPaneleyRouteImport.update({
+  id: '/doma-iz-sip-paneley',
+  path: '/doma-iz-sip-paneley',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DomaIzKleenogoBrusaRoute = DomaIzKleenogoBrusaRouteImport.update({
+  id: '/doma-iz-kleenogo-brusa',
+  path: '/doma-iz-kleenogo-brusa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DomaIzKeramicheskihBlokovRoute =
+  DomaIzKeramicheskihBlokovRouteImport.update({
+    id: '/doma-iz-keramicheskih-blokov',
+    path: '/doma-iz-keramicheskih-blokov',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DomaIzGazobetonaRoute = DomaIzGazobetonaRouteImport.update({
+  id: '/doma-iz-gazobetona',
+  path: '/doma-iz-gazobetona',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DomaIzBrusaRoute = DomaIzBrusaRouteImport.update({
+  id: '/doma-iz-brusa',
+  path: '/doma-iz-brusa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactsRoute = ContactsRouteImport.update({
+  id: '/contacts',
+  path: '/contacts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClientRoute = ClientRouteImport.update({
+  id: '/client',
+  path: '/client',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChistovayaOtdelkaRoute = ChistovayaOtdelkaRouteImport.update({
+  id: '/chistovaya-otdelka',
+  path: '/chistovaya-otdelka',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChernovoyRemontRoute = ChernovoyRemontRouteImport.update({
+  id: '/chernovoy-remont',
+  path: '/chernovoy-remont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BiznesRemontRoute = BiznesRemontRouteImport.update({
+  id: '/biznes-remont',
+  path: '/biznes-remont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => PortfolioRoute,
+} as any)
+const ClientProjectIdRoute = ClientProjectIdRouteImport.update({
+  id: '/project/$id',
+  path: '/project/$id',
+  getParentRoute: () => ClientRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/biznes-remont': typeof BiznesRemontRoute
+  '/chernovoy-remont': typeof ChernovoyRemontRoute
+  '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
+  '/client': typeof ClientRouteWithChildren
+  '/contacts': typeof ContactsRoute
+  '/cookies': typeof CookiesRoute
+  '/doma-iz-brusa': typeof DomaIzBrusaRoute
+  '/doma-iz-gazobetona': typeof DomaIzGazobetonaRoute
+  '/doma-iz-keramicheskih-blokov': typeof DomaIzKeramicheskihBlokovRoute
+  '/doma-iz-kleenogo-brusa': typeof DomaIzKleenogoBrusaRoute
+  '/doma-iz-sip-paneley': typeof DomaIzSipPaneleyRoute
+  '/ekonom-remont': typeof EkonomRemontRoute
+  '/elektromontazh': typeof ElektromontazhRoute
+  '/evroremont': typeof EvroremontRoute
+  '/faq': typeof FaqRoute
+  '/fasadnye-raboty': typeof FasadnyeRabotyRoute
+  '/fundamenty': typeof FundamentyRoute
+  '/generalnyy-podryad': typeof GeneralnyyPodryadRoute
+  '/how-we-work': typeof HowWeWorkRoute
+  '/inzhenernye-sistemy': typeof InzhenernyeSistemyRoute
+  '/karkasnye-doma': typeof KarkasnyeDomaRoute
+  '/kirpichnye-doma': typeof KirpichnyeDomaRoute
+  '/kladochnye-raboty': typeof KladochnyeRabotyRoute
+  '/kombinirovannye-doma': typeof KombinirovannyeDomaRoute
+  '/kontrol-kachestva': typeof KontrolKachestvaRoute
+  '/kosmeticheskiy-remont': typeof KosmeticheskiyRemontRoute
+  '/krovelnye-raboty': typeof KrovelnyeRabotyRoute
+  '/login': typeof LoginRoute
+  '/mnogokvartirnye-doma': typeof MnogokvartirnyeDomaRoute
+  '/monolitnye-doma': typeof MonolitnyeDomaRoute
+  '/monolitnye-raboty': typeof MonolitnyeRabotyRoute
+  '/otoplenie': typeof OtoplenieRoute
+  '/personal-data-consent': typeof PersonalDataConsentRoute
+  '/portfolio': typeof PortfolioRouteWithChildren
+  '/premialnyy-remont': typeof PremialnyyRemontRoute
+  '/prices': typeof PricesRoute
+  '/privacy': typeof PrivacyRoute
+  '/remont': typeof RemontRoute
+  '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
+  '/requisites': typeof RequisitesRoute
+  '/reviews': typeof ReviewsRoute
+  '/santehnika': typeof SantehnikaRoute
+  '/sro-i-dokumenty': typeof SroIDokumentyRoute
+  '/standartnyy-remont': typeof StandartnyyRemontRoute
+  '/stroitelstvo': typeof StroitelstvoRoute
+  '/stroitelstvo-domov-pod-klyuch': typeof StroitelstvoDomovPodKlyuchRoute
+  '/team': typeof TeamRoute
+  '/teplyy-pol': typeof TeplyyPolRoute
+  '/terms': typeof TermsRoute
+  '/ukladka-plitki': typeof UkladkaPlitkiRoute
+  '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
+  '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/biznes-remont': typeof BiznesRemontRoute
+  '/chernovoy-remont': typeof ChernovoyRemontRoute
+  '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
+  '/client': typeof ClientRouteWithChildren
+  '/contacts': typeof ContactsRoute
+  '/cookies': typeof CookiesRoute
+  '/doma-iz-brusa': typeof DomaIzBrusaRoute
+  '/doma-iz-gazobetona': typeof DomaIzGazobetonaRoute
+  '/doma-iz-keramicheskih-blokov': typeof DomaIzKeramicheskihBlokovRoute
+  '/doma-iz-kleenogo-brusa': typeof DomaIzKleenogoBrusaRoute
+  '/doma-iz-sip-paneley': typeof DomaIzSipPaneleyRoute
+  '/ekonom-remont': typeof EkonomRemontRoute
+  '/elektromontazh': typeof ElektromontazhRoute
+  '/evroremont': typeof EvroremontRoute
+  '/faq': typeof FaqRoute
+  '/fasadnye-raboty': typeof FasadnyeRabotyRoute
+  '/fundamenty': typeof FundamentyRoute
+  '/generalnyy-podryad': typeof GeneralnyyPodryadRoute
+  '/how-we-work': typeof HowWeWorkRoute
+  '/inzhenernye-sistemy': typeof InzhenernyeSistemyRoute
+  '/karkasnye-doma': typeof KarkasnyeDomaRoute
+  '/kirpichnye-doma': typeof KirpichnyeDomaRoute
+  '/kladochnye-raboty': typeof KladochnyeRabotyRoute
+  '/kombinirovannye-doma': typeof KombinirovannyeDomaRoute
+  '/kontrol-kachestva': typeof KontrolKachestvaRoute
+  '/kosmeticheskiy-remont': typeof KosmeticheskiyRemontRoute
+  '/krovelnye-raboty': typeof KrovelnyeRabotyRoute
+  '/login': typeof LoginRoute
+  '/mnogokvartirnye-doma': typeof MnogokvartirnyeDomaRoute
+  '/monolitnye-doma': typeof MonolitnyeDomaRoute
+  '/monolitnye-raboty': typeof MonolitnyeRabotyRoute
+  '/otoplenie': typeof OtoplenieRoute
+  '/personal-data-consent': typeof PersonalDataConsentRoute
+  '/portfolio': typeof PortfolioRouteWithChildren
+  '/premialnyy-remont': typeof PremialnyyRemontRoute
+  '/prices': typeof PricesRoute
+  '/privacy': typeof PrivacyRoute
+  '/remont': typeof RemontRoute
+  '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
+  '/requisites': typeof RequisitesRoute
+  '/reviews': typeof ReviewsRoute
+  '/santehnika': typeof SantehnikaRoute
+  '/sro-i-dokumenty': typeof SroIDokumentyRoute
+  '/standartnyy-remont': typeof StandartnyyRemontRoute
+  '/stroitelstvo': typeof StroitelstvoRoute
+  '/stroitelstvo-domov-pod-klyuch': typeof StroitelstvoDomovPodKlyuchRoute
+  '/team': typeof TeamRoute
+  '/teplyy-pol': typeof TeplyyPolRoute
+  '/terms': typeof TermsRoute
+  '/ukladka-plitki': typeof UkladkaPlitkiRoute
+  '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
+  '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/biznes-remont': typeof BiznesRemontRoute
+  '/chernovoy-remont': typeof ChernovoyRemontRoute
+  '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
+  '/client': typeof ClientRouteWithChildren
+  '/contacts': typeof ContactsRoute
+  '/cookies': typeof CookiesRoute
+  '/doma-iz-brusa': typeof DomaIzBrusaRoute
+  '/doma-iz-gazobetona': typeof DomaIzGazobetonaRoute
+  '/doma-iz-keramicheskih-blokov': typeof DomaIzKeramicheskihBlokovRoute
+  '/doma-iz-kleenogo-brusa': typeof DomaIzKleenogoBrusaRoute
+  '/doma-iz-sip-paneley': typeof DomaIzSipPaneleyRoute
+  '/ekonom-remont': typeof EkonomRemontRoute
+  '/elektromontazh': typeof ElektromontazhRoute
+  '/evroremont': typeof EvroremontRoute
+  '/faq': typeof FaqRoute
+  '/fasadnye-raboty': typeof FasadnyeRabotyRoute
+  '/fundamenty': typeof FundamentyRoute
+  '/generalnyy-podryad': typeof GeneralnyyPodryadRoute
+  '/how-we-work': typeof HowWeWorkRoute
+  '/inzhenernye-sistemy': typeof InzhenernyeSistemyRoute
+  '/karkasnye-doma': typeof KarkasnyeDomaRoute
+  '/kirpichnye-doma': typeof KirpichnyeDomaRoute
+  '/kladochnye-raboty': typeof KladochnyeRabotyRoute
+  '/kombinirovannye-doma': typeof KombinirovannyeDomaRoute
+  '/kontrol-kachestva': typeof KontrolKachestvaRoute
+  '/kosmeticheskiy-remont': typeof KosmeticheskiyRemontRoute
+  '/krovelnye-raboty': typeof KrovelnyeRabotyRoute
+  '/login': typeof LoginRoute
+  '/mnogokvartirnye-doma': typeof MnogokvartirnyeDomaRoute
+  '/monolitnye-doma': typeof MonolitnyeDomaRoute
+  '/monolitnye-raboty': typeof MonolitnyeRabotyRoute
+  '/otoplenie': typeof OtoplenieRoute
+  '/personal-data-consent': typeof PersonalDataConsentRoute
+  '/portfolio': typeof PortfolioRouteWithChildren
+  '/premialnyy-remont': typeof PremialnyyRemontRoute
+  '/prices': typeof PricesRoute
+  '/privacy': typeof PrivacyRoute
+  '/remont': typeof RemontRoute
+  '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
+  '/requisites': typeof RequisitesRoute
+  '/reviews': typeof ReviewsRoute
+  '/santehnika': typeof SantehnikaRoute
+  '/sro-i-dokumenty': typeof SroIDokumentyRoute
+  '/standartnyy-remont': typeof StandartnyyRemontRoute
+  '/stroitelstvo': typeof StroitelstvoRoute
+  '/stroitelstvo-domov-pod-klyuch': typeof StroitelstvoDomovPodKlyuchRoute
+  '/team': typeof TeamRoute
+  '/teplyy-pol': typeof TeplyyPolRoute
+  '/terms': typeof TermsRoute
+  '/ukladka-plitki': typeof UkladkaPlitkiRoute
+  '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
+  '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/biznes-remont'
+    | '/chernovoy-remont'
+    | '/chistovaya-otdelka'
+    | '/client'
+    | '/contacts'
+    | '/cookies'
+    | '/doma-iz-brusa'
+    | '/doma-iz-gazobetona'
+    | '/doma-iz-keramicheskih-blokov'
+    | '/doma-iz-kleenogo-brusa'
+    | '/doma-iz-sip-paneley'
+    | '/ekonom-remont'
+    | '/elektromontazh'
+    | '/evroremont'
+    | '/faq'
+    | '/fasadnye-raboty'
+    | '/fundamenty'
+    | '/generalnyy-podryad'
+    | '/how-we-work'
+    | '/inzhenernye-sistemy'
+    | '/karkasnye-doma'
+    | '/kirpichnye-doma'
+    | '/kladochnye-raboty'
+    | '/kombinirovannye-doma'
+    | '/kontrol-kachestva'
+    | '/kosmeticheskiy-remont'
+    | '/krovelnye-raboty'
+    | '/login'
+    | '/mnogokvartirnye-doma'
+    | '/monolitnye-doma'
+    | '/monolitnye-raboty'
+    | '/otoplenie'
+    | '/personal-data-consent'
+    | '/portfolio'
+    | '/premialnyy-remont'
+    | '/prices'
+    | '/privacy'
+    | '/remont'
+    | '/remont-pod-klyuch'
+    | '/requisites'
+    | '/reviews'
+    | '/santehnika'
+    | '/sro-i-dokumenty'
+    | '/standartnyy-remont'
+    | '/stroitelstvo'
+    | '/stroitelstvo-domov-pod-klyuch'
+    | '/team'
+    | '/teplyy-pol'
+    | '/terms'
+    | '/ukladka-plitki'
+    | '/vodosnabzhenie-kanalizatsiya'
+    | '/portfolio/$slug'
+    | '/client/project/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/biznes-remont'
+    | '/chernovoy-remont'
+    | '/chistovaya-otdelka'
+    | '/client'
+    | '/contacts'
+    | '/cookies'
+    | '/doma-iz-brusa'
+    | '/doma-iz-gazobetona'
+    | '/doma-iz-keramicheskih-blokov'
+    | '/doma-iz-kleenogo-brusa'
+    | '/doma-iz-sip-paneley'
+    | '/ekonom-remont'
+    | '/elektromontazh'
+    | '/evroremont'
+    | '/faq'
+    | '/fasadnye-raboty'
+    | '/fundamenty'
+    | '/generalnyy-podryad'
+    | '/how-we-work'
+    | '/inzhenernye-sistemy'
+    | '/karkasnye-doma'
+    | '/kirpichnye-doma'
+    | '/kladochnye-raboty'
+    | '/kombinirovannye-doma'
+    | '/kontrol-kachestva'
+    | '/kosmeticheskiy-remont'
+    | '/krovelnye-raboty'
+    | '/login'
+    | '/mnogokvartirnye-doma'
+    | '/monolitnye-doma'
+    | '/monolitnye-raboty'
+    | '/otoplenie'
+    | '/personal-data-consent'
+    | '/portfolio'
+    | '/premialnyy-remont'
+    | '/prices'
+    | '/privacy'
+    | '/remont'
+    | '/remont-pod-klyuch'
+    | '/requisites'
+    | '/reviews'
+    | '/santehnika'
+    | '/sro-i-dokumenty'
+    | '/standartnyy-remont'
+    | '/stroitelstvo'
+    | '/stroitelstvo-domov-pod-klyuch'
+    | '/team'
+    | '/teplyy-pol'
+    | '/terms'
+    | '/ukladka-plitki'
+    | '/vodosnabzhenie-kanalizatsiya'
+    | '/portfolio/$slug'
+    | '/client/project/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/biznes-remont'
+    | '/chernovoy-remont'
+    | '/chistovaya-otdelka'
+    | '/client'
+    | '/contacts'
+    | '/cookies'
+    | '/doma-iz-brusa'
+    | '/doma-iz-gazobetona'
+    | '/doma-iz-keramicheskih-blokov'
+    | '/doma-iz-kleenogo-brusa'
+    | '/doma-iz-sip-paneley'
+    | '/ekonom-remont'
+    | '/elektromontazh'
+    | '/evroremont'
+    | '/faq'
+    | '/fasadnye-raboty'
+    | '/fundamenty'
+    | '/generalnyy-podryad'
+    | '/how-we-work'
+    | '/inzhenernye-sistemy'
+    | '/karkasnye-doma'
+    | '/kirpichnye-doma'
+    | '/kladochnye-raboty'
+    | '/kombinirovannye-doma'
+    | '/kontrol-kachestva'
+    | '/kosmeticheskiy-remont'
+    | '/krovelnye-raboty'
+    | '/login'
+    | '/mnogokvartirnye-doma'
+    | '/monolitnye-doma'
+    | '/monolitnye-raboty'
+    | '/otoplenie'
+    | '/personal-data-consent'
+    | '/portfolio'
+    | '/premialnyy-remont'
+    | '/prices'
+    | '/privacy'
+    | '/remont'
+    | '/remont-pod-klyuch'
+    | '/requisites'
+    | '/reviews'
+    | '/santehnika'
+    | '/sro-i-dokumenty'
+    | '/standartnyy-remont'
+    | '/stroitelstvo'
+    | '/stroitelstvo-domov-pod-klyuch'
+    | '/team'
+    | '/teplyy-pol'
+    | '/terms'
+    | '/ukladka-plitki'
+    | '/vodosnabzhenie-kanalizatsiya'
+    | '/portfolio/$slug'
+    | '/client/project/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
+  BiznesRemontRoute: typeof BiznesRemontRoute
+  ChernovoyRemontRoute: typeof ChernovoyRemontRoute
+  ChistovayaOtdelkaRoute: typeof ChistovayaOtdelkaRoute
+  ClientRoute: typeof ClientRouteWithChildren
+  ContactsRoute: typeof ContactsRoute
+  CookiesRoute: typeof CookiesRoute
+  DomaIzBrusaRoute: typeof DomaIzBrusaRoute
+  DomaIzGazobetonaRoute: typeof DomaIzGazobetonaRoute
+  DomaIzKeramicheskihBlokovRoute: typeof DomaIzKeramicheskihBlokovRoute
+  DomaIzKleenogoBrusaRoute: typeof DomaIzKleenogoBrusaRoute
+  DomaIzSipPaneleyRoute: typeof DomaIzSipPaneleyRoute
+  EkonomRemontRoute: typeof EkonomRemontRoute
+  ElektromontazhRoute: typeof ElektromontazhRoute
+  EvroremontRoute: typeof EvroremontRoute
+  FaqRoute: typeof FaqRoute
+  FasadnyeRabotyRoute: typeof FasadnyeRabotyRoute
+  FundamentyRoute: typeof FundamentyRoute
+  GeneralnyyPodryadRoute: typeof GeneralnyyPodryadRoute
+  HowWeWorkRoute: typeof HowWeWorkRoute
+  InzhenernyeSistemyRoute: typeof InzhenernyeSistemyRoute
+  KarkasnyeDomaRoute: typeof KarkasnyeDomaRoute
+  KirpichnyeDomaRoute: typeof KirpichnyeDomaRoute
+  KladochnyeRabotyRoute: typeof KladochnyeRabotyRoute
+  KombinirovannyeDomaRoute: typeof KombinirovannyeDomaRoute
+  KontrolKachestvaRoute: typeof KontrolKachestvaRoute
+  KosmeticheskiyRemontRoute: typeof KosmeticheskiyRemontRoute
+  KrovelnyeRabotyRoute: typeof KrovelnyeRabotyRoute
+  LoginRoute: typeof LoginRoute
+  MnogokvartirnyeDomaRoute: typeof MnogokvartirnyeDomaRoute
+  MonolitnyeDomaRoute: typeof MonolitnyeDomaRoute
+  MonolitnyeRabotyRoute: typeof MonolitnyeRabotyRoute
+  OtoplenieRoute: typeof OtoplenieRoute
+  PersonalDataConsentRoute: typeof PersonalDataConsentRoute
+  PortfolioRoute: typeof PortfolioRouteWithChildren
+  PremialnyyRemontRoute: typeof PremialnyyRemontRoute
+  PricesRoute: typeof PricesRoute
+  PrivacyRoute: typeof PrivacyRoute
+  RemontRoute: typeof RemontRoute
+  RemontPodKlyuchRoute: typeof RemontPodKlyuchRoute
+  RequisitesRoute: typeof RequisitesRoute
+  ReviewsRoute: typeof ReviewsRoute
+  SantehnikaRoute: typeof SantehnikaRoute
+  SroIDokumentyRoute: typeof SroIDokumentyRoute
+  StandartnyyRemontRoute: typeof StandartnyyRemontRoute
+  StroitelstvoRoute: typeof StroitelstvoRoute
+  StroitelstvoDomovPodKlyuchRoute: typeof StroitelstvoDomovPodKlyuchRoute
+  TeamRoute: typeof TeamRoute
+  TeplyyPolRoute: typeof TeplyyPolRoute
+  TermsRoute: typeof TermsRoute
+  UkladkaPlitkiRoute: typeof UkladkaPlitkiRoute
+  VodosnabzhenieKanalizatsiyaRoute: typeof VodosnabzhenieKanalizatsiyaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vodosnabzhenie-kanalizatsiya': {
+      id: '/vodosnabzhenie-kanalizatsiya'
+      path: '/vodosnabzhenie-kanalizatsiya'
+      fullPath: '/vodosnabzhenie-kanalizatsiya'
+      preLoaderRoute: typeof VodosnabzhenieKanalizatsiyaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ukladka-plitki': {
+      id: '/ukladka-plitki'
+      path: '/ukladka-plitki'
+      fullPath: '/ukladka-plitki'
+      preLoaderRoute: typeof UkladkaPlitkiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teplyy-pol': {
+      id: '/teplyy-pol'
+      path: '/teplyy-pol'
+      fullPath: '/teplyy-pol'
+      preLoaderRoute: typeof TeplyyPolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stroitelstvo-domov-pod-klyuch': {
+      id: '/stroitelstvo-domov-pod-klyuch'
+      path: '/stroitelstvo-domov-pod-klyuch'
+      fullPath: '/stroitelstvo-domov-pod-klyuch'
+      preLoaderRoute: typeof StroitelstvoDomovPodKlyuchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stroitelstvo': {
+      id: '/stroitelstvo'
+      path: '/stroitelstvo'
+      fullPath: '/stroitelstvo'
+      preLoaderRoute: typeof StroitelstvoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/standartnyy-remont': {
+      id: '/standartnyy-remont'
+      path: '/standartnyy-remont'
+      fullPath: '/standartnyy-remont'
+      preLoaderRoute: typeof StandartnyyRemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sro-i-dokumenty': {
+      id: '/sro-i-dokumenty'
+      path: '/sro-i-dokumenty'
+      fullPath: '/sro-i-dokumenty'
+      preLoaderRoute: typeof SroIDokumentyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/santehnika': {
+      id: '/santehnika'
+      path: '/santehnika'
+      fullPath: '/santehnika'
+      preLoaderRoute: typeof SantehnikaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/requisites': {
+      id: '/requisites'
+      path: '/requisites'
+      fullPath: '/requisites'
+      preLoaderRoute: typeof RequisitesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/remont-pod-klyuch': {
+      id: '/remont-pod-klyuch'
+      path: '/remont-pod-klyuch'
+      fullPath: '/remont-pod-klyuch'
+      preLoaderRoute: typeof RemontPodKlyuchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/remont': {
+      id: '/remont'
+      path: '/remont'
+      fullPath: '/remont'
+      preLoaderRoute: typeof RemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prices': {
+      id: '/prices'
+      path: '/prices'
+      fullPath: '/prices'
+      preLoaderRoute: typeof PricesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/premialnyy-remont': {
+      id: '/premialnyy-remont'
+      path: '/premialnyy-remont'
+      fullPath: '/premialnyy-remont'
+      preLoaderRoute: typeof PremialnyyRemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/personal-data-consent': {
+      id: '/personal-data-consent'
+      path: '/personal-data-consent'
+      fullPath: '/personal-data-consent'
+      preLoaderRoute: typeof PersonalDataConsentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/otoplenie': {
+      id: '/otoplenie'
+      path: '/otoplenie'
+      fullPath: '/otoplenie'
+      preLoaderRoute: typeof OtoplenieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/monolitnye-raboty': {
+      id: '/monolitnye-raboty'
+      path: '/monolitnye-raboty'
+      fullPath: '/monolitnye-raboty'
+      preLoaderRoute: typeof MonolitnyeRabotyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/monolitnye-doma': {
+      id: '/monolitnye-doma'
+      path: '/monolitnye-doma'
+      fullPath: '/monolitnye-doma'
+      preLoaderRoute: typeof MonolitnyeDomaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mnogokvartirnye-doma': {
+      id: '/mnogokvartirnye-doma'
+      path: '/mnogokvartirnye-doma'
+      fullPath: '/mnogokvartirnye-doma'
+      preLoaderRoute: typeof MnogokvartirnyeDomaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/krovelnye-raboty': {
+      id: '/krovelnye-raboty'
+      path: '/krovelnye-raboty'
+      fullPath: '/krovelnye-raboty'
+      preLoaderRoute: typeof KrovelnyeRabotyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kosmeticheskiy-remont': {
+      id: '/kosmeticheskiy-remont'
+      path: '/kosmeticheskiy-remont'
+      fullPath: '/kosmeticheskiy-remont'
+      preLoaderRoute: typeof KosmeticheskiyRemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontrol-kachestva': {
+      id: '/kontrol-kachestva'
+      path: '/kontrol-kachestva'
+      fullPath: '/kontrol-kachestva'
+      preLoaderRoute: typeof KontrolKachestvaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kombinirovannye-doma': {
+      id: '/kombinirovannye-doma'
+      path: '/kombinirovannye-doma'
+      fullPath: '/kombinirovannye-doma'
+      preLoaderRoute: typeof KombinirovannyeDomaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kladochnye-raboty': {
+      id: '/kladochnye-raboty'
+      path: '/kladochnye-raboty'
+      fullPath: '/kladochnye-raboty'
+      preLoaderRoute: typeof KladochnyeRabotyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kirpichnye-doma': {
+      id: '/kirpichnye-doma'
+      path: '/kirpichnye-doma'
+      fullPath: '/kirpichnye-doma'
+      preLoaderRoute: typeof KirpichnyeDomaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/karkasnye-doma': {
+      id: '/karkasnye-doma'
+      path: '/karkasnye-doma'
+      fullPath: '/karkasnye-doma'
+      preLoaderRoute: typeof KarkasnyeDomaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/inzhenernye-sistemy': {
+      id: '/inzhenernye-sistemy'
+      path: '/inzhenernye-sistemy'
+      fullPath: '/inzhenernye-sistemy'
+      preLoaderRoute: typeof InzhenernyeSistemyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-we-work': {
+      id: '/how-we-work'
+      path: '/how-we-work'
+      fullPath: '/how-we-work'
+      preLoaderRoute: typeof HowWeWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/generalnyy-podryad': {
+      id: '/generalnyy-podryad'
+      path: '/generalnyy-podryad'
+      fullPath: '/generalnyy-podryad'
+      preLoaderRoute: typeof GeneralnyyPodryadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fundamenty': {
+      id: '/fundamenty'
+      path: '/fundamenty'
+      fullPath: '/fundamenty'
+      preLoaderRoute: typeof FundamentyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fasadnye-raboty': {
+      id: '/fasadnye-raboty'
+      path: '/fasadnye-raboty'
+      fullPath: '/fasadnye-raboty'
+      preLoaderRoute: typeof FasadnyeRabotyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/evroremont': {
+      id: '/evroremont'
+      path: '/evroremont'
+      fullPath: '/evroremont'
+      preLoaderRoute: typeof EvroremontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/elektromontazh': {
+      id: '/elektromontazh'
+      path: '/elektromontazh'
+      fullPath: '/elektromontazh'
+      preLoaderRoute: typeof ElektromontazhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ekonom-remont': {
+      id: '/ekonom-remont'
+      path: '/ekonom-remont'
+      fullPath: '/ekonom-remont'
+      preLoaderRoute: typeof EkonomRemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doma-iz-sip-paneley': {
+      id: '/doma-iz-sip-paneley'
+      path: '/doma-iz-sip-paneley'
+      fullPath: '/doma-iz-sip-paneley'
+      preLoaderRoute: typeof DomaIzSipPaneleyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doma-iz-kleenogo-brusa': {
+      id: '/doma-iz-kleenogo-brusa'
+      path: '/doma-iz-kleenogo-brusa'
+      fullPath: '/doma-iz-kleenogo-brusa'
+      preLoaderRoute: typeof DomaIzKleenogoBrusaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doma-iz-keramicheskih-blokov': {
+      id: '/doma-iz-keramicheskih-blokov'
+      path: '/doma-iz-keramicheskih-blokov'
+      fullPath: '/doma-iz-keramicheskih-blokov'
+      preLoaderRoute: typeof DomaIzKeramicheskihBlokovRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doma-iz-gazobetona': {
+      id: '/doma-iz-gazobetona'
+      path: '/doma-iz-gazobetona'
+      fullPath: '/doma-iz-gazobetona'
+      preLoaderRoute: typeof DomaIzGazobetonaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doma-iz-brusa': {
+      id: '/doma-iz-brusa'
+      path: '/doma-iz-brusa'
+      fullPath: '/doma-iz-brusa'
+      preLoaderRoute: typeof DomaIzBrusaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacts': {
+      id: '/contacts'
+      path: '/contacts'
+      fullPath: '/contacts'
+      preLoaderRoute: typeof ContactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/client': {
+      id: '/client'
+      path: '/client'
+      fullPath: '/client'
+      preLoaderRoute: typeof ClientRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chistovaya-otdelka': {
+      id: '/chistovaya-otdelka'
+      path: '/chistovaya-otdelka'
+      fullPath: '/chistovaya-otdelka'
+      preLoaderRoute: typeof ChistovayaOtdelkaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chernovoy-remont': {
+      id: '/chernovoy-remont'
+      path: '/chernovoy-remont'
+      fullPath: '/chernovoy-remont'
+      preLoaderRoute: typeof ChernovoyRemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/biznes-remont': {
+      id: '/biznes-remont'
+      path: '/biznes-remont'
+      fullPath: '/biznes-remont'
+      preLoaderRoute: typeof BiznesRemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +1139,101 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/portfolio/$slug': {
+      id: '/portfolio/$slug'
+      path: '/$slug'
+      fullPath: '/portfolio/$slug'
+      preLoaderRoute: typeof PortfolioSlugRouteImport
+      parentRoute: typeof PortfolioRoute
+    }
+    '/client/project/$id': {
+      id: '/client/project/$id'
+      path: '/project/$id'
+      fullPath: '/client/project/$id'
+      preLoaderRoute: typeof ClientProjectIdRouteImport
+      parentRoute: typeof ClientRoute
+    }
   }
 }
 
+interface ClientRouteChildren {
+  ClientProjectIdRoute: typeof ClientProjectIdRoute
+}
+
+const ClientRouteChildren: ClientRouteChildren = {
+  ClientProjectIdRoute: ClientProjectIdRoute,
+}
+
+const ClientRouteWithChildren =
+  ClientRoute._addFileChildren(ClientRouteChildren)
+
+interface PortfolioRouteChildren {
+  PortfolioSlugRoute: typeof PortfolioSlugRoute
+}
+
+const PortfolioRouteChildren: PortfolioRouteChildren = {
+  PortfolioSlugRoute: PortfolioSlugRoute,
+}
+
+const PortfolioRouteWithChildren = PortfolioRoute._addFileChildren(
+  PortfolioRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
+  BiznesRemontRoute: BiznesRemontRoute,
+  ChernovoyRemontRoute: ChernovoyRemontRoute,
+  ChistovayaOtdelkaRoute: ChistovayaOtdelkaRoute,
+  ClientRoute: ClientRouteWithChildren,
+  ContactsRoute: ContactsRoute,
+  CookiesRoute: CookiesRoute,
+  DomaIzBrusaRoute: DomaIzBrusaRoute,
+  DomaIzGazobetonaRoute: DomaIzGazobetonaRoute,
+  DomaIzKeramicheskihBlokovRoute: DomaIzKeramicheskihBlokovRoute,
+  DomaIzKleenogoBrusaRoute: DomaIzKleenogoBrusaRoute,
+  DomaIzSipPaneleyRoute: DomaIzSipPaneleyRoute,
+  EkonomRemontRoute: EkonomRemontRoute,
+  ElektromontazhRoute: ElektromontazhRoute,
+  EvroremontRoute: EvroremontRoute,
+  FaqRoute: FaqRoute,
+  FasadnyeRabotyRoute: FasadnyeRabotyRoute,
+  FundamentyRoute: FundamentyRoute,
+  GeneralnyyPodryadRoute: GeneralnyyPodryadRoute,
+  HowWeWorkRoute: HowWeWorkRoute,
+  InzhenernyeSistemyRoute: InzhenernyeSistemyRoute,
+  KarkasnyeDomaRoute: KarkasnyeDomaRoute,
+  KirpichnyeDomaRoute: KirpichnyeDomaRoute,
+  KladochnyeRabotyRoute: KladochnyeRabotyRoute,
+  KombinirovannyeDomaRoute: KombinirovannyeDomaRoute,
+  KontrolKachestvaRoute: KontrolKachestvaRoute,
+  KosmeticheskiyRemontRoute: KosmeticheskiyRemontRoute,
+  KrovelnyeRabotyRoute: KrovelnyeRabotyRoute,
+  LoginRoute: LoginRoute,
+  MnogokvartirnyeDomaRoute: MnogokvartirnyeDomaRoute,
+  MonolitnyeDomaRoute: MonolitnyeDomaRoute,
+  MonolitnyeRabotyRoute: MonolitnyeRabotyRoute,
+  OtoplenieRoute: OtoplenieRoute,
+  PersonalDataConsentRoute: PersonalDataConsentRoute,
+  PortfolioRoute: PortfolioRouteWithChildren,
+  PremialnyyRemontRoute: PremialnyyRemontRoute,
+  PricesRoute: PricesRoute,
+  PrivacyRoute: PrivacyRoute,
+  RemontRoute: RemontRoute,
+  RemontPodKlyuchRoute: RemontPodKlyuchRoute,
+  RequisitesRoute: RequisitesRoute,
+  ReviewsRoute: ReviewsRoute,
+  SantehnikaRoute: SantehnikaRoute,
+  SroIDokumentyRoute: SroIDokumentyRoute,
+  StandartnyyRemontRoute: StandartnyyRemontRoute,
+  StroitelstvoRoute: StroitelstvoRoute,
+  StroitelstvoDomovPodKlyuchRoute: StroitelstvoDomovPodKlyuchRoute,
+  TeamRoute: TeamRoute,
+  TeplyyPolRoute: TeplyyPolRoute,
+  TermsRoute: TermsRoute,
+  UkladkaPlitkiRoute: UkladkaPlitkiRoute,
+  VodosnabzhenieKanalizatsiyaRoute: VodosnabzhenieKanalizatsiyaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
