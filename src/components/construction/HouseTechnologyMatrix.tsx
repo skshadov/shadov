@@ -4,7 +4,7 @@
  */
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { HOUSE_TECHNOLOGIES } from "@/data/house-technologies";
+import { HOUSE_TECHNOLOGIES, HOUSE_TURNKEY_WITH_BASIC_MATERIALS_LABEL } from "@/data/house-technologies";
 import { formatRubles } from "@/lib/format-price";
 
 type Mode = "work" | "materials";
@@ -84,7 +84,7 @@ export function HouseTechnologyMatrix({ heading }: Props) {
               <thead className="bg-[color:var(--surface-medium)] text-xs uppercase tracking-wider text-muted-foreground">
                 <tr>
                   <th scope="col" className="px-4 py-3">Технология</th>
-                  <th scope="col" className="px-4 py-3">Под ключ с базовыми материалами</th>
+                  <th scope="col" className="px-4 py-3">{HOUSE_TURNKEY_WITH_BASIC_MATERIALS_LABEL}</th>
                 </tr>
               </thead>
               <tbody>

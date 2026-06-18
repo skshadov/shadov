@@ -10,9 +10,9 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "validate:prices": "bun src/lib/validate-prices.ts"
-    ,
-    "validate:content": "bun src/lib/validate-content.ts"
+    "validate:prices": "bun src/lib/validate-prices.ts",
+    "validate:content": "bun src/lib/validate-content.ts",
+    "audit:construction": "bun src/lib/audit-construction-content.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

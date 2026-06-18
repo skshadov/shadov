@@ -7,7 +7,12 @@ import { REPAIR_PACKAGES } from "@/data/repair-packages";
 import { ALL_PRICE_CATEGORIES } from "@/types/pricing";
 import { SERVICE_FAQ } from "@/data/service-faq";
 import { PRICES, getPriceById } from "@/data/prices";
-import { HOUSE_TECHNOLOGIES, HOUSE_COMPLETION_LEVELS } from "@/data/house-technologies";
+import {
+  HOUSE_COMPLETION_DISCLAIMER,
+  HOUSE_COMPLETION_LEVELS,
+  HOUSE_TECHNOLOGIES,
+  HOUSE_TURNKEY_WITH_BASIC_MATERIALS_LABEL,
+} from "@/data/house-technologies";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 
@@ -78,6 +83,9 @@ const WARRANTY_TERM_RX = /гаранти[а-я]+\s+\d+\s*(год|года|лет
 function fail(msg: string): never {
   console.error("validate-content:", msg);
   process.exit(1);
+}
+function assert(condition: unknown, msg: string): asserts condition {
+  if (!condition) fail(msg);
 }
 function uniq<T>(arr: T[]): T[] {
   return Array.from(new Set(arr));
@@ -277,7 +285,7 @@ if (PRICES.length === 0) fail("prices.ts пуст");
 // валидатор не проверяет; данные проверяются как готовая база.
 // ─────────────────────────────────────────────────────────────────────────
 
-const REQUIRED_CONSTRUCTION_ROUTES = [
+const EXPECTED_CONSTRUCTION_ROUTES = [
   "/stroitelstvo",
   "/stroitelstvo-domov-pod-klyuch",
   "/karkasnye-doma",
@@ -297,6 +305,8 @@ const REQUIRED_CONSTRUCTION_ROUTES = [
   "/krovelnye-raboty",
   "/fasadnye-raboty",
 ] as const;
+
+const CYRILLIC_PATTERN = /[А-Яа-яЁё]/;
 
 const EXPECTED_CONSTRUCTION_H1: Record<string, string> = {
   "/stroitelstvo": "Строительство частных и многоквартирных домов в Москве и Московской области",
@@ -342,6 +352,51 @@ const EXPECTED_CONSTRUCTION_PRICE: Record<string, string | null> = {
   "/fasadnye-raboty": "1 800",
 };
 
+const EXPECTED_TECHNOLOGY_NAMES = [
+  "Каркасный дом",
+  "Дом из СИП-панелей",
+  "Дом из профилированного бруса",
+  "Дом из клееного бруса",
+  "Дом из газобетона",
+  "Дом из керамических блоков",
+  "Кирпичный дом",
+  "Монолитный железобетонный дом",
+  "Комбинированный дом",
+] as const;
+
+const EXPECTED_COMPLETION_LEVELS = [
+  "Коробка",
+  "Тёплый контур",
+  "Под чистовую отделку",
+  "Под ключ",
+] as const;
+
+const EXPECTED_TURNKEY_INCLUDED = [
+  "Конструктив",
+  "Фасад",
+  "Кровля",
+  "Окна",
+  "Наружные двери",
+  "Электрика",
+  "Сантехника",
+  "Отопление",
+  "Водоснабжение",
+  "Канализация",
+  "Черновая отделка",
+  "Чистовая отделка базового уровня",
+  "Сантехнические приборы базовой комплектации",
+  "Розетки и выключатели базовой комплектации",
+  "Проверка инженерных систем",
+  "Сдача готового дома",
+] as const;
+
+const FORBIDDEN_TURNKEY_INCLUDED = [
+  "Черная отделка",
+  "Чёрная отделка",
+  "Сантехнические приборы комплектации",
+  "Розетки и выключатели комплектации",
+] as const;
+
 const FORBIDDEN_CONSTRUCTION = [
   /\bлучший\b/i,
   /\bсамый\s+(?:тёплый|теплый|надёжный|надежный)\b/i,
@@ -355,14 +410,15 @@ const constructionRoutes = constructionPages.map((p) => p.route);
 
 console.log("validate-content: строительных страниц", constructionPages.length);
 
-if (constructionPages.length !== REQUIRED_CONSTRUCTION_ROUTES.length) {
+if (constructionPages.length !== EXPECTED_CONSTRUCTION_ROUTES.length) {
   fail(
-    `ожидается ${REQUIRED_CONSTRUCTION_ROUTES.length} строительных страниц, найдено ${constructionPages.length}`,
+    `ожидается ${EXPECTED_CONSTRUCTION_ROUTES.length} строительных страниц, найдено ${constructionPages.length}`,
   );
 }
-for (const r of REQUIRED_CONSTRUCTION_ROUTES) {
-  if (!constructionRoutes.includes(r)) fail(`отсутствует строительный маршрут ${r}`);
-}
+assert(
+  JSON.stringify(constructionRoutes) === JSON.stringify(EXPECTED_CONSTRUCTION_ROUTES),
+  `массив строительных route не совпадает с утверждённым.\n  ожидается: ${JSON.stringify(EXPECTED_CONSTRUCTION_ROUTES)}\n  найдено:   ${JSON.stringify(constructionRoutes)}`,
+);
 
 const cSlugSet = new Set<string>();
 const cRouteSet = new Set<string>();
@@ -370,6 +426,15 @@ const cH1Set = new Set<string>();
 const cMetaSet = new Set<string>();
 
 for (const p of constructionPages) {
+  assert(
+    !CYRILLIC_PATTERN.test(p.route),
+    `Кириллица в route: ${p.route}`,
+  );
+  assert(
+    !CYRILLIC_PATTERN.test(p.slug),
+    `Кириллица в slug: ${p.slug}`,
+  );
+
   if (cSlugSet.has(p.slug)) fail(`дублированный slug строительства: ${p.slug}`);
   if (cRouteSet.has(p.route)) fail(`дублированный route строительства: ${p.route}`);
   if (cH1Set.has(p.h1)) fail(`дублированный H1 строительства: ${p.h1}`);
@@ -462,6 +527,10 @@ for (const p of constructionPages) {
 if (HOUSE_TECHNOLOGIES.length !== 9) {
   fail(`ожидается 9 технологий, найдено ${HOUSE_TECHNOLOGIES.length}`);
 }
+assert(
+  JSON.stringify(HOUSE_TECHNOLOGIES.map((t) => t.name)) === JSON.stringify(EXPECTED_TECHNOLOGY_NAMES),
+  `названия технологий не совпадают с утверждёнными.\n  ожидается: ${JSON.stringify(EXPECTED_TECHNOLOGY_NAMES)}\n  найдено:   ${JSON.stringify(HOUSE_TECHNOLOGIES.map((t) => t.name))}`,
+);
 for (const t of HOUSE_TECHNOLOGIES) {
   for (const k of ["shell", "warmShell", "preFinish", "turnkey"] as const) {
     if (!t.workPrices[k] || t.workPrices[k] <= 0) {
@@ -494,6 +563,14 @@ const EXPECTED_LEVEL_IDS = ["shell", "warmShell", "preFinish", "turnkey"];
 if (HOUSE_COMPLETION_LEVELS.length !== 4) {
   fail(`ожидается 4 уровня готовности, найдено ${HOUSE_COMPLETION_LEVELS.length}`);
 }
+assert(
+  JSON.stringify(HOUSE_COMPLETION_LEVELS.map((l) => l.name)) === JSON.stringify(EXPECTED_COMPLETION_LEVELS),
+  `названия уровней готовности не совпадают с утверждёнными.\n  ожидается: ${JSON.stringify(EXPECTED_COMPLETION_LEVELS)}\n  найдено:   ${JSON.stringify(HOUSE_COMPLETION_LEVELS.map((l) => l.name))}`,
+);
+assert(
+  HOUSE_TURNKEY_WITH_BASIC_MATERIALS_LABEL === "Под ключ с базовыми материалами",
+  `заголовок цены с материалами не совпадает: ${HOUSE_TURNKEY_WITH_BASIC_MATERIALS_LABEL}`,
+);
 for (const id of EXPECTED_LEVEL_IDS) {
   const lvl = HOUSE_COMPLETION_LEVELS.find((l) => l.id === id);
   if (!lvl) fail(`отсутствует уровень готовности ${id}`);
@@ -501,6 +578,23 @@ for (const id of EXPECTED_LEVEL_IDS) {
   if (!lvl!.excluded.length) fail(`уровень ${id}: excluded пустой`);
   if (!lvl!.description) fail(`уровень ${id}: description пустое`);
 }
+const turnkeyLevel = HOUSE_COMPLETION_LEVELS.find((l) => l.id === "turnkey");
+if (!turnkeyLevel) fail("отсутствует уровень готовности turnkey");
+assert(
+  JSON.stringify(turnkeyLevel.included) === JSON.stringify(EXPECTED_TURNKEY_INCLUDED),
+  `состав уровня «Под ключ» не совпадает с утверждённым.\n  ожидается: ${JSON.stringify(EXPECTED_TURNKEY_INCLUDED)}\n  найдено:   ${JSON.stringify(turnkeyLevel.included)}`,
+);
+for (const forbidden of FORBIDDEN_TURNKEY_INCLUDED) {
+  assert(
+    !turnkeyLevel.included.includes(forbidden),
+    `уровень «Под ключ»: запрещённое значение included: ${forbidden}`,
+  );
+}
+assert(
+  HOUSE_COMPLETION_DISCLAIMER ===
+    "Точный состав комплектации фиксируется в смете и договоре с учётом проекта выбранного дома.",
+  `подпись уровней готовности не совпадает: ${HOUSE_COMPLETION_DISCLAIMER}`,
+);
 
 // Проверка отсутствия автоматического slice(0, 5) в строительном каркасе.
 try {
