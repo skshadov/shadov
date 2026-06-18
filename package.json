@@ -13,6 +13,7 @@
     "validate:prices": "bun src/lib/validate-prices.ts",
     "validate:content": "bun src/lib/validate-content.ts",
     "audit:construction": "bun src/lib/audit-construction-content.ts"
+    ,"audit:stage-2.4.2": "bun src/lib/audit-stage-2-4-2.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
