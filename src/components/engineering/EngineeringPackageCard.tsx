@@ -3,7 +3,7 @@
  * Состав пакета не выдумывается. Если состав не подтверждён данными,
  * выводится утверждённый дисклеймер.
  */
-import { formatPrice } from "@/lib/format-price";
+import { formatPriceItem } from "@/lib/format-price";
 import type { PriceItem } from "@/types/pricing";
 
 export const PACKAGE_COMPOSITION_DISCLAIMER =
@@ -19,7 +19,7 @@ export function EngineeringPackageCard({ pkg, composition }: Props) {
   return (
     <article className="rounded-lg border border-border bg-card p-6">
       <h3 className="font-display text-lg font-semibold">{pkg.name}</h3>
-      <p className="mt-2 text-sm text-muted-foreground">{formatPrice(pkg)}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{formatPriceItem(pkg)}</p>
       {items.length > 0 ? (
         <ul className="mt-4 space-y-1 text-sm">
           {items.map((it) => (
