@@ -1000,9 +1000,10 @@ for (const p of ENGINEERING_SERVICE_PAGES) {
 }
 
 // Утверждение «тёплый пол как единственный источник отопления» запрещено.
-const TP_ONLY_RX = /тёплый\s+пол[^.]{0,80}единственн[а-я]+\s+источник/i;
+// Допустимы только формулировки с отрицанием («не во всех случаях …»).
+const TP_AFFIRM_RX = /(является|достаточен|может\s+быть|обеспечивает)[^.]{0,40}единственн[а-я]+\s+источник/i;
 const tpBlob = JSON.stringify(ENGINEERING_SERVICE_PAGES.find((p) => p.slug === "teplyy-pol"));
-if (TP_ONLY_RX.test(tpBlob)) {
+if (TP_AFFIRM_RX.test(tpBlob) && !/не\s+во\s+всех\s+случаях[^.]{0,80}единственн/i.test(tpBlob)) {
   fail("/teplyy-pol: утверждение о единственном источнике отопления недопустимо");
 }
 
