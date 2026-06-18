@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { Illustration } from "@/components/common/Illustration";
 import { SectionHeading } from "@/components/common/SectionHeading";
-import controlImg from "@/assets/illustrations/control-foreman.jpg";
+import { controlPicture } from "@/assets/illustrations/sources";
 import { Button } from "@/components/ui/button";
 
 const ITEMS = [
@@ -54,10 +54,13 @@ export function ProjectControlSection() {
           </div>
         </div>
         <Illustration
-          src={controlImg}
+          src={controlPicture.src}
+          sources={controlPicture.sources}
+          imgSrcSet={controlPicture.imgSrcSet}
+          imgSizes={controlPicture.imgSizes}
           description="инженер на стройплощадке проверяет рабочую документацию на планшете"
-          width={1280}
-          height={960}
+          width={controlPicture.width}
+          height={controlPicture.height}
           className="overflow-hidden rounded-xl border border-border"
         />
       </div>
