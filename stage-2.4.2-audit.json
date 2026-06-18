@@ -1,0 +1,527 @@
+$ bun src/lib/audit-stage-2-4-2.ts
+{
+  "stage": "2.4.2",
+  "specificationCheck": {
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  },
+  "routes": {
+    "active": [
+      {
+        "route": "/stroitelstvo-domov-pod-klyuch",
+        "slug": "stroitelstvo-domov-pod-klyuch",
+        "h1": "Строительство частных домов под ключ в Москве и Московской области",
+        "metaTitle": "Строительство частных домов под ключ — девять технологий — Шадов и партнёры",
+        "canonical": "https://shadov.pro/stroitelstvo-domov-pod-klyuch",
+        "illustrationKey": "direction-houses",
+        "usesConstructionServicePage": true,
+        "hasRouteStub": false,
+        "hasNoindex": false
+      },
+      {
+        "route": "/karkasnye-doma",
+        "slug": "karkasnye-doma",
+        "h1": "Строительство каркасных домов под ключ",
+        "metaTitle": "Каркасные дома под ключ — Шадов и партнёры",
+        "canonical": "https://shadov.pro/karkasnye-doma",
+        "illustrationKey": "direction-houses",
+        "usesConstructionServicePage": true,
+        "hasRouteStub": false,
+        "hasNoindex": false
+      },
+      {
+        "route": "/doma-iz-sip-paneley",
+        "slug": "doma-iz-sip-paneley",
+        "h1": "Строительство домов из СИП-панелей под ключ",
+        "metaTitle": "Дома из СИП-панелей под ключ — Шадов и партнёры",
+        "canonical": "https://shadov.pro/doma-iz-sip-paneley",
+        "illustrationKey": "direction-houses",
+        "usesConstructionServicePage": true,
+        "hasRouteStub": false,
+        "hasNoindex": false
+      },
+      {
+        "route": "/doma-iz-brusa",
+        "slug": "doma-iz-brusa",
+        "h1": "Строительство домов из профилированного бруса",
+        "metaTitle": "Дома из профилированного бруса — Шадов и партнёры",
+        "canonical": "https://shadov.pro/doma-iz-brusa",
+        "illustrationKey": "direction-houses",
+        "usesConstructionServicePage": true,
+        "hasRouteStub": false,
+        "hasNoindex": false
+      },
+      {
+        "route": "/doma-iz-kleenogo-brusa",
+        "slug": "doma-iz-kleenogo-brusa",
+        "h1": "Строительство домов из клееного бруса",
+        "metaTitle": "Дома из клееного бруса — Шадов и партнёры",
+        "canonical": "https://shadov.pro/doma-iz-kleenogo-brusa",
+        "illustrationKey": "direction-houses",
+        "usesConstructionServicePage": true,
+        "hasRouteStub": false,
+        "hasNoindex": false
+      },
+      {
+        "route": "/doma-iz-gazobetona",
+        "slug": "doma-iz-gazobetona",
+        "h1": "Строительство домов из газобетона под ключ",
+        "metaTitle": "Дома из газобетона под ключ — Шадов и партнёры",
+        "canonical": "https://shadov.pro/doma-iz-gazobetona",
+        "illustrationKey": "direction-houses",
+        "usesConstructionServicePage": true,
+        "hasRouteStub": false,
+        "hasNoindex": false
+      },
+      {
+        "route": "/doma-iz-keramicheskih-blokov",
+        "slug": "doma-iz-keramicheskih-blokov",
+        "h1": "Строительство домов из керамических блоков",
+        "metaTitle": "Дома из керамических блоков — Шадов и партнёры",
+        "canonical": "https://shadov.pro/doma-iz-keramicheskih-blokov",
+        "illustrationKey": "direction-houses",
+        "usesConstructionServicePage": true,
+        "hasRouteStub": false,
+        "hasNoindex": false
+      },
+      {
+        "route": "/kirpichnye-doma",
+        "slug": "kirpichnye-doma",
+        "h1": "Строительство кирпичных домов под ключ",
+        "metaTitle": "Кирпичные дома под ключ — Шадов и партнёры",
+        "canonical": "https://shadov.pro/kirpichnye-doma",
+        "illustrationKey": "direction-houses",
+        "usesConstructionServicePage": true,
+        "hasRouteStub": false,
+        "hasNoindex": false
+      },
+      {
+        "route": "/monolitnye-doma",
+        "slug": "monolitnye-doma",
+        "h1": "Строительство монолитных железобетонных домов",
+        "metaTitle": "Монолитные железобетонные дома — Шадов и партнёры",
+        "canonical": "https://shadov.pro/monolitnye-doma",
+        "illustrationKey": "direction-houses",
+        "usesConstructionServicePage": true,
+        "hasRouteStub": false,
+        "hasNoindex": false
+      },
+      {
+        "route": "/kombinirovannye-doma",
+        "slug": "kombinirovannye-doma",
+        "h1": "Строительство комбинированных домов",
+        "metaTitle": "Комбинированные дома — Шадов и партнёры",
+        "canonical": "https://shadov.pro/kombinirovannye-doma",
+        "illustrationKey": "direction-houses",
+        "usesConstructionServicePage": true,
+        "hasRouteStub": false,
+        "hasNoindex": false
+      }
+    ],
+    "stubs": [
+      {
+        "route": "/stroitelstvo",
+        "usesConstructionServicePage": false,
+        "hasRouteStub": true,
+        "hasNoindexFollow": true
+      },
+      {
+        "route": "/mnogokvartirnye-doma",
+        "usesConstructionServicePage": false,
+        "hasRouteStub": true,
+        "hasNoindexFollow": true
+      },
+      {
+        "route": "/generalnyy-podryad",
+        "usesConstructionServicePage": false,
+        "hasRouteStub": true,
+        "hasNoindexFollow": true
+      },
+      {
+        "route": "/monolitnye-raboty",
+        "usesConstructionServicePage": false,
+        "hasRouteStub": true,
+        "hasNoindexFollow": true
+      },
+      {
+        "route": "/fundamenty",
+        "usesConstructionServicePage": false,
+        "hasRouteStub": true,
+        "hasNoindexFollow": true
+      },
+      {
+        "route": "/kladochnye-raboty",
+        "usesConstructionServicePage": false,
+        "hasRouteStub": true,
+        "hasNoindexFollow": true
+      },
+      {
+        "route": "/krovelnye-raboty",
+        "usesConstructionServicePage": false,
+        "hasRouteStub": true,
+        "hasNoindexFollow": true
+      },
+      {
+        "route": "/fasadnye-raboty",
+        "usesConstructionServicePage": false,
+        "hasRouteStub": true,
+        "hasNoindexFollow": true
+      }
+    ]
+  },
+  "technologies": [
+    {
+      "slug": "karkasnye-doma",
+      "name": "Каркасный дом",
+      "prices": {
+        "shell": 18000,
+        "warmShell": 26000,
+        "preFinish": 36000,
+        "turnkey": 45000,
+        "turnkeyWithBasicMaterials": 95000
+      }
+    },
+    {
+      "slug": "doma-iz-sip-paneley",
+      "name": "Дом из СИП-панелей",
+      "prices": {
+        "shell": 17000,
+        "warmShell": 25000,
+        "preFinish": 35000,
+        "turnkey": 44000,
+        "turnkeyWithBasicMaterials": 90000
+      }
+    },
+    {
+      "slug": "doma-iz-brusa",
+      "name": "Дом из профилированного бруса",
+      "prices": {
+        "shell": 20000,
+        "warmShell": 28000,
+        "preFinish": 38000,
+        "turnkey": 48000,
+        "turnkeyWithBasicMaterials": 105000
+      }
+    },
+    {
+      "slug": "doma-iz-kleenogo-brusa",
+      "name": "Дом из клееного бруса",
+      "prices": {
+        "shell": 24000,
+        "warmShell": 34000,
+        "preFinish": 46000,
+        "turnkey": 58000,
+        "turnkeyWithBasicMaterials": 125000
+      }
+    },
+    {
+      "slug": "doma-iz-gazobetona",
+      "name": "Дом из газобетона",
+      "prices": {
+        "shell": 25000,
+        "warmShell": 36000,
+        "preFinish": 50000,
+        "turnkey": 65000,
+        "turnkeyWithBasicMaterials": 125000
+      }
+    },
+    {
+      "slug": "doma-iz-keramicheskih-blokov",
+      "name": "Дом из керамических блоков",
+      "prices": {
+        "shell": 28000,
+        "warmShell": 40000,
+        "preFinish": 55000,
+        "turnkey": 72000,
+        "turnkeyWithBasicMaterials": 145000
+      }
+    },
+    {
+      "slug": "kirpichnye-doma",
+      "name": "Кирпичный дом",
+      "prices": {
+        "shell": 32000,
+        "warmShell": 45000,
+        "preFinish": 62000,
+        "turnkey": 80000,
+        "turnkeyWithBasicMaterials": 165000
+      }
+    },
+    {
+      "slug": "monolitnye-doma",
+      "name": "Монолитный железобетонный дом",
+      "prices": {
+        "shell": 35000,
+        "warmShell": 50000,
+        "preFinish": 70000,
+        "turnkey": 90000,
+        "turnkeyWithBasicMaterials": 180000
+      }
+    },
+    {
+      "slug": "kombinirovannye-doma",
+      "name": "Комбинированный дом",
+      "prices": {
+        "shell": 40000,
+        "warmShell": 55000,
+        "preFinish": 75000,
+        "turnkey": 95000,
+        "turnkeyWithBasicMaterials": 190000
+      }
+    }
+  ],
+  "matrixLabels": {
+    "shell": "Коробка",
+    "warmShell": "Тёплый контур",
+    "preFinish": "Под чистовую отделку",
+    "turnkey": "Под ключ",
+    "materials": "Под ключ с базовыми материалами"
+  },
+  "completionLevels": [
+    {
+      "id": "shell",
+      "name": "Коробка",
+      "included": [
+        "Фундамент",
+        "Несущие стены",
+        "Внутренние несущие конструкции",
+        "Перекрытия",
+        "Лестница в конструктиве, если предусмотрена проектом",
+        "Стропильная система или конструкция кровли",
+        "Кровельное покрытие"
+      ],
+      "excluded": [
+        "Окна",
+        "Наружные двери",
+        "Фасадная отделка",
+        "Инженерные системы",
+        "Внутренняя отделка"
+      ]
+    },
+    {
+      "id": "warmShell",
+      "name": "Тёплый контур",
+      "included": [
+        "Коробка",
+        "Утеплённая кровля",
+        "Окна",
+        "Наружные двери",
+        "Закрытие внешних проёмов",
+        "Базовая защита фасада",
+        "Гидроизоляционные и теплоизоляционные работы по проекту"
+      ],
+      "excluded": [
+        "Внутренние инженерные системы",
+        "Штукатурка",
+        "Стяжка",
+        "Чистовая отделка",
+        "Сантехнические приборы"
+      ]
+    },
+    {
+      "id": "preFinish",
+      "name": "Под чистовую отделку",
+      "included": [
+        "Тёплый контур",
+        "Черновая электрика",
+        "Водоснабжение",
+        "Канализация",
+        "Отопление",
+        "Штукатурка",
+        "Стяжка",
+        "Подготовка поверхностей",
+        "Базовая котельная по проекту"
+      ],
+      "excluded": [
+        "Чистовые покрытия",
+        "Чистовая сантехника",
+        "Светильники",
+        "Межкомнатные двери, если они отдельно не предусмотрены",
+        "Мебель и оборудование"
+      ]
+    },
+    {
+      "id": "turnkey",
+      "name": "Под ключ",
+      "included": [
+        "Конструктив",
+        "Фасад",
+        "Кровля",
+        "Окна",
+        "Наружные двери",
+        "Электрика",
+        "Сантехника",
+        "Отопление",
+        "Водоснабжение",
+        "Канализация",
+        "Черновая отделка",
+        "Чистовая отделка базового уровня",
+        "Сантехнические приборы базовой комплектации",
+        "Розетки и выключатели базовой комплектации",
+        "Проверка инженерных систем",
+        "Сдача готового дома"
+      ],
+      "excluded": [
+        "Мебель рассчитывается отдельно",
+        "Кухня рассчитывается отдельно",
+        "Бытовая техника рассчитывается отдельно",
+        "Благоустройство рассчитывается отдельно",
+        "Дорогостоящее оборудование рассчитывается отдельно"
+      ]
+    }
+  ],
+  "completionDisclaimer": "Точный состав комплектации фиксируется в смете и договоре с учётом проекта выбранного дома.",
+  "relatedServices": [
+    {
+      "route": "/stroitelstvo-domov-pod-klyuch",
+      "displayedRelatedRoutes": [
+        "/karkasnye-doma",
+        "/doma-iz-gazobetona",
+        "/kirpichnye-doma",
+        "/monolitnye-doma"
+      ]
+    },
+    {
+      "route": "/karkasnye-doma",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    },
+    {
+      "route": "/doma-iz-sip-paneley",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    },
+    {
+      "route": "/doma-iz-brusa",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    },
+    {
+      "route": "/doma-iz-kleenogo-brusa",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    },
+    {
+      "route": "/doma-iz-gazobetona",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    },
+    {
+      "route": "/doma-iz-keramicheskih-blokov",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    },
+    {
+      "route": "/kirpichnye-doma",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    },
+    {
+      "route": "/monolitnye-doma",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    },
+    {
+      "route": "/kombinirovannye-doma",
+      "displayedRelatedRoutes": [
+        "/stroitelstvo-domov-pod-klyuch"
+      ]
+    }
+  ],
+  "accessibility": {
+    "usesAriaPressed": true,
+    "containsRadioRole": false,
+    "containsRadioGroupRole": false,
+    "containsMinHeight44": true,
+    "containsMinWidth44": true
+  },
+  "illustrations": [
+    {
+      "route": "/stroitelstvo-domov-pod-klyuch",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true
+    },
+    {
+      "route": "/karkasnye-doma",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true
+    },
+    {
+      "route": "/doma-iz-sip-paneley",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true
+    },
+    {
+      "route": "/doma-iz-brusa",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true
+    },
+    {
+      "route": "/doma-iz-kleenogo-brusa",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true
+    },
+    {
+      "route": "/doma-iz-gazobetona",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true
+    },
+    {
+      "route": "/doma-iz-keramicheskih-blokov",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true
+    },
+    {
+      "route": "/kirpichnye-doma",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true
+    },
+    {
+      "route": "/monolitnye-doma",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true
+    },
+    {
+      "route": "/kombinirovannye-doma",
+      "illustrationKey": "direction-houses",
+      "allowedKey": true
+    }
+  ],
+  "forbiddenSearch": {
+    "patterns": [
+      "Строительство новых домов под ключ",
+      "Строительство первых домов под ключом",
+      "Сантехнические приборы станции комплектации",
+      "Сантехнические приборы определения комплектации",
+      "Сантехнические приборы для комплектации",
+      "Розетки и выключатели местоположения комплектации",
+      "Розетки и выключатели аварийной комплектации",
+      "Розетки и выключатели формирования комплектации",
+      "Черная отделка",
+      "Кровя",
+      "Электроика",
+      "кавалер",
+      "ставка тарификация",
+      "Предполагается отдельно",
+      "Дыхающий",
+      "Под дверью",
+      "Чайный дом"
+    ],
+    "matchesOutsideValidator": []
+  },
+  "totals": {
+    "activeRoutes": 10,
+    "stubRoutes": 8,
+    "technologies": 9,
+    "comparedPrices": 45
+  }
+}
