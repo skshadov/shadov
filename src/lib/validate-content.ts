@@ -718,6 +718,11 @@ const TURNKEY_REQUIRED_IN_EXCLUDED = [
   "Благоустройство рассчитывается отдельно",
   "Дорогостоящее оборудование рассчитывается отдельно",
 ] as const;
+const EXPECTED_TURNKEY_EXCLUDED = TURNKEY_REQUIRED_IN_EXCLUDED;
+assert(
+  JSON.stringify(turnkeyLevel.excluded) === JSON.stringify(EXPECTED_TURNKEY_EXCLUDED),
+  `исключения уровня «Под ключ» не совпадают.\n  ожидается: ${JSON.stringify(EXPECTED_TURNKEY_EXCLUDED)}\n  найдено:   ${JSON.stringify(turnkeyLevel.excluded)}`,
+);
 for (const v of TURNKEY_FORBIDDEN_IN_INCLUDED) {
   if (turnkeyLevel.included.includes(v)) {
     fail(`уровень «Под ключ»: запрещённое значение в included: ${v}`);
