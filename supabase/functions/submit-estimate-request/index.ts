@@ -1,22 +1,11 @@
 /**
- * Edge Function submit-estimate-request — единственный путь публичной отправки
- * заявки. Используется service_role внутри функции, RLS не нарушается, потому
- * что сервер сам нормализует данные и проверяет согласие, honeypot, rate-limit
- * и feature flag PUBLIC_DATA_COLLECTION_ENABLED.
- *
- * Контракт ответа: { success: true, requestNumber } или { success: false, code }.
- * Внутренний UUID заявки наружу не отдаётся.
+ * Stage 3B — production submit-estimate-request.
+ * Вся бизнес-логика и валидация в общем handler (../_shared/handler.ts),
+ * чтобы тестовый вариант разделял код. Production-флаг и список origins
+ * читаются из ALLOWED_ORIGINS / PUBLIC_DATA_COLLECTION_ENABLED.
  */
-// deno-lint-ignore-file no-explicit-any
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
-
-const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
-const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-const ALLOWED_ORIGINS = (Deno.env.get("ALLOWED_ORIGINS") ?? "*")
-  .split(",").map((s) => s.trim()).filter(Boolean);
-const RATE_LIMIT_SALT = Deno.env.get("RATE_LIMIT_SALT") ?? "stage-3-default-salt";
-const PUBLIC_DATA_COLLECTION_ENABLED =
-  (Deno.env.get("PUBLIC_DATA_COLLECTION_ENABLED") ?? "false").toLowerCase() === "true";
+import { createHandler } from "../_shared/handler.ts";
+Deno.serve(createHandler({ name: "submit-estimate-request", testMode: false }));
 
 const RATE_LIMIT_MAX = 5;
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
