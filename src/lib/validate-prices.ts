@@ -103,8 +103,8 @@ function validatePrices(items: PriceItem[]): Issue[] {
 function validateServicePages(): Issue[] {
   const issues: Issue[] = [];
 
-  // Подэтап 2.5.2A: всего 35 = 18 строительных + 10 ремонта (активных)
-  // + 6 инженерных + 1 плиточная заглушка (category=repair, isStub=true).
+  // Подэтап 2.6: всего 35 = 18 строительных + 11 ремонта (включая
+  // активированную плиточную страницу) + 6 инженерных. Заглушек 0.
   if (SERVICE_PAGES.length !== 35)
     issues.push({ rule: "service-pages-count", message: `Ожидается 35 страниц услуг, получено ${SERVICE_PAGES.length}` });
 
@@ -115,17 +115,29 @@ function validateServicePages(): Issue[] {
     counts[s.category]++;
   }
   if (counts.construction !== 18) issues.push({ rule: "category-count", message: `construction (активных): ожидается 18, получено ${counts.construction}` });
-  if (counts.repair !== 10)       issues.push({ rule: "category-count", message: `repair (активных): ожидается 10, получено ${counts.repair}` });
+  if (counts.repair !== 11)       issues.push({ rule: "category-count", message: `repair (активных): ожидается 11, получено ${counts.repair}` });
   if (counts.engineering !== 6)   issues.push({ rule: "category-count", message: `engineering (активных): ожидается 6, получено ${counts.engineering}` });
-  if (stubs !== 1)                issues.push({ rule: "stub-count", message: `заглушек ожидается 1 (плитка), получено ${stubs}` });
+  if (stubs !== 0)                issues.push({ rule: "stub-count", message: `заглушек ожидается 0, получено ${stubs}` });
 
-  // /ukladka-plitki: точное состояние.
+  // /ukladka-plitki: активная страница с category=repair, без isStub.
+  // Стартовая цена startingPriceItemId должна существовать в prices.ts
+  // и иметь priceFrom = 2800 (категория tiling).
   const tile = SERVICE_PAGES.find((s) => s.slug === "ukladka-plitki");
   if (!tile) issues.push({ rule: "tile-required", message: "/ukladka-plitki отсутствует в SERVICE_PAGES" });
   else {
     if (tile.category !== "repair") issues.push({ rule: "tile-category", message: `/ukladka-plitki: ожидается category=repair, найдено ${tile.category}` });
-    if (tile.isStub !== true) issues.push({ rule: "tile-stub", message: `/ukladka-plitki: ожидается isStub=true` });
+    if (tile.isStub === true) issues.push({ rule: "tile-active", message: `/ukladka-plitki: активна, isStub быть не должно` });
+    if (!tile.startingPriceItemId) {
+      issues.push({ rule: "tile-starting-id", message: "/ukladka-plitki: отсутствует startingPriceItemId" });
+    } else {
+      const item = items.find((p) => p.id === tile.startingPriceItemId);
+      if (!item) issues.push({ rule: "tile-starting-id", message: `/ukladka-plitki: startingPriceItemId ${tile.startingPriceItemId} не найден в prices.ts` });
+      else if (item.priceFrom !== 2800) issues.push({ rule: "tile-starting-price", message: `/ukladka-plitki: стартовая позиция должна стоить 2800, найдено ${item.priceFrom}` });
+    }
   }
+  // Категория tiling — ровно 20 позиций.
+  const tilingCount = items.filter((p) => p.category === "tiling").length;
+  if (tilingCount !== 20) issues.push({ rule: "tiling-count", message: `tiling: ожидается 20 позиций, найдено ${tilingCount}` });
 
   const slugs = new Set<string>(); const routes = new Set<string>(); const metas = new Set<string>(); const h1s = new Set<string>();
   for (const s of SERVICE_PAGES) {
