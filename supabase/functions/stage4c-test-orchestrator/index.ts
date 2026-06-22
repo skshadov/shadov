@@ -142,8 +142,8 @@ Deno.serve(async (req: Request) => {
     createdProjectIds.push(projB.id);
 
     await admin.from("project_members").insert([
-      { project_id: projA.id, user_id: clientA.id, role: "client" },
-      { project_id: projB.id, user_id: clientB.id, role: "client" },
+      { project_id: projA.id, user_id: clientA.id, member_role: "client" },
+      { project_id: projB.id, user_id: clientB.id, member_role: "client" },
     ]);
 
     // Documents: visible & hidden in projectA; foreign in projectB
@@ -155,76 +155,76 @@ Deno.serve(async (req: Request) => {
       if (error) throw new Error(`upload ${p}: ${error.message}`);
       createdStoragePaths.push(p);
     }
-    const { data: docVisible } = await admin.from("project_documents").insert({
-      project_id: projA.id, title: "visible", storage_path: docVisiblePath, is_visible_to_client: true, file_size: 12, mime_type: "text/plain",
+    const docBase = { mime_type: "text/plain", size_bytes: 12, file_name: "x.txt" };
+    const { data: docVisible, error: dvErr } = await admin.from("project_documents").insert({
+      project_id: projA.id, title: "visible", storage_path: docVisiblePath, is_visible_to_client: true, ...docBase,
     }).select("id").single();
-    const { data: docHidden } = await admin.from("project_documents").insert({
-      project_id: projA.id, title: "hidden", storage_path: docHiddenPath, is_visible_to_client: false, file_size: 12, mime_type: "text/plain",
+    if (dvErr || !docVisible) throw new Error(`docVisible: ${dvErr?.message}`);
+    const { data: docHidden, error: dhErr } = await admin.from("project_documents").insert({
+      project_id: projA.id, title: "hidden", storage_path: docHiddenPath, is_visible_to_client: false, ...docBase,
     }).select("id").single();
-    const { data: docForeign } = await admin.from("project_documents").insert({
-      project_id: projB.id, title: "foreign", storage_path: docForeignPath, is_visible_to_client: true, file_size: 12, mime_type: "text/plain",
+    if (dhErr || !docHidden) throw new Error(`docHidden: ${dhErr?.message}`);
+    const { data: docForeign, error: dfErr } = await admin.from("project_documents").insert({
+      project_id: projB.id, title: "foreign", storage_path: docForeignPath, is_visible_to_client: true, ...docBase,
     }).select("id").single();
+    if (dfErr || !docForeign) throw new Error(`docForeign: ${dfErr?.message}`);
 
-    // Cameras
-    const { data: camA } = await admin.from("project_cameras").insert({
-      project_id: projA.id, name: "camA", status: "online",
-    }).select("id").single();
-    const { data: camB } = await admin.from("project_cameras").insert({
-      project_id: projB.id, name: "camB", status: "online",
-    }).select("id").single();
+    const { data: camA, error: caErr } = await admin.from("project_cameras").insert({ project_id: projA.id, name: "camA", status: "online" }).select("id").single();
+    if (caErr || !camA) throw new Error(`camA: ${caErr?.message}`);
+    const { data: camB, error: cbErr } = await admin.from("project_cameras").insert({ project_id: projB.id, name: "camB", status: "online" }).select("id").single();
+    if (cbErr || !camB) throw new Error(`camB: ${cbErr?.message}`);
 
-    // Payments
-    const { data: payA } = await admin.from("project_payments").insert({
-      project_id: projA.id, amount: 100000, currency: "RUB", status: "pending", description: "test",
+    const { data: payA, error: paErr } = await admin.from("project_payments").insert({
+      project_id: projA.id, title: "Pay A", amount: 100000, currency: "RUB", status: "planned",
     }).select("id").single();
-    const { data: payB } = await admin.from("project_payments").insert({
-      project_id: projB.id, amount: 200000, currency: "RUB", status: "pending", description: "test",
+    if (paErr || !payA) throw new Error(`payA: ${paErr?.message}`);
+    const { data: payB, error: pbErr } = await admin.from("project_payments").insert({
+      project_id: projB.id, title: "Pay B", amount: 200000, currency: "RUB", status: "planned",
     }).select("id").single();
+    if (pbErr || !payB) throw new Error(`payB: ${pbErr?.message}`);
 
-    // Daily reports: published in A, draft in A, published in B
-    const { data: drPub } = await admin.from("project_daily_reports").insert({
-      project_id: projA.id, report_date: "2026-06-01", weather: "sunny", workers_count: 5,
-      work_completed: ["x"], next_steps: ["y"], issues: [], published_at: new Date().toISOString(),
+    const drBase = { title: "Daily", summary: "Summary", work_completed: ["x"], next_steps: ["y"], issues: [] as string[] };
+    const { data: drPub, error: drpErr } = await admin.from("project_daily_reports").insert({
+      project_id: projA.id, report_date: "2026-06-01", ...drBase, published_at: new Date().toISOString(),
     }).select("id").single();
-    const { data: drDraft } = await admin.from("project_daily_reports").insert({
-      project_id: projA.id, report_date: "2026-06-02", weather: "cloudy", workers_count: 5,
-      work_completed: ["x"], next_steps: ["y"], issues: [],
+    if (drpErr || !drPub) throw new Error(`drPub: ${drpErr?.message}`);
+    const { data: drDraft, error: drdErr } = await admin.from("project_daily_reports").insert({
+      project_id: projA.id, report_date: "2026-06-02", ...drBase,
     }).select("id").single();
-    const { data: drForeign } = await admin.from("project_daily_reports").insert({
-      project_id: projB.id, report_date: "2026-06-01", weather: "sunny", workers_count: 5,
-      work_completed: ["x"], next_steps: ["y"], issues: [], published_at: new Date().toISOString(),
+    if (drdErr || !drDraft) throw new Error(`drDraft: ${drdErr?.message}`);
+    const { data: drForeign, error: drfErr } = await admin.from("project_daily_reports").insert({
+      project_id: projB.id, report_date: "2026-06-01", ...drBase, published_at: new Date().toISOString(),
     }).select("id").single();
+    if (drfErr || !drForeign) throw new Error(`drForeign: ${drfErr?.message}`);
 
-    // Link visible doc to published report in A
-    await admin.from("project_daily_report_documents").insert({
-      report_id: drPub!.id, document_id: docVisible!.id,
-    });
-    // Link hidden doc to draft report in A (should not be visible)
-    await admin.from("project_daily_report_documents").insert({
-      report_id: drDraft!.id, document_id: docHidden!.id,
-    });
+    await admin.from("project_daily_report_documents").insert({ report_id: drPub.id, document_id: docVisible.id });
+    await admin.from("project_daily_report_documents").insert({ report_id: drDraft.id, document_id: docHidden.id });
 
-    // Messages
-    const { data: msgA } = await admin.from("project_messages").insert({
+    const { data: msgA, error: maErr } = await admin.from("project_messages").insert({
       project_id: projA.id, sender_id: clientA.id, message_type: "user", body: "hello",
     }).select("id").single();
-    const { data: msgB } = await admin.from("project_messages").insert({
+    if (maErr || !msgA) throw new Error(`msgA: ${maErr?.message}`);
+    const { data: msgB, error: mbErr } = await admin.from("project_messages").insert({
       project_id: projB.id, sender_id: clientB.id, message_type: "user", body: "hello",
     }).select("id").single();
+    if (mbErr || !msgB) throw new Error(`msgB: ${mbErr?.message}`);
 
-    // Stage + acceptance in A
-    const { data: stageA } = await admin.from("project_stages").insert({
-      project_id: projA.id, name: "Stage 1", status: "in_review", order_index: 1,
+    const { data: stageA, error: saErr } = await admin.from("project_stages").insert({
+      project_id: projA.id, title: "Stage 1", status: "waiting_acceptance", sort_order: 1,
     }).select("id").single();
-    const { data: accA } = await admin.from("project_stage_acceptances").insert({
-      stage_id: stageA!.id, status: "pending", requested_at: new Date().toISOString(),
+    if (saErr || !stageA) throw new Error(`stageA: ${saErr?.message}`);
+    const { data: accA, error: aaErr } = await admin.from("project_stage_acceptances").insert({
+      stage_id: stageA.id, status: "pending", attempt_number: 1, requested_at: new Date().toISOString(),
     }).select("id").single();
-    const { data: stageB } = await admin.from("project_stages").insert({
-      project_id: projB.id, name: "Stage 1", status: "in_review", order_index: 1,
+    if (aaErr || !accA) throw new Error(`accA: ${aaErr?.message}`);
+    const { data: stageB, error: sbErr } = await admin.from("project_stages").insert({
+      project_id: projB.id, title: "Stage 1", status: "waiting_acceptance", sort_order: 1,
     }).select("id").single();
-    const { data: accB } = await admin.from("project_stage_acceptances").insert({
-      stage_id: stageB!.id, status: "pending", requested_at: new Date().toISOString(),
+    if (sbErr || !stageB) throw new Error(`stageB: ${sbErr?.message}`);
+    const { data: accB, error: abErr } = await admin.from("project_stage_acceptances").insert({
+      stage_id: stageB.id, status: "pending", attempt_number: 1, requested_at: new Date().toISOString(),
     }).select("id").single();
+    if (abErr || !accB) throw new Error(`accB: ${abErr?.message}`);
 
     // ── RLS MATRIX ───────────────────────────────────────────────────
     // anonymous: bare anon key
@@ -435,8 +435,9 @@ Deno.serve(async (req: Request) => {
     }), 401);
 
     // cameras: camA has no source yet (we deleted via admin-insert+delete sequence above? actually we inserted source for camA via admin/camera_sources/admin_insert. let's use camB which has none from clientB perspective—but clientA can't see it. Use camA's status: we added a source. Test camera_not_configured needs no-source camera; we'll create one)
-    const { data: camNoSource } = await admin.from("project_cameras").insert({ project_id: projA.id, name: "no-src", status: "online" }).select("id").single();
-    await edgeRecord("cameras", "own_no_source_camera_not_configured", await callEdge("get-project-camera-session", tokenA, { camera_id: camNoSource!.id }), 200, "camera_not_configured", false, ["provider","provider_camera_id","configuration_reference","rtsp","username","password","token","apiKey"]);
+    const { data: camNoSource, error: cnErr } = await admin.from("project_cameras").insert({ project_id: projA.id, name: "no-src", status: "online" }).select("id").single();
+    if (cnErr || !camNoSource) throw new Error(`camNoSource: ${cnErr?.message}`);
+    await edgeRecord("cameras", "own_no_source_camera_not_configured", await callEdge("get-project-camera-session", tokenA, { camera_id: camNoSource.id }), 200, "camera_not_configured", false, ["provider","provider_camera_id","configuration_reference","rtsp","username","password","token","apiKey"]);
     await edgeRecord("cameras", "foreign_404", await callEdge("get-project-camera-session", tokenA, { camera_id: camB!.id }), 404, "camera_not_found");
     await edgeRecord("cameras", "random_uuid_404", await callEdge("get-project-camera-session", tokenA, { camera_id: "00000000-0000-0000-0000-000000000000" }), 404, "camera_not_found");
     await edgeRecord("cameras", "invalid_uuid_404", await callEdge("get-project-camera-session", tokenA, { camera_id: "nope" }), 404, "camera_not_found");
