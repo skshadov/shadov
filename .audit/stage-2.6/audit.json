@@ -1,0 +1,596 @@
+{
+  "stage": "2.6",
+  "specificationCheck": {
+    "passed": true,
+    "errors": []
+  },
+  "servicePages": [
+    {
+      "slug": "remont",
+      "route": "/remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "remont-pod-klyuch",
+      "route": "/remont-pod-klyuch",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "kosmeticheskiy-remont",
+      "route": "/kosmeticheskiy-remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "ekonom-remont",
+      "route": "/ekonom-remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "standartnyy-remont",
+      "route": "/standartnyy-remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "evroremont",
+      "route": "/evroremont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "biznes-remont",
+      "route": "/biznes-remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "premialnyy-remont",
+      "route": "/premialnyy-remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "chernovoy-remont",
+      "route": "/chernovoy-remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "chistovaya-otdelka",
+      "route": "/chistovaya-otdelka",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "ukladka-plitki",
+      "route": "/ukladka-plitki",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "stroitelstvo",
+      "route": "/stroitelstvo",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "stroitelstvo-domov-pod-klyuch",
+      "route": "/stroitelstvo-domov-pod-klyuch",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "karkasnye-doma",
+      "route": "/karkasnye-doma",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "doma-iz-sip-paneley",
+      "route": "/doma-iz-sip-paneley",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "doma-iz-brusa",
+      "route": "/doma-iz-brusa",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "doma-iz-kleenogo-brusa",
+      "route": "/doma-iz-kleenogo-brusa",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "doma-iz-gazobetona",
+      "route": "/doma-iz-gazobetona",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "doma-iz-keramicheskih-blokov",
+      "route": "/doma-iz-keramicheskih-blokov",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "kirpichnye-doma",
+      "route": "/kirpichnye-doma",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "monolitnye-doma",
+      "route": "/monolitnye-doma",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "kombinirovannye-doma",
+      "route": "/kombinirovannye-doma",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "mnogokvartirnye-doma",
+      "route": "/mnogokvartirnye-doma",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "generalnyy-podryad",
+      "route": "/generalnyy-podryad",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "monolitnye-raboty",
+      "route": "/monolitnye-raboty",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "fundamenty",
+      "route": "/fundamenty",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "kladochnye-raboty",
+      "route": "/kladochnye-raboty",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "krovelnye-raboty",
+      "route": "/krovelnye-raboty",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "fasadnye-raboty",
+      "route": "/fasadnye-raboty",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "inzhenernye-sistemy",
+      "route": "/inzhenernye-sistemy",
+      "category": "engineering",
+      "isStub": false
+    },
+    {
+      "slug": "elektromontazh",
+      "route": "/elektromontazh",
+      "category": "engineering",
+      "isStub": false
+    },
+    {
+      "slug": "santehnika",
+      "route": "/santehnika",
+      "category": "engineering",
+      "isStub": false
+    },
+    {
+      "slug": "vodosnabzhenie-kanalizatsiya",
+      "route": "/vodosnabzhenie-kanalizatsiya",
+      "category": "engineering",
+      "isStub": false
+    },
+    {
+      "slug": "otoplenie",
+      "route": "/otoplenie",
+      "category": "engineering",
+      "isStub": false
+    },
+    {
+      "slug": "teplyy-pol",
+      "route": "/teplyy-pol",
+      "category": "engineering",
+      "isStub": false
+    }
+  ],
+  "servicePageCounts": {
+    "total": 35,
+    "active": 35,
+    "stubs": 0,
+    "construction": 18,
+    "repair": 11,
+    "engineering": 6
+  },
+  "tilePage": {
+    "route": "/ukladka-plitki",
+    "h1": "Укладка плитки и керамогранита",
+    "startingPriceItemId": "tiling-standart-keram",
+    "startingPriceValue": 2800,
+    "priceItems": 20,
+    "routeFile": "src/routes/ukladka-plitki.tsx",
+    "usesRepairServicePage": true
+  },
+  "calculator": {
+    "route": "/kalkulyator-stoimosti",
+    "modes": [
+      "repair",
+      "house",
+      "construction",
+      "engineering"
+    ],
+    "ctaCount": 16
+  },
+  "informationRoutes": [
+    {
+      "route": "/about",
+      "routeFile": "src/routes/about.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/team",
+      "routeFile": "src/routes/team.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/portfolio",
+      "routeFile": "src/routes/portfolio.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/portfolio/$slug",
+      "routeFile": "src/routes/portfolio.$slug.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": true,
+      "hasCanonical": false
+    },
+    {
+      "route": "/contacts",
+      "routeFile": "src/routes/contacts.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/reviews",
+      "routeFile": "src/routes/reviews.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/faq",
+      "routeFile": "src/routes/faq.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/how-we-work",
+      "routeFile": "src/routes/how-we-work.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/kontrol-kachestva",
+      "routeFile": "src/routes/kontrol-kachestva.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/sro-i-dokumenty",
+      "routeFile": "src/routes/sro-i-dokumenty.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    }
+  ],
+  "legalRoutes": [
+    {
+      "route": "/privacy",
+      "routeFile": "src/routes/privacy.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true,
+      "hasService": false,
+      "hasOffer": false,
+      "hasReview": false,
+      "hasAggregateRating": false
+    },
+    {
+      "route": "/personal-data-consent",
+      "routeFile": "src/routes/personal-data-consent.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true,
+      "hasService": false,
+      "hasOffer": false,
+      "hasReview": false,
+      "hasAggregateRating": false
+    },
+    {
+      "route": "/cookies",
+      "routeFile": "src/routes/cookies.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true,
+      "hasService": false,
+      "hasOffer": false,
+      "hasReview": false,
+      "hasAggregateRating": false
+    },
+    {
+      "route": "/terms",
+      "routeFile": "src/routes/terms.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true,
+      "hasService": false,
+      "hasOffer": false,
+      "hasReview": false,
+      "hasAggregateRating": false
+    },
+    {
+      "route": "/requisites",
+      "routeFile": "src/routes/requisites.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true,
+      "hasService": false,
+      "hasOffer": false,
+      "hasReview": false,
+      "hasAggregateRating": false
+    }
+  ],
+  "remainingRouteStubs": [
+    "/admin",
+    "/client/project/$id",
+    "/client",
+    "/login"
+  ],
+  "futureStageRoutes": [
+    {
+      "route": "/login",
+      "routeFile": "src/routes/login.tsx",
+      "plannedStage": 3,
+      "usesRouteStub": true,
+      "hasNoindex": true
+    },
+    {
+      "route": "/client",
+      "routeFile": "src/routes/client.tsx",
+      "plannedStage": 4,
+      "usesRouteStub": true,
+      "hasNoindex": true
+    },
+    {
+      "route": "/client/project/$id",
+      "routeFile": "src/routes/client.project.$id.tsx",
+      "plannedStage": 4,
+      "usesRouteStub": true,
+      "hasNoindex": true
+    },
+    {
+      "route": "/admin",
+      "routeFile": "src/routes/admin.tsx",
+      "plannedStage": 5,
+      "usesRouteStub": true,
+      "hasNoindex": true
+    }
+  ],
+  "navigation": {
+    "mainNavLinks": 31,
+    "unique": true,
+    "hasCalculator": true,
+    "hasPortfolio": true,
+    "hasAbout": true,
+    "hasContacts": true,
+    "hasAdmin": false,
+    "hasClient": false,
+    "hasLogin": false
+  },
+  "footerLinks": {
+    "info": [
+      "/about",
+      "/team",
+      "/how-we-work",
+      "/kontrol-kachestva",
+      "/sro-i-dokumenty",
+      "/portfolio",
+      "/reviews",
+      "/faq"
+    ],
+    "legal": [
+      "/privacy",
+      "/personal-data-consent",
+      "/cookies",
+      "/terms",
+      "/requisites"
+    ],
+    "infoCount": 8,
+    "legalCount": 5
+  },
+  "formConsentLinks": {
+    "linksToConsent": true,
+    "linksToPrivacy": true,
+    "consentRequired": true,
+    "noBackendCall": true,
+    "usesLocalStorage": true,
+    "storageKey": "shadov:estimate-draft"
+  },
+  "companyDataUsage": {
+    "fields": {
+      "legalName": false,
+      "brandName": true,
+      "brandFull": true,
+      "domain": true,
+      "inn": false,
+      "ogrn": false,
+      "kpp": false,
+      "legalAddress": false,
+      "officeAddress": false,
+      "phone": false,
+      "phoneE164": false,
+      "email": false,
+      "telegram": false,
+      "whatsapp": false,
+      "workingHours": false,
+      "sroName": false,
+      "sroNumber": false,
+      "sroRegistryUrl": false,
+      "yearsOnMarket": false,
+      "staffCount": false,
+      "projectsCount": false,
+      "warrantyYears": false
+    },
+    "isFilledHelperUsed": {
+      "contacts": true,
+      "requisites": true,
+      "privacy": true,
+      "consent": true,
+      "footer": true
+    }
+  },
+  "storageInventory": {
+    "localStorageKeys": [
+      "shadov:estimate-draft",
+      "shadov-cost-calculator-v1"
+    ],
+    "sessionStorageKeys": [],
+    "cookies": [],
+    "analyticsScripts": false,
+    "consentBannerNeeded": false
+  },
+  "portfolioIntegrity": {
+    "emptyStateText": true,
+    "noFakeProjects": true,
+    "dynamicSlugReturns404": true,
+    "hasCalculatorCta": true
+  },
+  "reviewsIntegrity": {
+    "hasEmptyState": true,
+    "noFakeReviews": true,
+    "noReviewSchema": true,
+    "noAggregateRating": true
+  },
+  "structuredData": {
+    "faqHasFaqPage": true,
+    "tileHasBreadcrumb": true,
+    "legalNoServiceOffer": true,
+    "reviewsNoReviewSchema": true,
+    "portfolioNoItemList": true
+  },
+  "metadata": {
+    "uniqueTitles": 14,
+    "uniqueCanonicals": 0
+  },
+  "accessibility": {
+    "containerPage": true,
+    "h1Once": true,
+    "hasMainLandmark": true,
+    "breadcrumbsAriaLabel": true
+  },
+  "responsiveChecks": {
+    "notes": [
+      "Контейнеры используют container-page с горизонтальными отступами под 320 px.",
+      "Информационные карточки rounded-xl border bg-card перестраиваются в одну колонку.",
+      "Длинные юридические тексты разбиты на InfoSection и не выходят за viewport.",
+      "Кнопки CTA имеют min-h-11 (44 px tap target).",
+      "Контакты и реквизиты — flex/grid с авто-переносом на мобильных."
+    ],
+    "breakpointsConsidered": [
+      "320px",
+      "375px",
+      "430px",
+      "768px",
+      "1024px",
+      "1440px",
+      "1920px"
+    ]
+  },
+  "forbiddenSearch": {
+    "matchesOutsideValidator": []
+  },
+  "regressionChecks": {
+    "servicePages": 35,
+    "priceItems": 334,
+    "calculatorModes": 4,
+    "calculatorRoutes": 1,
+    "ctaCount": 16
+  },
+  "stage2Completion": {
+    "allServicePagesComplete": true,
+    "calculatorComplete": true,
+    "legalPagesComplete": true,
+    "informationPagesComplete": true,
+    "formsRemainDemo": true,
+    "backendNotStarted": true,
+    "readyForStage3": true,
+    "blockingIssues": []
+  },
+  "totals": {
+    "priceItems": 334,
+    "servicePages": 35,
+    "activeServicePages": 35,
+    "serviceStubPages": 0,
+    "repairServicePages": 11,
+    "constructionServicePages": 18,
+    "engineeringServicePages": 6,
+    "calculatorRoutes": 1,
+    "calculatorModes": 4,
+    "tilePages": 1,
+    "tilePriceItems": 20,
+    "backendConnections": 0,
+    "authRoutesActivated": 0,
+    "adminRoutesActivated": 0,
+    "clientRoutesActivated": 0,
+    "informationRoutes": 10,
+    "legalRoutes": 5,
+    "remainingStubRoutes": 4
+  }
+}

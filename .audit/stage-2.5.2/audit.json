@@ -53,8 +53,8 @@
       "existsInServicePages": true,
       "existsInEngineeringPages": false,
       "isActiveEngineeringService": false,
-      "hasRouteStub": true,
-      "hasNoindexFollow": true
+      "hasRouteStub": false,
+      "hasNoindexFollow": false
     }
   },
   "duplicateCheck": {
@@ -768,7 +768,7 @@
   },
   "regressionChecks": {
     "constructionPages": 18,
-    "repairPages": 10,
+    "repairPages": 11,
     "tileStubPages": 1,
     "engineeringPagesInServicePages": 6,
     "servicePagesTotal": 35,

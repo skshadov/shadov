@@ -80,7 +80,7 @@
       "turnkey-materials"
     ],
     "disclaimers": 4,
-    "links": 15
+    "links": 16
   },
   "calculatorRoute": {
     "route": "/kalkulyator-stoimosti",
@@ -496,6 +496,12 @@
       "mode": "engineering",
       "category": "underfloor_heating",
       "inServicePages": true
+    },
+    {
+      "slug": "ukladka-plitki",
+      "mode": "repair",
+      "category": "tiling",
+      "inServicePages": true
     }
   ],
   "localStorage": {
@@ -534,12 +540,12 @@
   },
   "regressionChecks": {
     "servicePages": 35,
-    "repairActivePages": 10,
+    "repairActivePages": 11,
     "constructionActivePages": 18,
     "engineeringActivePages": 6,
-    "tileStubPages": 1,
-    "tileIsRouteStub": true,
-    "tileNoindexFollow": true,
+    "tileActivePages": 1,
+    "tileIsRouteStub": false,
+    "tileNoindexFollow": false,
     "pricesTotal": 334
   },
   "totals": {
@@ -547,9 +553,9 @@
     "calculatorModes": 4,
     "priceItems": 334,
     "servicePages": 35,
-    "repairActivePages": 10,
+    "repairActivePages": 11,
     "constructionActivePages": 18,
     "engineeringActivePages": 6,
-    "tileStubPages": 1
+    "tileActivePages": 1
   }
 }

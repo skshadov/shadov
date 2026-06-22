@@ -27,6 +27,7 @@ const REQUIRED_REPAIR_ROUTES = [
   "/premialnyy-remont",
   "/chernovoy-remont",
   "/chistovaya-otdelka",
+  "/ukladka-plitki",
 ] as const;
 
 // Утверждённые H1 (дословно).
@@ -42,6 +43,7 @@ const EXPECTED_H1: Record<string, string> = {
   "/premialnyy-remont": "Премиальный ремонт квартиры или частного дома",
   "/chernovoy-remont": "Черновой ремонт квартиры или частного дома",
   "/chistovaya-otdelka": "Чистовая отделка квартиры или частного дома",
+  "/ukladka-plitki": "Укладка плитки и керамогранита",
 };
 
 // Утверждённые стартовые цены (без пробелов, только число) — сверяем подстрокой.
@@ -56,6 +58,7 @@ const EXPECTED_STARTING_PRICE_NUMBER: Record<string, string> = {
   "/premialnyy-remont": "48 000",
   "/chernovoy-remont": "10 000",
   "/chistovaya-otdelka": "8 000",
+  "/ukladka-plitki": "2 800",
 };
 
 // Утверждённое количество included для пакетов с фиксированным составом.
@@ -102,9 +105,8 @@ function normalizeSpaces(s: string): string {
   return s.replace(/\u00A0/g, " ");
 }
 
-// Подэтап 2.5.2A: страница-заглушка /ukladka-plitki также относится к
-// category=repair (отделочные работы), но содержательной валидации не
-// проходит — для этого блока учитываем только активные записи.
+// Подэтап 2.6: 11 активных страниц ремонта (включая активированную
+// /ukladka-plitki). Заглушек среди ремонта быть не должно.
 const repairPages = SERVICE_PAGES.filter((p) => p.category === "repair" && !p.isStub);
 const repairRoutes = repairPages.map((p) => p.route);
 
@@ -918,8 +920,8 @@ assert(
   `массив инженерных route не совпадает с утверждённым.\n  ожидается: ${JSON.stringify(ENGINEERING_ACTIVE_ROUTES)}\n  найдено:   ${JSON.stringify(ENG_ROUTES)}`,
 );
 
-// Подэтап 2.5.2A — регрессия: 35 = repair(10) + construction(18) + engineering(6)
-// + плиточная заглушка /ukladka-plitki (category=repair, isStub=true).
+// Подэтап 2.6: 35 = repair(11) + construction(18) + engineering(6).
+// /ukladka-plitki активирована, isStub=false, RouteStub снят.
 if (SERVICE_PAGES.length !== 35) {
   fail(`SERVICE_PAGES: ожидается 35, найдено ${SERVICE_PAGES.length}`);
 }
@@ -928,21 +930,23 @@ if (engineeringPages.length !== 6) {
   fail(`инженерных записей в SERVICE_PAGES: ожидается 6, найдено ${engineeringPages.length}`);
 }
 
-// Плиточная заглушка: ровно одна, корректная категория, не в инженерных.
 const tilePages = SERVICE_PAGES.filter((p) => p.slug === "ukladka-plitki");
 if (tilePages.length !== 1) fail(`плиточных записей: ожидается 1, найдено ${tilePages.length}`);
 const tile = tilePages[0];
 if (tile.category === "engineering") fail("/ukladka-plitki не должна быть category=engineering");
 if (tile.category !== "repair") fail(`/ukladka-plitki: ожидается category=repair, найдено ${tile.category}`);
-if (tile.isStub !== true) fail("/ukladka-plitki: ожидается isStub=true");
+if (tile.isStub === true) fail("/ukladka-plitki: на этапе 2.6 активирована, isStub быть не должно");
 if (ENGINEERING_SERVICE_PAGES.some((p) => p.slug === "ukladka-plitki")) {
   fail("/ukladka-plitki не должна входить в ENGINEERING_SERVICE_PAGES");
 }
 {
   const tileRouteSrc = readFileSync(resolve(process.cwd(), "src/routes/ukladka-plitki.tsx"), "utf8");
-  if (!/RouteStub/.test(tileRouteSrc)) fail("/ukladka-plitki: ожидается RouteStub");
-  if (!/noindex,\s*follow/.test(tileRouteSrc)) fail("/ukladka-plitki: ожидается robots noindex, follow");
+  if (/RouteStub/.test(tileRouteSrc)) fail("/ukladka-plitki: RouteStub снят на этапе 2.6");
+  if (/noindex/i.test(tileRouteSrc)) fail("/ukladka-plitki: noindex снят на этапе 2.6");
   if (/EngineeringServicePage/.test(tileRouteSrc)) fail("/ukladka-plitki: EngineeringServicePage не должен подключаться");
+  if (!/RepairServicePage/.test(tileRouteSrc)) fail("/ukladka-plitki: должен использовать RepairServicePage");
+  if (!/rel:\s*"canonical"/.test(tileRouteSrc)) fail("/ukladka-plitki: отсутствует canonical");
+  if (!/BreadcrumbList/.test(tileRouteSrc)) fail("/ukladka-plitki: отсутствует BreadcrumbList");
 }
 const engRouteSet = new Set<string>();
 const engSlugSet = new Set<string>();
@@ -1141,7 +1145,6 @@ if (CALCULATOR_MODES.length !== 4) fail(`режимов калькулятора
 {
   // CTA ведут на существующий route и не подключены к /ukladka-plitki.
   for (const link of CALCULATOR_LINKS_FROM_SERVICES) {
-    if (link.slug === "ukladka-plitki") fail("CTA калькулятора не должна быть на /ukladka-plitki");
     if (!SERVICE_PAGES.some((p) => p.slug === link.slug)) fail(`CTA калькулятора ссылается на отсутствующий slug ${link.slug}`);
     if (!(CALCULATOR_MODES as string[]).includes(link.mode)) fail(`CTA mode неизвестен: ${link.mode}`);
     if (link.category && !ALL_PRICE_CATEGORIES.includes(link.category as never)) fail(`CTA category неизвестна: ${link.category}`);
@@ -1173,10 +1176,9 @@ if (CALCULATOR_MODES.length !== 4) fail(`режимов калькулятора
   }
 }
 {
-  // Плиточная заглушка осталась RouteStub с noindex, follow.
   const tile = readFileSync(resolve(process.cwd(), "src/routes/ukladka-plitki.tsx"), "utf8");
-  if (!/RouteStub/.test(tile)) fail("/ukladka-plitki больше не RouteStub");
-  if (!/noindex,\s*follow/.test(tile)) fail("/ukladka-plitki без noindex, follow");
+  if (/RouteStub/.test(tile)) fail("/ukladka-plitki: RouteStub снят на этапе 2.6");
+  if (/noindex/i.test(tile)) fail("/ukladka-plitki: noindex снят на этапе 2.6");
 }
 
 console.log("✓ validate-content 2.5.3: пройдена.");
