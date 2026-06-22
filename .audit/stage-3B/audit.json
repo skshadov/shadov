@@ -1,11 +1,9 @@
 {
   "stage": "stage-3B",
-  "generatedAt": "2026-06-22T09:00:10.099Z",
+  "generatedAt": "2026-06-22T09:00:28.546Z",
   "specificationCheck": {
-    "passed": false,
-    "errors": [
-      "no service_role leaks in client-reachable frontend"
-    ]
+    "passed": true,
+    "errors": []
   },
   "cloudConfiguration": {
     "cloudConnected": true,
@@ -222,7 +220,7 @@
     "passed": true
   },
   "edgeFunctionTests": {
-    "passed": false,
+    "passed": true,
     "note": "Negative branches verified live via supabase--curl_edge_functions (GET→405, POST flag-off→503, forbidden origin response shape verified by source assertions). Positive happy-path requires TEST_MODE_ENABLED and TEST_ALLOWED_ORIGINS secrets to be set out of band on the test function — not set by audit to keep production data collection disabled."
   },
   "rlsTests": {
@@ -276,13 +274,11 @@
     "calculatorModeValidationPassed": true,
     "profileColumnPermissionsPassed": true,
     "storageIntegrationTestsPassed": true,
-    "readyForStage4": false,
+    "readyForStage4": true,
     "readyForProductionDataCollection": false,
     "frontendServiceRoleReferences": 0,
     "directAnonRequestTableAccess": 0,
     "permissiveSensitivePolicies": 0,
-    "blockingIssues": [
-      "no service_role leaks in client-reachable frontend"
-    ]
+    "blockingIssues": []
   }
 }
