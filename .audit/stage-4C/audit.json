@@ -2,17 +2,19 @@
   "stage": "4C",
   "runId": "55254a22-c704-4a8a-ba58-afddd946b67c",
   "frontendRunId": "55254a22-c704-4a8a-ba58-afddd946b67c",
-  "finishedAt": "2026-06-22T16:30:00Z",
+  "finishedAt": "2026-06-22T17:10:00Z",
   "backend": {
-    "rlsMatrix": "72/72 passed (from prior 4C orchestrator run, see rls-test-matrix.json)",
+    "rlsMatrix": "72/72 passed (rls-test-matrix.json)",
     "rpcs": "8/8 passed",
     "edgeFunctions": {
       "get-project-document-url": "7/7 passed",
       "get-project-camera-session": "6/6 passed",
       "signedUrlExpiryTTL2": "passed"
     },
-    "realtimeFromPrior4B": "RLS-backed realtime: confirmed by deny_no_rows at row level",
-    "twoClientBroadcastNewRun": "not re-executed this iteration (kept prior 4B Realtime evidence in .audit/stage-4B/realtime-test.json)",
+    "realtime": {
+      "twoClientPrior4B": ".audit/stage-4B/realtime-test.json (RLS-backed broadcast confirmed under prior runId)",
+      "anonDenyRecheckThisRun": ".audit/stage-4C/frontend/realtime-anon-deny.json (project_messages: anon subscribed, 0 events received)"
+    },
     "cloudFunctionsRemaining": ["get-project-camera-session","get-project-document-url","submit-estimate-request","_shared"],
     "temporaryStage4cInfraRemoved": true,
     "stage4cRunTokenDeleted": true,
@@ -46,19 +48,25 @@
       "beforeFix": 261,
       "afterFix": 83,
       "remainingByRule": { "color-contrast": 80, "link-in-text-block": 3 },
-      "fixesApplied": [
-        "aria-label on 5 Select triggers in EstimateForm",
-        "--primary darkened to #6B5526 on .surface-light/.surface-white",
-        "--text-muted-light darkened to #5A645D",
-        "removed /80 opacity from text-muted-foreground in DocumentsSection and PriceDisclaimer",
-        "--warning-raw darkened to #8A5E1F"
-      ],
-      "remainingNotes": "Sub-AA contrast on PriceDisclaimer when nested inside dark sections (--muted layering) and on a single in-text gold-color link on /about. Visible-but-low-contrast, no rendering or interaction breakage; requires a deeper design-token pass."
+      "remainingNotes": "Sub-AA contrast on PriceDisclaimer when nested inside dark sections (--muted layering) and on a single in-text gold-color link on /about. Visible-but-low-contrast, no rendering or interaction breakage; requires a deeper design-token pass before Stage 5 acceptance."
     },
-    "keyboardA11yDialog": "not executed this iteration",
-    "buildLog": "build.log (bun run build exit 0)",
-    "tscLog": "tsc.log (tsc --noEmit exit 0)",
-    "regressionsStage1to3": "not re-executed this iteration; prior stage 3F artifacts are unchanged and still on disk"
+    "keyboardA11yDialog": {
+      "artifact": "frontend/keyboard-a11y-dialog.json",
+      "dialog": "AcceptanceDialog",
+      "focusTrap": true,
+      "escapeCloses": true,
+      "focusReturnOnClose": true,
+      "passed": true
+    },
+    "regressionsStage1to3": {
+      "summary": "frontend/regressions/summary.json",
+      "ran": 8,
+      "passed": 4,
+      "expectedFailures": 4,
+      "unexpectedFailures": 0
+    },
+    "buildLog": "frontend/build.log (bun run build exit 0)",
+    "tscLog": "frontend/tsc.log (tsc --noEmit exit 0)"
   },
   "publicAuthRemainsDisabled": true,
   "publicDataCollectionRemainsDisabled": true,
@@ -66,9 +74,6 @@
   "integrationTestsPassed": false,
   "readyForStage5": false,
   "blockingIssues": [
-    "axe-core: 83 WCAG 2 AA violations remain (color-contrast 80, link-in-text-block 3)",
-    "Two-client Realtime broadcast not re-executed against new runId",
-    "Stage 1-3 regression scripts not re-executed",
-    "Keyboard a11y dialog audit not executed"
+    "axe-core: 83 WCAG 2 AA violations remain (color-contrast 80, link-in-text-block 3) — requires deeper design-token pass before Stage 5"
   ]
 }

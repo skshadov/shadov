@@ -4,8 +4,10 @@
     "passed": false,
     "errors": [
       "/login: должен оставаться RouteStub",
+      "/client: должен оставаться RouteStub",
+      "/client/project/$id: должен оставаться RouteStub",
       "EstimateForm: обнаружен backend-вызов",
-      "forbiddenSearch: 1"
+      "forbiddenSearch: 2"
     ]
   },
   "servicePages": [
@@ -392,9 +394,7 @@
     }
   ],
   "remainingRouteStubs": [
-    "/admin",
-    "/client/project/$id",
-    "/client"
+    "/admin"
   ],
   "futureStageRoutes": [
     {
@@ -408,14 +408,14 @@
       "route": "/client",
       "routeFile": "src/routes/client.tsx",
       "plannedStage": 4,
-      "usesRouteStub": true,
+      "usesRouteStub": false,
       "hasNoindex": true
     },
     {
       "route": "/client/project/$id",
       "routeFile": "src/routes/client.project.$id.tsx",
       "plannedStage": 4,
-      "usesRouteStub": true,
+      "usesRouteStub": false,
       "hasNoindex": true
     },
     {
@@ -561,6 +561,10 @@
       {
         "where": "src/components/forms/EstimateForm.tsx",
         "pattern": "0000000000"
+      },
+      {
+        "where": "src/lib/audit-stage-4.ts",
+        "pattern": "0000000000"
       }
     ]
   },
@@ -581,8 +585,10 @@
     "readyForStage3": false,
     "blockingIssues": [
       "/login: должен оставаться RouteStub",
+      "/client: должен оставаться RouteStub",
+      "/client/project/$id: должен оставаться RouteStub",
       "EstimateForm: обнаружен backend-вызов",
-      "forbiddenSearch: 1"
+      "forbiddenSearch: 2"
     ]
   },
   "totals": {
@@ -603,6 +609,6 @@
     "clientRoutesActivated": 0,
     "informationRoutes": 10,
     "legalRoutes": 5,
-    "remainingStubRoutes": 3
+    "remainingStubRoutes": 1
   }
 }

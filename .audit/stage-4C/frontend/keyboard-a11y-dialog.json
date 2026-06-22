@@ -1,0 +1,18 @@
+{
+  "tool": "static code review of src/components/client/AcceptanceDialog.tsx",
+  "checkedAt": "2026-06-22T17:00:00Z",
+  "dialog": "AcceptanceDialog (hand-rolled, role=dialog, aria-modal=true, aria-labelledby=acc-title)",
+  "checks": {
+    "roleDialog": true,
+    "ariaModal": true,
+    "ariaLabelledby": true,
+    "escapeCloses": true,
+    "autoFocusOnOpen": true,
+    "focusTrap": true,
+    "focusReturnOnClose": true,
+    "submitDisabledWhileBusy": true,
+    "errorAnnounced": "role=alert on inline error"
+  },
+  "fixApplied": "Added Tab/Shift+Tab focus trap and restore previously focused element on close.",
+  "passed": true
+}

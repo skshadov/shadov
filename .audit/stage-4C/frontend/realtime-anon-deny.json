@@ -1,0 +1,8 @@
+{
+  "table": "project_messages",
+  "anonSubscribed": true,
+  "eventsReceived": 0,
+  "anonReceivedNoEvents": true,
+  "runId": "55254a22-c704-4a8a-ba58-afddd946b67c",
+  "note": "Anon client subscribed to project_messages via Realtime and received 0 row events (RLS-backed realtime: subscriber can connect but rows are filtered by RLS when they have no membership)."
+}
