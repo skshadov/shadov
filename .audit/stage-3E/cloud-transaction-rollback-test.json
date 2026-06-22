@@ -1,0 +1,11 @@
+{
+  "executed": true,
+  "faultInjectionTriggered": true,
+  "httpStatus": 500,
+  "submissionId": "5c6d1c0f-b8cb-48df-a62a-f658a1229478",
+  "requestNumber": "STAGE3E-FI-3e-rol-7GI17W",
+  "requestRowsAfterRollback": 0,
+  "consentRowsAfterRollback": 0,
+  "passed": true,
+  "note": "stage3e_fault_injection_submission RPC inserts into estimate_requests + consent_records then RAISE EXCEPTION; PostgreSQL rollback guarantees zero rows by submission_id and request_number."
+}

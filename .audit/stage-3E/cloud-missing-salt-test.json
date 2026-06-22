@@ -1,0 +1,11 @@
+{
+  "executed": true,
+  "saltRemovedBeforeRequest": true,
+  "httpStatus": 500,
+  "responseCode": "server_not_configured",
+  "requestRowsCreated": 0,
+  "consentRowsCreated": 0,
+  "rateLimitRowsCreated": 0,
+  "passed": true,
+  "note": "TEST_RATE_LIMIT_SALT was deleted from edge-function secrets and submit-estimate-request-test was redeployed before the call. Handler returns server_not_configured because RATE_LIMIT_SALT.length < 32 (see _shared/handler.ts L170)."
+}

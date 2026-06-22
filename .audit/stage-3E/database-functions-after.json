@@ -1,0 +1,19 @@
+{
+  "capturedAt": "2026-06-22T10:31:48Z",
+  "queriedVia": "pg_proc JOIN pg_namespace; verified via information_schema.routines",
+  "publicFunctions": [
+    {"function_name":"has_role","language":"sql"},
+    {"function_name":"handle_new_user","language":"plpgsql"},
+    {"function_name":"set_updated_at","language":"plpgsql"},
+    {"function_name":"is_project_member","language":"sql"},
+    {"function_name":"consume_submission_rate_limit","language":"plpgsql"},
+    {"function_name":"cleanup_expired_rate_limits","language":"plpgsql"},
+    {"function_name":"create_estimate_request_transaction","language":"plpgsql"}
+  ],
+  "testOnlyFunctions": [],
+  "testOnlyRpcExists": false,
+  "checkedNames": [
+    "stage3d_fault_injection_submission",
+    "stage3e_fault_injection_submission"
+  ]
+}
