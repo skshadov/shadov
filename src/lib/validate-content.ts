@@ -920,8 +920,8 @@ assert(
   `массив инженерных route не совпадает с утверждённым.\n  ожидается: ${JSON.stringify(ENGINEERING_ACTIVE_ROUTES)}\n  найдено:   ${JSON.stringify(ENG_ROUTES)}`,
 );
 
-// Подэтап 2.5.2A — регрессия: 35 = repair(10) + construction(18) + engineering(6)
-// + плиточная заглушка /ukladka-plitki (category=repair, isStub=true).
+// Подэтап 2.6: 35 = repair(11) + construction(18) + engineering(6).
+// /ukladka-plitki активирована, isStub=false, RouteStub снят.
 if (SERVICE_PAGES.length !== 35) {
   fail(`SERVICE_PAGES: ожидается 35, найдено ${SERVICE_PAGES.length}`);
 }
@@ -930,21 +930,23 @@ if (engineeringPages.length !== 6) {
   fail(`инженерных записей в SERVICE_PAGES: ожидается 6, найдено ${engineeringPages.length}`);
 }
 
-// Плиточная заглушка: ровно одна, корректная категория, не в инженерных.
 const tilePages = SERVICE_PAGES.filter((p) => p.slug === "ukladka-plitki");
 if (tilePages.length !== 1) fail(`плиточных записей: ожидается 1, найдено ${tilePages.length}`);
 const tile = tilePages[0];
 if (tile.category === "engineering") fail("/ukladka-plitki не должна быть category=engineering");
 if (tile.category !== "repair") fail(`/ukladka-plitki: ожидается category=repair, найдено ${tile.category}`);
-if (tile.isStub !== true) fail("/ukladka-plitki: ожидается isStub=true");
+if (tile.isStub === true) fail("/ukladka-plitki: на этапе 2.6 активирована, isStub быть не должно");
 if (ENGINEERING_SERVICE_PAGES.some((p) => p.slug === "ukladka-plitki")) {
   fail("/ukladka-plitki не должна входить в ENGINEERING_SERVICE_PAGES");
 }
 {
   const tileRouteSrc = readFileSync(resolve(process.cwd(), "src/routes/ukladka-plitki.tsx"), "utf8");
-  if (!/RouteStub/.test(tileRouteSrc)) fail("/ukladka-plitki: ожидается RouteStub");
-  if (!/noindex,\s*follow/.test(tileRouteSrc)) fail("/ukladka-plitki: ожидается robots noindex, follow");
+  if (/RouteStub/.test(tileRouteSrc)) fail("/ukladka-plitki: RouteStub снят на этапе 2.6");
+  if (/noindex/i.test(tileRouteSrc)) fail("/ukladka-plitki: noindex снят на этапе 2.6");
   if (/EngineeringServicePage/.test(tileRouteSrc)) fail("/ukladka-plitki: EngineeringServicePage не должен подключаться");
+  if (!/RepairServicePage/.test(tileRouteSrc)) fail("/ukladka-plitki: должен использовать RepairServicePage");
+  if (!/rel:\s*"canonical"/.test(tileRouteSrc)) fail("/ukladka-plitki: отсутствует canonical");
+  if (!/BreadcrumbList/.test(tileRouteSrc)) fail("/ukladka-plitki: отсутствует BreadcrumbList");
 }
 const engRouteSet = new Set<string>();
 const engSlugSet = new Set<string>();
