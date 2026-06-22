@@ -183,6 +183,7 @@ export const CALCULATOR_LINKS_FROM_SERVICES: Array<{
   { slug: "vodosnabzhenie-kanalizatsiya", mode: "engineering", category: "water_supply" },
   { slug: "otoplenie",                    mode: "engineering", category: "heating" },
   { slug: "teplyy-pol",                   mode: "engineering", category: "underfloor_heating" },
+  { slug: "ukladka-plitki",               mode: "repair", category: "tiling" },
 ];
 
 /**
