@@ -78,7 +78,11 @@ const adminStubKept = /RouteStub/.test(adminStubSrc) && /noindex/.test(adminStub
 // Edge function
 const edgeIndex = "supabase/functions/submit-estimate-request/index.ts";
 const edgeExists = has(edgeIndex);
-const edgeSrc = edgeExists ? read(edgeIndex) : "";
+const sharedHandler = "supabase/functions/_shared/handler.ts";
+const edgeSrc =
+  (edgeExists ? read(edgeIndex) : "") +
+  "\n" +
+  (has(sharedHandler) ? read(sharedHandler) : "");
 const edgeChecks = {
   honeypot: /honeypot|website/i.test(edgeSrc),
   rateLimit: /submission_rate_limits/.test(edgeSrc),
