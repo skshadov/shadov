@@ -96,7 +96,7 @@ Deno.serve(async (req: Request) => {
     const msgA = (await admin.from("project_messages").insert({ project_id: pA.id, message_type: "system", body: "hello A" }).select("id").single()).data!;
     const reportA = (await admin.from("project_daily_reports").insert({ project_id: pA.id, report_date: new Date().toISOString().slice(0,10), title: "DR1", summary: "ok", published_at: new Date().toISOString() }).select("id").single()).data!;
     const reportAUnpub = (await admin.from("project_daily_reports").insert({ project_id: pA.id, report_date: new Date(Date.now()-86400000).toISOString().slice(0,10), title: "DR-unpub", summary: "draft" }).select("id").single()).data!;
-    await admin.from("project_daily_report_documents").insert({ report_id: reportA.id, document_id: docVisible.id });
+    await admin.from("project_daily_report_documents").insert({ report_id: reportA.id, document_id: docVisible.id, sort_order: 1 });
     const accA = (await admin.from("project_stage_acceptances").insert({ stage_id: sA.id, attempt_number: 1, status: "pending", requested_by: ids.clientA }).select("id").single()).data!;
 
     // 3. Sign in users
@@ -139,13 +139,13 @@ Deno.serve(async (req: Request) => {
     }
     // 4e. Client cannot insert/update/delete documents
     for (const [op, run] of [
-      ["insert", async () => A.client.from("project_documents").insert({ project_id: pA.id, storage_path: "x", file_name: "x", mime_type: "text/plain", size_bytes: 1, is_visible_to_client: true })],
-      ["update", async () => A.client.from("project_documents").update({ title: "x" }).eq("id", docVisible.id)],
-      ["delete", async () => A.client.from("project_documents").delete().eq("id", docVisible.id)],
+      ["insert", async () => A.client.from("project_documents").insert({ project_id: pA.id, storage_path: "x", file_name: "x", mime_type: "text/plain", size_bytes: 1, is_visible_to_client: true }).select()],
+      ["update", async () => A.client.from("project_documents").update({ title: "blocked" }).eq("id", docVisible.id).select()],
+      ["delete", async () => A.client.from("project_documents").delete().eq("id", docVisible.id).select()],
     ] as const) {
       const r = await run();
-      const actual = r.error ? "deny" : "allow";
-      rec(result.rlsMatrix, `documents/client_${op}`, "project_documents", op, "deny", actual, { error: r.error?.message });
+      const actual = r.error || (r.data?.length ?? 0) === 0 ? "deny" : "allow";
+      rec(result.rlsMatrix, `documents/client_${op}`, "project_documents", op, "deny", actual, { error: r.error?.message, rows: r.data?.length ?? 0 });
     }
     // 4f. Admin CRUD on documents
     {
@@ -222,12 +222,13 @@ Deno.serve(async (req: Request) => {
       const foreignSelect = await A.client.from("project_cameras").select("id").eq("id", camB.id);
       rec(result.rlsMatrix, "cameras/client_foreign_select", "project_cameras", "select", "deny_no_rows", (foreignSelect.data?.length ?? 0) === 0 ? "deny_no_rows" : "leak");
       for (const [op, run] of [
-        ["insert", async () => A.client.from("project_cameras").insert({ project_id: pA.id, name: "x", status: "not_configured", sort_order: 99 })],
-        ["update", async () => A.client.from("project_cameras").update({ name: "x" }).eq("id", camA.id)],
-        ["delete", async () => A.client.from("project_cameras").delete().eq("id", camA.id)],
+        ["insert", async () => A.client.from("project_cameras").insert({ project_id: pA.id, name: "x", status: "not_configured", sort_order: 99 }).select()],
+        ["update", async () => A.client.from("project_cameras").update({ name: "blocked" }).eq("id", camA.id).select()],
+        ["delete", async () => A.client.from("project_cameras").delete().eq("id", camA.id).select()],
       ] as const) {
         const r = await run();
-        rec(result.rlsMatrix, `cameras/client_${op}`, "project_cameras", op, "deny", r.error ? "deny" : "allow");
+        const actual = r.error || (r.data?.length ?? 0) === 0 ? "deny" : "allow";
+        rec(result.rlsMatrix, `cameras/client_${op}`, "project_cameras", op, "deny", actual, { error: r.error?.message, rows: r.data?.length ?? 0 });
       }
       // admin CRUD on project_cameras
       const adminCam = await ADM.client.from("project_cameras").insert({ project_id: pA.id, name: "AdminCam", status: "not_configured", sort_order: 100 }).select("id").single();
@@ -240,13 +241,13 @@ Deno.serve(async (req: Request) => {
         rec(result.rlsMatrix, "cameras/admin_delete", "project_cameras", "delete", "allow", d.error ? "deny" : "allow");
       }
       // admin camera_sources CRUD
-      const adminSrc = await ADM.client.from("project_camera_sources").insert({ camera_id: camA.id, provider: "test", provider_camera_id: "x", configuration_reference: "ref" }).select("id").single();
-      rec(result.rlsMatrix, "camera_sources/admin_insert", "project_camera_sources", "insert", "allow", adminSrc.data ? "allow" : "deny");
+      const adminSrc = await ADM.client.from("project_camera_sources").insert({ camera_id: camA.id, provider: "test", provider_camera_id: "x", configuration_reference: "ref" }).select("camera_id").maybeSingle();
+      rec(result.rlsMatrix, "camera_sources/admin_insert", "project_camera_sources", "insert", "allow", adminSrc.data ? "allow" : "deny", { error: adminSrc.error?.message });
       if (adminSrc.data) {
-        const u = await ADM.client.from("project_camera_sources").update({ provider: "test2" }).eq("id", adminSrc.data.id);
+        const u = await ADM.client.from("project_camera_sources").update({ provider: "test2" }).eq("camera_id", adminSrc.data.camera_id);
         rec(result.rlsMatrix, "camera_sources/admin_update", "project_camera_sources", "update", "allow", u.error ? "deny" : "allow");
         rec(result.rlsMatrix, "camera_sources/admin_select", "project_camera_sources", "select", "allow", "allow");
-        const d = await ADM.client.from("project_camera_sources").delete().eq("id", adminSrc.data.id);
+        const d = await ADM.client.from("project_camera_sources").delete().eq("camera_id", adminSrc.data.camera_id);
         rec(result.rlsMatrix, "camera_sources/admin_delete", "project_camera_sources", "delete", "allow", d.error ? "deny" : "allow");
       }
       // client cannot read camera_sources
@@ -279,12 +280,13 @@ Deno.serve(async (req: Request) => {
       rec(result.rlsMatrix, "payments/client_select_own", "project_payments", "select", "allow", (own.data?.length ?? 0) > 0 ? "allow" : "deny");
       rec(result.rlsMatrix, "payments/client_select_foreign", "project_payments", "select", "deny_no_rows", (foreign.data?.length ?? 0) === 0 ? "deny_no_rows" : "leak");
       for (const [op, run] of [
-        ["insert", async () => A.client.from("project_payments").insert({ project_id: pA.id, title: "x", currency: "RUB", status: "planned" })],
-        ["update", async () => A.client.from("project_payments").update({ title: "x" }).eq("id", payA.id)],
-        ["delete", async () => A.client.from("project_payments").delete().eq("id", payA.id)],
+        ["insert", async () => A.client.from("project_payments").insert({ project_id: pA.id, title: "x", currency: "RUB", status: "planned" }).select()],
+        ["update", async () => A.client.from("project_payments").update({ title: "blocked" }).eq("id", payA.id).select()],
+        ["delete", async () => A.client.from("project_payments").delete().eq("id", payA.id).select()],
       ] as const) {
         const r = await run();
-        rec(result.rlsMatrix, `payments/client_${op}`, "project_payments", op, "deny", r.error ? "deny" : "allow");
+        const actual = r.error || (r.data?.length ?? 0) === 0 ? "deny" : "allow";
+        rec(result.rlsMatrix, `payments/client_${op}`, "project_payments", op, "deny", actual, { error: r.error?.message, rows: r.data?.length ?? 0 });
       }
       // admin CRUD
       const ai = await ADM.client.from("project_payments").insert({ project_id: pA.id, title: "ap", currency: "RUB", status: "planned" }).select("id").single();
