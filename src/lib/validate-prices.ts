@@ -103,14 +103,29 @@ function validatePrices(items: PriceItem[]): Issue[] {
 function validateServicePages(): Issue[] {
   const issues: Issue[] = [];
 
-  if (SERVICE_PAGES.length !== 34)
-    issues.push({ rule: "service-pages-count", message: `Ожидается 34 страницы услуг, получено ${SERVICE_PAGES.length}` });
+  // Подэтап 2.5.2A: всего 35 = 18 строительных + 10 ремонта (активных)
+  // + 6 инженерных + 1 плиточная заглушка (category=repair, isStub=true).
+  if (SERVICE_PAGES.length !== 35)
+    issues.push({ rule: "service-pages-count", message: `Ожидается 35 страниц услуг, получено ${SERVICE_PAGES.length}` });
 
   const counts = { construction: 0, repair: 0, engineering: 0 };
-  for (const s of SERVICE_PAGES) counts[s.category]++;
-  if (counts.construction !== 18) issues.push({ rule: "category-count", message: `construction: ожидается 18, получено ${counts.construction}` });
-  if (counts.repair !== 10)       issues.push({ rule: "category-count", message: `repair: ожидается 10, получено ${counts.repair}` });
-  if (counts.engineering !== 6)   issues.push({ rule: "category-count", message: `engineering: ожидается 6, получено ${counts.engineering}` });
+  let stubs = 0;
+  for (const s of SERVICE_PAGES) {
+    if (s.isStub) { stubs++; continue; }
+    counts[s.category]++;
+  }
+  if (counts.construction !== 18) issues.push({ rule: "category-count", message: `construction (активных): ожидается 18, получено ${counts.construction}` });
+  if (counts.repair !== 10)       issues.push({ rule: "category-count", message: `repair (активных): ожидается 10, получено ${counts.repair}` });
+  if (counts.engineering !== 6)   issues.push({ rule: "category-count", message: `engineering (активных): ожидается 6, получено ${counts.engineering}` });
+  if (stubs !== 1)                issues.push({ rule: "stub-count", message: `заглушек ожидается 1 (плитка), получено ${stubs}` });
+
+  // /ukladka-plitki: точное состояние.
+  const tile = SERVICE_PAGES.find((s) => s.slug === "ukladka-plitki");
+  if (!tile) issues.push({ rule: "tile-required", message: "/ukladka-plitki отсутствует в SERVICE_PAGES" });
+  else {
+    if (tile.category !== "repair") issues.push({ rule: "tile-category", message: `/ukladka-plitki: ожидается category=repair, найдено ${tile.category}` });
+    if (tile.isStub !== true) issues.push({ rule: "tile-stub", message: `/ukladka-plitki: ожидается isStub=true` });
+  }
 
   const slugs = new Set<string>(); const routes = new Set<string>(); const metas = new Set<string>(); const h1s = new Set<string>();
   for (const s of SERVICE_PAGES) {
