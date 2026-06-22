@@ -19,6 +19,7 @@
     "audit:stage-2.5.1": "bun src/lib/audit-stage-2-5-1.ts",
     "audit:stage-2.5.2": "bun src/lib/audit-stage-2-5-2.ts",
     "audit:stage-2.5.3": "bun src/lib/audit-stage-2-5-3.ts",
+    "audit:stage-2-final": "bun src/lib/audit-stage-2-final.ts",
     "calculator:tests": "bun src/lib/calculator-tests.ts"
   },
   "dependencies": {
