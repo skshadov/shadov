@@ -62,7 +62,7 @@ const emailAdmin = `test-admin-${stamp}@stage3.local`;
 const pwd = "Stage3-TestPwd-" + stamp;
 
 let uidA = "", uidB = "", uidAdmin = "";
-let projectId = "", reqIdA = "", reqIdB = "";
+let projectId = "", reqIdA = "", reqIdB = "", stageId = "";
 
 async function setup() {
   console.log("== setup ==");
@@ -81,6 +81,9 @@ async function setup() {
   projectId = proj.data.id;
   const mem = await admin.from("project_members").insert({ project_id: projectId, user_id: uidA, member_role: "client" });
   if (mem.error) throw new Error("add member: " + mem.error.message);
+  const st = await admin.from("project_stages").insert({ project_id: projectId, sort_order: 1, title: "stage", status: "planned" }).select("id").single();
+  if (st.error) throw new Error("create stage: " + st.error.message);
+  stageId = st.data.id;
 
   // Тестовые заявки (вставка через service role — обход RLS)
   const rA = await admin.from("estimate_requests").insert({
@@ -186,8 +189,9 @@ async function runMatrix() {
     return { error: r.error };
   });
   await exec("clientA-stage-update","clientA","update","project_stages","deny", async () => {
-    const r = await cA.from("project_stages").update({ status: "done" }).eq("project_id", projectId);
-    return { error: r.error };
+    const r = await cA.from("project_stages").update({ status: "done" }).eq("id", stageId).select("id");
+    if (r.error) return { error: r.error };
+    return { error: (r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null };
   });
   await exec("clientA-document-insert","clientA","insert","project_documents","deny", async () => {
     const r = await cA.from("project_documents").insert({ project_id: projectId, storage_path: "x", file_name: "x" });
