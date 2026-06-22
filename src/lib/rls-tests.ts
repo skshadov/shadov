@@ -316,7 +316,7 @@ async function runMatrix() {
     return { error: r.error };
   });
   await exec("admin-project_members-update","admin","update","project_members","allow", async () => {
-    const r = await cAdmin.from("project_members").update({ member_role: "viewer" }).eq("project_id", projectId).eq("user_id", uidA).select("user_id");
+    const r = await cAdmin.from("project_members").update({ member_role: "manager" }).eq("project_id", projectId).eq("user_id", uidA).select("user_id");
     return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
   });
   await exec("admin-project_members-delete","admin","delete","project_members","allow", async () => {
