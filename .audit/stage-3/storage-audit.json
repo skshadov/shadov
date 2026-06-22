@@ -1,0 +1,1 @@
+{"buckets": [{"name": "project-documents", "public": false, "policies": ["project docs members read","project docs admins all"]}]}

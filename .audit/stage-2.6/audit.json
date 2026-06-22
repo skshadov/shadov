@@ -1,8 +1,12 @@
 {
   "stage": "2.6",
   "specificationCheck": {
-    "passed": true,
-    "errors": []
+    "passed": false,
+    "errors": [
+      "/login: должен оставаться RouteStub",
+      "EstimateForm: обнаружен backend-вызов",
+      "forbiddenSearch: 1"
+    ]
   },
   "servicePages": [
     {
@@ -390,15 +394,14 @@
   "remainingRouteStubs": [
     "/admin",
     "/client/project/$id",
-    "/client",
-    "/login"
+    "/client"
   ],
   "futureStageRoutes": [
     {
       "route": "/login",
       "routeFile": "src/routes/login.tsx",
       "plannedStage": 3,
-      "usesRouteStub": true,
+      "usesRouteStub": false,
       "hasNoindex": true
     },
     {
@@ -459,7 +462,7 @@
     "linksToConsent": true,
     "linksToPrivacy": true,
     "consentRequired": true,
-    "noBackendCall": true,
+    "noBackendCall": false,
     "usesLocalStorage": true,
     "storageKey": "shadov:estimate-draft"
   },
@@ -554,7 +557,12 @@
     ]
   },
   "forbiddenSearch": {
-    "matchesOutsideValidator": []
+    "matchesOutsideValidator": [
+      {
+        "where": "src/components/forms/EstimateForm.tsx",
+        "pattern": "0000000000"
+      }
+    ]
   },
   "regressionChecks": {
     "servicePages": 35,
@@ -568,10 +576,14 @@
     "calculatorComplete": true,
     "legalPagesComplete": true,
     "informationPagesComplete": true,
-    "formsRemainDemo": true,
+    "formsRemainDemo": false,
     "backendNotStarted": true,
-    "readyForStage3": true,
-    "blockingIssues": []
+    "readyForStage3": false,
+    "blockingIssues": [
+      "/login: должен оставаться RouteStub",
+      "EstimateForm: обнаружен backend-вызов",
+      "forbiddenSearch: 1"
+    ]
   },
   "totals": {
     "priceItems": 334,
@@ -591,6 +603,6 @@
     "clientRoutesActivated": 0,
     "informationRoutes": 10,
     "legalRoutes": 5,
-    "remainingStubRoutes": 4
+    "remainingStubRoutes": 3
   }
 }

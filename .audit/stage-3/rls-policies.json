@@ -1,0 +1,12 @@
+{
+ "user_roles": ["users read own roles","admins read all roles"],
+ "profiles": ["users read own profile","users update own profile","admins read all profiles","admins update all profiles"],
+ "estimate_requests": ["users read own requests","admins read all requests","admins update requests"],
+ "consent_records": ["users read own consents","admins read all consents"],
+ "submission_rate_limits": [],
+ "projects": ["members read project","admins manage projects"],
+ "project_members": ["users read own membership","admins manage memberships"],
+ "project_stages": ["members read stages","admins manage stages"],
+ "project_documents": ["members read documents","admins manage documents"],
+ "storage.objects": ["project docs members read","project docs admins all"]
+}

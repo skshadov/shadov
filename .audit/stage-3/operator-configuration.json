@@ -1,0 +1,1 @@
+{"operatorConfigured": false, "missingRequiredFields": ["legalName","contact","inn","ogrn","legalAddress"], "reason": "src/config/company.ts: реквизиты не заполнены — Этап 1 запретил выдумывать."}
