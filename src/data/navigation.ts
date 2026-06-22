@@ -73,6 +73,7 @@ export const MAIN_NAV: NavItem[] = [
   NAV_INZHENERNYE,
   { label: "Наши работы", to: "/portfolio" },
   { label: "Цены", to: "/prices" },
+  { label: "Калькулятор", to: "/kalkulyator-stoimosti" },
   { label: "О компании", to: "/about" },
   { label: "Контакты", to: "/contacts" },
 ];
