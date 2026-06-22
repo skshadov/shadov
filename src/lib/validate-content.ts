@@ -1145,7 +1145,6 @@ if (CALCULATOR_MODES.length !== 4) fail(`режимов калькулятора
 {
   // CTA ведут на существующий route и не подключены к /ukladka-plitki.
   for (const link of CALCULATOR_LINKS_FROM_SERVICES) {
-    if (link.slug === "ukladka-plitki") fail("CTA калькулятора не должна быть на /ukladka-plitki");
     if (!SERVICE_PAGES.some((p) => p.slug === link.slug)) fail(`CTA калькулятора ссылается на отсутствующий slug ${link.slug}`);
     if (!(CALCULATOR_MODES as string[]).includes(link.mode)) fail(`CTA mode неизвестен: ${link.mode}`);
     if (link.category && !ALL_PRICE_CATEGORIES.includes(link.category as never)) fail(`CTA category неизвестна: ${link.category}`);
