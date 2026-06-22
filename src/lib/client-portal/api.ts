@@ -222,7 +222,7 @@ export async function respondToAcceptance(
   const { data, error } = await supabase.rpc("respond_to_stage_acceptance", {
     acceptance_id: acceptanceId,
     decision,
-    comment,
+    comment: comment ?? "",
   });
   if (error) throw error;
   const row = Array.isArray(data) ? data[0] : data;
