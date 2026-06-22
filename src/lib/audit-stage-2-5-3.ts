@@ -128,7 +128,8 @@ const servicePageLinks = CALCULATOR_LINKS_FROM_SERVICES.map((l) => ({
   category: l.category ?? null,
   inServicePages: SERVICE_PAGES.some((p) => p.slug === l.slug),
 }));
-ok(servicePageLinks.length === 15, `CTA: ожидается 15, получено ${servicePageLinks.length}`);
+// Подэтап 2.6: добавлена CTA на /ukladka-plitki — итого 16 CTA.
+ok(servicePageLinks.length === 16, `CTA: ожидается 16, получено ${servicePageLinks.length}`);
 for (const e of servicePageLinks) {
   ok(e.inServicePages, `CTA ${e.slug}: страница не найдена`);
 }
