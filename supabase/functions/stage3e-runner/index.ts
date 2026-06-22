@@ -198,6 +198,12 @@ Deno.serve(async (req) => {
   const scenario: string = body.scenario;
   const testRunId: string = body.testRunId ?? crypto.randomUUID();
   try {
+    if (scenario === "diag") return ok({
+      runTokenLen: RUN_TOKEN.length,
+      saltLen: (Deno.env.get("TEST_RATE_LIMIT_SALT") ?? "").length,
+      testModeEnabled: (Deno.env.get("TEST_MODE_ENABLED") ?? "").toLowerCase(),
+      allowedOrigins: TEST_ALLOWED,
+    });
     if (scenario === "sanity") return ok(await scenarioSanity(testRunId));
     if (scenario === "missing-salt") return ok(await scenarioMissingSalt(testRunId));
     if (scenario === "cleanup") return ok(await scenarioCleanup(testRunId));
