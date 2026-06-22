@@ -28,7 +28,7 @@ export function CalculatorSummary({ result }: { result: CalculatorResult }) {
         Предварительный расчёт — {MODE_LABELS[result.mode]}
       </h2>
 
-      <div className="mt-4 overflow-x-auto">
+      <div className="mt-4 overflow-x-auto min-h-11">
         <table className="min-w-full text-sm">
           <caption className="text-left text-xs text-muted-foreground">
             Постатейный предварительный расчёт по утверждённому прайсу
