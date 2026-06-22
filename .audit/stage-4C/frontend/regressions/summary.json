@@ -1,0 +1,19 @@
+{
+  "ranAt": "2026-06-22T17:05:00Z",
+  "scripts": [
+    { "name": "audit-stage-3",   "exit": 0, "status": "passed" },
+    { "name": "audit-stage-3d",  "exit": 0, "status": "passed" },
+    { "name": "audit-stage-3e",  "exit": 0, "status": "passed" },
+    { "name": "calculator-tests","exit": 0, "status": "passed" },
+    { "name": "audit-stage-2-final",                    "exit": 1, "status": "expected_failure",
+      "reason": "Asserts /login, /client, /client/project/$id stay RouteStub and EstimateForm has no backend call. Stage 4 deliberately activated /client routes and EstimateForm wires to submit-estimate-request; failures are correct behavior for the post-stage-4 codebase." },
+    { "name": "audit-stage-2-regression-for-stage-3",   "exit": 1, "status": "expected_failure",
+      "reason": "Same as above: requires /client to be RouteStub, intentionally no longer true." },
+    { "name": "audit-stage-3b",                         "exit": 1, "status": "expected_failure",
+      "reason": "Reads supabase/functions/submit-estimate-request-test/index.ts which was a Stage-3B test-only edge function removed during 3D/3E cleanup." },
+    { "name": "audit-stage-3f",                         "exit": 1, "status": "expected_failure",
+      "reason": "Requires Stage-3F build.log / typescript.log / archive-verify.log artifacts and Stage-3F test edge functions; these were one-shot stage artifacts (and test functions intentionally deleted at end of 3F)." }
+  ],
+  "totals": { "ran": 8, "passed": 4, "expectedFailures": 4, "unexpectedFailures": 0 },
+  "verdict": "All passing scripts pass. Failing scripts are stage-locked to pre-stage-4 invariants that Stage 4 intentionally changed, or to one-shot test artifacts that were cleaned up. No regressions."
+}
