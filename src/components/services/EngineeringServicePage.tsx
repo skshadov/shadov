@@ -26,6 +26,7 @@ import { EstimateForm } from "@/components/forms/EstimateForm";
 import { RelatedServices } from "@/components/services/RelatedServices";
 import { Illustration } from "@/components/common/Illustration";
 import { engineeringPicture } from "@/assets/illustrations/sources";
+import { CalculatorCta } from "@/components/calculator/CalculatorCta";
 
 interface Props {
   slug: string;
@@ -161,6 +162,8 @@ export function EngineeringServicePage({ slug }: Props) {
         </section>
 
         <ServiceFaq items={faq} />
+
+        <CalculatorCta slug={slug} />
 
         <section className="border-b border-border py-10">
           <div className="container-page">
