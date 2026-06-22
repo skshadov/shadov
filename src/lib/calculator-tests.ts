@@ -89,9 +89,9 @@ const scenarios: Scenario[] = [
     },
   },
   {
-    name: "Кровельная работа в м² (complex-metallocherepica)",
+    name: "Кровельная работа в м² (complex-utepl-metall)",
     run: () => {
-      const it = need("roofing-complex-metallocherepica");
+      const it = need("roofing-complex-utepl-metall");
       const r = calculate({ mode: "construction", lines: [{ id: it.id, volume: 180 }] });
       const expected = 180 * (it.priceFrom ?? 0);
       return r.subtotal === expected ? null : fail("сумма", `${expected}/${r.subtotal}`);
