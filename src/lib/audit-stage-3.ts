@@ -5,12 +5,16 @@
  * приводятся в JSON в stdout; exit-code 0 при отсутствии блокеров.
  */
 import { readFileSync, existsSync, statSync, readdirSync } from "fs";
-import { resolve, join } from "path";
+import { resolve, join, dirname } from "path";
+import { fileURLToPath } from "url";
 import { SERVICE_PAGES } from "@/data/service-pages";
 import { PRICES } from "@/data/prices";
 import { getOperatorStatus, isPublicAuthEnabled, isPublicDataCollectionEnabled } from "./operator-configuration";
 
-const root = process.cwd();
+// Корень проекта определяется относительно расположения скрипта,
+// чтобы аудит работал при запуске из любого cwd (в т.ч. .audit/stage-3A).
+const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
+const root = resolve(SCRIPT_DIR, "..", "..");
 const read = (p: string) => readFileSync(resolve(root, p), "utf8");
 const has = (p: string) => existsSync(resolve(root, p));
 
