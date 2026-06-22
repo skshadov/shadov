@@ -58,6 +58,7 @@ Deno.serve(async (req: Request) => {
     rls: [] as Scenario[],
     rpcTests: [] as any[],
     edgeTests: { documents: [] as any[], cameras: [] as any[] },
+    signedUrlExpiryTest: { executed: false, passed: false } as any,
     realtimeTests: { passed: true, notes: "skipped-in-orchestrator (run from playwright)" },
     cleanup: {} as any,
   };
@@ -453,6 +454,41 @@ Deno.serve(async (req: Request) => {
     // ── REALTIME (basic in-process) ─────────────────────────────────
     // Minimal realtime smoke: insert as clientA, ensure visible via select with author projection; full broadcast test is in playwright.
     out.realtimeTests = { passed: true, notes: "smoke-only: clientA insert visible via own select; full subscribe-flow runs in playwright session" };
+
+    // ── SIGNED URL EXPIRY (TTL=2) ────────────────────────────────────
+    try {
+      const ttlRes = await fetch(`${SUPABASE_URL}/functions/v1/stage4c-doc-url-ttl2`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": PUBLISHABLE,
+          "Authorization": `Bearer ${tokenA}`,
+          "X-Run-Token": Deno.env.get("STAGE4C_RUN_TOKEN") ?? "",
+        },
+        body: JSON.stringify({ document_id: docVisible.id }),
+      });
+      const ttlJson = await ttlRes.json();
+      const immediate = await fetch(ttlJson.url);
+      const immediateStatus = immediate.status;
+      // drain body
+      await immediate.arrayBuffer();
+      await new Promise(r => setTimeout(r, 3500));
+      const expired = await fetch(ttlJson.url);
+      const expiredStatus = expired.status;
+      await expired.arrayBuffer();
+      out.signedUrlExpiryTest = {
+        executed: true,
+        testTtl: 2,
+        productionTtl: 300,
+        immediateStatus,
+        immediateDownloadAllowed: immediateStatus === 200,
+        expiredStatus,
+        expiredDownloadDenied: expiredStatus !== 200,
+        passed: immediateStatus === 200 && expiredStatus !== 200,
+      };
+    } catch (e: any) {
+      out.signedUrlExpiryTest = { executed: false, passed: false, error: String(e?.message ?? e) };
+    }
 
     // ── SUMMARY ─────────────────────────────────────────────────────
     out.rls_total = out.rls.length;
