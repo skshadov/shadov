@@ -55,6 +55,7 @@ export const ACTIVE_ENGINEERING_SLUGS = new Set<string>([
  * подключаются на следующих подэтапах.
  */
 function isActiveServicePage(p: ServicePageData): boolean {
+  if (p.category === "engineering") return ACTIVE_ENGINEERING_SLUGS.has(p.slug);
   if (p.included.length === 0 || p.stages.length === 0) return false;
   if (p.category === "construction") return ACTIVE_CONSTRUCTION_SLUGS.has(p.slug);
   return true;
