@@ -85,7 +85,7 @@ const edgeSrc =
   (has(sharedHandler) ? read(sharedHandler) : "");
 const edgeChecks = {
   honeypot: /honeypot|website/i.test(edgeSrc),
-  rateLimit: /submission_rate_limits/.test(edgeSrc),
+  rateLimit: /submission_rate_limits|consume_submission_rate_limit/.test(edgeSrc),
   hashedIp: /sha-?256/i.test(edgeSrc) || /digest\(['"]SHA-256/.test(edgeSrc),
   consentRequired: /consent_accepted/.test(edgeSrc),
   submissionIdUnique: /submission_id/.test(edgeSrc),
