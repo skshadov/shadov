@@ -256,11 +256,14 @@ const structuredData: Record<string, { breadcrumb: boolean; service: boolean; of
 for (const route of EXPECTED_ROUTES) {
   const src = readRoute(route);
   const canonicalUrl = `https://shadov.pro${route}`;
+  const urlConst = src.includes(`const URL = "${canonicalUrl}"`);
+  const hasCanonical = urlConst && /links:\s*\[\{\s*rel:\s*"canonical",\s*href:\s*URL\s*\}\]/.test(src);
+  const hasOgUrl = urlConst && /property:\s*"og:url",\s*content:\s*URL\s*\}/.test(src);
   metadata[route] = {
-    title: (src.match(/p\.metaTitle/) ? "from-data" : "missing"),
-    description: (src.match(/p\.metaDescription/) ? "from-data" : "missing"),
-    canonical: src.includes(`href: "${canonicalUrl}"`) ? canonicalUrl : "mismatch",
-    ogUrl: src.includes(`content: "${canonicalUrl}"`) ? canonicalUrl : "mismatch",
+    title: src.match(/p\.metaTitle/) ? "from-data" : "missing",
+    description: src.match(/p\.metaDescription/) ? "from-data" : "missing",
+    canonical: hasCanonical ? canonicalUrl : "mismatch",
+    ogUrl: hasOgUrl ? canonicalUrl : "mismatch",
   };
   if (metadata[route].canonical !== canonicalUrl) ok(false, `${route}: canonical не совпадает с ${canonicalUrl}`);
   if (metadata[route].ogUrl !== canonicalUrl) ok(false, `${route}: og:url не совпадает с ${canonicalUrl}`);
