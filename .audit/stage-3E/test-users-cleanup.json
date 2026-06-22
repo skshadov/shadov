@@ -1,0 +1,7 @@
+{
+  "capturedAt": "2026-06-22T10:37:21Z",
+  "queriedAfterTeardown": true,
+  "remainingTestUsers": 0,
+  "patternsChecked": ["%@stage3.local","%@example.test","stage3e%","test-%"],
+  "source": "supabase--read_query against auth.users"
+}

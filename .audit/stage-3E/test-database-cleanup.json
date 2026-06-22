@@ -1,0 +1,9 @@
+{
+  "capturedAt": "2026-06-22T10:37:21Z",
+  "queriedAfterTeardown": true,
+  "remainingTestRequests": 0,
+  "remainingTestConsents": 0,
+  "totalRateLimitRows": 0,
+  "remainingTestRows": 0,
+  "source": "supabase--read_query against public.estimate_requests, consent_records, submission_rate_limits"
+}
