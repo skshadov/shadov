@@ -1,11 +1,10 @@
 {
   "stage": "stage-3B",
-  "generatedAt": "2026-06-22T08:59:41.775Z",
+  "generatedAt": "2026-06-22T09:00:10.099Z",
   "specificationCheck": {
     "passed": false,
     "errors": [
-      "user_id from supabase.auth.getUser only",
-      "no service_role assignment in frontend"
+      "no service_role leaks in client-reachable frontend"
     ]
   },
   "cloudConfiguration": {
@@ -283,8 +282,7 @@
     "directAnonRequestTableAccess": 0,
     "permissiveSensitivePolicies": 0,
     "blockingIssues": [
-      "user_id from supabase.auth.getUser only",
-      "no service_role assignment in frontend"
+      "no service_role leaks in client-reachable frontend"
     ]
   }
 }
