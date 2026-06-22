@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-22T10:50:21.312Z",
+  "generatedAt": "2026-06-22T10:51:18.620Z",
   "executed": true,
   "bucket": "project-documents",
-  "projectId": "e651d164-66f2-4cd9-9cd6-00857af63fd6",
+  "projectId": "307973df-0b43-44a9-875a-174ad2fad4c9",
   "scenarios": [
     {
       "testName": "anon-storage-list-bucket",
