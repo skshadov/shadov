@@ -1,0 +1,1 @@
+DROP FUNCTION IF EXISTS public.stage3d_fault_injection_submission(uuid);
