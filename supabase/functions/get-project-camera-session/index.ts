@@ -26,7 +26,7 @@ Deno.serve(async (req: Request) => {
   try { body = await req.json(); } catch { return json({ success: false, code: "bad_request" }, 400); }
   const cameraId = body.camera_id;
   if (typeof cameraId !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(cameraId)) {
-    return json({ success: false, code: "camera_not_configured" }, 200);
+    return json({ success: false, code: "camera_not_found" }, 404);
   }
   const userClient = createClient(SUPABASE_URL, PUBLISHABLE, {
     global: { headers: { Authorization: auth } },
@@ -36,7 +36,8 @@ Deno.serve(async (req: Request) => {
   if (userErr || !userData?.user) return json({ success: false, code: "unauthorized" }, 401);
   const { data: cam } = await userClient
     .from("project_cameras").select("id").eq("id", cameraId).maybeSingle();
-  if (!cam) return json({ success: false, code: "camera_not_configured" }, 200);
+  // RLS-scoped read: foreign / nonexistent cameras both return the SAME response.
+  if (!cam) return json({ success: false, code: "camera_not_found" }, 404);
   const admin = createClient(SUPABASE_URL, SERVICE, { auth: { persistSession: false, autoRefreshToken: false } });
   const { data: source } = await admin
     .from("project_camera_sources").select("provider").eq("camera_id", cameraId).maybeSingle();
