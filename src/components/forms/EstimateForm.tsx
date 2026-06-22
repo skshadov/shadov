@@ -32,6 +32,8 @@ import {
   RadioGroup,
   RadioGroupItem,
 } from "@/components/ui/radio-group";
+import { supabase } from "@/integrations/supabase/client";
+import { isPublicDataCollectionEnabled, CONSENT_VERSION } from "@/lib/operator-configuration";
 
 const STORAGE_KEY = "shadov:estimate-draft";
 
@@ -144,6 +146,7 @@ export function EstimateForm() {
   const formId = useId();
   const [submitting, setSubmitting] = useState(false);
   const [hasDraft, setHasDraft] = useState(false);
+  const backendEnabled = isPublicDataCollectionEnabled();
 
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
@@ -181,6 +184,40 @@ export function EstimateForm() {
     if (submitting) return;
     setSubmitting(true);
     try {
+      if (backendEnabled) {
+        const submissionId = (typeof crypto !== "undefined" && "randomUUID" in crypto)
+          ? crypto.randomUUID()
+          : `${Date.now()}-${Math.random().toString(16).slice(2)}-0000-0000-000000000000`;
+        const { data, error } = await supabase.functions.invoke("submit-estimate-request", {
+          body: {
+            submission_id: submissionId,
+            source_path: typeof window !== "undefined" ? window.location.pathname : "/",
+            service_slug: values.service,
+            contact_name: values.name,
+            phone: values.phone,
+            email: null,
+            message: values.comment ?? null,
+            consent_accepted: true,
+            consent_version: CONSENT_VERSION,
+            website: "", // honeypot
+          },
+        });
+        if (error || !data || (data as { success?: boolean }).success !== true) {
+          toast.error("Не удалось отправить заявку", {
+            description: "Пожалуйста, попробуйте ещё раз или свяжитесь по телефону.",
+          });
+          return;
+        }
+        const requestNumber = (data as { requestNumber?: string }).requestNumber ?? "";
+        window.localStorage.removeItem(STORAGE_KEY);
+        reset(DEFAULTS);
+        setHasDraft(false);
+        toast.success("Заявка зарегистрирована", {
+          description: `Номер заявки: ${requestNumber}`,
+          duration: 10000,
+        });
+        return;
+      }
       const { consent: _consent, ...persistable } = values;
       void _consent;
       window.localStorage.setItem(
@@ -216,9 +253,15 @@ export function EstimateForm() {
       className="grid gap-5"
     >
       <div className="flex items-center justify-between gap-3">
-        <span className="inline-flex items-center gap-2 rounded-full border border-warning/40 bg-warning/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-[color:var(--warning)]">
-          DEMO режим
-        </span>
+        {backendEnabled ? (
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-primary">
+            Защищённая отправка
+          </span>
+        ) : (
+          <span className="inline-flex items-center gap-2 rounded-full border border-warning/40 bg-warning/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-[color:var(--warning)]">
+            DEMO режим
+          </span>
+        )}
         {hasDraft ? (
           <Button
             type="button"
@@ -233,9 +276,15 @@ export function EstimateForm() {
         ) : null}
       </div>
 
-      <p className="rounded-md border border-border bg-muted/50 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
-        До подключения защищённой базы данных форма работает в демонстрационном режиме: введённые данные сохраняются только на этом устройстве, никуда не отправляются и не передаются третьим лицам.
-      </p>
+      {backendEnabled ? (
+        <p className="rounded-md border border-border bg-muted/50 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
+          Данные отправляются в защищённую базу. Подробнее — в политике конфиденциальности.
+        </p>
+      ) : (
+        <p className="rounded-md border border-border bg-muted/50 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
+          До подключения защищённой базы данных форма работает в демонстрационном режиме: введённые данные сохраняются только на этом устройстве, никуда не отправляются и не передаются третьим лицам.
+        </p>
+      )}
 
       <div className="grid gap-4 md:grid-cols-2">
         <Field label="Тип объекта" error={errors.objectType?.message} required>

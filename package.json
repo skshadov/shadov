@@ -20,6 +20,7 @@
     "audit:stage-2.5.2": "bun src/lib/audit-stage-2-5-2.ts",
     "audit:stage-2.5.3": "bun src/lib/audit-stage-2-5-3.ts",
     "audit:stage-2-final": "bun src/lib/audit-stage-2-final.ts",
+    "audit:stage-3": "bun src/lib/audit-stage-3.ts",
     "calculator:tests": "bun src/lib/calculator-tests.ts"
   },
   "dependencies": {
@@ -50,6 +51,7 @@
     "@radix-ui/react-toggle": "^1.1.10",
     "@radix-ui/react-toggle-group": "^1.1.11",
     "@radix-ui/react-tooltip": "^1.2.8",
+    "@supabase/supabase-js": "^2.108.2",
     "@tailwindcss/vite": "^4.2.1",
     "@tanstack/react-query": "^5.83.0",
     "@tanstack/react-router": "^1.168.25",
