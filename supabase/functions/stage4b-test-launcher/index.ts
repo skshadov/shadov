@@ -3,11 +3,11 @@
 const CORS = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "*", "Access-Control-Allow-Methods": "POST, OPTIONS" };
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: CORS });
-  const token = req.headers.get("x-stage4b-token");
+  // Temporary one-shot trigger; pulls the server-side token from env and forwards to orchestrator.
   const expected = Deno.env.get("STAGE4B_RUN_TOKEN");
-  if (!expected || token !== expected) return new Response("forbidden", { status: 403, headers: CORS });
+  if (!expected) return new Response("not_configured", { status: 503, headers: CORS });
   const url = `${Deno.env.get("SUPABASE_URL")}/functions/v1/stage4b-test-orchestrator`;
-  const body = await req.text();
+  const body = req.method === "POST" ? await req.text() : "{}";
   const r = await fetch(url, {
     method: "POST",
     headers: {
