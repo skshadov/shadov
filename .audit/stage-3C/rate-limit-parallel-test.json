@@ -1,0 +1,75 @@
+{
+  "executed": true,
+  "passed": true,
+  "failed": 0,
+  "keySource": "shared_fallback",
+  "total": 10,
+  "okCount": 5,
+  "limitedCount": 5,
+  "requests": [
+    {
+      "index": 0,
+      "status": 200,
+      "startedAt": "2026-06-22T09:29:31.012Z",
+      "endedAt": "2026-06-22T09:29:31.160Z"
+    },
+    {
+      "index": 1,
+      "status": 200,
+      "startedAt": "2026-06-22T09:29:31.012Z",
+      "endedAt": "2026-06-22T09:29:31.168Z"
+    },
+    {
+      "index": 2,
+      "status": 200,
+      "startedAt": "2026-06-22T09:29:31.012Z",
+      "endedAt": "2026-06-22T09:29:31.169Z"
+    },
+    {
+      "index": 3,
+      "status": 429,
+      "startedAt": "2026-06-22T09:29:31.013Z",
+      "endedAt": "2026-06-22T09:29:31.124Z"
+    },
+    {
+      "index": 4,
+      "status": 200,
+      "startedAt": "2026-06-22T09:29:31.013Z",
+      "endedAt": "2026-06-22T09:29:31.173Z"
+    },
+    {
+      "index": 5,
+      "status": 429,
+      "startedAt": "2026-06-22T09:29:31.013Z",
+      "endedAt": "2026-06-22T09:29:31.171Z"
+    },
+    {
+      "index": 6,
+      "status": 429,
+      "startedAt": "2026-06-22T09:29:31.013Z",
+      "endedAt": "2026-06-22T09:29:31.165Z"
+    },
+    {
+      "index": 7,
+      "status": 200,
+      "startedAt": "2026-06-22T09:29:31.013Z",
+      "endedAt": "2026-06-22T09:29:31.205Z"
+    },
+    {
+      "index": 8,
+      "status": 429,
+      "startedAt": "2026-06-22T09:29:31.013Z",
+      "endedAt": "2026-06-22T09:29:31.169Z"
+    },
+    {
+      "index": 9,
+      "status": 429,
+      "startedAt": "2026-06-22T09:29:31.013Z",
+      "endedAt": "2026-06-22T09:29:31.180Z"
+    }
+  ],
+  "rateLimitRow": {
+    "attempt_count": 10,
+    "expires_at": "2026-06-22T10:30:00+00:00"
+  }
+}

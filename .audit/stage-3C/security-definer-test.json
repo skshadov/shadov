@@ -1,0 +1,33 @@
+{
+  "executed": true,
+  "passed": true,
+  "failed": 0,
+  "results": [
+    {
+      "name": "anon has_role deny",
+      "passed": true,
+      "actual": "deny",
+      "errorCode": "42501"
+    },
+    {
+      "name": "client has_role self allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "client has_role other deny",
+      "passed": true,
+      "actual": "deny"
+    },
+    {
+      "name": "client is_project_member self allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "client is_project_member other deny",
+      "passed": true,
+      "actual": "deny"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "executed": true,
+  "passed": true,
+  "failed": 0,
+  "status": 500,
+  "code": "fault_injection_failed",
+  "counts": {
+    "requestCount": 0,
+    "consentCount": 0,
+    "rows": []
+  }
+}

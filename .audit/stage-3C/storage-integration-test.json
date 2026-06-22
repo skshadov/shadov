@@ -1,0 +1,36 @@
+{
+  "executed": true,
+  "passed": true,
+  "failed": 0,
+  "results": [
+    {
+      "name": "admin upload",
+      "passed": true
+    },
+    {
+      "name": "anonymous list/download/upload deny",
+      "passed": true
+    },
+    {
+      "name": "client member read own allow; other/upload/delete deny",
+      "passed": true,
+      "ownReadError": null,
+      "otherReadError": "Object not found",
+      "uploadError": "new row violates row-level security policy",
+      "deleteError": null,
+      "deleteRows": 0
+    },
+    {
+      "name": "client non-member read deny",
+      "passed": true
+    },
+    {
+      "name": "admin read allow; malformed path deny without cast exception",
+      "passed": true
+    },
+    {
+      "name": "admin delete allow",
+      "passed": true
+    }
+  ]
+}
