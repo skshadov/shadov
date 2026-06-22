@@ -918,13 +918,31 @@ assert(
   `массив инженерных route не совпадает с утверждённым.\n  ожидается: ${JSON.stringify(ENGINEERING_ACTIVE_ROUTES)}\n  найдено:   ${JSON.stringify(ENG_ROUTES)}`,
 );
 
-// Регрессия: общее число страниц услуг = repair(10) + construction(18) + engineering(6) = 34.
-if (SERVICE_PAGES.length !== 34) {
-  fail(`SERVICE_PAGES: ожидается 34, найдено ${SERVICE_PAGES.length}`);
+// Подэтап 2.5.2A — регрессия: 35 = repair(10) + construction(18) + engineering(6)
+// + плиточная заглушка /ukladka-plitki (category=repair, isStub=true).
+if (SERVICE_PAGES.length !== 35) {
+  fail(`SERVICE_PAGES: ожидается 35, найдено ${SERVICE_PAGES.length}`);
 }
 const engineeringPages = SERVICE_PAGES.filter((p) => p.category === "engineering");
 if (engineeringPages.length !== 6) {
   fail(`инженерных записей в SERVICE_PAGES: ожидается 6, найдено ${engineeringPages.length}`);
+}
+
+// Плиточная заглушка: ровно одна, корректная категория, не в инженерных.
+const tilePages = SERVICE_PAGES.filter((p) => p.slug === "ukladka-plitki");
+if (tilePages.length !== 1) fail(`плиточных записей: ожидается 1, найдено ${tilePages.length}`);
+const tile = tilePages[0];
+if (tile.category === "engineering") fail("/ukladka-plitki не должна быть category=engineering");
+if (tile.category !== "repair") fail(`/ukladka-plitki: ожидается category=repair, найдено ${tile.category}`);
+if (tile.isStub !== true) fail("/ukladka-plitki: ожидается isStub=true");
+if (ENGINEERING_SERVICE_PAGES.some((p) => p.slug === "ukladka-plitki")) {
+  fail("/ukladka-plitki не должна входить в ENGINEERING_SERVICE_PAGES");
+}
+{
+  const tileRouteSrc = readFileSync(resolve(process.cwd(), "src/routes/ukladka-plitki.tsx"), "utf8");
+  if (!/RouteStub/.test(tileRouteSrc)) fail("/ukladka-plitki: ожидается RouteStub");
+  if (!/noindex,\s*follow/.test(tileRouteSrc)) fail("/ukladka-plitki: ожидается robots noindex, follow");
+  if (/EngineeringServicePage/.test(tileRouteSrc)) fail("/ukladka-plitki: EngineeringServicePage не должен подключаться");
 }
 const engRouteSet = new Set<string>();
 const engSlugSet = new Set<string>();
