@@ -1,0 +1,30 @@
+{
+  "capturedAt": "2026-06-22T09:59:44.200Z",
+  "testFunctionUrl": "https://shbgsrryredmememwgtn.supabase.co/functions/v1/submit-estimate-request-test",
+  "matrix": [
+    {
+      "name": "parallel_rate_limit",
+      "statuses": [
+        200,
+        200,
+        200,
+        429,
+        429,
+        200,
+        429,
+        429,
+        200,
+        429
+      ],
+      "ok200": 5,
+      "rateLimited429": 5,
+      "passed": true
+    },
+    {
+      "name": "cleanup_expired_rate_limits",
+      "before": 0,
+      "deleted": 0,
+      "passed": true
+    }
+  ]
+}

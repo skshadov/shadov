@@ -1,0 +1,13 @@
+{
+  "capturedAt": "2026-06-22T09:59:44.200Z",
+  "testFunctionUrl": "https://shbgsrryredmememwgtn.supabase.co/functions/v1/submit-estimate-request-test",
+  "matrix": [
+    {
+      "name": "transaction_rollback",
+      "status": 500,
+      "code": "fault_injection_failed",
+      "remainingRequests": 0,
+      "passed": true
+    }
+  ]
+}
