@@ -1,11 +1,8 @@
 {
   "stage": "2.5.3",
   "specificationCheck": {
-    "passed": false,
-    "errors": [
-      "canonical не найден в route-файле",
-      "accessibility.minTapHeight провален"
-    ]
+    "passed": true,
+    "errors": []
   },
   "sourceInventory": {
     "calculatorRulesSource": "src/data/calculator-rules.ts",
@@ -514,7 +511,7 @@
     "modeRadioGroup": true,
     "inputsHaveLabels": true,
     "ariaDescribedBy": true,
-    "minTapHeight": false
+    "minTapHeight": true
   },
   "responsiveChecks": {
     "notes": [
