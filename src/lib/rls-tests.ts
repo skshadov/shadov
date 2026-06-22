@@ -312,15 +312,15 @@ async function runMatrix() {
   // Admin CRUD — project_members
   console.log("== admin project_members CRUD ==");
   await exec("admin-project_members-select","admin","select","project_members","allow", async () => {
-    const r = await cAdmin.from("project_members").select("id").eq("project_id", projectId);
+    const r = await cAdmin.from("project_members").select("user_id,member_role").eq("project_id", projectId);
     return { error: r.error };
   });
   await exec("admin-project_members-update","admin","update","project_members","allow", async () => {
-    const r = await cAdmin.from("project_members").update({ member_role: "viewer" }).eq("project_id", projectId).eq("user_id", uidA).select("id");
+    const r = await cAdmin.from("project_members").update({ member_role: "viewer" }).eq("project_id", projectId).eq("user_id", uidA).select("user_id");
     return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
   });
   await exec("admin-project_members-delete","admin","delete","project_members","allow", async () => {
-    const r = await cAdmin.from("project_members").delete().eq("project_id", projectId).eq("user_id", uidB).select("id");
+    const r = await cAdmin.from("project_members").delete().eq("project_id", projectId).eq("user_id", uidB).select("user_id");
     return { error: r.error };
   });
 
@@ -349,7 +349,7 @@ async function runMatrix() {
   console.log("== admin project_documents CRUD ==");
   let adminDocId = "";
   await exec("admin-project_documents-insert","admin","insert","project_documents","allow", async () => {
-    const r = await cAdmin.from("project_documents").insert({ project_id: projectId, storage_path: "stage3e/admin.pdf", file_name: "admin.pdf" }).select("id").single();
+    const r = await cAdmin.from("project_documents").insert({ project_id: projectId, storage_path: "stage3e/admin.pdf", file_name: "admin.pdf", mime_type: "application/pdf", size_bytes: 1024 }).select("id").single();
     if (r.error) return { error: r.error };
     adminDocId = r.data.id; return { error: null };
   });
