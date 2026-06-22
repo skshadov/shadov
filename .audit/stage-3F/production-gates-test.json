@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-06-22T10:31:05.720Z",
+  "productionDataCollection": {
+    "httpStatus": 503,
+    "responseCode": "public_collection_disabled",
+    "capturedFromCloud": true,
+    "edgeFunction": "submit-estimate-request",
+    "note": "Live cloud call via stage3e-runner prod-gates scenario"
+  },
+  "publicAuthEnabled": false,
+  "publicDataCollectionEnabled": false,
+  "operatorConfigured": false,
+  "missingRequiredFields": [
+    "legalName",
+    "contact",
+    "inn",
+    "ogrn",
+    "legalAddress"
+  ],
+  "operatorSummary": {
+    "operatorConfigured": false,
+    "missingRequiredFields": [
+      "legalName",
+      "contact",
+      "inn",
+      "ogrn",
+      "legalAddress"
+    ],
+    "publicDataCollectionEnabled": false,
+    "publicAuthEnabled": false
+  },
+  "passed": true
+}
