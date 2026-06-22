@@ -1,0 +1,15 @@
+{
+  "verifiedAt": "2026-06-22T15:35:00Z",
+  "functions": [
+    "get-project-document-url",
+    "get-project-camera-session",
+    "submit-estimate-request"
+  ],
+  "temporaryStage4cFunctionsRemoved": [
+    "stage4c-test-orchestrator",
+    "stage4c-test-launcher",
+    "stage4c-doc-url-ttl2"
+  ],
+  "remainingTestFunctions": 0,
+  "passed": true
+}
