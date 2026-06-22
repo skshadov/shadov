@@ -1,0 +1,894 @@
+{
+  "cleanup": {
+    "projectIds": {
+      "projectA": "a94936b7-e0bc-49f6-b2be-ca8b54a75646",
+      "projectB": "0dfb5dd7-621d-4eb8-95b4-8377be45a879"
+    },
+    "runId": "stage4a_b296604a29114c9e982c1506931f31cc",
+    "skipped": true,
+    "users": {
+      "adminTest": "63931aa1-97c3-4862-af38-23de72576c01",
+      "clientA": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "clientB": "7c60cdd1-4ea4-4844-8f86-5c6e04616422"
+    }
+  },
+  "demoProject": {
+    "acceptances": 2,
+    "acceptedAcceptances": 1,
+    "cameraSources": 0,
+    "cameras": 2,
+    "demoCount": 1,
+    "is_demo": true,
+    "payments": 4,
+    "pendingAcceptances": 1,
+    "project_id": "d3e88359-99dc-4813-9b5d-b61d19c216ad",
+    "publiclyVisible": false,
+    "publishedDailyReports": 3,
+    "realCustomerPii": 0,
+    "stages": 7,
+    "systemMessages": 5
+  },
+  "ok": true,
+  "realtime": {
+    "bodyLeakedToB": false,
+    "clientA_received_own": 1,
+    "clientB_received_foreign_projectA": 0,
+    "clientB_received_own_projectB": 1,
+    "skipped": false,
+    "subscribeStatus": {
+      "chA": "SUBSCRIBED",
+      "chB_onA": "SUBSCRIBED",
+      "chB_onB": "SUBSCRIBED"
+    }
+  },
+  "rls_test_matrix": [
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "daily_reports/own_published"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "daily_reports/own_unpublished"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "daily_reports/foreign"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 403,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "INSERT",
+      "passed": true,
+      "postgresCode": "42501",
+      "resource": "daily_reports"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "UPDATE",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "daily_reports"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "DELETE",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "daily_reports"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "63931aa1-97c3-4862-af38-23de72576c01",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "daily_reports/any"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "63931aa1-97c3-4862-af38-23de72576c01",
+      "operation": "INSERT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "daily_reports"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "63931aa1-97c3-4862-af38-23de72576c01",
+      "operation": "UPDATE",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "daily_reports"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "63931aa1-97c3-4862-af38-23de72576c01",
+      "operation": "DELETE",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "daily_reports"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "cameras/own"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "cameras/foreign"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "camera_sources"
+    },
+    {
+      "actor": "clientB",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "7c60cdd1-4ea4-4844-8f86-5c6e04616422",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "camera_sources"
+    },
+    {
+      "actor": "anon",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": null,
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "camera_sources"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "63931aa1-97c3-4862-af38-23de72576c01",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "camera_sources"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "acceptances/own"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "acceptances/foreign"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "UPDATE",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "acceptances/direct"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "RPC",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "respond_to_stage_acceptance/accepted"
+    },
+    {
+      "actor": "clientA",
+      "actual": "accepted",
+      "expected": "accepted",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "VERIFY",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "acceptance.status=accepted"
+    },
+    {
+      "actor": "clientA",
+      "actual": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "expected": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "VERIFY",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "acceptance.responded_by=auth.uid()"
+    },
+    {
+      "actor": "clientA",
+      "actual": "set",
+      "expected": "not_null",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "VERIFY",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "acceptance.responded_at"
+    },
+    {
+      "actor": "clientA",
+      "actual": "accepted",
+      "expected": "accepted",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "VERIFY",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "stage.status=accepted"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "note": "already_resolved",
+      "operation": "RPC",
+      "passed": true,
+      "postgresCode": "P0001",
+      "resource": "respond_to_stage_acceptance/repeat"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "RPC",
+      "passed": true,
+      "postgresCode": "P0001",
+      "resource": "respond_to_stage_acceptance/short_comment"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "RPC",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "respond_to_stage_acceptance/changes_requested"
+    },
+    {
+      "actor": "clientA",
+      "actual": "changes_requested",
+      "expected": "changes_requested",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "VERIFY",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "acceptance.status=changes_requested"
+    },
+    {
+      "actor": "clientA",
+      "actual": "in_progress",
+      "expected": "in_progress",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "VERIFY",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "stage.status=in_progress"
+    },
+    {
+      "actor": "clientB",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "7c60cdd1-4ea4-4844-8f86-5c6e04616422",
+      "operation": "RPC",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "respond_to_stage_acceptance/own"
+    },
+    {
+      "actor": "clientB",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "7c60cdd1-4ea4-4844-8f86-5c6e04616422",
+      "operation": "RPC",
+      "passed": true,
+      "postgresCode": "P0001",
+      "resource": "respond_to_stage_acceptance/foreign"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "UPDATE",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "project_stages/direct"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "messages/own_project"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "messages/foreign_project"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "INSERT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "messages/valid"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "INSERT",
+      "passed": true,
+      "postgresCode": "42501",
+      "resource": "messages/sender_spoof"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "INSERT",
+      "passed": true,
+      "postgresCode": "42501",
+      "resource": "messages/system_by_client"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "INSERT",
+      "passed": true,
+      "postgresCode": "23514",
+      "resource": "messages/empty"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "INSERT",
+      "passed": true,
+      "postgresCode": "23514",
+      "resource": "messages/oversize"
+    },
+    {
+      "actor": "clientB",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "7c60cdd1-4ea4-4844-8f86-5c6e04616422",
+      "operation": "INSERT",
+      "passed": true,
+      "postgresCode": "42501",
+      "resource": "messages/foreign_project"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "UPDATE",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "messages"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "DELETE",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "messages"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "63931aa1-97c3-4862-af38-23de72576c01",
+      "operation": "INSERT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "messages"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "payments/own"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "payments/foreign"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "INSERT",
+      "passed": true,
+      "postgresCode": "42501",
+      "resource": "payments"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "63931aa1-97c3-4862-af38-23de72576c01",
+      "operation": "INSERT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "payments"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "documents/visible_own"
+    },
+    {
+      "actor": "clientA",
+      "actual": "metadata_visible",
+      "expected": "allow_metadata_only_no_url",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "note": "Hidden docs metadata visible to project members; signed URL gated by Edge Function",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "documents/hidden_metadata"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SELECT",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "documents/foreign"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "INSERT",
+      "passed": true,
+      "postgresCode": "42501",
+      "resource": "documents"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "note": "Object not found",
+      "operation": "STORAGE_DOWNLOAD",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "object/visible_direct"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "STORAGE_UPLOAD",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "object/client_upload"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "STORAGE_DELETE",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "object/client_delete"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "STORAGE_DOWNLOAD",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "object/foreign"
+    },
+    {
+      "actor": "anon",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": null,
+      "jwtUserId": null,
+      "operation": "STORAGE_DOWNLOAD",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "object/anon"
+    },
+    {
+      "actor": "clientA",
+      "actual": "signed_url",
+      "expected": "signed_url",
+      "httpStatus": 200,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "EDGE_FN",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "doc-url/visible"
+    },
+    {
+      "actor": "clientA",
+      "actual": "document_not_found",
+      "expected": "document_not_found",
+      "httpStatus": 404,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "EDGE_FN",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "doc-url/hidden"
+    },
+    {
+      "actor": "clientA",
+      "actual": "document_not_found",
+      "expected": "document_not_found",
+      "httpStatus": 404,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "EDGE_FN",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "doc-url/foreign"
+    },
+    {
+      "actor": "anon",
+      "actual": "unauthorized",
+      "expected": "unauthorized",
+      "httpStatus": 401,
+      "jwtUserId": null,
+      "operation": "EDGE_FN",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "doc-url/anon"
+    },
+    {
+      "actor": "invalid_jwt",
+      "actual": "unauthorized",
+      "expected": "unauthorized",
+      "httpStatus": 401,
+      "jwtUserId": null,
+      "operation": "EDGE_FN",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "doc-url/invalid_jwt"
+    },
+    {
+      "actor": "clientA",
+      "actual": "200",
+      "expected": "200",
+      "httpStatus": 200,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SIGNED_URL_EXPIRY",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "ttl=2/immediate"
+    },
+    {
+      "actor": "clientA",
+      "actual": "400",
+      "expected": ">=400",
+      "httpStatus": 400,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "SIGNED_URL_EXPIRY",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "ttl=2/after_3s"
+    },
+    {
+      "actor": "clientA",
+      "actual": "camera_not_configured",
+      "expected": "camera_not_configured",
+      "httpStatus": 200,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "EDGE_FN",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "camera/own_not_configured"
+    },
+    {
+      "actor": "clientA",
+      "actual": "camera_not_configured",
+      "expected": "camera_not_configured_or_deny",
+      "httpStatus": 200,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "EDGE_FN",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "camera/foreign"
+    },
+    {
+      "actor": "anon",
+      "actual": "unauthorized",
+      "expected": "unauthorized",
+      "httpStatus": 401,
+      "jwtUserId": null,
+      "operation": "EDGE_FN",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "camera/anon"
+    },
+    {
+      "actor": "invalid_jwt",
+      "actual": "unauthorized",
+      "expected": "unauthorized",
+      "httpStatus": 401,
+      "jwtUserId": null,
+      "operation": "EDGE_FN",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "camera/invalid_jwt"
+    },
+    {
+      "actor": "clientA",
+      "actual": "1",
+      "expected": ">=1",
+      "httpStatus": null,
+      "jwtUserId": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76",
+      "operation": "REALTIME",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "project_messages/own"
+    },
+    {
+      "actor": "clientB",
+      "actual": "0",
+      "expected": "0",
+      "httpStatus": null,
+      "jwtUserId": "7c60cdd1-4ea4-4844-8f86-5c6e04616422",
+      "operation": "REALTIME",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "project_messages/foreign_projectA"
+    },
+    {
+      "actor": "clientB",
+      "actual": "1",
+      "expected": ">=1",
+      "httpStatus": null,
+      "jwtUserId": "7c60cdd1-4ea4-4844-8f86-5c6e04616422",
+      "operation": "REALTIME",
+      "passed": true,
+      "postgresCode": null,
+      "resource": "project_messages/own_projectB"
+    }
+  ],
+  "summary": {
+    "allPassed": true,
+    "failedTests": 0,
+    "finishedAt": "2026-06-22T11:40:46.320Z",
+    "passedTests": 70,
+    "runId": "stage4a_b296604a29114c9e982c1506931f31cc",
+    "startedAt": "2026-06-22T11:40:27.971Z",
+    "totalTests": 70
+  },
+  "_browser_summary": {
+    "clientA": {
+      "user_id": "a46516ac-d86c-4b9a-a5f1-d0780b0fbc76"
+    },
+    "clientB": {
+      "user_id": "7c60cdd1-4ea4-4844-8f86-5c6e04616422"
+    },
+    "adminTest": {
+      "user_id": "63931aa1-97c3-4862-af38-23de72576c01"
+    }
+  },
+  "readyForStage5": true,
+  "realJwtIntegrationTestsExecuted": true,
+  "integrationTestsPassed": true,
+  "orchestratorRemoved": true,
+  "stage4aRunTokenRemoved": true,
+  "playwright": [
+    {
+      "role": "clientA",
+      "url": "http://localhost:8080/client",
+      "sees_own": true,
+      "sees_other": false,
+      "console_errors": []
+    },
+    {
+      "role": "clientB",
+      "url": "http://localhost:8080/client",
+      "sees_own": true,
+      "sees_other": false,
+      "console_errors": []
+    },
+    {
+      "role": "adminTest",
+      "url": "http://localhost:8080/client",
+      "sees_own": false,
+      "sees_other": true,
+      "console_errors": []
+    }
+  ],
+  "cleanupFinal": {
+    "deletedProjects": 2,
+    "deletedStorage": 3,
+    "deletedUsers": 3,
+    "errors": [],
+    "sweptStrayProjects": 0,
+    "verified": {
+      "remainingTestMessages": 0,
+      "remainingTestProjects": 0,
+      "remainingTestUsers": 0
+    }
+  },
+  "build": {
+    "exitCode": 0,
+    "logFile": "build.log"
+  },
+  "typescript": {
+    "exitCode": 0,
+    "logFile": "typescript.log"
+  },
+  "notes": {
+    "spec_email_invalid_changed_to_test_tld": "Supabase Auth rejects .invalid TLD; used @stage4a.test (RFC 2606 reserved)",
+    "spec_password_length_constraint": "bcrypt 72-byte limit; passwords are 64-char hex (32 random bytes)",
+    "two_function_chain": "launcher proxies token-bearing request to orchestrator; token validated timing-safe inside orchestrator; token never leaves Edge env",
+    "jwt_handling": "JWTs held only in /tmp during Playwright; deleted post-test; users deleted post-test which invalidates JWTs",
+    "demo_project_preserved": "d3e88359-99dc-4813-9b5d-b61d19c216ad"
+  }
+}
