@@ -1,8 +1,0 @@
-$ bun src/lib/validate-content.ts
-validate-content: страниц ремонта 11
-validate-content: строительных страниц 18
-✓ validate-content: пройдена.
-✓ validate-content 2.4.3: пройдена.
-✓ validate-content 2.5.1: пройдена.
-✓ validate-content 2.5.3: пройдена.
-exit_code=0
