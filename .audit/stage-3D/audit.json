@@ -1,0 +1,187 @@
+{
+  "stage": "3D",
+  "completedAt": "2026-06-22T10:03:53.540Z",
+  "testFunctionUrl": "https://shbgsrryredmememwgtn.supabase.co/functions/v1/submit-estimate-request-test",
+  "cloudEdgeIntegrationMatrix": [
+    {
+      "name": "valid_anonymous",
+      "passed": true
+    },
+    {
+      "name": "valid_authenticated",
+      "passed": true
+    },
+    {
+      "name": "concurrent_idempotency",
+      "passed": true
+    },
+    {
+      "name": "parallel_rate_limit",
+      "passed": true
+    },
+    {
+      "name": "origin_allowed",
+      "passed": true
+    },
+    {
+      "name": "origin_disallowed",
+      "passed": true
+    },
+    {
+      "name": "origin_missing",
+      "passed": true
+    },
+    {
+      "name": "invalid_token",
+      "passed": true
+    },
+    {
+      "name": "unknown_service_slug",
+      "passed": true
+    },
+    {
+      "name": "invalid_calculator_mode",
+      "passed": true
+    },
+    {
+      "name": "rate_limit_salt_present",
+      "passed": true
+    },
+    {
+      "name": "transaction_rollback",
+      "passed": true
+    },
+    {
+      "name": "cleanup_expired_rate_limits",
+      "passed": true
+    },
+    {
+      "name": "no_pii_in_response",
+      "passed": true
+    }
+  ],
+  "conditions": {
+    "validAnonymousCloudSubmissionPassed": true,
+    "validAuthenticatedCloudSubmissionPassed": true,
+    "cloudConcurrentIdempotencyPassed": true,
+    "cloudParallelRateLimitPassed": true,
+    "cloudConsentRollbackPassed": true,
+    "cloudCorsPassed": true,
+    "cloudMissingSaltPassed": true,
+    "productionFunctionDeployed": true,
+    "testFunctionDeployed": false,
+    "debugFunctionDeployed": false,
+    "testSecretsActive": false,
+    "remainingTestUsers": 0,
+    "remainingTestRows": 0,
+    "remainingTestStorageObjects": 0,
+    "deployedCloudEdgeTestsExecuted": true,
+    "localOnlyEdgeTests": false,
+    "testOnlyRpcExists": false,
+    "PUBLIC_DATA_COLLECTION_ENABLED": false,
+    "PUBLIC_AUTH_ENABLED": false,
+    "operatorConfigured": false,
+    "readyForProductionDataCollection": false,
+    "readyForStage4": true
+  },
+  "cloudFunctionsBefore": {
+    "submit-estimate-request": {
+      "status": 503,
+      "deployed": true
+    },
+    "submit-estimate-request-test": {
+      "status": 404,
+      "deployed": false
+    },
+    "stage3c-debug-address": {
+      "status": 404,
+      "deployed": false
+    },
+    "inspect-client-address": {
+      "status": 404,
+      "deployed": false
+    },
+    "stage3d-runner": {
+      "status": 404,
+      "deployed": false
+    }
+  },
+  "cloudFunctionsAfter": {
+    "submit-estimate-request": {
+      "status": 503,
+      "deployed": true
+    },
+    "submit-estimate-request-test": {
+      "status": 404,
+      "deployed": false
+    },
+    "stage3c-debug-address": {
+      "status": 404,
+      "deployed": false
+    },
+    "inspect-client-address": {
+      "status": 404,
+      "deployed": false
+    },
+    "stage3d-runner": {
+      "status": 404,
+      "deployed": false
+    }
+  },
+  "cloudSecretsBefore": [
+    "LOVABLE_API_KEY",
+    "TEST_ALLOWED_ORIGINS",
+    "TEST_MODE_ENABLED",
+    "TEST_RATE_LIMIT_SALT",
+    "TEST_RUN_TOKEN"
+  ],
+  "cloudSecretsAfter": [
+    "LOVABLE_API_KEY"
+  ],
+  "testCleanup": {
+    "usersC": {
+      "capturedAt": "2026-06-22T10:03:14Z",
+      "source": "supabase--read_query against auth.users",
+      "patterns": [
+        "%stage3d%",
+        "%stage3c%",
+        "%@example.invalid",
+        "%.local",
+        "%.invalid"
+      ],
+      "remainingTestUsers": 0,
+      "remainingEmails": []
+    },
+    "dbC": {
+      "capturedAt": "2026-06-22T10:03:14Z",
+      "source": "supabase--read_query",
+      "checks": {
+        "estimate_requests_test": 0,
+        "consent_records_test": 0,
+        "submission_rate_limits": 0,
+        "profiles_test": 0,
+        "user_roles_test": 0,
+        "projects_total": 0,
+        "project_members_total": 0,
+        "project_stages_total": 0,
+        "project_documents_total": 0
+      },
+      "remainingTestRows": 0
+    },
+    "storC": {
+      "capturedAt": "2026-06-22T10:03:14Z",
+      "bucket": "project-documents",
+      "source": "supabase--read_query against storage.objects",
+      "patterns": [
+        "%stage3d%",
+        "%stage3c%",
+        "%.invalid%"
+      ],
+      "totalObjects": 0,
+      "remainingTestStorageObjects": 0
+    }
+  },
+  "specificationCheck": {
+    "passed": true
+  }
+}
