@@ -1,11 +1,9 @@
 {
   "stage": "4",
-  "timestamp": "2026-06-22T11:16:20.914Z",
+  "timestamp": "2026-06-22T11:16:48.022Z",
   "specificationCheck": {
-    "passed": false,
-    "errors": [
-      "RLS matrix: anonymous client can read protected tables"
-    ],
+    "passed": true,
+    "errors": [],
     "warnings": []
   },
   "routes": {
@@ -43,7 +41,7 @@
     "demoReady": true,
     "rpcExists": true,
     "realtimeEnabled": null,
-    "timestamp": "2026-06-22T11:16:20.604Z"
+    "timestamp": "2026-06-22T11:16:47.689Z"
   },
   "demoProject": {
     "project_id": "d3e88359-99dc-4813-9b5d-b61d19c216ad",
@@ -76,7 +74,7 @@
       },
       {
         "table": "project_camera_sources",
-        "anonDenied": false
+        "anonDenied": true
       },
       {
         "table": "project_stage_acceptances",
@@ -91,9 +89,9 @@
         "anonDenied": true
       }
     ],
-    "allAnonDenied": false,
+    "allAnonDenied": true,
     "total": 7,
-    "failed": 1
+    "failed": 0
   },
   "securitySearch": {
     "svcRoleHits": 0,
@@ -112,13 +110,11 @@
     "paymentsReady": true,
     "documentsReady": true,
     "demoProjectReady": true,
-    "rlsComplete": false,
+    "rlsComplete": true,
     "publicAuthRemainsDisabled": true,
     "publicDataCollectionRemainsDisabled": true,
     "adminUiNotStarted": true,
-    "readyForStage5": false,
-    "blockingIssues": [
-      "RLS matrix: anonymous client can read protected tables"
-    ]
+    "readyForStage5": true,
+    "blockingIssues": []
   }
 }

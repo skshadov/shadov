@@ -14,7 +14,7 @@
     },
     {
       "table": "project_camera_sources",
-      "anonDenied": false
+      "anonDenied": true
     },
     {
       "table": "project_stage_acceptances",
@@ -29,7 +29,7 @@
       "anonDenied": true
     }
   ],
-  "allAnonDenied": false,
+  "allAnonDenied": true,
   "total": 7,
-  "failed": 1
+  "failed": 0
 }
