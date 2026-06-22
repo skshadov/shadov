@@ -1,21 +1,8 @@
 {
   "stage": "2.5.2",
   "specificationCheck": {
-    "passed": false,
-    "errors": [
-      "/inzhenernye-sistemy: canonical не совпадает с https://shadov.pro/inzhenernye-sistemy",
-      "/inzhenernye-sistemy: og:url не совпадает с https://shadov.pro/inzhenernye-sistemy",
-      "/elektromontazh: canonical не совпадает с https://shadov.pro/elektromontazh",
-      "/elektromontazh: og:url не совпадает с https://shadov.pro/elektromontazh",
-      "/santehnika: canonical не совпадает с https://shadov.pro/santehnika",
-      "/santehnika: og:url не совпадает с https://shadov.pro/santehnika",
-      "/vodosnabzhenie-kanalizatsiya: canonical не совпадает с https://shadov.pro/vodosnabzhenie-kanalizatsiya",
-      "/vodosnabzhenie-kanalizatsiya: og:url не совпадает с https://shadov.pro/vodosnabzhenie-kanalizatsiya",
-      "/otoplenie: canonical не совпадает с https://shadov.pro/otoplenie",
-      "/otoplenie: og:url не совпадает с https://shadov.pro/otoplenie",
-      "/teplyy-pol: canonical не совпадает с https://shadov.pro/teplyy-pol",
-      "/teplyy-pol: og:url не совпадает с https://shadov.pro/teplyy-pol"
-    ]
+    "passed": true,
+    "errors": []
   },
   "engineeringServicePages": [
     {
@@ -683,38 +670,38 @@
     "/inzhenernye-sistemy": {
       "title": "from-data",
       "description": "from-data",
-      "canonical": "mismatch",
-      "ogUrl": "mismatch"
+      "canonical": "https://shadov.pro/inzhenernye-sistemy",
+      "ogUrl": "https://shadov.pro/inzhenernye-sistemy"
     },
     "/elektromontazh": {
       "title": "from-data",
       "description": "from-data",
-      "canonical": "mismatch",
-      "ogUrl": "mismatch"
+      "canonical": "https://shadov.pro/elektromontazh",
+      "ogUrl": "https://shadov.pro/elektromontazh"
     },
     "/santehnika": {
       "title": "from-data",
       "description": "from-data",
-      "canonical": "mismatch",
-      "ogUrl": "mismatch"
+      "canonical": "https://shadov.pro/santehnika",
+      "ogUrl": "https://shadov.pro/santehnika"
     },
     "/vodosnabzhenie-kanalizatsiya": {
       "title": "from-data",
       "description": "from-data",
-      "canonical": "mismatch",
-      "ogUrl": "mismatch"
+      "canonical": "https://shadov.pro/vodosnabzhenie-kanalizatsiya",
+      "ogUrl": "https://shadov.pro/vodosnabzhenie-kanalizatsiya"
     },
     "/otoplenie": {
       "title": "from-data",
       "description": "from-data",
-      "canonical": "mismatch",
-      "ogUrl": "mismatch"
+      "canonical": "https://shadov.pro/otoplenie",
+      "ogUrl": "https://shadov.pro/otoplenie"
     },
     "/teplyy-pol": {
       "title": "from-data",
       "description": "from-data",
-      "canonical": "mismatch",
-      "ogUrl": "mismatch"
+      "canonical": "https://shadov.pro/teplyy-pol",
+      "ogUrl": "https://shadov.pro/teplyy-pol"
     }
   },
   "structuredData": {
