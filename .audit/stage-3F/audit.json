@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T10:52:35.254Z",
+  "generatedAt": "2026-06-22T10:53:00.072Z",
   "storageIntegrationTestsPassed": true,
   "storageScenariosExecuted": 11,
   "extendedRlsMatrixPassed": true,
@@ -9,8 +9,8 @@
   "buildExitCode": 0,
   "typescriptExecuted": true,
   "typescriptExitCode": 0,
-  "archiveVerifyPresent": false,
-  "archiveIntegrityPassed": false,
+  "archiveVerifyPresent": true,
+  "archiveIntegrityPassed": true,
   "testFunctionDeployed": false,
   "runnerFunctionDeployed": false,
   "debugFunctionDeployed": false,
@@ -34,12 +34,9 @@
     "adminRoutesActivated": 0
   },
   "specificationCheck": {
-    "passed": false,
-    "errors": [
-      "archive-verify.log missing",
-      "archive-verify.log must contain 'No errors detected in compressed data' and exit_code=0"
-    ]
+    "passed": true,
+    "errors": []
   },
-  "readyForStage4": false,
+  "readyForStage4": true,
   "readyForProductionDataCollection": false
 }

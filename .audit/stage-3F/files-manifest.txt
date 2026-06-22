@@ -1,3 +1,4 @@
+audit-exit-code.txt
 audit-source.ts
 audit-stage-2-regression.log
 audit-stage-3.log
@@ -16,7 +17,6 @@ production-gates-test.json
 rls-test-matrix.json
 rls-tests.log
 storage-integration-test.json
-storage-tests.log
 test-database-cleanup.json
 test-storage-cleanup.json
 test-users-cleanup.json
