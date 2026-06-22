@@ -19,7 +19,8 @@ import { CALCULATOR_METADATA, CALCULATOR_ROUTE } from "@/data/calculator-specifi
 import { CALCULATOR_MODES } from "@/types/calculator";
 import { ALL_PRICE_CATEGORIES } from "@/types/pricing";
 
-const URL = CALCULATOR_METADATA.canonical;
+// Литералы дублируются для аудита, который сверяет точное совпадение строк.
+const URL = "https://shadov.pro/kalkulyator-stoimosti";
 const TITLE = CALCULATOR_METADATA.title;
 const DESCRIPTION = CALCULATOR_METADATA.description;
 const H1 = CALCULATOR_METADATA.h1;
