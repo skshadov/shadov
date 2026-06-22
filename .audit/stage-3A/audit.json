@@ -1,0 +1,117 @@
+{
+  "stage": "stage-3",
+  "cloudConfiguration": {
+    "cloudConnected": true,
+    "supabaseClientSingleton": true,
+    "integrationFiles": true
+  },
+  "operatorConfiguration": {
+    "operatorConfigured": false,
+    "missingRequiredFields": [
+      "legalName",
+      "contact",
+      "inn",
+      "ogrn",
+      "legalAddress"
+    ]
+  },
+  "featureFlags": {
+    "PUBLIC_DATA_COLLECTION_ENABLED": false,
+    "PUBLIC_AUTH_ENABLED": false
+  },
+  "migrations": {
+    "count": 2,
+    "files": [
+      "20260622081055_9d57e447-3837-4f60-b168-7385b367c065.sql",
+      "20260622081124_3ad424c6-f2be-427b-bbcb-55fd12f3051a.sql"
+    ]
+  },
+  "edgeFunctions": {
+    "submitEstimateRequest": {
+      "exists": true,
+      "checks": {
+        "honeypot": true,
+        "rateLimit": true,
+        "hashedIp": true,
+        "consentRequired": true,
+        "submissionIdUnique": true,
+        "noLogPii": true,
+        "featureFlag": true,
+        "corsCheck": true,
+        "requestNumberFormat": true
+      }
+    }
+  },
+  "estimateForm": {
+    "importsBackendFlag": true,
+    "callsEdgeFunction": true,
+    "keepsLocalDraft": true,
+    "noDirectInsert": true,
+    "consentRequired": true,
+    "generatesSubmissionId": true
+  },
+  "loginRoute": {
+    "active": true,
+    "noindex": true
+  },
+  "routeStubs": {
+    "/client": true,
+    "/client/project/$id": true,
+    "/admin": true
+  },
+  "rls": {
+    "permissiveHits": [],
+    "permissiveCount": 0
+  },
+  "securitySearch": {
+    "serviceRoleLeaks": [
+      "src/lib/rls-tests.ts"
+    ],
+    "directInsertHits": [
+      "src/lib/rls-tests.ts"
+    ]
+  },
+  "legalPages": {
+    "privacyMentionsDemoOrCloud": true,
+    "consentMentionsDemoOrCloud": true
+  },
+  "totals": {
+    "priceItems": 334,
+    "servicePages": 35,
+    "repairServicePages": 11,
+    "constructionServicePages": 18,
+    "engineeringServicePages": 6,
+    "calculatorRoutes": 1,
+    "calculatorModes": 4,
+    "activeAuthRoutes": 1,
+    "clientRoutesActivated": 0,
+    "adminRoutesActivated": 0,
+    "databaseTables": 9,
+    "privateStorageBuckets": 1,
+    "directAnonRequestTableAccess": 0,
+    "frontendServiceRoleReferences": 1,
+    "permissiveSensitivePolicies": 0
+  },
+  "stage3Completion": {
+    "cloudConnected": true,
+    "databaseReady": true,
+    "migrationsApplied": true,
+    "rlsComplete": true,
+    "authInfrastructureReady": true,
+    "loginPageReady": true,
+    "estimateSubmissionInfrastructureReady": true,
+    "publicDataCollectionEnabled": false,
+    "publicAuthEnabled": false,
+    "operatorConfigured": false,
+    "projectFoundationReady": true,
+    "privateStorageReady": true,
+    "clientUiNotStarted": true,
+    "adminUiNotStarted": true,
+    "readyForStage4": false,
+    "readyForProductionDataCollection": false,
+    "blockingIssues": [
+      "service_role_in_frontend",
+      "direct_anon_insert"
+    ]
+  }
+}
