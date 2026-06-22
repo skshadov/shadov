@@ -1,0 +1,132 @@
+{
+  "generatedAt": "2026-06-22T10:50:21.312Z",
+  "executed": true,
+  "bucket": "project-documents",
+  "projectId": "e651d164-66f2-4cd9-9cd6-00857af63fd6",
+  "scenarios": [
+    {
+      "testName": "anon-storage-list-bucket",
+      "actor": "anon",
+      "operation": "list",
+      "resource": "storage:project-documents/",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "rls-empty"
+    },
+    {
+      "testName": "anon-storage-download",
+      "actor": "anon",
+      "operation": "download",
+      "resource": "storage:object(member)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "Object not found"
+    },
+    {
+      "testName": "anon-storage-upload",
+      "actor": "anon",
+      "operation": "upload",
+      "resource": "storage:project-documents",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "new row violates row-level security policy"
+    },
+    {
+      "testName": "member-storage-read-own",
+      "actor": "clientA",
+      "operation": "download",
+      "resource": "storage:object(own-project)",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "member-storage-upload-deny",
+      "actor": "clientA",
+      "operation": "upload",
+      "resource": "storage:project-documents",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "new row violates row-level security policy"
+    },
+    {
+      "testName": "member-storage-delete-deny",
+      "actor": "clientA",
+      "operation": "delete",
+      "resource": "storage:project-documents",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "rls-empty"
+    },
+    {
+      "testName": "nonmember-storage-read",
+      "actor": "clientB",
+      "operation": "download",
+      "resource": "storage:object(other-project)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "Object not found"
+    },
+    {
+      "testName": "admin-storage-upload",
+      "actor": "admin",
+      "operation": "upload",
+      "resource": "storage:project-documents",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-storage-read",
+      "actor": "admin",
+      "operation": "download",
+      "resource": "storage:object",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-storage-delete",
+      "actor": "admin",
+      "operation": "delete",
+      "resource": "storage:project-documents",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "member-storage-malformed-path",
+      "actor": "clientA",
+      "operation": "download",
+      "resource": "storage:invalid-project/...",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "Object not found"
+    }
+  ],
+  "anonListDenied": true,
+  "anonReadDenied": true,
+  "anonUploadDenied": true,
+  "memberReadOwnAllowed": true,
+  "memberReadOtherDenied": true,
+  "memberUploadDenied": true,
+  "memberDeleteDenied": true,
+  "nonMemberReadDenied": true,
+  "adminUploadAllowed": true,
+  "adminReadAllowed": true,
+  "adminDeleteAllowed": true,
+  "malformedPathDenied": true,
+  "malformedPathSqlException": false,
+  "cleanupPassed": true,
+  "remainingTestStorageObjects": 0,
+  "remainingTestRows": 0,
+  "remainingTestUsers": 0,
+  "passed": true
+}
