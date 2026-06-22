@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-22T10:40:19.356Z",
-  "passed": 51,
-  "failed": 1,
+  "generatedAt": "2026-06-22T10:40:42.571Z",
+  "passed": 52,
+  "failed": 0,
   "total": 52,
   "results": [
     {
@@ -355,9 +355,8 @@
       "operation": "update",
       "resource": "project_members",
       "expected": "allow",
-      "actual": "deny",
-      "passed": false,
-      "errorCode": "23514"
+      "actual": "allow",
+      "passed": true
     },
     {
       "testName": "admin-project_members-delete",
