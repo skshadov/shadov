@@ -1,0 +1,56 @@
+$ bun src/lib/estimate-submission-tests.ts
+  ✓ EstimateForm: вызов supabase.functions.invoke('submit-estimate-request')
+  ✓ EstimateForm: gate isPublicDataCollectionEnabled
+  ✓ EstimateForm: генерация submission_id через crypto.randomUUID
+  ✓ EstimateForm: passes consent_version
+  ✓ EstimateForm: honeypot website-поле
+  ✓ EstimateForm: localStorage draft
+  ✓ EstimateForm: показ requestNumber после успеха
+  ✓ EstimateForm: без прямого insert в estimate_requests
+  ✓ EstimateForm: feature-off ⇒ DEMO mode (localStorage)
+  ✓ EstimateForm: source_path передаётся
+  ✓ prod fn использует общий handler
+  ✓ test fn удалена из активного дерева после Stage 3C
+  ✓ edge: feature-flag check (prod + test branches)
+  ✓ edge: CORS preflight 204
+  ✓ edge: метод POST only
+  ✓ edge: invalid_json
+  ✓ edge: honeypot
+  ✓ edge: bad_submission_id
+  ✓ edge: bad_name
+  ✓ edge: no_contact
+  ✓ edge: bad_email
+  ✓ edge: bad_phone
+  ✓ edge: no_consent
+  ✓ edge: bad_source
+  ✓ edge: snapshot_too_large
+  ✓ edge: rate_limited
+  ✓ edge: SHA-256 hash для rate-limit ключа
+  ✓ edge: RATE_LIMIT_SALT/TEST_RATE_LIMIT_SALT min length 32
+  ✓ edge: requestNumber формата SH-YYYYMM-XXXXXX
+  ✓ edge: возвращает только requestNumber из RPC, не внутренний UUID
+  ✓ edge: идемпотентность через create_estimate_request_transaction RPC
+  ✓ edge: атомарный rate-limit через consume_submission_rate_limit RPC
+  ✓ edge: транзакционная вставка request + consents в одной SECURITY DEFINER функции
+  ✓ edge: нет console.log с PII
+  ✓ edge: CORS fail-closed — нет '?? *' fallback
+  ✓ edge: origin_not_allowed 403 для запрещённого Origin
+  ✓ edge: server_not_configured при отсутствии настроек
+  ✓ edge: service_slug — allowlist 35 значений
+  ✓ edge: calculator_mode — точный allowlist
+  ✓ edge: snapshot строгий whitelist полей
+  ✓ edge: message_too_long вместо slice
+  ✓ edge: user_id из проверенного JWT, body.user_id игнорируется
+  ✓ edge: cf-connecting-ip как trusted IP
+  ✓ edge: x-forwarded-for НЕ используется
+  ✓ edge: submission_id не используется как fallback rate-limit key
+  ✓ edge: test token required with constant-time comparison
+  ✓ validator uuid ok
+  ✓ validator uuid bad
+  ✓ validator email ok
+  ✓ validator email bad
+  ✓ validator phone ok +7
+  ✓ validator phone bad
+
+estimate-submission-tests: 52 прошли, 0 провалены
+exit_code=0

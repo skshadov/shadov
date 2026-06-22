@@ -1,0 +1,30 @@
+$ bun src/lib/calculator-tests.ts
+  ✓ Ремонт по пакету (cosmetic, 50 м²)
+  ✓ Ремонт с дополнительной работой (cosmetic + demolition.peregorodka-blok)
+  ✓ Каркасный дом — под ключ (100 м²)
+  ✓ Газобетонный дом — под ключ (120 м²)
+  ✓ Дом с базовыми материалами (kombinirovannye)
+  ✓ Монолитная работа в м³ (perekrytie)
+  ✓ Кладочная работа в м³ (gazobeton-naruzh)
+  ✓ Кровельная работа в м² (complex-utepl-metall)
+  ✓ Фасадная работа в м² (mokryy)
+  ✓ Электромонтажный пакет (basic, 60 м²)
+  ✓ Отдельные электрические точки (chernovaya-tochka, 22 шт.)
+  ✓ Сантехнический пакет (chastnyy-dom, 140 м²)
+  ✓ Отдельная сантехническая работа (smesitel, 4 шт.)
+  ✓ Пакет отопления (bazovoe, 150 м²)
+  ✓ Тёплый пол по фактической единице (truba-tp, м²)
+  ✓ Процентная позиция генподряда — без базы СМР не считается
+  ✓ Процентная позиция генподряда — с базой СМР
+  ✓ Позиция «по проекту» (demolition-vyvoz)
+  ✓ Попытка двойного учёта (electrical_packages-basic + electrical-chernovaya-tochka)
+  ✓ Нулевой объём
+  ✓ Отрицательный объём
+  ✓ Несуществующий ID
+  ✓ NaN и Infinity не появляются в результате
+  ✓ Восстановление из localStorage (имитация)
+  ✓ Очистка localStorage (пустой ввод)
+  ✓ Некорректный query-параметр (несуществующий mode)
+calculator-tests: 26/26 прошли
+✓ calculator-tests passed.
+exit_code=0

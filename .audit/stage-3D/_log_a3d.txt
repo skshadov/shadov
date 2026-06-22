@@ -1,0 +1,6 @@
+$ bun src/lib/audit-stage-3d.ts
+{
+  "passed": true,
+  "readyForStage4": true
+}
+exit_code=0

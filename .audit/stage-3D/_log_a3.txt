@@ -1,0 +1,132 @@
+$ bun src/lib/audit-stage-3.ts
+{
+  "stage": "stage-3",
+  "cloudConfiguration": {
+    "cloudConnected": true,
+    "supabaseClientSingleton": true,
+    "integrationFiles": true
+  },
+  "operatorConfiguration": {
+    "operatorConfigured": false,
+    "missingRequiredFields": [
+      "legalName",
+      "contact",
+      "inn",
+      "ogrn",
+      "legalAddress"
+    ]
+  },
+  "featureFlags": {
+    "PUBLIC_DATA_COLLECTION_ENABLED": false,
+    "PUBLIC_AUTH_ENABLED": false
+  },
+  "migrations": {
+    "count": 13,
+    "files": [
+      "20260622081055_9d57e447-3837-4f60-b168-7385b367c065.sql",
+      "20260622081124_3ad424c6-f2be-427b-bbcb-55fd12f3051a.sql",
+      "20260622084829_7decbdc0-bdc2-4380-8b3f-28460fc7e1de.sql",
+      "20260622084843_0270d5f7-381a-4663-b5c5-5d2047560358.sql",
+      "20260622084910_6947a550-68cb-4297-a149-9840076e0319.sql",
+      "20260622085247_901a9bfd-01c9-4981-80af-9ec33ef1f7c4.sql",
+      "20260622091505_3073a347-0c4b-42c4-92c7-97651aebd47c.sql",
+      "20260622091958_46839207-355d-4391-b774-2742180578fd.sql",
+      "20260622092014_8e88c361-575d-44b3-b520-0d935b046d4e.sql",
+      "20260622092525_751ecb5d-ca00-4dbb-8fc0-8a581e0295ee.sql",
+      "20260622092541_120eb232-c067-4724-93a3-2279584fb185.sql",
+      "20260622094536_f398e685-477d-4c2f-bc1b-74b70ee489d5.sql",
+      "20260622100018_d39c317f-9a4f-4365-ab44-ca1e51b1e43e.sql"
+    ]
+  },
+  "edgeFunctions": {
+    "submitEstimateRequest": {
+      "exists": true,
+      "checks": {
+        "honeypot": true,
+        "rateLimit": true,
+        "hashedIp": true,
+        "consentRequired": true,
+        "submissionIdUnique": true,
+        "noLogPii": true,
+        "featureFlag": true,
+        "corsCheck": true,
+        "requestNumberFormat": true
+      }
+    }
+  },
+  "estimateForm": {
+    "importsBackendFlag": true,
+    "callsEdgeFunction": true,
+    "keepsLocalDraft": true,
+    "noDirectInsert": true,
+    "consentRequired": true,
+    "generatesSubmissionId": true
+  },
+  "loginRoute": {
+    "active": true,
+    "noindex": true
+  },
+  "routeStubs": {
+    "/client": true,
+    "/client/project/$id": true,
+    "/admin": true
+  },
+  "rls": {
+    "permissiveHits": [],
+    "permissiveCount": 0
+  },
+  "securitySearch": {
+    "serviceRoleLeaks": [
+      "src/lib/stage-3c-integration.ts"
+    ],
+    "directInsertHits": [
+      "src/lib/stage-3c-integration.ts"
+    ]
+  },
+  "legalPages": {
+    "privacyMentionsDemoOrCloud": true,
+    "consentMentionsDemoOrCloud": true
+  },
+  "totals": {
+    "priceItems": 334,
+    "servicePages": 35,
+    "repairServicePages": 11,
+    "constructionServicePages": 18,
+    "engineeringServicePages": 6,
+    "calculatorRoutes": 1,
+    "calculatorModes": 4,
+    "activeAuthRoutes": 1,
+    "clientRoutesActivated": 0,
+    "adminRoutesActivated": 0,
+    "databaseTables": 9,
+    "privateStorageBuckets": 1,
+    "directAnonRequestTableAccess": 0,
+    "frontendServiceRoleReferences": 1,
+    "permissiveSensitivePolicies": 0
+  },
+  "stage3Completion": {
+    "cloudConnected": true,
+    "databaseReady": true,
+    "migrationsApplied": true,
+    "rlsComplete": true,
+    "authInfrastructureReady": true,
+    "loginPageReady": true,
+    "estimateSubmissionInfrastructureReady": true,
+    "publicDataCollectionEnabled": false,
+    "publicAuthEnabled": false,
+    "operatorConfigured": false,
+    "projectFoundationReady": true,
+    "privateStorageReady": true,
+    "clientUiNotStarted": true,
+    "adminUiNotStarted": true,
+    "readyForStage4": false,
+    "readyForProductionDataCollection": false,
+    "blockingIssues": [
+      "service_role_in_frontend",
+      "direct_anon_insert"
+    ]
+  }
+}
+audit-stage-3: блокеры: service_role_in_frontend, direct_anon_insert
+error: script "audit:stage-3" exited with code 1
+exit_code=1

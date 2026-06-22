@@ -1,0 +1,25 @@
+$ bun src/lib/auth-tests.ts
+  ✓ /login существует
+  ✓ /login не использует RouteStub
+  ✓ /login содержит noindex,follow
+  ✓ /login использует signInWithOtp
+  ✓ /login использует signOut
+  ✓ /login не сохраняет access/refresh token руками
+  ✓ /login содержит универсальный текст 'ссылка отправлена'
+  ✓ /login: нет назначения admin по email во frontend
+  ✓ /login: использует isPublicAuthEnabled
+  ✓ /client остаётся RouteStub
+  ✓ /admin остаётся RouteStub
+  ✓ VITE_PUBLIC_AUTH_ENABLED отсутствует или false
+  ✓ VITE_PUBLIC_DATA_COLLECTION_ENABLED отсутствует или false
+  ✓ email valid: ok@example.com
+  ✓ email invalid: no-at
+  ✓ email invalid: no-domain@
+  ✓ email invalid: empty
+  ✓ email invalid: too-long
+  ✓ operator-config: envFlag combined с operatorConfigured
+  ✓ operator-config: getOperatorStatus возвращает missingRequiredFields
+  ✓ нет insert role=admin во frontend
+
+auth-tests: 21 прошли, 0 провалены
+exit_code=0

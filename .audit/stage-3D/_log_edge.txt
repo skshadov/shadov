@@ -1,0 +1,11 @@
+$ bun src/lib/edge-function-tests.ts
+  ✓ OPTIONS preflight → 204
+  ✓ GET → method_not_allowed (405)
+  ✓ POST disabled-flag → 503 public_collection_disabled
+  ✓ Невалидный JSON всё ещё блокируется flag-off (одно и то же сообщение)
+  ✓ CORS Allow-Origin отсутствует для запрещённого Origin (fail-closed)
+  ✓ Тело ответа не содержит внутренний UUID
+
+edge-function-tests: 6 прошли, 0 провалены
+Положительные HTTP-ветки Stage 3C выполнены отдельным интеграционным harness через тестовую функцию; production-функция проверена в fail-closed режиме с PUBLIC_DATA_COLLECTION_ENABLED=false.
+exit_code=0
