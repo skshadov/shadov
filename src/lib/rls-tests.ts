@@ -189,7 +189,7 @@ async function runMatrix() {
     return { error: r.error };
   });
   await exec("clientA-stage-update","clientA","update","project_stages","deny", async () => {
-    const r = await cA.from("project_stages").update({ status: "done" }).eq("id", stageId).select("id");
+    const r = await cA.from("project_stages").update({ status: "completed" }).eq("id", stageId).select("id");
     if (r.error) return { error: r.error };
     return { error: (r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null };
   });
