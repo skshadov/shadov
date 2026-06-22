@@ -85,6 +85,12 @@ async function purgeBySubmission(ids: string[]) {
   await admin.from("estimate_requests").delete().in("submission_id", ids);
 }
 
+
+async function purgeRateLimits() {
+  const a = createClient(SUPABASE_URL, SERVICE_ROLE, { auth: { persistSession: false } });
+  await a.from("submission_rate_limits").delete().gte("attempt_count",0);
+}
+
 async function runAll() {
   const admin = createClient(SUPABASE_URL, SERVICE_ROLE, { auth: { persistSession: false } });
   const startedAt = new Date().toISOString();
@@ -96,6 +102,7 @@ async function runAll() {
   // Pre-clean any prior stage3d rate-limit keys aggressively via cleanup
   await admin.rpc("cleanup_expired_rate_limits");
 
+    await purgeRateLimits();
   // 1. Valid anonymous
   {
     const sid = uuid(); created.push(sid);
@@ -147,6 +154,7 @@ async function runAll() {
     });
   }
 
+    await purgeRateLimits();
   // 4. Parallel rate limit: 10 unique submission_ids in parallel
   {
     // Bust prior counts by using a fresh window: ensure no prior attempts for this IP+UA
@@ -166,36 +174,42 @@ async function runAll() {
     });
   }
 
+    await purgeRateLimits();
   // 5. Allowed origin
   {
     const sid = uuid(); created.push(sid);
     const r = await call({ body: baseBody(sid), originHdr: origin(true) });
     ok("origin_allowed", 200, r.status);
   }
+    await purgeRateLimits();
   // 6. Disallowed origin
   {
     const sid = uuid();
     const r = await call({ body: baseBody(sid), originHdr: "https://evil.example.invalid" });
     ok("origin_disallowed", 403, r.status, { code: r.body?.code });
   }
+    await purgeRateLimits();
   // 7. Missing origin
   {
     const sid = uuid();
     const r = await call({ body: baseBody(sid), originHdr: null });
     ok("origin_missing", 403, r.status, { code: r.body?.code });
   }
+    await purgeRateLimits();
   // 8. Invalid X-Test-Run-Token
   {
     const sid = uuid();
     const r = await call({ body: baseBody(sid), token: "wrong-token-value-aaaaaaaaaaaaaaaaa" });
     ok("invalid_token", 403, r.status, { code: r.body?.code });
   }
+    await purgeRateLimits();
   // 9. Unknown service_slug
   {
     const sid = uuid();
     const r = await call({ body: { ...baseBody(sid), service_slug: "totally-unknown-service-slug" } });
     ok("unknown_service_slug", 400, r.status, { code: r.body?.code });
   }
+    await purgeRateLimits();
   // 10. Invalid calculator_mode
   {
     const sid = uuid();
@@ -210,6 +224,7 @@ async function runAll() {
     passed: TEST_RATE_LIMIT_SALT.length >= 32,
   });
 
+    await purgeRateLimits();
   // 12. Transactional rollback via fault injection
   {
     const sid = uuid();
@@ -224,6 +239,7 @@ async function runAll() {
     });
   }
 
+    await purgeRateLimits();
   // 13. Cleanup expired rate limits
   {
     const before = (await admin.from("submission_rate_limits").select("id", { count: "exact", head: true })).count ?? 0;
@@ -231,6 +247,7 @@ async function runAll() {
     matrix.push({ name: "cleanup_expired_rate_limits", before, deleted: cleaned, passed: true });
   }
 
+    await purgeRateLimits();
   // 14. No UUID / PII in responses (sample 3 calls)
   {
     const checks: any[] = [];
