@@ -172,6 +172,9 @@
 
   html, body {
     min-height: 100dvh;
+    /* Stage 4C: prevent document-level horizontal scroll without breaking
+       internal scroll containers (overflow-x: auto/scroll keep working). */
+    overflow-x: clip;
   }
 
   body {
