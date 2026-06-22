@@ -48,7 +48,7 @@ Deno.serve(async (req: Request) => {
   };
 
   const created = { userIds: [] as string[], projectIds: [] as string[], storagePaths: [] as string[] };
-  const debug: any = { inserts: {} };
+  const debug: any = { inserts: {}, marker: "v3-member_role_client" };
 
   try {
     // 1. Create users
