@@ -111,8 +111,12 @@ Deno.serve(async (req: Request) => {
     if (operation === "select") {
       // SELECT: allow = 200 with rows; deny = 200 with 0 rows (RLS hides) OR 401/403
       actual = (ok && rowCount > 0) ? "allow" : "deny";
+    } else if (operation === "update" || operation === "delete") {
+      // PostgREST returns 204 even when RLS hides the row. With Prefer:return=representation
+      // an RLS-denied operation returns 200 with [] — rowCount stays 0.
+      actual = (ok && rowCount > 0) ? "allow" : "deny";
     } else {
-      // write ops: allow = 2xx; deny = 401/403/404 or empty array on insert without returning
+      // insert: 2xx with representation = allow; 4xx = deny
       actual = ok ? "allow" : "deny";
     }
     const userIdHash = (await sha256Hex(userId)).slice(0, 16);
@@ -253,12 +257,12 @@ Deno.serve(async (req: Request) => {
     await add("clientA", clientA.id, "documents/hidden_own_client", "project_documents", "select", "deny", await asUser(tokenA, `/project_documents?id=eq.${docHidden!.id}&select=id`));
     await add("clientA", clientA.id, "documents/foreign_client", "project_documents", "select", "deny", await asUser(tokenA, `/project_documents?id=eq.${docForeign!.id}&select=id`));
     await add("clientA", clientA.id, "documents/client_insert", "project_documents", "insert", "deny", await asUser(tokenA, `/project_documents`, {
-      method: "POST", body: JSON.stringify({ project_id: projA.id, title: "x", storage_path: `${projA.id}/x.txt`, is_visible_to_client: true })
+      method: "POST", body: JSON.stringify({ project_id: projA.id, title: "x", storage_path: `${projA.id}/x.txt`, is_visible_to_client: true, file_name: "x.txt", mime_type: "text/plain", size_bytes: 1 })
     }));
     await add("clientA", clientA.id, "documents/client_update", "project_documents", "update", "deny", await asUser(tokenA, `/project_documents?id=eq.${docVisible!.id}`, {
-      method: "PATCH", body: JSON.stringify({ title: "hacked" })
+      method: "PATCH", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ title: "hacked" })
     }));
-    await add("clientA", clientA.id, "documents/client_delete", "project_documents", "delete", "deny", await asUser(tokenA, `/project_documents?id=eq.${docVisible!.id}`, { method: "DELETE" }));
+    await add("clientA", clientA.id, "documents/client_delete", "project_documents", "delete", "deny", await asUser(tokenA, `/project_documents?id=eq.${docVisible!.id}`, { method: "DELETE", headers: { "Prefer": "return=representation" } })));
 
     await add("clientA", clientA.id, "cameras/client_select_own", "project_cameras", "select", "allow", await asUser(tokenA, `/project_cameras?id=eq.${camA!.id}&select=id,name`));
     await add("clientA", clientA.id, "cameras/client_foreign", "project_cameras", "select", "deny", await asUser(tokenA, `/project_cameras?id=eq.${camB!.id}&select=id`));
@@ -266,20 +270,20 @@ Deno.serve(async (req: Request) => {
       method: "POST", body: JSON.stringify({ project_id: projA.id, name: "x" })
     }));
     await add("clientA", clientA.id, "cameras/client_update", "project_cameras", "update", "deny", await asUser(tokenA, `/project_cameras?id=eq.${camA!.id}`, {
-      method: "PATCH", body: JSON.stringify({ name: "hacked" })
+      method: "PATCH", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ name: "hacked" })
     }));
-    await add("clientA", clientA.id, "cameras/client_delete", "project_cameras", "delete", "deny", await asUser(tokenA, `/project_cameras?id=eq.${camA!.id}`, { method: "DELETE" }));
+    await add("clientA", clientA.id, "cameras/client_delete", "project_cameras", "delete", "deny", await asUser(tokenA, `/project_cameras?id=eq.${camA!.id}`, { method: "DELETE", headers: { "Prefer": "return=representation" } })));
     await add("clientA", clientA.id, "camera_sources/client_select", "project_camera_sources", "select", "deny", await asUser(tokenA, `/project_camera_sources?select=camera_id`));
 
     await add("clientA", clientA.id, "payments/client_select_own", "project_payments", "select", "allow", await asUser(tokenA, `/project_payments?id=eq.${payA!.id}&select=id,amount`));
     await add("clientA", clientA.id, "payments/client_foreign", "project_payments", "select", "deny", await asUser(tokenA, `/project_payments?id=eq.${payB!.id}&select=id`));
     await add("clientA", clientA.id, "payments/client_insert", "project_payments", "insert", "deny", await asUser(tokenA, `/project_payments`, {
-      method: "POST", body: JSON.stringify({ project_id: projA.id, amount: 1, currency: "RUB", status: "pending" })
+      method: "POST", body: JSON.stringify({ project_id: projA.id, title: "admin-pay", amount: 1, currency: "RUB", status: "planned" })
     }));
     await add("clientA", clientA.id, "payments/client_update", "project_payments", "update", "deny", await asUser(tokenA, `/project_payments?id=eq.${payA!.id}`, {
-      method: "PATCH", body: JSON.stringify({ amount: 1 })
+      method: "PATCH", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ amount: 1 })
     }));
-    await add("clientA", clientA.id, "payments/client_delete", "project_payments", "delete", "deny", await asUser(tokenA, `/project_payments?id=eq.${payA!.id}`, { method: "DELETE" }));
+    await add("clientA", clientA.id, "payments/client_delete", "project_payments", "delete", "deny", await asUser(tokenA, `/project_payments?id=eq.${payA!.id}`, { method: "DELETE", headers: { "Prefer": "return=representation" } })));
 
     await add("clientA", clientA.id, "messages/client_select_own", "project_messages", "select", "allow", await asUser(tokenA, `/project_messages?id=eq.${msgA!.id}&select=id,body`));
     await add("clientA", clientA.id, "messages/client_foreign", "project_messages", "select", "deny", await asUser(tokenA, `/project_messages?id=eq.${msgB!.id}&select=id`));
@@ -294,9 +298,9 @@ Deno.serve(async (req: Request) => {
       method: "POST", body: JSON.stringify({ project_id: projA.id, sender_id: clientA.id, message_type: "system", body: "sys" })
     }));
     await add("clientA", clientA.id, "messages/client_update", "project_messages", "update", "deny", await asUser(tokenA, `/project_messages?id=eq.${msgA!.id}`, {
-      method: "PATCH", body: JSON.stringify({ body: "edited" })
+      method: "PATCH", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ body: "edited" })
     }));
-    await add("clientA", clientA.id, "messages/client_delete", "project_messages", "delete", "deny", await asUser(tokenA, `/project_messages?id=eq.${msgA!.id}`, { method: "DELETE" }));
+    await add("clientA", clientA.id, "messages/client_delete", "project_messages", "delete", "deny", await asUser(tokenA, `/project_messages?id=eq.${msgA!.id}`, { method: "DELETE", headers: { "Prefer": "return=representation" } })));
 
     await add("clientA", clientA.id, "daily_reports/client_published_own", "project_daily_reports", "select", "allow", await asUser(tokenA, `/project_daily_reports?id=eq.${drPub!.id}&select=id`));
     await add("clientA", clientA.id, "daily_reports/client_draft_own", "project_daily_reports", "select", "deny", await asUser(tokenA, `/project_daily_reports?id=eq.${drDraft!.id}&select=id`));
@@ -310,10 +314,10 @@ Deno.serve(async (req: Request) => {
     await add("clientA", clientA.id, "acceptances/client_select_own", "project_stage_acceptances", "select", "allow", await asUser(tokenA, `/project_stage_acceptances?id=eq.${accA!.id}&select=id,status`));
     await add("clientA", clientA.id, "acceptances/client_foreign", "project_stage_acceptances", "select", "deny", await asUser(tokenA, `/project_stage_acceptances?id=eq.${accB!.id}&select=id`));
     await add("clientA", clientA.id, "acceptances/client_direct_update", "project_stage_acceptances", "update", "deny", await asUser(tokenA, `/project_stage_acceptances?id=eq.${accA!.id}`, {
-      method: "PATCH", body: JSON.stringify({ status: "accepted" })
+      method: "PATCH", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ status: "accepted" })
     }));
     await add("clientA", clientA.id, "stages/client_direct_update", "project_stages", "update", "deny", await asUser(tokenA, `/project_stages?id=eq.${stageA!.id}`, {
-      method: "PATCH", body: JSON.stringify({ status: "accepted" })
+      method: "PATCH", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ status: "accepted" })
     }));
 
     await add("clientA", clientA.id, "user_roles/client_self", "user_roles", "select", "allow", await asUser(tokenA, `/user_roles?user_id=eq.${clientA.id}&select=user_id,role`));
@@ -336,7 +340,7 @@ Deno.serve(async (req: Request) => {
     await add("adminTest", adminU.id, "documents/admin_select", "project_documents", "select", "allow", await asUser(tokenAdmin, `/project_documents?id=eq.${docHidden!.id}&select=id`));
     await add("adminTest", adminU.id, "documents/admin_insert", "project_documents", "insert", "allow", await asUser(tokenAdmin, `/project_documents`, {
       method: "POST", headers: { "Prefer": "return=representation" },
-      body: JSON.stringify({ project_id: projA.id, title: "admin-ins", storage_path: `${projA.id}/admin.txt`, is_visible_to_client: true })
+      body: JSON.stringify({ project_id: projA.id, title: "admin-ins", storage_path: `${projA.id}/admin.txt`, is_visible_to_client: true, file_name: "admin.txt", mime_type: "text/plain", size_bytes: 1 })
     }));
     await add("adminTest", adminU.id, "documents/admin_update", "project_documents", "update", "allow", await asUser(tokenAdmin, `/project_documents?id=eq.${docHidden!.id}`, {
       method: "PATCH", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ title: "renamed" })
@@ -351,7 +355,7 @@ Deno.serve(async (req: Request) => {
     }));
     await add("adminTest", adminU.id, "camera_sources/admin_select", "project_camera_sources", "select", "allow", await asUser(tokenAdmin, `/project_camera_sources?camera_id=eq.${camA!.id}&select=camera_id`));
     await add("adminTest", adminU.id, "payments/admin_insert", "project_payments", "insert", "allow", await asUser(tokenAdmin, `/project_payments`, {
-      method: "POST", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ project_id: projA.id, amount: 1, currency: "RUB", status: "pending" })
+      method: "POST", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ project_id: projA.id, title: "admin-pay", amount: 1, currency: "RUB", status: "planned" })
     }));
     await add("adminTest", adminU.id, "messages/admin_insert_system", "project_messages", "insert", "allow", await asUser(tokenAdmin, `/project_messages`, {
       method: "POST", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ project_id: projA.id, sender_id: adminU.id, message_type: "system", body: "sys" })
