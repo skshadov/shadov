@@ -1,0 +1,15 @@
+{
+  "project_id": "d3e88359-99dc-4813-9b5d-b61d19c216ad",
+  "is_demo": true,
+  "title": "DEMO — строительство частного дома",
+  "stages": 7,
+  "publishedDailyReports": 3,
+  "acceptances": 2,
+  "pendingAcceptances": 1,
+  "acceptedAcceptances": 1,
+  "systemMessages": 5,
+  "payments": 4,
+  "cameras": 2,
+  "cameraSources": 0,
+  "allCamerasNotConfigured": true
+}

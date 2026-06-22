@@ -1,0 +1,10 @@
+{
+  "clientActive": true,
+  "projectActive": true,
+  "adminStillStub": true,
+  "loginHasReturnTo": true,
+  "clientNoindex": true,
+  "projectNoindex": true,
+  "loginNoindex": true,
+  "adminNoindex": true
+}

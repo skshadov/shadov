@@ -74,8 +74,9 @@ export const ROUTES: RouteEntry[] = [
   { path: "/faq", title: "Вопросы и ответы", group: "info", stub: true },
 
   // Клиентская часть (на Этапе 1 — публичные заглушки)
-  { path: "/login", title: "Вход в личный кабинет", shortTitle: "Личный кабинет", group: "client", stub: true },
-  { path: "/client", title: "Личный кабинет", group: "client", stub: true },
+  { path: "/login", title: "Вход в личный кабинет", shortTitle: "Личный кабинет", group: "client" },
+  { path: "/client", title: "Личный кабинет", group: "client" },
+  { path: "/client/project/$id", title: "Проект в кабинете", group: "client" },
   { path: "/admin", title: "Административная панель", group: "client", stub: true },
 
   // Калькулятор (Подэтап 2.5.3)

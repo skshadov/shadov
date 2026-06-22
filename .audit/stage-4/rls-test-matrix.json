@@ -1,0 +1,35 @@
+{
+  "anonResults": [
+    {
+      "table": "project_daily_reports",
+      "anonDenied": true
+    },
+    {
+      "table": "project_daily_report_documents",
+      "anonDenied": true
+    },
+    {
+      "table": "project_cameras",
+      "anonDenied": true
+    },
+    {
+      "table": "project_camera_sources",
+      "anonDenied": true
+    },
+    {
+      "table": "project_stage_acceptances",
+      "anonDenied": true
+    },
+    {
+      "table": "project_messages",
+      "anonDenied": true
+    },
+    {
+      "table": "project_payments",
+      "anonDenied": true
+    }
+  ],
+  "allAnonDenied": true,
+  "total": 7,
+  "failed": 0
+}
