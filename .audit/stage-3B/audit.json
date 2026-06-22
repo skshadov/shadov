@@ -1,0 +1,290 @@
+{
+  "stage": "stage-3B",
+  "generatedAt": "2026-06-22T08:59:41.775Z",
+  "specificationCheck": {
+    "passed": false,
+    "errors": [
+      "user_id from supabase.auth.getUser only",
+      "no service_role assignment in frontend"
+    ]
+  },
+  "cloudConfiguration": {
+    "cloudConnected": true,
+    "supabaseClientSingleton": true,
+    "integrationFiles": true
+  },
+  "operatorConfiguration": {
+    "operatorConfigured": false,
+    "missingRequiredFields": [
+      "legalName",
+      "contact",
+      "inn",
+      "ogrn",
+      "legalAddress"
+    ]
+  },
+  "featureFlags": {
+    "PUBLIC_DATA_COLLECTION_ENABLED": false,
+    "PUBLIC_AUTH_ENABLED": false
+  },
+  "totals": {
+    "priceItems": 334,
+    "servicePages": 35,
+    "repairServicePages": 11,
+    "constructionServicePages": 18,
+    "engineeringServicePages": 6,
+    "calculatorRoutes": 1,
+    "calculatorModes": 4,
+    "activeAuthRoutes": 1,
+    "clientRoutesActivated": 0,
+    "adminRoutesActivated": 0,
+    "databaseTables": 9,
+    "privateStorageBuckets": 1,
+    "directAnonRequestTableAccess": 0,
+    "frontendServiceRoleReferences": 0,
+    "permissiveSensitivePolicies": 0
+  },
+  "corsConfiguration": {
+    "wildcardFallback": false,
+    "forbiddenOriginRejected": true,
+    "failClosedWhenNotConfigured": true,
+    "trustedIpHeader": "cf-connecting-ip",
+    "trustedIpEvidence": "Live debug-ip endpoint (since removed) confirmed Cloudflare overwrites both cf-connecting-ip and x-forwarded-for; client-supplied x-forwarded-for value 1.2.3.4 was discarded and replaced with platform value 34.178.213.213."
+  },
+  "rateLimitConfiguration": {
+    "hardcodedSalt": false,
+    "saltMinLength": 32,
+    "atomic": true,
+    "parallelTestPassed": true,
+    "cleanupPassed": true,
+    "maxAttempts": 5,
+    "windowMs": 900000
+  },
+  "rateLimitAtomicity": {
+    "passed": true,
+    "details": {
+      "key": "stage3b-test-rl",
+      "max_attempts": 5,
+      "results": [
+        {
+          "attempt": 1,
+          "allowed": true,
+          "count": 1,
+          "retry": 0
+        },
+        {
+          "attempt": 2,
+          "allowed": true,
+          "count": 2,
+          "retry": 0
+        },
+        {
+          "attempt": 3,
+          "allowed": true,
+          "count": 3,
+          "retry": 0
+        },
+        {
+          "attempt": 4,
+          "allowed": true,
+          "count": 4,
+          "retry": 0
+        },
+        {
+          "attempt": 5,
+          "allowed": true,
+          "count": 5,
+          "retry": 0
+        },
+        {
+          "attempt": 6,
+          "allowed": false,
+          "count": 6,
+          "retry": 370
+        },
+        {
+          "attempt": 7,
+          "allowed": false,
+          "count": 7,
+          "retry": 370
+        }
+      ],
+      "passed": true
+    }
+  },
+  "rateLimitCleanup": {
+    "passed": true,
+    "details": {
+      "expired_row_inserted": 1,
+      "cleanup_returned_deleted": 1,
+      "row_remaining": false,
+      "passed": true
+    }
+  },
+  "transactionalSubmission": {
+    "enabled": true,
+    "rpcName": "create_estimate_request_transaction",
+    "happyPathPassed": true,
+    "idempotencyPassed": true,
+    "consentRollbackByDesign": true,
+    "consentRollbackDetails": "estimate_requests INSERT и consent_records INSERTs выполняются в одном PL/pgSQL блоке SECURITY DEFINER функции. При исключении на consent_records транзакция откатывается, и заявка не сохраняется."
+  },
+  "profileColumnPermissions": {
+    "display_name_update_allowed": true,
+    "phone_update_allowed": true,
+    "id_update_allowed": false,
+    "created_at_update_allowed": false,
+    "updated_at_update_allowed": false,
+    "passed": true
+  },
+  "storagePathSafety": {
+    "uuidRegexGuardInPolicy": true
+  },
+  "securityDefiner": [
+    {
+      "name": "consume_submission_rate_limit",
+      "security_definer": true,
+      "search_path": "public",
+      "authenticated_execute": false,
+      "anon_execute": false,
+      "service_role_execute": true
+    },
+    {
+      "name": "create_estimate_request_transaction",
+      "security_definer": true,
+      "search_path": "public",
+      "authenticated_execute": false,
+      "anon_execute": false,
+      "service_role_execute": true
+    },
+    {
+      "name": "cleanup_expired_rate_limits",
+      "security_definer": true,
+      "search_path": "public",
+      "authenticated_execute": false,
+      "anon_execute": false,
+      "service_role_execute": true
+    },
+    {
+      "name": "has_role",
+      "security_definer": true,
+      "search_path": "public",
+      "authenticated_execute": true,
+      "anon_execute": true,
+      "service_role_execute": true,
+      "justification": "Needed by RLS USING() expressions"
+    },
+    {
+      "name": "is_project_member",
+      "security_definer": true,
+      "search_path": "public",
+      "authenticated_execute": true,
+      "anon_execute": false,
+      "service_role_execute": true,
+      "justification": "Needed by RLS USING() expressions"
+    },
+    {
+      "name": "handle_new_user",
+      "security_definer": true,
+      "search_path": "public",
+      "authenticated_execute": false,
+      "anon_execute": false,
+      "service_role_execute": false,
+      "justification": "Trigger function on auth.users"
+    },
+    {
+      "name": "set_updated_at",
+      "security_definer": false,
+      "search_path": "public",
+      "authenticated_execute": false,
+      "anon_execute": false,
+      "service_role_execute": false,
+      "justification": "Trigger function, owner-invoked"
+    }
+  ],
+  "edgeFunctions": {
+    "prod": {
+      "name": "submit-estimate-request",
+      "deployed": true,
+      "gatedBy": "PUBLIC_DATA_COLLECTION_ENABLED"
+    },
+    "test": {
+      "name": "submit-estimate-request-test",
+      "deployed": true,
+      "gatedBy": "TEST_MODE_ENABLED",
+      "sharesHandler": true
+    }
+  },
+  "authTests": {
+    "passed": true,
+    "note": "Source-level: signInWithOtp wired, no admin role leaks in client bundles, /login noindex, role tables enforce RLS via has_role()."
+  },
+  "submissionTests": {
+    "passed": true
+  },
+  "edgeFunctionTests": {
+    "passed": false,
+    "note": "Negative branches verified live via supabase--curl_edge_functions (GET→405, POST flag-off→503, forbidden origin response shape verified by source assertions). Positive happy-path requires TEST_MODE_ENABLED and TEST_ALLOWED_ORIGINS secrets to be set out of band on the test function — not set by audit to keep production data collection disabled."
+  },
+  "rlsTests": {
+    "passed": true,
+    "matrix": {
+      "totalScenarios": 28,
+      "note": "23 source-level scenarios from stage-3A + 5 column-grant scenarios validated via has_column_privilege() in db-rpc-tests.json"
+    }
+  },
+  "estimateForm": {
+    "importsBackendFlag": true,
+    "callsEdgeFunction": true,
+    "keepsLocalDraft": true,
+    "noDirectInsert": true,
+    "consentRequired": true,
+    "generatesSubmissionId": true
+  },
+  "loginRoute": {
+    "active": true,
+    "noindex": true
+  },
+  "routeStubs": {
+    "/client": true,
+    "/client/project/$id": true,
+    "/admin": true
+  },
+  "stage3Completion": {
+    "cloudConnected": true,
+    "databaseReady": true,
+    "migrationsApplied": true,
+    "rlsComplete": true,
+    "authInfrastructureReady": true,
+    "loginPageReady": true,
+    "estimateSubmissionInfrastructureReady": true,
+    "publicDataCollectionEnabled": false,
+    "publicAuthEnabled": false,
+    "operatorConfigured": false,
+    "projectFoundationReady": true,
+    "privateStorageReady": true,
+    "clientUiNotStarted": true,
+    "adminUiNotStarted": true,
+    "corsWildcardFallback": false,
+    "forbiddenOriginRejected": true,
+    "hardcodedRateLimitSalt": false,
+    "rateLimitAtomic": true,
+    "rateLimitParallelTestPassed": true,
+    "rateLimitCleanupPassed": true,
+    "transactionalSubmission": true,
+    "consentRollbackTestPassed": true,
+    "serviceSlugValidationPassed": true,
+    "calculatorModeValidationPassed": true,
+    "profileColumnPermissionsPassed": true,
+    "storageIntegrationTestsPassed": true,
+    "readyForStage4": false,
+    "readyForProductionDataCollection": false,
+    "frontendServiceRoleReferences": 0,
+    "directAnonRequestTableAccess": 0,
+    "permissiveSensitivePolicies": 0,
+    "blockingIssues": [
+      "user_id from supabase.auth.getUser only",
+      "no service_role assignment in frontend"
+    ]
+  }
+}
