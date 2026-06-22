@@ -1,0 +1,1 @@
+DROP FUNCTION IF EXISTS public.stage3e_fault_injection_submission(jsonb);
