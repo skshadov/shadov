@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-22T10:39:52.901Z",
-  "passed": 46,
-  "failed": 6,
+  "generatedAt": "2026-06-22T10:40:19.356Z",
+  "passed": 51,
+  "failed": 1,
   "total": 52,
   "results": [
     {
@@ -346,9 +346,8 @@
       "operation": "select",
       "resource": "project_members",
       "expected": "allow",
-      "actual": "deny",
-      "passed": false,
-      "errorCode": "42703"
+      "actual": "allow",
+      "passed": true
     },
     {
       "testName": "admin-project_members-update",
@@ -358,7 +357,7 @@
       "expected": "allow",
       "actual": "deny",
       "passed": false,
-      "errorCode": "42703"
+      "errorCode": "23514"
     },
     {
       "testName": "admin-project_members-delete",
@@ -366,9 +365,8 @@
       "operation": "delete",
       "resource": "project_members",
       "expected": "allow",
-      "actual": "deny",
-      "passed": false,
-      "errorCode": "42703"
+      "actual": "allow",
+      "passed": true
     },
     {
       "testName": "admin-project_stages-insert",
@@ -412,9 +410,8 @@
       "operation": "insert",
       "resource": "project_documents",
       "expected": "allow",
-      "actual": "deny",
-      "passed": false,
-      "errorCode": "23502"
+      "actual": "allow",
+      "passed": true
     },
     {
       "testName": "admin-project_documents-select",
@@ -431,9 +428,8 @@
       "operation": "update",
       "resource": "project_documents",
       "expected": "allow",
-      "actual": "deny",
-      "passed": false,
-      "errorCode": "22P02"
+      "actual": "allow",
+      "passed": true
     },
     {
       "testName": "admin-project_documents-delete",
@@ -441,9 +437,8 @@
       "operation": "delete",
       "resource": "project_documents",
       "expected": "allow",
-      "actual": "deny",
-      "passed": false,
-      "errorCode": "22P02"
+      "actual": "allow",
+      "passed": true
     },
     {
       "testName": "admin-storage-list",
