@@ -76,12 +76,8 @@ $ bun src/lib/audit-stage-3.ts
     "permissiveCount": 0
   },
   "securitySearch": {
-    "serviceRoleLeaks": [
-      "src/lib/stage-3c-integration.ts"
-    ],
-    "directInsertHits": [
-      "src/lib/stage-3c-integration.ts"
-    ]
+    "serviceRoleLeaks": [],
+    "directInsertHits": []
   },
   "legalPages": {
     "privacyMentionsDemoOrCloud": true,
@@ -101,7 +97,7 @@ $ bun src/lib/audit-stage-3.ts
     "databaseTables": 9,
     "privateStorageBuckets": 1,
     "directAnonRequestTableAccess": 0,
-    "frontendServiceRoleReferences": 1,
+    "frontendServiceRoleReferences": 0,
     "permissiveSensitivePolicies": 0
   },
   "stage3Completion": {
@@ -119,14 +115,9 @@ $ bun src/lib/audit-stage-3.ts
     "privateStorageReady": true,
     "clientUiNotStarted": true,
     "adminUiNotStarted": true,
-    "readyForStage4": false,
+    "readyForStage4": true,
     "readyForProductionDataCollection": false,
-    "blockingIssues": [
-      "service_role_in_frontend",
-      "direct_anon_insert"
-    ]
+    "blockingIssues": []
   }
 }
-audit-stage-3: блокеры: service_role_in_frontend, direct_anon_insert
-error: script "audit:stage-3" exited with code 1
-exit_code=1
+exit_code=0
