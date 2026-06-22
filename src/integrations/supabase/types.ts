@@ -363,6 +363,10 @@ export type Database = {
         Args: { _project_id: string; _user_id: string }
         Returns: boolean
       }
+      stage3e_fault_injection_submission: {
+        Args: { _payload: Json }
+        Returns: undefined
+      }
     }
     Enums: {
       app_role: "client" | "admin"
