@@ -345,7 +345,7 @@ Deno.serve(async (req: Request) => {
     await add("adminTest", adminU.id, "documents/admin_update", "project_documents", "update", "allow", await asUser(tokenAdmin, `/project_documents?id=eq.${docHidden!.id}`, {
       method: "PATCH", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ title: "renamed" })
     }));
-    await add("adminTest", adminU.id, "documents/admin_delete", "project_documents", "delete", "allow", await asUser(tokenAdmin, `/project_documents?title=eq.admin-ins`, { method: "DELETE" }));
+    await add("adminTest", adminU.id, "documents/admin_delete", "project_documents", "delete", "allow", await asUser(tokenAdmin, `/project_documents?title=eq.admin-ins`, { method: "DELETE", headers: { "Prefer": "return=representation" } }));
     await add("adminTest", adminU.id, "cameras/admin_insert", "project_cameras", "insert", "allow", await asUser(tokenAdmin, `/project_cameras`, {
       method: "POST", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ project_id: projA.id, name: "admin-cam" })
     }));
