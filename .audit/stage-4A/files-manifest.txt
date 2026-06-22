@@ -1,16 +1,18 @@
-total 93
-drwxr-xr-x 1 root root   300 Jun 22 14:21 .
+total 95
+drwxr-xr-x 1 root root   340 Jun 22 14:22 .
 drwxr-xr-x 1 root root   380 Jun 22 14:17 ..
+-rw-r--r-- 1 root root  1055 Jun 22 14:22 archive-verify.log
 -rw-r--r-- 1 root root 24369 Jun 22 14:20 audit.json
--rw-r--r-- 1 root root 45916 Jun 22 14:21 build.log
--rw-r--r-- 1 root root   611 Jun 22 14:18 checksums.sha256
+-rw-r--r-- 1 root root 45928 Jun 22 14:22 build.log
+-rw-r--r-- 1 root root   280 Jun 22 14:22 checksums-verify.log
+-rw-r--r-- 1 root root   962 Jun 22 14:22 checksums.sha256
 -rw-r--r-- 1 root root   332 Jun 22 14:21 cloud-functions-after.json
 -rw-r--r-- 1 root root   221 Jun 22 14:21 cloud-secrets-after.json
 -rw-r--r-- 1 root root   345 Jun 22 14:20 demo-project-audit.json
--rw-r--r-- 1 root root     0 Jun 22 14:18 files-manifest.txt
+-rw-r--r-- 1 root root     0 Jun 22 14:22 files-manifest.txt
 -rw-r--r-- 1 root root   445 Jun 22 14:17 playwright-browser-test.json
 -rw-r--r-- 1 root root   219 Jun 22 14:21 post-cleanup-verification.json
 -rw-r--r-- 1 root root   267 Jun 22 14:20 realtime-test.json
 -rw-r--r-- 1 root root 19430 Jun 22 14:20 rls-test-matrix.json
 -rw-r--r-- 1 root root   181 Jun 22 14:17 test-cleanup-final.json
--rw-r--r-- 1 root root     0 Jun 22 14:18 typescript.log
+-rw-r--r-- 1 root root   348 Jun 22 14:22 typescript.log
