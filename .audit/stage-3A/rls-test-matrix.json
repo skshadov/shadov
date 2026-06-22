@@ -1,0 +1,228 @@
+{
+  "generatedAt": "2026-06-22T08:25:17.544Z",
+  "passed": 22,
+  "failed": 1,
+  "total": 23,
+  "results": [
+    {
+      "testName": "anon-profiles-select",
+      "actor": "anon",
+      "operation": "select",
+      "resource": "profiles",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "rls-empty"
+    },
+    {
+      "testName": "anon-user_roles-select",
+      "actor": "anon",
+      "operation": "select",
+      "resource": "user_roles",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "rls-empty"
+    },
+    {
+      "testName": "anon-estimate-select",
+      "actor": "anon",
+      "operation": "select",
+      "resource": "estimate_requests",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "rls-empty"
+    },
+    {
+      "testName": "anon-estimate-insert",
+      "actor": "anon",
+      "operation": "insert",
+      "resource": "estimate_requests",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "42501"
+    },
+    {
+      "testName": "anon-projects-select",
+      "actor": "anon",
+      "operation": "select",
+      "resource": "projects",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "rls-empty"
+    },
+    {
+      "testName": "anon-documents-select",
+      "actor": "anon",
+      "operation": "select",
+      "resource": "project_documents",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "rls-empty"
+    },
+    {
+      "testName": "anon-storage-list",
+      "actor": "anon",
+      "operation": "list",
+      "resource": "storage:project-documents",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "rls-empty"
+    },
+    {
+      "testName": "clientA-own-profile-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "profiles(self)",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-other-profile-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "profiles(other)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "rls-empty"
+    },
+    {
+      "testName": "clientA-own-roles-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "user_roles(self)",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-admin-insert-self",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "user_roles(admin)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "42501"
+    },
+    {
+      "testName": "clientA-own-request-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "estimate_requests(self)",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-other-request-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "estimate_requests(other)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "rls-empty"
+    },
+    {
+      "testName": "clientA-own-project-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "projects(member)",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-member-insert",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "project_members",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "42501"
+    },
+    {
+      "testName": "clientA-stage-update",
+      "actor": "clientA",
+      "operation": "update",
+      "resource": "project_stages",
+      "expected": "deny",
+      "actual": "allow",
+      "passed": false
+    },
+    {
+      "testName": "clientA-document-insert",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "project_documents",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "42501"
+    },
+    {
+      "testName": "clientB-project-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "projects(non-member)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "rls-empty"
+    },
+    {
+      "testName": "admin-profiles-select",
+      "actor": "admin",
+      "operation": "select",
+      "resource": "profiles",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-requests-select",
+      "actor": "admin",
+      "operation": "select",
+      "resource": "estimate_requests",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-request-update",
+      "actor": "admin",
+      "operation": "update",
+      "resource": "estimate_requests",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-projects-select",
+      "actor": "admin",
+      "operation": "select",
+      "resource": "projects",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-member-insert",
+      "actor": "admin",
+      "operation": "insert",
+      "resource": "project_members",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    }
+  ]
+}
