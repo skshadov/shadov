@@ -1078,3 +1078,105 @@ for (const f of [
 }
 
 console.log("✓ validate-content 2.5.1: пройдена.");
+
+// ─────────────────────────────────────────────────────────────────────────
+// Подэтап 2.5.3 — калькулятор предварительной стоимости.
+// ─────────────────────────────────────────────────────────────────────────
+
+import {
+  CALCULATOR_MODE_SPECS,
+  CALCULATOR_LINKS_FROM_SERVICES,
+  CALCULATOR_METADATA,
+  CALCULATOR_ROUTE,
+  PACKAGE_CONFLICTS,
+  CALCULATOR_FORMULAS,
+} from "@/data/calculator-specification";
+import { CALCULATOR_LOCAL_STORAGE_KEY, CALCULATOR_MODES } from "@/types/calculator";
+import { MAIN_NAV } from "@/data/navigation";
+import { ROUTES } from "@/data/routes";
+
+if (CALCULATOR_ROUTE !== "/kalkulyator-stoimosti") fail("route калькулятора не совпадает");
+if (CALCULATOR_METADATA.canonical !== "https://shadov.pro/kalkulyator-stoimosti") fail("canonical калькулятора неверный");
+if (CALCULATOR_METADATA.h1 !== "Калькулятор предварительной стоимости работ") fail("H1 калькулятора неверный");
+if (CALCULATOR_MODES.length !== 4) fail(`режимов калькулятора ожидается 4, получено ${CALCULATOR_MODES.length}`);
+
+{
+  const src = readFileSync(resolve(process.cwd(), "src/routes/kalkulyator-stoimosti.tsx"), "utf8");
+  if (/noindex/i.test(src)) fail("страница калькулятора содержит noindex");
+  if (!new RegExp(`title:\\s*TITLE`).test(src) && !src.includes(CALCULATOR_METADATA.title)) {
+    fail("title страницы калькулятора не совпадает");
+  }
+  if (!src.includes(CALCULATOR_METADATA.canonical)) fail("canonical страницы калькулятора не совпадает");
+  if (!/BreadcrumbList/.test(src)) fail("страница калькулятора без BreadcrumbList");
+  if (!/WebApplication/.test(src)) fail("страница калькулятора без WebApplication JSON-LD");
+  if (/aggregateRating|ratingValue|priceCurrency/.test(src)) fail("WebApplication не должен содержать рейтинг или цену");
+}
+{
+  // Ссылка в навигации одна.
+  const flat: string[] = [];
+  for (const it of MAIN_NAV) {
+    if ("items" in it) {
+      flat.push(it.to);
+      for (const sub of it.items) flat.push(sub.to);
+    } else flat.push(it.to);
+  }
+  const occ = flat.filter((t) => t === CALCULATOR_ROUTE).length;
+  if (occ !== 1) fail(`ссылка на калькулятор в MAIN_NAV: ожидается 1, получено ${occ}`);
+  if (!ROUTES.some((r) => r.path === CALCULATOR_ROUTE)) fail("ROUTES не содержит калькулятор");
+}
+{
+  // Все ID и категории в спецификации существуют.
+  for (const spec of CALCULATOR_MODE_SPECS) {
+    for (const c of spec.priceCategories) {
+      if (!ALL_PRICE_CATEGORIES.includes(c)) fail(`калькулятор: неизвестная категория ${c}`);
+    }
+  }
+  for (const [pkg, conflicts] of Object.entries(PACKAGE_CONFLICTS)) {
+    if (!ALL_PRICE_CATEGORIES.includes(pkg as never)) fail(`PACKAGE_CONFLICTS: неизвестная пакетная категория ${pkg}`);
+    for (const c of conflicts) {
+      if (!ALL_PRICE_CATEGORIES.includes(c)) fail(`PACKAGE_CONFLICTS: неизвестная категория ${c}`);
+    }
+  }
+}
+{
+  // CTA ведут на существующий route и не подключены к /ukladka-plitki.
+  for (const link of CALCULATOR_LINKS_FROM_SERVICES) {
+    if (link.slug === "ukladka-plitki") fail("CTA калькулятора не должна быть на /ukladka-plitki");
+    if (!SERVICE_PAGES.some((p) => p.slug === link.slug)) fail(`CTA калькулятора ссылается на отсутствующий slug ${link.slug}`);
+    if (!(CALCULATOR_MODES as string[]).includes(link.mode)) fail(`CTA mode неизвестен: ${link.mode}`);
+    if (link.category && !ALL_PRICE_CATEGORIES.includes(link.category as never)) fail(`CTA category неизвестна: ${link.category}`);
+  }
+}
+{
+  // Движок без eval и без NaN/Infinity литералов.
+  const engineSrc = readFileSync(resolve(process.cwd(), "src/lib/calculator-engine.ts"), "utf8");
+  if (/\beval\s*\(/.test(engineSrc)) fail("calculator-engine: запрещён eval");
+  if (/NaN\s*₽|Infinity\s*₽/.test(engineSrc)) fail("calculator-engine: литералы NaN ₽/Infinity ₽");
+  if (!/CALCULATOR_FORMULAS|fixed-unit|percentage/i.test(engineSrc) && CALCULATOR_FORMULAS.length === 0) {
+    fail("calculator-engine: формулы не зарегистрированы");
+  }
+}
+{
+  // LocalStorage versioned, без персональных данных в коде калькулятора.
+  if (!/^shadov-cost-calculator-v\d+$/.test(CALCULATOR_LOCAL_STORAGE_KEY)) fail("localStorage key должен быть versioned");
+  const calcSrcFiles = [
+    "src/components/calculator/CostCalculator.tsx",
+    "src/components/calculator/CalculatorInputs.tsx",
+    "src/components/calculator/CalculatorPriceItems.tsx",
+    "src/components/calculator/CalculatorSummary.tsx",
+  ];
+  const PERSONAL_RX = /(телефон|phone|email|почта|фамили|имя\s*клиент)/i;
+  for (const f of calcSrcFiles) {
+    const s = readFileSync(resolve(process.cwd(), f), "utf8");
+    if (PERSONAL_RX.test(s)) fail(`${f}: персональные данные в калькуляторе не сохраняются`);
+    if (/\beval\s*\(/.test(s)) fail(`${f}: запрещён eval`);
+  }
+}
+{
+  // Плиточная заглушка осталась RouteStub с noindex, follow.
+  const tile = readFileSync(resolve(process.cwd(), "src/routes/ukladka-plitki.tsx"), "utf8");
+  if (!/RouteStub/.test(tile)) fail("/ukladka-plitki больше не RouteStub");
+  if (!/noindex,\s*follow/.test(tile)) fail("/ukladka-plitki без noindex, follow");
+}
+
+console.log("✓ validate-content 2.5.3: пройдена.");
