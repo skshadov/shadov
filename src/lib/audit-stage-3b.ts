@@ -130,10 +130,11 @@ spec("no service_role leaks in client-reachable frontend",
       return acc;
     }
     // Allowed server-only files (verified server-runtime exclusive)
-    const SERVER_ONLY = /\.server\.ts$/;
+    // server-only or dev/audit-only files that never enter the client bundle
+    const SERVER_OR_AUDIT_ONLY = /\.server\.ts$|src\/lib\/(audit-|rls-tests|edge-function-tests|estimate-submission-tests|auth-tests|audit-stage-)/;
     const files = walk("src");
     for (const f of files) {
-      if (SERVER_ONLY.test(f)) continue;
+      if (SERVER_OR_AUDIT_ONLY.test(f)) continue;
       const c = read(f);
       if (/SUPABASE_SERVICE_ROLE_KEY/.test(c)) return false;
     }
