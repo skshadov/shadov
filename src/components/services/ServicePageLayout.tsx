@@ -21,6 +21,7 @@ import { ServiceReviews } from "./ServiceReviews";
 import { ServiceFaq } from "./ServiceFaq";
 import { RelatedServices } from "./RelatedServices";
 import { ServiceEstimateCta } from "./ServiceEstimateCta";
+import { CalculatorCta } from "@/components/calculator/CalculatorCta";
 import type { ResolvedServicePage } from "@/lib/get-service-data";
 import type { BreadcrumbItem } from "@/components/common/Breadcrumbs";
 
@@ -55,6 +56,7 @@ export function ServicePageLayout({ resolved, breadcrumbs, estimateExample = [] 
       <ServicePortfolio />
       <ServiceReviews />
       <ServiceFaq items={faq} />
+      <CalculatorCta slug={data.slug} />
       <ServiceEstimateCta />
       <RelatedServices items={related} />
     </article>
