@@ -262,7 +262,7 @@ Deno.serve(async (req: Request) => {
     await add("clientA", clientA.id, "documents/client_update", "project_documents", "update", "deny", await asUser(tokenA, `/project_documents?id=eq.${docVisible!.id}`, {
       method: "PATCH", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ title: "hacked" })
     }));
-    await add("clientA", clientA.id, "documents/client_delete", "project_documents", "delete", "deny", await asUser(tokenA, `/project_documents?id=eq.${docVisible!.id}`, { method: "DELETE", headers: { "Prefer": "return=representation" } })));
+    await add("clientA", clientA.id, "documents/client_delete", "project_documents", "delete", "deny", await asUser(tokenA, `/project_documents?id=eq.${docVisible!.id}`, { method: "DELETE", headers: { "Prefer": "return=representation" } }));
 
     await add("clientA", clientA.id, "cameras/client_select_own", "project_cameras", "select", "allow", await asUser(tokenA, `/project_cameras?id=eq.${camA!.id}&select=id,name`));
     await add("clientA", clientA.id, "cameras/client_foreign", "project_cameras", "select", "deny", await asUser(tokenA, `/project_cameras?id=eq.${camB!.id}&select=id`));
@@ -272,7 +272,7 @@ Deno.serve(async (req: Request) => {
     await add("clientA", clientA.id, "cameras/client_update", "project_cameras", "update", "deny", await asUser(tokenA, `/project_cameras?id=eq.${camA!.id}`, {
       method: "PATCH", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ name: "hacked" })
     }));
-    await add("clientA", clientA.id, "cameras/client_delete", "project_cameras", "delete", "deny", await asUser(tokenA, `/project_cameras?id=eq.${camA!.id}`, { method: "DELETE", headers: { "Prefer": "return=representation" } })));
+    await add("clientA", clientA.id, "cameras/client_delete", "project_cameras", "delete", "deny", await asUser(tokenA, `/project_cameras?id=eq.${camA!.id}`, { method: "DELETE", headers: { "Prefer": "return=representation" } }));
     await add("clientA", clientA.id, "camera_sources/client_select", "project_camera_sources", "select", "deny", await asUser(tokenA, `/project_camera_sources?select=camera_id`));
 
     await add("clientA", clientA.id, "payments/client_select_own", "project_payments", "select", "allow", await asUser(tokenA, `/project_payments?id=eq.${payA!.id}&select=id,amount`));
@@ -283,7 +283,7 @@ Deno.serve(async (req: Request) => {
     await add("clientA", clientA.id, "payments/client_update", "project_payments", "update", "deny", await asUser(tokenA, `/project_payments?id=eq.${payA!.id}`, {
       method: "PATCH", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ amount: 1 })
     }));
-    await add("clientA", clientA.id, "payments/client_delete", "project_payments", "delete", "deny", await asUser(tokenA, `/project_payments?id=eq.${payA!.id}`, { method: "DELETE", headers: { "Prefer": "return=representation" } })));
+    await add("clientA", clientA.id, "payments/client_delete", "project_payments", "delete", "deny", await asUser(tokenA, `/project_payments?id=eq.${payA!.id}`, { method: "DELETE", headers: { "Prefer": "return=representation" } }));
 
     await add("clientA", clientA.id, "messages/client_select_own", "project_messages", "select", "allow", await asUser(tokenA, `/project_messages?id=eq.${msgA!.id}&select=id,body`));
     await add("clientA", clientA.id, "messages/client_foreign", "project_messages", "select", "deny", await asUser(tokenA, `/project_messages?id=eq.${msgB!.id}&select=id`));
@@ -300,7 +300,7 @@ Deno.serve(async (req: Request) => {
     await add("clientA", clientA.id, "messages/client_update", "project_messages", "update", "deny", await asUser(tokenA, `/project_messages?id=eq.${msgA!.id}`, {
       method: "PATCH", headers: { "Prefer": "return=representation" }, body: JSON.stringify({ body: "edited" })
     }));
-    await add("clientA", clientA.id, "messages/client_delete", "project_messages", "delete", "deny", await asUser(tokenA, `/project_messages?id=eq.${msgA!.id}`, { method: "DELETE", headers: { "Prefer": "return=representation" } })));
+    await add("clientA", clientA.id, "messages/client_delete", "project_messages", "delete", "deny", await asUser(tokenA, `/project_messages?id=eq.${msgA!.id}`, { method: "DELETE", headers: { "Prefer": "return=representation" } }));
 
     await add("clientA", clientA.id, "daily_reports/client_published_own", "project_daily_reports", "select", "allow", await asUser(tokenA, `/project_daily_reports?id=eq.${drPub!.id}&select=id`));
     await add("clientA", clientA.id, "daily_reports/client_draft_own", "project_daily_reports", "select", "deny", await asUser(tokenA, `/project_daily_reports?id=eq.${drDraft!.id}&select=id`));
