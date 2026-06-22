@@ -103,12 +103,16 @@ async function setup() {
 
 async function teardown() {
   console.log("== teardown ==");
+  await admin.from("consent_records").delete().or("document_version.eq.test,document_version.eq.rls-3e");
   await admin.from("consent_records").delete().in("request_id", [reqIdA, reqIdB].filter(Boolean));
   await admin.from("estimate_requests").delete().in("id", [reqIdA, reqIdB].filter(Boolean));
+  await admin.from("projects").delete().eq("title", "stage3e-admin-proj-u");
+  await admin.from("projects").delete().eq("title", "stage3e-admin-proj");
   await admin.from("project_members").delete().eq("project_id", projectId);
   await admin.from("project_stages").delete().eq("project_id", projectId);
   await admin.from("project_documents").delete().eq("project_id", projectId);
   await admin.from("projects").delete().eq("id", projectId);
+  await admin.from("submission_rate_limits").delete().like("key_hash", "rls-3e-%");
   await admin.from("user_roles").delete().in("user_id", [uidA, uidB, uidAdmin].filter(Boolean));
   await admin.from("profiles").delete().in("id", [uidA, uidB, uidAdmin].filter(Boolean));
   for (const u of [uidA, uidB, uidAdmin]) if (u) await deleteUser(u);
