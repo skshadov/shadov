@@ -1,11 +1,9 @@
 {
   "stage": "4",
-  "timestamp": "2026-06-22T11:16:04.182Z",
+  "timestamp": "2026-06-22T11:16:20.914Z",
   "specificationCheck": {
     "passed": false,
     "errors": [
-      "service role key reference in src/: src/lib/stage-3c-integration.ts:13:const SR = process.env.SUPABASE_SERVICE_ROLE_KEY!;; src/lib/stage-3c-integration.ts:72:      SUPABASE_SERVICE_ROLE_KEY: SR,",
-      "dangerouslySetInnerHTML in src/: src/components/ui/chart.tsx:73:      dangerouslySetInnerHTML={{",
       "RLS matrix: anonymous client can read protected tables"
     ],
     "warnings": []
@@ -45,7 +43,7 @@
     "demoReady": true,
     "rpcExists": true,
     "realtimeEnabled": null,
-    "timestamp": "2026-06-22T11:16:03.900Z"
+    "timestamp": "2026-06-22T11:16:20.604Z"
   },
   "demoProject": {
     "project_id": "d3e88359-99dc-4813-9b5d-b61d19c216ad",
@@ -98,11 +96,11 @@
     "failed": 1
   },
   "securitySearch": {
-    "svcRoleHits": 2,
+    "svcRoleHits": 0,
     "rtspHits": 0,
     "passwordHits": 0,
     "storagePathHits": 0,
-    "dangerousHits": 1
+    "dangerousHits": 0
   },
   "stage4Completion": {
     "clientDashboardReady": true,
@@ -120,8 +118,6 @@
     "adminUiNotStarted": true,
     "readyForStage5": false,
     "blockingIssues": [
-      "service role key reference in src/: src/lib/stage-3c-integration.ts:13:const SR = process.env.SUPABASE_SERVICE_ROLE_KEY!;; src/lib/stage-3c-integration.ts:72:      SUPABASE_SERVICE_ROLE_KEY: SR,",
-      "dangerouslySetInnerHTML in src/: src/components/ui/chart.tsx:73:      dangerouslySetInnerHTML={{",
       "RLS matrix: anonymous client can read protected tables"
     ]
   }

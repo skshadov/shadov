@@ -1,12 +1,7 @@
 {
-  "svcRoleHits": [
-    "src/lib/stage-3c-integration.ts:13:const SR = process.env.SUPABASE_SERVICE_ROLE_KEY!;",
-    "src/lib/stage-3c-integration.ts:72:      SUPABASE_SERVICE_ROLE_KEY: SR,"
-  ],
+  "svcRoleHits": [],
   "rtspHits": [],
   "passwordHits": [],
   "storagePathHits": [],
-  "dangerousHits": [
-    "src/components/ui/chart.tsx:73:      dangerouslySetInnerHTML={{"
-  ]
+  "dangerousHits": []
 }
