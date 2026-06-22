@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-06-22T10:40:58.885Z",
+  "missingSaltTestExecuted": true,
+  "missingSaltFailClosedPassed": true,
+  "expiredRateLimitRowsBefore": 1,
+  "expiredRateLimitRowsAfter": 0,
+  "rateLimitCleanupPassed": true,
+  "rollbackRequestRows": 0,
+  "rollbackConsentRows": 0,
+  "consentRollbackPassed": true,
+  "testOnlyRpcExists": false,
+  "productionDataCollectionEnabled": false,
+  "publicAuthEnabled": false,
+  "operatorConfigured": false,
+  "extendedRlsMatrixPassed": true,
+  "rlsScenarios": 52,
+  "rlsFailed": 0,
+  "testFunctionDeployed": false,
+  "runnerFunctionDeployed": false,
+  "debugFunctionDeployed": false,
+  "testSecretsActive": false,
+  "remainingTestRows": 0,
+  "remainingTestUsers": 0,
+  "remainingTestStorageObjects": 0,
+  "regression": {
+    "priceItems": 334,
+    "servicePages": 35,
+    "repairServicePages": 11,
+    "constructionServicePages": 18,
+    "engineeringServicePages": 6,
+    "calculatorRoutes": 1,
+    "calculatorModes": 4,
+    "clientRoutesActivated": 0,
+    "adminRoutesActivated": 0
+  },
+  "specificationCheck": {
+    "passed": true,
+    "errors": []
+  },
+  "readyForStage4": true,
+  "readyForProductionDataCollection": false
+}

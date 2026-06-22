@@ -103,12 +103,16 @@ async function setup() {
 
 async function teardown() {
   console.log("== teardown ==");
+  await admin.from("consent_records").delete().or("document_version.eq.test,document_version.eq.rls-3e");
   await admin.from("consent_records").delete().in("request_id", [reqIdA, reqIdB].filter(Boolean));
   await admin.from("estimate_requests").delete().in("id", [reqIdA, reqIdB].filter(Boolean));
+  await admin.from("projects").delete().eq("title", "stage3e-admin-proj-u");
+  await admin.from("projects").delete().eq("title", "stage3e-admin-proj");
   await admin.from("project_members").delete().eq("project_id", projectId);
   await admin.from("project_stages").delete().eq("project_id", projectId);
   await admin.from("project_documents").delete().eq("project_id", projectId);
   await admin.from("projects").delete().eq("id", projectId);
+  await admin.from("submission_rate_limits").delete().like("key_hash", "rls-3e-%");
   await admin.from("user_roles").delete().in("user_id", [uidA, uidB, uidAdmin].filter(Boolean));
   await admin.from("profiles").delete().in("id", [uidA, uidB, uidAdmin].filter(Boolean));
   for (const u of [uidA, uidB, uidAdmin]) if (u) await deleteUser(u);
@@ -227,9 +231,180 @@ async function runMatrix() {
     const r = await cAdmin.from("project_members").insert({ project_id: projectId, user_id: uidB, member_role: "manager" });
     return { error: r.error };
   });
+
+  // ---- Stage 3E extended scenarios ----
+
+  // Profile column-level updates
+  console.log("== profile columns ==");
+  await exec("clientA-own-display_name-update","clientA","update","profiles(self.display_name)","allow", async () => {
+    const r = await cA.from("profiles").update({ display_name: "Stage3E A" }).eq("id", uidA).select("id");
+    if (r.error) return { error: r.error };
+    return { error: (r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null };
+  });
+  await exec("clientA-own-phone-update","clientA","update","profiles(self.phone)","allow", async () => {
+    const r = await cA.from("profiles").update({ phone: "+7 (495) 000-00-00" }).eq("id", uidA).select("id");
+    if (r.error) return { error: r.error };
+    return { error: (r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null };
+  });
+  await exec("clientA-own-id-update-deny","clientA","update","profiles(self.id)","deny", async () => {
+    const r = await cA.from("profiles").update({ id: uidB }).eq("id", uidA);
+    return { error: r.error };
+  });
+  await exec("clientA-own-created_at-update-deny","clientA","update","profiles(self.created_at)","deny", async () => {
+    const r = await cA.from("profiles").update({ created_at: new Date(0).toISOString() } as any).eq("id", uidA);
+    return { error: r.error };
+  });
+  await exec("clientA-own-updated_at-update-deny","clientA","update","profiles(self.updated_at)","deny", async () => {
+    const r = await cA.from("profiles").update({ updated_at: new Date(0).toISOString() } as any).eq("id", uidA);
+    return { error: r.error };
+  });
+  await exec("clientA-other-profile-update-deny","clientA","update","profiles(other)","deny", async () => {
+    const r = await cA.from("profiles").update({ display_name: "hax" }).eq("id", uidB).select("id");
+    if (r.error) return { error: r.error };
+    return { error: (r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null };
+  });
+
+  // Consent records (own / other)
+  console.log("== consent_records ==");
+  // Seed consents tied to reqIdA / reqIdB
+  await admin.from("consent_records").insert([
+    { request_id: reqIdA, user_id: uidA, document_slug: "privacy", document_version: "rls-3e", accepted_at: new Date().toISOString() },
+    { request_id: reqIdB, user_id: uidB, document_slug: "privacy", document_version: "rls-3e", accepted_at: new Date().toISOString() },
+  ]);
+  await exec("clientA-own-consent-select","clientA","select","consent_records(self)","allow", async () => {
+    const r = await cA.from("consent_records").select("id").eq("user_id", uidA);
+    if (r.error) return { error: r.error };
+    return { error: (r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null };
+  });
+  await exec("clientA-other-consent-select","clientA","select","consent_records(other)","deny", async () => {
+    const r = await cA.from("consent_records").select("id").eq("user_id", uidB);
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+
+  // Rate-limit table — anon must not be able to insert directly
+  console.log("== rate-limit ==");
+  await exec("anon-rate-limit-insert-deny","anon","insert","submission_rate_limits","deny", async () => {
+    const r = await anon.from("submission_rate_limits").insert({
+      key_hash: "rls-3e-anon-attempt", window_started_at: new Date().toISOString(), attempt_count: 1, expires_at: new Date(Date.now()+3600_000).toISOString(),
+    });
+    return { error: r.error };
+  });
+  await exec("clientA-rate-limit-insert-deny","clientA","insert","submission_rate_limits","deny", async () => {
+    const r = await cA.from("submission_rate_limits").insert({
+      key_hash: "rls-3e-cA-attempt", window_started_at: new Date().toISOString(), attempt_count: 1, expires_at: new Date(Date.now()+3600_000).toISOString(),
+    });
+    return { error: r.error };
+  });
+
+  // Admin CRUD — projects
+  console.log("== admin projects CRUD ==");
+  let projAdminId = "";
+  await exec("admin-projects-insert","admin","insert","projects","allow", async () => {
+    const r = await cAdmin.from("projects").insert({ title: "stage3e-admin-proj", status: "active" }).select("id").single();
+    if (r.error) return { error: r.error };
+    projAdminId = r.data.id; return { error: null };
+  });
+  await exec("admin-projects-update","admin","update","projects","allow", async () => {
+    const r = await cAdmin.from("projects").update({ title: "stage3e-admin-proj-u" }).eq("id", projAdminId).select("id");
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+
+  // Admin CRUD — project_members
+  console.log("== admin project_members CRUD ==");
+  await exec("admin-project_members-select","admin","select","project_members","allow", async () => {
+    const r = await cAdmin.from("project_members").select("user_id,member_role").eq("project_id", projectId);
+    return { error: r.error };
+  });
+  await exec("admin-project_members-update","admin","update","project_members","allow", async () => {
+    const r = await cAdmin.from("project_members").update({ member_role: "manager" }).eq("project_id", projectId).eq("user_id", uidA).select("user_id");
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+  await exec("admin-project_members-delete","admin","delete","project_members","allow", async () => {
+    const r = await cAdmin.from("project_members").delete().eq("project_id", projectId).eq("user_id", uidB).select("user_id");
+    return { error: r.error };
+  });
+
+  // Admin CRUD — project_stages
+  console.log("== admin project_stages CRUD ==");
+  let adminStageId = "";
+  await exec("admin-project_stages-insert","admin","insert","project_stages","allow", async () => {
+    const r = await cAdmin.from("project_stages").insert({ project_id: projectId, sort_order: 99, title: "s3e-admin", status: "planned" }).select("id").single();
+    if (r.error) return { error: r.error };
+    adminStageId = r.data.id; return { error: null };
+  });
+  await exec("admin-project_stages-select","admin","select","project_stages","allow", async () => {
+    const r = await cAdmin.from("project_stages").select("id").eq("project_id", projectId);
+    return { error: r.error };
+  });
+  await exec("admin-project_stages-update","admin","update","project_stages","allow", async () => {
+    const r = await cAdmin.from("project_stages").update({ status: "completed" }).eq("id", adminStageId).select("id");
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+  await exec("admin-project_stages-delete","admin","delete","project_stages","allow", async () => {
+    const r = await cAdmin.from("project_stages").delete().eq("id", adminStageId).select("id");
+    return { error: r.error };
+  });
+
+  // Admin CRUD — project_documents
+  console.log("== admin project_documents CRUD ==");
+  let adminDocId = "";
+  await exec("admin-project_documents-insert","admin","insert","project_documents","allow", async () => {
+    const r = await cAdmin.from("project_documents").insert({ project_id: projectId, storage_path: "stage3e/admin.pdf", file_name: "admin.pdf", mime_type: "application/pdf", size_bytes: 1024 }).select("id").single();
+    if (r.error) return { error: r.error };
+    adminDocId = r.data.id; return { error: null };
+  });
+  await exec("admin-project_documents-select","admin","select","project_documents","allow", async () => {
+    const r = await cAdmin.from("project_documents").select("id").eq("project_id", projectId);
+    return { error: r.error };
+  });
+  await exec("admin-project_documents-update","admin","update","project_documents","allow", async () => {
+    const r = await cAdmin.from("project_documents").update({ file_name: "admin-u.pdf" }).eq("id", adminDocId).select("id");
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+  await exec("admin-project_documents-delete","admin","delete","project_documents","allow", async () => {
+    const r = await cAdmin.from("project_documents").delete().eq("id", adminDocId).select("id");
+    return { error: r.error };
+  });
+  if (projAdminId) await admin.from("projects").delete().eq("id", projAdminId);
+
+  // Storage allow — admin & client (bucket private; both expected to be denied without explicit policy)
+  console.log("== storage ==");
+  await exec("admin-storage-list","admin","list","storage:project-documents","deny", async () => {
+    const r = await cAdmin.storage.from("project-documents").list();
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+  await exec("clientA-storage-list","clientA","list","storage:project-documents","deny", async () => {
+    const r = await cA.storage.from("project-documents").list();
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+
+  // Security definer helpers
+  console.log("== helper functions ==");
+  await exec("clientA-has_role-self","clientA","rpc","has_role(self)","allow", async () => {
+    const r = await cA.rpc("has_role", { _user_id: uidA, _role: "client" });
+    return { error: r.error };
+  });
+  await exec("clientA-has_role-other-deny","clientA","rpc","has_role(other)","deny", async () => {
+    const r = await cA.rpc("has_role", { _user_id: uidB, _role: "client" });
+    // Function is SECURITY DEFINER but guarded with auth.uid()=_user_id; for other it should return false (not an error).
+    // RLS-style deny here = function returns false. Map to deny via data check.
+    if (r.error) return { error: r.error };
+    const ok = r.data === false;
+    return { error: ok ? { code: "has_role-false" } : null };
+  });
+  await exec("clientA-is_project_member-self","clientA","rpc","is_project_member(self)","allow", async () => {
+    const r = await cA.rpc("is_project_member", { _project_id: projectId, _user_id: uidA });
+    return { error: r.error };
+  });
+  await exec("clientA-is_project_member-other-deny","clientA","rpc","is_project_member(other)","deny", async () => {
+    const r = await cA.rpc("is_project_member", { _project_id: projectId, _user_id: uidB });
+    if (r.error) return { error: r.error };
+    const ok = r.data === false;
+    return { error: ok ? { code: "is_member-false" } : null };
+  });
 }
 
-const out = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..", ".audit/stage-3A/rls-test-matrix.json");
+const out = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..", ".audit/stage-3E/rls-test-matrix.json");
 
 try {
   await setup();
