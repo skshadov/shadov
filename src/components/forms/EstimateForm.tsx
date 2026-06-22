@@ -292,7 +292,7 @@ export function EstimateForm() {
             value={watched.objectType || undefined}
             onValueChange={(v) => setValue("objectType", v, { shouldValidate: isSubmitted })}
           >
-            <SelectTrigger><SelectValue placeholder="Выберите тип объекта" /></SelectTrigger>
+            <SelectTrigger aria-label="Тип объекта"><SelectValue placeholder="Выберите тип объекта" /></SelectTrigger>
             <SelectContent>
               {OBJECT_TYPES.map((t) => (
                 <SelectItem key={t} value={t}>{t}</SelectItem>
@@ -306,7 +306,7 @@ export function EstimateForm() {
             value={watched.service || undefined}
             onValueChange={(v) => setValue("service", v, { shouldValidate: isSubmitted })}
           >
-            <SelectTrigger><SelectValue placeholder="Выберите услугу" /></SelectTrigger>
+            <SelectTrigger aria-label="Нужная услуга"><SelectValue placeholder="Выберите услугу" /></SelectTrigger>
             <SelectContent>
               {SERVICES.map((t) => (
                 <SelectItem key={t} value={t}>{t}</SelectItem>
@@ -330,7 +330,7 @@ export function EstimateForm() {
             value={watched.unit || undefined}
             onValueChange={(v) => setValue("unit", v, { shouldValidate: isSubmitted })}
           >
-            <SelectTrigger><SelectValue placeholder="Выберите единицу" /></SelectTrigger>
+            <SelectTrigger aria-label="Единица измерения"><SelectValue placeholder="Выберите единицу" /></SelectTrigger>
             <SelectContent>
               {UNITS.map((t) => (
                 <SelectItem key={t} value={t}>{t}</SelectItem>
@@ -344,7 +344,7 @@ export function EstimateForm() {
             value={watched.state || undefined}
             onValueChange={(v) => setValue("state", v, { shouldValidate: isSubmitted })}
           >
-            <SelectTrigger><SelectValue placeholder="Можно пропустить" /></SelectTrigger>
+            <SelectTrigger aria-label="Текущее состояние объекта"><SelectValue placeholder="Можно пропустить" /></SelectTrigger>
             <SelectContent>
               {STATES.map((t) => (
                 <SelectItem key={t} value={t}>{t}</SelectItem>
@@ -367,7 +367,7 @@ export function EstimateForm() {
             value={watched.startDate || undefined}
             onValueChange={(v) => setValue("startDate", v, { shouldValidate: isSubmitted })}
           >
-            <SelectTrigger><SelectValue placeholder="Когда планируете начать" /></SelectTrigger>
+            <SelectTrigger aria-label="Планируемый срок начала"><SelectValue placeholder="Когда планируете начать" /></SelectTrigger>
             <SelectContent>
               {STARTS.map((t) => (
                 <SelectItem key={t} value={t}>{t}</SelectItem>

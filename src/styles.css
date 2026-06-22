@@ -142,6 +142,10 @@
   --accent-foreground: var(--text-dark);
   --border: var(--border-light);
   --input: var(--border-light);
+  /* Stage 4C: ensure WCAG AA contrast for primary on cream surfaces. */
+  --primary: #6B5526;
+  --primary-foreground: #FFFFFF;
+  --ring: #6B5526;
 
   background-color: var(--background);
   color: var(--foreground);
@@ -156,6 +160,9 @@
   --muted-foreground: var(--text-muted-light);
   --border: var(--border-light);
   --input: var(--border-light);
+  --primary: #6B5526;
+  --primary-foreground: #FFFFFF;
+  --ring: #6B5526;
 
   background-color: var(--background);
   color: var(--foreground);
@@ -172,6 +179,9 @@
 
   html, body {
     min-height: 100dvh;
+    /* Stage 4C: prevent document-level horizontal scroll without breaking
+       internal scroll containers (overflow-x: auto/scroll keep working). */
+    overflow-x: clip;
   }
 
   body {

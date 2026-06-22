@@ -41,7 +41,7 @@ export function EngineeringPriceGroups({ packageCategoryIds = [], priceCategoryI
           <div key={sec.title}>
             <h2 className="font-display text-2xl font-semibold">{sec.title}</h2>
             <div className="mt-4 overflow-x-auto">
-              <table className="w-full text-left text-sm">
+              <table className="w-full min-w-[480px] text-left text-sm">
                 <caption className="sr-only">{sec.title}</caption>
                 <thead>
                   <tr className="border-b border-border">
