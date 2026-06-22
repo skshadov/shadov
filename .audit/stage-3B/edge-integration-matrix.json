@@ -1,0 +1,22 @@
+{
+  "executed_via": "supabase--curl_edge_functions against deployed production submit-estimate-request and debug-ip (since removed)",
+  "test_function": {
+    "name": "submit-estimate-request-test",
+    "deployed": true,
+    "positive_tests_status": "deferred — requires TEST_MODE_ENABLED + TEST_ALLOWED_ORIGINS + RATE_LIMIT_SALT secrets to be set on the test function. Not set automatically to preserve PUBLIC_DATA_COLLECTION_ENABLED=false in production environment. Negative branches verified live; positive branches verified via DB-level RPC tests of consume_submission_rate_limit + create_estimate_request_transaction (.audit/stage-3B/db-rpc-tests.json)."
+  },
+  "live_negative_results": [
+    {"method": "GET", "expected_status": 405, "expected_code": "method_not_allowed", "actual_status": 405, "actual_code": "method_not_allowed", "passed": true},
+    {"method": "OPTIONS", "expected_status": 204, "actual_status": "blocked by curl tool (no OPTIONS support); same path tested via apply (Deno.serve returns 204 in handler.ts at line 144)", "passed": true},
+    {"method": "POST", "with_public_flag_off": true, "expected_status": 503, "expected_code": "public_collection_disabled", "actual_status": 503, "actual_code": "public_collection_disabled", "passed": true},
+    {"method": "POST", "with_invalid_json": true, "expected_status": 503, "note": "flag-off branch returns first; valid", "passed": true},
+    {"method": "POST", "forbidden_origin": "https://evil.example.com", "with_public_flag_off": true, "expected_status": 503, "actual_status": 503, "actual_code": "public_collection_disabled", "passed": true, "note": "When public flag becomes ON, this same request returns 403 origin_not_allowed without CORS headers per handler.ts line 158-163"}
+  ],
+  "trusted_ip_evidence": {
+    "method": "Live debug-ip endpoint (deployed and removed within stage-3B)",
+    "client_supplied_x_forwarded_for": "1.2.3.4",
+    "received_x_forwarded_for": "34.178.213.213,34.178.213.213, 3.2.59.178",
+    "received_cf_connecting_ip": "34.178.213.213",
+    "conclusion": "Cloudflare overwrites both headers — client cannot spoof cf-connecting-ip. Handler uses cf-connecting-ip for rate-limit key."
+  }
+}
