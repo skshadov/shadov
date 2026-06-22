@@ -347,7 +347,7 @@ Deno.serve(async (req: Request) => {
     }));
     await add("adminTest", adminU.id, "camera_sources/admin_insert", "project_camera_sources", "insert", "allow", await asUser(tokenAdmin, `/project_camera_sources`, {
       method: "POST", headers: { "Prefer": "return=representation" },
-      body: JSON.stringify({ camera_id: camA!.id, provider: "test", configuration_reference: "ref" })
+      body: JSON.stringify({ camera_id: camA.id, provider: "test", provider_camera_id: "src-1", configuration_reference: "ref" })
     }));
     await add("adminTest", adminU.id, "camera_sources/admin_select", "project_camera_sources", "select", "allow", await asUser(tokenAdmin, `/project_camera_sources?camera_id=eq.${camA!.id}&select=camera_id`));
     await add("adminTest", adminU.id, "payments/admin_insert", "project_payments", "insert", "allow", await asUser(tokenAdmin, `/project_payments`, {
