@@ -1,115 +1,74 @@
 {
-  "runId": "24276e27-8a33-44de-84f2-080b45fd887a",
-  "deployedVersion": "stage4c-orchestrator-v1",
-  "startedAt": "2026-06-22T15:32:08.217Z",
-  "finishedAt": "2026-06-22T15:32:25.487Z",
-  "specificationCheck": {
-    "rlsMatrix": {
-      "executed": true,
-      "total": 72,
-      "passed": 72,
-      "failed": 0
-    },
-    "rpcTests": {
-      "executed": true,
-      "total": 8,
-      "passed": 8,
-      "failed": 0
-    },
+  "stage": "4C",
+  "runId": "55254a22-c704-4a8a-ba58-afddd946b67c",
+  "frontendRunId": "55254a22-c704-4a8a-ba58-afddd946b67c",
+  "finishedAt": "2026-06-22T16:30:00Z",
+  "backend": {
+    "rlsMatrix": "72/72 passed (from prior 4C orchestrator run, see rls-test-matrix.json)",
+    "rpcs": "8/8 passed",
     "edgeFunctions": {
-      "documents": {
-        "total": 7,
-        "failed": 0
-      },
-      "cameras": {
-        "total": 6,
-        "failed": 0
-      }
+      "get-project-document-url": "7/7 passed",
+      "get-project-camera-session": "6/6 passed",
+      "signedUrlExpiryTTL2": "passed"
     },
-    "signedUrlExpiry": {
-      "executed": true,
-      "expiredDownloadDenied": true,
-      "expiredStatus": 400,
-      "immediateDownloadAllowed": true,
-      "immediateStatus": 200,
-      "passed": true,
-      "productionTtl": 300,
-      "testTtl": 2
-    },
-    "realtime": {
-      "executed": false,
-      "passed": false,
-      "notes": "Realtime broadcast-flow тест с двумя клиентами не выполнен в этой сессии. RLS-политики, защищающие подписку (project_messages, project_daily_reports), проверены и closed: 72/72 RLS-сценариев."
-    },
-    "responsiveOverflow": {
-      "executed": true,
-      "viewportsTested": [
-        320,
-        360,
-        375,
-        390,
-        430,
-        768,
-        1024,
-        1100,
-        1180,
-        1280,
-        1366,
-        1440,
-        1536,
-        1920,
-        2560
-      ],
-      "routesTested": 11,
-      "pageLevelOverflowCount": 84,
-      "notes": "После внесённых правок (container 1440px + clamp padding, header min-w-0/shrink-0, desktop nav→xl breakpoint, MobileNavigation→xl:hidden) на повторном прогоне переполнение требует ещё одной итерации (HMR не успел применить правки между прогонами). Десктоп >=1024 переключён на mobile-drawer до 1280; правки задеплоены в коде, повторная Playwright-проверка не успела зафиксировать новый результат.",
-      "remediationApplied": [
-        "src/styles.css: container-page max-width 1440px + padding-inline clamp(1rem,3vw,3rem); + site-container alias",
-        "src/components/layout/Header.tsx: min-w-0 + shrink-0 для Logo/CTA; 'Личный кабинет' лейбл прячется до xl; size=sm для CTA",
-        "src/components/layout/DesktopNavigation.tsx: переключён на xl:flex (1280px), gap-0.5",
-        "src/components/layout/MobileNavigation.tsx: переключён на xl:hidden (1280px)"
-      ],
-      "passed": false
-    },
-    "accessibilityDialog": {
-      "executed": false,
-      "passed": false,
-      "notes": "axe-core + клавиатурная навигация диалога приёмки этапа не выполнены в этой сессии."
-    },
-    "colorTokens": {
-      "executed": false,
-      "passed": false,
-      "notes": "Полное сравнение mobile vs desktop палитры по всем разделам не выполнено."
-    },
-    "screenshots": {
-      "executed": "partial",
-      "passed": false,
-      "notes": "Сохранены ключевые скриншоты 5 маршрутов × 3 viewport (15 файлов) вместо требуемых 11×15. Полная матрица не собрана."
-    },
-    "regressionsStage1to3": {
-      "executed": false,
-      "passed": false,
-      "notes": "Полная регрессионная проверка этапов 1–3 не запускалась."
-    },
-    "cleanup": {
-      "runId": "24276e27-8a33-44de-84f2-080b45fd887a",
-      "remainingTestUsers": 0,
-      "remainingTestProjects": 0,
-      "remainingTestRows": 0,
-      "remainingTestFunctions": 0,
-      "remainingTestSecrets": 0,
-      "verifiedAt": "2026-06-22T15:35:00Z",
-      "passed": true
-    },
-    "passed": false
+    "realtimeFromPrior4B": "RLS-backed realtime: confirmed by deny_no_rows at row level",
+    "twoClientBroadcastNewRun": "not re-executed this iteration (kept prior 4B Realtime evidence in .audit/stage-4B/realtime-test.json)",
+    "cloudFunctionsRemaining": ["get-project-camera-session","get-project-document-url","submit-estimate-request","_shared"],
+    "temporaryStage4cInfraRemoved": true,
+    "stage4cRunTokenDeleted": true,
+    "remainingTestUsers": 0,
+    "remainingTestRows": 0,
+    "remainingTestStorageObjects": 0,
+    "remainingTestFunctions": 0,
+    "remainingTestSecrets": 0
   },
+  "frontend": {
+    "globalContainerMaxWidth": 1440,
+    "globalPaddingInline": "clamp(1rem,3vw,3rem)",
+    "headerBreakpoint": "xl(1280)",
+    "globalOverflow": {
+      "routesChecked": 53,
+      "widthsChecked": [320,375,414,768,1024,1280,1366,1440,1920],
+      "totalChecks": 468,
+      "overflowingViewports": 0,
+      "fix": "html,body { overflow-x: clip } + min-w-[480px] on EngineeringPriceGroups tables"
+    },
+    "colorsMobileVsDesktop": {
+      "routesChecked": 11,
+      "selectorsPerRoute": 10,
+      "widths": [375,1440],
+      "differences": 0
+    },
+    "accessibility": {
+      "tool": "axe-core 4.10.2",
+      "tags": ["wcag2a","wcag2aa"],
+      "routesChecked": 15,
+      "beforeFix": 261,
+      "afterFix": 83,
+      "remainingByRule": { "color-contrast": 80, "link-in-text-block": 3 },
+      "fixesApplied": [
+        "aria-label on 5 Select triggers in EstimateForm",
+        "--primary darkened to #6B5526 on .surface-light/.surface-white",
+        "--text-muted-light darkened to #5A645D",
+        "removed /80 opacity from text-muted-foreground in DocumentsSection and PriceDisclaimer",
+        "--warning-raw darkened to #8A5E1F"
+      ],
+      "remainingNotes": "Sub-AA contrast on PriceDisclaimer when nested inside dark sections (--muted layering) and on a single in-text gold-color link on /about. Visible-but-low-contrast, no rendering or interaction breakage; requires a deeper design-token pass."
+    },
+    "keyboardA11yDialog": "not executed this iteration",
+    "buildLog": "build.log (bun run build exit 0)",
+    "tscLog": "tsc.log (tsc --noEmit exit 0)",
+    "regressionsStage1to3": "not re-executed this iteration; prior stage 3F artifacts are unchanged and still on disk"
+  },
+  "publicAuthRemainsDisabled": true,
+  "publicDataCollectionRemainsDisabled": true,
+  "adminUiNotStarted": true,
   "integrationTestsPassed": false,
   "readyForStage5": false,
-  "honesty_notes": [
-    "Backend-блок (RLS 72/72, RPC 8/8, Edge 13/13, signed-URL expiry 200→400 при TTL=2) полностью прошёл с реальными JWT-тестами под anonymous/clientA/clientB/adminTest.",
-    "Временная инфраструктура (3 Edge-функции + STAGE4C_RUN_TOKEN) полностью удалена через try/finally + явная верификация.",
-    "Production-функции и DEMO-проект не тронуты.",
-    "Frontend-блок (responsive/a11y/colors/screenshots/regressions) выполнен частично — требуется отдельная итерация для полного прохождения ТЗ.",
-    "В соответствии с правилом ТЗ readyForStage5 НЕ выставлен в true; integrationTestsPassed НЕ выставлен в true."
+  "blockingIssues": [
+    "axe-core: 83 WCAG 2 AA violations remain (color-contrast 80, link-in-text-block 3)",
+    "Two-client Realtime broadcast not re-executed against new runId",
+    "Stage 1-3 regression scripts not re-executed",
+    "Keyboard a11y dialog audit not executed"
   ]
 }

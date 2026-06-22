@@ -1,5 +1,4 @@
 ./audit.json
-./build.log
 ./camera-tests.json
 ./checksums.sha256
 ./client-portal-filter-tests.json
@@ -12,6 +11,11 @@
 ./edge-function-source/get-project-document-url.ts
 ./edge-function-source/stage4c-test-orchestrator.ts
 ./files-manifest.txt
+./frontend/axe-final.json
+./frontend/build.log
+./frontend/colors-mobile-desktop.json
+./frontend/global-overflow-after.json
+./frontend/tsc.log
 ./global-overflow-elements.json
 ./global-responsive-screenshots/calc-1366.png
 ./global-responsive-screenshots/calc-1920.png
@@ -36,4 +40,3 @@
 ./rls-test-matrix.json
 ./signed-url-expiry-test.json
 ./stage-acceptance-tests.json
-./typescript.log

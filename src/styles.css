@@ -74,13 +74,13 @@
   --text-light: #F7F8F5;
   --text-dark: #172019;
   --text-muted-dark: #AAB5AE;
-  --text-muted-light: #68736C;
+  --text-muted-light: #5A645D;
   --border-dark-raw: rgba(255, 255, 255, 0.12);
   --border-light: #D9DED9;
   --accent-raw: #C1A166;
   --accent-hover: #D0B47B;
   --success-raw: #3F7B5A;
-  --warning-raw: #A97732;
+  --warning-raw: #8A5E1F;
   --error-raw: #A94D45;
 
   /* shadcn-токены, отображённые на палитру (по умолчанию — тёмная тема) */
