@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-22T08:25:17.544Z",
-  "passed": 22,
-  "failed": 1,
+  "generatedAt": "2026-06-22T08:25:55.994Z",
+  "passed": 23,
+  "failed": 0,
   "total": 23,
   "results": [
     {
@@ -156,8 +156,9 @@
       "operation": "update",
       "resource": "project_stages",
       "expected": "deny",
-      "actual": "allow",
-      "passed": false
+      "actual": "deny",
+      "passed": true,
+      "errorCode": "rls-empty"
     },
     {
       "testName": "clientA-document-insert",
