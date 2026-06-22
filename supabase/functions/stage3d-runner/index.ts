@@ -34,6 +34,7 @@ function baseSnapshot() {
 function baseBody(submissionId: string, extra: Record<string, unknown> = {}) {
   return {
     submission_id: submissionId,
+    consent_accepted: true,
     request_number: `${STAGE}-${Date.now()}-${Math.floor(Math.random() * 1e6)}`,
     consent_version: "v1",
     consent_accepted_at: new Date().toISOString(),
