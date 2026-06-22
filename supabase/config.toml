@@ -1,1 +1,10 @@
 project_id = "shbgsrryredmememwgtn"
+
+[functions.stage4a-test-launcher]
+verify_jwt = false
+
+[functions.stage4a-test-orchestrator]
+verify_jwt = false
+
+[functions.get-project-document-url-test]
+verify_jwt = false

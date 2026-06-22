@@ -1,0 +1,23 @@
+[
+  {
+    "role": "clientA",
+    "url": "http://localhost:8080/client",
+    "sees_own": true,
+    "sees_other": false,
+    "console_errors": []
+  },
+  {
+    "role": "clientB",
+    "url": "http://localhost:8080/client",
+    "sees_own": true,
+    "sees_other": false,
+    "console_errors": []
+  },
+  {
+    "role": "adminTest",
+    "url": "http://localhost:8080/client",
+    "sees_own": false,
+    "sees_other": true,
+    "console_errors": []
+  }
+]
