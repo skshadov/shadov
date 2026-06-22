@@ -174,13 +174,14 @@ for (const f of FILES_TO_SCAN) {
 const forbiddenSearch = { matchesOutsideValidator };
 ok(matchesOutsideValidator.length === 0, `forbiddenSearch: ${matchesOutsideValidator.length}`);
 
-// Test results
+// Test results — запуск через node:child_process для совместимости.
 let calculatorTestsExit = 1;
 let calculatorTestsOutput = "";
 try {
-  const child = Bun.spawnSync({ cmd: ["bun", "src/lib/calculator-tests.ts"], stdout: "pipe", stderr: "pipe" });
-  calculatorTestsExit = child.exitCode ?? 1;
-  calculatorTestsOutput = new TextDecoder().decode(child.stdout) + new TextDecoder().decode(child.stderr);
+  const { spawnSync } = await import("node:child_process");
+  const child = spawnSync("bun", ["src/lib/calculator-tests.ts"], { encoding: "utf8" });
+  calculatorTestsExit = child.status ?? 1;
+  calculatorTestsOutput = (child.stdout ?? "") + (child.stderr ?? "");
 } catch (e) {
   calculatorTestsOutput = String(e);
 }
