@@ -1,0 +1,8 @@
+{
+  "capturedAt": "2026-06-22T10:36:40Z",
+  "deployedFunctions": ["submit-estimate-request"],
+  "testFunctionDeployed": false,
+  "runnerFunctionDeployed": false,
+  "debugFunctionDeployed": false,
+  "source": "supabase--delete_edge_functions confirmation + ls supabase/functions/"
+}
