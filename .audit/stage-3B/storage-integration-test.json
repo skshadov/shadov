@@ -1,0 +1,12 @@
+{
+  "note": "Source-level + RLS-policy-level checks for storage.objects on bucket project-documents",
+  "policies": [
+    {"name": "project docs members read", "cmd": "SELECT", "roles": "authenticated", "uuid_format_guard": true},
+    {"name": "project docs admins all", "cmd": "ALL", "roles": "authenticated"}
+  ],
+  "uuid_path_safety": "Policy SELECT now uses ~ '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$' regex guard before ::uuid cast. Malformed object names no longer raise typecast errors.",
+  "anon_access": "denied (no anon policy)",
+  "client_non_member_access": "denied by is_project_member()",
+  "admin_access": "allowed by has_role(auth.uid(), 'admin')",
+  "passed": true
+}

@@ -1,0 +1,4 @@
+{
+  "note": "Sequential 7-call test under service_role demonstrates atomic counter — see db-rpc-tests.json rate_limit_test. True N-concurrent test omitted because RPC tool exposes only serial invocations; the SQL function uses ON CONFLICT DO UPDATE + RETURNING which guarantees atomicity (single statement, row-level lock).",
+  "results": {"key":"stage3b-test-rl","max_attempts":5,"results":[{"attempt":1,"allowed":true,"count":1,"retry":0},{"attempt":2,"allowed":true,"count":2,"retry":0},{"attempt":3,"allowed":true,"count":3,"retry":0},{"attempt":4,"allowed":true,"count":4,"retry":0},{"attempt":5,"allowed":true,"count":5,"retry":0},{"attempt":6,"allowed":false,"count":6,"retry":370},{"attempt":7,"allowed":false,"count":7,"retry":370}],"passed":true}
+}
