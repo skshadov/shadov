@@ -66,7 +66,6 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as ClientProjectIdRouteImport } from './routes/client.project.$id'
-import { Route as ApiPublicStage3dEnvCheckRouteImport } from './routes/api/public/stage3d-env-check'
 
 const VodosnabzhenieKanalizatsiyaRoute =
   VodosnabzhenieKanalizatsiyaRouteImport.update({
@@ -356,12 +355,6 @@ const ClientProjectIdRoute = ClientProjectIdRouteImport.update({
   path: '/project/$id',
   getParentRoute: () => ClientRoute,
 } as any)
-const ApiPublicStage3dEnvCheckRoute =
-  ApiPublicStage3dEnvCheckRouteImport.update({
-    id: '/api/public/stage3d-env-check',
-    path: '/api/public/stage3d-env-check',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -420,7 +413,6 @@ export interface FileRoutesByFullPath {
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
-  '/api/public/stage3d-env-check': typeof ApiPublicStage3dEnvCheckRoute
   '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRoutesByTo {
@@ -480,7 +472,6 @@ export interface FileRoutesByTo {
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
-  '/api/public/stage3d-env-check': typeof ApiPublicStage3dEnvCheckRoute
   '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRoutesById {
@@ -541,7 +532,6 @@ export interface FileRoutesById {
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
-  '/api/public/stage3d-env-check': typeof ApiPublicStage3dEnvCheckRoute
   '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRouteTypes {
@@ -603,7 +593,6 @@ export interface FileRouteTypes {
     | '/ukladka-plitki'
     | '/vodosnabzhenie-kanalizatsiya'
     | '/portfolio/$slug'
-    | '/api/public/stage3d-env-check'
     | '/client/project/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -663,7 +652,6 @@ export interface FileRouteTypes {
     | '/ukladka-plitki'
     | '/vodosnabzhenie-kanalizatsiya'
     | '/portfolio/$slug'
-    | '/api/public/stage3d-env-check'
     | '/client/project/$id'
   id:
     | '__root__'
@@ -723,7 +711,6 @@ export interface FileRouteTypes {
     | '/ukladka-plitki'
     | '/vodosnabzhenie-kanalizatsiya'
     | '/portfolio/$slug'
-    | '/api/public/stage3d-env-check'
     | '/client/project/$id'
   fileRoutesById: FileRoutesById
 }
@@ -783,7 +770,6 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   UkladkaPlitkiRoute: typeof UkladkaPlitkiRoute
   VodosnabzhenieKanalizatsiyaRoute: typeof VodosnabzhenieKanalizatsiyaRoute
-  ApiPublicStage3dEnvCheckRoute: typeof ApiPublicStage3dEnvCheckRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1187,13 +1173,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClientProjectIdRouteImport
       parentRoute: typeof ClientRoute
     }
-    '/api/public/stage3d-env-check': {
-      id: '/api/public/stage3d-env-check'
-      path: '/api/public/stage3d-env-check'
-      fullPath: '/api/public/stage3d-env-check'
-      preLoaderRoute: typeof ApiPublicStage3dEnvCheckRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -1276,7 +1255,6 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   UkladkaPlitkiRoute: UkladkaPlitkiRoute,
   VodosnabzhenieKanalizatsiyaRoute: VodosnabzhenieKanalizatsiyaRoute,
-  ApiPublicStage3dEnvCheckRoute: ApiPublicStage3dEnvCheckRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
