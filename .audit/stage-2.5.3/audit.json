@@ -1,0 +1,555 @@
+{
+  "stage": "2.5.3",
+  "specificationCheck": {
+    "passed": true,
+    "errors": []
+  },
+  "sourceInventory": {
+    "calculatorRulesSource": "src/data/calculator-rules.ts",
+    "calculatorSpecificationSource": "src/data/calculator-specification.ts",
+    "pricesSource": "src/data/prices.ts",
+    "enginePath": "src/lib/calculator-engine.ts",
+    "testsPath": "src/lib/calculator-tests.ts",
+    "routePath": "src/routes/kalkulyator-stoimosti.tsx",
+    "documentationReferences": [
+      "§10 — инженерные системы",
+      "§11 — список маршрутов",
+      "§13 — коэффициенты сметы",
+      "§34 — калькулятор предварительной стоимости"
+    ],
+    "unresolvedQuestions": [
+      "Конкретные значения коэффициентов §13 применяются только в смете; в калькуляторе не используются.",
+      "Площадь стен и потолка пользователь вводит вручную: формула пересчёта из площади пола не подтверждена.",
+      "Площадь фасада, площадь кровли, объём бетона: пользователь вводит вручную."
+    ]
+  },
+  "calculatorSpecification": {
+    "route": "/kalkulyator-stoimosti",
+    "implementationStatus": "complete",
+    "modes": [
+      "repair",
+      "house",
+      "construction",
+      "engineering"
+    ],
+    "priceCategories": [
+      "repair_packages",
+      "additional_repairs",
+      "demolition",
+      "tiling",
+      "finishing_walls",
+      "finishing_floors",
+      "finishing_ceilings",
+      "finishing_doors",
+      "house_construction_work",
+      "house_construction_materials",
+      "monolithic",
+      "foundations",
+      "masonry",
+      "roofing",
+      "facades",
+      "general_contracting",
+      "electrical_packages",
+      "electrical",
+      "plumbing_packages",
+      "plumbing",
+      "water_supply",
+      "heating_packages",
+      "heating",
+      "underfloor_heating"
+    ],
+    "formulas": [
+      "fixed-unit",
+      "package-area",
+      "percentage",
+      "per-unit"
+    ],
+    "packageConflicts": [
+      "repair_packages",
+      "house_construction_work",
+      "house_construction_materials",
+      "electrical_packages",
+      "plumbing_packages",
+      "heating_packages"
+    ],
+    "houseCompletionLevels": [
+      "shell",
+      "warm",
+      "prefinish",
+      "turnkey",
+      "turnkey-materials"
+    ],
+    "disclaimers": 4,
+    "links": 15
+  },
+  "calculatorRoute": {
+    "route": "/kalkulyator-stoimosti",
+    "fileExists": true,
+    "canonical": "https://shadov.pro/kalkulyator-stoimosti",
+    "h1": "Калькулятор предварительной стоимости работ",
+    "title": "Калькулятор стоимости строительства и ремонта — Шадов и партнёры",
+    "description": "Предварительный расчёт стоимости ремонта, строительства частного дома, отдельных строительных и инженерных работ по действующему прайсу.",
+    "hasNoindex": false,
+    "hasBreadcrumb": true,
+    "hasWebApplication": true
+  },
+  "navigation": {
+    "inMainNav": true,
+    "inRoutesTs": true,
+    "occurrencesInMainNav": 1
+  },
+  "modes": [
+    {
+      "id": "repair",
+      "label": "Ремонт",
+      "priceCategories": [
+        "repair_packages",
+        "additional_repairs",
+        "demolition",
+        "tiling",
+        "finishing_walls",
+        "finishing_floors",
+        "finishing_ceilings",
+        "finishing_doors"
+      ],
+      "packageCategories": [
+        "repair_packages"
+      ],
+      "separateCategories": [
+        "additional_repairs",
+        "demolition",
+        "tiling",
+        "finishing_walls",
+        "finishing_floors",
+        "finishing_ceilings",
+        "finishing_doors"
+      ],
+      "forbiddenAutoCalculations": [
+        "Площадь стен не рассчитывается автоматически из площади пола.",
+        "Площадь потолка не рассчитывается автоматически из площади пола.",
+        "Объёмы по пог. м, шт. и комплектам вводятся пользователем вручную."
+      ]
+    },
+    {
+      "id": "house",
+      "label": "Строительство частного дома",
+      "priceCategories": [
+        "house_construction_work",
+        "house_construction_materials"
+      ],
+      "packageCategories": [
+        "house_construction_work",
+        "house_construction_materials"
+      ],
+      "separateCategories": [],
+      "forbiddenAutoCalculations": [
+        "Цена работ и цена «под ключ с базовыми материалами» не складываются — это альтернативы.",
+        "Фундамент, кровля, фасад не добавляются повторно, если они входят в выбранный уровень.",
+        "Объём бетона, площадь фасада, площадь кровли, количество блоков не выводятся из площади дома.",
+        "Инженерные точки не рассчитываются по площади дома."
+      ]
+    },
+    {
+      "id": "construction",
+      "label": "Отдельные строительные работы",
+      "priceCategories": [
+        "monolithic",
+        "foundations",
+        "masonry",
+        "roofing",
+        "facades",
+        "general_contracting"
+      ],
+      "packageCategories": [],
+      "separateCategories": [
+        "monolithic",
+        "foundations",
+        "masonry",
+        "roofing",
+        "facades",
+        "general_contracting"
+      ],
+      "forbiddenAutoCalculations": [
+        "Объём бетона не вычисляется из площади здания.",
+        "Тип фундамента не выбирается автоматически.",
+        "Площадь кровли не вычисляется из площади пола.",
+        "Площадь фасада не вычисляется из площади дома.",
+        "Комплексное кровельное решение и входящие в него отдельные операции не суммируются автоматически.",
+        "Стоимость генерального подряда рассчитывается только после ручного ввода стоимости СМР."
+      ]
+    },
+    {
+      "id": "engineering",
+      "label": "Инженерные системы",
+      "priceCategories": [
+        "electrical_packages",
+        "electrical",
+        "plumbing_packages",
+        "plumbing",
+        "water_supply",
+        "heating_packages",
+        "heating",
+        "underfloor_heating"
+      ],
+      "packageCategories": [
+        "electrical_packages",
+        "plumbing_packages",
+        "heating_packages"
+      ],
+      "separateCategories": [
+        "electrical",
+        "plumbing",
+        "water_supply",
+        "heating",
+        "underfloor_heating"
+      ],
+      "forbiddenAutoCalculations": [
+        "Количество электрических и сантехнических точек не вычисляется из площади.",
+        "Мощность отопления не рассчитывается.",
+        "Тёплый пол не утверждается как единственный источник отопления.",
+        "Пакет и отдельная работа не суммируются автоматически."
+      ]
+    }
+  ],
+  "inputs": {
+    "repair": [
+      "площадь по полу",
+      "пакет ремонта",
+      "дополнительные работы",
+      "демонтаж"
+    ],
+    "house": [
+      "технология",
+      "площадь дома",
+      "уровень готовности",
+      "режим только работы или с базовыми материалами"
+    ],
+    "construction": [
+      "категория",
+      "позиция",
+      "объём в фактической единице"
+    ],
+    "engineering": [
+      "направление",
+      "пакет или отдельная работа",
+      "объём в фактической единице"
+    ]
+  },
+  "priceCategories": [
+    "repair_packages",
+    "additional_repairs",
+    "demolition",
+    "tiling",
+    "finishing_walls",
+    "finishing_floors",
+    "finishing_ceilings",
+    "finishing_doors",
+    "house_construction_work",
+    "house_construction_materials",
+    "monolithic",
+    "foundations",
+    "masonry",
+    "roofing",
+    "facades",
+    "general_contracting",
+    "electrical_packages",
+    "electrical",
+    "plumbing_packages",
+    "plumbing",
+    "water_supply",
+    "heating_packages",
+    "heating",
+    "underfloor_heating"
+  ],
+  "priceItems": 334,
+  "units": [
+    "м²",
+    "комплект",
+    "м³",
+    "тонна",
+    "отверстие",
+    "шт.",
+    "пог. м",
+    "%",
+    "месяц",
+    "модуль",
+    "точка",
+    "контур",
+    "контейнер"
+  ],
+  "formulas": [
+    {
+      "id": "fixed-unit",
+      "description": "Стоимость позиции = объём × цена за единицу",
+      "source": "prices.ts — поля priceFrom, unit"
+    },
+    {
+      "id": "package-area",
+      "description": "Стоимость пакета = площадь × цена пакета за м²",
+      "source": "prices.ts — пакеты с unit=\"м²\""
+    },
+    {
+      "id": "percentage",
+      "description": "Стоимость = базовая стоимость × процент / 100",
+      "source": "prices.ts — поля percentageFrom"
+    },
+    {
+      "id": "per-unit",
+      "description": "Стоимость = количество × цена за штуку/комплект/пог. м",
+      "source": "prices.ts — поля priceFrom, unit"
+    }
+  ],
+  "coefficients": {
+    "note": "Коэффициенты §13 хранятся в src/data/calculator-rules.ts. В калькулятор не подставляются автоматически — отражены только в смете.",
+    "source": "src/data/calculator-rules.ts"
+  },
+  "rounding": {
+    "intermediate": "Промежуточные значения не округляются до тысяч.",
+    "final": "Итог округляется до полного рубля (Math.round).",
+    "format": "Intl.NumberFormat('ru-RU') — neasaltable пробелы заменяются на NBSP."
+  },
+  "packageCombinationRules": [
+    {
+      "packageCategory": "repair_packages",
+      "conflictsWith": [
+        "additional_repairs",
+        "demolition",
+        "tiling",
+        "finishing_walls",
+        "finishing_floors",
+        "finishing_ceilings",
+        "finishing_doors"
+      ]
+    },
+    {
+      "packageCategory": "house_construction_work",
+      "conflictsWith": [
+        "monolithic",
+        "foundations",
+        "masonry",
+        "roofing",
+        "facades"
+      ]
+    },
+    {
+      "packageCategory": "house_construction_materials",
+      "conflictsWith": [
+        "house_construction_work",
+        "monolithic",
+        "foundations",
+        "masonry",
+        "roofing",
+        "facades"
+      ]
+    },
+    {
+      "packageCategory": "electrical_packages",
+      "conflictsWith": [
+        "electrical"
+      ]
+    },
+    {
+      "packageCategory": "plumbing_packages",
+      "conflictsWith": [
+        "plumbing"
+      ]
+    },
+    {
+      "packageCategory": "heating_packages",
+      "conflictsWith": [
+        "heating"
+      ]
+    }
+  ],
+  "prohibitedCalculations": [
+    "Площадь стен из площади пола.",
+    "Площадь потолка из площади пола.",
+    "Площадь фасада из площади дома.",
+    "Площадь кровли из площади пола или дома.",
+    "Объём бетона из площади здания.",
+    "Количество блоков из площади стен.",
+    "Мощность отопления.",
+    "Количество электрических точек из площади.",
+    "Количество сантехнических точек из площади.",
+    "Стоимость оборудования по характеристикам.",
+    "Процент запаса.",
+    "Региональный коэффициент.",
+    "Коэффициент сложности.",
+    "Стоимость генподряда без ручного ввода базы СМР.",
+    "Автоматический расчёт многоквартирного дома."
+  ],
+  "testScenarios": {
+    "runner": "src/lib/calculator-tests.ts",
+    "exitCode": 0,
+    "passed": true,
+    "lastLines": [
+      "  ✓ Восстановление из localStorage (имитация)",
+      "  ✓ Очистка localStorage (пустой ввод)",
+      "  ✓ Некорректный query-параметр (несуществующий mode)",
+      "calculator-tests: 26/26 прошли",
+      "✓ calculator-tests passed."
+    ]
+  },
+  "metadata": {
+    "title": "Калькулятор стоимости строительства и ремонта — Шадов и партнёры",
+    "description": "Предварительный расчёт стоимости ремонта, строительства частного дома, отдельных строительных и инженерных работ по действующему прайсу.",
+    "canonical": "https://shadov.pro/kalkulyator-stoimosti",
+    "ogTitle": "Калькулятор стоимости строительства и ремонта — Шадов и партнёры",
+    "ogDescription": "Предварительный расчёт стоимости ремонта, строительства частного дома, отдельных строительных и инженерных работ по действующему прайсу.",
+    "ogType": "website",
+    "ogUrl": "https://shadov.pro/kalkulyator-stoimosti",
+    "h1": "Калькулятор предварительной стоимости работ"
+  },
+  "structuredData": {
+    "breadcrumb": true,
+    "webApplication": true,
+    "hasFakeRating": false,
+    "hasFakePrice": false
+  },
+  "servicePageLinks": [
+    {
+      "slug": "remont",
+      "mode": "repair",
+      "category": null,
+      "inServicePages": true
+    },
+    {
+      "slug": "remont-pod-klyuch",
+      "mode": "repair",
+      "category": null,
+      "inServicePages": true
+    },
+    {
+      "slug": "stroitelstvo",
+      "mode": "house",
+      "category": null,
+      "inServicePages": true
+    },
+    {
+      "slug": "stroitelstvo-domov-pod-klyuch",
+      "mode": "house",
+      "category": null,
+      "inServicePages": true
+    },
+    {
+      "slug": "monolitnye-raboty",
+      "mode": "construction",
+      "category": "monolithic",
+      "inServicePages": true
+    },
+    {
+      "slug": "fundamenty",
+      "mode": "construction",
+      "category": "foundations",
+      "inServicePages": true
+    },
+    {
+      "slug": "kladochnye-raboty",
+      "mode": "construction",
+      "category": "masonry",
+      "inServicePages": true
+    },
+    {
+      "slug": "krovelnye-raboty",
+      "mode": "construction",
+      "category": "roofing",
+      "inServicePages": true
+    },
+    {
+      "slug": "fasadnye-raboty",
+      "mode": "construction",
+      "category": "facades",
+      "inServicePages": true
+    },
+    {
+      "slug": "inzhenernye-sistemy",
+      "mode": "engineering",
+      "category": null,
+      "inServicePages": true
+    },
+    {
+      "slug": "elektromontazh",
+      "mode": "engineering",
+      "category": "electrical",
+      "inServicePages": true
+    },
+    {
+      "slug": "santehnika",
+      "mode": "engineering",
+      "category": "plumbing",
+      "inServicePages": true
+    },
+    {
+      "slug": "vodosnabzhenie-kanalizatsiya",
+      "mode": "engineering",
+      "category": "water_supply",
+      "inServicePages": true
+    },
+    {
+      "slug": "otoplenie",
+      "mode": "engineering",
+      "category": "heating",
+      "inServicePages": true
+    },
+    {
+      "slug": "teplyy-pol",
+      "mode": "engineering",
+      "category": "underfloor_heating",
+      "inServicePages": true
+    }
+  ],
+  "localStorage": {
+    "key": "shadov-cost-calculator-v1",
+    "versioned": true,
+    "storesPersonalData": false
+  },
+  "accessibility": {
+    "ariaLiveOnSummary": true,
+    "tableHasCaption": true,
+    "tableHasThead": true,
+    "tableUsesScope": true,
+    "modeRadioGroup": true,
+    "inputsHaveLabels": true,
+    "ariaDescribedBy": true,
+    "minTapHeight": true
+  },
+  "responsiveChecks": {
+    "notes": [
+      "Виджет калькулятора использует grid lg:grid-cols-[1fr_1fr] — на мобильных устройствах одна колонка.",
+      "Таблица итогов обёрнута в overflow-x-auto для прокрутки на 320px.",
+      "Все поля type=number имеют inputMode=decimal — iOS не показывает zoom.",
+      "Кнопки min-h-11 — соответствуют 44 px tap target."
+    ],
+    "breakpointsConsidered": [
+      "320px",
+      "375px",
+      "430px",
+      "768px",
+      "1024px",
+      "1440px"
+    ]
+  },
+  "forbiddenSearch": {
+    "matchesOutsideValidator": []
+  },
+  "regressionChecks": {
+    "servicePages": 35,
+    "repairActivePages": 10,
+    "constructionActivePages": 18,
+    "engineeringActivePages": 6,
+    "tileStubPages": 1,
+    "tileIsRouteStub": true,
+    "tileNoindexFollow": true,
+    "pricesTotal": 334
+  },
+  "totals": {
+    "calculatorRoutes": 1,
+    "calculatorModes": 4,
+    "priceItems": 334,
+    "servicePages": 35,
+    "repairActivePages": 10,
+    "constructionActivePages": 18,
+    "engineeringActivePages": 6,
+    "tileStubPages": 1
+  }
+}

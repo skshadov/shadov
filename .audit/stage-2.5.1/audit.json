@@ -578,7 +578,7 @@
     {
       "path": "src/components/services/EngineeringServicePage.tsx",
       "exists": true,
-      "bytes": 6868
+      "bytes": 6978
     },
     {
       "path": "src/components/engineering/EngineeringDirections.tsx",
@@ -628,10 +628,10 @@
     }
   ],
   "calculatorInventory": {
-    "calculatorRoute": null,
-    "routeFileExists": false,
-    "inRoutesTs": false,
-    "inNavigationTs": false,
+    "calculatorRoute": "found-in-routes-or-navigation",
+    "routeFileExists": true,
+    "inRoutesTs": true,
+    "inNavigationTs": true,
     "componentsFound": [
       "src/components/common/RouteStub.tsx",
       "src/components/content/EmptyPortfolioState.tsx",
@@ -642,7 +642,17 @@
       "src/components/layout/Header.tsx",
       "src/components/layout/MobileNavigation.tsx",
       "src/components/prices/PriceCoefficients.tsx",
-      "src/components/ui/sidebar.tsx"
+      "src/components/services/EngineeringServicePage.tsx",
+      "src/components/services/ServicePageLayout.tsx",
+      "src/components/ui/sidebar.tsx",
+      "src/components/calculator/CalculatorDisclaimer.tsx",
+      "src/components/calculator/CalculatorWarnings.tsx",
+      "src/components/calculator/CalculatorSummary.tsx",
+      "src/components/calculator/CalculatorModeSelector.tsx",
+      "src/components/calculator/CalculatorInputs.tsx",
+      "src/components/calculator/CalculatorPriceItems.tsx",
+      "src/components/calculator/CostCalculator.tsx",
+      "src/components/calculator/CalculatorCta.tsx"
     ],
     "formulasFound": [
       "src/components/prices/PriceCoefficients.tsx"
@@ -668,6 +678,16 @@
           234,
           545,
           571
+        ]
+      },
+      {
+        "file": "src/routes/kalkulyator-stoimosti.tsx",
+        "lines": [
+          15,
+          18,
+          19,
+          23,
+          36
         ]
       },
       {
@@ -725,12 +745,102 @@
         ]
       },
       {
+        "file": "src/components/services/EngineeringServicePage.tsx",
+        "lines": [
+          29
+        ]
+      },
+      {
+        "file": "src/components/services/ServicePageLayout.tsx",
+        "lines": [
+          24
+        ]
+      },
+      {
         "file": "src/components/ui/sidebar.tsx",
         "lines": [
           229,
           237,
           238,
           241
+        ]
+      },
+      {
+        "file": "src/components/calculator/CalculatorDisclaimer.tsx",
+        "lines": [
+          3,
+          8,
+          9,
+          14,
+          17
+        ]
+      },
+      {
+        "file": "src/components/calculator/CalculatorWarnings.tsx",
+        "lines": [
+          6,
+          19,
+          22
+        ]
+      },
+      {
+        "file": "src/components/calculator/CalculatorSummary.tsx",
+        "lines": [
+          7,
+          24,
+          27
+        ]
+      },
+      {
+        "file": "src/components/calculator/CalculatorModeSelector.tsx",
+        "lines": [
+          5,
+          6
+        ]
+      },
+      {
+        "file": "src/components/calculator/CalculatorInputs.tsx",
+        "lines": [
+          7,
+          9
+        ]
+      },
+      {
+        "file": "src/components/calculator/CalculatorPriceItems.tsx",
+        "lines": [
+          9,
+          10
+        ]
+      },
+      {
+        "file": "src/components/calculator/CostCalculator.tsx",
+        "lines": [
+          6,
+          12,
+          15,
+          16
+        ]
+      },
+      {
+        "file": "src/components/calculator/CalculatorCta.tsx",
+        "lines": [
+          7,
+          8,
+          18,
+          23,
+          34
+        ]
+      },
+      {
+        "file": "src/data/navigation.ts",
+        "lines": [
+          76
+        ]
+      },
+      {
+        "file": "src/data/routes.ts",
+        "lines": [
+          82
         ]
       },
       {
@@ -767,6 +877,16 @@
         ]
       },
       {
+        "file": "src/data/calculator-specification.ts",
+        "lines": [
+          4,
+          11,
+          14,
+          15,
+          233
+        ]
+      },
+      {
         "file": "src/lib/audit-stage-2-4-3.ts",
         "lines": [
           209
@@ -791,13 +911,50 @@
         ]
       },
       {
+        "file": "src/lib/validate-content.ts",
+        "lines": [
+          1093,
+          1094,
+          1098,
+          1099,
+          1104
+        ]
+      },
+      {
         "file": "src/lib/validate-prices.ts",
         "lines": [
           75
         ]
+      },
+      {
+        "file": "src/lib/calculator-engine.ts",
+        "lines": [
+          4,
+          14,
+          19
+        ]
+      },
+      {
+        "file": "src/lib/calculator-tests.ts",
+        "lines": [
+          6,
+          289,
+          291,
+          294
+        ]
+      },
+      {
+        "file": "src/lib/audit-stage-2-5-3.ts",
+        "lines": [
+          23,
+          24,
+          36,
+          106,
+          107
+        ]
       }
     ],
-    "implementationStatus": "not-started"
+    "implementationStatus": "partial"
   },
   "forbiddenSearch": {
     "matchesOutsideValidator": []

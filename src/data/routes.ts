@@ -78,6 +78,9 @@ export const ROUTES: RouteEntry[] = [
   { path: "/client", title: "Личный кабинет", group: "client", stub: true },
   { path: "/admin", title: "Административная панель", group: "client", stub: true },
 
+  // Калькулятор (Подэтап 2.5.3)
+  { path: "/kalkulyator-stoimosti", title: "Калькулятор предварительной стоимости работ", shortTitle: "Калькулятор", group: "info" },
+
   // Юридические
   { path: "/privacy", title: "Политика конфиденциальности", group: "legal", stub: true },
   { path: "/personal-data-consent", title: "Согласие на обработку персональных данных", shortTitle: "Согласие на ОПД", group: "legal", stub: true },
