@@ -229,7 +229,7 @@ async function runMatrix() {
   });
 }
 
-const out = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..", ".audit/stage-3A/rls-test-matrix.json");
+const out = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..", ".audit/stage-3E/rls-test-matrix.json");
 
 try {
   await setup();
