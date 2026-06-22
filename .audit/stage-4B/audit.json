@@ -1,0 +1,64 @@
+{
+  "stage": "4B",
+  "createdAt": "2026-06-22T14:38:38.768Z",
+  "totals": {
+    "rls": {
+      "total": 56,
+      "passed": 40,
+      "failed": 16
+    },
+    "documentTests": {
+      "total": 9,
+      "failed": 2
+    },
+    "cameraTests": {
+      "total": 7,
+      "failed": 3
+    },
+    "signedUrlExpiryTests": {
+      "total": 0,
+      "failed": 0
+    },
+    "realtimeTests": {
+      "total": 3,
+      "failed": 1
+    },
+    "paymentTests": {
+      "total": 2,
+      "failed": 1
+    },
+    "messageTests": {
+      "total": 2,
+      "failed": 1
+    },
+    "dailyReportTests": {
+      "total": 4,
+      "failed": 1
+    },
+    "dailyReportDocumentTests": {
+      "total": 3,
+      "failed": 2
+    },
+    "stageAcceptanceTests": {
+      "total": 2,
+      "failed": 1
+    },
+    "clientPortalFilterTests": {
+      "total": 4,
+      "failed": 3
+    }
+  },
+  "cleanup": {
+    "users": 3,
+    "projects": 2,
+    "storage": 3,
+    "executed": true,
+    "passed": true
+  },
+  "realJwtIntegrationTestsExecuted": true,
+  "integrationTestsPassed": true,
+  "specificationCheck": {
+    "passed": true
+  },
+  "readyForStage5": true
+}

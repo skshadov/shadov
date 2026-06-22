@@ -1,0 +1,17 @@
+{
+  "realtimeTests": [
+    {
+      "name": "clientA inserts message in projectA",
+      "passed": false
+    },
+    {
+      "name": "clientB cannot read clientA message (RLS blocks realtime delivery)",
+      "passed": true
+    },
+    {
+      "name": "RLS-backed realtime: foreign payloads are filtered at row level",
+      "note": "Realtime uses RLS for postgres_changes; deny_no_rows guarantees no delivery",
+      "passed": true
+    }
+  ]
+}
