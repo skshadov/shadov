@@ -1,1 +1,14 @@
-{"functions":["get-project-document-url","get-project-camera-session","submit-estimate-request"]}
+{
+  "production_functions": [
+    "get-project-document-url",
+    "get-project-camera-session",
+    "submit-estimate-request"
+  ],
+  "stage4a_test_functions_removed": [
+    "stage4a-test-orchestrator",
+    "stage4a-test-launcher",
+    "get-project-document-url-test",
+    "stage4a-fetch-result",
+    "stage4a-storage-cleanup"
+  ]
+}
