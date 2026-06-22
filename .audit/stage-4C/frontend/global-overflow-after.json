@@ -1,0 +1,3746 @@
+[
+ {
+  "route": "/about",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/biznes-remont",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/chernovoy-remont",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/chistovaya-otdelka",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/contacts",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/cookies",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-brusa",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-gazobetona",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-keramicheskih-blokov",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-kleenogo-brusa",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-sip-paneley",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/ekonom-remont",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/elektromontazh",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/evroremont",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/faq",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/fasadnye-raboty",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/fundamenty",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/generalnyy-podryad",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/how-we-work",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/inzhenernye-sistemy",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/kalkulyator-stoimosti",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 376,
+  "overflow": false
+ },
+ {
+  "route": "/karkasnye-doma",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/kirpichnye-doma",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/kladochnye-raboty",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/kombinirovannye-doma",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/kontrol-kachestva",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/kosmeticheskiy-remont",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/krovelnye-raboty",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/mnogokvartirnye-doma",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-doma",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-raboty",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/otoplenie",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/personal-data-consent",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/portfolio",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/premialnyy-remont",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/prices",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 326,
+  "overflow": false
+ },
+ {
+  "route": "/privacy",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 334,
+  "overflow": false
+ },
+ {
+  "route": "/remont-pod-klyuch",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/remont",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/requisites",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/reviews",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/santehnika",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/sro-i-dokumenty",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/standartnyy-remont",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo-domov-pod-klyuch",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/team",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/teplyy-pol",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/terms",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 320,
+  "overflow": false
+ },
+ {
+  "route": "/ukladka-plitki",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/vodosnabzhenie-kanalizatsiya",
+  "width": 320,
+  "scrollW": 320,
+  "clientW": 320,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/about",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/biznes-remont",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/chernovoy-remont",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/chistovaya-otdelka",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/contacts",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/cookies",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-brusa",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-gazobetona",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-keramicheskih-blokov",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-kleenogo-brusa",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-sip-paneley",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/ekonom-remont",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/elektromontazh",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/evroremont",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/faq",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/fasadnye-raboty",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/fundamenty",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/generalnyy-podryad",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/how-we-work",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/inzhenernye-sistemy",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/kalkulyator-stoimosti",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 376,
+  "overflow": false
+ },
+ {
+  "route": "/karkasnye-doma",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/kirpichnye-doma",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/kladochnye-raboty",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/kombinirovannye-doma",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/kontrol-kachestva",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/kosmeticheskiy-remont",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/krovelnye-raboty",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/mnogokvartirnye-doma",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-doma",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-raboty",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/otoplenie",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/personal-data-consent",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/portfolio",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/premialnyy-remont",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/prices",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/privacy",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/remont-pod-klyuch",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/remont",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/requisites",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/reviews",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/santehnika",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/sro-i-dokumenty",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/standartnyy-remont",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo-domov-pod-klyuch",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/team",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/teplyy-pol",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/terms",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 375,
+  "overflow": false
+ },
+ {
+  "route": "/ukladka-plitki",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/vodosnabzhenie-kanalizatsiya",
+  "width": 375,
+  "scrollW": 375,
+  "clientW": 375,
+  "bodyScrollW": 391,
+  "overflow": false
+ },
+ {
+  "route": "/about",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/biznes-remont",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/chernovoy-remont",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/chistovaya-otdelka",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/contacts",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/cookies",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-brusa",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-gazobetona",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-keramicheskih-blokov",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-kleenogo-brusa",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-sip-paneley",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/ekonom-remont",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/elektromontazh",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/evroremont",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/faq",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/fasadnye-raboty",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/fundamenty",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/generalnyy-podryad",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/how-we-work",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/inzhenernye-sistemy",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/kalkulyator-stoimosti",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/karkasnye-doma",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/kirpichnye-doma",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/kladochnye-raboty",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/kombinirovannye-doma",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/kontrol-kachestva",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/kosmeticheskiy-remont",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/krovelnye-raboty",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/mnogokvartirnye-doma",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-doma",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-raboty",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/otoplenie",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/personal-data-consent",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/portfolio",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/premialnyy-remont",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/prices",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/privacy",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/remont-pod-klyuch",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/remont",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/requisites",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/reviews",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/santehnika",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/sro-i-dokumenty",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/standartnyy-remont",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo-domov-pod-klyuch",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/team",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/teplyy-pol",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/terms",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/ukladka-plitki",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/vodosnabzhenie-kanalizatsiya",
+  "width": 414,
+  "scrollW": 414,
+  "clientW": 414,
+  "bodyScrollW": 414,
+  "overflow": false
+ },
+ {
+  "route": "/about",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/biznes-remont",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/chernovoy-remont",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/chistovaya-otdelka",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/contacts",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/cookies",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-brusa",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-gazobetona",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-keramicheskih-blokov",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-kleenogo-brusa",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-sip-paneley",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/ekonom-remont",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/elektromontazh",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/evroremont",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/faq",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/fasadnye-raboty",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/fundamenty",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/generalnyy-podryad",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/how-we-work",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/inzhenernye-sistemy",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/kalkulyator-stoimosti",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/karkasnye-doma",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/kirpichnye-doma",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/kladochnye-raboty",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/kombinirovannye-doma",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/kontrol-kachestva",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/kosmeticheskiy-remont",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/krovelnye-raboty",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/mnogokvartirnye-doma",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-doma",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-raboty",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/otoplenie",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/personal-data-consent",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/portfolio",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/premialnyy-remont",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/prices",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/privacy",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/remont-pod-klyuch",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/remont",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/requisites",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/reviews",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/santehnika",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/sro-i-dokumenty",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/standartnyy-remont",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo-domov-pod-klyuch",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/team",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/teplyy-pol",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/terms",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/ukladka-plitki",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/vodosnabzhenie-kanalizatsiya",
+  "width": 768,
+  "scrollW": 768,
+  "clientW": 768,
+  "bodyScrollW": 768,
+  "overflow": false
+ },
+ {
+  "route": "/about",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/biznes-remont",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/chernovoy-remont",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/chistovaya-otdelka",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/contacts",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/cookies",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-brusa",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-gazobetona",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-keramicheskih-blokov",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-kleenogo-brusa",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-sip-paneley",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/ekonom-remont",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/elektromontazh",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/evroremont",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/faq",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/fasadnye-raboty",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/fundamenty",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/generalnyy-podryad",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/how-we-work",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/inzhenernye-sistemy",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/kalkulyator-stoimosti",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/karkasnye-doma",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/kirpichnye-doma",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/kladochnye-raboty",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/kombinirovannye-doma",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/kontrol-kachestva",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/kosmeticheskiy-remont",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/krovelnye-raboty",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/mnogokvartirnye-doma",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-doma",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-raboty",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/otoplenie",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/personal-data-consent",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/portfolio",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/premialnyy-remont",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/prices",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/privacy",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/remont-pod-klyuch",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/remont",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/requisites",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/reviews",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/santehnika",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/sro-i-dokumenty",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/standartnyy-remont",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo-domov-pod-klyuch",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/team",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/teplyy-pol",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/terms",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/ukladka-plitki",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/vodosnabzhenie-kanalizatsiya",
+  "width": 1024,
+  "scrollW": 1024,
+  "clientW": 1024,
+  "bodyScrollW": 1024,
+  "overflow": false
+ },
+ {
+  "route": "/about",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/biznes-remont",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/chernovoy-remont",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/chistovaya-otdelka",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/contacts",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/cookies",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-brusa",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-gazobetona",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-keramicheskih-blokov",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-kleenogo-brusa",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-sip-paneley",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/ekonom-remont",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/elektromontazh",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/evroremont",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/faq",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/fasadnye-raboty",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/fundamenty",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/generalnyy-podryad",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/how-we-work",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/inzhenernye-sistemy",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/kalkulyator-stoimosti",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/karkasnye-doma",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/kirpichnye-doma",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/kladochnye-raboty",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/kombinirovannye-doma",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/kontrol-kachestva",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/kosmeticheskiy-remont",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/krovelnye-raboty",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/mnogokvartirnye-doma",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-doma",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-raboty",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/otoplenie",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/personal-data-consent",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/portfolio",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/premialnyy-remont",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/prices",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/privacy",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/remont-pod-klyuch",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/remont",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/requisites",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/reviews",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/santehnika",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/sro-i-dokumenty",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/standartnyy-remont",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo-domov-pod-klyuch",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/team",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/teplyy-pol",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/terms",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/ukladka-plitki",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/vodosnabzhenie-kanalizatsiya",
+  "width": 1280,
+  "scrollW": 1280,
+  "clientW": 1280,
+  "bodyScrollW": 1280,
+  "overflow": false
+ },
+ {
+  "route": "/about",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/biznes-remont",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/chernovoy-remont",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/chistovaya-otdelka",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/contacts",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/cookies",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-brusa",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-gazobetona",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-keramicheskih-blokov",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-kleenogo-brusa",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-sip-paneley",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/ekonom-remont",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/elektromontazh",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/evroremont",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/faq",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/fasadnye-raboty",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/fundamenty",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/generalnyy-podryad",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/how-we-work",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/inzhenernye-sistemy",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/kalkulyator-stoimosti",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/karkasnye-doma",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/kirpichnye-doma",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/kladochnye-raboty",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/kombinirovannye-doma",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/kontrol-kachestva",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/kosmeticheskiy-remont",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/krovelnye-raboty",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/mnogokvartirnye-doma",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-doma",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-raboty",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/otoplenie",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/personal-data-consent",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/portfolio",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/premialnyy-remont",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/prices",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/privacy",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/remont-pod-klyuch",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/remont",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/requisites",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/reviews",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/santehnika",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/sro-i-dokumenty",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/standartnyy-remont",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo-domov-pod-klyuch",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/team",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/teplyy-pol",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/terms",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/ukladka-plitki",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/vodosnabzhenie-kanalizatsiya",
+  "width": 1366,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "bodyScrollW": 1366,
+  "overflow": false
+ },
+ {
+  "route": "/about",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/biznes-remont",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/chernovoy-remont",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/chistovaya-otdelka",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/contacts",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/cookies",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-brusa",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-gazobetona",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-keramicheskih-blokov",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-kleenogo-brusa",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-sip-paneley",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/ekonom-remont",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/elektromontazh",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/evroremont",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/faq",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/fasadnye-raboty",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/fundamenty",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/generalnyy-podryad",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/how-we-work",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/inzhenernye-sistemy",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/kalkulyator-stoimosti",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/karkasnye-doma",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/kirpichnye-doma",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/kladochnye-raboty",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/kombinirovannye-doma",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/kontrol-kachestva",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/kosmeticheskiy-remont",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/krovelnye-raboty",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/mnogokvartirnye-doma",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-doma",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-raboty",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/otoplenie",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/personal-data-consent",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/portfolio",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/premialnyy-remont",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/prices",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/privacy",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/remont-pod-klyuch",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/remont",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/requisites",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/reviews",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/santehnika",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/sro-i-dokumenty",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/standartnyy-remont",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo-domov-pod-klyuch",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/team",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/teplyy-pol",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/terms",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/ukladka-plitki",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/vodosnabzhenie-kanalizatsiya",
+  "width": 1440,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bodyScrollW": 1440,
+  "overflow": false
+ },
+ {
+  "route": "/about",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/biznes-remont",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/chernovoy-remont",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/chistovaya-otdelka",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/contacts",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/cookies",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-brusa",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-gazobetona",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-keramicheskih-blokov",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-kleenogo-brusa",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/doma-iz-sip-paneley",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/ekonom-remont",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/elektromontazh",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/evroremont",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/faq",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/fasadnye-raboty",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/fundamenty",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/generalnyy-podryad",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/how-we-work",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/inzhenernye-sistemy",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/kalkulyator-stoimosti",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/karkasnye-doma",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/kirpichnye-doma",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/kladochnye-raboty",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/kombinirovannye-doma",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/kontrol-kachestva",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/kosmeticheskiy-remont",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/krovelnye-raboty",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/mnogokvartirnye-doma",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-doma",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/monolitnye-raboty",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/otoplenie",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/personal-data-consent",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/portfolio",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/premialnyy-remont",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/prices",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/privacy",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/remont-pod-klyuch",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/remont",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/requisites",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/reviews",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/santehnika",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/sro-i-dokumenty",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/standartnyy-remont",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo-domov-pod-klyuch",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/stroitelstvo",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/team",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/teplyy-pol",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/terms",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/ukladka-plitki",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ },
+ {
+  "route": "/vodosnabzhenie-kanalizatsiya",
+  "width": 1920,
+  "scrollW": 1920,
+  "clientW": 1920,
+  "bodyScrollW": 1920,
+  "overflow": false
+ }
+]
