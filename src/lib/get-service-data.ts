@@ -37,6 +37,18 @@ export const ACTIVE_CONSTRUCTION_SLUGS = new Set<string>([
 ]);
 
 /**
+ * Подэтап 2.5.2 — шесть подключённых инженерных страниц.
+ */
+export const ACTIVE_ENGINEERING_SLUGS = new Set<string>([
+  "inzhenernye-sistemy",
+  "elektromontazh",
+  "santehnika",
+  "vodosnabzhenie-kanalizatsiya",
+  "otoplenie",
+  "teplyy-pol",
+]);
+
+/**
  * Категория считается активной, если у страницы есть заполненный контент
  * (included/stages непустые). Для строительства дополнительно требуется
  * принадлежность к ACTIVE_CONSTRUCTION_SLUGS, поскольку 8 заглушек ещё
