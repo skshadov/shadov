@@ -40,6 +40,7 @@ import { Route as KombinirovannyeDomaRouteImport } from './routes/kombinirovanny
 import { Route as KladochnyeRabotyRouteImport } from './routes/kladochnye-raboty'
 import { Route as KirpichnyeDomaRouteImport } from './routes/kirpichnye-doma'
 import { Route as KarkasnyeDomaRouteImport } from './routes/karkasnye-doma'
+import { Route as KalkulyatorStoimostiRouteImport } from './routes/kalkulyator-stoimosti'
 import { Route as InzhenernyeSistemyRouteImport } from './routes/inzhenernye-sistemy'
 import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
 import { Route as GeneralnyyPodryadRouteImport } from './routes/generalnyy-podryad'
@@ -223,6 +224,11 @@ const KarkasnyeDomaRoute = KarkasnyeDomaRouteImport.update({
   path: '/karkasnye-doma',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KalkulyatorStoimostiRoute = KalkulyatorStoimostiRouteImport.update({
+  id: '/kalkulyator-stoimosti',
+  path: '/kalkulyator-stoimosti',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InzhenernyeSistemyRoute = InzhenernyeSistemyRouteImport.update({
   id: '/inzhenernye-sistemy',
   path: '/inzhenernye-sistemy',
@@ -374,6 +380,7 @@ export interface FileRoutesByFullPath {
   '/generalnyy-podryad': typeof GeneralnyyPodryadRoute
   '/how-we-work': typeof HowWeWorkRoute
   '/inzhenernye-sistemy': typeof InzhenernyeSistemyRoute
+  '/kalkulyator-stoimosti': typeof KalkulyatorStoimostiRoute
   '/karkasnye-doma': typeof KarkasnyeDomaRoute
   '/kirpichnye-doma': typeof KirpichnyeDomaRoute
   '/kladochnye-raboty': typeof KladochnyeRabotyRoute
@@ -432,6 +439,7 @@ export interface FileRoutesByTo {
   '/generalnyy-podryad': typeof GeneralnyyPodryadRoute
   '/how-we-work': typeof HowWeWorkRoute
   '/inzhenernye-sistemy': typeof InzhenernyeSistemyRoute
+  '/kalkulyator-stoimosti': typeof KalkulyatorStoimostiRoute
   '/karkasnye-doma': typeof KarkasnyeDomaRoute
   '/kirpichnye-doma': typeof KirpichnyeDomaRoute
   '/kladochnye-raboty': typeof KladochnyeRabotyRoute
@@ -491,6 +499,7 @@ export interface FileRoutesById {
   '/generalnyy-podryad': typeof GeneralnyyPodryadRoute
   '/how-we-work': typeof HowWeWorkRoute
   '/inzhenernye-sistemy': typeof InzhenernyeSistemyRoute
+  '/kalkulyator-stoimosti': typeof KalkulyatorStoimostiRoute
   '/karkasnye-doma': typeof KarkasnyeDomaRoute
   '/kirpichnye-doma': typeof KirpichnyeDomaRoute
   '/kladochnye-raboty': typeof KladochnyeRabotyRoute
@@ -551,6 +560,7 @@ export interface FileRouteTypes {
     | '/generalnyy-podryad'
     | '/how-we-work'
     | '/inzhenernye-sistemy'
+    | '/kalkulyator-stoimosti'
     | '/karkasnye-doma'
     | '/kirpichnye-doma'
     | '/kladochnye-raboty'
@@ -609,6 +619,7 @@ export interface FileRouteTypes {
     | '/generalnyy-podryad'
     | '/how-we-work'
     | '/inzhenernye-sistemy'
+    | '/kalkulyator-stoimosti'
     | '/karkasnye-doma'
     | '/kirpichnye-doma'
     | '/kladochnye-raboty'
@@ -667,6 +678,7 @@ export interface FileRouteTypes {
     | '/generalnyy-podryad'
     | '/how-we-work'
     | '/inzhenernye-sistemy'
+    | '/kalkulyator-stoimosti'
     | '/karkasnye-doma'
     | '/kirpichnye-doma'
     | '/kladochnye-raboty'
@@ -726,6 +738,7 @@ export interface RootRouteChildren {
   GeneralnyyPodryadRoute: typeof GeneralnyyPodryadRoute
   HowWeWorkRoute: typeof HowWeWorkRoute
   InzhenernyeSistemyRoute: typeof InzhenernyeSistemyRoute
+  KalkulyatorStoimostiRoute: typeof KalkulyatorStoimostiRoute
   KarkasnyeDomaRoute: typeof KarkasnyeDomaRoute
   KirpichnyeDomaRoute: typeof KirpichnyeDomaRoute
   KladochnyeRabotyRoute: typeof KladochnyeRabotyRoute
@@ -978,6 +991,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KarkasnyeDomaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kalkulyator-stoimosti': {
+      id: '/kalkulyator-stoimosti'
+      path: '/kalkulyator-stoimosti'
+      fullPath: '/kalkulyator-stoimosti'
+      preLoaderRoute: typeof KalkulyatorStoimostiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/inzhenernye-sistemy': {
       id: '/inzhenernye-sistemy'
       path: '/inzhenernye-sistemy'
@@ -1203,6 +1223,7 @@ const rootRouteChildren: RootRouteChildren = {
   GeneralnyyPodryadRoute: GeneralnyyPodryadRoute,
   HowWeWorkRoute: HowWeWorkRoute,
   InzhenernyeSistemyRoute: InzhenernyeSistemyRoute,
+  KalkulyatorStoimostiRoute: KalkulyatorStoimostiRoute,
   KarkasnyeDomaRoute: KarkasnyeDomaRoute,
   KirpichnyeDomaRoute: KirpichnyeDomaRoute,
   KladochnyeRabotyRoute: KladochnyeRabotyRoute,
