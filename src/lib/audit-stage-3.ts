@@ -34,7 +34,9 @@ const cloudConnected = has(clientFile);
 const supabaseClientSingleton = cloudConnected;
 
 // Frontend leak проверка: src/ за исключением *.server.ts
-const srcFiles = findFiles(resolve(root, "src"), /\.(ts|tsx)$/).filter((f) => !/\.server\.tsx?$/.test(f));
+const srcFiles = findFiles(resolve(root, "src"), /\.(ts|tsx)$/).filter(
+  (f) => !/\.server\.tsx?$/.test(f) && !/audit-stage-3\.ts$/.test(f),
+);
 const serviceRoleLeaks: string[] = [];
 for (const f of srcFiles) {
   const content = readFileSync(f, "utf8");
