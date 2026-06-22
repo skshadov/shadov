@@ -1,24 +1,8 @@
 {
   "stage": "2.6",
   "specificationCheck": {
-    "passed": false,
-    "errors": [
-      "info /about: отсутствует canonical",
-      "info /team: отсутствует canonical",
-      "info /portfolio: отсутствует canonical",
-      "info /contacts: отсутствует canonical",
-      "info /reviews: отсутствует canonical",
-      "info /faq: отсутствует canonical",
-      "info /how-we-work: отсутствует canonical",
-      "info /kontrol-kachestva: отсутствует canonical",
-      "info /sro-i-dokumenty: отсутствует canonical",
-      "legal /privacy: отсутствует canonical",
-      "legal /personal-data-consent: отсутствует canonical",
-      "legal /cookies: отсутствует canonical",
-      "legal /terms: отсутствует canonical",
-      "legal /requisites: отсутствует canonical",
-      "forbiddenSearch: 3"
-    ]
+    "passed": true,
+    "errors": []
   },
   "servicePages": [
     {
@@ -266,7 +250,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false
+      "hasCanonical": true
     },
     {
       "route": "/team",
@@ -274,7 +258,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false
+      "hasCanonical": true
     },
     {
       "route": "/portfolio",
@@ -282,7 +266,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false
+      "hasCanonical": true
     },
     {
       "route": "/portfolio/$slug",
@@ -298,7 +282,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false
+      "hasCanonical": true
     },
     {
       "route": "/reviews",
@@ -306,7 +290,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false
+      "hasCanonical": true
     },
     {
       "route": "/faq",
@@ -314,7 +298,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false
+      "hasCanonical": true
     },
     {
       "route": "/how-we-work",
@@ -322,7 +306,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false
+      "hasCanonical": true
     },
     {
       "route": "/kontrol-kachestva",
@@ -330,7 +314,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false
+      "hasCanonical": true
     },
     {
       "route": "/sro-i-dokumenty",
@@ -338,7 +322,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false
+      "hasCanonical": true
     }
   ],
   "legalRoutes": [
@@ -348,7 +332,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false,
+      "hasCanonical": true,
       "hasService": false,
       "hasOffer": false,
       "hasReview": false,
@@ -360,7 +344,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false,
+      "hasCanonical": true,
       "hasService": false,
       "hasOffer": false,
       "hasReview": false,
@@ -372,7 +356,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false,
+      "hasCanonical": true,
       "hasService": false,
       "hasOffer": false,
       "hasReview": false,
@@ -384,7 +368,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false,
+      "hasCanonical": true,
       "hasService": false,
       "hasOffer": false,
       "hasReview": false,
@@ -396,7 +380,7 @@
       "exists": true,
       "usesRouteStub": false,
       "hasNoindex": false,
-      "hasCanonical": false,
+      "hasCanonical": true,
       "hasService": false,
       "hasOffer": false,
       "hasReview": false,
@@ -570,20 +554,7 @@
     ]
   },
   "forbiddenSearch": {
-    "matchesOutsideValidator": [
-      {
-        "where": "src/config/company.ts",
-        "pattern": "0000000000"
-      },
-      {
-        "where": "src/config/company.ts",
-        "pattern": "[телефон]"
-      },
-      {
-        "where": "src/config/company.ts",
-        "pattern": "[ИНН]"
-      }
-    ]
+    "matchesOutsideValidator": []
   },
   "regressionChecks": {
     "servicePages": 35,
@@ -599,24 +570,8 @@
     "informationPagesComplete": true,
     "formsRemainDemo": true,
     "backendNotStarted": true,
-    "readyForStage3": false,
-    "blockingIssues": [
-      "info /about: отсутствует canonical",
-      "info /team: отсутствует canonical",
-      "info /portfolio: отсутствует canonical",
-      "info /contacts: отсутствует canonical",
-      "info /reviews: отсутствует canonical",
-      "info /faq: отсутствует canonical",
-      "info /how-we-work: отсутствует canonical",
-      "info /kontrol-kachestva: отсутствует canonical",
-      "info /sro-i-dokumenty: отсутствует canonical",
-      "legal /privacy: отсутствует canonical",
-      "legal /personal-data-consent: отсутствует canonical",
-      "legal /cookies: отсутствует canonical",
-      "legal /terms: отсутствует canonical",
-      "legal /requisites: отсутствует canonical",
-      "forbiddenSearch: 3"
-    ]
+    "readyForStage3": true,
+    "blockingIssues": []
   },
   "totals": {
     "priceItems": 334,
