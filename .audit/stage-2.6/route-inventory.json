@@ -1,0 +1,403 @@
+{
+  "informationRoutes": [
+    {
+      "route": "/about",
+      "routeFile": "src/routes/about.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/team",
+      "routeFile": "src/routes/team.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/portfolio",
+      "routeFile": "src/routes/portfolio.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/portfolio/$slug",
+      "routeFile": "src/routes/portfolio.$slug.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": true,
+      "hasCanonical": false
+    },
+    {
+      "route": "/contacts",
+      "routeFile": "src/routes/contacts.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/reviews",
+      "routeFile": "src/routes/reviews.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/faq",
+      "routeFile": "src/routes/faq.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/how-we-work",
+      "routeFile": "src/routes/how-we-work.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/kontrol-kachestva",
+      "routeFile": "src/routes/kontrol-kachestva.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    },
+    {
+      "route": "/sro-i-dokumenty",
+      "routeFile": "src/routes/sro-i-dokumenty.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true
+    }
+  ],
+  "legalRoutes": [
+    {
+      "route": "/privacy",
+      "routeFile": "src/routes/privacy.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true,
+      "hasService": false,
+      "hasOffer": false,
+      "hasReview": false,
+      "hasAggregateRating": false
+    },
+    {
+      "route": "/personal-data-consent",
+      "routeFile": "src/routes/personal-data-consent.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true,
+      "hasService": false,
+      "hasOffer": false,
+      "hasReview": false,
+      "hasAggregateRating": false
+    },
+    {
+      "route": "/cookies",
+      "routeFile": "src/routes/cookies.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true,
+      "hasService": false,
+      "hasOffer": false,
+      "hasReview": false,
+      "hasAggregateRating": false
+    },
+    {
+      "route": "/terms",
+      "routeFile": "src/routes/terms.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true,
+      "hasService": false,
+      "hasOffer": false,
+      "hasReview": false,
+      "hasAggregateRating": false
+    },
+    {
+      "route": "/requisites",
+      "routeFile": "src/routes/requisites.tsx",
+      "exists": true,
+      "usesRouteStub": false,
+      "hasNoindex": false,
+      "hasCanonical": true,
+      "hasService": false,
+      "hasOffer": false,
+      "hasReview": false,
+      "hasAggregateRating": false
+    }
+  ],
+  "futureStageRoutes": [
+    {
+      "route": "/login",
+      "routeFile": "src/routes/login.tsx",
+      "plannedStage": 3,
+      "usesRouteStub": true,
+      "hasNoindex": true
+    },
+    {
+      "route": "/client",
+      "routeFile": "src/routes/client.tsx",
+      "plannedStage": 4,
+      "usesRouteStub": true,
+      "hasNoindex": true
+    },
+    {
+      "route": "/client/project/$id",
+      "routeFile": "src/routes/client.project.$id.tsx",
+      "plannedStage": 4,
+      "usesRouteStub": true,
+      "hasNoindex": true
+    },
+    {
+      "route": "/admin",
+      "routeFile": "src/routes/admin.tsx",
+      "plannedStage": 5,
+      "usesRouteStub": true,
+      "hasNoindex": true
+    }
+  ],
+  "remainingRouteStubs": [
+    "/admin",
+    "/client/project/$id",
+    "/client",
+    "/login"
+  ],
+  "tilePage": {
+    "route": "/ukladka-plitki",
+    "h1": "Укладка плитки и керамогранита",
+    "startingPriceItemId": "tiling-standart-keram",
+    "startingPriceValue": 2800,
+    "priceItems": 20,
+    "routeFile": "src/routes/ukladka-plitki.tsx",
+    "usesRepairServicePage": true
+  },
+  "servicePages": [
+    {
+      "slug": "remont",
+      "route": "/remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "remont-pod-klyuch",
+      "route": "/remont-pod-klyuch",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "kosmeticheskiy-remont",
+      "route": "/kosmeticheskiy-remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "ekonom-remont",
+      "route": "/ekonom-remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "standartnyy-remont",
+      "route": "/standartnyy-remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "evroremont",
+      "route": "/evroremont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "biznes-remont",
+      "route": "/biznes-remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "premialnyy-remont",
+      "route": "/premialnyy-remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "chernovoy-remont",
+      "route": "/chernovoy-remont",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "chistovaya-otdelka",
+      "route": "/chistovaya-otdelka",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "ukladka-plitki",
+      "route": "/ukladka-plitki",
+      "category": "repair",
+      "isStub": false
+    },
+    {
+      "slug": "stroitelstvo",
+      "route": "/stroitelstvo",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "stroitelstvo-domov-pod-klyuch",
+      "route": "/stroitelstvo-domov-pod-klyuch",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "karkasnye-doma",
+      "route": "/karkasnye-doma",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "doma-iz-sip-paneley",
+      "route": "/doma-iz-sip-paneley",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "doma-iz-brusa",
+      "route": "/doma-iz-brusa",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "doma-iz-kleenogo-brusa",
+      "route": "/doma-iz-kleenogo-brusa",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "doma-iz-gazobetona",
+      "route": "/doma-iz-gazobetona",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "doma-iz-keramicheskih-blokov",
+      "route": "/doma-iz-keramicheskih-blokov",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "kirpichnye-doma",
+      "route": "/kirpichnye-doma",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "monolitnye-doma",
+      "route": "/monolitnye-doma",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "kombinirovannye-doma",
+      "route": "/kombinirovannye-doma",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "mnogokvartirnye-doma",
+      "route": "/mnogokvartirnye-doma",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "generalnyy-podryad",
+      "route": "/generalnyy-podryad",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "monolitnye-raboty",
+      "route": "/monolitnye-raboty",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "fundamenty",
+      "route": "/fundamenty",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "kladochnye-raboty",
+      "route": "/kladochnye-raboty",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "krovelnye-raboty",
+      "route": "/krovelnye-raboty",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "fasadnye-raboty",
+      "route": "/fasadnye-raboty",
+      "category": "construction",
+      "isStub": false
+    },
+    {
+      "slug": "inzhenernye-sistemy",
+      "route": "/inzhenernye-sistemy",
+      "category": "engineering",
+      "isStub": false
+    },
+    {
+      "slug": "elektromontazh",
+      "route": "/elektromontazh",
+      "category": "engineering",
+      "isStub": false
+    },
+    {
+      "slug": "santehnika",
+      "route": "/santehnika",
+      "category": "engineering",
+      "isStub": false
+    },
+    {
+      "slug": "vodosnabzhenie-kanalizatsiya",
+      "route": "/vodosnabzhenie-kanalizatsiya",
+      "category": "engineering",
+      "isStub": false
+    },
+    {
+      "slug": "otoplenie",
+      "route": "/otoplenie",
+      "category": "engineering",
+      "isStub": false
+    },
+    {
+      "slug": "teplyy-pol",
+      "route": "/teplyy-pol",
+      "category": "engineering",
+      "isStub": false
+    }
+  ]
+}
