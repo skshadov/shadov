@@ -1,0 +1,12 @@
+{
+  "bodyLeakedToB": false,
+  "clientA_received_own": 1,
+  "clientB_received_foreign_projectA": 0,
+  "clientB_received_own_projectB": 1,
+  "skipped": false,
+  "subscribeStatus": {
+    "chA": "SUBSCRIBED",
+    "chB_onA": "SUBSCRIBED",
+    "chB_onB": "SUBSCRIBED"
+  }
+}
