@@ -336,6 +336,22 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      cleanup_expired_rate_limits: { Args: never; Returns: number }
+      consume_submission_rate_limit: {
+        Args: { _key_hash: string; _max_attempts: number; _window_ms: number }
+        Returns: {
+          allowed: boolean
+          attempt_count: number
+          retry_after_seconds: number
+        }[]
+      }
+      create_estimate_request_transaction: {
+        Args: { _payload: Json }
+        Returns: {
+          created: boolean
+          request_number: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
