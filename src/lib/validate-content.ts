@@ -1152,8 +1152,8 @@ if (CALCULATOR_MODES.length !== 4) fail(`режимов калькулятора
   const engineSrc = readFileSync(resolve(process.cwd(), "src/lib/calculator-engine.ts"), "utf8");
   if (/\beval\s*\(/.test(engineSrc)) fail("calculator-engine: запрещён eval");
   if (/NaN\s*₽|Infinity\s*₽/.test(engineSrc)) fail("calculator-engine: литералы NaN ₽/Infinity ₽");
-  if (!/CALCULATOR_FORMULAS|fixed-unit|percentage/i.test(engineSrc) && CALCULATOR_FORMULAS.length === 0) {
-    fail("calculator-engine: формулы не зарегистрированы");
+  if (CALCULATOR_FORMULAS.length < 4) {
+    fail("calculator-engine: формулы не зарегистрированы (ожидается ≥ 4)");
   }
 }
 {
