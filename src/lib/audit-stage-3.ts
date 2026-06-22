@@ -45,6 +45,7 @@ const isAuditOrTest = (f: string) =>
   /\.server\.tsx?$/.test(f) ||
   /(?:^|\/)audit-[^/]*\.ts$/.test(f) ||
   /(?:^|\/)(auth|rls|edge-function|estimate-submission|calculator)-tests?\.ts$/.test(f) ||
+  /(?:^|\/)stage-[^/]*-integration\.ts$/.test(f) ||
   /(?:^|\/)validate-[^/]*\.ts$/.test(f);
 const srcFiles = findFiles(resolve(root, "src"), /\.(ts|tsx)$/).filter((f) => !isAuditOrTest(f));
 const serviceRoleLeaks: string[] = [];
