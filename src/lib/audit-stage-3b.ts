@@ -102,8 +102,10 @@ spec("storage policy validates UUID before ::uuid",
 spec("handler uses cf-connecting-ip", /cf-connecting-ip/.test(handler));
 spec("handler does not read x-forwarded-for", !/x-forwarded-for/.test(handler));
 
-// 16. user_id only from JWT
-spec("user_id from supabase.auth.getUser only", /supabase\.auth\.getUser\(token\)/.test(handler) && !/body\.user_id/.test(handler));
+// 16. user_id only from JWT (ignore comments mentioning body.user_id)
+spec("user_id from supabase.auth.getUser only",
+  /supabase\.auth\.getUser\(token\)/.test(handler) &&
+  !handler.split("\n").some(line => !/^\s*(\/\/|\*)/.test(line) && /body\.user_id/.test(line)));
 
 // SECURITY DEFINER lockdown
 spec("privileged RPCs locked to service_role",
@@ -116,7 +118,7 @@ spec("all SECURITY DEFINER funcs have fixed search_path",
 // Frontend gate still in place
 spec("EstimateForm gated by isPublicDataCollectionEnabled", /isPublicDataCollectionEnabled\(\)/.test(form));
 spec("EstimateForm calls submit-estimate-request edge fn", /supabase\.functions\.invoke\(\s*['"]submit-estimate-request['"]/.test(form));
-spec("no service_role assignment in frontend",
+spec("no service_role leaks in client-reachable frontend",
   (() => {
     function walk(dir: string, acc: string[] = []): string[] {
       for (const f of readdirSync(resolve(root, dir), { withFileTypes: true })) {
@@ -127,10 +129,13 @@ spec("no service_role assignment in frontend",
       }
       return acc;
     }
+    // Allowed server-only files (verified server-runtime exclusive)
+    const SERVER_ONLY = /\.server\.ts$/;
     const files = walk("src");
     for (const f of files) {
+      if (SERVER_ONLY.test(f)) continue;
       const c = read(f);
-      if (/SUPABASE_SERVICE_ROLE_KEY/.test(c) && !/client\.server|process\.env\.SUPABASE_SERVICE_ROLE_KEY/.test(c)) return false;
+      if (/SUPABASE_SERVICE_ROLE_KEY/.test(c)) return false;
     }
     return true;
   })());
