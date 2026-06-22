@@ -48,6 +48,7 @@ Deno.serve(async (req: Request) => {
   };
 
   const created = { userIds: [] as string[], projectIds: [] as string[], storagePaths: [] as string[] };
+  const debug: any = { inserts: {} };
 
   try {
     // 1. Create users
@@ -71,7 +72,8 @@ Deno.serve(async (req: Request) => {
     const pA = (await admin.from("projects").insert({ title: "Stage4B Project A", status: "active", description: "test A", is_demo: false }).select("id").single()).data!;
     const pB = (await admin.from("projects").insert({ title: "Stage4B Project B", status: "active", description: "test B", is_demo: false }).select("id").single()).data!;
     created.projectIds.push(pA.id, pB.id);
-    const pmIns = await admin.from("project_members").insert([{ project_id: pA.id, user_id: ids.clientA, member_role: "owner" }, { project_id: pB.id, user_id: ids.clientB, member_role: "owner" }]);
+    const pmIns = await admin.from("project_members").insert([{ project_id: pA.id, user_id: ids.clientA, member_role: "owner" }, { project_id: pB.id, user_id: ids.clientB, member_role: "owner" }]).select();
+    debug.inserts.project_members = { error: pmIns.error?.message, rows: pmIns.data?.length, data: pmIns.data };
     if (pmIns.error) throw new Error("project_members insert: " + pmIns.error.message);
 
     // Seed stages, documents (visible + hidden), camera (without source), payments, messages, daily report
@@ -101,6 +103,10 @@ Deno.serve(async (req: Request) => {
     const A = await userClient(users.clientA.email, users.clientA.password);
     const B = await userClient(users.clientB.email, users.clientB.password);
     const ADM = await userClient(users.adminTest.email, users.adminTest.password);
+    debug.userIds = { clientA: A.userId, clientB: B.userId, adminTest: ADM.userId, expected: ids };
+    // Sanity: clientA reads own membership rows
+    const ownMembership = await A.client.from("project_members").select("project_id,user_id,member_role");
+    debug.clientA_membership = { rows: ownMembership.data, error: ownMembership.error?.message };
 
     // 4. CRITICAL FIX VERIFICATIONS
     // 4a. Hidden document — clientA must NOT see hidden row metadata
@@ -413,6 +419,7 @@ Deno.serve(async (req: Request) => {
     result.cleanup.executed = true;
     result.cleanup.passed = !result.cleanup.projectsError && !result.cleanup.storageError && !result.cleanup.usersError;
   }
+  result.debug = debug;
 
   return new Response(JSON.stringify(result, null, 2), { status: 200, headers: { ...CORS, "content-type": "application/json" } });
 });
