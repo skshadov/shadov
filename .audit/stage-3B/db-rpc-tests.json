@@ -1,0 +1,49 @@
+{
+  "executed_via": "supabase RPC under service_role",
+  "rate_limit_test": {
+    "key": "stage3b-test-rl",
+    "max_attempts": 5,
+    "results": [
+      {"attempt": 1, "allowed": true,  "count": 1, "retry": 0},
+      {"attempt": 2, "allowed": true,  "count": 2, "retry": 0},
+      {"attempt": 3, "allowed": true,  "count": 3, "retry": 0},
+      {"attempt": 4, "allowed": true,  "count": 4, "retry": 0},
+      {"attempt": 5, "allowed": true,  "count": 5, "retry": 0},
+      {"attempt": 6, "allowed": false, "count": 6, "retry": 370},
+      {"attempt": 7, "allowed": false, "count": 7, "retry": 370}
+    ],
+    "passed": true
+  },
+  "transactional_submission_test": {
+    "first_call": {"request_number": "SH-TEST-AAAAAA", "created": true},
+    "first_state": {"requests": 1, "consents": 2},
+    "idempotent_second_call": {"request_number": "SH-TEST-AAAAAA", "created": false},
+    "second_state": {"requests": 1, "consents": 2},
+    "passed": true,
+    "notes": "Повторный submission_id возвращает тот же request_number; новый (SH-TEST-DIFF) проигнорирован; дубликатов consent_records нет."
+  },
+  "cleanup_test": {
+    "expired_row_inserted": 1,
+    "cleanup_returned_deleted": 1,
+    "row_remaining": false,
+    "passed": true
+  },
+  "profile_column_grants": {
+    "display_name_update_allowed": true,
+    "phone_update_allowed": true,
+    "id_update_allowed": false,
+    "created_at_update_allowed": false,
+    "updated_at_update_allowed": false,
+    "passed": true
+  },
+  "security_definer_functions": [
+    {"name":"consume_submission_rate_limit","security_definer":true,"search_path":"public","authenticated_execute":false,"anon_execute":false,"service_role_execute":true},
+    {"name":"create_estimate_request_transaction","security_definer":true,"search_path":"public","authenticated_execute":false,"anon_execute":false,"service_role_execute":true},
+    {"name":"cleanup_expired_rate_limits","security_definer":true,"search_path":"public","authenticated_execute":false,"anon_execute":false,"service_role_execute":true},
+    {"name":"has_role","security_definer":true,"search_path":"public","authenticated_execute":true,"anon_execute":true,"service_role_execute":true,"justification":"Needed by RLS USING() expressions"},
+    {"name":"is_project_member","security_definer":true,"search_path":"public","authenticated_execute":true,"anon_execute":false,"service_role_execute":true,"justification":"Needed by RLS USING() expressions"},
+    {"name":"handle_new_user","security_definer":true,"search_path":"public","authenticated_execute":false,"anon_execute":false,"service_role_execute":false,"justification":"Trigger function on auth.users"},
+    {"name":"set_updated_at","security_definer":false,"search_path":"public","authenticated_execute":false,"anon_execute":false,"service_role_execute":false,"justification":"Trigger function, owner-invoked"}
+  ],
+  "overall_passed": true
+}
