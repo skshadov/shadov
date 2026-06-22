@@ -1,0 +1,17 @@
+{
+  "tableExists": {
+    "project_daily_reports": true,
+    "project_daily_report_documents": true,
+    "project_cameras": true,
+    "project_camera_sources": true,
+    "project_stage_acceptances": true,
+    "project_messages": true,
+    "project_payments": true
+  },
+  "allTablesExist": true,
+  "demoCount": 1,
+  "demoReady": true,
+  "rpcExists": true,
+  "realtimeEnabled": null,
+  "timestamp": "2026-06-22T11:15:21.938Z"
+}

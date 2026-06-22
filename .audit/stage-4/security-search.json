@@ -1,0 +1,22 @@
+{
+  "svcRoleHits": [
+    "src/lib/rls-tests.ts:7: * Использует SUPABASE_SERVICE_ROLE_KEY только серверно (не во frontend).",
+    "src/lib/rls-tests.ts:15:const SR = process.env.SUPABASE_SERVICE_ROLE_KEY!;",
+    "src/integrations/supabase/client.server.ts:10:  const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;",
+    "src/integrations/supabase/client.server.ts:12:  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {",
+    "src/integrations/supabase/client.server.ts:15:      ...(!SUPABASE_SERVICE_ROLE_KEY ? ['SUPABASE_SERVICE_ROLE_KEY'] : []),",
+    "src/integrations/supabase/client.server.ts:22:  return createClient<Database>(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {"
+  ],
+  "rtspHits": [
+    "src/lib/audit-stage-4.ts:93:const rtspHits = ripSrc(\"rtsp://\");",
+    "src/lib/audit-stage-4.ts:99:need(rtspHits.length === 0, `rtsp:// reference in src/: ${rtspHits.slice(0,3).join(\"; \")}`);"
+  ],
+  "passwordHits": [],
+  "storagePathHits": [],
+  "dangerousHits": [
+    "src/lib/audit-stage-4.ts:84:// 3. Security search: no service_role / RTSP / password / storage_path / dangerouslySetInnerHTML in src/",
+    "src/lib/audit-stage-4.ts:96:const dangerousHits = ripSrc(\"dangerouslySetInnerHTML\");",
+    "src/lib/audit-stage-4.ts:102:need(dangerousHits.length === 0, `dangerouslySetInnerHTML in src/: ${dangerousHits.slice(0,3).join(\"; \")}`);",
+    "src/components/ui/chart.tsx:73:      dangerouslySetInnerHTML={{"
+  ]
+}

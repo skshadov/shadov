@@ -1,0 +1,130 @@
+{
+  "stage": "4",
+  "timestamp": "2026-06-22T11:15:22.225Z",
+  "specificationCheck": {
+    "passed": false,
+    "errors": [
+      "service role key reference in src/: src/lib/rls-tests.ts:7: * Использует SUPABASE_SERVICE_ROLE_KEY только серверно (не во frontend).; src/lib/rls-tests.ts:15:const SR = process.env.SUPABASE_SERVICE_ROLE_KEY!;; src/integrations/supabase/client.server.ts:10:  const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;",
+      "rtsp:// reference in src/: src/lib/audit-stage-4.ts:93:const rtspHits = ripSrc(\"rtsp://\");; src/lib/audit-stage-4.ts:99:need(rtspHits.length === 0, `rtsp:// reference in src/: ${rtspHits.slice(0,3).join(\"; \")}`);",
+      "dangerouslySetInnerHTML in src/: src/lib/audit-stage-4.ts:84:// 3. Security search: no service_role / RTSP / password / storage_path / dangerouslySetInnerHTML in src/; src/lib/audit-stage-4.ts:96:const dangerousHits = ripSrc(\"dangerouslySetInnerHTML\");; src/lib/audit-stage-4.ts:102:need(dangerousHits.length === 0, `dangerouslySetInnerHTML in src/: ${dangerousHits.slice(0,3).join(\"; \")}`);",
+      "RLS matrix: anonymous client can read protected tables"
+    ],
+    "warnings": []
+  },
+  "routes": {
+    "clientActive": true,
+    "projectActive": true,
+    "adminStillStub": true,
+    "loginHasReturnTo": true,
+    "activeClientRoutes": 2,
+    "activeAdminRoutes": 0
+  },
+  "authGuard": {
+    "safeReturnToImplemented": true
+  },
+  "newTables": [
+    "project_daily_reports",
+    "project_daily_report_documents",
+    "project_cameras",
+    "project_camera_sources",
+    "project_stage_acceptances",
+    "project_messages",
+    "project_payments"
+  ],
+  "liveDatabase": {
+    "tableExists": {
+      "project_daily_reports": true,
+      "project_daily_report_documents": true,
+      "project_cameras": true,
+      "project_camera_sources": true,
+      "project_stage_acceptances": true,
+      "project_messages": true,
+      "project_payments": true
+    },
+    "allTablesExist": true,
+    "demoCount": 1,
+    "demoReady": true,
+    "rpcExists": true,
+    "realtimeEnabled": null,
+    "timestamp": "2026-06-22T11:15:21.938Z"
+  },
+  "demoProject": {
+    "project_id": "d3e88359-99dc-4813-9b5d-b61d19c216ad",
+    "is_demo": true,
+    "title": "DEMO — строительство частного дома",
+    "stages": 7,
+    "publishedDailyReports": 3,
+    "acceptances": 2,
+    "pendingAcceptances": 1,
+    "acceptedAcceptances": 1,
+    "systemMessages": 5,
+    "payments": 4,
+    "cameras": 2,
+    "cameraSources": 0,
+    "allCamerasNotConfigured": true
+  },
+  "rlsMatrix": {
+    "anonResults": [
+      {
+        "table": "project_daily_reports",
+        "anonDenied": true
+      },
+      {
+        "table": "project_daily_report_documents",
+        "anonDenied": true
+      },
+      {
+        "table": "project_cameras",
+        "anonDenied": true
+      },
+      {
+        "table": "project_camera_sources",
+        "anonDenied": false
+      },
+      {
+        "table": "project_stage_acceptances",
+        "anonDenied": true
+      },
+      {
+        "table": "project_messages",
+        "anonDenied": true
+      },
+      {
+        "table": "project_payments",
+        "anonDenied": true
+      }
+    ],
+    "allAnonDenied": false,
+    "total": 7,
+    "failed": 1
+  },
+  "securitySearch": {
+    "svcRoleHits": 6,
+    "rtspHits": 2,
+    "passwordHits": 0,
+    "storagePathHits": 0,
+    "dangerousHits": 4
+  },
+  "stage4Completion": {
+    "clientDashboardReady": true,
+    "projectPageReady": true,
+    "dailyReportsReady": true,
+    "acceptanceReady": true,
+    "camerasReady": true,
+    "messagesReady": true,
+    "paymentsReady": true,
+    "documentsReady": true,
+    "demoProjectReady": true,
+    "rlsComplete": false,
+    "publicAuthRemainsDisabled": true,
+    "publicDataCollectionRemainsDisabled": true,
+    "adminUiNotStarted": true,
+    "readyForStage5": false,
+    "blockingIssues": [
+      "service role key reference in src/: src/lib/rls-tests.ts:7: * Использует SUPABASE_SERVICE_ROLE_KEY только серверно (не во frontend).; src/lib/rls-tests.ts:15:const SR = process.env.SUPABASE_SERVICE_ROLE_KEY!;; src/integrations/supabase/client.server.ts:10:  const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;",
+      "rtsp:// reference in src/: src/lib/audit-stage-4.ts:93:const rtspHits = ripSrc(\"rtsp://\");; src/lib/audit-stage-4.ts:99:need(rtspHits.length === 0, `rtsp:// reference in src/: ${rtspHits.slice(0,3).join(\"; \")}`);",
+      "dangerouslySetInnerHTML in src/: src/lib/audit-stage-4.ts:84:// 3. Security search: no service_role / RTSP / password / storage_path / dangerouslySetInnerHTML in src/; src/lib/audit-stage-4.ts:96:const dangerousHits = ripSrc(\"dangerouslySetInnerHTML\");; src/lib/audit-stage-4.ts:102:need(dangerousHits.length === 0, `dangerouslySetInnerHTML in src/: ${dangerousHits.slice(0,3).join(\"; \")}`);",
+      "RLS matrix: anonymous client can read protected tables"
+    ]
+  }
+}
