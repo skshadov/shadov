@@ -1,14 +1,15 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Link } from "@tanstack/react-router";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
-import { isPublicAuthEnabled, getOperatorStatus } from "@/lib/operator-configuration";
+import { safeReturnTo } from "@/lib/client-portal/safe-return-to";
+
+type Search = { returnTo?: string };
 
 export const Route = createFileRoute("/login")({
   head: () => ({
@@ -19,40 +20,46 @@ export const Route = createFileRoute("/login")({
     ],
     links: [{ rel: "canonical", href: "/login" }],
   }),
+  ssr: false,
+  validateSearch: (s: Record<string, unknown>): Search => ({
+    returnTo: typeof s.returnTo === "string" ? s.returnTo : undefined,
+  }),
   component: Page,
 });
 
 function Page() {
-  const authEnabled = isPublicAuthEnabled();
-  const operator = getOperatorStatus();
+  const navigate = useNavigate();
+  const search = useSearch({ from: "/login" }) as Search;
+  const returnTo = safeReturnTo(search.returnTo);
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [password, setPassword] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
 
   useEffect(() => {
     let mounted = true;
-    supabase.auth.getUser().then(({ data }) => {
-      if (mounted) setUserEmail(data.user?.email ?? null);
+    supabase.auth.getSession().then(({ data }) => {
+      if (mounted) setUserEmail(data.session?.user?.email ?? null);
     });
     const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
       setUserEmail(session?.user?.email ?? null);
+      if (session?.user) navigate({ to: returnTo, replace: true });
     });
     return () => { mounted = false; sub.subscription.unsubscribe(); };
-  }, []);
+  }, [navigate, returnTo]);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!authEnabled) return;
-    setStatus("sending");
-    try {
-      await supabase.auth.signInWithOtp({
-        email,
-        options: { emailRedirectTo: typeof window !== "undefined" ? `${window.location.origin}/` : undefined },
-      });
-      setStatus("sent");
-    } catch {
-      setStatus("sent"); // не раскрываем существование пользователя
+    if (busy) return;
+    setBusy(true); setError(null);
+    const { error: err } = await supabase.auth.signInWithPassword({ email, password });
+    if (err) {
+      setError("Не удалось войти. Проверьте email и пароль.");
+      setBusy(false);
+      return;
     }
+    navigate({ to: returnTo, replace: true });
   }
 
   async function onLogout() {
@@ -69,41 +76,32 @@ function Page() {
           <div className="mx-auto mt-6 max-w-md rounded-xl border border-border bg-card p-6 md:p-8">
             <h1 className="font-display text-2xl font-semibold md:text-3xl">Вход для клиентов</h1>
             <p className="mt-2 text-sm text-muted-foreground">
-              Для входа достаточно ввести email — мы пришлём ссылку. Отдельная регистрация не требуется.
+              Учётные записи создаются администратором. Самостоятельная регистрация на сайте сейчас недоступна.
             </p>
-
-            {!authEnabled ? (
-              <div className="mt-6 rounded-md border border-warning/40 bg-warning/10 p-4 text-sm">
-                Публичный вход временно отключён. Инфраструктура авторизации подключена, но публичный сбор данных активируется после заполнения реквизитов оператора{operator.missingRequiredFields.length ? ` (отсутствуют: ${operator.missingRequiredFields.join(", ")})` : ""}.
-              </div>
-            ) : userEmail ? (
+            {userEmail ? (
               <div className="mt-6 space-y-4">
                 <p className="text-sm">Вы вошли как <strong>{userEmail}</strong>.</p>
-                <p className="text-sm text-muted-foreground">Личный кабинет будет открыт на следующем этапе развития сайта.</p>
-                <Button type="button" variant="outline" onClick={onLogout}>Выйти</Button>
+                <div className="flex flex-wrap gap-2">
+                  <Button asChild><Link to={returnTo}>Перейти в кабинет</Link></Button>
+                  <Button type="button" variant="outline" onClick={onLogout}>Выйти</Button>
+                </div>
               </div>
             ) : (
               <form onSubmit={onSubmit} className="mt-6 grid gap-4" noValidate>
                 <div className="grid gap-1.5">
                   <Label htmlFor="login-email">Email</Label>
-                  <Input
-                    id="login-email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@example.com"
-                  />
+                  <Input id="login-email" type="email" autoComplete="email" required
+                    value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" />
                 </div>
-                <Button type="submit" disabled={status === "sending"} className="min-h-11">
-                  {status === "sending" ? "Отправляем…" : "Получить ссылку для входа"}
+                <div className="grid gap-1.5">
+                  <Label htmlFor="login-password">Пароль</Label>
+                  <Input id="login-password" type="password" autoComplete="current-password" required
+                    value={password} onChange={(e) => setPassword(e.target.value)} />
+                </div>
+                {error ? <p role="alert" className="text-sm text-destructive">{error}</p> : null}
+                <Button type="submit" disabled={busy} className="min-h-11">
+                  {busy ? "Входим…" : "Войти"}
                 </Button>
-                {status === "sent" ? (
-                  <p className="rounded-md border border-border bg-muted/40 p-3 text-sm">
-                    Если адрес может быть использован для входа, инструкция будет отправлена на него.
-                  </p>
-                ) : null}
                 <p className="text-xs text-muted-foreground">
                   Продолжая, вы соглашаетесь с{" "}
                   <Link to="/privacy" className="text-primary underline-offset-2 hover:underline">политикой конфиденциальности</Link>{" "}
