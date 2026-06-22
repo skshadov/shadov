@@ -1,0 +1,19 @@
+{
+  "executed": true,
+  "passed": true,
+  "failed": 0,
+  "allowed": {
+    "status": 200,
+    "allowOrigin": "https://stage3c-test.invalid"
+  },
+  "forbidden": {
+    "status": 403,
+    "code": "origin_not_allowed",
+    "allowOriginPresent": false,
+    "requestCount": 0
+  },
+  "noOriginHarnessRule": {
+    "status": 200,
+    "allowedOnlyWithValidTestToken": true
+  }
+}

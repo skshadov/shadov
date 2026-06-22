@@ -1,0 +1,10 @@
+{
+  "executed": true,
+  "passed": true,
+  "failed": 0,
+  "status": 500,
+  "code": "server_not_configured",
+  "requestCount": 0,
+  "rateLimitBefore": 0,
+  "rateLimitAfter": 0
+}

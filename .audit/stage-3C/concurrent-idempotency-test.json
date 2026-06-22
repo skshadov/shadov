@@ -1,0 +1,28 @@
+{
+  "executed": true,
+  "passed": true,
+  "failed": 0,
+  "startedAt": "2026-06-22T09:29:30.684Z",
+  "endedAt": "2026-06-22T09:29:30.903Z",
+  "statuses": [
+    200,
+    200,
+    200,
+    200,
+    200
+  ],
+  "requestNumbers": [
+    "SH-202606-123085"
+  ],
+  "counts": {
+    "requestCount": 1,
+    "consentCount": 2,
+    "rows": [
+      {
+        "id": "fc70e9ae-58d9-49b9-8170-a01f635d6e3f",
+        "user_id": null,
+        "request_number": "SH-202606-123085"
+      }
+    ]
+  }
+}

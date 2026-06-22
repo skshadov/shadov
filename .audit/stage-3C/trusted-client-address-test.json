@@ -1,0 +1,31 @@
+{
+  "executed": true,
+  "passed": true,
+  "failed": 0,
+  "selectedSource": "shared_fallback",
+  "reason": "cf-connecting-ip overwrite was not positively observable because the platform rejected the client-supplied cf-connecting-ip request before function code; handler therefore uses shared_fallback unless TRUST_CF_CONNECTING_IP is explicitly enabled.",
+  "cfConnectingIp": {
+    "clientSuppliedValue": "198.51.100.10",
+    "receivedValue": null,
+    "wasOverwritten": false,
+    "wasAppended": false,
+    "wasRemoved": true,
+    "singleIp": false
+  },
+  "xForwardedFor": {
+    "clientSuppliedValue": "198.51.100.11",
+    "receivedValue": null,
+    "wasOverwritten": false,
+    "wasAppended": false,
+    "wasRemoved": true,
+    "singleIp": false
+  },
+  "xRealIp": {
+    "clientSuppliedValue": "198.51.100.12",
+    "receivedValue": null,
+    "wasOverwritten": false,
+    "wasAppended": false,
+    "wasRemoved": true,
+    "singleIp": false
+  }
+}

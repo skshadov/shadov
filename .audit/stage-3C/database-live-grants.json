@@ -1,0 +1,110 @@
+[
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "consent_records",
+    "privilege_type": "INSERT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "consent_records",
+    "privilege_type": "SELECT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "privilege_type": "INSERT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "privilege_type": "SELECT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "profiles",
+    "privilege_type": "INSERT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "profiles",
+    "privilege_type": "SELECT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "project_documents",
+    "privilege_type": "INSERT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "project_documents",
+    "privilege_type": "SELECT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "project_members",
+    "privilege_type": "INSERT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "project_members",
+    "privilege_type": "SELECT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "privilege_type": "INSERT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "privilege_type": "SELECT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "projects",
+    "privilege_type": "INSERT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "projects",
+    "privilege_type": "SELECT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "submission_rate_limits",
+    "privilege_type": "INSERT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "submission_rate_limits",
+    "privilege_type": "SELECT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "user_roles",
+    "privilege_type": "INSERT"
+  },
+  {
+    "grantee": "sandbox_exec",
+    "table_schema": "public",
+    "table_name": "user_roles",
+    "privilege_type": "SELECT"
+  }
+]

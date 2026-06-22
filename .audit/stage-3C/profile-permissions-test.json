@@ -1,0 +1,40 @@
+{
+  "executed": true,
+  "passed": true,
+  "failed": 0,
+  "results": [
+    {
+      "name": "profile own display_name update allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "profile own phone update allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "profile own created_at update deny",
+      "passed": true,
+      "actual": "deny",
+      "errorCode": "42501"
+    },
+    {
+      "name": "profile own updated_at update deny",
+      "passed": true,
+      "actual": "deny",
+      "errorCode": "42501"
+    },
+    {
+      "name": "profile own id update deny",
+      "passed": true,
+      "actual": "deny",
+      "errorCode": "42501"
+    },
+    {
+      "name": "profile other update deny",
+      "passed": true,
+      "actual": "deny"
+    }
+  ]
+}

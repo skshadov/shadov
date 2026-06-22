@@ -1,0 +1,168 @@
+{
+  "executed": true,
+  "passed": true,
+  "failed": 0,
+  "total": 31,
+  "results": [
+    {
+      "name": "profile own display_name update allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "profile own phone update allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "profile own created_at update deny",
+      "passed": true,
+      "actual": "deny",
+      "errorCode": "42501"
+    },
+    {
+      "name": "profile own updated_at update deny",
+      "passed": true,
+      "actual": "deny",
+      "errorCode": "42501"
+    },
+    {
+      "name": "profile own id update deny",
+      "passed": true,
+      "actual": "deny",
+      "errorCode": "42501"
+    },
+    {
+      "name": "profile other update deny",
+      "passed": true,
+      "actual": "deny"
+    },
+    {
+      "name": "consent own select allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "consent other select deny",
+      "passed": true,
+      "actual": "deny"
+    },
+    {
+      "name": "rate limits client select deny",
+      "passed": true,
+      "actual": "deny"
+    },
+    {
+      "name": "rate limits client insert deny",
+      "passed": true,
+      "actual": "deny",
+      "errorCode": "42501"
+    },
+    {
+      "name": "anon has_role deny",
+      "passed": true,
+      "actual": "deny",
+      "errorCode": "42501"
+    },
+    {
+      "name": "client has_role self allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "client has_role other deny",
+      "passed": true,
+      "actual": "deny"
+    },
+    {
+      "name": "client is_project_member self allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "client is_project_member other deny",
+      "passed": true,
+      "actual": "deny"
+    },
+    {
+      "name": "admin projects insert allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin projects select allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin projects update allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin project_members insert allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin project_members select allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin project_members update allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin project_stages insert allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin project_stages select allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin project_stages update allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin project_documents insert allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin project_documents select allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin project_documents update allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin project_documents delete allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin project_stages delete allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin project_members delete allow",
+      "passed": true,
+      "actual": "allow"
+    },
+    {
+      "name": "admin projects delete allow",
+      "passed": true,
+      "actual": "allow"
+    }
+  ]
+}
