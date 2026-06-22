@@ -103,14 +103,14 @@ function validatePrices(items: PriceItem[]): Issue[] {
 function validateServicePages(): Issue[] {
   const issues: Issue[] = [];
 
-  if (SERVICE_PAGES.length !== 35)
-    issues.push({ rule: "service-pages-count", message: `Ожидается 35 страниц услуг, получено ${SERVICE_PAGES.length}` });
+  if (SERVICE_PAGES.length !== 34)
+    issues.push({ rule: "service-pages-count", message: `Ожидается 34 страницы услуг, получено ${SERVICE_PAGES.length}` });
 
   const counts = { construction: 0, repair: 0, engineering: 0 };
   for (const s of SERVICE_PAGES) counts[s.category]++;
   if (counts.construction !== 18) issues.push({ rule: "category-count", message: `construction: ожидается 18, получено ${counts.construction}` });
   if (counts.repair !== 10)       issues.push({ rule: "category-count", message: `repair: ожидается 10, получено ${counts.repair}` });
-  if (counts.engineering !== 7)   issues.push({ rule: "category-count", message: `engineering: ожидается 7, получено ${counts.engineering}` });
+  if (counts.engineering !== 6)   issues.push({ rule: "category-count", message: `engineering: ожидается 6, получено ${counts.engineering}` });
 
   const slugs = new Set<string>(); const routes = new Set<string>(); const metas = new Set<string>(); const h1s = new Set<string>();
   for (const s of SERVICE_PAGES) {
