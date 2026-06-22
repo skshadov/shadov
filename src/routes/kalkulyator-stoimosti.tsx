@@ -26,7 +26,10 @@ const H1 = CALCULATOR_METADATA.h1;
 
 const calculatorSearchSchema = z.object({
   mode: fallback(z.enum(CALCULATOR_MODES as [string, ...string[]]), "repair").default("repair"),
-  category: fallback(z.enum(ALL_PRICE_CATEGORIES as [string, ...string[]]).optional(), undefined).default(undefined),
+  category: fallback(
+    z.enum(ALL_PRICE_CATEGORIES as [string, ...string[]]).optional(),
+    undefined as string | undefined,
+  ).optional(),
 });
 
 export const Route = createFileRoute("/kalkulyator-stoimosti")({
