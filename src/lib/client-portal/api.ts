@@ -112,14 +112,15 @@ const DOC_COLS =
   "id,project_id,storage_path,file_name,mime_type,size_bytes,document_category,title,description,document_date,is_visible_to_client,created_at";
 
 export async function listMyProjects(): Promise<ProjectRow[]> {
-  // RLS на projects: пользователь видит только проекты, где состоит в project_members
-  // (политика существует с этапа 3B). Если её нет — клиент получит пустой список.
-  const { data, error } = await supabase
-    .from("projects")
-    .select(PROJECT_COLS)
-    .order("created_at", { ascending: false });
+  // Этап 4B: явная фильтрация через SECURITY DEFINER RPC,
+  // которая всегда использует auth.uid() и JOIN-ит project_members.
+  // Это исключает утечку проектов администраторам через RLS-политику projects.
+  const { data, error } = await supabase.rpc("get_my_projects");
   if (error) throw error;
-  return (data ?? []) as ProjectRow[];
+  return ((data ?? []) as ProjectRow[]).map((p) => ({
+    id: p.id, title: p.title, status: p.status,
+    description: p.description, is_demo: p.is_demo,
+  }));
 }
 
 export async function getProject(id: string): Promise<ProjectRow | null> {
