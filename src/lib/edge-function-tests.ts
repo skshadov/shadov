@@ -45,9 +45,12 @@ async function main() {
     const j = await r.json();
     return r.status === 503 && j.code === "public_collection_disabled";
   });
-  await t("CORS заголовок присутствует", async () => {
-    const r = await post({});
-    return r.headers.get("access-control-allow-origin") !== null;
+  await t("CORS Allow-Origin отсутствует для запрещённого Origin (fail-closed)", async () => {
+    const r = await post({}, { Origin: "https://evil.example.com" });
+    // Production ALLOWED_ORIGINS не должен содержать evil.example.com,
+    // поэтому Allow-Origin не возвращается. С выключенным public-флагом
+    // ответ — 503 public_collection_disabled (origin фильтр работает в всех ветках).
+    return r.headers.get("access-control-allow-origin") === null;
   });
   await t("Тело ответа не содержит внутренний UUID", async () => {
     const r = await post({});
