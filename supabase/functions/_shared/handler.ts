@@ -215,11 +215,9 @@ export function createHandler(config: HandlerConfig) {
     const snap = validateSnapshot(body.calculator_snapshot);
     if (!snap.ok) return reject(400, snap.code, originAllowed);
 
-    if (config.testMode && body.stage3c_fault_injection === true) {
+    if (config.testMode && (body.stage3d_fault_injection === true || body.stage3c_fault_injection === true)) {
       const supabase: SupabaseClient = createClient(SUPABASE_URL, SERVICE_ROLE, { auth: { persistSession: false } });
-      await supabase.rpc("stage3c_fault_injection_submission", {
-        _payload: { submission_id: body.submission_id, request_number: generateRequestNumber(), user_id: null },
-      });
+      await supabase.rpc("stage3d_fault_injection_submission", { _submission_id: body.submission_id });
       return reject(500, "fault_injection_failed", originAllowed);
     }
 
