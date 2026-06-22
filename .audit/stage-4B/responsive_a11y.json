@@ -1,0 +1,431 @@
+{
+  "viewports": [
+    {
+      "width": 320,
+      "height": 800,
+      "clientH1": "\u041b\u0438\u0447\u043d\u044b\u0439 \u043a\u0430\u0431\u0438\u043d\u0435\u0442",
+      "tabs": {
+        "overview": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=overview"
+        },
+        "stages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=stages"
+        },
+        "reports": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=reports"
+        },
+        "cameras": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=cameras"
+        },
+        "messages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=messages"
+        },
+        "payments": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=payments"
+        },
+        "documents": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=documents"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "width": 375,
+      "height": 800,
+      "clientH1": "\u041b\u0438\u0447\u043d\u044b\u0439 \u043a\u0430\u0431\u0438\u043d\u0435\u0442",
+      "tabs": {
+        "overview": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=overview"
+        },
+        "stages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=stages"
+        },
+        "reports": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=reports"
+        },
+        "cameras": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=cameras"
+        },
+        "messages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=messages"
+        },
+        "payments": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=payments"
+        },
+        "documents": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=documents"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "width": 430,
+      "height": 900,
+      "clientH1": "\u041b\u0438\u0447\u043d\u044b\u0439 \u043a\u0430\u0431\u0438\u043d\u0435\u0442",
+      "tabs": {
+        "overview": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=overview"
+        },
+        "stages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=stages"
+        },
+        "reports": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=reports"
+        },
+        "cameras": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=cameras"
+        },
+        "messages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=messages"
+        },
+        "payments": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=payments"
+        },
+        "documents": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=documents"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "clientH1": "\u041b\u0438\u0447\u043d\u044b\u0439 \u043a\u0430\u0431\u0438\u043d\u0435\u0442",
+      "tabs": {
+        "overview": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=overview"
+        },
+        "stages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=stages"
+        },
+        "reports": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=reports"
+        },
+        "cameras": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=cameras"
+        },
+        "messages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=messages"
+        },
+        "payments": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=payments"
+        },
+        "documents": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=documents"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "width": 1024,
+      "height": 1366,
+      "clientH1": "\u041b\u0438\u0447\u043d\u044b\u0439 \u043a\u0430\u0431\u0438\u043d\u0435\u0442",
+      "tabs": {
+        "overview": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=overview"
+        },
+        "stages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=stages"
+        },
+        "reports": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=reports"
+        },
+        "cameras": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=cameras"
+        },
+        "messages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=messages"
+        },
+        "payments": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=payments"
+        },
+        "documents": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=documents"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "width": 1440,
+      "height": 1800,
+      "clientH1": "\u041b\u0438\u0447\u043d\u044b\u0439 \u043a\u0430\u0431\u0438\u043d\u0435\u0442",
+      "tabs": {
+        "overview": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=overview"
+        },
+        "stages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=stages"
+        },
+        "reports": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=reports"
+        },
+        "cameras": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=cameras"
+        },
+        "messages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=messages"
+        },
+        "payments": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=payments"
+        },
+        "documents": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=documents"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "width": 1920,
+      "height": 1800,
+      "clientH1": "\u041b\u0438\u0447\u043d\u044b\u0439 \u043a\u0430\u0431\u0438\u043d\u0435\u0442",
+      "tabs": {
+        "overview": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=overview"
+        },
+        "stages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=stages"
+        },
+        "reports": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=reports"
+        },
+        "cameras": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=cameras"
+        },
+        "messages": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=messages"
+        },
+        "payments": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=payments"
+        },
+        "documents": {
+          "tablist": 1,
+          "tabs": 7,
+          "tabpanel": 1,
+          "h1": "Stage4B PW Project",
+          "url": "http://localhost:8080/client/project/f2f026ee-c724-42f5-b59e-32a761aee425?tab=documents"
+        }
+      },
+      "pageErrors": []
+    }
+  ],
+  "a11y": {
+    "skip_link_present": true,
+    "tablist_count": 1,
+    "tab_count": 7,
+    "tabpanel_count": 1,
+    "tab_key_focus_works": true,
+    "tablist_focus_initial": true,
+    "no_dialog_trigger_found": true,
+    "unlabeled_inputs": 0,
+    "aria_live_regions": 2,
+    "aria_describedby_count": 0,
+    "main_count": 1,
+    "images_without_alt": 0,
+    "buttons_without_name": 0,
+    "h1_count": 1
+  },
+  "tabsTested": [
+    "overview",
+    "stages",
+    "reports",
+    "cameras",
+    "messages",
+    "payments",
+    "documents"
+  ],
+  "errors": [],
+  "severeIssues": [],
+  "passed": true
+}

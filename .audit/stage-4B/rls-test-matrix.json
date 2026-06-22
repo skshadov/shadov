@@ -1,0 +1,458 @@
+{
+  "summary": {
+    "total": 56,
+    "passed": 40,
+    "failed": 16
+  },
+  "results": [
+    {
+      "scenario": "documents/hidden_metadata_client",
+      "table": "project_documents",
+      "op": "select",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "scenario": "documents/hidden_metadata_admin",
+      "table": "project_documents",
+      "op": "select",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "documents/visible_own_client",
+      "table": "project_documents",
+      "op": "select",
+      "expected": "allow",
+      "actual": "deny",
+      "passed": false
+    },
+    {
+      "scenario": "documents/foreign_client",
+      "table": "project_documents",
+      "op": "select",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "scenario": "documents/client_insert",
+      "table": "project_documents",
+      "op": "insert",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "error": "new row violates row-level security policy for table \"project_documents\""
+    },
+    {
+      "scenario": "documents/client_update",
+      "table": "project_documents",
+      "op": "update",
+      "expected": "deny",
+      "actual": "allow",
+      "passed": false
+    },
+    {
+      "scenario": "documents/client_delete",
+      "table": "project_documents",
+      "op": "delete",
+      "expected": "deny",
+      "actual": "allow",
+      "passed": false
+    },
+    {
+      "scenario": "documents/admin_insert",
+      "table": "project_documents",
+      "op": "insert",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "documents/admin_update",
+      "table": "project_documents",
+      "op": "update",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "documents/admin_delete",
+      "table": "project_documents",
+      "op": "delete",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "documents/admin_select",
+      "table": "project_documents",
+      "op": "select",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "cameras/client_own_select",
+      "table": "project_cameras",
+      "op": "select",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "cameras/client_foreign_select",
+      "table": "project_cameras",
+      "op": "select",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "scenario": "cameras/client_insert",
+      "table": "project_cameras",
+      "op": "insert",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true
+    },
+    {
+      "scenario": "cameras/client_update",
+      "table": "project_cameras",
+      "op": "update",
+      "expected": "deny",
+      "actual": "allow",
+      "passed": false
+    },
+    {
+      "scenario": "cameras/client_delete",
+      "table": "project_cameras",
+      "op": "delete",
+      "expected": "deny",
+      "actual": "allow",
+      "passed": false
+    },
+    {
+      "scenario": "cameras/admin_insert",
+      "table": "project_cameras",
+      "op": "insert",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "cameras/admin_update",
+      "table": "project_cameras",
+      "op": "update",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "cameras/admin_select",
+      "table": "project_cameras",
+      "op": "select",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "cameras/admin_delete",
+      "table": "project_cameras",
+      "op": "delete",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "camera_sources/admin_insert",
+      "table": "project_camera_sources",
+      "op": "insert",
+      "expected": "allow",
+      "actual": "deny",
+      "passed": false
+    },
+    {
+      "scenario": "camera_sources/client_select",
+      "table": "project_camera_sources",
+      "op": "select",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "scenario": "payments/client_select_own",
+      "table": "project_payments",
+      "op": "select",
+      "expected": "allow",
+      "actual": "deny",
+      "passed": false
+    },
+    {
+      "scenario": "payments/client_select_foreign",
+      "table": "project_payments",
+      "op": "select",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "scenario": "payments/client_insert",
+      "table": "project_payments",
+      "op": "insert",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true
+    },
+    {
+      "scenario": "payments/client_update",
+      "table": "project_payments",
+      "op": "update",
+      "expected": "deny",
+      "actual": "allow",
+      "passed": false
+    },
+    {
+      "scenario": "payments/client_delete",
+      "table": "project_payments",
+      "op": "delete",
+      "expected": "deny",
+      "actual": "allow",
+      "passed": false
+    },
+    {
+      "scenario": "payments/admin_insert",
+      "table": "project_payments",
+      "op": "insert",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "payments/admin_update",
+      "table": "project_payments",
+      "op": "update",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "payments/admin_select",
+      "table": "project_payments",
+      "op": "select",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "payments/admin_delete",
+      "table": "project_payments",
+      "op": "delete",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "messages/client_select_own",
+      "table": "project_messages",
+      "op": "select",
+      "expected": "allow",
+      "actual": "deny",
+      "passed": false
+    },
+    {
+      "scenario": "messages/client_select_foreign",
+      "table": "project_messages",
+      "op": "select",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "scenario": "messages/client_insert_own",
+      "table": "project_messages",
+      "op": "insert",
+      "expected": "allow",
+      "actual": "deny",
+      "passed": false
+    },
+    {
+      "scenario": "messages/client_insert_foreign",
+      "table": "project_messages",
+      "op": "insert",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true
+    },
+    {
+      "scenario": "messages/admin_insert",
+      "table": "project_messages",
+      "op": "insert",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "messages/admin_select",
+      "table": "project_messages",
+      "op": "select",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "messages/admin_update",
+      "table": "project_messages",
+      "op": "update",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "messages/admin_delete",
+      "table": "project_messages",
+      "op": "delete",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "daily_reports/client_published_own",
+      "table": "project_daily_reports",
+      "op": "select",
+      "expected": "allow",
+      "actual": "deny",
+      "passed": false
+    },
+    {
+      "scenario": "daily_reports/client_unpublished_own",
+      "table": "project_daily_reports",
+      "op": "select",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "scenario": "daily_reports/client_foreign",
+      "table": "project_daily_reports",
+      "op": "select",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "scenario": "daily_reports/admin_unpublished",
+      "table": "project_daily_reports",
+      "op": "select",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "daily_report_docs/client_published_own",
+      "table": "project_daily_report_documents",
+      "op": "select",
+      "expected": "allow",
+      "actual": "deny",
+      "passed": false
+    },
+    {
+      "scenario": "daily_report_docs/client_foreign",
+      "table": "project_daily_report_documents",
+      "op": "select",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "scenario": "daily_report_docs/admin_select",
+      "table": "project_daily_report_documents",
+      "op": "select",
+      "expected": "allow",
+      "actual": "deny",
+      "passed": false
+    },
+    {
+      "scenario": "acceptances/client_select_own",
+      "table": "project_stage_acceptances",
+      "op": "select",
+      "expected": "allow",
+      "actual": "deny",
+      "passed": false
+    },
+    {
+      "scenario": "acceptances/client_select_foreign",
+      "table": "project_stage_acceptances",
+      "op": "select",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "scenario": "acceptances/admin_insert",
+      "table": "project_stage_acceptances",
+      "op": "insert",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "acceptances/admin_select",
+      "table": "project_stage_acceptances",
+      "op": "select",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "acceptances/admin_update",
+      "table": "project_stage_acceptances",
+      "op": "update",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "acceptances/admin_delete",
+      "table": "project_stage_acceptances",
+      "op": "delete",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "scenario": "projects/client_member_select",
+      "table": "projects",
+      "op": "select",
+      "expected": "allow",
+      "actual": "deny",
+      "passed": false
+    },
+    {
+      "scenario": "projects/client_foreign_select",
+      "table": "projects",
+      "op": "select",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "scenario": "projects/client_insert",
+      "table": "projects",
+      "op": "insert",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true
+    },
+    {
+      "scenario": "projects/admin_select_via_admin_policy",
+      "table": "projects",
+      "op": "select",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    }
+  ]
+}

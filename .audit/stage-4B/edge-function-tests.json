@@ -1,0 +1,159 @@
+{
+  "documentTests": [
+    {
+      "name": "clientA hidden own document metadata",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "name": "admin hidden metadata",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "name": "clientA visible own",
+      "expected": "allow",
+      "actual": "deny",
+      "passed": false
+    },
+    {
+      "name": "clientA foreign doc",
+      "expected": "deny_no_rows",
+      "actual": "deny_no_rows",
+      "passed": true
+    },
+    {
+      "name": "edge:hidden->404 document_not_found",
+      "expected": {
+        "status": 404,
+        "code": "document_not_found"
+      },
+      "actual": {
+        "status": 404,
+        "body": {
+          "error": "document_not_found",
+          "code": "document_not_found"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "edge:foreign->404 document_not_found",
+      "expected": {
+        "status": 404,
+        "code": "document_not_found"
+      },
+      "actual": {
+        "status": 404,
+        "body": {
+          "error": "document_not_found",
+          "code": "document_not_found"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "edge:random->404 document_not_found",
+      "expected": {
+        "status": 404,
+        "code": "document_not_found"
+      },
+      "actual": {
+        "status": 404,
+        "body": {
+          "error": "document_not_found",
+          "code": "document_not_found"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "edge:visible->200 signed url",
+      "expected": 200,
+      "actual": 404,
+      "passed": false
+    },
+    {
+      "name": "edge:uniform response for hidden/foreign/random",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ],
+  "cameraTests": [
+    {
+      "name": "clientA own camera without source -> camera_not_configured 200",
+      "actual": {
+        "status": 200,
+        "body": {
+          "success": false,
+          "code": "camera_not_configured"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "clientA projectB camera -> camera_not_found 404",
+      "actual": {
+        "status": 200,
+        "body": {
+          "success": false,
+          "code": "camera_not_configured"
+        }
+      },
+      "passed": false
+    },
+    {
+      "name": "random UUID -> camera_not_found 404",
+      "actual": {
+        "status": 200,
+        "body": {
+          "success": false,
+          "code": "camera_not_configured"
+        }
+      },
+      "passed": false
+    },
+    {
+      "name": "invalid UUID -> camera_not_found 404",
+      "actual": {
+        "status": 200,
+        "body": {
+          "success": false,
+          "code": "camera_not_configured"
+        }
+      },
+      "passed": false
+    },
+    {
+      "name": "anon -> unauthorized 401",
+      "actual": {
+        "status": 401,
+        "body": {
+          "success": false,
+          "code": "unauthorized"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "invalid jwt -> unauthorized 401",
+      "actual": {
+        "status": 401,
+        "body": {
+          "success": false,
+          "code": "unauthorized"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "no secret/internal fields in any response",
+      "actual": false,
+      "passed": true
+    }
+  ],
+  "signedUrlExpiryTests": []
+}
