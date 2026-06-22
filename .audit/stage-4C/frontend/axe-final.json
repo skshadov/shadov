@@ -1,0 +1,53 @@
+{
+ "/": [],
+ "/prices": [
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "count": 76
+  }
+ ],
+ "/kalkulyator-stoimosti": [
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "count": 1
+  }
+ ],
+ "/contacts": [],
+ "/about": [
+  {
+   "id": "link-in-text-block",
+   "impact": "serious",
+   "count": 3
+  }
+ ],
+ "/how-we-work": [],
+ "/stroitelstvo": [],
+ "/remont": [],
+ "/inzhenernye-sistemy": [
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "count": 1
+  }
+ ],
+ "/portfolio": [],
+ "/login": [],
+ "/faq": [],
+ "/elektromontazh": [
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "count": 1
+  }
+ ],
+ "/santehnika": [
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "count": 1
+  }
+ ],
+ "/cookies": []
+}
