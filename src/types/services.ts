@@ -39,6 +39,12 @@ export type ServicePageData = {
   relatedSlugs: string[];
   illustrationKey?: string;
   /**
+   * Подэтап 2.5.2A — пометка страницы-заглушки. Запись присутствует в
+   * SERVICE_PAGES (для целостности архитектуры и валидации), но маршрут
+   * остаётся RouteStub с noindex,follow до отдельного наполнения.
+   */
+  isStub?: boolean;
+  /**
    * Подэтап 2.5.1 — поля для инженерных страниц. Используются
    * EngineeringServicePage. Опциональны для совместимости со страницами
    * ремонта и строительства.
