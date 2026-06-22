@@ -48,7 +48,7 @@ Deno.serve(async (req: Request) => {
   };
 
   const created = { userIds: [] as string[], projectIds: [] as string[], storagePaths: [] as string[] };
-  const debug: any = { inserts: {}, marker: "v4-rows-deny" };
+  const debug: any = { inserts: {}, marker: "v5-drd" };
 
   try {
     // 1. Create users
@@ -96,7 +96,8 @@ Deno.serve(async (req: Request) => {
     const msgA = (await admin.from("project_messages").insert({ project_id: pA.id, message_type: "system", body: "hello A" }).select("id").single()).data!;
     const reportA = (await admin.from("project_daily_reports").insert({ project_id: pA.id, report_date: new Date().toISOString().slice(0,10), title: "DR1", summary: "ok", published_at: new Date().toISOString() }).select("id").single()).data!;
     const reportAUnpub = (await admin.from("project_daily_reports").insert({ project_id: pA.id, report_date: new Date(Date.now()-86400000).toISOString().slice(0,10), title: "DR-unpub", summary: "draft" }).select("id").single()).data!;
-    await admin.from("project_daily_report_documents").insert({ report_id: reportA.id, document_id: docVisible.id, sort_order: 1 });
+    const drdIns = await admin.from("project_daily_report_documents").insert({ report_id: reportA.id, document_id: docVisible.id, sort_order: 1 }).select();
+    debug.inserts.drd = { error: drdIns.error?.message, rows: drdIns.data?.length };
     const accA = (await admin.from("project_stage_acceptances").insert({ stage_id: sA.id, attempt_number: 1, status: "pending", requested_by: ids.clientA }).select("id").single()).data!;
 
     // 3. Sign in users
