@@ -27,6 +27,7 @@ const REQUIRED_REPAIR_ROUTES = [
   "/premialnyy-remont",
   "/chernovoy-remont",
   "/chistovaya-otdelka",
+  "/ukladka-plitki",
 ] as const;
 
 // Утверждённые H1 (дословно).
@@ -42,6 +43,7 @@ const EXPECTED_H1: Record<string, string> = {
   "/premialnyy-remont": "Премиальный ремонт квартиры или частного дома",
   "/chernovoy-remont": "Черновой ремонт квартиры или частного дома",
   "/chistovaya-otdelka": "Чистовая отделка квартиры или частного дома",
+  "/ukladka-plitki": "Укладка плитки и керамогранита",
 };
 
 // Утверждённые стартовые цены (без пробелов, только число) — сверяем подстрокой.
@@ -56,6 +58,7 @@ const EXPECTED_STARTING_PRICE_NUMBER: Record<string, string> = {
   "/premialnyy-remont": "48 000",
   "/chernovoy-remont": "10 000",
   "/chistovaya-otdelka": "8 000",
+  "/ukladka-plitki": "2 800",
 };
 
 // Утверждённое количество included для пакетов с фиксированным составом.
