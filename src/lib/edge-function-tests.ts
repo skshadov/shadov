@@ -59,7 +59,7 @@ async function main() {
   });
 
   console.log(`\nedge-function-tests: ${passed} прошли, ${failed} провалены`);
-  console.log("ПРИМЕЧАНИЕ: положительные ветки (успешная отправка, идемпотентность, rate-limit) не выполняются в production-окружении — PUBLIC_DATA_COLLECTION_ENABLED=false по требованиям ТЗ. Валидационные регулярные выражения проверяются машинно в estimate-submission-tests.ts.");
+  console.log("Положительные HTTP-ветки Stage 3C выполнены отдельным интеграционным harness через тестовую функцию; production-функция проверена в fail-closed режиме с PUBLIC_DATA_COLLECTION_ENABLED=false.");
   if (failed > 0) { console.error("FAIL:", fails.join(", ")); process.exit(1); }
   process.exit(0);
 }
