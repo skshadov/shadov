@@ -105,9 +105,8 @@ function normalizeSpaces(s: string): string {
   return s.replace(/\u00A0/g, " ");
 }
 
-// Подэтап 2.5.2A: страница-заглушка /ukladka-plitki также относится к
-// category=repair (отделочные работы), но содержательной валидации не
-// проходит — для этого блока учитываем только активные записи.
+// Подэтап 2.6: 11 активных страниц ремонта (включая активированную
+// /ukladka-plitki). Заглушек среди ремонта быть не должно.
 const repairPages = SERVICE_PAGES.filter((p) => p.category === "repair" && !p.isStub);
 const repairRoutes = repairPages.map((p) => p.route);
 
