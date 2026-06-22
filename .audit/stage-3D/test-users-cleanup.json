@@ -1,0 +1,7 @@
+{
+  "capturedAt": "2026-06-22T10:03:14Z",
+  "source": "supabase--read_query against auth.users",
+  "patterns": ["%stage3d%","%stage3c%","%@example.invalid","%.local","%.invalid"],
+  "remainingTestUsers": 0,
+  "remainingEmails": []
+}

@@ -1,0 +1,8 @@
+{
+  "capturedAt": "2026-06-22T10:03:14Z",
+  "bucket": "project-documents",
+  "source": "supabase--read_query against storage.objects",
+  "patterns": ["%stage3d%","%stage3c%","%.invalid%"],
+  "totalObjects": 0,
+  "remainingTestStorageObjects": 0
+}
