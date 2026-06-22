@@ -1,4 +1,4 @@
-3d7aa9eefe6770b80e272c4522d55fc2427d26cce97259e18e7f7c83afe6588d  ./audit.json
+5057ef98f422e539f3196edea92d4b8981736fee1a42473fd0e2e2ddcfca74ab  ./audit.json
 b54f34f48de8a360bb7afcafb0a6a8c5351991c2123d56b5a2ef1947ef22728f  ./camera-tests.json
 5abcb25c267807110306fb30d70b3aed5717b920fe3a7dd307fd815d9ea64bee  ./client-portal-filter-tests.json
 8e113eb1e998abeac12ec35c317d7bbd5cf8dd2cb1d6fdecfe776392658daa65  ./cloud-functions-after.json
@@ -10,10 +10,19 @@ b9f2e7072aa7ff6ac3fe0d2a506325d8614518e89ce0f6257fb195ace5a89da1  ./daily-report
 945e75a1c6a1d4aa8592eef93409da3a76cc19994c747f58c23de8d1a541fd22  ./edge-function-source/get-project-document-url.ts
 a39272525e6ee5a92392ed364b015c172a116439e0bb356f96db8ba532018873  ./edge-function-source/stage4c-test-orchestrator.ts
 ee43fe6e6f5b6d5b15de075444ad8d548bd07f0aad0d72b294132c65856506ff  ./frontend/axe-final.json
-c7bb2bf80afa2c0750363a64a8af0ccb5908cfc1680bb49ba2052e32dc2d2b94  ./frontend/build.log
 8511b689a6eaf0be109574a64f1504f71da68b6fbea8df4ccc814593abd16bab  ./frontend/colors-mobile-desktop.json
 e7fc748c62ae7c7df39cfad600bc18af30d08ac12f227d56d56c5059743170ab  ./frontend/global-overflow-after.json
-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./frontend/tsc.log
+ea37f1c17a2154090eefa3cbd4b2ee477e398c82b90bc4834aa170db0c717017  ./frontend/keyboard-a11y-dialog.json
+4e511aebb88848bd59c2846288399785b8c03d0470b2ea79160a911fcc0c86be  ./frontend/realtime-anon-deny.json
+9acdca8de80e3092552999f8542217d8106663f945bb55f67e8beb2c858a3227  ./frontend/regressions/audit-stage-2-final.log
+df5b9551f0d680d1c10e7663b346f41eb2afbf814446f1944acbb961c242d9b6  ./frontend/regressions/audit-stage-2-regression-for-stage-3.log
+05fdc4e80d73bc65b6216907cebe8316a3f1c121686d092f419dcd10ac4b5f22  ./frontend/regressions/audit-stage-3.log
+3cde0ef511a7ae636416ea73e5fe9e87b7614ab263c9ce651bb55692896df20b  ./frontend/regressions/audit-stage-3b.log
+6662a40310708fd68eef9bb8e7a44dded346a70fc7d179ad305139e46390ecc3  ./frontend/regressions/audit-stage-3d.log
+2859f5d8564e64b92f168c75f465699943458884c4c126ff94964d217b600cb7  ./frontend/regressions/audit-stage-3e.log
+a9391303a43a08c4d568441a4144d2439c2e907136d8179e24ac6c4a605f5c4b  ./frontend/regressions/audit-stage-3f.log
+cb8957e3333805a54b06ce4380328a03b80b9e9853a6dea4b36d510fcf372d2e  ./frontend/regressions/calculator-tests.log
+71bf749d82e9eb72dbd8a395047d11c99cae963ee707a4a480fb3816ff02500c  ./frontend/regressions/summary.json
 a4ae48780eb65aaabf73f26e7aefe80327ac9e903c47e3b3cb5ce96b9d08bf70  ./global-overflow-elements.json
 89cd0fa690cdaa34c70234e6763903f4f07fc50dff7422f639325b84bede0d63  ./global-responsive-screenshots/calc-1366.png
 65e411768c5662c3ff2afd19289e59b041bcba36245e71077d2276576f2f78ec  ./global-responsive-screenshots/calc-1920.png
