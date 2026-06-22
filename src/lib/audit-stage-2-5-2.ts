@@ -358,8 +358,9 @@ else {
   if (tilePage.category === "engineering") ok(false, "tilePage.category=engineering запрещено");
   if (tilePage.existsInEngineeringPages) ok(false, "tile входит в ENGINEERING_SERVICE_PAGES");
   if (tilePage.isActiveEngineeringService) ok(false, "tile активна как инженерная");
-  if (!tilePage.hasRouteStub) ok(false, "tile route без RouteStub");
-  if (!tilePage.hasNoindexFollow) ok(false, "tile route без noindex, follow");
+  // Подэтап 2.6: /ukladka-plitki активирована, RouteStub снят.
+  if (tilePage.hasRouteStub) ok(false, "tile route всё ещё RouteStub после 2.6");
+  if (tilePage.hasNoindexFollow) ok(false, "tile route всё ещё noindex после 2.6");
 }
 
 const regressionChecks = {
@@ -371,8 +372,9 @@ const regressionChecks = {
   pricesRouteExists: existsSync(resolve(process.cwd(), "src/routes/prices.tsx")),
 };
 if (regressionChecks.constructionPages !== 18) ok(false, `construction != 18`);
-if (regressionChecks.repairPages !== 10) ok(false, `repair (активных) != 10`);
-if (regressionChecks.tileStubPages !== 1) ok(false, `плиточная заглушка != 1`);
+if (regressionChecks.repairPages !== 11) ok(false, `repair (активных) != 11`);
+// На 2.6 плиточная страница активна; запись в SERVICE_PAGES сохраняется (1).
+if (regressionChecks.tileStubPages !== 1) ok(false, `плиточная запись != 1`);
 if (regressionChecks.engineeringPagesInServicePages !== 6) ok(false, `engineering != 6`);
 if (regressionChecks.servicePagesTotal !== 35) ok(false, `SERVICE_PAGES total != 35`);
 
