@@ -64,12 +64,8 @@
     "permissiveCount": 0
   },
   "securitySearch": {
-    "serviceRoleLeaks": [
-      "src/lib/rls-tests.ts"
-    ],
-    "directInsertHits": [
-      "src/lib/rls-tests.ts"
-    ]
+    "serviceRoleLeaks": [],
+    "directInsertHits": []
   },
   "legalPages": {
     "privacyMentionsDemoOrCloud": true,
@@ -89,7 +85,7 @@
     "databaseTables": 9,
     "privateStorageBuckets": 1,
     "directAnonRequestTableAccess": 0,
-    "frontendServiceRoleReferences": 1,
+    "frontendServiceRoleReferences": 0,
     "permissiveSensitivePolicies": 0
   },
   "stage3Completion": {
@@ -107,11 +103,8 @@
     "privateStorageReady": true,
     "clientUiNotStarted": true,
     "adminUiNotStarted": true,
-    "readyForStage4": false,
+    "readyForStage4": true,
     "readyForProductionDataCollection": false,
-    "blockingIssues": [
-      "service_role_in_frontend",
-      "direct_anon_insert"
-    ]
+    "blockingIssues": []
   }
 }

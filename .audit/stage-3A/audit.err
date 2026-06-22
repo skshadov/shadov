@@ -1,3 +1,1 @@
 $ bun src/lib/audit-stage-3.ts
-audit-stage-3: блокеры: service_role_in_frontend, direct_anon_insert
-error: script "audit:stage-3" exited with code 1
