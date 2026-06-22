@@ -672,12 +672,38 @@
         ]
       },
       {
+        "file": "src/routes/cookies.tsx",
+        "lines": [
+          35,
+          36
+        ]
+      },
+      {
+        "file": "src/routes/portfolio.$slug.tsx",
+        "lines": [
+          38
+        ]
+      },
+      {
+        "file": "src/routes/portfolio.tsx",
+        "lines": [
+          49
+        ]
+      },
+      {
         "file": "src/routes/prices.tsx",
         "lines": [
           144,
           234,
           545,
           571
+        ]
+      },
+      {
+        "file": "src/routes/privacy.tsx",
+        "lines": [
+          56,
+          57
         ]
       },
       {
@@ -873,7 +899,8 @@
           117,
           188,
           189,
-          279
+          279,
+          879
         ]
       },
       {
@@ -883,7 +910,7 @@
           11,
           14,
           15,
-          233
+          234
         ]
       },
       {
@@ -913,11 +940,11 @@
       {
         "file": "src/lib/validate-content.ts",
         "lines": [
-          1093,
-          1094,
+          1097,
           1098,
-          1099,
-          1104
+          1102,
+          1103,
+          1108
         ]
       },
       {
