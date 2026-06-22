@@ -21,8 +21,8 @@ import { ArrowRight } from "lucide-react";
 
 export function DesktopNavigation() {
   return (
-    <NavigationMenu className="hidden lg:flex">
-      <NavigationMenuList className="gap-1">
+    <NavigationMenu className="hidden min-w-0 xl:flex">
+      <NavigationMenuList className="gap-0.5">
         {MAIN_NAV.map((item) =>
           isDropdown(item) ? (
             <DropdownItem key={item.to} item={item} />
