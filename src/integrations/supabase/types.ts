@@ -680,6 +680,17 @@ export type Database = {
           request_number: string
         }[]
       }
+      get_my_projects: {
+        Args: never
+        Returns: {
+          created_at: string
+          description: string
+          id: string
+          is_demo: boolean
+          status: string
+          title: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
