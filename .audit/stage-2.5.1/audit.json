@@ -979,6 +979,16 @@
           106,
           107
         ]
+      },
+      {
+        "file": "src/lib/audit-stage-2-final.ts",
+        "lines": [
+          21,
+          22,
+          242,
+          271,
+          287
+        ]
       }
     ],
     "implementationStatus": "partial"
