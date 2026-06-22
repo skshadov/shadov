@@ -1,0 +1,2 @@
+ [{"table" : "estimate_requests", "trigger" : "estimate_requests_set_updated_at", "event" : "UPDATE"}, {"table" : "profiles", "trigger" : "profiles_set_updated_at", "event" : "UPDATE"}, {"table" : "project_stages", "trigger" : "project_stages_set_updated_at", "event" : "UPDATE"}, {"table" : "projects", "trigger" : "projects_set_updated_at", "event" : "UPDATE"}]
+

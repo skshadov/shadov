@@ -1,0 +1,2 @@
+ [{"table" : "consent_records", "rls_enabled" : true}, {"table" : "estimate_requests", "rls_enabled" : true}, {"table" : "profiles", "rls_enabled" : true}, {"table" : "project_documents", "rls_enabled" : true}, {"table" : "project_members", "rls_enabled" : true}, {"table" : "project_stages", "rls_enabled" : true}, {"table" : "projects", "rls_enabled" : true}, {"table" : "submission_rate_limits", "rls_enabled" : true}, {"table" : "user_roles", "rls_enabled" : true}]
+
