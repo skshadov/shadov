@@ -762,6 +762,7 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
     relatedSlugs: [
       "chernovoy-remont",
       "remont-pod-klyuch",
+      "ukladka-plitki",
     ],
     estimateExampleItemIds: [
       "finishing_walls-pokraska",
@@ -783,5 +784,34 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
       "finishing_walls-oboi": "Альтернативный вариант: поклейка обоев вместо покраски",
       "finishing_floors-laminat": "Альтернатива: укладка кварцвинила",
     },
+  },
+  // 11) /ukladka-plitki — заглушка отделочных работ (категория repair).
+  // Подэтап 2.5.2A: страница присутствует в SERVICE_PAGES как isStub.
+  // Полное наполнение относится к более позднему этапу. Маршрут
+  // /ukladka-plitki продолжает использовать RouteStub с noindex, follow.
+  {
+    slug: "ukladka-plitki",
+    route: "/ukladka-plitki",
+    category: "repair",
+    isStub: true,
+    title: "Укладка плитки",
+    metaTitle: "Укладка плитки — Шадов и партнёры",
+    metaDescription:
+      "Раздел готовится. Полное наполнение страницы укладки плитки появится на следующем этапе развития сайта.",
+    h1: "Укладка плитки",
+    description:
+      "Отдельная отделочная услуга по укладке плитки и керамогранита. Полное наполнение страницы появится на следующем этапе развития сайта.",
+    suitableFor: [],
+    benefits: [],
+    included: [],
+    excluded: [],
+    technology: [],
+    stages: [],
+    qualityControl: [],
+    documents: [],
+    timelineFactors: [],
+    priceCategoryIds: ["tiling"],
+    faqIds: [],
+    relatedSlugs: ["chistovaya-otdelka"],
   },
 ];
