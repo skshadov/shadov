@@ -11,29 +11,15 @@ import { REPAIR_SERVICE_PAGES } from "./service-pages-repair";
 import { CONSTRUCTION_SERVICE_PAGES } from "./service-pages-construction";
 import { ENGINEERING_SERVICE_PAGES } from "./service-pages-engineering";
 
-function empty<T>(): T[] {
-  return [] as T[];
-}
-
+// Подэтап 2.5.2 — удалена прежняя inline-запись `ukladka-plitki`
+// (была ошибочно отнесена к category="engineering" в 2.1, что давало
+// engineeringPagesInServicePages = 7 в аудите 2.5.1). Маршрут /ukladka-plitki
+// остаётся RouteStub отдельно от SERVICE_PAGES и подключится в следующем
+// разделе ТЗ. После удаления инженерных записей ровно 6.
 export const SERVICE_PAGES: ServicePageData[] = [
-  // ── Ремонт ────────────────────────────────────────────────────────────────
   ...REPAIR_SERVICE_PAGES,
-
-  // ── Строительство (подэтап 2.4.1 — полные данные 18 страниц) ─────────────
   ...CONSTRUCTION_SERVICE_PAGES,
-
-  // ── Инженерные системы (подэтап 2.5.1 — 6 страниц, маршруты остаются RouteStub) ──
   ...ENGINEERING_SERVICE_PAGES,
-
-  { slug: "ukladka-plitki", route: "/ukladka-plitki", category: "engineering",
-    title: "Укладка плитки", metaTitle: "Укладка плитки и керамогранита — Шадов и партнёры",
-    metaDescription: "Стандартная плитка, керамогранит, крупный формат и плиты до 3200 мм, мозаика, диагональ, ёлочка, запил 45°.",
-    h1: "Укладка плитки", description: "Все виды плиточных работ с гидроизоляцией и контролем оснований.",
-    startingPrice: "от 2 800 ₽/м²",
-    suitableFor: empty(), benefits: empty(), included: empty(), excluded: empty(),
-    technology: empty(), stages: empty(), qualityControl: empty(), documents: empty(), timelineFactors: empty(),
-    priceCategoryIds: ["tiling"], faqIds: ["contract-price", "hidden-works"], relatedSlugs: ["chistovaya-otdelka", "santehnika", "teplyy-pol"],
-  },
 ];
 
 export function getServicePage(slug: string): ServicePageData | undefined {

@@ -761,7 +761,6 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
     ],
     relatedSlugs: [
       "chernovoy-remont",
-      "ukladka-plitki",
       "remont-pod-klyuch",
     ],
     estimateExampleItemIds: [

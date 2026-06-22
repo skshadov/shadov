@@ -148,16 +148,19 @@ conflicts.push({
   },
 });
 
-// ── routeStatus (6 RouteStub, noindex, follow, без EngineeringServicePage) ──
+// ── routeStatus ──────────────────────────────────────────────────────
+// На 2.5.1 маршруты создавались как RouteStub с noindex,follow;
+// в подэтапе 2.5.2 все 6 переведены на EngineeringServicePage. Аудит
+// пересчитан, чтобы остаться зелёным после активации.
 const routeStatus = ENGINEERING_ROUTES.map((route) => {
   const src = readRoute(route);
   const isStub = /RouteStub/.test(src);
   const noindexFollow = /noindex,\s*follow/.test(src);
-  const noEng = !/EngineeringServicePage/.test(src);
-  if (!isStub) ok(false, `${route}: должен оставаться RouteStub`);
-  if (!noindexFollow) ok(false, `${route}: должен сохранять noindex, follow`);
-  if (!noEng) ok(false, `${route}: EngineeringServicePage не должен быть подключён`);
-  return { route, isRouteStub: isStub, noindexFollow, noEngineeringServicePage: noEng };
+  const hasEng = /EngineeringServicePage/.test(src);
+  if (isStub) ok(false, `${route}: RouteStub удалён в 2.5.2`);
+  if (noindexFollow) ok(false, `${route}: noindex,follow удалён в 2.5.2`);
+  if (!hasEng) ok(false, `${route}: EngineeringServicePage не подключён`);
+  return { route, isRouteStub: isStub, noindexFollow, hasEngineeringServicePage: hasEng };
 });
 
 // ── priceCategories ──────────────────────────────────────────────────
@@ -322,7 +325,7 @@ const regressionChecks = {
 // ── totals ───────────────────────────────────────────────────────────
 const totals = {
   engineeringRoutes: engineeringRoutes.length,
-  activeEngineeringRoutes: 0,
+  activeEngineeringRoutes: routeStatus.filter((r) => r.hasEngineeringServicePage).length,
   stubEngineeringRoutes: routeStatus.filter((r) => r.isRouteStub).length,
   priceCategories: Object.keys(priceCategories).length,
   priceItems: priceItemsTotal,
@@ -332,8 +335,8 @@ const totals = {
 
 // ── specificationCheck ───────────────────────────────────────────────
 if (totals.engineeringRoutes !== 6) ok(false, `totals.engineeringRoutes != 6`);
-if (totals.activeEngineeringRoutes !== 0) ok(false, `totals.activeEngineeringRoutes != 0`);
-if (totals.stubEngineeringRoutes !== 6) ok(false, `totals.stubEngineeringRoutes != 6`);
+if (totals.activeEngineeringRoutes !== 6) ok(false, `totals.activeEngineeringRoutes != 6`);
+if (totals.stubEngineeringRoutes !== 0) ok(false, `totals.stubEngineeringRoutes != 0`);
 if (totals.priceCategories !== 8) ok(false, `totals.priceCategories != 8`);
 if (totals.priceItems !== 98) ok(false, `totals.priceItems != 98`);
 if (totals.componentsCreated !== 5) ok(false, `totals.componentsCreated != 5`);
