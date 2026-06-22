@@ -1,0 +1,639 @@
+[
+  {
+    "table_schema": "public",
+    "table_name": "consent_records",
+    "column_name": "id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "consent_records",
+    "column_name": "request_id",
+    "data_type": "uuid",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "consent_records",
+    "column_name": "user_id",
+    "data_type": "uuid",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "consent_records",
+    "column_name": "document_slug",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "consent_records",
+    "column_name": "document_version",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "consent_records",
+    "column_name": "accepted_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "consent_records",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "request_number",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "submission_id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "user_id",
+    "data_type": "uuid",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "source_path",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "service_slug",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "calculator_mode",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "contact_name",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "phone",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "email",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "message",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "calculator_snapshot",
+    "data_type": "jsonb",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "price_version",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "consent_version",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "consent_accepted_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "status",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "estimate_requests",
+    "column_name": "updated_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "profiles",
+    "column_name": "id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "profiles",
+    "column_name": "display_name",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "profiles",
+    "column_name": "phone",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "profiles",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "profiles",
+    "column_name": "updated_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_documents",
+    "column_name": "id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_documents",
+    "column_name": "project_id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_documents",
+    "column_name": "storage_path",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_documents",
+    "column_name": "file_name",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_documents",
+    "column_name": "mime_type",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_documents",
+    "column_name": "size_bytes",
+    "data_type": "bigint",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_documents",
+    "column_name": "document_category",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_documents",
+    "column_name": "uploaded_by",
+    "data_type": "uuid",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_documents",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_members",
+    "column_name": "project_id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_members",
+    "column_name": "user_id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_members",
+    "column_name": "member_role",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_members",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "column_name": "id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "column_name": "project_id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "column_name": "sort_order",
+    "data_type": "integer",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "column_name": "title",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "column_name": "description",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "column_name": "status",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "column_name": "planned_start",
+    "data_type": "date",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "column_name": "planned_end",
+    "data_type": "date",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "column_name": "actual_start",
+    "data_type": "date",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "column_name": "actual_end",
+    "data_type": "date",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "project_stages",
+    "column_name": "updated_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "projects",
+    "column_name": "id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "projects",
+    "column_name": "title",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "projects",
+    "column_name": "status",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "projects",
+    "column_name": "description",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "projects",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "projects",
+    "column_name": "updated_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "submission_rate_limits",
+    "column_name": "key_hash",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "submission_rate_limits",
+    "column_name": "window_started_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "submission_rate_limits",
+    "column_name": "attempt_count",
+    "data_type": "integer",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "submission_rate_limits",
+    "column_name": "expires_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "user_roles",
+    "column_name": "user_id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "user_roles",
+    "column_name": "role",
+    "data_type": "USER-DEFINED",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "public",
+    "table_name": "user_roles",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "buckets",
+    "column_name": "id",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "buckets",
+    "column_name": "name",
+    "data_type": "text",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "buckets",
+    "column_name": "owner",
+    "data_type": "uuid",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "buckets",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "buckets",
+    "column_name": "updated_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "buckets",
+    "column_name": "public",
+    "data_type": "boolean",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "buckets",
+    "column_name": "avif_autodetection",
+    "data_type": "boolean",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "buckets",
+    "column_name": "file_size_limit",
+    "data_type": "bigint",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "buckets",
+    "column_name": "allowed_mime_types",
+    "data_type": "ARRAY",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "buckets",
+    "column_name": "owner_id",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "buckets",
+    "column_name": "type",
+    "data_type": "USER-DEFINED",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "objects",
+    "column_name": "id",
+    "data_type": "uuid",
+    "is_nullable": "NO"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "objects",
+    "column_name": "bucket_id",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "objects",
+    "column_name": "name",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "objects",
+    "column_name": "owner",
+    "data_type": "uuid",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "objects",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "objects",
+    "column_name": "updated_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "objects",
+    "column_name": "last_accessed_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "objects",
+    "column_name": "metadata",
+    "data_type": "jsonb",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "objects",
+    "column_name": "path_tokens",
+    "data_type": "ARRAY",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "objects",
+    "column_name": "version",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "objects",
+    "column_name": "owner_id",
+    "data_type": "text",
+    "is_nullable": "YES"
+  },
+  {
+    "table_schema": "storage",
+    "table_name": "objects",
+    "column_name": "user_metadata",
+    "data_type": "jsonb",
+    "is_nullable": "YES"
+  }
+]

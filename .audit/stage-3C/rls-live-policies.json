@@ -1,0 +1,302 @@
+[
+  {
+    "schemaname": "public",
+    "tablename": "consent_records",
+    "policyname": "admins read all consents",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "has_role(auth.uid(), 'admin'::app_role)",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "consent_records",
+    "policyname": "users read own consents",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "(user_id = auth.uid())",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "estimate_requests",
+    "policyname": "admins read all requests",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "has_role(auth.uid(), 'admin'::app_role)",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "estimate_requests",
+    "policyname": "admins update requests",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "UPDATE",
+    "qual": "has_role(auth.uid(), 'admin'::app_role)",
+    "with_check": "has_role(auth.uid(), 'admin'::app_role)"
+  },
+  {
+    "schemaname": "public",
+    "tablename": "estimate_requests",
+    "policyname": "users read own requests",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "(user_id = auth.uid())",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "profiles",
+    "policyname": "admins read all profiles",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "has_role(auth.uid(), 'admin'::app_role)",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "profiles",
+    "policyname": "admins update all profiles",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "UPDATE",
+    "qual": "has_role(auth.uid(), 'admin'::app_role)",
+    "with_check": "has_role(auth.uid(), 'admin'::app_role)"
+  },
+  {
+    "schemaname": "public",
+    "tablename": "profiles",
+    "policyname": "users read own profile",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "(id = auth.uid())",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "profiles",
+    "policyname": "users update own profile",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "UPDATE",
+    "qual": "(id = auth.uid())",
+    "with_check": "(id = auth.uid())"
+  },
+  {
+    "schemaname": "public",
+    "tablename": "project_documents",
+    "policyname": "admins manage documents",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "ALL",
+    "qual": "has_role(auth.uid(), 'admin'::app_role)",
+    "with_check": "has_role(auth.uid(), 'admin'::app_role)"
+  },
+  {
+    "schemaname": "public",
+    "tablename": "project_documents",
+    "policyname": "members read documents",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "is_project_member(project_id, auth.uid())",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "project_members",
+    "policyname": "admins manage memberships",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "ALL",
+    "qual": "has_role(auth.uid(), 'admin'::app_role)",
+    "with_check": "has_role(auth.uid(), 'admin'::app_role)"
+  },
+  {
+    "schemaname": "public",
+    "tablename": "project_members",
+    "policyname": "users read own membership",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "(user_id = auth.uid())",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "project_stages",
+    "policyname": "admins manage stages",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "ALL",
+    "qual": "has_role(auth.uid(), 'admin'::app_role)",
+    "with_check": "has_role(auth.uid(), 'admin'::app_role)"
+  },
+  {
+    "schemaname": "public",
+    "tablename": "project_stages",
+    "policyname": "members read stages",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "is_project_member(project_id, auth.uid())",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "projects",
+    "policyname": "admins manage projects",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "ALL",
+    "qual": "has_role(auth.uid(), 'admin'::app_role)",
+    "with_check": "has_role(auth.uid(), 'admin'::app_role)"
+  },
+  {
+    "schemaname": "public",
+    "tablename": "projects",
+    "policyname": "members read project",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "is_project_member(id, auth.uid())",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "submission_rate_limits",
+    "policyname": "no direct client deletes rate limits",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "DELETE",
+    "qual": "false",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "submission_rate_limits",
+    "policyname": "no direct client reads rate limits",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "false",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "submission_rate_limits",
+    "policyname": "no direct client updates rate limits",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "UPDATE",
+    "qual": "false",
+    "with_check": "false"
+  },
+  {
+    "schemaname": "public",
+    "tablename": "submission_rate_limits",
+    "policyname": "no direct client writes rate limits",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "INSERT",
+    "qual": null,
+    "with_check": "false"
+  },
+  {
+    "schemaname": "public",
+    "tablename": "user_roles",
+    "policyname": "admins read all roles",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "has_role(auth.uid(), 'admin'::app_role)",
+    "with_check": null
+  },
+  {
+    "schemaname": "public",
+    "tablename": "user_roles",
+    "policyname": "users read own roles",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "(user_id = auth.uid())",
+    "with_check": null
+  },
+  {
+    "schemaname": "storage",
+    "tablename": "objects",
+    "policyname": "project docs admins all",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "ALL",
+    "qual": "((bucket_id = 'project-documents'::text) AND has_role(auth.uid(), 'admin'::app_role))",
+    "with_check": "((bucket_id = 'project-documents'::text) AND has_role(auth.uid(), 'admin'::app_role))"
+  },
+  {
+    "schemaname": "storage",
+    "tablename": "objects",
+    "policyname": "project docs members read",
+    "permissive": "PERMISSIVE",
+    "roles": [
+      "authenticated"
+    ],
+    "cmd": "SELECT",
+    "qual": "((bucket_id = 'project-documents'::text) AND ((string_to_array(name, '/'::text))[1] ~ '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'::text) AND is_project_member(((string_to_array(name, '/'::text))[1])::uuid, auth.uid()))",
+    "with_check": null
+  }
+]

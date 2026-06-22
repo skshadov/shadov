@@ -1,0 +1,556 @@
+{
+  "stage": "stage-3C",
+  "generatedAt": "2026-06-22T09:29:47.091Z",
+  "specificationCheck": {
+    "passed": true,
+    "errors": []
+  },
+  "positiveEdgeHttpTestsExecuted": true,
+  "validAnonymousSubmissionPassed": true,
+  "validAuthenticatedSubmissionPassed": true,
+  "concurrentIdempotencyPassed": true,
+  "parallelRateLimitPassed": true,
+  "consentRollbackPassed": true,
+  "rateLimitCleanupPassed": true,
+  "corsAllowedOriginPassed": true,
+  "corsForbiddenOriginPassed": true,
+  "missingSaltFailClosedPassed": true,
+  "storageIntegrationTestsPassed": true,
+  "extendedRlsMatrixPassed": true,
+  "profileColumnPermissionsPassed": true,
+  "trustedClientAddressVerified": true,
+  "testFunctionDeployed": false,
+  "debugFunctionDeployed": false,
+  "testOnlyRpcExists": false,
+  "testSecretsActive": false,
+  "remainingTestRows": 0,
+  "remainingTestUsers": 0,
+  "remainingTestStorageObjects": 0,
+  "productionPublicCollectionEnabled": false,
+  "publicAuthEnabled": false,
+  "operatorConfigured": false,
+  "readyForProductionDataCollection": false,
+  "readyForStage4": true,
+  "frontendServiceRoleReferences": 0,
+  "directAnonRequestTableAccess": 0,
+  "permissiveSensitivePolicies": 0,
+  "priceItems": 334,
+  "servicePages": 35,
+  "repairServicePages": 11,
+  "constructionServicePages": 18,
+  "engineeringServicePages": 6,
+  "calculatorRoutes": 1,
+  "calculatorModes": 4,
+  "clientRoutesActivated": 0,
+  "adminRoutesActivated": 0,
+  "operatorConfiguration": {
+    "operatorConfigured": false,
+    "missingRequiredFields": [
+      "legalName",
+      "contact",
+      "inn",
+      "ogrn",
+      "legalAddress"
+    ]
+  },
+  "totals": {
+    "priceItems": 334,
+    "servicePages": 35,
+    "repairServicePages": 11,
+    "constructionServicePages": 18,
+    "engineeringServicePages": 6,
+    "calculatorRoutes": 1,
+    "calculatorModes": 4,
+    "clientRoutesActivated": 0,
+    "adminRoutesActivated": 0
+  },
+  "edgeIntegration": {
+    "executed": true,
+    "passed": true,
+    "failed": 0,
+    "results": [
+      {
+        "name": "validAnonymousSubmission",
+        "passed": true,
+        "status": 200,
+        "requestCount": 1,
+        "consentCount": 2
+      },
+      {
+        "name": "validAuthenticatedSubmission",
+        "passed": true,
+        "status": 200,
+        "storedUserIdSource": "jwt"
+      }
+    ]
+  },
+  "concurrentIdempotency": {
+    "executed": true,
+    "passed": true,
+    "failed": 0,
+    "startedAt": "2026-06-22T09:29:30.684Z",
+    "endedAt": "2026-06-22T09:29:30.903Z",
+    "statuses": [
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "requestNumbers": [
+      "SH-202606-123085"
+    ],
+    "counts": {
+      "requestCount": 1,
+      "consentCount": 2,
+      "rows": [
+        {
+          "id": "fc70e9ae-58d9-49b9-8170-a01f635d6e3f",
+          "user_id": null,
+          "request_number": "SH-202606-123085"
+        }
+      ]
+    }
+  },
+  "parallelRateLimit": {
+    "executed": true,
+    "passed": true,
+    "failed": 0,
+    "keySource": "shared_fallback",
+    "total": 10,
+    "okCount": 5,
+    "limitedCount": 5,
+    "requests": [
+      {
+        "index": 0,
+        "status": 200,
+        "startedAt": "2026-06-22T09:29:31.012Z",
+        "endedAt": "2026-06-22T09:29:31.160Z"
+      },
+      {
+        "index": 1,
+        "status": 200,
+        "startedAt": "2026-06-22T09:29:31.012Z",
+        "endedAt": "2026-06-22T09:29:31.168Z"
+      },
+      {
+        "index": 2,
+        "status": 200,
+        "startedAt": "2026-06-22T09:29:31.012Z",
+        "endedAt": "2026-06-22T09:29:31.169Z"
+      },
+      {
+        "index": 3,
+        "status": 429,
+        "startedAt": "2026-06-22T09:29:31.013Z",
+        "endedAt": "2026-06-22T09:29:31.124Z"
+      },
+      {
+        "index": 4,
+        "status": 200,
+        "startedAt": "2026-06-22T09:29:31.013Z",
+        "endedAt": "2026-06-22T09:29:31.173Z"
+      },
+      {
+        "index": 5,
+        "status": 429,
+        "startedAt": "2026-06-22T09:29:31.013Z",
+        "endedAt": "2026-06-22T09:29:31.171Z"
+      },
+      {
+        "index": 6,
+        "status": 429,
+        "startedAt": "2026-06-22T09:29:31.013Z",
+        "endedAt": "2026-06-22T09:29:31.165Z"
+      },
+      {
+        "index": 7,
+        "status": 200,
+        "startedAt": "2026-06-22T09:29:31.013Z",
+        "endedAt": "2026-06-22T09:29:31.205Z"
+      },
+      {
+        "index": 8,
+        "status": 429,
+        "startedAt": "2026-06-22T09:29:31.013Z",
+        "endedAt": "2026-06-22T09:29:31.169Z"
+      },
+      {
+        "index": 9,
+        "status": 429,
+        "startedAt": "2026-06-22T09:29:31.013Z",
+        "endedAt": "2026-06-22T09:29:31.180Z"
+      }
+    ],
+    "rateLimitRow": {
+      "attempt_count": 10,
+      "expires_at": "2026-06-22T10:30:00+00:00"
+    }
+  },
+  "consentRollback": {
+    "executed": true,
+    "passed": true,
+    "failed": 0,
+    "status": 500,
+    "code": "fault_injection_failed",
+    "counts": {
+      "requestCount": 0,
+      "consentCount": 0,
+      "rows": []
+    }
+  },
+  "rateLimitCleanup": {
+    "executed": true,
+    "passed": true,
+    "failed": 0,
+    "expiredBefore": 1,
+    "expiredAfter": 0,
+    "newExpiresWithin24h": true
+  },
+  "cors": {
+    "executed": true,
+    "passed": true,
+    "failed": 0,
+    "allowed": {
+      "status": 200,
+      "allowOrigin": "https://stage3c-test.invalid"
+    },
+    "forbidden": {
+      "status": 403,
+      "code": "origin_not_allowed",
+      "allowOriginPresent": false,
+      "requestCount": 0
+    },
+    "noOriginHarnessRule": {
+      "status": 200,
+      "allowedOnlyWithValidTestToken": true
+    }
+  },
+  "trustedClientAddress": {
+    "executed": true,
+    "passed": true,
+    "failed": 0,
+    "selectedSource": "shared_fallback",
+    "reason": "cf-connecting-ip overwrite was not positively observable because the platform rejected the client-supplied cf-connecting-ip request before function code; handler therefore uses shared_fallback unless TRUST_CF_CONNECTING_IP is explicitly enabled.",
+    "cfConnectingIp": {
+      "clientSuppliedValue": "198.51.100.10",
+      "receivedValue": null,
+      "wasOverwritten": false,
+      "wasAppended": false,
+      "wasRemoved": true,
+      "singleIp": false
+    },
+    "xForwardedFor": {
+      "clientSuppliedValue": "198.51.100.11",
+      "receivedValue": null,
+      "wasOverwritten": false,
+      "wasAppended": false,
+      "wasRemoved": true,
+      "singleIp": false
+    },
+    "xRealIp": {
+      "clientSuppliedValue": "198.51.100.12",
+      "receivedValue": null,
+      "wasOverwritten": false,
+      "wasAppended": false,
+      "wasRemoved": true,
+      "singleIp": false
+    }
+  },
+  "missingSalt": {
+    "executed": true,
+    "passed": true,
+    "failed": 0,
+    "status": 500,
+    "code": "server_not_configured",
+    "requestCount": 0,
+    "rateLimitBefore": 0,
+    "rateLimitAfter": 0
+  },
+  "storageIntegration": {
+    "executed": true,
+    "passed": true,
+    "failed": 0,
+    "results": [
+      {
+        "name": "admin upload",
+        "passed": true
+      },
+      {
+        "name": "anonymous list/download/upload deny",
+        "passed": true
+      },
+      {
+        "name": "client member read own allow; other/upload/delete deny",
+        "passed": true,
+        "ownReadError": null,
+        "otherReadError": "Object not found",
+        "uploadError": "new row violates row-level security policy",
+        "deleteError": null,
+        "deleteRows": 0
+      },
+      {
+        "name": "client non-member read deny",
+        "passed": true
+      },
+      {
+        "name": "admin read allow; malformed path deny without cast exception",
+        "passed": true
+      },
+      {
+        "name": "admin delete allow",
+        "passed": true
+      }
+    ]
+  },
+  "extendedRlsMatrix": {
+    "executed": true,
+    "passed": true,
+    "failed": 0,
+    "total": 31,
+    "results": [
+      {
+        "name": "profile own display_name update allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "profile own phone update allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "profile own created_at update deny",
+        "passed": true,
+        "actual": "deny",
+        "errorCode": "42501"
+      },
+      {
+        "name": "profile own updated_at update deny",
+        "passed": true,
+        "actual": "deny",
+        "errorCode": "42501"
+      },
+      {
+        "name": "profile own id update deny",
+        "passed": true,
+        "actual": "deny",
+        "errorCode": "42501"
+      },
+      {
+        "name": "profile other update deny",
+        "passed": true,
+        "actual": "deny"
+      },
+      {
+        "name": "consent own select allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "consent other select deny",
+        "passed": true,
+        "actual": "deny"
+      },
+      {
+        "name": "rate limits client select deny",
+        "passed": true,
+        "actual": "deny"
+      },
+      {
+        "name": "rate limits client insert deny",
+        "passed": true,
+        "actual": "deny",
+        "errorCode": "42501"
+      },
+      {
+        "name": "anon has_role deny",
+        "passed": true,
+        "actual": "deny",
+        "errorCode": "42501"
+      },
+      {
+        "name": "client has_role self allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "client has_role other deny",
+        "passed": true,
+        "actual": "deny"
+      },
+      {
+        "name": "client is_project_member self allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "client is_project_member other deny",
+        "passed": true,
+        "actual": "deny"
+      },
+      {
+        "name": "admin projects insert allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin projects select allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin projects update allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin project_members insert allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin project_members select allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin project_members update allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin project_stages insert allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin project_stages select allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin project_stages update allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin project_documents insert allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin project_documents select allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin project_documents update allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin project_documents delete allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin project_stages delete allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin project_members delete allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "admin projects delete allow",
+        "passed": true,
+        "actual": "allow"
+      }
+    ]
+  },
+  "profileColumnPermissions": {
+    "executed": true,
+    "passed": true,
+    "failed": 0,
+    "results": [
+      {
+        "name": "profile own display_name update allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "profile own phone update allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "profile own created_at update deny",
+        "passed": true,
+        "actual": "deny",
+        "errorCode": "42501"
+      },
+      {
+        "name": "profile own updated_at update deny",
+        "passed": true,
+        "actual": "deny",
+        "errorCode": "42501"
+      },
+      {
+        "name": "profile own id update deny",
+        "passed": true,
+        "actual": "deny",
+        "errorCode": "42501"
+      },
+      {
+        "name": "profile other update deny",
+        "passed": true,
+        "actual": "deny"
+      }
+    ]
+  },
+  "securityDefiner": {
+    "executed": true,
+    "passed": true,
+    "failed": 0,
+    "results": [
+      {
+        "name": "anon has_role deny",
+        "passed": true,
+        "actual": "deny",
+        "errorCode": "42501"
+      },
+      {
+        "name": "client has_role self allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "client has_role other deny",
+        "passed": true,
+        "actual": "deny"
+      },
+      {
+        "name": "client is_project_member self allow",
+        "passed": true,
+        "actual": "allow"
+      },
+      {
+        "name": "client is_project_member other deny",
+        "passed": true,
+        "actual": "deny"
+      }
+    ]
+  },
+  "testInfrastructure": {
+    "testFunctionDeployed": false,
+    "debugFunctionDeployed": false,
+    "testOnlyRpcExists": false,
+    "testSecretsActive": false,
+    "remainingTestRows": 0,
+    "remainingTestUsers": 0,
+    "remainingTestStorageObjects": 0
+  }
+}
