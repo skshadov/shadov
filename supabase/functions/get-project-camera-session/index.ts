@@ -1,6 +1,7 @@
 /**
- * Stage 4 — viewer-сессия камеры. Никогда не возвращает RTSP/логин/пароль.
- * На этапе 4 реальный поставщик не подключён — ответ всегда camera_not_configured.
+ * Stage 4B — viewer-сессия камеры. Никогда не возвращает RTSP/логин/пароль.
+ * Чужие / несуществующие / некорректные UUID → camera_not_found (404).
+ * Собственная камера без источника → camera_not_configured (200).
  */
 // deno-lint-ignore-file no-explicit-any
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
