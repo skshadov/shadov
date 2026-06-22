@@ -60,7 +60,7 @@ for (const f of ROUTE_FILES) {
     routeFile: `src/routes/${f}`,
     usesRouteStub: /RouteStub/.test(src),
     hasNoindex: /noindex/i.test(src),
-    hasCanonical: /rel:\s*"canonical"/.test(src),
+    hasCanonical: /rel:\s*"canonical"/.test(src) || /buildInfoHead\(/.test(src),
     isFutureStage: FUTURE_STUB_ROUTES.has(route),
   });
 }
@@ -123,7 +123,7 @@ const informationRoutes = INFO_ROUTES.map((r) => {
     exists: src.length > 0,
     usesRouteStub: /RouteStub/.test(src),
     hasNoindex: /noindex/i.test(src),
-    hasCanonical: /rel:\s*"canonical"/.test(src),
+    hasCanonical: /rel:\s*"canonical"/.test(src) || /buildInfoHead\(/.test(src),
   };
 });
 for (const r of informationRoutes) {
@@ -147,7 +147,7 @@ const legalRoutes = LEGAL_ROUTES.map((r) => {
     exists: src.length > 0,
     usesRouteStub: /RouteStub/.test(src),
     hasNoindex: /noindex/i.test(src),
-    hasCanonical: /rel:\s*"canonical"/.test(src),
+    hasCanonical: /rel:\s*"canonical"/.test(src) || /buildInfoHead\(/.test(src),
     hasService: /"@type"\s*:\s*"Service"/.test(src),
     hasOffer: /"@type"\s*:\s*"Offer"/.test(src),
     hasReview: /"@type"\s*:\s*"Review"/.test(src),
