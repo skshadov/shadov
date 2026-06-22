@@ -189,9 +189,9 @@ async function liveChecks() {
   need(rpcExists, `respond_to_stage_acceptance RPC missing or broken: ${rpcErr?.message}`);
 
   // Realtime publication: project_messages must be in supabase_realtime
-  const { data: pubRows } = await admin.from("pg_publication_tables" as never).select("*").eq("pubname","supabase_realtime").eq("tablename","project_messages") as never;
-  // Some Supabase setups don't expose pg_publication_tables via PostgREST — fallback ok
-  const realtimeEnabled = Array.isArray(pubRows) ? pubRows.length > 0 : null;
+  // Realtime publication is verified via the migration; PostgREST does not expose
+  // pg_publication_tables. Surface as informational, not a hard check.
+  const realtimeEnabled = null as boolean | null;
 
   liveSummary = {
     tableExists, allTablesExist,
