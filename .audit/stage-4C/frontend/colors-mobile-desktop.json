@@ -1,0 +1,1099 @@
+{
+ "data": {
+  "/": {
+   "mobile": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   },
+   "desktop": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   }
+  },
+  "/prices": {
+   "mobile": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(243, 241, 233)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(104, 115, 108)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   },
+   "desktop": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(243, 241, 233)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(104, 115, 108)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   }
+  },
+  "/kalkulyator-stoimosti": {
+   "mobile": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(243, 241, 233)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgb(193, 161, 102)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   },
+   "desktop": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(243, 241, 233)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgb(193, 161, 102)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   }
+  },
+  "/contacts": {
+   "mobile": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(243, 241, 233)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "oklab(0.724494 0.0120004 0.0849482 / 0.1)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   },
+   "desktop": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(243, 241, 233)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "oklab(0.724494 0.0120004 0.0849482 / 0.1)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   }
+  },
+  "/about": {
+   "mobile": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(243, 241, 233)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   },
+   "desktop": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(243, 241, 233)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   }
+  },
+  "/how-we-work": {
+   "mobile": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(243, 241, 233)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   },
+   "desktop": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(243, 241, 233)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   }
+  },
+  "/stroitelstvo": {
+   "mobile": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(19, 42, 33)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   },
+   "desktop": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(19, 42, 33)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   }
+  },
+  "/remont": {
+   "mobile": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgb(19, 42, 33)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgb(19, 42, 33)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   },
+   "desktop": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgb(19, 42, 33)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgb(19, 42, 33)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   }
+  },
+  "/inzhenernye-sistemy": {
+   "mobile": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgb(193, 161, 102)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(19, 42, 33)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   },
+   "desktop": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgb(193, 161, 102)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(19, 42, 33)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   }
+  },
+  "/portfolio": {
+   "mobile": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(243, 241, 233)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "oklab(0.724494 0.0120004 0.0849482 / 0.1)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   },
+   "desktop": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(0, 0, 0, 0)"
+    },
+    "main": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(243, 241, 233)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h1": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "h2": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgba(0, 0, 0, 0)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "a.text-primary, .text-primary": {
+     "color": "rgb(193, 161, 102)",
+     "bg": "oklab(0.724494 0.0120004 0.0849482 / 0.1)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-primary": {
+     "color": "rgb(26, 20, 8)",
+     "bg": "rgb(193, 161, 102)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    ".bg-card": {
+     "color": "rgb(23, 32, 25)",
+     "bg": "rgb(255, 255, 255)",
+     "border": "rgb(217, 222, 217)"
+    },
+    ".text-muted-foreground": {
+     "color": "rgb(170, 181, 174)",
+     "bg": "rgb(7, 23, 16)",
+     "border": "oklab(0.999994 0.0000455678 0.0000200868 / 0.0486274)"
+    }
+   }
+  },
+  "/login": {
+   "mobile": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": null,
+    "main": null,
+    "footer": null,
+    "h1": null,
+    "h2": null,
+    "a.text-primary, .text-primary": null,
+    ".bg-primary": null,
+    ".bg-card": null,
+    ".text-muted-foreground": null
+   },
+   "desktop": {
+    "body": {
+     "color": "rgb(247, 248, 245)",
+     "bg": "rgb(11, 31, 24)",
+     "border": "rgba(255, 255, 255, 0.12)"
+    },
+    "header": null,
+    "main": null,
+    "footer": null,
+    "h1": null,
+    "h2": null,
+    "a.text-primary, .text-primary": null,
+    ".bg-primary": null,
+    ".bg-card": null,
+    ".text-muted-foreground": null
+   }
+  }
+ },
+ "diffs": []
+}
