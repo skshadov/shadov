@@ -1,0 +1,1 @@
+{"functions": ["public.set_updated_at()","public.handle_new_user()","public.has_role(uuid, app_role)","public.is_project_member(uuid, uuid)"]}

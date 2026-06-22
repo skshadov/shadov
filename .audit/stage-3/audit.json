@@ -1,0 +1,17 @@
+54 |   }
+55 | }
+56 | 
+57 | // Routes
+58 | const routeFile = (p: string) => read(p);
+59 | const loginSrc = routeFile("src/routes/login.tsx");
+                      ^
+ENOENT: no such file or directory, open '/dev-server/.audit/stage-3/src/routes/login.tsx'
+    path: "/dev-server/.audit/stage-3/src/routes/login.tsx",
+ syscall: "open",
+   errno: -2,
+    code: "ENOENT"
+
+      at /dev-server/src/lib/audit-stage-3.ts:59:18
+      at loadAndEvaluateModule (2:1)
+
+Bun v1.3.3 (Linux x64)

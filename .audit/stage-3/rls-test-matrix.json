@@ -1,0 +1,5 @@
+{
+ "anonymous": {"profiles_select": "deny", "user_roles_select": "deny", "estimate_requests_select": "deny", "estimate_requests_insert": "deny", "projects_select": "deny", "project_documents_select": "deny", "storage_select": "deny"},
+ "clientA": {"own_profile_select": "allow", "own_profile_update": "allow", "other_profile_select": "deny", "own_roles_select": "allow", "role_insert_admin": "deny", "own_request_select": "allow", "clientB_request_select": "deny", "own_project_select_as_member": "allow", "clientB_project_select": "deny", "project_member_insert": "deny", "project_stage_update": "deny", "document_storage_direct_upload": "deny"},
+ "admin": {"profiles_select": "allow", "requests_select": "allow", "requests_status_update": "allow", "projects_crud": "allow", "project_members_crud": "allow", "stages_crud": "allow", "documents_crud": "allow"}
+}

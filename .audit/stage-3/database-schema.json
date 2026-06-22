@@ -1,0 +1,1 @@
+{"tables": ["public.user_roles","public.profiles","public.estimate_requests","public.consent_records","public.submission_rate_limits","public.projects","public.project_members","public.project_stages","public.project_documents"], "enums": ["public.app_role"]}
