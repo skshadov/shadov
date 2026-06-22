@@ -254,7 +254,6 @@ await liveChecks();
 if ((liveSummary as { skipped?: boolean }).skipped) {
   warnings.push("live database checks skipped — re-run with SUPABASE_SERVICE_ROLE_KEY in env");
 }
-}
 
 writeJson("database-live-schema.json", liveSummary);
 writeJson("demo-project-audit.json", demoSummary);
