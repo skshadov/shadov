@@ -1,0 +1,71 @@
+{
+  "runId": "24276e27-8a33-44de-84f2-080b45fd887a",
+  "startedAt": "2026-06-22T15:32:08.217Z",
+  "finishedAt": "2026-06-22T15:32:25.487Z",
+  "deployedVersion": "stage4c-orchestrator-v1",
+  "executed": true,
+  "scenarios": [
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "acceptances/anon_select",
+      "table": "project_stage_acceptances",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "acceptances/client_select_own",
+      "table": "project_stage_acceptances",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "acceptances/client_foreign",
+      "table": "project_stage_acceptances",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "update",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "acceptances/client_direct_update",
+      "table": "project_stage_acceptances",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientB",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "acceptances/clientB_foreign",
+      "table": "project_stage_acceptances",
+      "userIdHash": "3e6673500b70cd2b"
+    }
+  ],
+  "passed": true,
+  "failed": 0
+}

@@ -1,0 +1,1106 @@
+{
+  "cleanup": {
+    "finishedAt": "2026-06-22T15:32:25.487Z",
+    "passed": true,
+    "remainingTestProjects": 0,
+    "remainingTestUsers": 0,
+    "startedAt": "2026-06-22T15:32:24.810Z"
+  },
+  "deployedVersion": "stage4c-orchestrator-v1",
+  "edgeTests": {
+    "cameras": [
+      {
+        "body": {
+          "code": "camera_not_configured",
+          "success": false
+        },
+        "expectedCode": "camera_not_configured",
+        "expectedStatus": 200,
+        "httpStatus": 200,
+        "passed": true,
+        "scenario": "own_no_source_camera_not_configured"
+      },
+      {
+        "body": {
+          "code": "camera_not_found",
+          "success": false
+        },
+        "expectedCode": "camera_not_found",
+        "expectedStatus": 404,
+        "httpStatus": 404,
+        "passed": true,
+        "scenario": "foreign_404"
+      },
+      {
+        "body": {
+          "code": "camera_not_found",
+          "success": false
+        },
+        "expectedCode": "camera_not_found",
+        "expectedStatus": 404,
+        "httpStatus": 404,
+        "passed": true,
+        "scenario": "random_uuid_404"
+      },
+      {
+        "body": {
+          "code": "camera_not_found",
+          "success": false
+        },
+        "expectedCode": "camera_not_found",
+        "expectedStatus": 404,
+        "httpStatus": 404,
+        "passed": true,
+        "scenario": "invalid_uuid_404"
+      },
+      {
+        "body": {
+          "code": "unauthorized",
+          "success": false
+        },
+        "expectedCode": "unauthorized",
+        "expectedStatus": 401,
+        "httpStatus": 401,
+        "passed": true,
+        "scenario": "anon_401"
+      },
+      {
+        "body": {
+          "code": "unauthorized",
+          "success": false
+        },
+        "expectedCode": null,
+        "expectedStatus": 401,
+        "httpStatus": 401,
+        "passed": true,
+        "scenario": "bad_jwt_401"
+      }
+    ],
+    "documents": [
+      {
+        "body": {
+          "expires_in": 300,
+          "url": "https://shbgsrryredmememwgtn.supabase.co/storage/v1/object/sign/project-documents/09b54114-4ebb-4d53-8175-afd10931f682/visible-c3b5ac30-c5f5-4e42-9938-75feaec5dd75.txt?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iMTRkOGIwMS02YWQ2LTQ4NzMtYWEyNy01ZjVjMTZlMmM1YjIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0LWRvY3VtZW50cy8wOWI1NDExNC00ZWJiLTRkNTMtODE3NS1hZmQxMDkzMWY2ODIvdmlzaWJsZS1jM2I1YWMzMC1jNWY1LTRlNDItOTkzOC03NWZlYWVjNWRkNzUudHh0Iiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4MjE0MjMzNSwiZXhwIjoxNzgyMTQyNjM1fQ.-DxBGVIIpHeAVkYuNkCITmMINj3eC4j0WcHR_2AmqcQ"
+        },
+        "expectedCode": null,
+        "expectedStatus": 200,
+        "httpStatus": 200,
+        "passed": true,
+        "scenario": "visible_own_200"
+      },
+      {
+        "body": {
+          "code": "document_not_found",
+          "error": "document_not_found"
+        },
+        "expectedCode": "document_not_found",
+        "expectedStatus": 404,
+        "httpStatus": 404,
+        "passed": true,
+        "scenario": "hidden_own_404"
+      },
+      {
+        "body": {
+          "code": "document_not_found",
+          "error": "document_not_found"
+        },
+        "expectedCode": "document_not_found",
+        "expectedStatus": 404,
+        "httpStatus": 404,
+        "passed": true,
+        "scenario": "foreign_404"
+      },
+      {
+        "body": {
+          "code": "document_not_found",
+          "error": "document_not_found"
+        },
+        "expectedCode": "document_not_found",
+        "expectedStatus": 404,
+        "httpStatus": 404,
+        "passed": true,
+        "scenario": "random_uuid_404"
+      },
+      {
+        "body": {
+          "code": "document_not_found",
+          "error": "document_not_found"
+        },
+        "expectedCode": "document_not_found",
+        "expectedStatus": 404,
+        "httpStatus": 404,
+        "passed": true,
+        "scenario": "invalid_uuid_404"
+      },
+      {
+        "body": {
+          "error": "unauthorized"
+        },
+        "expectedCode": "unauthorized",
+        "expectedStatus": 401,
+        "httpStatus": 401,
+        "passed": true,
+        "scenario": "anon_401"
+      },
+      {
+        "body": {
+          "error": "unauthorized"
+        },
+        "expectedCode": null,
+        "expectedStatus": 401,
+        "httpStatus": 401,
+        "passed": true,
+        "scenario": "bad_jwt_401"
+      }
+    ]
+  },
+  "edge_cameras_failed": 0,
+  "edge_cameras_total": 6,
+  "edge_documents_failed": 0,
+  "edge_documents_total": 7,
+  "executed": true,
+  "finishedAt": "2026-06-22T15:32:25.487Z",
+  "realtimeTests": {
+    "notes": "smoke-only: clientA insert visible via own select; full subscribe-flow runs in playwright session",
+    "passed": true
+  },
+  "rls": [
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "projects/anon_select",
+      "table": "projects",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "documents/anon_select",
+      "table": "project_documents",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/anon_select",
+      "table": "project_cameras",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 400,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": "42703",
+      "scenario": "camera_sources/anon_select",
+      "table": "project_camera_sources",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "payments/anon_select",
+      "table": "project_payments",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/anon_select",
+      "table": "project_messages",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_reports/anon_select",
+      "table": "project_daily_reports",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_report_docs/anon_select",
+      "table": "project_daily_report_documents",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "stages/anon_select",
+      "table": "project_stages",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "acceptances/anon_select",
+      "table": "project_stage_acceptances",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "members/anon_select",
+      "table": "project_members",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "user_roles/anon_select",
+      "table": "user_roles",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "profiles/anon_select",
+      "table": "profiles",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "projects/client_member_select",
+      "table": "projects",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "projects/client_foreign_select",
+      "table": "projects",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "documents/visible_own_client",
+      "table": "project_documents",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "documents/hidden_own_client",
+      "table": "project_documents",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "documents/foreign_client",
+      "table": "project_documents",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 403,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": "42501",
+      "scenario": "documents/client_insert",
+      "table": "project_documents",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "update",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "documents/client_update",
+      "table": "project_documents",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "delete",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "documents/client_delete",
+      "table": "project_documents",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/client_select_own",
+      "table": "project_cameras",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/client_foreign",
+      "table": "project_cameras",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 403,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": "42501",
+      "scenario": "cameras/client_insert",
+      "table": "project_cameras",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "update",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/client_update",
+      "table": "project_cameras",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "delete",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/client_delete",
+      "table": "project_cameras",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "camera_sources/client_select",
+      "table": "project_camera_sources",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "payments/client_select_own",
+      "table": "project_payments",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "payments/client_foreign",
+      "table": "project_payments",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 403,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": "42501",
+      "scenario": "payments/client_insert",
+      "table": "project_payments",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "update",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "payments/client_update",
+      "table": "project_payments",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "delete",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "payments/client_delete",
+      "table": "project_payments",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/client_select_own",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/client_foreign",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 201,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/client_insert_own",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 403,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": "42501",
+      "scenario": "messages/client_insert_spoof",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 403,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": "42501",
+      "scenario": "messages/client_insert_system",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "update",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/client_update",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "delete",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/client_delete",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_reports/client_published_own",
+      "table": "project_daily_reports",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_reports/client_draft_own",
+      "table": "project_daily_reports",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_reports/client_foreign",
+      "table": "project_daily_reports",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_report_docs/client_published_own",
+      "table": "project_daily_report_documents",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_report_docs/client_draft_own",
+      "table": "project_daily_report_documents",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 403,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": "42501",
+      "scenario": "daily_report_docs/client_insert",
+      "table": "project_daily_report_documents",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "acceptances/client_select_own",
+      "table": "project_stage_acceptances",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "acceptances/client_foreign",
+      "table": "project_stage_acceptances",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "update",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "acceptances/client_direct_update",
+      "table": "project_stage_acceptances",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "update",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "stages/client_direct_update",
+      "table": "project_stages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "user_roles/client_self",
+      "table": "user_roles",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "user_roles/client_other",
+      "table": "user_roles",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 403,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": "42501",
+      "scenario": "user_roles/client_promote",
+      "table": "user_roles",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientB",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "projects/clientB_member_select",
+      "table": "projects",
+      "userIdHash": "3e6673500b70cd2b"
+    },
+    {
+      "actor": "clientB",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "projects/clientB_foreign",
+      "table": "projects",
+      "userIdHash": "3e6673500b70cd2b"
+    },
+    {
+      "actor": "clientB",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "documents/clientB_foreign",
+      "table": "project_documents",
+      "userIdHash": "3e6673500b70cd2b"
+    },
+    {
+      "actor": "clientB",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/clientB_foreign",
+      "table": "project_cameras",
+      "userIdHash": "3e6673500b70cd2b"
+    },
+    {
+      "actor": "clientB",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "payments/clientB_foreign",
+      "table": "project_payments",
+      "userIdHash": "3e6673500b70cd2b"
+    },
+    {
+      "actor": "clientB",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/clientB_foreign",
+      "table": "project_messages",
+      "userIdHash": "3e6673500b70cd2b"
+    },
+    {
+      "actor": "clientB",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "acceptances/clientB_foreign",
+      "table": "project_stage_acceptances",
+      "userIdHash": "3e6673500b70cd2b"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "projects/admin_select",
+      "table": "projects",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "documents/admin_select",
+      "table": "project_documents",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 201,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "documents/admin_insert",
+      "table": "project_documents",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "update",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "documents/admin_update",
+      "table": "project_documents",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "delete",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "documents/admin_delete",
+      "table": "project_documents",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 201,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/admin_insert",
+      "table": "project_cameras",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 201,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "camera_sources/admin_insert",
+      "table": "project_camera_sources",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "camera_sources/admin_select",
+      "table": "project_camera_sources",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 201,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "payments/admin_insert",
+      "table": "project_payments",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 201,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/admin_insert_system",
+      "table": "project_messages",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_reports/admin_select_draft",
+      "table": "project_daily_reports",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_report_docs/admin_select",
+      "table": "project_daily_report_documents",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "update",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "stages/admin_update",
+      "table": "project_stages",
+      "userIdHash": "a2ab0a307eb541f7"
+    }
+  ],
+  "rls_failed": 0,
+  "rls_passed": 72,
+  "rls_total": 72,
+  "rpcTests": [
+    {
+      "actor": "clientA",
+      "count": 1,
+      "httpStatus": 200,
+      "onlyOwn": true,
+      "passed": true,
+      "test": "get_my_projects/clientA_only_own"
+    },
+    {
+      "actor": "clientB",
+      "count": 1,
+      "httpStatus": 200,
+      "onlyOwn": true,
+      "passed": true,
+      "test": "get_my_projects/clientB_only_own"
+    },
+    {
+      "actor": "adminTest",
+      "count": 0,
+      "httpStatus": 200,
+      "passed": true,
+      "test": "get_my_projects/admin_without_membership_empty"
+    },
+    {
+      "actor": "clientA",
+      "httpStatus": 400,
+      "passed": true,
+      "test": "respond_to_stage_acceptance/short_comment_denied"
+    },
+    {
+      "actor": "clientB",
+      "httpStatus": 400,
+      "passed": true,
+      "test": "respond_to_stage_acceptance/foreign_denied"
+    },
+    {
+      "actor": "clientA",
+      "httpStatus": 200,
+      "passed": true,
+      "test": "respond_to_stage_acceptance/changes_ok"
+    },
+    {
+      "actor": "clientA",
+      "httpStatus": 200,
+      "passed": true,
+      "test": "respond_to_stage_acceptance/accepted_ok"
+    },
+    {
+      "actor": "clientA",
+      "httpStatus": 400,
+      "passed": true,
+      "test": "respond_to_stage_acceptance/idempotent_denied"
+    }
+  ],
+  "rpc_failed": 0,
+  "rpc_passed": 8,
+  "rpc_total": 8,
+  "runId": "24276e27-8a33-44de-84f2-080b45fd887a",
+  "signedUrlExpiryTest": {
+    "executed": true,
+    "expiredDownloadDenied": true,
+    "expiredStatus": 400,
+    "immediateDownloadAllowed": true,
+    "immediateStatus": 200,
+    "passed": true,
+    "productionTtl": 300,
+    "testTtl": 2
+  },
+  "startedAt": "2026-06-22T15:32:08.217Z"
+}

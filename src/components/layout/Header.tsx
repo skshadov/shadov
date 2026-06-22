@@ -40,22 +40,22 @@ export function Header() {
       >
         <TopInfoBar />
         <div
-          className={`container-page flex items-center justify-between gap-4 transition-[height] ${
+          className={`container-page flex min-w-0 items-center justify-between gap-3 transition-[height] ${
             scrolled ? "h-14" : "h-16 md:h-20"
           }`}
         >
-          <Logo variant="full" className="text-foreground" />
+          <Logo variant="full" className="shrink-0 text-foreground" />
 
           <DesktopNavigation />
 
-          <div className="flex items-center gap-2">
-            <Button asChild variant="ghost" className="hidden md:inline-flex">
+          <div className="flex shrink-0 items-center gap-2">
+            <Button asChild variant="ghost" size="sm" className="hidden md:inline-flex">
               <Link to="/login">
-                <LogIn aria-hidden="true" className="mr-1 h-4 w-4" />
-                Личный кабинет
+                <LogIn aria-hidden="true" className="h-4 w-4 xl:mr-1" />
+                <span className="hidden xl:inline">Личный кабинет</span>
               </Link>
             </Button>
-            <Button asChild className="hidden md:inline-flex">
+            <Button asChild size="sm" className="hidden md:inline-flex">
               <Link to="/" hash="estimate">
                 Получить расчёт
                 <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4" />
