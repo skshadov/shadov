@@ -139,38 +139,218 @@ export type Database = {
         }
         Relationships: []
       }
+      project_camera_sources: {
+        Row: {
+          camera_id: string
+          configuration_reference: string | null
+          created_at: string
+          provider: string
+          provider_camera_id: string
+          updated_at: string
+        }
+        Insert: {
+          camera_id: string
+          configuration_reference?: string | null
+          created_at?: string
+          provider: string
+          provider_camera_id: string
+          updated_at?: string
+        }
+        Update: {
+          camera_id?: string
+          configuration_reference?: string | null
+          created_at?: string
+          provider?: string
+          provider_camera_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_camera_sources_camera_id_fkey"
+            columns: ["camera_id"]
+            isOneToOne: true
+            referencedRelation: "project_cameras"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_cameras: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          last_checked_at: string | null
+          name: string
+          project_id: string
+          sort_order: number
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          last_checked_at?: string | null
+          name: string
+          project_id: string
+          sort_order?: number
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          last_checked_at?: string | null
+          name?: string
+          project_id?: string
+          sort_order?: number
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_cameras_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_daily_report_documents: {
+        Row: {
+          created_at: string
+          document_id: string
+          report_id: string
+          sort_order: number
+        }
+        Insert: {
+          created_at?: string
+          document_id: string
+          report_id: string
+          sort_order?: number
+        }
+        Update: {
+          created_at?: string
+          document_id?: string
+          report_id?: string
+          sort_order?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_daily_report_documents_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "project_documents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_daily_report_documents_report_id_fkey"
+            columns: ["report_id"]
+            isOneToOne: false
+            referencedRelation: "project_daily_reports"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_daily_reports: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          id: string
+          issues: string[]
+          next_steps: string[]
+          project_id: string
+          published_at: string | null
+          report_date: string
+          summary: string
+          title: string
+          updated_at: string
+          work_completed: string[]
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          issues?: string[]
+          next_steps?: string[]
+          project_id: string
+          published_at?: string | null
+          report_date: string
+          summary: string
+          title: string
+          updated_at?: string
+          work_completed?: string[]
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          issues?: string[]
+          next_steps?: string[]
+          project_id?: string
+          published_at?: string | null
+          report_date?: string
+          summary?: string
+          title?: string
+          updated_at?: string
+          work_completed?: string[]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_daily_reports_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       project_documents: {
         Row: {
           created_at: string
+          description: string | null
           document_category: string | null
+          document_date: string | null
           file_name: string
           id: string
+          is_visible_to_client: boolean
           mime_type: string
           project_id: string
           size_bytes: number
           storage_path: string
+          title: string | null
           uploaded_by: string | null
         }
         Insert: {
           created_at?: string
+          description?: string | null
           document_category?: string | null
+          document_date?: string | null
           file_name: string
           id?: string
+          is_visible_to_client?: boolean
           mime_type: string
           project_id: string
           size_bytes: number
           storage_path: string
+          title?: string | null
           uploaded_by?: string | null
         }
         Update: {
           created_at?: string
+          description?: string | null
           document_category?: string | null
+          document_date?: string | null
           file_name?: string
           id?: string
+          is_visible_to_client?: boolean
           mime_type?: string
           project_id?: string
           size_bytes?: number
           storage_path?: string
+          title?: string | null
           uploaded_by?: string | null
         }
         Relationships: [
@@ -208,6 +388,151 @@ export type Database = {
             columns: ["project_id"]
             isOneToOne: false
             referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_messages: {
+        Row: {
+          body: string
+          created_at: string
+          id: string
+          message_type: string
+          project_id: string
+          sender_id: string | null
+        }
+        Insert: {
+          body: string
+          created_at?: string
+          id?: string
+          message_type?: string
+          project_id: string
+          sender_id?: string | null
+        }
+        Update: {
+          body?: string
+          created_at?: string
+          id?: string
+          message_type?: string
+          project_id?: string
+          sender_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_messages_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_payments: {
+        Row: {
+          amount: number | null
+          created_at: string
+          currency: string
+          description: string | null
+          due_date: string | null
+          id: string
+          paid_at: string | null
+          project_id: string
+          stage_id: string | null
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          amount?: number | null
+          created_at?: string
+          currency?: string
+          description?: string | null
+          due_date?: string | null
+          id?: string
+          paid_at?: string | null
+          project_id: string
+          stage_id?: string | null
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          amount?: number | null
+          created_at?: string
+          currency?: string
+          description?: string | null
+          due_date?: string | null
+          id?: string
+          paid_at?: string | null
+          project_id?: string
+          stage_id?: string | null
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_payments_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "project_payments_stage_id_fkey"
+            columns: ["stage_id"]
+            isOneToOne: false
+            referencedRelation: "project_stages"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      project_stage_acceptances: {
+        Row: {
+          attempt_number: number
+          client_comment: string | null
+          created_at: string
+          id: string
+          requested_at: string
+          requested_by: string | null
+          responded_at: string | null
+          responded_by: string | null
+          stage_id: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          attempt_number: number
+          client_comment?: string | null
+          created_at?: string
+          id?: string
+          requested_at?: string
+          requested_by?: string | null
+          responded_at?: string | null
+          responded_by?: string | null
+          stage_id: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          attempt_number?: number
+          client_comment?: string | null
+          created_at?: string
+          id?: string
+          requested_at?: string
+          requested_by?: string | null
+          responded_at?: string | null
+          responded_by?: string | null
+          stage_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_stage_acceptances_stage_id_fkey"
+            columns: ["stage_id"]
+            isOneToOne: false
+            referencedRelation: "project_stages"
             referencedColumns: ["id"]
           },
         ]
@@ -270,6 +595,7 @@ export type Database = {
           created_at: string
           description: string | null
           id: string
+          is_demo: boolean
           status: string
           title: string
           updated_at: string
@@ -278,6 +604,7 @@ export type Database = {
           created_at?: string
           description?: string | null
           id?: string
+          is_demo?: boolean
           status?: string
           title: string
           updated_at?: string
@@ -286,6 +613,7 @@ export type Database = {
           created_at?: string
           description?: string | null
           id?: string
+          is_demo?: boolean
           status?: string
           title?: string
           updated_at?: string
@@ -362,6 +690,15 @@ export type Database = {
       is_project_member: {
         Args: { _project_id: string; _user_id: string }
         Returns: boolean
+      }
+      respond_to_stage_acceptance: {
+        Args: { acceptance_id: string; comment: string; decision: string }
+        Returns: {
+          acceptance_id_out: string
+          stage_id_out: string
+          stage_status_out: string
+          status_out: string
+        }[]
       }
     }
     Enums: {
