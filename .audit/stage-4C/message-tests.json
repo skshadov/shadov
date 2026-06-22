@@ -1,0 +1,131 @@
+{
+  "runId": "24276e27-8a33-44de-84f2-080b45fd887a",
+  "startedAt": "2026-06-22T15:32:08.217Z",
+  "finishedAt": "2026-06-22T15:32:25.487Z",
+  "deployedVersion": "stage4c-orchestrator-v1",
+  "executed": true,
+  "scenarios": [
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/anon_select",
+      "table": "project_messages",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/client_select_own",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/client_foreign",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 201,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/client_insert_own",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 403,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": "42501",
+      "scenario": "messages/client_insert_spoof",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 403,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": "42501",
+      "scenario": "messages/client_insert_system",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "update",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/client_update",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "delete",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/client_delete",
+      "table": "project_messages",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientB",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/clientB_foreign",
+      "table": "project_messages",
+      "userIdHash": "3e6673500b70cd2b"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 201,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "messages/admin_insert_system",
+      "table": "project_messages",
+      "userIdHash": "a2ab0a307eb541f7"
+    }
+  ],
+  "passed": true,
+  "failed": 0
+}

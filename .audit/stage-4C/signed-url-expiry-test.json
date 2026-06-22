@@ -1,0 +1,14 @@
+{
+  "executed": true,
+  "expiredDownloadDenied": true,
+  "expiredStatus": 400,
+  "immediateDownloadAllowed": true,
+  "immediateStatus": 200,
+  "passed": true,
+  "productionTtl": 300,
+  "testTtl": 2,
+  "runId": "24276e27-8a33-44de-84f2-080b45fd887a",
+  "startedAt": "2026-06-22T15:32:08.217Z",
+  "finishedAt": "2026-06-22T15:32:25.487Z",
+  "deployedVersion": "stage4c-orchestrator-v1"
+}

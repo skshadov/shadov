@@ -1,0 +1,223 @@
+{
+  "runId": "24276e27-8a33-44de-84f2-080b45fd887a",
+  "startedAt": "2026-06-22T15:32:08.217Z",
+  "finishedAt": "2026-06-22T15:32:25.487Z",
+  "deployedVersion": "stage4c-orchestrator-v1",
+  "executed": true,
+  "rlsScenarios": [
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/anon_select",
+      "table": "project_cameras",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 400,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": "42703",
+      "scenario": "camera_sources/anon_select",
+      "table": "project_camera_sources",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/client_select_own",
+      "table": "project_cameras",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/client_foreign",
+      "table": "project_cameras",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 403,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": "42501",
+      "scenario": "cameras/client_insert",
+      "table": "project_cameras",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "update",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/client_update",
+      "table": "project_cameras",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "delete",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/client_delete",
+      "table": "project_cameras",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "camera_sources/client_select",
+      "table": "project_camera_sources",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientB",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/clientB_foreign",
+      "table": "project_cameras",
+      "userIdHash": "3e6673500b70cd2b"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 201,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "cameras/admin_insert",
+      "table": "project_cameras",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 201,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "camera_sources/admin_insert",
+      "table": "project_camera_sources",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "camera_sources/admin_select",
+      "table": "project_camera_sources",
+      "userIdHash": "a2ab0a307eb541f7"
+    }
+  ],
+  "edgeFunctionTests": [
+    {
+      "body": {
+        "code": "camera_not_configured",
+        "success": false
+      },
+      "expectedCode": "camera_not_configured",
+      "expectedStatus": 200,
+      "httpStatus": 200,
+      "passed": true,
+      "scenario": "own_no_source_camera_not_configured"
+    },
+    {
+      "body": {
+        "code": "camera_not_found",
+        "success": false
+      },
+      "expectedCode": "camera_not_found",
+      "expectedStatus": 404,
+      "httpStatus": 404,
+      "passed": true,
+      "scenario": "foreign_404"
+    },
+    {
+      "body": {
+        "code": "camera_not_found",
+        "success": false
+      },
+      "expectedCode": "camera_not_found",
+      "expectedStatus": 404,
+      "httpStatus": 404,
+      "passed": true,
+      "scenario": "random_uuid_404"
+    },
+    {
+      "body": {
+        "code": "camera_not_found",
+        "success": false
+      },
+      "expectedCode": "camera_not_found",
+      "expectedStatus": 404,
+      "httpStatus": 404,
+      "passed": true,
+      "scenario": "invalid_uuid_404"
+    },
+    {
+      "body": {
+        "code": "unauthorized",
+        "success": false
+      },
+      "expectedCode": "unauthorized",
+      "expectedStatus": 401,
+      "httpStatus": 401,
+      "passed": true,
+      "scenario": "anon_401"
+    },
+    {
+      "body": {
+        "code": "unauthorized",
+        "success": false
+      },
+      "expectedCode": null,
+      "expectedStatus": 401,
+      "httpStatus": 401,
+      "passed": true,
+      "scenario": "bad_jwt_401"
+    }
+  ],
+  "passed": true,
+  "failed": 0
+}

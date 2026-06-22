@@ -1,0 +1,131 @@
+{
+  "runId": "24276e27-8a33-44de-84f2-080b45fd887a",
+  "startedAt": "2026-06-22T15:32:08.217Z",
+  "finishedAt": "2026-06-22T15:32:25.487Z",
+  "deployedVersion": "stage4c-orchestrator-v1",
+  "executed": true,
+  "scenarios": [
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_reports/anon_select",
+      "table": "project_daily_reports",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "anonymous",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_report_docs/anon_select",
+      "table": "project_daily_report_documents",
+      "userIdHash": "12b9377cbe7e5c94"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_reports/client_published_own",
+      "table": "project_daily_reports",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_reports/client_draft_own",
+      "table": "project_daily_reports",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_reports/client_foreign",
+      "table": "project_daily_reports",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_report_docs/client_published_own",
+      "table": "project_daily_report_documents",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_report_docs/client_draft_own",
+      "table": "project_daily_report_documents",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "clientA",
+      "actual": "deny",
+      "expected": "deny",
+      "httpStatus": 403,
+      "operation": "insert",
+      "passed": true,
+      "postgresCode": "42501",
+      "scenario": "daily_report_docs/client_insert",
+      "table": "project_daily_report_documents",
+      "userIdHash": "53102389d522ebd7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_reports/admin_select_draft",
+      "table": "project_daily_reports",
+      "userIdHash": "a2ab0a307eb541f7"
+    },
+    {
+      "actor": "adminTest",
+      "actual": "allow",
+      "expected": "allow",
+      "httpStatus": 200,
+      "operation": "select",
+      "passed": true,
+      "postgresCode": null,
+      "scenario": "daily_report_docs/admin_select",
+      "table": "project_daily_report_documents",
+      "userIdHash": "a2ab0a307eb541f7"
+    }
+  ],
+  "passed": true,
+  "failed": 0
+}

@@ -1,0 +1,34 @@
+{
+  "runId": "24276e27-8a33-44de-84f2-080b45fd887a",
+  "startedAt": "2026-06-22T15:32:08.217Z",
+  "finishedAt": "2026-06-22T15:32:25.487Z",
+  "deployedVersion": "stage4c-orchestrator-v1",
+  "executed": true,
+  "tests": [
+    {
+      "actor": "clientA",
+      "count": 1,
+      "httpStatus": 200,
+      "onlyOwn": true,
+      "passed": true,
+      "test": "get_my_projects/clientA_only_own"
+    },
+    {
+      "actor": "clientB",
+      "count": 1,
+      "httpStatus": 200,
+      "onlyOwn": true,
+      "passed": true,
+      "test": "get_my_projects/clientB_only_own"
+    },
+    {
+      "actor": "adminTest",
+      "count": 0,
+      "httpStatus": 200,
+      "passed": true,
+      "test": "get_my_projects/admin_without_membership_empty"
+    }
+  ],
+  "passed": true,
+  "failed": 0
+}
