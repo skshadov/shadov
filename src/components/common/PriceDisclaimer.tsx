@@ -21,7 +21,7 @@ export function PriceDisclaimer({ className, showDate = true }: PriceDisclaimerP
         Цены являются ориентировочными, не являются публичной офертой и используются для предварительной оценки бюджета. Точная стоимость определяется после изучения проекта, обследования объекта и подготовки сметы.
       </p>
       {showDate ? (
-        <p className="mt-3 text-xs uppercase tracking-wider text-muted-foreground/80">
+        <p className="mt-3 text-xs uppercase tracking-wider text-muted-foreground">
           Дата актуализации: {PRICES_ACTUAL_DATE}
         </p>
       ) : null}

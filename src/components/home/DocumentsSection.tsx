@@ -40,7 +40,7 @@ export function DocumentsSection() {
               <Icon aria-hidden="true" className="h-5 w-5 text-primary" />
               <p className="mt-3 font-display text-base font-semibold leading-tight">{title}</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
-              <p className="mt-3 text-xs uppercase tracking-wider text-muted-foreground/80">
+              <p className="mt-3 text-xs uppercase tracking-wider text-muted-foreground">
                 Заполняется через административную панель
               </p>
             </li>
