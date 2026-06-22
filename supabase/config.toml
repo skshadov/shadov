@@ -1,1 +1,4 @@
 project_id = "shbgsrryredmememwgtn"
+
+[functions.stage4a-storage-cleanup]
+verify_jwt = false
