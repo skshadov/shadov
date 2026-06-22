@@ -804,7 +804,7 @@
   },
   "regressionChecks": {
     "constructionPages": 18,
-    "repairPages": 10,
+    "repairPages": 11,
     "engineeringPagesInServicePages": 6,
     "pricesRouteExists": true
   },

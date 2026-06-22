@@ -327,17 +327,54 @@ const forbiddenSearch = { matchesOutsideValidator };
 if (matchesOutsideValidator.length) ok(false, `forbiddenSearch: найдено ${matchesOutsideValidator.length}`);
 
 // ── regressionChecks ─────────────────────────────────────────────────
+const repairActive = SERVICE_PAGES.filter((p) => p.category === "repair" && !p.isStub);
+const tileEntries = SERVICE_PAGES.filter((p) => p.slug === "ukladka-plitki");
+const tile = tileEntries[0];
+const tileRouteSrc = readFileSync(resolve(process.cwd(), "src/routes/ukladka-plitki.tsx"), "utf8");
+const tilePage = tile ? {
+  route: tile.route,
+  slug: tile.slug,
+  category: tile.category,
+  existsInServicePages: true,
+  existsInEngineeringPages: ENGINEERING_SERVICE_PAGES.some((p) => p.slug === "ukladka-plitki"),
+  isActiveEngineeringService: false,
+  hasRouteStub: /RouteStub/.test(tileRouteSrc),
+  hasNoindexFollow: /noindex,\s*follow/.test(tileRouteSrc),
+} : null;
+
+const servicePageInventory = {
+  totalServicePages: SERVICE_PAGES.length,
+  engineeringPages: engineeringPages.length,
+  tilePages: tileEntries.length,
+  tilePage,
+};
+
+if (servicePageInventory.totalServicePages !== 35) ok(false, `totalServicePages != 35 (${servicePageInventory.totalServicePages})`);
+if (servicePageInventory.engineeringPages !== 6) ok(false, `engineeringPages != 6`);
+if (servicePageInventory.tilePages !== 1) ok(false, `tilePages != 1`);
+if (!tilePage) ok(false, "/ukladka-plitki не найдена в SERVICE_PAGES");
+else {
+  if (tilePage.route !== "/ukladka-plitki") ok(false, "tilePage.route неверен");
+  if (tilePage.category === "engineering") ok(false, "tilePage.category=engineering запрещено");
+  if (tilePage.existsInEngineeringPages) ok(false, "tile входит в ENGINEERING_SERVICE_PAGES");
+  if (tilePage.isActiveEngineeringService) ok(false, "tile активна как инженерная");
+  if (!tilePage.hasRouteStub) ok(false, "tile route без RouteStub");
+  if (!tilePage.hasNoindexFollow) ok(false, "tile route без noindex, follow");
+}
+
 const regressionChecks = {
   constructionPages: SERVICE_PAGES.filter((p) => p.category === "construction").length,
-  repairPages: SERVICE_PAGES.filter((p) => p.category === "repair").length,
+  repairPages: repairActive.length,
+  tileStubPages: tileEntries.length,
   engineeringPagesInServicePages: engineeringPages.length,
   servicePagesTotal: SERVICE_PAGES.length,
   pricesRouteExists: existsSync(resolve(process.cwd(), "src/routes/prices.tsx")),
 };
 if (regressionChecks.constructionPages !== 18) ok(false, `construction != 18`);
-if (regressionChecks.repairPages !== 10) ok(false, `repair != 10`);
+if (regressionChecks.repairPages !== 10) ok(false, `repair (активных) != 10`);
+if (regressionChecks.tileStubPages !== 1) ok(false, `плиточная заглушка != 1`);
 if (regressionChecks.engineeringPagesInServicePages !== 6) ok(false, `engineering != 6`);
-if (regressionChecks.servicePagesTotal !== 34) ok(false, `SERVICE_PAGES total != 34`);
+if (regressionChecks.servicePagesTotal !== 35) ok(false, `SERVICE_PAGES total != 35`);
 
 // ── totals ───────────────────────────────────────────────────────────
 const totals = {
@@ -361,6 +398,7 @@ const result = {
   stage: STAGE,
   specificationCheck,
   engineeringServicePages,
+  servicePageInventory,
   duplicateCheck,
   routeStatus,
   pageData,

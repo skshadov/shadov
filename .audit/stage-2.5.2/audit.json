@@ -42,6 +42,21 @@
       "sourceFile": "src/data/service-pages-engineering.ts"
     }
   ],
+  "servicePageInventory": {
+    "totalServicePages": 35,
+    "engineeringPages": 6,
+    "tilePages": 1,
+    "tilePage": {
+      "route": "/ukladka-plitki",
+      "slug": "ukladka-plitki",
+      "category": "repair",
+      "existsInServicePages": true,
+      "existsInEngineeringPages": false,
+      "isActiveEngineeringService": false,
+      "hasRouteStub": true,
+      "hasNoindexFollow": true
+    }
+  },
   "duplicateCheck": {
     "engineeringEntries": 6,
     "uniqueRoutes": 6,
@@ -754,8 +769,9 @@
   "regressionChecks": {
     "constructionPages": 18,
     "repairPages": 10,
+    "tileStubPages": 1,
     "engineeringPagesInServicePages": 6,
-    "servicePagesTotal": 34,
+    "servicePagesTotal": 35,
     "pricesRouteExists": true
   },
   "totals": {
