@@ -1,0 +1,1 @@
+{"buckets": [{"id": "project-documents", "name": "project-documents", "public": false}], "policies": [{"cmd": "SELECT", "roles": ["authenticated"], "policy": "project docs members read"}, {"cmd": "ALL", "roles": ["authenticated"], "policy": "project docs admins all"}], "objects_count": 0}
