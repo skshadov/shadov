@@ -342,11 +342,13 @@ Deno.serve(async (req: Request) => {
       result.dailyReportTests.push({ name: "admin sees unpublished", passed: (adm.data?.length ?? 0) > 0 });
 
       // daily_report_documents — own published allow, foreign deny
-      const drDoc = await A.client.from("project_daily_report_documents").select("id").eq("report_id", reportA.id);
+      const drDoc = await A.client.from("project_daily_report_documents").select("report_id,document_id").eq("report_id", reportA.id);
+      debug.drd_clientA = { data: drDoc.data, error: drDoc.error?.message, status: (drDoc as any).status };
       rec(result.rlsMatrix, "daily_report_docs/client_published_own", "project_daily_report_documents", "select", "allow", (drDoc.data?.length ?? 0) > 0 ? "allow" : "deny");
-      const drDocForeign = await B.client.from("project_daily_report_documents").select("id").eq("report_id", reportA.id);
+      const drDocForeign = await B.client.from("project_daily_report_documents").select("report_id,document_id").eq("report_id", reportA.id);
       rec(result.rlsMatrix, "daily_report_docs/client_foreign", "project_daily_report_documents", "select", "deny_no_rows", (drDocForeign.data?.length ?? 0) === 0 ? "deny_no_rows" : "leak");
-      const drDocAdm = await ADM.client.from("project_daily_report_documents").select("id");
+      const drDocAdm = await ADM.client.from("project_daily_report_documents").select("report_id,document_id");
+      debug.drd_admin = { count: drDocAdm.data?.length, error: drDocAdm.error?.message, status: (drDocAdm as any).status };
       rec(result.rlsMatrix, "daily_report_docs/admin_select", "project_daily_report_documents", "select", "allow", (drDocAdm.data?.length ?? 0) > 0 ? "allow" : "deny");
       result.dailyReportDocumentTests.push({ name: "client own report document", passed: (drDoc.data?.length ?? 0) > 0 });
       result.dailyReportDocumentTests.push({ name: "client foreign report document deny", passed: (drDocForeign.data?.length ?? 0) === 0 });
