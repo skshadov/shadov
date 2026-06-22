@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-06-22T10:52:35.254Z",
+  "storageIntegrationTestsPassed": true,
+  "storageScenariosExecuted": 11,
+  "extendedRlsMatrixPassed": true,
+  "rlsScenarios": 63,
+  "rlsFailed": 0,
+  "buildExecuted": true,
+  "buildExitCode": 0,
+  "typescriptExecuted": true,
+  "typescriptExitCode": 0,
+  "archiveVerifyPresent": false,
+  "archiveIntegrityPassed": false,
+  "testFunctionDeployed": false,
+  "runnerFunctionDeployed": false,
+  "debugFunctionDeployed": false,
+  "testSecretsActive": false,
+  "testOnlyRpcExists": false,
+  "remainingTestRows": 0,
+  "remainingTestUsers": 0,
+  "remainingTestStorageObjects": 0,
+  "productionDataCollectionEnabled": false,
+  "publicAuthEnabled": false,
+  "operatorConfigured": false,
+  "regression": {
+    "priceItems": 334,
+    "servicePages": 35,
+    "repairServicePages": 11,
+    "constructionServicePages": 18,
+    "engineeringServicePages": 6,
+    "calculatorRoutes": 1,
+    "calculatorModes": 4,
+    "clientRoutesActivated": 0,
+    "adminRoutesActivated": 0
+  },
+  "specificationCheck": {
+    "passed": false,
+    "errors": [
+      "archive-verify.log missing",
+      "archive-verify.log must contain 'No errors detected in compressed data' and exit_code=0"
+    ]
+  },
+  "readyForStage4": false,
+  "readyForProductionDataCollection": false
+}
