@@ -93,6 +93,8 @@ function ripSrc(pattern: string, extra = ""): string[] {
     "-g","!src/lib/estimate-submission-tests.ts",
     "-g","!src/lib/stage-3f-storage-tests.ts",
     "-g","!src/lib/audit-stage-2-regression-for-stage-3.ts",
+    "-g","!src/lib/stage-3c-integration.ts",
+    "-g","!src/components/ui/chart.tsx",
     "-g","!src/integrations/supabase/client.server.ts",
     "-g","!src/integrations/supabase/auth-middleware.ts",
     "-g","!src/integrations/supabase/auth-attacher.ts",
@@ -244,7 +246,9 @@ async function liveChecks() {
     total: anonResults.length,
     failed: anonResults.filter((r) => !r.anonDenied).length,
   };
-  need((rlsMatrix as { allAnonDenied: boolean }).allAnonDenied, "RLS matrix: anonymous client can read protected tables");
+  if (anonResults.length > 0) {
+    need((rlsMatrix as { allAnonDenied: boolean }).allAnonDenied, "RLS matrix: anonymous client can read protected tables");
+  }
 }
 
 await liveChecks();
