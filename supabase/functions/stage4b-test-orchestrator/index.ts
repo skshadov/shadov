@@ -71,7 +71,8 @@ Deno.serve(async (req: Request) => {
     const pA = (await admin.from("projects").insert({ title: "Stage4B Project A", status: "active", description: "test A", is_demo: false }).select("id").single()).data!;
     const pB = (await admin.from("projects").insert({ title: "Stage4B Project B", status: "active", description: "test B", is_demo: false }).select("id").single()).data!;
     created.projectIds.push(pA.id, pB.id);
-    await admin.from("project_members").insert([{ project_id: pA.id, user_id: ids.clientA, role: "owner" }, { project_id: pB.id, user_id: ids.clientB, role: "owner" }]);
+    const pmIns = await admin.from("project_members").insert([{ project_id: pA.id, user_id: ids.clientA, member_role: "owner" }, { project_id: pB.id, user_id: ids.clientB, member_role: "owner" }]);
+    if (pmIns.error) throw new Error("project_members insert: " + pmIns.error.message);
 
     // Seed stages, documents (visible + hidden), camera (without source), payments, messages, daily report
     const sA = (await admin.from("project_stages").insert({ project_id: pA.id, sort_order: 1, title: "S1", status: "in_progress" }).select("id").single()).data!;
@@ -259,7 +260,7 @@ Deno.serve(async (req: Request) => {
       result.clientPortalFilterTests.push({ name: "clientB sees only projectB", expected: [pB.id], actual: bIds, passed: bIds.includes(pB.id) && !bIds.includes(pA.id) });
       result.clientPortalFilterTests.push({ name: "adminTest without membership sees no projects", expected: [], actual: admIds, passed: !admIds.includes(pA.id) && !admIds.includes(pB.id) });
       // Then add admin as member of A, re-check
-      await admin.from("project_members").insert({ project_id: pA.id, user_id: ids.adminTest, role: "viewer" });
+      await admin.from("project_members").insert({ project_id: pA.id, user_id: ids.adminTest, member_role: "viewer" });
       const admWithMembership = await ADM.client.rpc("get_my_projects");
       const wmIds = (admWithMembership.data ?? []).map((x: any) => x.id);
       result.clientPortalFilterTests.push({ name: "adminTest with membership on A sees only A", expected: [pA.id], actual: wmIds, passed: wmIds.includes(pA.id) && !wmIds.includes(pB.id) });
