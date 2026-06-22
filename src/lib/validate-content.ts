@@ -1176,10 +1176,9 @@ if (CALCULATOR_MODES.length !== 4) fail(`режимов калькулятора
   }
 }
 {
-  // Плиточная заглушка осталась RouteStub с noindex, follow.
   const tile = readFileSync(resolve(process.cwd(), "src/routes/ukladka-plitki.tsx"), "utf8");
-  if (!/RouteStub/.test(tile)) fail("/ukladka-plitki больше не RouteStub");
-  if (!/noindex,\s*follow/.test(tile)) fail("/ukladka-plitki без noindex, follow");
+  if (/RouteStub/.test(tile)) fail("/ukladka-plitki: RouteStub снят на этапе 2.6");
+  if (/noindex/i.test(tile)) fail("/ukladka-plitki: noindex снят на этапе 2.6");
 }
 
 console.log("✓ validate-content 2.5.3: пройдена.");
