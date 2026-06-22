@@ -283,39 +283,39 @@
   "routeStatus": [
     {
       "route": "/inzhenernye-sistemy",
-      "isRouteStub": true,
-      "noindexFollow": true,
-      "noEngineeringServicePage": true
+      "isRouteStub": false,
+      "noindexFollow": false,
+      "hasEngineeringServicePage": true
     },
     {
       "route": "/elektromontazh",
-      "isRouteStub": true,
-      "noindexFollow": true,
-      "noEngineeringServicePage": true
+      "isRouteStub": false,
+      "noindexFollow": false,
+      "hasEngineeringServicePage": true
     },
     {
       "route": "/santehnika",
-      "isRouteStub": true,
-      "noindexFollow": true,
-      "noEngineeringServicePage": true
+      "isRouteStub": false,
+      "noindexFollow": false,
+      "hasEngineeringServicePage": true
     },
     {
       "route": "/vodosnabzhenie-kanalizatsiya",
-      "isRouteStub": true,
-      "noindexFollow": true,
-      "noEngineeringServicePage": true
+      "isRouteStub": false,
+      "noindexFollow": false,
+      "hasEngineeringServicePage": true
     },
     {
       "route": "/otoplenie",
-      "isRouteStub": true,
-      "noindexFollow": true,
-      "noEngineeringServicePage": true
+      "isRouteStub": false,
+      "noindexFollow": false,
+      "hasEngineeringServicePage": true
     },
     {
       "route": "/teplyy-pol",
-      "isRouteStub": true,
-      "noindexFollow": true,
-      "noEngineeringServicePage": true
+      "isRouteStub": false,
+      "noindexFollow": false,
+      "hasEngineeringServicePage": true
     }
   ],
   "priceCategories": {
@@ -578,7 +578,7 @@
     {
       "path": "src/components/services/EngineeringServicePage.tsx",
       "exists": true,
-      "bytes": 6436
+      "bytes": 6868
     },
     {
       "path": "src/components/engineering/EngineeringDirections.tsx",
@@ -633,16 +633,16 @@
     "inRoutesTs": false,
     "inNavigationTs": false,
     "componentsFound": [
-      "src/components/ui/sidebar.tsx",
       "src/components/common/RouteStub.tsx",
-      "src/components/layout/MobileNavigation.tsx",
-      "src/components/layout/Header.tsx",
+      "src/components/content/EmptyPortfolioState.tsx",
       "src/components/forms/EstimateForm.tsx",
-      "src/components/home/EstimateSection.tsx",
       "src/components/home/ContactsSection.tsx",
+      "src/components/home/EstimateSection.tsx",
       "src/components/home/HeroSection.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/layout/MobileNavigation.tsx",
       "src/components/prices/PriceCoefficients.tsx",
-      "src/components/content/EmptyPortfolioState.tsx"
+      "src/components/ui/sidebar.tsx"
     ],
     "formulasFound": [
       "src/components/prices/PriceCoefficients.tsx"
@@ -671,60 +671,9 @@
         ]
       },
       {
-        "file": "src/components/ui/sidebar.tsx",
-        "lines": [
-          229,
-          237,
-          238,
-          241
-        ]
-      },
-      {
         "file": "src/components/common/RouteStub.tsx",
         "lines": [
           54
-        ]
-      },
-      {
-        "file": "src/components/layout/MobileNavigation.tsx",
-        "lines": [
-          122
-        ]
-      },
-      {
-        "file": "src/components/layout/Header.tsx",
-        "lines": [
-          59
-        ]
-      },
-      {
-        "file": "src/components/forms/EstimateForm.tsx",
-        "lines": [
-          36
-        ]
-      },
-      {
-        "file": "src/components/home/EstimateSection.tsx",
-        "lines": [
-          10
-        ]
-      },
-      {
-        "file": "src/components/home/ContactsSection.tsx",
-        "lines": [
-          56
-        ]
-      },
-      {
-        "file": "src/components/home/HeroSection.tsx",
-        "lines": [
-          46
-        ]
-      },
-      {
-        "file": "src/components/prices/PriceCoefficients.tsx",
-        "lines": [
-          4
         ]
       },
       {
@@ -734,19 +683,61 @@
         ]
       },
       {
+        "file": "src/components/forms/EstimateForm.tsx",
+        "lines": [
+          36
+        ]
+      },
+      {
+        "file": "src/components/home/ContactsSection.tsx",
+        "lines": [
+          56
+        ]
+      },
+      {
+        "file": "src/components/home/EstimateSection.tsx",
+        "lines": [
+          10
+        ]
+      },
+      {
+        "file": "src/components/home/HeroSection.tsx",
+        "lines": [
+          46
+        ]
+      },
+      {
+        "file": "src/components/layout/Header.tsx",
+        "lines": [
+          59
+        ]
+      },
+      {
+        "file": "src/components/layout/MobileNavigation.tsx",
+        "lines": [
+          122
+        ]
+      },
+      {
+        "file": "src/components/prices/PriceCoefficients.tsx",
+        "lines": [
+          4
+        ]
+      },
+      {
+        "file": "src/components/ui/sidebar.tsx",
+        "lines": [
+          229,
+          237,
+          238,
+          241
+        ]
+      },
+      {
         "file": "src/data/service-faq.ts",
         "lines": [
           10,
           11
-        ]
-      },
-      {
-        "file": "src/data/service-pages-repair.ts",
-        "lines": [
-          117,
-          188,
-          189,
-          279
         ]
       },
       {
@@ -767,9 +758,12 @@
         ]
       },
       {
-        "file": "src/lib/validate-prices.ts",
+        "file": "src/data/service-pages-repair.ts",
         "lines": [
-          75
+          117,
+          188,
+          189,
+          279
         ]
       },
       {
@@ -789,11 +783,17 @@
       {
         "file": "src/lib/audit-stage-2-5-1.ts",
         "lines": [
-          257,
-          280,
-          282,
-          287,
-          288
+          260,
+          283,
+          285,
+          290,
+          291
+        ]
+      },
+      {
+        "file": "src/lib/validate-prices.ts",
+        "lines": [
+          75
         ]
       }
     ],
@@ -805,7 +805,7 @@
   "regressionChecks": {
     "constructionPages": 18,
     "repairPages": 10,
-    "engineeringPagesInServicePages": 7,
+    "engineeringPagesInServicePages": 6,
     "pricesRouteExists": true
   },
   "conflicts": [
@@ -832,8 +832,8 @@
   ],
   "totals": {
     "engineeringRoutes": 6,
-    "activeEngineeringRoutes": 0,
-    "stubEngineeringRoutes": 6,
+    "activeEngineeringRoutes": 6,
+    "stubEngineeringRoutes": 0,
     "priceCategories": 8,
     "priceItems": 98,
     "engineeringSlugs": 6,
