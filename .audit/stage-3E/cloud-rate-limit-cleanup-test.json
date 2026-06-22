@@ -1,0 +1,10 @@
+{
+  "executed": true,
+  "expiredRowsBefore": 1,
+  "expiredRowsAfter": 0,
+  "deletedRows": 1,
+  "rowStillPresent": false,
+  "liveCapOk": true,
+  "passed": true,
+  "note": "Real expired row inserted via service role then cleanup_expired_rate_limits RPC invoked; row physically removed."
+}
