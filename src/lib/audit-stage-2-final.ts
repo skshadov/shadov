@@ -383,10 +383,14 @@ const VALIDATOR_FILES = [
   "audit-stage-2-4-4.ts", "audit-construction-content.ts",
   "calculator-tests.ts", "calculator-rules.ts",
 ];
+// src/config/company.ts хранит запретительный массив `forbidden` для
+// helper isFilled(); подстроки внутри этого массива — не утечка, а защита.
+const SAFELIST_FILES = new Set(["src/config/company.ts"]);
 const matchesOutsideValidator: Array<{ where: string; pattern: string }> = [];
 for (const file of walk(resolve(ROOT, "src"))) {
   const rel = file.replace(`${ROOT}/`, "");
   if (VALIDATOR_FILES.some((v) => rel.endsWith(v))) continue;
+  if (SAFELIST_FILES.has(rel)) continue;
   const s = readFileSync(file, "utf8");
   for (const p of FORBIDDEN_PATTERNS) {
     if (p.rx.test(s)) matchesOutsideValidator.push({ where: rel, pattern: p.pattern });
