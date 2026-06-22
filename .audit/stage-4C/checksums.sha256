@@ -1,6 +1,6 @@
-a39272525e6ee5a92392ed364b015c172a116439e0bb356f96db8ba532018873  ./edge-function-source/index.ts
 945e75a1c6a1d4aa8592eef93409da3a76cc19994c747f58c23de8d1a541fd22  ./edge-function-source/get-project-document-url.ts
 4781866212d913188401896d56015db41c916e3c5849abef07b960343d255ab2  ./edge-function-source/get-project-camera-session.ts
+a39272525e6ee5a92392ed364b015c172a116439e0bb356f96db8ba532018873  ./edge-function-source/stage4c-test-orchestrator.ts
 89cd0fa690cdaa34c70234e6763903f4f07fc50dff7422f639325b84bede0d63  ./global-responsive-screenshots/calc-1366.png
 65e411768c5662c3ff2afd19289e59b041bcba36245e71077d2276576f2f78ec  ./global-responsive-screenshots/calc-1920.png
 e0cb61312e7dd1f0deb19497b0355b4ac6b70b09572084d2efb8cedcbf3e9344  ./global-responsive-screenshots/calc-375.png
@@ -35,5 +35,5 @@ bde294368bfed77c2cddf8cec271d398aee9cdbab3b26e1059281bd33adb0120  ./typescript.l
 8e113eb1e998abeac12ec35c317d7bbd5cf8dd2cb1d6fdecfe776392658daa65  ./cloud-functions-after.json
 a033dd8debe8620c202ecc600aebe4f9578b6f0de1c2cb7c4b54762263388838  ./cloud-secrets-after.json
 4b2e78b1b77f2ff4295147eb187b1821db61aba6be79bac3f39c16c79c859659  ./audit.json
-9e5b7ede4b873c2d7bfe9c9b0804647105a7e159dbe673080e12bb70574e8ae9  ./files-manifest.txt
-b5c8c845db4dcd3b9e8275a78757d430b9a3e9ac1ca2e3204037c849cd87076d  ./checksums.sha256
+9f807a47b1785367e016dea3dcb64d47bf36f76230613185eeb2ce737a612f03  ./files-manifest.txt
+ff59030e6bfcc7331caab9ecc3b1a8f3a1afe9f442eb1e0e21a7c9d61809e050  ./checksums.sha256

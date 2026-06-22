@@ -1,6 +1,7 @@
 ./audit.json
 ./build.log
 ./camera-tests.json
+./checksums.sha256
 ./client-portal-filter-tests.json
 ./cloud-functions-after.json
 ./cloud-secrets-after.json
@@ -9,7 +10,7 @@
 ./document-tests.json
 ./edge-function-source/get-project-camera-session.ts
 ./edge-function-source/get-project-document-url.ts
-./edge-function-source/index.ts
+./edge-function-source/stage4c-test-orchestrator.ts
 ./files-manifest.txt
 ./global-overflow-elements.json
 ./global-responsive-screenshots/calc-1366.png
