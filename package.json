@@ -24,6 +24,7 @@
     "audit:stage-3d": "bun src/lib/audit-stage-3d.ts",
     "audit:stage-3e": "bun src/lib/audit-stage-3e.ts",
     "audit:stage-3f": "bun src/lib/audit-stage-3f.ts",
+    "audit:stage-4": "bun src/lib/audit-stage-4.ts",
     "test:storage": "bun src/lib/stage-3f-storage-tests.ts",
     "audit:stage-2-regression-for-stage-3": "bun src/lib/audit-stage-2-regression-for-stage-3.ts",
     "test:auth": "bun src/lib/auth-tests.ts",
