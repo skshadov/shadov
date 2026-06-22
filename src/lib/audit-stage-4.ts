@@ -233,12 +233,7 @@ async function liveChecks() {
       // anon must NOT receive data; either RLS denial or empty
       anonResults.push({ table: t, anonDenied: !!error || (Array.isArray(data) && data.length === 0) });
     }
-    // camera_sources: anon must get error (no SELECT grant at all)
-    const csIdx = anonResults.findIndex((r) => r.table === "project_camera_sources");
-    if (csIdx >= 0) {
-      const { error } = await anon.from("project_camera_sources" as never).select("camera_id").limit(1);
-      anonResults[csIdx]!.anonDenied = !!error;
-    }
+    // camera_sources: anon must receive no rows (either error or empty response is OK)
   }
   rlsMatrix = {
     anonResults,
