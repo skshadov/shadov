@@ -325,7 +325,7 @@ const regressionChecks = {
 // ── totals ───────────────────────────────────────────────────────────
 const totals = {
   engineeringRoutes: engineeringRoutes.length,
-  activeEngineeringRoutes: 0,
+  activeEngineeringRoutes: routeStatus.filter((r) => r.hasEngineeringServicePage).length,
   stubEngineeringRoutes: routeStatus.filter((r) => r.isRouteStub).length,
   priceCategories: Object.keys(priceCategories).length,
   priceItems: priceItemsTotal,
