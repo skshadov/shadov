@@ -35,7 +35,7 @@ export function MobileNavigation() {
           variant="ghost"
           size="icon"
           aria-label="Открыть меню"
-          className="lg:hidden min-h-11 min-w-11"
+          className="xl:hidden min-h-11 min-w-11"
         >
           <Menu aria-hidden="true" className="h-5 w-5" />
         </Button>
