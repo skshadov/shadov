@@ -132,7 +132,7 @@ ok(servicePageLinks.length === 15, `CTA: ожидается 15, получено
 for (const e of servicePageLinks) {
   ok(e.inServicePages, `CTA ${e.slug}: страница не найдена`);
 }
-ok(!CALCULATOR_LINKS_FROM_SERVICES.some((l) => l.slug === "ukladka-plitki"), "CTA подключена к /ukladka-plitki (запрещено)");
+// Подэтап 2.6: CTA на /ukladka-plitki разрешена после активации страницы.
 
 // localStorage
 const localStorageSpec = {
@@ -281,7 +281,7 @@ const responsiveChecks = {
 const repairActive = SERVICE_PAGES.filter((p) => p.category === "repair" && !p.isStub).length;
 const constructionActive = SERVICE_PAGES.filter((p) => p.category === "construction" && !p.isStub).length;
 const engineeringActive = SERVICE_PAGES.filter((p) => p.category === "engineering" && !p.isStub).length;
-const tileStubPages = SERVICE_PAGES.filter((p) => p.slug === "ukladka-plitki" && p.isStub).length;
+const tileActivePages = SERVICE_PAGES.filter((p) => p.slug === "ukladka-plitki" && !p.isStub).length;
 const tileRouteSrc = readSafe("src/routes/ukladka-plitki.tsx");
 
 const regressionChecks = {
@@ -289,18 +289,18 @@ const regressionChecks = {
   repairActivePages: repairActive,
   constructionActivePages: constructionActive,
   engineeringActivePages: engineeringActive,
-  tileStubPages,
+  tileActivePages,
   tileIsRouteStub: /RouteStub/.test(tileRouteSrc),
   tileNoindexFollow: /noindex,\s*follow/.test(tileRouteSrc),
   pricesTotal: PRICES.length,
 };
 ok(regressionChecks.servicePages === 35, `servicePages != 35`);
-ok(regressionChecks.repairActivePages === 10, `repairActive != 10`);
+ok(regressionChecks.repairActivePages === 11, `repairActive != 11`);
 ok(regressionChecks.constructionActivePages === 18, `constructionActive != 18`);
 ok(regressionChecks.engineeringActivePages === 6, `engineeringActive != 6`);
-ok(regressionChecks.tileStubPages === 1, `tileStubPages != 1`);
-ok(regressionChecks.tileIsRouteStub, "/ukladka-plitki не RouteStub");
-ok(regressionChecks.tileNoindexFollow, "/ukladka-plitki без noindex, follow");
+ok(regressionChecks.tileActivePages === 1, `tileActivePages != 1`);
+ok(!regressionChecks.tileIsRouteStub, "/ukladka-plitki: RouteStub снят на этапе 2.6");
+ok(!regressionChecks.tileNoindexFollow, "/ukladka-plitki: noindex снят на этапе 2.6");
 ok(regressionChecks.pricesTotal === 334, `prices total != 334`);
 
 const totals = {
@@ -311,16 +311,16 @@ const totals = {
   repairActivePages: repairActive,
   constructionActivePages: constructionActive,
   engineeringActivePages: engineeringActive,
-  tileStubPages,
+  tileActivePages,
 };
 ok(totals.calculatorRoutes === 1, "totals.calculatorRoutes != 1");
 ok(totals.calculatorModes === 4, "totals.calculatorModes != 4");
 ok(totals.priceItems === 334, "totals.priceItems != 334");
 ok(totals.servicePages === 35, "totals.servicePages != 35");
-ok(totals.repairActivePages === 10, "totals.repairActivePages != 10");
+ok(totals.repairActivePages === 11, "totals.repairActivePages != 11");
 ok(totals.constructionActivePages === 18, "totals.constructionActivePages != 18");
 ok(totals.engineeringActivePages === 6, "totals.engineeringActivePages != 6");
-ok(totals.tileStubPages === 1, "totals.tileStubPages != 1");
+ok(totals.tileActivePages === 1, "totals.tileActivePages != 1");
 
 const specificationCheck = { passed: errors.length === 0, errors };
 
