@@ -24,11 +24,11 @@ function origin(allowed = true) {
 }
 function baseSnapshot() {
   return {
-    service_slug: "demontazh-sten-i-peregorodok",
-    calculator_mode: "result",
-    summary: { total: 12000, currency: "RUB", formatted: "12 000 ₽" },
-    items: [{ id: "1", name: "x", quantity: 10, unit: "м²", priceId: "test", priceFormatted: "1200 ₽" }],
-    metadata: { computedAt: new Date().toISOString() },
+    mode: "repair",
+    priceVersion: "v1",
+    items: [{ id: "repair_packages-econom", quantity: 35, unit: "м²" }],
+    totals: { final: 12000 },
+    warnings: [],
   };
 }
 function baseBody(submissionId: string, extra: Record<string, unknown> = {}) {
@@ -39,8 +39,8 @@ function baseBody(submissionId: string, extra: Record<string, unknown> = {}) {
     consent_version: "v1",
     consent_accepted_at: new Date().toISOString(),
     source_path: `/${STAGE}/test`,
-    service_slug: "demontazh-sten-i-peregorodok",
-    calculator_mode: "result",
+    service_slug: "remont",
+    calculator_mode: "repair",
     contact_name: `Stage3D Тест ${submissionId.slice(0, 4)}`,
     phone: "+7 999 000 00 01",
     email: `${STAGE}-${submissionId.slice(0, 8)}@example.invalid`,
@@ -193,17 +193,13 @@ async function runAll() {
   // 9. Unknown service_slug
   {
     const sid = uuid();
-    const snap = baseSnapshot();
-    snap.service_slug = "totally-unknown-service-slug";
-    const r = await call({ body: { ...baseBody(sid), service_slug: "totally-unknown-service-slug", calculator_snapshot: snap } });
+    const r = await call({ body: { ...baseBody(sid), service_slug: "totally-unknown-service-slug" } });
     ok("unknown_service_slug", 400, r.status, { code: r.body?.code });
   }
   // 10. Invalid calculator_mode
   {
     const sid = uuid();
-    const snap = baseSnapshot();
-    snap.calculator_mode = "garbage-mode";
-    const r = await call({ body: { ...baseBody(sid), calculator_mode: "garbage-mode", calculator_snapshot: snap } });
+    const r = await call({ body: { ...baseBody(sid), calculator_mode: "garbage-mode" } });
     ok("invalid_calculator_mode", 400, r.status, { code: r.body?.code });
   }
   // 11. Missing TEST_RATE_LIMIT_SALT — we cannot actually unset; verify server reports server_not_configured by toggling via runner self-check
