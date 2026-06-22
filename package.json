@@ -21,6 +21,7 @@
     "audit:stage-2.5.3": "bun src/lib/audit-stage-2-5-3.ts",
     "audit:stage-2-final": "bun src/lib/audit-stage-2-final.ts",
     "audit:stage-3": "bun src/lib/audit-stage-3.ts",
+    "audit:stage-3d": "bun src/lib/audit-stage-3d.ts",
     "audit:stage-2-regression-for-stage-3": "bun src/lib/audit-stage-2-regression-for-stage-3.ts",
     "test:auth": "bun src/lib/auth-tests.ts",
     "test:estimate-submission": "bun src/lib/estimate-submission-tests.ts",
