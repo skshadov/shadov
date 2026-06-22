@@ -215,11 +215,8 @@ export function createHandler(config: HandlerConfig) {
     const snap = validateSnapshot(body.calculator_snapshot);
     if (!snap.ok) return reject(400, snap.code, originAllowed);
 
-    if (config.testMode && (body.stage3d_fault_injection === true || body.stage3c_fault_injection === true)) {
-      const supabase: SupabaseClient = createClient(SUPABASE_URL, SERVICE_ROLE, { auth: { persistSession: false } });
-      await supabase.rpc("stage3d_fault_injection_submission", { _submission_id: body.submission_id });
-      return reject(500, "fault_injection_failed", originAllowed);
-    }
+    // Stage 3D test-only fault injection RPC was removed after cloud audit;
+    // production-only handler retains no test branch beyond config.testMode gate above.
 
     const rlKey = getTrustedClientKey(req);
     const keyHash = await sha256(`${rlKey.material}${RATE_LIMIT_SALT}`);

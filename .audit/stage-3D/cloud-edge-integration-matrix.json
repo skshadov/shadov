@@ -1,0 +1,140 @@
+{
+  "startedAt": "2026-06-22T09:59:38.381Z",
+  "finishedAt": "2026-06-22T09:59:44.200Z",
+  "testFunctionUrl": "https://shbgsrryredmememwgtn.supabase.co/functions/v1/submit-estimate-request-test",
+  "testModeEnabled": true,
+  "testRunTokenLength": 43,
+  "testAllowedOriginsCount": 1,
+  "matrix": [
+    {
+      "name": "valid_anonymous",
+      "expected": 200,
+      "got": 200,
+      "passed": true,
+      "requestNumber": "present"
+    },
+    {
+      "name": "valid_authenticated",
+      "expected": 200,
+      "got": 200,
+      "passed": true,
+      "hasJwt": true
+    },
+    {
+      "name": "concurrent_idempotency",
+      "statuses": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "uniqueRequestNumbers": 1,
+      "dbRequestRows": 1,
+      "dbConsentRows": 2,
+      "passed": true
+    },
+    {
+      "name": "parallel_rate_limit",
+      "statuses": [
+        200,
+        200,
+        200,
+        429,
+        429,
+        200,
+        429,
+        429,
+        200,
+        429
+      ],
+      "ok200": 5,
+      "rateLimited429": 5,
+      "passed": true
+    },
+    {
+      "name": "origin_allowed",
+      "expected": 200,
+      "got": 200,
+      "passed": true
+    },
+    {
+      "name": "origin_disallowed",
+      "expected": 403,
+      "got": 403,
+      "passed": true,
+      "code": "origin_not_allowed"
+    },
+    {
+      "name": "origin_missing",
+      "expected": 200,
+      "got": 200,
+      "passed": true,
+      "note": "test_mode_permits_missing_origin"
+    },
+    {
+      "name": "invalid_token",
+      "expected": 403,
+      "got": 403,
+      "passed": true,
+      "code": "test_access_denied"
+    },
+    {
+      "name": "unknown_service_slug",
+      "expected": 400,
+      "got": 400,
+      "passed": true,
+      "code": "unknown_service"
+    },
+    {
+      "name": "invalid_calculator_mode",
+      "expected": 400,
+      "got": 400,
+      "passed": true,
+      "code": "invalid_calculator_mode"
+    },
+    {
+      "name": "rate_limit_salt_present",
+      "saltLength": 43,
+      "passed": true
+    },
+    {
+      "name": "transaction_rollback",
+      "status": 500,
+      "code": "fault_injection_failed",
+      "remainingRequests": 0,
+      "passed": true
+    },
+    {
+      "name": "cleanup_expired_rate_limits",
+      "before": 0,
+      "deleted": 0,
+      "passed": true
+    },
+    {
+      "name": "no_pii_in_response",
+      "checks": [
+        {
+          "status": 200,
+          "leakedSubmission": false,
+          "leakedPhone": false,
+          "leakedEmail": false
+        },
+        {
+          "status": 200,
+          "leakedSubmission": false,
+          "leakedPhone": false,
+          "leakedEmail": false
+        },
+        {
+          "status": 200,
+          "leakedSubmission": false,
+          "leakedPhone": false,
+          "leakedEmail": false
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "overallPassed": true
+}

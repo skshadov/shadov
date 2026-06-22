@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-06-22T09:59:44.200Z",
+  "testFunctionUrl": "https://shbgsrryredmememwgtn.supabase.co/functions/v1/submit-estimate-request-test",
+  "matrix": [
+    {
+      "name": "rate_limit_salt_present",
+      "saltLength": 43,
+      "passed": true
+    }
+  ]
+}

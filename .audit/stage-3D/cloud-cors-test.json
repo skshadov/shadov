@@ -1,0 +1,26 @@
+{
+  "capturedAt": "2026-06-22T09:59:44.200Z",
+  "testFunctionUrl": "https://shbgsrryredmememwgtn.supabase.co/functions/v1/submit-estimate-request-test",
+  "matrix": [
+    {
+      "name": "origin_allowed",
+      "expected": 200,
+      "got": 200,
+      "passed": true
+    },
+    {
+      "name": "origin_disallowed",
+      "expected": 403,
+      "got": 403,
+      "passed": true,
+      "code": "origin_not_allowed"
+    },
+    {
+      "name": "origin_missing",
+      "expected": 200,
+      "got": 200,
+      "passed": true,
+      "note": "test_mode_permits_missing_origin"
+    }
+  ]
+}
