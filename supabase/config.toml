@@ -1,7 +1,1 @@
 project_id = "shbgsrryredmememwgtn"
-
-[functions.stage4b-test-orchestrator]
-verify_jwt = false
-
-[functions.stage4b-test-launcher]
-verify_jwt = false
