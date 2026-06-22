@@ -25,7 +25,7 @@ function origin(allowed = true) {
 function baseSnapshot() {
   return {
     mode: "repair",
-    priceVersion: "v1",
+    priceVersion: "2026-06",
     items: [{ id: "repair_packages-econom", quantity: 35, unit: "м²" }],
     totals: { final: 12000 },
     warnings: [],
@@ -46,7 +46,7 @@ function baseBody(submissionId: string, extra: Record<string, unknown> = {}) {
     email: `${STAGE}-${submissionId.slice(0, 8)}@example.invalid`,
     message: "stage3d cloud test",
     calculator_snapshot: baseSnapshot(),
-    price_version: "v1",
+    price_version: "2026-06",
     ...extra,
   };
 }
