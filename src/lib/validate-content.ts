@@ -892,7 +892,9 @@ console.log("✓ validate-content 2.4.3: пройдена.");
 
 import { ENGINEERING_SERVICE_PAGES } from "@/data/service-pages-engineering";
 
-const ENGINEERING_STUB_ROUTES = [
+// Подэтап 2.5.2 — все 6 инженерных маршрутов активированы (EngineeringServicePage),
+// noindex снят, RouteStub удалён.
+const ENGINEERING_ACTIVE_ROUTES = [
   "/inzhenernye-sistemy",
   "/elektromontazh",
   "/santehnika",
@@ -909,30 +911,59 @@ if (ENGINEERING_SERVICE_PAGES.length !== 6) {
 
 const ENG_ROUTES = ENGINEERING_SERVICE_PAGES.map((p) => p.route);
 assert(
-  JSON.stringify(ENG_ROUTES) === JSON.stringify(ENGINEERING_STUB_ROUTES),
-  `массив инженерных route не совпадает с утверждённым.\n  ожидается: ${JSON.stringify(ENGINEERING_STUB_ROUTES)}\n  найдено:   ${JSON.stringify(ENG_ROUTES)}`,
+  JSON.stringify(ENG_ROUTES) === JSON.stringify(ENGINEERING_ACTIVE_ROUTES),
+  `массив инженерных route не совпадает с утверждённым.\n  ожидается: ${JSON.stringify(ENGINEERING_ACTIVE_ROUTES)}\n  найдено:   ${JSON.stringify(ENG_ROUTES)}`,
 );
+
+// Регрессия: общее число страниц услуг = repair(10) + construction(18) + engineering(6) = 34.
+if (SERVICE_PAGES.length !== 34) {
+  fail(`SERVICE_PAGES: ожидается 34, найдено ${SERVICE_PAGES.length}`);
+}
+const engineeringPages = SERVICE_PAGES.filter((p) => p.category === "engineering");
+if (engineeringPages.length !== 6) {
+  fail(`инженерных записей в SERVICE_PAGES: ожидается 6, найдено ${engineeringPages.length}`);
+}
+const engRouteSet = new Set<string>();
+const engSlugSet = new Set<string>();
+for (const p of engineeringPages) {
+  if (engRouteSet.has(p.route)) fail(`дубликат инженерного route: ${p.route}`);
+  if (engSlugSet.has(p.slug)) fail(`дубликат инженерного slug: ${p.slug}`);
+  engRouteSet.add(p.route);
+  engSlugSet.add(p.slug);
+}
 
 for (const p of ENGINEERING_SERVICE_PAGES) {
   if (CYRILLIC_PATTERN.test(p.route)) fail(`кириллица в route: ${p.route}`);
   if (CYRILLIC_PATTERN.test(p.slug)) fail(`кириллица в slug: ${p.slug}`);
 }
 
-for (const route of ENGINEERING_STUB_ROUTES) {
+for (const route of ENGINEERING_ACTIVE_ROUTES) {
   let src: string;
   try {
     src = readRoute(route);
   } catch (e) {
     fail(`route-файл ${route} не найден: ${e}`);
   }
-  if (!/RouteStub/.test(src)) {
-    fail(`инженерный route ${route}: должен оставаться RouteStub`);
+  if (/RouteStub/.test(src)) {
+    fail(`инженерный route ${route}: всё ещё использует RouteStub`);
   }
-  if (!/noindex,\s*follow/.test(src)) {
-    fail(`инженерный route ${route}: должен сохранять noindex, follow`);
+  if (/noindex/i.test(src)) {
+    fail(`инженерный route ${route}: содержит noindex`);
   }
-  if (/EngineeringServicePage/.test(src)) {
-    fail(`инженерный route ${route}: EngineeringServicePage подключаться не должен на 2.5.1`);
+  if (!/EngineeringServicePage/.test(src)) {
+    fail(`инженерный route ${route}: не подключён EngineeringServicePage`);
+  }
+  if (!/rel:\s*"canonical"/.test(src)) {
+    fail(`инженерный route ${route}: отсутствует canonical`);
+  }
+  if (!/og:url/.test(src) || !/og:title/.test(src) || !/og:description/.test(src)) {
+    fail(`инженерный route ${route}: отсутствуют Open Graph метатеги`);
+  }
+  if (!/BreadcrumbList/.test(src)) {
+    fail(`инженерный route ${route}: отсутствует BreadcrumbList`);
+  }
+  if (/\bas\s+any\b/.test(src)) {
+    fail(`инженерный route ${route}: запрещён as any`);
   }
 }
 
