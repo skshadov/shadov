@@ -130,13 +130,13 @@ function validateServicePages(): Issue[] {
     if (!tile.startingPriceItemId) {
       issues.push({ rule: "tile-starting-id", message: "/ukladka-plitki: отсутствует startingPriceItemId" });
     } else {
-      const item = items.find((p) => p.id === tile.startingPriceItemId);
-      if (!item) issues.push({ rule: "tile-starting-id", message: `/ukladka-plitki: startingPriceItemId ${tile.startingPriceItemId} не найден в prices.ts` });
-      else if (item.priceFrom !== 2800) issues.push({ rule: "tile-starting-price", message: `/ukladka-plitki: стартовая позиция должна стоить 2800, найдено ${item.priceFrom}` });
+      const startingItem = PRICES.find((p) => p.id === tile.startingPriceItemId);
+      if (!startingItem) issues.push({ rule: "tile-starting-id", message: `/ukladka-plitki: startingPriceItemId ${tile.startingPriceItemId} не найден в prices.ts` });
+      else if (startingItem.priceFrom !== 2800) issues.push({ rule: "tile-starting-price", message: `/ukladka-plitki: стартовая позиция должна стоить 2800, найдено ${startingItem.priceFrom}` });
     }
   }
   // Категория tiling — ровно 20 позиций.
-  const tilingCount = items.filter((p) => p.category === "tiling").length;
+  const tilingCount = PRICES.filter((p) => p.category === "tiling").length;
   if (tilingCount !== 20) issues.push({ rule: "tiling-count", message: `tiling: ожидается 20 позиций, найдено ${tilingCount}` });
 
   const slugs = new Set<string>(); const routes = new Set<string>(); const metas = new Set<string>(); const h1s = new Set<string>();
