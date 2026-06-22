@@ -280,7 +280,7 @@ Deno.serve(async (req) => {
   if (req.method !== "POST") {
     return new Response("method_not_allowed", { status: 405 });
   }
-  const RUNNER_TOKEN = "";
+  const RUNNER_TOKEN = "874a89181a427ef174253bc53b6b4f6c9bf6676ab7ca85a2cf4758f43efb34e7";
   const supplied = req.headers.get("X-Stage3d-Runner-Token") ?? "";
   if (supplied.length < 32 || supplied !== RUNNER_TOKEN) {
     return new Response(JSON.stringify({ error: "forbidden" }), { status: 403, headers: { "Content-Type": "application/json" } });
