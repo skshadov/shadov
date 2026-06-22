@@ -1,0 +1,19 @@
+{
+  "remainingTestUsers": 0,
+  "remainingTestProjects": 0,
+  "remainingTestStorageObjects": 0,
+  "remainingTestRows": 0,
+  "remainingTestFunctions": 0,
+  "remainingTestSecrets": 0,
+  "demoProjectId": "d3e88359-99dc-4813-9b5d-b61d19c216ad",
+  "demoProjectIntact": true,
+  "deletedTempFunctions": ["stage4b-test-orchestrator", "stage4b-test-launcher", "stage4b-session-mint"],
+  "deletedTempSecrets": ["STAGE4B_RUN_TOKEN"],
+  "verifiedAt": "2026-06-22T15:08:00Z",
+  "verificationQueries": {
+    "users": "SELECT count(*) FROM auth.users WHERE email LIKE 'stage4b-%@example.test' => 0",
+    "projects": "SELECT count(*) FROM public.projects WHERE title LIKE 'Stage4B%' => 0",
+    "demo": "SELECT count(*) FROM public.projects WHERE is_demo=true => 1",
+    "storage": "SELECT count(*) FROM storage.objects WHERE bucket_id='project-documents' => 0"
+  }
+}

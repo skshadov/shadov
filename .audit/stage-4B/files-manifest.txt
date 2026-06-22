@@ -1,0 +1,16 @@
+drwxr-xr-x 1 root root   320 Jun 22 15:11 .
+drwxr-xr-x 1 root root   400 Jun 22 14:34 ..
+-rw-r--r-- 1 root root    12 Jun 22 15:11 audit-exit-code.txt
+-rw-r--r-- 1 root root  1119 Jun 22 15:07 audit.json
+-rw-r--r-- 1 root root 45928 Jun 22 15:07 build.log
+-rw-r--r-- 1 root root   227 Jun 22 15:11 cloud-functions-after.json
+-rw-r--r-- 1 root root   269 Jun 22 15:11 cloud-secrets-after.json
+-rw-r--r-- 1 root root  1584 Jun 22 15:07 demo-project-audit.json
+-rw-r--r-- 1 root root  3428 Jun 22 15:07 edge-function-tests.json
+-rw-r--r-- 1 root root     0 Jun 22 15:11 files-manifest.txt
+-rw-r--r-- 1 root root 16979 Jun 22 15:06 orchestrator-raw.json
+-rw-r--r-- 1 root root   850 Jun 22 15:11 post-cleanup-verification.json
+-rw-r--r-- 1 root root   441 Jun 22 15:07 realtime-test.json
+-rw-r--r-- 1 root root 14101 Jun 22 15:07 responsive_a11y.json
+-rw-r--r-- 1 root root 11100 Jun 22 15:07 rls-test-matrix.json
+-rw-r--r-- 1 root root    12 Jun 22 15:07 typescript.log

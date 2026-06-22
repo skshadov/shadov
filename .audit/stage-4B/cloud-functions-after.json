@@ -1,0 +1,4 @@
+{
+  "productionFunctions": ["get-project-camera-session","get-project-document-url","submit-estimate-request","_shared"],
+  "deletedTempFunctions": ["stage4b-test-orchestrator","stage4b-test-launcher","stage4b-session-mint"]
+}
