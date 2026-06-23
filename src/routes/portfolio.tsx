@@ -54,11 +54,11 @@ function Page() {
         </div>
         <p className="text-sm text-muted-foreground">
           Подробнее об услугах —{" "}
-          <Link to="/stroitelstvo" className="text-primary underline-offset-2 hover:underline">строительство</Link>
+          <Link to="/stroitelstvo" className="text-primary underline underline-offset-2 hover:opacity-80">строительство</Link>
           {", "}
-          <Link to="/remont" className="text-primary underline-offset-2 hover:underline">ремонт</Link>
+          <Link to="/remont" className="text-primary underline underline-offset-2 hover:opacity-80">ремонт</Link>
           {", "}
-          <Link to="/inzhenernye-sistemy" className="text-primary underline-offset-2 hover:underline">инженерные системы</Link>.
+          <Link to="/inzhenernye-sistemy" className="text-primary underline underline-offset-2 hover:opacity-80">инженерные системы</Link>.
         </p>
       </InfoSection>
     </InfoPageLayout>

@@ -43,7 +43,7 @@ function Page() {
 
       <InfoSection title="Удаление локально сохранённых данных">
         <p>Данные удаляются кнопкой «Очистить сохранённые данные» в форме расчёта, ручным удалением соответствующих ключей localStorage или очисткой данных сайта в настройках браузера.</p>
-        <p>Подробнее — в <Link to="/privacy" className="text-primary underline-offset-2 hover:underline">политике конфиденциальности</Link>.</p>
+        <p>Подробнее — в <Link to="/privacy" className="text-primary underline underline-offset-2 hover:opacity-80">политике конфиденциальности</Link>.</p>
       </InfoSection>
     </InfoPageLayout>
   );

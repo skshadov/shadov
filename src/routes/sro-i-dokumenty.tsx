@@ -34,7 +34,7 @@ function Page() {
             {isFilled(company.sroNumber) ? <li>Номер записи в реестре: {company.sroNumber}</li> : null}
             {isFilled(company.sroRegistryUrl) ? (
               <li>
-                <a href={company.sroRegistryUrl} className="text-primary underline-offset-2 hover:underline" rel="noreferrer noopener" target="_blank">
+                <a href={company.sroRegistryUrl} className="text-primary underline underline-offset-2 hover:opacity-80" rel="noreferrer noopener" target="_blank">
                   Запись в реестре
                 </a>
               </li>
