@@ -42,13 +42,13 @@ export function Illustration({
   width,
   height,
   priority = false,
-  caption = true,
+  caption = false,
   rounded = true,
   className,
   imgClassName,
   ...rest
 }: IllustrationProps) {
-  const alt = `Иллюстрация: ${description}`;
+  const alt = description;
   return (
     <figure
       className={`relative ${className ?? ""}`}
@@ -81,9 +81,7 @@ export function Illustration({
         />
       </picture>
       {caption ? (
-        <figcaption className="pointer-events-none absolute right-2 bottom-2 rounded-sm bg-[color:var(--image-caption-bg)] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-[color:var(--image-caption-fg)] backdrop-blur-sm">
-          Иллюстрация
-        </figcaption>
+        <figcaption className="sr-only">{description}</figcaption>
       ) : null}
     </figure>
   );
