@@ -63,7 +63,7 @@ function LogoFull() {
   return (
     <>
       <LogoMark />
-      <span className="hidden xl:flex flex-col leading-tight whitespace-nowrap">
+      <span className="hidden 2xl:flex flex-col leading-tight whitespace-nowrap">
         <span className="font-display text-[15px] font-semibold tracking-[0.14em] uppercase">
           Шадов&nbsp;и&nbsp;партнёры
         </span>
