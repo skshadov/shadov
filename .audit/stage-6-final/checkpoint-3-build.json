@@ -1,0 +1,10 @@
+{
+  "checkpoint": "3",
+  "title": "Build / Typecheck regression",
+  "results": {
+    "buildExitCode": 0,
+    "typescriptExitCode": 0,
+    "logs": ["build-final.log", "typescript-final.log"]
+  },
+  "passed": true
+}

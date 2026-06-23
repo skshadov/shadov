@@ -1,0 +1,18 @@
+{
+  "checkpoint": "2",
+  "title": "SEO / sitemap / robots / heads / placeholders",
+  "results": {
+    "robotsTxtCreated": true,
+    "robotsTxtPath": "public/robots.txt",
+    "sitemapMechanism": "src/routes/sitemap[.]xml.ts (server route)",
+    "sitemapStaticPathsCount": 53,
+    "sitemapDynamicSources": ["service_categories.published", "services.published"],
+    "rootHeadFixed": true,
+    "rootHeadBefore": "title='Lovable App', desc='Pixel Perfect Replica…'",
+    "rootHeadAfter": "title='Шадов и партнёры — строительство и ремонт под ключ'",
+    "perRouteHeadCoverage": { "publicRoutesScanned": 54, "withoutHead": 1, "layoutOnlyExclusions": ["catalog.tsx"] },
+    "brokenHashLinks": 0,
+    "placeholderRoutes": 0
+  },
+  "passed": true
+}
