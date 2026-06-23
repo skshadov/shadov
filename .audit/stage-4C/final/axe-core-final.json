@@ -5,34 +5,9 @@
     375,
     1440
   ],
-  "violations": [
-    {
-      "route": "/about",
-      "viewport": 375,
-      "v": 1,
-      "viol": [
-        {
-          "id": "link-in-text-block",
-          "impact": "serious",
-          "nodes": 3
-        }
-      ]
-    },
-    {
-      "route": "/about",
-      "viewport": 1440,
-      "v": 1,
-      "viol": [
-        {
-          "id": "link-in-text-block",
-          "impact": "serious",
-          "nodes": 3
-        }
-      ]
-    }
-  ],
-  "axeCoreViolations": 2,
+  "violations": [],
+  "axeCoreViolations": 0,
   "criticalViolations": 0,
-  "seriousViolations": 2,
+  "seriousViolations": 0,
   "colorContrastViolations": 0
 }
