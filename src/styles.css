@@ -218,6 +218,15 @@
     min-width: 0;
   }
 
+  /* Stage 4C (final, §3): default grid/flex tracks to shrink instead of
+     min-content, so a single long token in a deeply nested child can't
+     blow up the page width on 320–375px viewports. Intentional scroll
+     regions opt back in via overflow-x: auto inside .table-scroll-region. */
+  .grid > *,
+  .flex > * {
+    min-width: 0;
+  }
+
   :focus-visible {
     outline: 2px solid var(--color-ring);
     outline-offset: 2px;

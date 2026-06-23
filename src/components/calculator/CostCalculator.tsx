@@ -121,8 +121,8 @@ export function CostCalculator({ initialMode, initialCategory }: Props) {
   const spec = CALCULATOR_MODE_SPECS.find((m) => m.id === input.mode);
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
-      <div className="grid gap-6">
+    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      <div className="grid min-w-0 gap-6">
         <CalculatorModeSelector value={input.mode} onChange={handleMode} />
         <CalculatorInputs
           mode={input.mode}
@@ -143,7 +143,7 @@ export function CostCalculator({ initialMode, initialCategory }: Props) {
           </Button>
         </div>
       </div>
-      <div className="grid gap-6">
+      <div className="grid min-w-0 gap-6">
         <CalculatorSummary result={result} />
         <CalculatorWarnings warnings={result.warnings} />
         <CalculatorDisclaimer mode={input.mode} />
