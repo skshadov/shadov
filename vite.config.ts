@@ -12,4 +12,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Опциональный override Nitro preset: только когда явно задан NITRO_PRESET
+  // (например, в GitHub Actions для деплоя на VPS Timeweb используем NITRO_PRESET=node-server).
+  // Без env-переменной поведение Lovable preview/published не меняется (по умолчанию cloudflare).
+  ...(process.env.NITRO_PRESET
+    ? { nitro: { preset: process.env.NITRO_PRESET } }
+    : {}),
 });
