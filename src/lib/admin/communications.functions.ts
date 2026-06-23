@@ -351,11 +351,15 @@ export const configureCameraSource = createServerFn({ method: "POST" })
     if (!provider) throw new Error("provider_required");
     const pcid = (input.provider_camera_id ?? "").trim();
     if (!pcid) throw new Error("provider_camera_id_required");
+    const cfg = input.configuration_reference?.trim() ?? null;
+    if (cfg && (cfg.length > 200 || /(rtsp|rtmp|:\/\/|password|secret|token|@)/i.test(cfg))) {
+      throw new Error("config_reference_unsafe");
+    }
     return {
       camera_id: input.camera_id,
       provider: provider.slice(0, 50),
       provider_camera_id: pcid.slice(0, 200),
-      configuration_reference: input.configuration_reference?.slice(0, 500) ?? null,
+      configuration_reference: cfg,
     };
   })
   .handler(async ({ data, context }): Promise<{ ok: true }> => {
