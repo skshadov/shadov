@@ -33,8 +33,8 @@ export type PublicService = Pick<
 export type PublicPriceItem = Pick<
   PriceRow,
   | "id"
-  | "slug"
   | "group_slug"
+  | "subgroup_slug"
   | "title"
   | "unit"
   | "price_min"
@@ -57,7 +57,7 @@ const CAT_COLS =
 const SVC_COLS =
   "id, slug, title, summary, body_md, base_price, currency, price_unit, category_id, sort_order, seo_title, seo_description, hero_media_id";
 const PRICE_COLS =
-  "id, slug, group_slug, title, unit, price_min, price_max, currency, notes, sort_order";
+  "id, group_slug, subgroup_slug, title, unit, price_min, price_max, currency, notes, sort_order";
 
 export const listPublishedCategories = createServerFn({ method: "GET" }).handler(
   async (): Promise<PublicCategory[]> => {
