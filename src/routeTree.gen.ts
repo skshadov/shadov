@@ -60,6 +60,7 @@ import { Route as ContactsRouteImport } from './routes/contacts'
 import { Route as ClientRouteImport } from './routes/client'
 import { Route as ChistovayaOtdelkaRouteImport } from './routes/chistovaya-otdelka'
 import { Route as ChernovoyRemontRouteImport } from './routes/chernovoy-remont'
+import { Route as CatalogRouteImport } from './routes/catalog'
 import { Route as BiznesRemontRouteImport } from './routes/biznes-remont'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
@@ -343,6 +344,11 @@ const ChernovoyRemontRoute = ChernovoyRemontRouteImport.update({
   path: '/chernovoy-remont',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CatalogRoute = CatalogRouteImport.update({
+  id: '/catalog',
+  path: '/catalog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BiznesRemontRoute = BiznesRemontRouteImport.update({
   id: '/biznes-remont',
   path: '/biznes-remont',
@@ -470,6 +476,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
   '/biznes-remont': typeof BiznesRemontRoute
+  '/catalog': typeof CatalogRoute
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
   '/client': typeof ClientRouteWithChildren
@@ -547,6 +554,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
   '/biznes-remont': typeof BiznesRemontRoute
+  '/catalog': typeof CatalogRoute
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
   '/client': typeof ClientRouteWithChildren
@@ -625,6 +633,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
   '/biznes-remont': typeof BiznesRemontRoute
+  '/catalog': typeof CatalogRoute
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
   '/client': typeof ClientRouteWithChildren
@@ -704,6 +713,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/admin'
     | '/biznes-remont'
+    | '/catalog'
     | '/chernovoy-remont'
     | '/chistovaya-otdelka'
     | '/client'
@@ -781,6 +791,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/admin'
     | '/biznes-remont'
+    | '/catalog'
     | '/chernovoy-remont'
     | '/chistovaya-otdelka'
     | '/client'
@@ -858,6 +869,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/admin'
     | '/biznes-remont'
+    | '/catalog'
     | '/chernovoy-remont'
     | '/chistovaya-otdelka'
     | '/client'
@@ -936,6 +948,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AdminRoute: typeof AdminRouteWithChildren
   BiznesRemontRoute: typeof BiznesRemontRoute
+  CatalogRoute: typeof CatalogRoute
   ChernovoyRemontRoute: typeof ChernovoyRemontRoute
   ChistovayaOtdelkaRoute: typeof ChistovayaOtdelkaRoute
   ClientRoute: typeof ClientRouteWithChildren
@@ -1348,6 +1361,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChernovoyRemontRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/catalog': {
+      id: '/catalog'
+      path: '/catalog'
+      fullPath: '/catalog'
+      preLoaderRoute: typeof CatalogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/biznes-remont': {
       id: '/biznes-remont'
       path: '/biznes-remont'
@@ -1630,6 +1650,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AdminRoute: AdminRouteWithChildren,
   BiznesRemontRoute: BiznesRemontRoute,
+  CatalogRoute: CatalogRoute,
   ChernovoyRemontRoute: ChernovoyRemontRoute,
   ChistovayaOtdelkaRoute: ChistovayaOtdelkaRoute,
   ClientRoute: ClientRouteWithChildren,
