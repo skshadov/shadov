@@ -44,15 +44,24 @@ export function Header() {
             scrolled ? "h-14" : "h-16 md:h-20"
           }`}
         >
-          <Logo variant="full" className="shrink-0 text-foreground" />
+          <Logo
+            variant="full"
+            className="shrink-0 text-foreground [&_[data-logo-subtitle]]:hidden 2xl:[&_[data-logo-subtitle]]:block"
+          />
 
           <DesktopNavigation />
 
           <div className="flex shrink-0 items-center gap-2">
-            <Button asChild variant="ghost" size="sm" className="hidden md:inline-flex">
+            <Button
+              asChild
+              variant="ghost"
+              size="sm"
+              className="hidden md:inline-flex"
+              aria-label="Личный кабинет"
+            >
               <Link to="/login">
-                <LogIn aria-hidden="true" className="h-4 w-4 xl:mr-1" />
-                <span className="hidden xl:inline">Личный кабинет</span>
+                <LogIn aria-hidden="true" className="h-4 w-4 2xl:mr-1" />
+                <span className="hidden 2xl:inline">Личный кабинет</span>
               </Link>
             </Button>
             <Button asChild size="sm" className="hidden md:inline-flex">
