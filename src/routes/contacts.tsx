@@ -1,8 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Calculator, ArrowRight } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
 import { InfoPageLayout, InfoSection, InfoList, buildInfoHead } from "@/components/info/InfoPageLayout";
 import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
-import { Button } from "@/components/ui/button";
 import { company, isFilled, regions } from "@/config/company";
 import { MessengerLinks } from "@/components/common/MessengerLinks";
 
@@ -83,34 +81,35 @@ function Page() {
       </InfoSection>
 
       <InfoSection title="Карта">
-        <div
-          aria-label="Карта офиса появится после публикации адреса"
-          className="flex h-64 items-center justify-center rounded-lg border border-dashed border-border bg-muted/40 text-sm text-muted-foreground"
-        >
-          Карта появится после публикации адреса офиса.
-        </div>
-      </InfoSection>
-
-      <InfoSection title="Предварительный расчёт">
-        <p className="text-sm text-muted-foreground">
-          Чтобы оценить стоимость и получить смету — откройте калькулятор
-          предварительной стоимости. Менеджер свяжется по результатам расчёта.
-        </p>
-        <div className="mt-3 flex flex-wrap gap-3">
-          <Button asChild>
-            <Link to="/kalkulyator-stoimosti">
-              <Calculator aria-hidden="true" className="mr-2 h-4 w-4" />
-              Открыть калькулятор
-              <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-        <p className="mt-3 text-xs text-muted-foreground">
-          Условия обработки данных — в{" "}
-          <Link to="/privacy" className="text-primary underline underline-offset-2 hover:opacity-80">политике конфиденциальности</Link>{" "}
-          и{" "}
-          <Link to="/personal-data-consent" className="text-primary underline underline-offset-2 hover:opacity-80">согласии на обработку персональных данных</Link>.
-        </p>
+        {isFilled(company.officeAddress) ? (
+          <div className="space-y-2">
+            <div className="overflow-hidden rounded-lg border border-border">
+              <iframe
+                title={`Карта: ${company.officeAddress}`}
+                src="https://www.openstreetmap.org/export/embed.html?bbox=37.7180%2C55.9145%2C37.7360%2C55.9235&layer=mapnik&marker=55.91894%2C37.72643"
+                className="h-72 w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <p className="text-sm text-muted-foreground">{company.officeAddress}</p>
+            <a
+              href={`https://www.openstreetmap.org/?mlat=55.91894&mlon=37.72643#map=17/55.91894/37.72643`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-primary underline underline-offset-2 hover:opacity-80"
+            >
+              Открыть карту в новой вкладке
+            </a>
+          </div>
+        ) : (
+          <div
+            aria-label="Карта офиса появится после публикации адреса"
+            className="flex h-64 items-center justify-center rounded-lg border border-dashed border-border bg-muted/40 text-sm text-muted-foreground"
+          >
+            Карта появится после публикации адреса офиса.
+          </div>
+        )}
       </InfoSection>
     </InfoPageLayout>
   );
