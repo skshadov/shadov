@@ -43,7 +43,7 @@ export function HeroSection() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg" className="min-h-12">
-              <Link to="/" hash="estimate">
+              <Link to="/kalkulyator-stoimosti">
                 Получить расчёт
                 <ArrowRight aria-hidden="true" className="ml-1.5 h-4 w-4" />
               </Link>

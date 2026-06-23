@@ -50,11 +50,11 @@ export function ContactsSection() {
             <PlaceholderNotice
               variant="soft"
               title="Прямые контакты появятся после публикации"
-              description="Телефон, email и адрес офиса заполняются через административную панель компании. До этого момента отправляйте запросы через форму расчёта на этой странице — мы свяжемся."
+              description="Телефон, email и адрес офиса заполняются через административную панель компании. До этого момента воспользуйтесь калькулятором стоимости — мы свяжемся."
               action={
                 <Button asChild>
-                  <Link to="/" hash="estimate">
-                    К форме расчёта
+                  <Link to="/kalkulyator-stoimosti">
+                    Рассчитать стоимость
                     <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>

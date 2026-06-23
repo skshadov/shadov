@@ -119,7 +119,7 @@ export function MobileNavigation() {
 
         <div className="flex flex-col gap-2 border-t border-border bg-card/40 px-4 py-4">
           <Button asChild className="min-h-11 w-full">
-            <Link to="/" hash="estimate" onClick={() => setOpen(false)}>
+            <Link to="/kalkulyator-stoimosti" onClick={() => setOpen(false)}>
               Получить расчёт
               <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4" />
             </Link>

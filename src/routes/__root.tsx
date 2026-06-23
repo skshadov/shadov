@@ -42,8 +42,7 @@ function NotFoundComponent() {
               Посмотреть услуги
             </Link>
             <Link
-              to="/"
-              hash="estimate"
+              to="/kalkulyator-stoimosti"
               className="inline-flex min-h-11 items-center justify-center rounded-md border border-border bg-background px-5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
             >
               Получить расчёт

@@ -65,7 +65,7 @@ export function Header() {
               </Link>
             </Button>
             <Button asChild size="sm" className="hidden md:inline-flex">
-              <Link to="/" hash="estimate">
+              <Link to="/kalkulyator-stoimosti">
                 Получить расчёт
                 <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4" />
               </Link>
