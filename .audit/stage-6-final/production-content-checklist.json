@@ -1,0 +1,29 @@
+{
+  "createdAt": "2026-06-23",
+  "status": "incomplete_blocked_by_owner",
+  "fields": [
+    { "field": "legalName", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "brandName", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "inn", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "kpp", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "ogrn", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "legalAddress", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "officeAddress", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "phone", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "email", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "sro.name", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "sro.number", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "sro.registryUrl", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "bank.name", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "bank.bik", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "bank.account", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "bank.corrAccount", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "estimateRequestRecipientEmail", "source": "company_settings", "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "catalog.priceItems", "source": "price_items table", "expectedCount": 334, "actualCount": 0, "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "catalog.serviceCategories", "source": "service_categories table", "expectedCount": 24, "actualCount": 0, "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "catalog.services", "source": "services table", "expectedCount": 35, "actualCount": 0, "placeholderRemoved": false, "verifiedByOwner": false, "published": false },
+    { "field": "portfolio.publishedProjects", "source": "portfolio_projects", "actualCount": 0, "placeholderRemoved": true, "verifiedByOwner": false, "published": false },
+    { "field": "reviews.publishedReviews", "source": "portfolio_reviews", "actualCount": 0, "placeholderRemoved": true, "verifiedByOwner": false, "published": false }
+  ],
+  "blockedBy": "Владелец не предоставил содержимое (реквизиты, прайс, каталог, портфолио, отзывы)."
+}
