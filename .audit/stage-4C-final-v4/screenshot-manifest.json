@@ -1,0 +1,403 @@
+{
+  "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "screenshotsIncluded": true,
+  "count": 44,
+  "items": [
+    {
+      "route": "/",
+      "viewport": 320,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/",
+      "sha256": "a4afb3dd66d1346abfe712f2de5e0626a11d5653948cb3910b533be6a4acf7e2",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/__320.png"
+    },
+    {
+      "route": "/",
+      "viewport": 375,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/",
+      "sha256": "f890b179f015e5b599739e9d701297f2a4c51e08ce2a636056c9df5a7623e080",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/__375.png"
+    },
+    {
+      "route": "/",
+      "viewport": 768,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/",
+      "sha256": "a2b734d656c4686458f673aaab2ac768083e8cce61978a9b9f0caddbf7dcfb8c",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/__768.png"
+    },
+    {
+      "route": "/",
+      "viewport": 1366,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/",
+      "sha256": "f7616e0f3d3751e33b18230585b6c8556ca6d705e65825eb8e017efd12063553",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/__1366.png"
+    },
+    {
+      "route": "/",
+      "viewport": 1920,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/",
+      "sha256": "f1e05f24d381d135cf36e741245a273495f750edc37a6a0beb746a69cb712eee",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/__1920.png"
+    },
+    {
+      "route": "/",
+      "viewport": 2560,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/",
+      "sha256": "c1fab26fb7b5b92353a0fa9bc73736a679a97b7888696ffcdc68340817bc6125",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/__2560.png"
+    },
+    {
+      "route": "/",
+      "viewport": 1100,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/",
+      "sha256": "75f0dc17473691a22febfbc483065889cfe22ae66aecd6cac28573b046851b96",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/header_1100.png"
+    },
+    {
+      "route": "/",
+      "viewport": 1180,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/",
+      "sha256": "e0bd2636a916a772dd9894a158fc18297eb15227c05241a6af24677ca57708a3",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/header_1180.png"
+    },
+    {
+      "route": "/",
+      "viewport": 1280,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/",
+      "sha256": "2d1a0a4ed1a34a6d850d98d33fb2f24fd98107ff2ccc2142d25bc714530dfc7a",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/header_1280.png"
+    },
+    {
+      "route": "/",
+      "viewport": 1366,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/",
+      "sha256": "f7616e0f3d3751e33b18230585b6c8556ca6d705e65825eb8e017efd12063553",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/header_1366.png"
+    },
+    {
+      "route": "/",
+      "viewport": 375,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/",
+      "sha256": "f890b179f015e5b599739e9d701297f2a4c51e08ce2a636056c9df5a7623e080",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/mobile_menu_open_375.png"
+    },
+    {
+      "route": "/prices",
+      "viewport": 320,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/prices",
+      "sha256": "5fdd5fb7ab46f82a2132787ca9e0282ed9d69bdec0ddf631a79a131fea791b8f",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/prices_320.png"
+    },
+    {
+      "route": "/prices",
+      "viewport": 375,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/prices",
+      "sha256": "e4085fc95473ce3c10922ef60e30259f0c1f5f2ee1d4cf9444d758bb50861f1e",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/prices_375.png"
+    },
+    {
+      "route": "/prices",
+      "viewport": 768,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/prices",
+      "sha256": "0c6cda6247d53647d88a39af01075f396a637e12ddf4cc30659ab3d35473b7dd",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/prices_768.png"
+    },
+    {
+      "route": "/prices",
+      "viewport": 1366,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/prices",
+      "sha256": "2f2e010ff367c92c2da24cfa63736853cee55cd260b23893ed9661eaa7d7a200",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/prices_1366.png"
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "viewport": 320,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/kalkulyator-stoimosti?mode=repair",
+      "sha256": "67e4fc6b4fa9467c28fc4ec069ee9b29213b4f486e54f4ebe9fde41370e2b9dc",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/calculator_320.png"
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "viewport": 360,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/kalkulyator-stoimosti?mode=repair",
+      "sha256": "3d938ca7568ccb11ff08cd8a2b9e5cbaae9735129550904f631f3cfaf726c541",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/calculator_360.png"
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "viewport": 375,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/kalkulyator-stoimosti?mode=repair",
+      "sha256": "c60d37af5ee3de350f66d595a7bf4dca8b839ef19ffa485e12681489b02cc029",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/calculator_375.png"
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "viewport": 768,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/kalkulyator-stoimosti?mode=repair",
+      "sha256": "3eef69213cf4806f652c399321f67745a1cda47319457f3eedae60e4b51e236a",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/calculator_768.png"
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "viewport": 1366,
+      "authenticated": false,
+      "renderedPage": "http://localhost:8080/kalkulyator-stoimosti?mode=repair",
+      "sha256": "8eda4e911ca8e5befa97d3e1bb987594639805c8d471711a5792f39e57cf3a69",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/calculator_1366.png"
+    },
+    {
+      "route": "/client",
+      "viewport": 320,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client",
+      "sha256": "e6fa078e7b7f8494adc4eb44f6ad11a7b21afcd35238e9e8b347c970aa8d15aa",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/client_authenticated_320.png"
+    },
+    {
+      "route": "/client",
+      "viewport": 375,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client",
+      "sha256": "9cb7e99664f7ceb2dad9558f2d2b8deb12d194423ffe0b011b4657f373cd880f",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/client_authenticated_375.png"
+    },
+    {
+      "route": "/client",
+      "viewport": 768,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client",
+      "sha256": "423f7dbba890bb9ee5132b5164b2f9ce32b2a8624dc23f63db1500460f8fd216",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/client_authenticated_768.png"
+    },
+    {
+      "route": "/client",
+      "viewport": 1440,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client",
+      "sha256": "7d581c3b93570c23ec135c9382a7cdf05e33caeab18955fe55b8fae8378916e2",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/client_authenticated_1440.png"
+    },
+    {
+      "route": "/client/project/$id",
+      "viewport": 320,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d",
+      "sha256": "055c3671ff3335bec9ba5b9ac7cce985338c103c834d9755f2f9182689c550f9",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/client_project_paramid_authenticated_320.png"
+    },
+    {
+      "route": "/client/project/$id",
+      "viewport": 375,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d",
+      "sha256": "cb0c3bd0fd9087c9ff07c52bcf274b12421e8a455b64306b358b5a9b0a00bf11",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/client_project_paramid_authenticated_375.png"
+    },
+    {
+      "route": "/client/project/$id",
+      "viewport": 768,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d",
+      "sha256": "3418b37192fde121cce19c5d7c8c91f6ca4c8308d7bf21e082e141251f8be378",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/client_project_paramid_authenticated_768.png"
+    },
+    {
+      "route": "/client/project/$id",
+      "viewport": 1440,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d",
+      "sha256": "c66bacb8e5b9a5b375ffaade3dfa1ff7707732b0ee0b6181df7dad4e87b7fe0b",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/client_project_paramid_authenticated_1440.png"
+    },
+    {
+      "route": "/client/project/$id?tab=overview",
+      "viewport": 375,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=overview",
+      "sha256": "cb0c3bd0fd9087c9ff07c52bcf274b12421e8a455b64306b358b5a9b0a00bf11",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_overview_mobile_375.png"
+    },
+    {
+      "route": "/client/project/$id?tab=overview",
+      "viewport": 1440,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=overview",
+      "sha256": "c66bacb8e5b9a5b375ffaade3dfa1ff7707732b0ee0b6181df7dad4e87b7fe0b",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_overview_desktop_1440.png"
+    },
+    {
+      "route": "/client/project/$id?tab=stages",
+      "viewport": 375,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=stages",
+      "sha256": "4aa5f562e2c8041fa5c6993972d37f71fe1190c0434e5957aa6444b8f1ad6a80",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_stages_mobile_375.png"
+    },
+    {
+      "route": "/client/project/$id?tab=stages",
+      "viewport": 1440,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=stages",
+      "sha256": "027f22a3a436d3ed75b8e0fbc88b32ca8cacee442aaca40c4a068cfe8d64f6e4",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_stages_desktop_1440.png"
+    },
+    {
+      "route": "/client/project/$id?tab=reports",
+      "viewport": 375,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=reports",
+      "sha256": "166ffa035d9dfa75d5f5c9f6799caf9c8fb400cc10cfbd32447b7cfa938dbb19",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_reports_mobile_375.png"
+    },
+    {
+      "route": "/client/project/$id?tab=reports",
+      "viewport": 1440,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=reports",
+      "sha256": "25ed9beab2b0772968eb547911b03227ce0cfc231f0ea7e83d670d0b026092cb",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_reports_desktop_1440.png"
+    },
+    {
+      "route": "/client/project/$id?tab=cameras",
+      "viewport": 375,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=cameras",
+      "sha256": "ecb6153da8deeaad70c6837fe82a8c081c61384b69938a77da9146c72e1ab381",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_cameras_mobile_375.png"
+    },
+    {
+      "route": "/client/project/$id?tab=cameras",
+      "viewport": 1440,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=cameras",
+      "sha256": "38ae2e5aec005fbed2b0728e63086d5bcf0ce5635ba56ad38275712623177c99",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_cameras_desktop_1440.png"
+    },
+    {
+      "route": "/client/project/$id?tab=messages",
+      "viewport": 375,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=messages",
+      "sha256": "c20be1ee1eb6b59d3856d4886a936aae8674db0fa0a88ee6602404ad969a7170",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_messages_mobile_375.png"
+    },
+    {
+      "route": "/client/project/$id?tab=messages",
+      "viewport": 1440,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=messages",
+      "sha256": "9ebfde66cc94cfd9a9f312147ceffae97d4ca589c931a36dc96cdc2c46049579",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_messages_desktop_1440.png"
+    },
+    {
+      "route": "/client/project/$id?tab=payments",
+      "viewport": 375,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=payments",
+      "sha256": "9df9245b03e04bbeb78a321025b01d7a1cfd939c314de569e394c505feb42441",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_payments_mobile_375.png"
+    },
+    {
+      "route": "/client/project/$id?tab=payments",
+      "viewport": 1440,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=payments",
+      "sha256": "abfe49c2279b3d54800193e24ad566d2e7ed79bc1c0417b6c6581adf0a7addc1",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_payments_desktop_1440.png"
+    },
+    {
+      "route": "/client/project/$id?tab=documents",
+      "viewport": 375,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=documents",
+      "sha256": "d0dd3da47ffa5bf754ab538b3667af325c35d68b2eb453200dba4a7b32674e8f",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_documents_mobile_375.png"
+    },
+    {
+      "route": "/client/project/$id?tab=documents",
+      "viewport": 1440,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=documents",
+      "sha256": "744e82b31668b6fc0245be8fe106c1c1294427d5131479b27d1771e8b461a275",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/project_tab_documents_desktop_1440.png"
+    },
+    {
+      "route": "/client/project/$id?tab=stages&dialog=acceptance",
+      "viewport": 375,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=stages&dialog=acceptance",
+      "sha256": "4aa5f562e2c8041fa5c6993972d37f71fe1190c0434e5957aa6444b8f1ad6a80",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/AcceptanceDialog_mobile_375.png"
+    },
+    {
+      "route": "/client/project/$id?tab=stages&dialog=acceptance",
+      "viewport": 1440,
+      "authenticated": true,
+      "renderedPage": "http://localhost:8080/client/project/3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d?tab=stages&dialog=acceptance",
+      "sha256": "027f22a3a436d3ed75b8e0fbc88b32ca8cacee442aaca40c4a068cfe8d64f6e4",
+      "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+      "file": "global-responsive-screenshots/AcceptanceDialog_desktop_1440.png"
+    }
+  ]
+}
