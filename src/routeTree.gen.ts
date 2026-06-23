@@ -60,11 +60,14 @@ import { Route as ContactsRouteImport } from './routes/contacts'
 import { Route as ClientRouteImport } from './routes/client'
 import { Route as ChistovayaOtdelkaRouteImport } from './routes/chistovaya-otdelka'
 import { Route as ChernovoyRemontRouteImport } from './routes/chernovoy-remont'
+import { Route as CatalogRouteImport } from './routes/catalog'
 import { Route as BiznesRemontRouteImport } from './routes/biznes-remont'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CatalogIndexRouteImport } from './routes/catalog.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as CatalogCategoryRouteImport } from './routes/catalog.$category'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
 import { Route as AdminPagesRouteImport } from './routes/admin.pages'
@@ -73,6 +76,7 @@ import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
 import { Route as ClientProjectIdRouteImport } from './routes/client.project.$id'
+import { Route as CatalogCategoryServiceRouteImport } from './routes/catalog.$category.$service'
 import { Route as AdminProjectsIdRouteImport } from './routes/admin.projects.$id'
 import { Route as AdminClientsIdRouteImport } from './routes/admin.clients.$id'
 import { Route as AdminCatalogServicesRouteImport } from './routes/admin.catalog.services'
@@ -343,6 +347,11 @@ const ChernovoyRemontRoute = ChernovoyRemontRouteImport.update({
   path: '/chernovoy-remont',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CatalogRoute = CatalogRouteImport.update({
+  id: '/catalog',
+  path: '/catalog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BiznesRemontRoute = BiznesRemontRouteImport.update({
   id: '/biznes-remont',
   path: '/biznes-remont',
@@ -363,10 +372,20 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CatalogIndexRoute = CatalogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CatalogRoute,
+} as any)
 const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => PortfolioRoute,
+} as any)
+const CatalogCategoryRoute = CatalogCategoryRouteImport.update({
+  id: '/$category',
+  path: '/$category',
+  getParentRoute: () => CatalogRoute,
 } as any)
 const AdminSettingsRoute = AdminSettingsRouteImport.update({
   id: '/settings',
@@ -407,6 +426,11 @@ const ClientProjectIdRoute = ClientProjectIdRouteImport.update({
   id: '/project/$id',
   path: '/project/$id',
   getParentRoute: () => ClientRoute,
+} as any)
+const CatalogCategoryServiceRoute = CatalogCategoryServiceRouteImport.update({
+  id: '/$service',
+  path: '/$service',
+  getParentRoute: () => CatalogCategoryRoute,
 } as any)
 const AdminProjectsIdRoute = AdminProjectsIdRouteImport.update({
   id: '/$id',
@@ -470,6 +494,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
   '/biznes-remont': typeof BiznesRemontRoute
+  '/catalog': typeof CatalogRouteWithChildren
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
   '/client': typeof ClientRouteWithChildren
@@ -528,13 +553,16 @@ export interface FileRoutesByFullPath {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
+  '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/catalog/': typeof CatalogIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
   '/admin/catalog/prices': typeof AdminCatalogPricesRoute
   '/admin/catalog/services': typeof AdminCatalogServicesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
+  '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
   '/client/project/$id': typeof ClientProjectIdRoute
   '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
   '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
@@ -605,13 +633,16 @@ export interface FileRoutesByTo {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
+  '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/catalog': typeof CatalogIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
   '/admin/catalog/prices': typeof AdminCatalogPricesRoute
   '/admin/catalog/services': typeof AdminCatalogServicesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
+  '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
   '/client/project/$id': typeof ClientProjectIdRoute
   '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
   '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
@@ -625,6 +656,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
   '/biznes-remont': typeof BiznesRemontRoute
+  '/catalog': typeof CatalogRouteWithChildren
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
   '/client': typeof ClientRouteWithChildren
@@ -683,13 +715,16 @@ export interface FileRoutesById {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
+  '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/catalog/': typeof CatalogIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
   '/admin/catalog/prices': typeof AdminCatalogPricesRoute
   '/admin/catalog/services': typeof AdminCatalogServicesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
+  '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
   '/client/project/$id': typeof ClientProjectIdRoute
   '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
   '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
@@ -704,6 +739,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/admin'
     | '/biznes-remont'
+    | '/catalog'
     | '/chernovoy-remont'
     | '/chistovaya-otdelka'
     | '/client'
@@ -762,13 +798,16 @@ export interface FileRouteTypes {
     | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
+    | '/catalog/$category'
     | '/portfolio/$slug'
+    | '/catalog/'
     | '/admin/applications/$id'
     | '/admin/catalog/categories'
     | '/admin/catalog/prices'
     | '/admin/catalog/services'
     | '/admin/clients/$id'
     | '/admin/projects/$id'
+    | '/catalog/$category/$service'
     | '/client/project/$id'
     | '/admin/projects/$id/cameras'
     | '/admin/projects/$id/documents'
@@ -839,13 +878,16 @@ export interface FileRouteTypes {
     | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
+    | '/catalog/$category'
     | '/portfolio/$slug'
+    | '/catalog'
     | '/admin/applications/$id'
     | '/admin/catalog/categories'
     | '/admin/catalog/prices'
     | '/admin/catalog/services'
     | '/admin/clients/$id'
     | '/admin/projects/$id'
+    | '/catalog/$category/$service'
     | '/client/project/$id'
     | '/admin/projects/$id/cameras'
     | '/admin/projects/$id/documents'
@@ -858,6 +900,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/admin'
     | '/biznes-remont'
+    | '/catalog'
     | '/chernovoy-remont'
     | '/chistovaya-otdelka'
     | '/client'
@@ -916,13 +959,16 @@ export interface FileRouteTypes {
     | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
+    | '/catalog/$category'
     | '/portfolio/$slug'
+    | '/catalog/'
     | '/admin/applications/$id'
     | '/admin/catalog/categories'
     | '/admin/catalog/prices'
     | '/admin/catalog/services'
     | '/admin/clients/$id'
     | '/admin/projects/$id'
+    | '/catalog/$category/$service'
     | '/client/project/$id'
     | '/admin/projects/$id/cameras'
     | '/admin/projects/$id/documents'
@@ -936,6 +982,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AdminRoute: typeof AdminRouteWithChildren
   BiznesRemontRoute: typeof BiznesRemontRoute
+  CatalogRoute: typeof CatalogRouteWithChildren
   ChernovoyRemontRoute: typeof ChernovoyRemontRoute
   ChistovayaOtdelkaRoute: typeof ChistovayaOtdelkaRoute
   ClientRoute: typeof ClientRouteWithChildren
@@ -1348,6 +1395,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChernovoyRemontRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/catalog': {
+      id: '/catalog'
+      path: '/catalog'
+      fullPath: '/catalog'
+      preLoaderRoute: typeof CatalogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/biznes-remont': {
       id: '/biznes-remont'
       path: '/biznes-remont'
@@ -1376,12 +1430,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/catalog/': {
+      id: '/catalog/'
+      path: '/'
+      fullPath: '/catalog/'
+      preLoaderRoute: typeof CatalogIndexRouteImport
+      parentRoute: typeof CatalogRoute
+    }
     '/portfolio/$slug': {
       id: '/portfolio/$slug'
       path: '/$slug'
       fullPath: '/portfolio/$slug'
       preLoaderRoute: typeof PortfolioSlugRouteImport
       parentRoute: typeof PortfolioRoute
+    }
+    '/catalog/$category': {
+      id: '/catalog/$category'
+      path: '/$category'
+      fullPath: '/catalog/$category'
+      preLoaderRoute: typeof CatalogCategoryRouteImport
+      parentRoute: typeof CatalogRoute
     }
     '/admin/settings': {
       id: '/admin/settings'
@@ -1438,6 +1506,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/client/project/$id'
       preLoaderRoute: typeof ClientProjectIdRouteImport
       parentRoute: typeof ClientRoute
+    }
+    '/catalog/$category/$service': {
+      id: '/catalog/$category/$service'
+      path: '/$service'
+      fullPath: '/catalog/$category/$service'
+      preLoaderRoute: typeof CatalogCategoryServiceRouteImport
+      parentRoute: typeof CatalogCategoryRoute
     }
     '/admin/projects/$id': {
       id: '/admin/projects/$id'
@@ -1602,6 +1677,31 @@ const AdminRouteChildren: AdminRouteChildren = {
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
+interface CatalogCategoryRouteChildren {
+  CatalogCategoryServiceRoute: typeof CatalogCategoryServiceRoute
+}
+
+const CatalogCategoryRouteChildren: CatalogCategoryRouteChildren = {
+  CatalogCategoryServiceRoute: CatalogCategoryServiceRoute,
+}
+
+const CatalogCategoryRouteWithChildren = CatalogCategoryRoute._addFileChildren(
+  CatalogCategoryRouteChildren,
+)
+
+interface CatalogRouteChildren {
+  CatalogCategoryRoute: typeof CatalogCategoryRouteWithChildren
+  CatalogIndexRoute: typeof CatalogIndexRoute
+}
+
+const CatalogRouteChildren: CatalogRouteChildren = {
+  CatalogCategoryRoute: CatalogCategoryRouteWithChildren,
+  CatalogIndexRoute: CatalogIndexRoute,
+}
+
+const CatalogRouteWithChildren =
+  CatalogRoute._addFileChildren(CatalogRouteChildren)
+
 interface ClientRouteChildren {
   ClientProjectIdRoute: typeof ClientProjectIdRoute
 }
@@ -1630,6 +1730,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AdminRoute: AdminRouteWithChildren,
   BiznesRemontRoute: BiznesRemontRoute,
+  CatalogRoute: CatalogRouteWithChildren,
   ChernovoyRemontRoute: ChernovoyRemontRoute,
   ChistovayaOtdelkaRoute: ChistovayaOtdelkaRoute,
   ClientRoute: ClientRouteWithChildren,
