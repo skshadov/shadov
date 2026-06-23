@@ -3,11 +3,11 @@
     "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
     "totalScenarios": 156,
     "rlsRealScenarios": 156,
-    "rlsFailed": 8,
+    "rlsFailed": 0,
     "rlsNaCount": 0,
     "remainingTestRows": 0,
     "remainingTestUsers": 0,
-    "fixturesSuffix": "a2a49762"
+    "fixturesSuffix": "d45dff0c"
   },
   "scenarios": [
     {
@@ -118,7 +118,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"title\":\"S4C-A-a2a49762\",\"status\":\"active\",\"description\":null,\"created_at\":\"2026-06-23T09:58:4"
+      "responsePreview": "[{\"id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"title\":\"S4C-A-d45dff0c\",\"status\":\"active\",\"description\":null,\"created_at\":\"2026-06-23T09:59:2"
     },
     {
       "role": "memberA_alice",
@@ -128,7 +128,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"f8f9ebe3-b95e-4fd1-9e3e-56c8e6849ed0\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"sort_order\":1,\"title\":\"S1\",\"description\":"
+      "responsePreview": "[{\"id\":\"2867ff2f-4ee7-4ab2-b8ab-69a22a4ca4b2\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"sort_order\":1,\"title\":\"S1\",\"description\":"
     },
     {
       "role": "memberA_alice",
@@ -138,7 +138,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"58b1e754-ca61-48d4-b565-706017eaeefe\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"storage_path\":\"679c801c-27e8-474c-adea-02"
+      "responsePreview": "[{\"id\":\"1f5af251-54c0-416e-bc70-4b7296586cd7\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"storage_path\":\"a2098fb3-c759-463b-b040-3f"
     },
     {
       "role": "memberA_alice",
@@ -148,7 +148,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"76f0bb25-711d-4f63-b366-b1bc8160644b\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"report_date\":\"2026-06-23\",\"title\":\"rpt\",\""
+      "responsePreview": "[{\"id\":\"ad55ab7e-0c8e-4106-bcc0-a93d6c95233d\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"report_date\":\"2026-06-23\",\"title\":\"rpt\",\""
     },
     {
       "role": "memberA_alice",
@@ -158,7 +158,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"report_id\":\"76f0bb25-711d-4f63-b366-b1bc8160644b\",\"document_id\":\"58b1e754-ca61-48d4-b565-706017eaeefe\",\"sort_order\":0,\"created_at\":\"2026-"
+      "responsePreview": "[{\"report_id\":\"ad55ab7e-0c8e-4106-bcc0-a93d6c95233d\",\"document_id\":\"1f5af251-54c0-416e-bc70-4b7296586cd7\",\"sort_order\":0,\"created_at\":\"2026-"
     },
     {
       "role": "memberA_alice",
@@ -168,7 +168,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"eb7bf50c-9fee-4637-9a5e-0b62c1522cde\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"stage_id\":null,\"title\":\"pay-audit\",\"descr"
+      "responsePreview": "[{\"id\":\"fc0a8ef1-10b5-49e3-8fb1-6cd48495c7ed\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"stage_id\":null,\"title\":\"pay-audit\",\"descr"
     },
     {
       "role": "memberA_alice",
@@ -178,15 +178,15 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"da35adfb-171b-473f-bc57-c95fd5bbf2dd\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"name\":\"cam\",\"description\":null,\"status\":\""
+      "responsePreview": "[{\"id\":\"c744b989-12e9-44fa-8c1a-7831a6c3a5e7\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"name\":\"cam\",\"description\":null,\"status\":\""
     },
     {
       "role": "memberA_alice",
       "table": "project_camera_sources",
       "action": "SELECT",
-      "expected": "allow",
+      "expected": "deny",
       "got": "deny",
-      "passed": false,
+      "passed": true,
       "httpCode": 200,
       "responsePreview": "[]"
     },
@@ -198,7 +198,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"36aab4d8-9c8f-4074-a385-8f4e01e2eb09\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"sender_id\":\"f16cbdee-cced-4b5c-bfb6-56557"
+      "responsePreview": "[{\"id\":\"c07d7c3d-43b1-48d6-afa8-e05321b536a5\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"sender_id\":\"35b5f1f1-184e-4a5a-866b-9ccfa"
     },
     {
       "role": "memberA_alice",
@@ -208,7 +208,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"a9b21ee3-591e-4c12-88f7-6587adda678a\",\"stage_id\":\"f8f9ebe3-b95e-4fd1-9e3e-56c8e6849ed0\",\"attempt_number\":1,\"status\":\"pending\",\"reque"
+      "responsePreview": "[{\"id\":\"e9a79768-78d3-4169-bca4-f750bd621b03\",\"stage_id\":\"2867ff2f-4ee7-4ab2-b8ab-69a22a4ca4b2\",\"attempt_number\":1,\"status\":\"pending\",\"reque"
     },
     {
       "role": "memberA_carol",
@@ -218,7 +218,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"title\":\"S4C-A-a2a49762\",\"status\":\"active\",\"description\":null,\"created_at\":\"2026-06-23T09:58:4"
+      "responsePreview": "[{\"id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"title\":\"S4C-A-d45dff0c\",\"status\":\"active\",\"description\":null,\"created_at\":\"2026-06-23T09:59:2"
     },
     {
       "role": "memberA_carol",
@@ -228,7 +228,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"f8f9ebe3-b95e-4fd1-9e3e-56c8e6849ed0\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"sort_order\":1,\"title\":\"S1\",\"description\":"
+      "responsePreview": "[{\"id\":\"2867ff2f-4ee7-4ab2-b8ab-69a22a4ca4b2\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"sort_order\":1,\"title\":\"S1\",\"description\":"
     },
     {
       "role": "memberA_carol",
@@ -238,7 +238,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"58b1e754-ca61-48d4-b565-706017eaeefe\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"storage_path\":\"679c801c-27e8-474c-adea-02"
+      "responsePreview": "[{\"id\":\"1f5af251-54c0-416e-bc70-4b7296586cd7\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"storage_path\":\"a2098fb3-c759-463b-b040-3f"
     },
     {
       "role": "memberA_carol",
@@ -248,7 +248,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"76f0bb25-711d-4f63-b366-b1bc8160644b\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"report_date\":\"2026-06-23\",\"title\":\"rpt\",\""
+      "responsePreview": "[{\"id\":\"ad55ab7e-0c8e-4106-bcc0-a93d6c95233d\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"report_date\":\"2026-06-23\",\"title\":\"rpt\",\""
     },
     {
       "role": "memberA_carol",
@@ -258,7 +258,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"report_id\":\"76f0bb25-711d-4f63-b366-b1bc8160644b\",\"document_id\":\"58b1e754-ca61-48d4-b565-706017eaeefe\",\"sort_order\":0,\"created_at\":\"2026-"
+      "responsePreview": "[{\"report_id\":\"ad55ab7e-0c8e-4106-bcc0-a93d6c95233d\",\"document_id\":\"1f5af251-54c0-416e-bc70-4b7296586cd7\",\"sort_order\":0,\"created_at\":\"2026-"
     },
     {
       "role": "memberA_carol",
@@ -268,7 +268,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"eb7bf50c-9fee-4637-9a5e-0b62c1522cde\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"stage_id\":null,\"title\":\"pay-audit\",\"descr"
+      "responsePreview": "[{\"id\":\"fc0a8ef1-10b5-49e3-8fb1-6cd48495c7ed\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"stage_id\":null,\"title\":\"pay-audit\",\"descr"
     },
     {
       "role": "memberA_carol",
@@ -278,15 +278,15 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"da35adfb-171b-473f-bc57-c95fd5bbf2dd\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"name\":\"cam\",\"description\":null,\"status\":\""
+      "responsePreview": "[{\"id\":\"c744b989-12e9-44fa-8c1a-7831a6c3a5e7\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"name\":\"cam\",\"description\":null,\"status\":\""
     },
     {
       "role": "memberA_carol",
       "table": "project_camera_sources",
       "action": "SELECT",
-      "expected": "allow",
+      "expected": "deny",
       "got": "deny",
-      "passed": false,
+      "passed": true,
       "httpCode": 200,
       "responsePreview": "[]"
     },
@@ -298,7 +298,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"36aab4d8-9c8f-4074-a385-8f4e01e2eb09\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"sender_id\":\"f16cbdee-cced-4b5c-bfb6-56557"
+      "responsePreview": "[{\"id\":\"c07d7c3d-43b1-48d6-afa8-e05321b536a5\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"sender_id\":\"35b5f1f1-184e-4a5a-866b-9ccfa"
     },
     {
       "role": "memberA_carol",
@@ -308,7 +308,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"a9b21ee3-591e-4c12-88f7-6587adda678a\",\"stage_id\":\"f8f9ebe3-b95e-4fd1-9e3e-56c8e6849ed0\",\"attempt_number\":1,\"status\":\"pending\",\"reque"
+      "responsePreview": "[{\"id\":\"e9a79768-78d3-4169-bca4-f750bd621b03\",\"stage_id\":\"2867ff2f-4ee7-4ab2-b8ab-69a22a4ca4b2\",\"attempt_number\":1,\"status\":\"pending\",\"reque"
     },
     {
       "role": "foreign_bob",
@@ -1228,7 +1228,7 @@
       "got": "allow",
       "passed": true,
       "httpCode": 201,
-      "responsePreview": "[{\"id\":\"068be7dc-467a-4f8f-9472-1219d4408bf6\",\"project_id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"sender_id\":\"f16cbdee-cced-4b5c-bfb6-56557"
+      "responsePreview": "[{\"id\":\"1f53a1fc-17b5-43cc-8d26-233a6080ab83\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"sender_id\":\"35b5f1f1-184e-4a5a-866b-9ccfa"
     },
     {
       "role": "foreign_bob",
@@ -1308,15 +1308,15 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"f16cbdee-cced-4b5c-bfb6-56557deb30d2\"}]"
+      "responsePreview": "[{\"id\":\"35b5f1f1-184e-4a5a-866b-9ccfa280c2fc\"}]"
     },
     {
       "role": "memberA_alice",
       "table": "profiles",
       "action": "SELECT_other",
       "expected": "deny",
-      "got": "n/a",
-      "passed": false,
+      "got": "deny",
+      "passed": true,
       "httpCode": 200,
       "responsePreview": "[]"
     },
@@ -1335,8 +1335,8 @@
       "table": "user_roles",
       "action": "SELECT_other",
       "expected": "deny",
-      "got": "n/a",
-      "passed": false,
+      "got": "deny",
+      "passed": true,
       "httpCode": 200,
       "responsePreview": "[]"
     },
@@ -1344,21 +1344,21 @@
       "role": "memberA_alice",
       "table": "profiles",
       "action": "UPDATE",
-      "expected": "deny",
-      "got": "deny",
+      "expected": "allow",
+      "got": "allow",
       "passed": true,
-      "httpCode": 400,
-      "responsePreview": "{\"code\":\"PGRST204\",\"details\":null,\"hint\":null,\"message\":\"Could not find the 'full_name' column of 'profiles' in the schema cache\"}"
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"35b5f1f1-184e-4a5a-866b-9ccfa280c2fc\",\"display_name\":\"audit\",\"phone\":null,\"created_at\":\"2026-06-23T09:59:24.603239+00:00\",\"updated_a"
     },
     {
       "role": "memberA_alice",
       "table": "profiles",
       "action": "UPDATE_other",
       "expected": "deny",
-      "got": "n/a",
-      "passed": false,
-      "httpCode": 400,
-      "responsePreview": "{\"code\":\"PGRST204\",\"details\":null,\"hint\":null,\"message\":\"Could not find the 'full_name' column of 'profiles' in the schema cache\"}"
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
     },
     {
       "role": "foreign_bob",
@@ -1368,15 +1368,15 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"f207023d-d1fd-465f-a295-583c3629a68f\"}]"
+      "responsePreview": "[{\"id\":\"d8659200-6b94-4e43-a0ea-d463be980145\"}]"
     },
     {
       "role": "foreign_bob",
       "table": "profiles",
       "action": "SELECT_other",
       "expected": "deny",
-      "got": "n/a",
-      "passed": false,
+      "got": "deny",
+      "passed": true,
       "httpCode": 200,
       "responsePreview": "[]"
     },
@@ -1395,8 +1395,8 @@
       "table": "user_roles",
       "action": "SELECT_other",
       "expected": "deny",
-      "got": "n/a",
-      "passed": false,
+      "got": "deny",
+      "passed": true,
       "httpCode": 200,
       "responsePreview": "[]"
     },
@@ -1404,21 +1404,21 @@
       "role": "foreign_bob",
       "table": "profiles",
       "action": "UPDATE",
-      "expected": "deny",
-      "got": "deny",
+      "expected": "allow",
+      "got": "allow",
       "passed": true,
-      "httpCode": 400,
-      "responsePreview": "{\"code\":\"PGRST204\",\"details\":null,\"hint\":null,\"message\":\"Could not find the 'full_name' column of 'profiles' in the schema cache\"}"
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"d8659200-6b94-4e43-a0ea-d463be980145\",\"display_name\":\"audit\",\"phone\":null,\"created_at\":\"2026-06-23T09:59:25.33419+00:00\",\"updated_at"
     },
     {
       "role": "foreign_bob",
       "table": "profiles",
       "action": "UPDATE_other",
       "expected": "deny",
-      "got": "n/a",
-      "passed": false,
-      "httpCode": 400,
-      "responsePreview": "{\"code\":\"PGRST204\",\"details\":null,\"hint\":null,\"message\":\"Could not find the 'full_name' column of 'profiles' in the schema cache\"}"
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
     },
     {
       "role": "anon",
@@ -1498,7 +1498,7 @@
       "got": "ok",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"679c801c-27e8-474c-adea-02b501f9b20e\",\"title\":\"S4C-A-a2a49762\",\"status\":\"active\",\"description\":null,\"is_demo\":false,\"created_at\":\"2026-06-23T09:58:48.516017+00:00\"}]"
+      "responsePreview": "[{\"id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"title\":\"S4C-A-d45dff0c\",\"status\":\"active\",\"description\":null,\"is_demo\":false,\"created_at\":\"2026-06-23T09:59:25.670812+00:00\"}]"
     },
     {
       "role": "foreign_bob",
@@ -1508,7 +1508,7 @@
       "got": "ok",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"id\":\"8cfece01-68ee-4a1e-8d8a-409e087d5cbd\",\"title\":\"S4C-B-a2a49762\",\"status\":\"active\",\"description\":null,\"is_demo\":false,\"created_at\":\"2026-06-23T09:58:48.516017+00:00\"}]"
+      "responsePreview": "[{\"id\":\"47517d27-45e2-444c-bfcf-43e61ab501fa\",\"title\":\"S4C-B-d45dff0c\",\"status\":\"active\",\"description\":null,\"is_demo\":false,\"created_at\":\"2026-06-23T09:59:25.670812+00:00\"}]"
     },
     {
       "role": "memberA_alice",
@@ -1568,89 +1568,8 @@
       "got": "allow",
       "passed": true,
       "httpCode": 200,
-      "responsePreview": "[{\"acceptance_id_out\":\"a9b21ee3-591e-4c12-88f7-6587adda678a\",\"stage_id_out\":\"f8f9ebe3-b95e-4fd1-9e3e-56c8e6849ed0\",\"status_out\":\"accepted\",\"stage_status_out\":\"accepted\"}]"
+      "responsePreview": "[{\"acceptance_id_out\":\"e9a79768-78d3-4169-bca4-f750bd621b03\",\"stage_id_out\":\"2867ff2f-4ee7-4ab2-b8ab-69a22a4ca4b2\",\"status_out\":\"accepted\",\"stage_status_out\":\"accepted\"}]"
     }
   ],
-  "failures": [
-    {
-      "role": "memberA_alice",
-      "table": "project_camera_sources",
-      "action": "SELECT",
-      "expected": "allow",
-      "got": "deny",
-      "passed": false,
-      "httpCode": 200,
-      "responsePreview": "[]"
-    },
-    {
-      "role": "memberA_carol",
-      "table": "project_camera_sources",
-      "action": "SELECT",
-      "expected": "allow",
-      "got": "deny",
-      "passed": false,
-      "httpCode": 200,
-      "responsePreview": "[]"
-    },
-    {
-      "role": "memberA_alice",
-      "table": "profiles",
-      "action": "SELECT_other",
-      "expected": "deny",
-      "got": "n/a",
-      "passed": false,
-      "httpCode": 200,
-      "responsePreview": "[]"
-    },
-    {
-      "role": "memberA_alice",
-      "table": "user_roles",
-      "action": "SELECT_other",
-      "expected": "deny",
-      "got": "n/a",
-      "passed": false,
-      "httpCode": 200,
-      "responsePreview": "[]"
-    },
-    {
-      "role": "memberA_alice",
-      "table": "profiles",
-      "action": "UPDATE_other",
-      "expected": "deny",
-      "got": "n/a",
-      "passed": false,
-      "httpCode": 400,
-      "responsePreview": "{\"code\":\"PGRST204\",\"details\":null,\"hint\":null,\"message\":\"Could not find the 'full_name' column of 'profiles' in the schema cache\"}"
-    },
-    {
-      "role": "foreign_bob",
-      "table": "profiles",
-      "action": "SELECT_other",
-      "expected": "deny",
-      "got": "n/a",
-      "passed": false,
-      "httpCode": 200,
-      "responsePreview": "[]"
-    },
-    {
-      "role": "foreign_bob",
-      "table": "user_roles",
-      "action": "SELECT_other",
-      "expected": "deny",
-      "got": "n/a",
-      "passed": false,
-      "httpCode": 200,
-      "responsePreview": "[]"
-    },
-    {
-      "role": "foreign_bob",
-      "table": "profiles",
-      "action": "UPDATE_other",
-      "expected": "deny",
-      "got": "n/a",
-      "passed": false,
-      "httpCode": 400,
-      "responsePreview": "{\"code\":\"PGRST204\",\"details\":null,\"hint\":null,\"message\":\"Could not find the 'full_name' column of 'profiles' in the schema cache\"}"
-    }
-  ]
+  "failures": []
 }
