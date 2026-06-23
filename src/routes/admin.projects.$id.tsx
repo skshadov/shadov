@@ -36,7 +36,7 @@ function ProjectDetailPage() {
 
   if (session.status !== "authenticated") return null;
   if (!hasPermission(session, "admin.projects.read")) {
-    return <AdminLayout admin={session.admin} title="Проект"><p>Нет доступа.</p></AdminLayout>;
+    return <AdminLayout admin={session.admin} title="Проект" breadcrumbs={[{ label: "Админ-панель", to: "/admin" }, { label: "Проекты", to: "/admin/projects" }]}><p>Нет доступа.</p></AdminLayout>;
   }
 
   const canWrite = hasPermission(session, "admin.projects.write");
