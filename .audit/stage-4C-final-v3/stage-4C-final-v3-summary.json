@@ -1,0 +1,31 @@
+{
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "stage": "4C-final-v3",
+  "iterations": {
+    "A_responsive_sweep": { "tests": 840, "passed": 840, "overflows": 0, "verdict": "PASS" },
+    "B_rls_crud_and_keyboard_dialog": {
+      "rls": { "tables": 13, "issues": 0, "verdict": "PASS" },
+      "keyboard_dialog": { "primitive": "Radix Sheet/Dialog", "focus_trap": true, "accessible_name": true, "esc_closes": true, "verdict": "PASS" }
+    },
+    "C_axe_a11y_and_color": {
+      "routes": 10, "viewports": 2, "totalChecks": 20,
+      "totalViolations": 0, "colorContrastFailures": 0, "criticalOrSerious": 0,
+      "fixesApplied": [
+        "EstimateForm: aria-label on RadioGroupItem (4 channels) + Checkbox consent",
+        "Inline links: persistent underline across 9 files (terms, privacy, contacts, portfolio, cookies, login, personal-data-consent, sro-i-dokumenty, EstimateForm)"
+      ],
+      "verdict": "PASS"
+    },
+    "D_build_regression": { "typecheck": "PASS", "viteBuild": "PASS", "verdict": "PASS" }
+  },
+  "previouslyConfirmedCheckpoints": [
+    "Signed URL expiry",
+    "Realtime two-client subscription",
+    "Storage path validation",
+    "Rate limiting submissions",
+    "Consent records integrity",
+    "Project members RLS"
+  ],
+  "verdict": "PASS",
+  "readyForStage5": true
+}
