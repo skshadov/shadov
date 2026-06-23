@@ -66,7 +66,11 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminClientsRouteImport } from './routes/admin.clients'
+import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
 import { Route as ClientProjectIdRouteImport } from './routes/client.project.$id'
+import { Route as AdminClientsIdRouteImport } from './routes/admin.clients.$id'
+import { Route as AdminApplicationsIdRouteImport } from './routes/admin.applications.$id'
 
 const VodosnabzhenieKanalizatsiyaRoute =
   VodosnabzhenieKanalizatsiyaRouteImport.update({
@@ -356,10 +360,30 @@ const AdminDashboardRoute = AdminDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminClientsRoute = AdminClientsRouteImport.update({
+  id: '/clients',
+  path: '/clients',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminApplicationsRoute = AdminApplicationsRouteImport.update({
+  id: '/applications',
+  path: '/applications',
+  getParentRoute: () => AdminRoute,
+} as any)
 const ClientProjectIdRoute = ClientProjectIdRouteImport.update({
   id: '/project/$id',
   path: '/project/$id',
   getParentRoute: () => ClientRoute,
+} as any)
+const AdminClientsIdRoute = AdminClientsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => AdminClientsRoute,
+} as any)
+const AdminApplicationsIdRoute = AdminApplicationsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => AdminApplicationsRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -418,8 +442,12 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
+  '/admin/applications': typeof AdminApplicationsRouteWithChildren
+  '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/admin/applications/$id': typeof AdminApplicationsIdRoute
+  '/admin/clients/$id': typeof AdminClientsIdRoute
   '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRoutesByTo {
@@ -478,8 +506,12 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
+  '/admin/applications': typeof AdminApplicationsRouteWithChildren
+  '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/admin/applications/$id': typeof AdminApplicationsIdRoute
+  '/admin/clients/$id': typeof AdminClientsIdRoute
   '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRoutesById {
@@ -539,8 +571,12 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
+  '/admin/applications': typeof AdminApplicationsRouteWithChildren
+  '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/admin/applications/$id': typeof AdminApplicationsIdRoute
+  '/admin/clients/$id': typeof AdminClientsIdRoute
   '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRouteTypes {
@@ -601,8 +637,12 @@ export interface FileRouteTypes {
     | '/terms'
     | '/ukladka-plitki'
     | '/vodosnabzhenie-kanalizatsiya'
+    | '/admin/applications'
+    | '/admin/clients'
     | '/admin/dashboard'
     | '/portfolio/$slug'
+    | '/admin/applications/$id'
+    | '/admin/clients/$id'
     | '/client/project/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -661,8 +701,12 @@ export interface FileRouteTypes {
     | '/terms'
     | '/ukladka-plitki'
     | '/vodosnabzhenie-kanalizatsiya'
+    | '/admin/applications'
+    | '/admin/clients'
     | '/admin/dashboard'
     | '/portfolio/$slug'
+    | '/admin/applications/$id'
+    | '/admin/clients/$id'
     | '/client/project/$id'
   id:
     | '__root__'
@@ -721,8 +765,12 @@ export interface FileRouteTypes {
     | '/terms'
     | '/ukladka-plitki'
     | '/vodosnabzhenie-kanalizatsiya'
+    | '/admin/applications'
+    | '/admin/clients'
     | '/admin/dashboard'
     | '/portfolio/$slug'
+    | '/admin/applications/$id'
+    | '/admin/clients/$id'
     | '/client/project/$id'
   fileRoutesById: FileRoutesById
 }
@@ -1185,6 +1233,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminDashboardRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/clients': {
+      id: '/admin/clients'
+      path: '/clients'
+      fullPath: '/admin/clients'
+      preLoaderRoute: typeof AdminClientsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/applications': {
+      id: '/admin/applications'
+      path: '/applications'
+      fullPath: '/admin/applications'
+      preLoaderRoute: typeof AdminApplicationsRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/client/project/$id': {
       id: '/client/project/$id'
       path: '/project/$id'
@@ -1192,14 +1254,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClientProjectIdRouteImport
       parentRoute: typeof ClientRoute
     }
+    '/admin/clients/$id': {
+      id: '/admin/clients/$id'
+      path: '/$id'
+      fullPath: '/admin/clients/$id'
+      preLoaderRoute: typeof AdminClientsIdRouteImport
+      parentRoute: typeof AdminClientsRoute
+    }
+    '/admin/applications/$id': {
+      id: '/admin/applications/$id'
+      path: '/$id'
+      fullPath: '/admin/applications/$id'
+      preLoaderRoute: typeof AdminApplicationsIdRouteImport
+      parentRoute: typeof AdminApplicationsRoute
+    }
   }
 }
 
+interface AdminApplicationsRouteChildren {
+  AdminApplicationsIdRoute: typeof AdminApplicationsIdRoute
+}
+
+const AdminApplicationsRouteChildren: AdminApplicationsRouteChildren = {
+  AdminApplicationsIdRoute: AdminApplicationsIdRoute,
+}
+
+const AdminApplicationsRouteWithChildren =
+  AdminApplicationsRoute._addFileChildren(AdminApplicationsRouteChildren)
+
+interface AdminClientsRouteChildren {
+  AdminClientsIdRoute: typeof AdminClientsIdRoute
+}
+
+const AdminClientsRouteChildren: AdminClientsRouteChildren = {
+  AdminClientsIdRoute: AdminClientsIdRoute,
+}
+
+const AdminClientsRouteWithChildren = AdminClientsRoute._addFileChildren(
+  AdminClientsRouteChildren,
+)
+
 interface AdminRouteChildren {
+  AdminApplicationsRoute: typeof AdminApplicationsRouteWithChildren
+  AdminClientsRoute: typeof AdminClientsRouteWithChildren
   AdminDashboardRoute: typeof AdminDashboardRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
+  AdminApplicationsRoute: AdminApplicationsRouteWithChildren,
+  AdminClientsRoute: AdminClientsRouteWithChildren,
   AdminDashboardRoute: AdminDashboardRoute,
 }
 
