@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PROJECTS } from "@/data/projects";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { CatalogFilters, useFilteredProjects } from "@/components/projects/CatalogFilters";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 const URL = "https://shadov.pro/proekty";
 const TITLE = "Проекты домов под ключ — Шадов и партнёры";
@@ -27,7 +29,9 @@ function CatalogPage() {
   const { state, setState, list } = useFilteredProjects(PROJECTS);
 
   return (
-    <main id="main" className="surface-light">
+    <div className="flex min-h-dvh flex-col">
+      <Header />
+      <main id="main" className="flex-1 surface-light">
       <div className="container-page py-10 md:py-14">
         <nav aria-label="Хлебные крошки" className="text-xs text-muted-foreground">
           <Link to="/" className="hover:text-foreground">Главная</Link>
@@ -63,6 +67,8 @@ function CatalogPage() {
           </section>
         </div>
       </div>
-    </main>
+      </main>
+      <Footer />
+    </div>
   );
 }
