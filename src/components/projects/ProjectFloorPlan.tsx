@@ -1,4 +1,5 @@
 import type { HouseProject, RoomSpec, FloorKey } from "@/data/projects";
+import type { ReactElement } from "react";
 
 /**
  * Архитектурно-стилизованный поэтажный план в духе catalog-plans.ru:
@@ -264,7 +265,7 @@ export function ProjectFloorPlan({ project, floor, className }: Props) {
 
       {/* Окна — разрывы в наружной стене для каждой комнаты, граничащей с улицей */}
       {blocks.flatMap((b, k) => {
-        const out: JSX.Element[] = [];
+        const out: ReactElement[] = [];
         const winLen = (len: number) => Math.min(Math.max(len * 0.35, 22), 70);
         if (isOuter(b, "n") && b.cat !== "outdoor") {
           const L = winLen(b.w);
