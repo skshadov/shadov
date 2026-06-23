@@ -113,7 +113,7 @@
   --error: var(--error-raw);
 
   /* Stage 4C (final): semantic scrim token for modal/dialog/sheet overlays
-     so component primitives never hardcode `bg-black/80`. Light surfaces
+     so primitives never hardcode opaque dark utility classes. Light surfaces
      override below to keep contrast appropriate. */
   --scrim: rgba(7, 23, 16, 0.78);
   --image-caption-bg: rgba(11, 31, 24, 0.62);
