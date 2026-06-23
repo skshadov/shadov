@@ -1,0 +1,28 @@
+{
+  "finalRunId": "623bbba1-8134-463d-8c21-7d295180e01b",
+  "generatedAt": "2026-06-23T09:20:17.072Z",
+  "executed": true,
+  "clientAReceivedOwn": false,
+  "clientBReceivedOwn": true,
+  "clientAReceivedForeign": false,
+  "clientBReceivedForeign": false,
+  "clientBSubscribedToForeignProjectGotEvent": false,
+  "foreignPayloadReceived": false,
+  "eventCounts": {
+    "clientA": 0,
+    "clientBOnA": 0,
+    "clientB": 1
+  },
+  "eventsAnonymized": [
+    {
+      "client": "clientB",
+      "channel": "rt-clientB-c3a5e578-f590-4051-b584-161c52fd8804",
+      "project_id": "c3a5e578-f590-4051-b584-161c52fd8804",
+      "message_id": "459514a9-c4f5-4a4c-94c9-fbbebf81a499",
+      "event_type": "INSERT",
+      "body_length": 9,
+      "foreign_keys_present": true
+    }
+  ],
+  "passed": false
+}
