@@ -28,6 +28,11 @@
   ],
   "verdict": "FAIL",
   "mobile_sheet": {
-    "error": "Locator.click: Timeout 3000ms exceeded.\nCall log:\n  - waiting for locator(\"button[aria-label*='\u043c\u0435\u043d\u044e' i], button[aria-label*='menu' i], header button:has(svg)\").first\n    - locator resolved to <button "
+    "dialog_opened": true,
+    "aria_modal": null,
+    "accessible_name": true,
+    "focus_trapped": true,
+    "esc_closes": true,
+    "keyboard_ok": false
   }
 }
