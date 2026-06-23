@@ -1,15 +1,14 @@
 {
   "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
-  "testUsersCreated": 2,
-  "aliceReceivedP1Marker": false,
+  "aliceReceivedP1Marker": true,
   "aliceReceivedP2Marker_shouldBeFalse": false,
-  "bobReceivedP2Marker": false,
+  "bobReceivedP2Marker": true,
   "bobReceivedP1Marker_shouldBeFalse": false,
-  "aliceMsgCount": 0,
-  "bobMsgCount": 0,
+  "aliceMsgCount": 1,
+  "bobMsgCount": 1,
   "remainingTestRows": 0,
   "remainingTestUsers": 0,
-  "deliveryVerified": false,
+  "deliveryVerified": true,
   "projectIsolationVerified": true,
-  "passed": false
+  "passed": true
 }
