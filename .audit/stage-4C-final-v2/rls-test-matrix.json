@@ -1,0 +1,1575 @@
+{
+  "summary": {
+    "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+    "totalScenarios": 156,
+    "rlsRealScenarios": 156,
+    "rlsFailed": 0,
+    "rlsNaCount": 0,
+    "remainingTestRows": 0,
+    "remainingTestUsers": 0,
+    "fixturesSuffix": "d45dff0c"
+  },
+  "scenarios": [
+    {
+      "role": "anon",
+      "table": "projects",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_stages",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_documents",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_daily_reports",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_daily_report_documents",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_payments",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_cameras",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_camera_sources",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_messages",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_stage_acceptances",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "projects",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"title\":\"S4C-A-d45dff0c\",\"status\":\"active\",\"description\":null,\"created_at\":\"2026-06-23T09:59:2"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_stages",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"2867ff2f-4ee7-4ab2-b8ab-69a22a4ca4b2\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"sort_order\":1,\"title\":\"S1\",\"description\":"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_documents",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"1f5af251-54c0-416e-bc70-4b7296586cd7\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"storage_path\":\"a2098fb3-c759-463b-b040-3f"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_daily_reports",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"ad55ab7e-0c8e-4106-bcc0-a93d6c95233d\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"report_date\":\"2026-06-23\",\"title\":\"rpt\",\""
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_daily_report_documents",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"report_id\":\"ad55ab7e-0c8e-4106-bcc0-a93d6c95233d\",\"document_id\":\"1f5af251-54c0-416e-bc70-4b7296586cd7\",\"sort_order\":0,\"created_at\":\"2026-"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_payments",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"fc0a8ef1-10b5-49e3-8fb1-6cd48495c7ed\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"stage_id\":null,\"title\":\"pay-audit\",\"descr"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_cameras",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"c744b989-12e9-44fa-8c1a-7831a6c3a5e7\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"name\":\"cam\",\"description\":null,\"status\":\""
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_camera_sources",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_messages",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"c07d7c3d-43b1-48d6-afa8-e05321b536a5\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"sender_id\":\"35b5f1f1-184e-4a5a-866b-9ccfa"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_stage_acceptances",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"e9a79768-78d3-4169-bca4-f750bd621b03\",\"stage_id\":\"2867ff2f-4ee7-4ab2-b8ab-69a22a4ca4b2\",\"attempt_number\":1,\"status\":\"pending\",\"reque"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "projects",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"title\":\"S4C-A-d45dff0c\",\"status\":\"active\",\"description\":null,\"created_at\":\"2026-06-23T09:59:2"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_stages",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"2867ff2f-4ee7-4ab2-b8ab-69a22a4ca4b2\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"sort_order\":1,\"title\":\"S1\",\"description\":"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_documents",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"1f5af251-54c0-416e-bc70-4b7296586cd7\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"storage_path\":\"a2098fb3-c759-463b-b040-3f"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_daily_reports",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"ad55ab7e-0c8e-4106-bcc0-a93d6c95233d\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"report_date\":\"2026-06-23\",\"title\":\"rpt\",\""
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_daily_report_documents",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"report_id\":\"ad55ab7e-0c8e-4106-bcc0-a93d6c95233d\",\"document_id\":\"1f5af251-54c0-416e-bc70-4b7296586cd7\",\"sort_order\":0,\"created_at\":\"2026-"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_payments",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"fc0a8ef1-10b5-49e3-8fb1-6cd48495c7ed\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"stage_id\":null,\"title\":\"pay-audit\",\"descr"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_cameras",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"c744b989-12e9-44fa-8c1a-7831a6c3a5e7\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"name\":\"cam\",\"description\":null,\"status\":\""
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_camera_sources",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_messages",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"c07d7c3d-43b1-48d6-afa8-e05321b536a5\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"sender_id\":\"35b5f1f1-184e-4a5a-866b-9ccfa"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_stage_acceptances",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"e9a79768-78d3-4169-bca4-f750bd621b03\",\"stage_id\":\"2867ff2f-4ee7-4ab2-b8ab-69a22a4ca4b2\",\"attempt_number\":1,\"status\":\"pending\",\"reque"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "projects",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_stages",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_documents",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_daily_reports",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_daily_report_documents",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_payments",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_cameras",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_camera_sources",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_messages",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_stage_acceptances",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "projects",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_stages",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_documents",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_daily_reports",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_daily_report_documents",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_payments",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_cameras",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_camera_sources",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_messages",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_stage_acceptances",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "projects",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_stages",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_documents",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_daily_reports",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_daily_report_documents",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_payments",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_cameras",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_camera_sources",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_messages",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_stage_acceptances",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "projects",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_stages",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_documents",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_daily_reports",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_daily_report_documents",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_payments",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_cameras",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_camera_sources",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_messages",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_stage_acceptances",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "projects",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_stages",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_documents",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_daily_reports",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_daily_report_documents",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_payments",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_cameras",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_camera_sources",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_messages",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_stage_acceptances",
+      "action": "UPDATE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "projects",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_stages",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_documents",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_daily_reports",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_daily_report_documents",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_payments",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_cameras",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_camera_sources",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_messages",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_stage_acceptances",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "projects",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_stages",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_documents",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_daily_reports",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_daily_report_documents",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_payments",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_cameras",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_camera_sources",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_messages",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_stage_acceptances",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "projects",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_stages",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_documents",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_daily_reports",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_daily_report_documents",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_payments",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_cameras",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_camera_sources",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_messages",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_carol",
+      "table": "project_stage_acceptances",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "projects",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_stages",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_documents",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_daily_reports",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_daily_report_documents",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_payments",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_cameras",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_camera_sources",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_messages",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_stage_acceptances",
+      "action": "DELETE",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "project_messages",
+      "action": "INSERT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 401,
+      "responsePreview": "{\"code\":\"42501\",\"details\":null,\"hint\":null,\"message\":\"new row violates row-level security policy for table \\\"project_messages\\\"\"}"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_messages",
+      "action": "INSERT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 201,
+      "responsePreview": "[{\"id\":\"1f53a1fc-17b5-43cc-8d26-233a6080ab83\",\"project_id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"sender_id\":\"35b5f1f1-184e-4a5a-866b-9ccfa"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_messages",
+      "action": "INSERT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 403,
+      "responsePreview": "{\"code\":\"42501\",\"details\":null,\"hint\":null,\"message\":\"new row violates row-level security policy for table \\\"project_messages\\\"\"}"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "projects",
+      "action": "INSERT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 403,
+      "responsePreview": "{\"code\":\"42501\",\"details\":null,\"hint\":null,\"message\":\"new row violates row-level security policy for table \\\"projects\\\"\"}"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_members",
+      "action": "INSERT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 403,
+      "responsePreview": "{\"code\":\"42501\",\"details\":null,\"hint\":null,\"message\":\"new row violates row-level security policy for table \\\"project_members\\\"\"}"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "project_documents",
+      "action": "INSERT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 403,
+      "responsePreview": "{\"code\":\"42501\",\"details\":null,\"hint\":null,\"message\":\"new row violates row-level security policy for table \\\"project_documents\\\"\"}"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "projects",
+      "action": "INSERT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 403,
+      "responsePreview": "{\"code\":\"42501\",\"details\":null,\"hint\":null,\"message\":\"new row violates row-level security policy for table \\\"projects\\\"\"}"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_members",
+      "action": "INSERT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 403,
+      "responsePreview": "{\"code\":\"42501\",\"details\":null,\"hint\":null,\"message\":\"new row violates row-level security policy for table \\\"project_members\\\"\"}"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "project_documents",
+      "action": "INSERT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 403,
+      "responsePreview": "{\"code\":\"42501\",\"details\":null,\"hint\":null,\"message\":\"new row violates row-level security policy for table \\\"project_documents\\\"\"}"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "profiles",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"35b5f1f1-184e-4a5a-866b-9ccfa280c2fc\"}]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "profiles",
+      "action": "SELECT_other",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "user_roles",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"role\":\"client\"}]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "user_roles",
+      "action": "SELECT_other",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "profiles",
+      "action": "UPDATE",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"35b5f1f1-184e-4a5a-866b-9ccfa280c2fc\",\"display_name\":\"audit\",\"phone\":null,\"created_at\":\"2026-06-23T09:59:24.603239+00:00\",\"updated_a"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "profiles",
+      "action": "UPDATE_other",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "profiles",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"d8659200-6b94-4e43-a0ea-d463be980145\"}]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "profiles",
+      "action": "SELECT_other",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "user_roles",
+      "action": "SELECT",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"role\":\"client\"}]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "user_roles",
+      "action": "SELECT_other",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "profiles",
+      "action": "UPDATE",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"d8659200-6b94-4e43-a0ea-d463be980145\",\"display_name\":\"audit\",\"phone\":null,\"created_at\":\"2026-06-23T09:59:25.33419+00:00\",\"updated_at"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "profiles",
+      "action": "UPDATE_other",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "profiles",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "user_roles",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "estimate_requests",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "consent_records",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "anon",
+      "table": "submission_rate_limits",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "submission_rate_limits",
+      "action": "INSERT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 403,
+      "responsePreview": "{\"code\":\"42501\",\"details\":null,\"hint\":null,\"message\":\"new row violates row-level security policy for table \\\"submission_rate_limits\\\"\"}"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "submission_rate_limits",
+      "action": "SELECT",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "rpc:get_my_projects",
+      "action": "RPC",
+      "expected": "allow_own_only",
+      "got": "ok",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"a2098fb3-c759-463b-b040-3f0f458edbe2\",\"title\":\"S4C-A-d45dff0c\",\"status\":\"active\",\"description\":null,\"is_demo\":false,\"created_at\":\"2026-06-23T09:59:25.670812+00:00\"}]"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "rpc:get_my_projects",
+      "action": "RPC",
+      "expected": "allow_own_only",
+      "got": "ok",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"id\":\"47517d27-45e2-444c-bfcf-43e61ab501fa\",\"title\":\"S4C-B-d45dff0c\",\"status\":\"active\",\"description\":null,\"is_demo\":false,\"created_at\":\"2026-06-23T09:59:25.670812+00:00\"}]"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "rpc:has_role",
+      "action": "RPC",
+      "expected": "callable",
+      "got": "true",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "true"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "rpc:has_role",
+      "action": "RPC",
+      "expected": "callable",
+      "got": "true",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "true"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "rpc:is_project_member",
+      "action": "RPC",
+      "expected": "true",
+      "got": "true",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "true"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "rpc:is_project_member",
+      "action": "RPC",
+      "expected": "false",
+      "got": "false",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "false"
+    },
+    {
+      "role": "foreign_bob",
+      "table": "rpc:respond_to_stage_acceptance",
+      "action": "RPC",
+      "expected": "deny",
+      "got": "deny",
+      "passed": true,
+      "httpCode": 400,
+      "responsePreview": "{\"code\":\"P0001\",\"details\":null,\"hint\":null,\"message\":\"forbidden\"}"
+    },
+    {
+      "role": "memberA_alice",
+      "table": "rpc:respond_to_stage_acceptance",
+      "action": "RPC",
+      "expected": "allow",
+      "got": "allow",
+      "passed": true,
+      "httpCode": 200,
+      "responsePreview": "[{\"acceptance_id_out\":\"e9a79768-78d3-4169-bca4-f750bd621b03\",\"stage_id_out\":\"2867ff2f-4ee7-4ab2-b8ab-69a22a4ca4b2\",\"status_out\":\"accepted\",\"stage_status_out\":\"accepted\"}]"
+    }
+  ],
+  "failures": []
+}
