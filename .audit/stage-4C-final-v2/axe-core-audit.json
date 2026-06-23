@@ -1,0 +1,31 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "violationCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/uslugi",
+      "violationCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "violationCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/kontakty",
+      "violationCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/auth",
+      "violationCount": 0,
+      "violations": []
+    }
+  ],
+  "totalViolations": 0,
+  "passed": true
+}
