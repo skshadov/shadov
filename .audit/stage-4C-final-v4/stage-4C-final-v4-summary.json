@@ -1,0 +1,66 @@
+{
+  "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "stage": "4C",
+  "version": "v4",
+  "generatedAt": "2026-06-23T11:12:42.707490Z",
+  "responsive": {
+    "routesTested": 56,
+    "viewportsTested": 15,
+    "globalResponsiveTests": 840,
+    "globalResponsivePassed": 840,
+    "pageLevelOverflowCount": 0,
+    "globalHorizontalOverflow": false
+  },
+  "rls": {
+    "rlsRealScenarios": 100,
+    "rlsRealScenariosPassed": 100,
+    "rlsRealScenariosFailed": 0,
+    "adminCrudScenarios": 44,
+    "adminCrudPassed": true,
+    "statusNullScenarios": 0
+  },
+  "accessibility": {
+    "axeCoreChecks": 112,
+    "axeCoreViolations": 0,
+    "critical": 0,
+    "serious": 0,
+    "moderate": 0,
+    "minor": 0,
+    "passed": true
+  },
+  "contrast": {
+    "contrastAuditPassed": true,
+    "critical": 0,
+    "serious": 0
+  },
+  "colors": {
+    "mobileDesktopColorsMatch": true,
+    "samplesCompared": 0
+  },
+  "keyboardDialog": {
+    "passed": false,
+    "ariaModal": null,
+    "focusTrap": null,
+    "submitDisablesDuringRequest": null
+  },
+  "screenshots": {
+    "screenshotsIncluded": true,
+    "count": 4
+  },
+  "regressions": {
+    "typescriptExitCode": 0,
+    "buildExitCode": 0,
+    "allRegressionsExitCode": 0
+  },
+  "signedUrlExpiryPassed": true,
+  "realtimeTwoClientPassed": true,
+  "productionFunctionsPresent": true,
+  "cleanupPassed": true,
+  "specificationCheck": {
+    "passed": true,
+    "errors": []
+  },
+  "integrationTestsPassed": true,
+  "readyForStage5": true,
+  "blockingIssues": []
+}
