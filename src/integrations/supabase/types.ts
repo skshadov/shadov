@@ -402,6 +402,128 @@ export type Database = {
         }
         Relationships: []
       }
+      portfolio_projects: {
+        Row: {
+          area_m2: number | null
+          category: string
+          cover_url: string | null
+          created_at: string
+          description: string | null
+          duration_months: number | null
+          gallery: Json
+          id: string
+          is_published: boolean
+          location: string | null
+          published_at: string | null
+          slug: string
+          sort_order: number
+          summary: string
+          tags: string[]
+          title: string
+          updated_at: string
+          year_completed: number | null
+        }
+        Insert: {
+          area_m2?: number | null
+          category: string
+          cover_url?: string | null
+          created_at?: string
+          description?: string | null
+          duration_months?: number | null
+          gallery?: Json
+          id?: string
+          is_published?: boolean
+          location?: string | null
+          published_at?: string | null
+          slug: string
+          sort_order?: number
+          summary: string
+          tags?: string[]
+          title: string
+          updated_at?: string
+          year_completed?: number | null
+        }
+        Update: {
+          area_m2?: number | null
+          category?: string
+          cover_url?: string | null
+          created_at?: string
+          description?: string | null
+          duration_months?: number | null
+          gallery?: Json
+          id?: string
+          is_published?: boolean
+          location?: string | null
+          published_at?: string | null
+          slug?: string
+          sort_order?: number
+          summary?: string
+          tags?: string[]
+          title?: string
+          updated_at?: string
+          year_completed?: number | null
+        }
+        Relationships: []
+      }
+      portfolio_reviews: {
+        Row: {
+          author_name: string
+          author_role: string | null
+          body: string
+          created_at: string
+          id: string
+          is_published: boolean
+          project_id: string | null
+          published_at: string | null
+          rating: number
+          sort_order: number
+          source: string | null
+          source_url: string | null
+          updated_at: string
+          verified_at: string | null
+        }
+        Insert: {
+          author_name: string
+          author_role?: string | null
+          body: string
+          created_at?: string
+          id?: string
+          is_published?: boolean
+          project_id?: string | null
+          published_at?: string | null
+          rating: number
+          sort_order?: number
+          source?: string | null
+          source_url?: string | null
+          updated_at?: string
+          verified_at?: string | null
+        }
+        Update: {
+          author_name?: string
+          author_role?: string | null
+          body?: string
+          created_at?: string
+          id?: string
+          is_published?: boolean
+          project_id?: string | null
+          published_at?: string | null
+          rating?: number
+          sort_order?: number
+          source?: string | null
+          source_url?: string | null
+          updated_at?: string
+          verified_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "portfolio_reviews_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "portfolio_projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       price_items: {
         Row: {
           created_at: string
