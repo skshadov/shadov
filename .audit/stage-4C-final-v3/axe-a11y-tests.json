@@ -4,15 +4,8 @@
     {
       "route": "/",
       "viewport": "mobile",
-      "violations": [
-        {
-          "id": "button-name",
-          "impact": "critical",
-          "nodes": 5,
-          "help": "Buttons must have discernible text"
-        }
-      ],
-      "violation_count": 5,
+      "violations": [],
+      "violation_count": 0,
       "color_contrast_failures": 0
     },
     {
@@ -39,43 +32,22 @@
     {
       "route": "/contacts",
       "viewport": "mobile",
-      "violations": [
-        {
-          "id": "button-name",
-          "impact": "critical",
-          "nodes": 5,
-          "help": "Buttons must have discernible text"
-        }
-      ],
-      "violation_count": 5,
+      "violations": [],
+      "violation_count": 0,
       "color_contrast_failures": 0
     },
     {
       "route": "/terms",
       "viewport": "mobile",
-      "violations": [
-        {
-          "id": "link-in-text-block",
-          "impact": "serious",
-          "nodes": 1,
-          "help": "Links must be distinguishable without relying on color"
-        }
-      ],
-      "violation_count": 1,
+      "violations": [],
+      "violation_count": 0,
       "color_contrast_failures": 0
     },
     {
       "route": "/privacy",
       "viewport": "mobile",
-      "violations": [
-        {
-          "id": "link-in-text-block",
-          "impact": "serious",
-          "nodes": 1,
-          "help": "Links must be distinguishable without relying on color"
-        }
-      ],
-      "violation_count": 1,
+      "violations": [],
+      "violation_count": 0,
       "color_contrast_failures": 0
     },
     {
@@ -102,15 +74,8 @@
     {
       "route": "/",
       "viewport": "desktop",
-      "violations": [
-        {
-          "id": "button-name",
-          "impact": "critical",
-          "nodes": 5,
-          "help": "Buttons must have discernible text"
-        }
-      ],
-      "violation_count": 5,
+      "violations": [],
+      "violation_count": 0,
       "color_contrast_failures": 0
     },
     {
@@ -137,43 +102,22 @@
     {
       "route": "/contacts",
       "viewport": "desktop",
-      "violations": [
-        {
-          "id": "button-name",
-          "impact": "critical",
-          "nodes": 5,
-          "help": "Buttons must have discernible text"
-        }
-      ],
-      "violation_count": 5,
+      "violations": [],
+      "violation_count": 0,
       "color_contrast_failures": 0
     },
     {
       "route": "/terms",
       "viewport": "desktop",
-      "violations": [
-        {
-          "id": "link-in-text-block",
-          "impact": "serious",
-          "nodes": 1,
-          "help": "Links must be distinguishable without relying on color"
-        }
-      ],
-      "violation_count": 1,
+      "violations": [],
+      "violation_count": 0,
       "color_contrast_failures": 0
     },
     {
       "route": "/privacy",
       "viewport": "desktop",
-      "violations": [
-        {
-          "id": "link-in-text-block",
-          "impact": "serious",
-          "nodes": 1,
-          "help": "Links must be distinguishable without relying on color"
-        }
-      ],
-      "violation_count": 1,
+      "violations": [],
+      "violation_count": 0,
       "color_contrast_failures": 0
     },
     {
@@ -199,9 +143,9 @@
     }
   ],
   "summary": {
-    "total_violations": 24,
+    "total_violations": 0,
     "color_contrast_failures": 0,
-    "critical_or_serious_rules": 8
+    "critical_or_serious_rules": 0
   },
-  "verdict": "FAIL"
+  "verdict": "PASS"
 }
