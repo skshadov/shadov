@@ -57,6 +57,15 @@ function ProjectDetailPage() {
                 <Button asChild size="sm" variant="outline">
                   <Link to="/admin/projects/$id/reports" params={{ id: project.id }}>Ежедневные отчёты</Link>
                 </Button>
+                <Button asChild size="sm" variant="outline">
+                  <Link to="/admin/projects/$id/messages" params={{ id: project.id }}>Сообщения</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline">
+                  <Link to="/admin/projects/$id/payments" params={{ id: project.id }}>Платежи</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline">
+                  <Link to="/admin/projects/$id/cameras" params={{ id: project.id }}>Камеры</Link>
+                </Button>
               </div>
               <ProjectMeta project={project} canWrite={canWrite} onSaved={reload} />
               <StagesSection project={project} canWrite={canWrite} onChanged={reload} />

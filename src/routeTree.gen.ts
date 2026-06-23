@@ -74,7 +74,10 @@ import { Route as AdminProjectsIdRouteImport } from './routes/admin.projects.$id
 import { Route as AdminClientsIdRouteImport } from './routes/admin.clients.$id'
 import { Route as AdminApplicationsIdRouteImport } from './routes/admin.applications.$id'
 import { Route as AdminProjectsIdReportsRouteImport } from './routes/admin.projects.$id.reports'
+import { Route as AdminProjectsIdPaymentsRouteImport } from './routes/admin.projects.$id.payments'
+import { Route as AdminProjectsIdMessagesRouteImport } from './routes/admin.projects.$id.messages'
 import { Route as AdminProjectsIdDocumentsRouteImport } from './routes/admin.projects.$id.documents'
+import { Route as AdminProjectsIdCamerasRouteImport } from './routes/admin.projects.$id.cameras'
 
 const VodosnabzhenieKanalizatsiyaRoute =
   VodosnabzhenieKanalizatsiyaRouteImport.update({
@@ -404,12 +407,27 @@ const AdminProjectsIdReportsRoute = AdminProjectsIdReportsRouteImport.update({
   path: '/reports',
   getParentRoute: () => AdminProjectsIdRoute,
 } as any)
+const AdminProjectsIdPaymentsRoute = AdminProjectsIdPaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => AdminProjectsIdRoute,
+} as any)
+const AdminProjectsIdMessagesRoute = AdminProjectsIdMessagesRouteImport.update({
+  id: '/messages',
+  path: '/messages',
+  getParentRoute: () => AdminProjectsIdRoute,
+} as any)
 const AdminProjectsIdDocumentsRoute =
   AdminProjectsIdDocumentsRouteImport.update({
     id: '/documents',
     path: '/documents',
     getParentRoute: () => AdminProjectsIdRoute,
   } as any)
+const AdminProjectsIdCamerasRoute = AdminProjectsIdCamerasRouteImport.update({
+  id: '/cameras',
+  path: '/cameras',
+  getParentRoute: () => AdminProjectsIdRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -476,7 +494,10 @@ export interface FileRoutesByFullPath {
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
   '/client/project/$id': typeof ClientProjectIdRoute
+  '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
   '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
+  '/admin/projects/$id/messages': typeof AdminProjectsIdMessagesRoute
+  '/admin/projects/$id/payments': typeof AdminProjectsIdPaymentsRoute
   '/admin/projects/$id/reports': typeof AdminProjectsIdReportsRoute
 }
 export interface FileRoutesByTo {
@@ -544,7 +565,10 @@ export interface FileRoutesByTo {
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
   '/client/project/$id': typeof ClientProjectIdRoute
+  '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
   '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
+  '/admin/projects/$id/messages': typeof AdminProjectsIdMessagesRoute
+  '/admin/projects/$id/payments': typeof AdminProjectsIdPaymentsRoute
   '/admin/projects/$id/reports': typeof AdminProjectsIdReportsRoute
 }
 export interface FileRoutesById {
@@ -613,7 +637,10 @@ export interface FileRoutesById {
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
   '/client/project/$id': typeof ClientProjectIdRoute
+  '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
   '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
+  '/admin/projects/$id/messages': typeof AdminProjectsIdMessagesRoute
+  '/admin/projects/$id/payments': typeof AdminProjectsIdPaymentsRoute
   '/admin/projects/$id/reports': typeof AdminProjectsIdReportsRoute
 }
 export interface FileRouteTypes {
@@ -683,7 +710,10 @@ export interface FileRouteTypes {
     | '/admin/clients/$id'
     | '/admin/projects/$id'
     | '/client/project/$id'
+    | '/admin/projects/$id/cameras'
     | '/admin/projects/$id/documents'
+    | '/admin/projects/$id/messages'
+    | '/admin/projects/$id/payments'
     | '/admin/projects/$id/reports'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -751,7 +781,10 @@ export interface FileRouteTypes {
     | '/admin/clients/$id'
     | '/admin/projects/$id'
     | '/client/project/$id'
+    | '/admin/projects/$id/cameras'
     | '/admin/projects/$id/documents'
+    | '/admin/projects/$id/messages'
+    | '/admin/projects/$id/payments'
     | '/admin/projects/$id/reports'
   id:
     | '__root__'
@@ -819,7 +852,10 @@ export interface FileRouteTypes {
     | '/admin/clients/$id'
     | '/admin/projects/$id'
     | '/client/project/$id'
+    | '/admin/projects/$id/cameras'
     | '/admin/projects/$id/documents'
+    | '/admin/projects/$id/messages'
+    | '/admin/projects/$id/payments'
     | '/admin/projects/$id/reports'
   fileRoutesById: FileRoutesById
 }
@@ -1338,11 +1374,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminProjectsIdReportsRouteImport
       parentRoute: typeof AdminProjectsIdRoute
     }
+    '/admin/projects/$id/payments': {
+      id: '/admin/projects/$id/payments'
+      path: '/payments'
+      fullPath: '/admin/projects/$id/payments'
+      preLoaderRoute: typeof AdminProjectsIdPaymentsRouteImport
+      parentRoute: typeof AdminProjectsIdRoute
+    }
+    '/admin/projects/$id/messages': {
+      id: '/admin/projects/$id/messages'
+      path: '/messages'
+      fullPath: '/admin/projects/$id/messages'
+      preLoaderRoute: typeof AdminProjectsIdMessagesRouteImport
+      parentRoute: typeof AdminProjectsIdRoute
+    }
     '/admin/projects/$id/documents': {
       id: '/admin/projects/$id/documents'
       path: '/documents'
       fullPath: '/admin/projects/$id/documents'
       preLoaderRoute: typeof AdminProjectsIdDocumentsRouteImport
+      parentRoute: typeof AdminProjectsIdRoute
+    }
+    '/admin/projects/$id/cameras': {
+      id: '/admin/projects/$id/cameras'
+      path: '/cameras'
+      fullPath: '/admin/projects/$id/cameras'
+      preLoaderRoute: typeof AdminProjectsIdCamerasRouteImport
       parentRoute: typeof AdminProjectsIdRoute
     }
   }
@@ -1372,12 +1429,18 @@ const AdminClientsRouteWithChildren = AdminClientsRoute._addFileChildren(
 )
 
 interface AdminProjectsIdRouteChildren {
+  AdminProjectsIdCamerasRoute: typeof AdminProjectsIdCamerasRoute
   AdminProjectsIdDocumentsRoute: typeof AdminProjectsIdDocumentsRoute
+  AdminProjectsIdMessagesRoute: typeof AdminProjectsIdMessagesRoute
+  AdminProjectsIdPaymentsRoute: typeof AdminProjectsIdPaymentsRoute
   AdminProjectsIdReportsRoute: typeof AdminProjectsIdReportsRoute
 }
 
 const AdminProjectsIdRouteChildren: AdminProjectsIdRouteChildren = {
+  AdminProjectsIdCamerasRoute: AdminProjectsIdCamerasRoute,
   AdminProjectsIdDocumentsRoute: AdminProjectsIdDocumentsRoute,
+  AdminProjectsIdMessagesRoute: AdminProjectsIdMessagesRoute,
+  AdminProjectsIdPaymentsRoute: AdminProjectsIdPaymentsRoute,
   AdminProjectsIdReportsRoute: AdminProjectsIdReportsRoute,
 }
 
