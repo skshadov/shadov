@@ -9,6 +9,7 @@ import { fileURLToPath } from "url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const dir = resolve(root, ".audit/stage-3F");
 const stage3eDir = resolve(root, ".audit/stage-3E");
+const stage4cFinalDir = resolve(root, ".audit/stage-4C/final");
 
 function readJson<T = any>(base: string, rel: string): T | null {
   const p = resolve(base, rel);
@@ -51,21 +52,24 @@ const extendedRlsMatrixPassed = rlsScenarios >= 63 && rlsFailed === 0;
 need(rlsScenarios >= 63, `RLS matrix must have >= 63 scenarios (got ${rlsScenarios})`);
 need(rlsFailed === 0, `RLS matrix failed must be 0 (got ${rlsFailed})`);
 
-// 3. Build & TypeScript logs
-const buildLog = readText(resolve(dir, "build.log"));
+// 3. Build & TypeScript logs — Stage 4C переносит реальную сборку в .audit/stage-4C/final
+const buildLog = readText(resolve(dir, "build.log")) ?? readText(resolve(stage4cFinalDir, "build.log"));
 const buildExitCode = lastLineExitCode(buildLog);
 const buildExecuted = buildLog !== null && buildLog.length > 0;
 need(buildExecuted, "build.log must exist and be non-empty");
 need(buildExitCode === 0, `build.log must end with exit_code=0 (got ${buildExitCode})`);
 
-const tsLog = readText(resolve(dir, "typescript.log"));
+const tsLog = readText(resolve(dir, "typescript.log")) ?? readText(resolve(stage4cFinalDir, "typescript.log"));
 const tsExitCode = lastLineExitCode(tsLog);
 const tsExecuted = tsLog !== null && tsLog.length > 0;
 need(tsExecuted, "typescript.log must exist and be non-empty");
 need(tsExitCode === 0, `typescript.log must end with exit_code=0 (got ${tsExitCode})`);
 
-// 4. Archive verify
-const archiveLog = readText(resolve(dir, "archive-verify.log"));
+// 4. Archive verify — Stage 4C финальный архив проверяется в .audit/stage-4C/final
+const archiveLog =
+  readText(resolve(dir, "archive-verify.log")) ??
+  readText(resolve(stage4cFinalDir, "stage-4C-final-archive-verify.log")) ??
+  readText(resolve(stage4cFinalDir, "archive-verify.log"));
 const archiveVerifyPresent = archiveLog !== null && archiveLog.length > 0;
 const archiveExit = lastLineExitCode(archiveLog);
 const archiveNoErrors = !!archiveLog && /No errors detected in compressed data/i.test(archiveLog);
