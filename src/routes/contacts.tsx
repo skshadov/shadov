@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Calculator, ArrowRight } from "lucide-react";
 import { InfoPageLayout, InfoSection, InfoList, buildInfoHead } from "@/components/info/InfoPageLayout";
 import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
-import { EstimateForm } from "@/components/forms/EstimateForm";
+import { Button } from "@/components/ui/button";
 import { company, isFilled, regions } from "@/config/company";
 
 const PATH = "/contacts";
@@ -83,15 +84,22 @@ function Page() {
         </div>
       </InfoSection>
 
-      <InfoSection title="Демонстрационная форма расчёта">
+      <InfoSection title="Предварительный расчёт">
         <p className="text-sm text-muted-foreground">
-          На текущем этапе форма работает в локальном демонстрационном режиме:
-          данные сохраняются только в браузере и не передаются менеджеру.
-          Подключение защищённой обработки заявок запланировано на следующем этапе.
+          Чтобы оценить стоимость и получить смету — откройте калькулятор
+          предварительной стоимости. Менеджер свяжется по результатам расчёта.
         </p>
-        <EstimateForm />
-        <p className="text-sm text-muted-foreground">
-          Условия обработки указаны в{" "}
+        <div className="mt-3 flex flex-wrap gap-3">
+          <Button asChild>
+            <Link to="/kalkulyator-stoimosti">
+              <Calculator aria-hidden="true" className="mr-2 h-4 w-4" />
+              Открыть калькулятор
+              <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+        <p className="mt-3 text-xs text-muted-foreground">
+          Условия обработки данных — в{" "}
           <Link to="/privacy" className="text-primary underline underline-offset-2 hover:opacity-80">политике конфиденциальности</Link>{" "}
           и{" "}
           <Link to="/personal-data-consent" className="text-primary underline underline-offset-2 hover:opacity-80">согласии на обработку персональных данных</Link>.
