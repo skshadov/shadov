@@ -1,0 +1,14 @@
+import { createClient } from "@supabase/supabase-js";
+import { readFileSync } from "fs";
+const URL_ = process.env.SUPABASE_URL!;
+const SR = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const admin = createClient(URL_, SR, { auth: { persistSession: false } });
+const st = JSON.parse(readFileSync("/tmp/browser/dialog/state.json","utf8"));
+await admin.from("project_stage_acceptances").delete().eq("stage_id", st.stageId);
+await admin.from("project_stages").delete().eq("project_id", st.projectId);
+await admin.from("project_members").delete().eq("project_id", st.projectId);
+await admin.from("projects").delete().eq("id", st.projectId);
+await admin.from("user_roles").delete().eq("user_id", st.uid);
+await admin.from("profiles").delete().eq("id", st.uid);
+await admin.auth.admin.deleteUser(st.uid);
+console.log("teardown ok");

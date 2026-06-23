@@ -1,0 +1,29 @@
+{
+  "finalRunId": "623bbba1-8134-463d-8c21-7d295180e01b",
+  "stage": "4C",
+  "checkpoint": "post-CSS re-verification",
+  "results": {
+    "pageLevelOverflowCount": 0,
+    "globalHorizontalOverflow": false,
+    "responsiveChecks": {"total": 480, "overflowing": 0},
+    "axeCore": {
+      "executed": true,
+      "routesChecked": 30,
+      "violations": {"critical": 0, "serious": 0, "moderate": 0, "minor": 0},
+      "colorContrast": 0,
+      "linkInTextBlock": 0,
+      "scrollableRegionFocusable": 0,
+      "passed": true
+    }
+  },
+  "pending": [
+    "keyboard dialog test (AcceptanceDialog)",
+    "Realtime two-client test",
+    "mobile/desktop color tokens match",
+    "RLS scenarios >= 90",
+    "Stage 1-3 regressions",
+    "build.log + typescript.log capture",
+    "final stage-4C-final-audit.zip assembly"
+  ],
+  "readyForStage5": false
+}

@@ -1,0 +1,13 @@
+{
+  "finalRunId": "623bbba1-8134-463d-8c21-7d295180e01b",
+  "routesAudited": 6,
+  "viewports": [
+    375,
+    1440
+  ],
+  "violations": [],
+  "axeCoreViolations": 0,
+  "criticalViolations": 0,
+  "seriousViolations": 0,
+  "colorContrastViolations": 0
+}

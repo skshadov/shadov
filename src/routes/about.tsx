@@ -44,10 +44,10 @@ function Page() {
         />
         <p>
           Подробное содержание каждого направления — на страницах{" "}
-          <Link to="/stroitelstvo" className="text-primary underline-offset-2 hover:underline">строительства</Link>
+          <Link to="/stroitelstvo" className="text-primary underline decoration-2 font-semibold">строительства</Link>
           {", "}
-          <Link to="/remont" className="text-primary underline-offset-2 hover:underline">ремонта</Link> и{" "}
-          <Link to="/inzhenernye-sistemy" className="text-primary underline-offset-2 hover:underline">инженерных систем</Link>.
+          <Link to="/remont" className="text-primary underline decoration-2 font-semibold">ремонта</Link> и{" "}
+          <Link to="/inzhenernye-sistemy" className="text-primary underline decoration-2 font-semibold">инженерных систем</Link>.
         </p>
       </InfoSection>
 
@@ -63,8 +63,8 @@ function Page() {
         />
         <p>
           Подробнее — в разделе{" "}
-          <Link to="/how-we-work" className="text-primary underline-offset-2 hover:underline">«Как мы работаем»</Link>{" "}и{" "}
-          <Link to="/kontrol-kachestva" className="text-primary underline-offset-2 hover:underline">«Контроль качества»</Link>.
+          <Link to="/how-we-work" className="text-primary underline decoration-2 font-semibold">«Как мы работаем»</Link>{" "}и{" "}
+          <Link to="/kontrol-kachestva" className="text-primary underline decoration-2 font-semibold">«Контроль качества»</Link>.
         </p>
       </InfoSection>
 

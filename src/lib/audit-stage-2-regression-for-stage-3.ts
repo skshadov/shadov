@@ -67,11 +67,13 @@ const pagesIndex = read("src/data/service-pages.ts");
 const tileMentions = (pagesIndex.match(/slug:\s*"ukladka-plitki"/g) ?? []).length;
 expect("ukladka-plitki: единственное определение", tileMentions <= 1, `inline=${tileMentions}`);
 
-// Маршруты этапа 4/5 остаются заглушками
-const clientStub = read("src/routes/client.tsx");
+// Stage 4 уже активировал /client; контракт обновлён: проверяем, что маршруты существуют
+// и помечены noindex для приватных кабинетов.
+const clientSrc = read("src/routes/client.tsx");
 const adminStub = read("src/routes/admin.tsx");
-expect("/client: RouteStub", /RouteStub/.test(clientStub));
-expect("/admin: RouteStub", /RouteStub/.test(adminStub));
+expect("/client: маршрут активен", !/RouteStub/.test(clientSrc));
+expect("/client: noindex", /noindex/.test(clientSrc));
+expect("/admin: остаётся заглушкой до Stage 5", /RouteStub/.test(adminStub));
 
 const result = {
   stage: "stage-2-regression-for-stage-3",

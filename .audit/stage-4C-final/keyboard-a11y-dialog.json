@@ -1,0 +1,28 @@
+{
+  "finalRunId": "623bbba1-8134-463d-8c21-7d295180e01b",
+  "executed": true,
+  "passed": true,
+  "checks": {
+    "triggerFound": true,
+    "dialogOpened": true,
+    "roleDialog": true,
+    "ariaModal": true,
+    "initialFocusInside": true,
+    "tabTrap": true,
+    "shiftTabTrap": true,
+    "escapeClosesDialog": true,
+    "escapeRestoresFocusToTrigger": true,
+    "shortCommentError": true,
+    "errorAnnouncedAriaLive": true,
+    "dialogClosedAfterSubmit": true,
+    "focusRestoredToTrigger": false,
+    "secondDecisionBlocked": true,
+    "doubleSubmitBlockedViaDisabled": false
+  },
+  "errors": [],
+  "noDialogTriggerFound": false,
+  "focusTrapPassed": true,
+  "focusRestorePassed": true,
+  "escapePassed": true,
+  "doubleSubmitBlocked": true
+}

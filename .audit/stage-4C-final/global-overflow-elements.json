@@ -1,0 +1,25 @@
+{
+  "pageLevelOverflowCount": 2,
+  "overflowing": [
+    {
+      "route": "/kalkulyator-stoimosti",
+      "viewport": 320,
+      "metrics": {
+        "sw": 320,
+        "cw": 320,
+        "bsw": 376,
+        "bcw": 320
+      }
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "viewport": 360,
+      "metrics": {
+        "sw": 360,
+        "cw": 360,
+        "bsw": 376,
+        "bcw": 360
+      }
+    }
+  ]
+}
