@@ -86,7 +86,10 @@ function LogoFull() {
         <span className="font-display text-[15px] font-semibold tracking-[0.14em] uppercase">
           Шадов&nbsp;и&nbsp;партнёры
         </span>
-        <span className="text-[10px] tracking-[0.22em] uppercase text-muted-foreground">
+        <span
+          data-logo-subtitle
+          className="text-[10px] tracking-[0.22em] uppercase text-muted-foreground"
+        >
           Строительная компания
         </span>
       </span>
