@@ -68,8 +68,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as CatalogIndexRouteImport } from './routes/catalog.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as CatalogCategoryRouteImport } from './routes/catalog.$category'
-import { Route as ApiSitemapDotxmlRouteImport } from './routes/api/sitemap[.]xml'
-import { Route as ApiRobotsDottxtRouteImport } from './routes/api/robots[.]txt'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
 import { Route as AdminPagesRouteImport } from './routes/admin.pages'
@@ -389,16 +387,6 @@ const CatalogCategoryRoute = CatalogCategoryRouteImport.update({
   path: '/$category',
   getParentRoute: () => CatalogRoute,
 } as any)
-const ApiSitemapDotxmlRoute = ApiSitemapDotxmlRouteImport.update({
-  id: '/api/sitemap.xml',
-  path: '/api/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiRobotsDottxtRoute = ApiRobotsDottxtRouteImport.update({
-  id: '/api/robots.txt',
-  path: '/api/robots.txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AdminSettingsRoute = AdminSettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -565,8 +553,6 @@ export interface FileRoutesByFullPath {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
-  '/api/robots.txt': typeof ApiRobotsDottxtRoute
-  '/api/sitemap.xml': typeof ApiSitemapDotxmlRoute
   '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/catalog/': typeof CatalogIndexRoute
@@ -647,8 +633,6 @@ export interface FileRoutesByTo {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
-  '/api/robots.txt': typeof ApiRobotsDottxtRoute
-  '/api/sitemap.xml': typeof ApiSitemapDotxmlRoute
   '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/catalog': typeof CatalogIndexRoute
@@ -731,8 +715,6 @@ export interface FileRoutesById {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
-  '/api/robots.txt': typeof ApiRobotsDottxtRoute
-  '/api/sitemap.xml': typeof ApiSitemapDotxmlRoute
   '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/catalog/': typeof CatalogIndexRoute
@@ -816,8 +798,6 @@ export interface FileRouteTypes {
     | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
-    | '/api/robots.txt'
-    | '/api/sitemap.xml'
     | '/catalog/$category'
     | '/portfolio/$slug'
     | '/catalog/'
@@ -898,8 +878,6 @@ export interface FileRouteTypes {
     | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
-    | '/api/robots.txt'
-    | '/api/sitemap.xml'
     | '/catalog/$category'
     | '/portfolio/$slug'
     | '/catalog'
@@ -981,8 +959,6 @@ export interface FileRouteTypes {
     | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
-    | '/api/robots.txt'
-    | '/api/sitemap.xml'
     | '/catalog/$category'
     | '/portfolio/$slug'
     | '/catalog/'
@@ -1058,8 +1034,6 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   UkladkaPlitkiRoute: typeof UkladkaPlitkiRoute
   VodosnabzhenieKanalizatsiyaRoute: typeof VodosnabzhenieKanalizatsiyaRoute
-  ApiRobotsDottxtRoute: typeof ApiRobotsDottxtRoute
-  ApiSitemapDotxmlRoute: typeof ApiSitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1477,20 +1451,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CatalogCategoryRouteImport
       parentRoute: typeof CatalogRoute
     }
-    '/api/sitemap.xml': {
-      id: '/api/sitemap.xml'
-      path: '/api/sitemap.xml'
-      fullPath: '/api/sitemap.xml'
-      preLoaderRoute: typeof ApiSitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/robots.txt': {
-      id: '/api/robots.txt'
-      path: '/api/robots.txt'
-      fullPath: '/api/robots.txt'
-      preLoaderRoute: typeof ApiRobotsDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/admin/settings': {
       id: '/admin/settings'
       path: '/settings'
@@ -1822,8 +1782,6 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   UkladkaPlitkiRoute: UkladkaPlitkiRoute,
   VodosnabzhenieKanalizatsiyaRoute: VodosnabzhenieKanalizatsiyaRoute,
-  ApiRobotsDottxtRoute: ApiRobotsDottxtRoute,
-  ApiSitemapDotxmlRoute: ApiSitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
