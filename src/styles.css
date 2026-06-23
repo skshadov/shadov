@@ -112,6 +112,13 @@
   --warning: #D4A14E;
   --error: var(--error-raw);
 
+  /* Stage 4C (final): semantic scrim token for modal/dialog/sheet overlays
+     so primitives never hardcode opaque dark utility classes. Light surfaces
+     override below to keep contrast appropriate. */
+  --scrim: rgba(7, 23, 16, 0.78);
+  --image-caption-bg: rgba(11, 31, 24, 0.62);
+  --image-caption-fg: rgba(247, 248, 245, 0.92);
+
   --chart-1: var(--accent-raw);
   --chart-2: var(--success-raw);
   --chart-3: var(--warning-raw);

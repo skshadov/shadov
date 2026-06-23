@@ -1,0 +1,28 @@
+{
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "filesScanned": 260,
+  "productionHits": 0,
+  "hits": [],
+  "allowlistedHits": 2,
+  "allowlisted": [
+    {
+      "file": "src/routes/__root.tsx",
+      "line": 102,
+      "pattern": "inline_hex",
+      "match": "\"#0B1F18\"",
+      "snippet": "{ name: \"theme-color\", content: \"#0B1F18\" },"
+    },
+    {
+      "file": "src/components/ui/chart.tsx",
+      "line": 51,
+      "pattern": "inline_hex",
+      "match": "'#ccc'",
+      "snippet": "\"flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-b"
+    }
+  ],
+  "allowlistReasons": {
+    "src/routes/__root.tsx#theme-color": "HTML PWA spec requires literal color value in <meta name='theme-color'> \u2014 CSS variables not allowed by browsers",
+    "src/components/ui/chart.tsx#[stroke='#ccc']": "CSS attribute selector matching Recharts default stroke value \u2014 NOT applying a color, restyling unstyled SVG elements with semantic tokens"
+  },
+  "passed": true
+}

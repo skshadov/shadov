@@ -81,7 +81,7 @@ export function Illustration({
         />
       </picture>
       {caption ? (
-        <figcaption className="pointer-events-none absolute right-2 bottom-2 rounded-sm bg-black/55 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-white/90 backdrop-blur-sm">
+        <figcaption className="pointer-events-none absolute right-2 bottom-2 rounded-sm bg-[color:var(--image-caption-bg)] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-[color:var(--image-caption-fg)] backdrop-blur-sm">
           Иллюстрация
         </figcaption>
       ) : null}
