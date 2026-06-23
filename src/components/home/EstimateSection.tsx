@@ -19,7 +19,7 @@ export function EstimateSection() {
             <ul className="mt-6 grid gap-3 text-sm text-muted-foreground">
               <li>• Заявка не является договором и ни к чему вас не обязывает.</li>
               <li>• Мы не передаём ваши данные третьим лицам.</li>
-              <li>• На Этапе 1 форма работает в демонстрационном режиме — данные сохраняются только на вашем устройстве.</li>
+              <li>• Расчёт является ориентировочным и не заменяет смету.</li>
             </ul>
           </div>
           <div className="rounded-xl border border-border bg-card p-5 md:p-7">
