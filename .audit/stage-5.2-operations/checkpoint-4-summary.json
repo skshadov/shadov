@@ -1,0 +1,43 @@
+{
+  "stage": "5.2.4",
+  "title": "Messages + Payments + Cameras",
+  "status": "completed",
+  "server_functions": [
+    "communications.functions.ts::listMessages",
+    "communications.functions.ts::sendMessage",
+    "communications.functions.ts::deleteMessage",
+    "communications.functions.ts::listPayments",
+    "communications.functions.ts::upsertPayment",
+    "communications.functions.ts::deletePayment",
+    "communications.functions.ts::listCameras",
+    "communications.functions.ts::upsertCamera",
+    "communications.functions.ts::deleteCamera",
+    "communications.functions.ts::configureCameraSource"
+  ],
+  "routes": [
+    "/admin/projects/$id/messages",
+    "/admin/projects/$id/payments",
+    "/admin/projects/$id/cameras"
+  ],
+  "permissions_required": [
+    "admin.messages.read", "admin.messages.write",
+    "admin.payments.read", "admin.payments.write", "admin.payments.delete",
+    "admin.cameras.read", "admin.cameras.write", "admin.cameras.configure"
+  ],
+  "audit_actions": [
+    "message.send", "message.delete",
+    "payment.create", "payment.update", "payment.delete",
+    "camera.create", "camera.update", "camera.delete", "camera.configure_source"
+  ],
+  "realtime": {
+    "table": "public.project_messages",
+    "filter": "project_id=eq.<id>",
+    "channel_pattern": "admin-messages-<projectId>"
+  },
+  "security_notes": [
+    "Камеры: RTSP/RTMP/токены/секреты в БД не хранятся (CHECK pcs_config_ref_safe). Серверная валидация configuration_reference повторяет паттерн БД.",
+    "Платежи: paid_at автоматически выставляется при переходе в статус paid.",
+    "Сообщения: realtime подписан с фильтром по project_id; UI перезагружает список целиком — простая консистентность важнее минимизации запросов."
+  ],
+  "next": "5.2 завершён. Готов к Stage 5.3 (Content + Services + Pricing + Operator config) после подтверждения."
+}
