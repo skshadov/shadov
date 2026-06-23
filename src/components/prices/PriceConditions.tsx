@@ -5,7 +5,7 @@ import { formatActualDate } from "@/lib/format-price";
 
 export function PriceConditions() {
   return (
-    <aside className="rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground">
+    <div role="note" className="rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground">
       <p>
         Цены указаны за работы. Материалы рассчитываются отдельно, если иное прямо не предусмотрено выбранной комплектацией.
       </p>
@@ -14,6 +14,6 @@ export function PriceConditions() {
         Точная стоимость определяется после изучения проекта, обследования объекта и подготовки сметы.
       </p>
       <p className="mt-2">Дата актуализации: {formatActualDate("2026-06")}</p>
-    </aside>
+    </div>
   );
 }
