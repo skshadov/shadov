@@ -1,0 +1,48 @@
+{
+  "stage": "5.3.2",
+  "title": "Content blocks + Media library",
+  "status": "completed",
+  "migration": "content_blocks + media_assets tables; site-media private bucket + storage policies; admin.content.* and admin.media.* perms",
+  "server_functions": [
+    "content.functions.ts::listContentBlocks (admin.content.read)",
+    "content.functions.ts::getContentBlock (admin.content.read)",
+    "content.functions.ts::upsertContentBlock (admin.content.write, auto published_at)",
+    "content.functions.ts::deleteContentBlock (admin.content.write)",
+    "content.functions.ts::getPublicContentBlock (public, server publishable client)",
+    "media.functions.ts::listMediaAssets (admin.media.read)",
+    "media.functions.ts::createMediaUploadUrl (admin.media.write, 25MB cap)",
+    "media.functions.ts::registerUploadedMedia (admin.media.write)",
+    "media.functions.ts::updateMediaAsset (admin.media.write)",
+    "media.functions.ts::deleteMediaAsset (admin.media.delete, removes object)",
+    "media.functions.ts::getMediaSignedUrls (admin.media.read, ≤7d expiry)"
+  ],
+  "routes": ["/admin/pages", "/admin/media"],
+  "permissions_added": [
+    "admin.content.read", "admin.content.write",
+    "admin.media.read", "admin.media.write", "admin.media.delete"
+  ],
+  "role_grants": {
+    "super_admin": "все content.*+media.*",
+    "admin": "все content.*+media.*",
+    "content_manager": "content.read/write + media.read/write (без media.delete)"
+  },
+  "audit_actions": [
+    "content_block.create", "content_block.update", "content_block.delete",
+    "media.upload", "media.update", "media.delete"
+  ],
+  "storage": {
+    "bucket": "site-media (private)",
+    "upload_flow": "signed upload URL → клиент заливает в storage → registerUploadedMedia пишет метаданные",
+    "delete_flow": "RPC удаляет объект из bucket + строку media_assets, всё под аудитом"
+  },
+  "constraints": [
+    "content_blocks: slug regex ^[a-z0-9][a-z0-9\\-_./]{0,150}$, locale ^[a-z]{2}(-[A-Z]{2})?$, статусы draft/published/archived, размеры тела (200KB/400KB)",
+    "media_assets: MIME whitelist (изображения/видео/PDF), ≤25MB, storage_path LIKE site-media/%",
+    "RLS storage.objects: чтение/запись/удаление в site-media только через has_admin_permission(...)"
+  ],
+  "security_notes": [
+    "Лимит линтера: те же 7 пре-существующих WARN'ов о SECURITY DEFINER функциях (RBAC хелперы) — не относятся к 5.3.2.",
+    "Публичный bucket был запрещён системой → используем приватный + signed URL (≤7 дней)."
+  ],
+  "next": "5.3.3 — структурированные услуги/категории/цены (или иной согласованный объём)."
+}

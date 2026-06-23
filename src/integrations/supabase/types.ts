@@ -255,6 +255,48 @@ export type Database = {
           },
         ]
       }
+      content_blocks: {
+        Row: {
+          body_html: string
+          body_md: string
+          created_at: string
+          id: string
+          locale: string
+          published_at: string | null
+          slug: string
+          status: string
+          title: string
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          body_html?: string
+          body_md?: string
+          created_at?: string
+          id?: string
+          locale?: string
+          published_at?: string | null
+          slug: string
+          status?: string
+          title?: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          body_html?: string
+          body_md?: string
+          created_at?: string
+          id?: string
+          locale?: string
+          published_at?: string | null
+          slug?: string
+          status?: string
+          title?: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
       estimate_requests: {
         Row: {
           calculator_mode: string | null
@@ -315,6 +357,48 @@ export type Database = {
           submission_id?: string
           updated_at?: string
           user_id?: string | null
+        }
+        Relationships: []
+      }
+      media_assets: {
+        Row: {
+          alt_text: string
+          created_at: string
+          height: number | null
+          id: string
+          mime_type: string
+          size_bytes: number
+          storage_path: string
+          title: string
+          updated_at: string
+          uploaded_by: string | null
+          width: number | null
+        }
+        Insert: {
+          alt_text?: string
+          created_at?: string
+          height?: number | null
+          id?: string
+          mime_type: string
+          size_bytes: number
+          storage_path: string
+          title?: string
+          updated_at?: string
+          uploaded_by?: string | null
+          width?: number | null
+        }
+        Update: {
+          alt_text?: string
+          created_at?: string
+          height?: number | null
+          id?: string
+          mime_type?: string
+          size_bytes?: number
+          storage_path?: string
+          title?: string
+          updated_at?: string
+          uploaded_by?: string | null
+          width?: number | null
         }
         Relationships: []
       }
