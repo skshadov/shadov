@@ -104,9 +104,9 @@ function Page() {
                 </Button>
                 <p className="text-xs text-muted-foreground">
                   Продолжая, вы соглашаетесь с{" "}
-                  <Link to="/privacy" className="text-primary underline-offset-2 hover:underline">политикой конфиденциальности</Link>{" "}
+                  <Link to="/privacy" className="text-primary underline underline-offset-2 hover:opacity-80">политикой конфиденциальности</Link>{" "}
                   и{" "}
-                  <Link to="/personal-data-consent" className="text-primary underline-offset-2 hover:underline">условиями обработки персональных данных</Link>.
+                  <Link to="/personal-data-consent" className="text-primary underline underline-offset-2 hover:opacity-80">условиями обработки персональных данных</Link>.
                 </p>
               </form>
             )}
