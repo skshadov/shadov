@@ -2,11 +2,11 @@
   "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
   "totalChecks": 112,
   "critical": 0,
-  "serious": 36,
-  "moderate": 70,
+  "serious": 0,
+  "moderate": 0,
   "minor": 0,
-  "violationsTotal": 106,
-  "passed": false,
+  "violationsTotal": 0,
+  "passed": true,
   "results": [
     {
       "route": "/about",
@@ -22,312 +22,36 @@
       "renderedUrl": "http://localhost:8080/admin",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "heading-order",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the order of headings is semantically correct",
-          "help": "Heading levels should only increase by one",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "heading-order",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "Heading order invalid"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<h3 class=\"font-display text-sm font-semibold uppercase tracking-wider text-foreground\">Строительство</h3>",
-              "target": [
-                "div:nth-child(1) > h3"
-              ],
-              "failureSummary": "Fix any of the following:\n  Heading order invalid"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/biznes-remont",
       "renderedUrl": "http://localhost:8080/biznes-remont",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                ".space-y-6 > aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/chernovoy-remont",
       "renderedUrl": "http://localhost:8080/chernovoy-remont",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/chistovaya-otdelka",
       "renderedUrl": "http://localhost:8080/chistovaya-otdelka",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/contacts",
@@ -352,998 +76,108 @@
       "renderedUrl": "http://localhost:8080/doma-iz-brusa",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".py-10:nth-child(10) > .space-y-4.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/doma-iz-gazobetona",
       "renderedUrl": "http://localhost:8080/doma-iz-gazobetona",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".py-10:nth-child(10) > .space-y-4.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/doma-iz-keramicheskih-blokov",
       "renderedUrl": "http://localhost:8080/doma-iz-keramicheskih-blokov",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".py-10:nth-child(10) > .space-y-4.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/doma-iz-kleenogo-brusa",
       "renderedUrl": "http://localhost:8080/doma-iz-kleenogo-brusa",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".py-10:nth-child(10) > .space-y-4.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/doma-iz-sip-paneley",
       "renderedUrl": "http://localhost:8080/doma-iz-sip-paneley",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".py-10:nth-child(10) > .space-y-4.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/ekonom-remont",
       "renderedUrl": "http://localhost:8080/ekonom-remont",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/elektromontazh",
       "renderedUrl": "http://localhost:8080/elektromontazh",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/evroremont",
       "renderedUrl": "http://localhost:8080/evroremont",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/faq",
       "renderedUrl": "http://localhost:8080/faq",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "heading-order",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the order of headings is semantically correct",
-          "help": "Heading levels should only increase by one",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "heading-order",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "Heading order invalid"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<h3 class=\"font-display text-sm font-semibold uppercase tracking-wider text-foreground\">Строительство</h3>",
-              "target": [
-                "div:nth-child(1) > h3"
-              ],
-              "failureSummary": "Fix any of the following:\n  Heading order invalid"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/fasadnye-raboty",
       "renderedUrl": "http://localhost:8080/fasadnye-raboty",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/fundamenty",
       "renderedUrl": "http://localhost:8080/fundamenty",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/generalnyy-podryad",
       "renderedUrl": "http://localhost:8080/generalnyy-podryad",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/how-we-work",
@@ -1386,360 +220,36 @@
       "renderedUrl": "http://localhost:8080/karkasnye-doma",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".py-10:nth-child(10) > .space-y-4.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/kirpichnye-doma",
       "renderedUrl": "http://localhost:8080/kirpichnye-doma",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".py-10:nth-child(10) > .space-y-4.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/kladochnye-raboty",
       "renderedUrl": "http://localhost:8080/kladochnye-raboty",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/kombinirovannye-doma",
       "renderedUrl": "http://localhost:8080/kombinirovannye-doma",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".py-10:nth-child(10) > .space-y-4.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/kontrol-kachestva",
@@ -1755,548 +265,63 @@
       "renderedUrl": "http://localhost:8080/kosmeticheskiy-remont",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/krovelnye-raboty",
       "renderedUrl": "http://localhost:8080/krovelnye-raboty",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/login",
       "renderedUrl": "http://localhost:8080/client",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "heading-order",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the order of headings is semantically correct",
-          "help": "Heading levels should only increase by one",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "heading-order",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "Heading order invalid"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<h3 class=\"font-display text-sm font-semibold uppercase tracking-wider text-foreground\">Строительство</h3>",
-              "target": [
-                "div:nth-child(1) > h3"
-              ],
-              "failureSummary": "Fix any of the following:\n  Heading order invalid"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/mnogokvartirnye-doma",
       "renderedUrl": "http://localhost:8080/mnogokvartirnye-doma",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/monolitnye-doma",
       "renderedUrl": "http://localhost:8080/monolitnye-doma",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".py-10:nth-child(10) > .space-y-4.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/monolitnye-raboty",
       "renderedUrl": "http://localhost:8080/monolitnye-raboty",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/otoplenie",
       "renderedUrl": "http://localhost:8080/otoplenie",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/personal-data-consent",
@@ -2321,227 +346,18 @@
       "renderedUrl": "http://localhost:8080/premialnyy-remont",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/prices",
       "renderedUrl": "http://localhost:8080/prices",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                ".py-8:nth-child(2) > .container-page > aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            },
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                ".py-8:nth-child(28) > .container-page > aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                "#coefficients > .space-y-6.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            },
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 4,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/privacy",
@@ -2557,180 +373,18 @@
       "renderedUrl": "http://localhost:8080/remont-pod-klyuch",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                ".space-y-6 > aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/remont",
       "renderedUrl": "http://localhost:8080/remont",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                ".space-y-6 > aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/requisites",
@@ -2755,56 +409,9 @@
       "renderedUrl": "http://localhost:8080/santehnika",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/sro-i-dokumenty",
@@ -2820,270 +427,27 @@
       "renderedUrl": "http://localhost:8080/standartnyy-remont",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/stroitelstvo-domov-pod-klyuch",
       "renderedUrl": "http://localhost:8080/stroitelstvo-domov-pod-klyuch",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".py-10:nth-child(10) > .space-y-4.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/stroitelstvo",
       "renderedUrl": "http://localhost:8080/stroitelstvo",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".py-10:nth-child(10) > .space-y-4.container-page > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/team",
@@ -3099,56 +463,9 @@
       "renderedUrl": "http://localhost:8080/teplyy-pol",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/terms",
@@ -3164,188 +481,27 @@
       "renderedUrl": "http://localhost:8080/ukladka-plitki",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        },
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".space-y-4 > .overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/vodosnabzhenie-kanalizatsiya",
       "renderedUrl": "http://localhost:8080/vodosnabzhenie-kanalizatsiya",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "scrollable-region-focusable",
-          "impact": "serious",
-          "tags": [
-            "cat.keyboard",
-            "wcag2a",
-            "wcag211",
-            "wcag213",
-            "TTv5",
-            "TT4.a",
-            "EN-301-549",
-            "EN-9.2.1.1",
-            "EN-9.2.1.3"
-          ],
-          "description": "Ensure elements that have scrollable content are accessible by keyboard",
-          "help": "Scrollable region must have keyboard access",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/scrollable-region-focusable?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "focusable-content",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should have focusable content"
-                },
-                {
-                  "id": "focusable-element",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "serious",
-                  "message": "Element should be focusable"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "serious",
-              "html": "<div class=\"overflow-x-auto rounded-lg border border-border bg-card\">",
-              "target": [
-                ".overflow-x-auto.rounded-lg.bg-card"
-              ],
-              "failureSummary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/client/project/66af2ff9-a65a-47cb-88ee-56545d42aa09",
       "renderedUrl": "http://localhost:8080/client/project/66af2ff9-a65a-47cb-88ee-56545d42aa09",
       "viewport": 375,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "heading-order",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the order of headings is semantically correct",
-          "help": "Heading levels should only increase by one",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "heading-order",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "Heading order invalid"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<h3 class=\"font-display text-sm font-semibold uppercase tracking-wider text-foreground\">Строительство</h3>",
-              "target": [
-                "div:nth-child(1) > h3"
-              ],
-              "failureSummary": "Fix any of the following:\n  Heading order invalid"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/client",
@@ -3370,174 +526,36 @@
       "renderedUrl": "http://localhost:8080/admin",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "heading-order",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the order of headings is semantically correct",
-          "help": "Heading levels should only increase by one",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "heading-order",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "Heading order invalid"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<h3 class=\"font-display text-sm font-semibold uppercase tracking-wider text-foreground\">Строительство</h3>",
-              "target": [
-                "div:nth-child(1) > h3"
-              ],
-              "failureSummary": "Fix any of the following:\n  Heading order invalid"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/biznes-remont",
       "renderedUrl": "http://localhost:8080/biznes-remont",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                ".space-y-6 > aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/chernovoy-remont",
       "renderedUrl": "http://localhost:8080/chernovoy-remont",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/chistovaya-otdelka",
       "renderedUrl": "http://localhost:8080/chistovaya-otdelka",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/contacts",
@@ -3562,264 +580,54 @@
       "renderedUrl": "http://localhost:8080/doma-iz-brusa",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/doma-iz-gazobetona",
       "renderedUrl": "http://localhost:8080/doma-iz-gazobetona",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/doma-iz-keramicheskih-blokov",
       "renderedUrl": "http://localhost:8080/doma-iz-keramicheskih-blokov",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/doma-iz-kleenogo-brusa",
       "renderedUrl": "http://localhost:8080/doma-iz-kleenogo-brusa",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/doma-iz-sip-paneley",
       "renderedUrl": "http://localhost:8080/doma-iz-sip-paneley",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/ekonom-remont",
       "renderedUrl": "http://localhost:8080/ekonom-remont",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/elektromontazh",
@@ -3835,218 +643,45 @@
       "renderedUrl": "http://localhost:8080/evroremont",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/faq",
       "renderedUrl": "http://localhost:8080/faq",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "heading-order",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the order of headings is semantically correct",
-          "help": "Heading levels should only increase by one",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "heading-order",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "Heading order invalid"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<h3 class=\"font-display text-sm font-semibold uppercase tracking-wider text-foreground\">Строительство</h3>",
-              "target": [
-                "div:nth-child(1) > h3"
-              ],
-              "failureSummary": "Fix any of the following:\n  Heading order invalid"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/fasadnye-raboty",
       "renderedUrl": "http://localhost:8080/fasadnye-raboty",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/fundamenty",
       "renderedUrl": "http://localhost:8080/fundamenty",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/generalnyy-podryad",
       "renderedUrl": "http://localhost:8080/generalnyy-podryad",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/how-we-work",
@@ -4089,176 +724,36 @@
       "renderedUrl": "http://localhost:8080/karkasnye-doma",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/kirpichnye-doma",
       "renderedUrl": "http://localhost:8080/kirpichnye-doma",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/kladochnye-raboty",
       "renderedUrl": "http://localhost:8080/kladochnye-raboty",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/kombinirovannye-doma",
       "renderedUrl": "http://localhost:8080/kombinirovannye-doma",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/kontrol-kachestva",
@@ -4274,262 +769,54 @@
       "renderedUrl": "http://localhost:8080/kosmeticheskiy-remont",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/krovelnye-raboty",
       "renderedUrl": "http://localhost:8080/krovelnye-raboty",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/login",
       "renderedUrl": "http://localhost:8080/client",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "heading-order",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the order of headings is semantically correct",
-          "help": "Heading levels should only increase by one",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "heading-order",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "Heading order invalid"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<h3 class=\"font-display text-sm font-semibold uppercase tracking-wider text-foreground\">Строительство</h3>",
-              "target": [
-                "div:nth-child(1) > h3"
-              ],
-              "failureSummary": "Fix any of the following:\n  Heading order invalid"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/mnogokvartirnye-doma",
       "renderedUrl": "http://localhost:8080/mnogokvartirnye-doma",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/monolitnye-doma",
       "renderedUrl": "http://localhost:8080/monolitnye-doma",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/monolitnye-raboty",
       "renderedUrl": "http://localhost:8080/monolitnye-raboty",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/otoplenie",
@@ -4563,109 +850,18 @@
       "renderedUrl": "http://localhost:8080/premialnyy-remont",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/prices",
       "renderedUrl": "http://localhost:8080/prices",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                ".py-8:nth-child(2) > .container-page > aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            },
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                ".py-8:nth-child(28) > .container-page > aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 2,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/privacy",
@@ -4681,88 +877,18 @@
       "renderedUrl": "http://localhost:8080/remont-pod-klyuch",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                ".space-y-6 > aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/remont",
       "renderedUrl": "http://localhost:8080/remont",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                ".space-y-6 > aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/requisites",
@@ -4805,132 +931,27 @@
       "renderedUrl": "http://localhost:8080/standartnyy-remont",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/stroitelstvo-domov-pod-klyuch",
       "renderedUrl": "http://localhost:8080/stroitelstvo-domov-pod-klyuch",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/stroitelstvo",
       "renderedUrl": "http://localhost:8080/stroitelstvo",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/team",
@@ -4964,44 +985,9 @@
       "renderedUrl": "http://localhost:8080/ukladka-plitki",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "landmark-complementary-is-top-level",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the complementary landmark or aside is at top level",
-          "help": "Aside should not be contained in another landmark",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "landmark-is-top-level",
-                  "data": {
-                    "role": null
-                  },
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "The null landmark is contained in another landmark."
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<aside class=\"rounded-lg border border-border bg-[color:var(--surface-medium)] p-4 text-xs leading-relaxed text-muted-foreground\">",
-              "target": [
-                "aside"
-              ],
-              "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/vodosnabzhenie-kanalizatsiya",
@@ -5017,42 +1003,9 @@
       "renderedUrl": "http://localhost:8080/client/project/66af2ff9-a65a-47cb-88ee-56545d42aa09",
       "viewport": 1440,
       "authenticated": false,
-      "violations": [
-        {
-          "id": "heading-order",
-          "impact": "moderate",
-          "tags": [
-            "cat.semantics",
-            "best-practice"
-          ],
-          "description": "Ensure the order of headings is semantically correct",
-          "help": "Heading levels should only increase by one",
-          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI",
-          "nodes": [
-            {
-              "any": [
-                {
-                  "id": "heading-order",
-                  "data": null,
-                  "relatedNodes": [],
-                  "impact": "moderate",
-                  "message": "Heading order invalid"
-                }
-              ],
-              "all": [],
-              "none": [],
-              "impact": "moderate",
-              "html": "<h3 class=\"font-display text-sm font-semibold uppercase tracking-wider text-foreground\">Строительство</h3>",
-              "target": [
-                "div:nth-child(1) > h3"
-              ],
-              "failureSummary": "Fix any of the following:\n  Heading order invalid"
-            }
-          ]
-        }
-      ],
-      "violationCount": 1,
-      "passed": false
+      "violations": [],
+      "violationCount": 0,
+      "passed": true
     },
     {
       "route": "/client",
