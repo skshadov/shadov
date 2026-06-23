@@ -67,6 +67,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
+import { Route as AdminPagesRouteImport } from './routes/admin.pages'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
@@ -373,6 +374,11 @@ const AdminProjectsRoute = AdminProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminPagesRoute = AdminPagesRouteImport.update({
+  id: '/pages',
+  path: '/pages',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminDashboardRoute = AdminDashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
@@ -494,6 +500,7 @@ export interface FileRoutesByFullPath {
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
@@ -566,6 +573,7 @@ export interface FileRoutesByTo {
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
@@ -639,6 +647,7 @@ export interface FileRoutesById {
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
@@ -713,6 +722,7 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/clients'
     | '/admin/dashboard'
+    | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
     | '/portfolio/$slug'
@@ -785,6 +795,7 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/clients'
     | '/admin/dashboard'
+    | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
     | '/portfolio/$slug'
@@ -857,6 +868,7 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/clients'
     | '/admin/dashboard'
+    | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
     | '/portfolio/$slug'
@@ -1337,6 +1349,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminProjectsRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/pages': {
+      id: '/admin/pages'
+      path: '/pages'
+      fullPath: '/admin/pages'
+      preLoaderRoute: typeof AdminPagesRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/dashboard': {
       id: '/admin/dashboard'
       path: '/dashboard'
@@ -1483,6 +1502,7 @@ interface AdminRouteChildren {
   AdminApplicationsRoute: typeof AdminApplicationsRouteWithChildren
   AdminClientsRoute: typeof AdminClientsRouteWithChildren
   AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminPagesRoute: typeof AdminPagesRoute
   AdminProjectsRoute: typeof AdminProjectsRouteWithChildren
   AdminSettingsRoute: typeof AdminSettingsRoute
 }
@@ -1491,6 +1511,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminApplicationsRoute: AdminApplicationsRouteWithChildren,
   AdminClientsRoute: AdminClientsRouteWithChildren,
   AdminDashboardRoute: AdminDashboardRoute,
+  AdminPagesRoute: AdminPagesRoute,
   AdminProjectsRoute: AdminProjectsRouteWithChildren,
   AdminSettingsRoute: AdminSettingsRoute,
 }
