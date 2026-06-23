@@ -1,0 +1,38 @@
+{
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "errorPaths": {
+    "invalid_decision": "invalid_decision",
+    "comment_required": "comment_required",
+    "forbidden": "forbidden",
+    "already_resolved": "already_resolved"
+  },
+  "acceptCall": {
+    "row": {
+      "acceptance_id_out": "4b5ff450-861b-4a81-9824-ec1a342e43be",
+      "stage_id_out": "ab8609a5-b932-4d04-98c9-5cf4f816b651",
+      "status_out": "accepted",
+      "stage_status_out": "accepted"
+    },
+    "error": null
+  },
+  "stage1StatusAfter": "accepted",
+  "changesCall": {
+    "row": {
+      "acceptance_id_out": "c6c85d35-60ff-4020-8261-f1eb2062b7f0",
+      "stage_id_out": "5746d87c-1193-453d-83ca-055facd7c3e3",
+      "status_out": "changes_requested",
+      "stage_status_out": "in_progress"
+    },
+    "error": null
+  },
+  "stage2StatusAfter": "in_progress",
+  "acceptedOk": true,
+  "changesOk": true,
+  "invalidDecisionOk": true,
+  "commentRequiredOk": true,
+  "forbiddenOk": true,
+  "alreadyResolvedOk": true,
+  "remainingTestRows": 0,
+  "remainingTestUsers": 0,
+  "passed": true
+}
