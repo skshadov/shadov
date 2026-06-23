@@ -319,7 +319,7 @@ function PricesPage() {
           </div>
 
           {houseMode === "work" ? (
-            <div className="overflow-x-auto rounded-lg border border-border bg-card">
+            <div className="overflow-x-auto rounded-lg border border-border bg-card" tabIndex={0} aria-label="Прокручиваемая таблица цен на строительство домов — только работы">
               <table className="w-full min-w-[640px] text-left text-sm">
                 <caption className="sr-only">Цены на строительство домов — только работы</caption>
                 <thead className="bg-[color:var(--surface-medium)] text-xs uppercase tracking-wider text-muted-foreground">
@@ -347,7 +347,7 @@ function PricesPage() {
               </table>
             </div>
           ) : (
-            <div className="overflow-x-auto rounded-lg border border-border bg-card">
+            <div className="overflow-x-auto rounded-lg border border-border bg-card" tabIndex={0} aria-label="Прокручиваемая таблица цен на строительство домов с базовыми материалами">
               <table className="w-full min-w-[480px] text-left text-sm">
                 <caption className="sr-only">Цены на строительство домов — работы и базовые материалы</caption>
                 <thead className="bg-[color:var(--surface-medium)] text-xs uppercase tracking-wider text-muted-foreground">

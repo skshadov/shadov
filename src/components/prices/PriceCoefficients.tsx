@@ -12,7 +12,7 @@ function formatCoefficient(min?: number, max?: number): string {
 
 export function PriceCoefficients() {
   return (
-    <div className="overflow-x-auto rounded-lg border border-border bg-card">
+    <div className="overflow-x-auto rounded-lg border border-border bg-card" tabIndex={0} aria-label="Прокручиваемая таблица коэффициентов к стоимости работ">
       <table className="w-full min-w-[480px] text-left text-sm">
         <caption className="sr-only">Коэффициенты к стоимости работ</caption>
         <thead className="bg-[color:var(--surface-medium)] text-xs uppercase tracking-wider text-muted-foreground">

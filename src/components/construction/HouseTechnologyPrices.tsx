@@ -26,7 +26,7 @@ export function HouseTechnologyPrices({ tech }: Props) {
         <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">
           Цены технологии «{tech.name}»
         </h2>
-        <div className="overflow-x-auto rounded-lg border border-border bg-card">
+        <div className="overflow-x-auto rounded-lg border border-border bg-card" tabIndex={0} aria-label={`Прокручиваемая таблица цен технологии ${tech.name}`}>
           <table className="w-full min-w-[320px] text-left text-sm">
             <caption className="sr-only">
               Цены технологии «{tech.name}» по уровням готовности, только работы

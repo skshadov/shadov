@@ -43,7 +43,7 @@ export function HouseTechnologyMatrix({ heading }: Props) {
           </button>
         </div>
 
-        <div className="overflow-x-auto rounded-lg border border-border bg-card">
+        <div className="overflow-x-auto rounded-lg border border-border bg-card" tabIndex={0} aria-label="Прокручиваемая таблица цен по технологиям строительства">
           {mode === "work" ? (
             <table className="w-full min-w-[640px] text-left text-sm">
               <caption className="sr-only">

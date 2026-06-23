@@ -1,0 +1,10 @@
+{
+  "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "contrastAuditPassed": true,
+  "source": "axe-core color-contrast rule across all 112 route/viewport checks",
+  "critical": 0,
+  "serious": 0,
+  "moderate": 0,
+  "minor": 0,
+  "passed": true
+}
