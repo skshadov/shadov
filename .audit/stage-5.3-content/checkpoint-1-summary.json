@@ -1,0 +1,28 @@
+{
+  "stage": "5.3.1",
+  "title": "Company / operator requisites (singleton)",
+  "status": "completed",
+  "migration": "company_settings table + admin.settings.read/write perms",
+  "server_functions": [
+    "settings.functions.ts::getPublicCompanyRequisites (public, server publishable client)",
+    "settings.functions.ts::getCompanySettings (admin.settings.read)",
+    "settings.functions.ts::updateCompanySettings (admin.settings.write)"
+  ],
+  "routes": ["/admin/settings", "/requisites (loader → public DB)"],
+  "permissions_added": ["admin.settings.read", "admin.settings.write"],
+  "audit_actions": ["company_settings.update"],
+  "rls": {
+    "public_read": "только при published = true (TO anon, authenticated)",
+    "admin_read": "has_admin_permission('admin.settings.read')",
+    "admin_write": "has_admin_permission('admin.settings.write')"
+  },
+  "constraints": [
+    "Singleton (unique index по boolean + CHECK singleton = true)",
+    "ИНН (10/12), ОГРН (13/15), КПП (9), phone_e164 (^\\+[1-9]\\d{6,18}$), SRO URL https?://"
+  ],
+  "security_notes": [
+    "Linter WARN'ы 0028/0029 о SECURITY DEFINER функциях — пре-существующие RBAC-хелперы (has_role, has_admin_permission, get_my_admin_permissions, respond_to_stage_acceptance и др.); они by design SECURITY DEFINER и вызываемы из RLS-политик.",
+    "Публичное чтение строго ограничено политикой published = true; черновики невидимы анонимам."
+  ],
+  "next": "5.3.2 — Контент: услуги / категории / медиа (по подтверждению)."
+}
