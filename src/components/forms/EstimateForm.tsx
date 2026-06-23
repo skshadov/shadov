@@ -439,11 +439,11 @@ export function EstimateForm() {
         />
         <span className="leading-snug text-muted-foreground">
           Я ознакомлен(а) и согласен(на) с{" "}
-          <Link to="/personal-data-consent" className="text-primary underline-offset-2 hover:underline">
+          <Link to="/personal-data-consent" className="text-primary underline underline-offset-2 hover:opacity-80">
             условиями обработки персональных данных
           </Link>{" "}
           и{" "}
-          <Link to="/privacy" className="text-primary underline-offset-2 hover:underline">
+          <Link to="/privacy" className="text-primary underline underline-offset-2 hover:opacity-80">
             политикой конфиденциальности
           </Link>
           .

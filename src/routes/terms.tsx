@@ -42,7 +42,7 @@ function Page() {
       </InfoSection>
 
       <InfoSection title="4. Демонстрационный режим форм">
-        <p>На текущем этапе формы сайта работают в локальном демонстрационном режиме и не передают данные в информационные системы компании. Подробнее — в <Link to="/privacy" className="text-primary underline-offset-2 hover:underline">политике конфиденциальности</Link>.</p>
+        <p>На текущем этапе формы сайта работают в локальном демонстрационном режиме и не передают данные в информационные системы компании. Подробнее — в <Link to="/privacy" className="text-primary underline underline-offset-2 hover:opacity-80">политике конфиденциальности</Link>.</p>
       </InfoSection>
 
       <InfoSection title="5. Изменение условий">

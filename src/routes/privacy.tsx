@@ -61,7 +61,7 @@ function Page() {
       </InfoSection>
 
       <InfoSection title="5. Cookie и localStorage">
-        <p>На текущем этапе сайт не устанавливает аналитические и рекламные Cookie. Для работы демонстрационных инструментов используется локальное хранилище браузера. Подробнее — в <Link to="/cookies" className="text-primary underline-offset-2 hover:underline">политике использования cookies</Link>.</p>
+        <p>На текущем этапе сайт не устанавливает аналитические и рекламные Cookie. Для работы демонстрационных инструментов используется локальное хранилище браузера. Подробнее — в <Link to="/cookies" className="text-primary underline underline-offset-2 hover:opacity-80">политике использования cookies</Link>.</p>
       </InfoSection>
 
       <InfoSection title="6. Передача третьим лицам">
@@ -94,7 +94,7 @@ function Page() {
             {isFilled(company.legalName) ? <li>Оператор: {company.legalName}</li> : null}
             {isFilled(company.inn) ? <li>ИНН: {company.inn}</li> : null}
             {isFilled(company.officeAddress) ? <li>Адрес: {company.officeAddress}</li> : null}
-            {isFilled(company.email) ? <li>Email: <a href={`mailto:${company.email}`} className="text-primary underline-offset-2 hover:underline">{company.email}</a></li> : null}
+            {isFilled(company.email) ? <li>Email: <a href={`mailto:${company.email}`} className="text-primary underline underline-offset-2 hover:opacity-80">{company.email}</a></li> : null}
           </ul>
         ) : (
           <PlaceholderNotice
