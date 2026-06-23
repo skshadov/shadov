@@ -1,0 +1,64 @@
+{
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "filesScanned": 260,
+  "hitCount": 8,
+  "hits": [
+    {
+      "file": "src/routes/__root.tsx",
+      "line": 102,
+      "pattern": "inline_hex",
+      "match": "\"#0B1F18\"",
+      "snippet": "{ name: \"theme-color\", content: \"#0B1F18\" },"
+    },
+    {
+      "file": "src/components/common/Illustration.tsx",
+      "line": 84,
+      "pattern": "\\btext-white\\b",
+      "match": "text-white",
+      "snippet": "<figcaption className=\"pointer-events-none absolute right-2 bottom-2 rounded-sm bg-black/55 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-wh"
+    },
+    {
+      "file": "src/components/common/Illustration.tsx",
+      "line": 84,
+      "pattern": "\\bbg-black\\b",
+      "match": "bg-black",
+      "snippet": "<figcaption className=\"pointer-events-none absolute right-2 bottom-2 rounded-sm bg-black/55 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-wh"
+    },
+    {
+      "file": "src/components/ui/alert-dialog.tsx",
+      "line": 19,
+      "pattern": "\\bbg-black\\b",
+      "match": "bg-black",
+      "snippet": "\"fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0\","
+    },
+    {
+      "file": "src/components/ui/chart.tsx",
+      "line": 51,
+      "pattern": "inline_hex",
+      "match": "'#ccc'",
+      "snippet": "\"flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-b"
+    },
+    {
+      "file": "src/components/ui/dialog.tsx",
+      "line": 24,
+      "pattern": "\\bbg-black\\b",
+      "match": "bg-black",
+      "snippet": "\"fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0\","
+    },
+    {
+      "file": "src/components/ui/drawer.tsx",
+      "line": 26,
+      "pattern": "\\bbg-black\\b",
+      "match": "bg-black",
+      "snippet": "className={cn(\"fixed inset-0 z-50 bg-black/80\", className)}"
+    },
+    {
+      "file": "src/components/ui/sheet.tsx",
+      "line": 24,
+      "pattern": "\\bbg-black\\b",
+      "match": "bg-black",
+      "snippet": "\"fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0\","
+    }
+  ],
+  "passed": false
+}
