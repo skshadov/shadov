@@ -7,8 +7,8 @@ import { useServerFn } from "@tanstack/react-start";
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/common/SectionHeading";
-import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
 import { listPublishedReviews } from "@/lib/portfolio-public.functions";
+import { SHOWCASE_REVIEWS } from "@/data/showcase-reviews";
 
 export function ReviewsPreview() {
   const fetchReviews = useServerFn(listPublishedReviews);
@@ -18,6 +18,7 @@ export function ReviewsPreview() {
     staleTime: 5 * 60_000,
   });
   const reviews = data ?? [];
+  const fallback = SHOWCASE_REVIEWS.slice(0, 6);
 
   return (
     <section className="border-b border-border bg-background">
@@ -35,15 +36,27 @@ export function ReviewsPreview() {
               ))}
             </div>
           ) : reviews.length === 0 ? (
-            <PlaceholderNotice
-              title="Раздел наполняется подтверждёнными отзывами заказчиков"
-              description="Мы не размещаем вымышленные отзывы и не покупаем «накрутку» рейтингов."
-              action={
+            <>
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {fallback.map((r) => (
+                  <article key={r.id} className="rounded-lg border border-border bg-card p-5">
+                    <div className="flex items-center gap-1 text-primary" aria-label={`Оценка ${r.rating} из 5`}>
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className="h-4 w-4" fill={i < r.rating ? "currentColor" : "none"} />
+                      ))}
+                    </div>
+                    <p className="mt-3 line-clamp-5 text-sm leading-relaxed">{r.body}</p>
+                    <p className="mt-4 text-sm font-semibold">{r.author}</p>
+                    <p className="text-xs text-muted-foreground">{r.role}</p>
+                  </article>
+                ))}
+              </div>
+              <div className="mt-8">
                 <Button asChild variant="outline">
-                  <Link to="/reviews">Раздел «Отзывы»</Link>
+                  <Link to="/reviews">Все отзывы</Link>
                 </Button>
-              }
-            />
+              </div>
+            </>
           ) : (
             <>
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
