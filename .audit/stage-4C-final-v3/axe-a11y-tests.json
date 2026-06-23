@@ -1,0 +1,207 @@
+{
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "results": [
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "nodes": 5,
+          "help": "Buttons must have discernible text"
+        }
+      ],
+      "violation_count": 5,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/o-nas",
+      "viewport": "mobile",
+      "violations": [],
+      "violation_count": 0,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/uslugi",
+      "viewport": "mobile",
+      "violations": [],
+      "violation_count": 0,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/portfolio",
+      "viewport": "mobile",
+      "violations": [],
+      "violation_count": 0,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/contacts",
+      "viewport": "mobile",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "nodes": 5,
+          "help": "Buttons must have discernible text"
+        }
+      ],
+      "violation_count": 5,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/terms",
+      "viewport": "mobile",
+      "violations": [
+        {
+          "id": "link-in-text-block",
+          "impact": "serious",
+          "nodes": 1,
+          "help": "Links must be distinguishable without relying on color"
+        }
+      ],
+      "violation_count": 1,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile",
+      "violations": [
+        {
+          "id": "link-in-text-block",
+          "impact": "serious",
+          "nodes": 1,
+          "help": "Links must be distinguishable without relying on color"
+        }
+      ],
+      "violation_count": 1,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/auth",
+      "viewport": "mobile",
+      "violations": [],
+      "violation_count": 0,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/client",
+      "viewport": "mobile",
+      "violations": [],
+      "violation_count": 0,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/client/project/66af2ff9-a65a-47cb-88ee-56545d42aa09",
+      "viewport": "mobile",
+      "violations": [],
+      "violation_count": 0,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "nodes": 5,
+          "help": "Buttons must have discernible text"
+        }
+      ],
+      "violation_count": 5,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/o-nas",
+      "viewport": "desktop",
+      "violations": [],
+      "violation_count": 0,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/uslugi",
+      "viewport": "desktop",
+      "violations": [],
+      "violation_count": 0,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/portfolio",
+      "viewport": "desktop",
+      "violations": [],
+      "violation_count": 0,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/contacts",
+      "viewport": "desktop",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "nodes": 5,
+          "help": "Buttons must have discernible text"
+        }
+      ],
+      "violation_count": 5,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/terms",
+      "viewport": "desktop",
+      "violations": [
+        {
+          "id": "link-in-text-block",
+          "impact": "serious",
+          "nodes": 1,
+          "help": "Links must be distinguishable without relying on color"
+        }
+      ],
+      "violation_count": 1,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/privacy",
+      "viewport": "desktop",
+      "violations": [
+        {
+          "id": "link-in-text-block",
+          "impact": "serious",
+          "nodes": 1,
+          "help": "Links must be distinguishable without relying on color"
+        }
+      ],
+      "violation_count": 1,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/auth",
+      "viewport": "desktop",
+      "violations": [],
+      "violation_count": 0,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/client",
+      "viewport": "desktop",
+      "violations": [],
+      "violation_count": 0,
+      "color_contrast_failures": 0
+    },
+    {
+      "route": "/client/project/66af2ff9-a65a-47cb-88ee-56545d42aa09",
+      "viewport": "desktop",
+      "violations": [],
+      "violation_count": 0,
+      "color_contrast_failures": 0
+    }
+  ],
+  "summary": {
+    "total_violations": 24,
+    "color_contrast_failures": 0,
+    "critical_or_serious_rules": 8
+  },
+  "verdict": "FAIL"
+}
