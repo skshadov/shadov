@@ -1,11 +1,11 @@
 {
   "finalRunId": "623bbba1-8134-463d-8c21-7d295180e01b",
-  "generatedAt": "2026-06-23T09:12:27.798Z",
-  "totalScenarios": 85,
-  "passed": 85,
+  "generatedAt": "2026-06-23T09:28:41.987Z",
+  "totalScenarios": 93,
+  "passed": 93,
   "failed": 0,
   "naCount": 8,
-  "rlsScenarios": 85,
+  "rlsScenarios": 93,
   "rlsFailed": 0,
   "results": [
     {
@@ -819,6 +819,86 @@
       "actor": "anon",
       "operation": "rpc",
       "resource": "get_my_projects",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "clientB-foreign-projects-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "projects(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientB-foreign-stages-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "project_stages(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientB-foreign-messages-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "project_messages(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientB-foreign-payments-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "project_payments(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientB-foreign-cameras-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "project_cameras(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientB-foreign-documents-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "project_documents(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientB-foreign-reports-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "project_daily_reports(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-admin-role-self-grant-deny",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "user_roles(self-admin)",
       "expected": "deny",
       "actual": "deny",
       "passed": true,
