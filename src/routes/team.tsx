@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InfoPageLayout, InfoSection, buildInfoHead } from "@/components/info/InfoPageLayout";
-import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
 
 const PATH = "/team";
 const TITLE = "Команда — Шадов и партнёры";
@@ -32,12 +31,6 @@ function Page() {
           <li>Прораб и бригады с подтверждённой квалификацией</li>
           <li>Граждане Российской Федерации с необходимыми допусками</li>
         </ul>
-      </InfoSection>
-      <InfoSection title="Публичный состав">
-        <PlaceholderNotice
-          title="Карточки сотрудников появятся после согласия на размещение"
-          description="Состав команды публикуется через административную панель после подтверждения данных и согласия на размещение. До этого момента вымышленные фотографии и фамилии не используются."
-        />
       </InfoSection>
     </InfoPageLayout>
   );

@@ -1,10 +1,7 @@
 /**
  * §12.7 ТЗ + уточнение 4: на Этапе 1 — без выдуманных фамилий.
  */
-import { Link } from "@tanstack/react-router";
-import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/common/SectionHeading";
-import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
 import { Users } from "lucide-react";
 
 const ROLES = [
@@ -32,17 +29,6 @@ export function TeamPreview() {
             </li>
           ))}
         </ul>
-        <div className="mt-8">
-          <PlaceholderNotice
-            title="Состав команды публикуется через административную панель"
-            description="Имена, фотографии и квалификации сотрудников появляются на сайте только после того, как они оформлены через внутреннюю систему. Никаких вымышленных персон в публичной части."
-            action={
-              <Button asChild variant="outline">
-                <Link to="/team">Раздел «Команда»</Link>
-              </Button>
-            }
-          />
-        </div>
       </div>
     </section>
   );
