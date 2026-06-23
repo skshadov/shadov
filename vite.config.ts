@@ -12,4 +12,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Override Nitro preset для деплоя на собственный Node.js-сервер (VPS Timeweb).
+  // Lovable preview/published продолжают работать (Lovable инжектит свой preset поверх в build pipeline).
+  // Локально и в GitHub Actions `bun run build` собирает Node-сервер: .output/server/index.mjs
+  nitro: {
+    preset: process.env.NITRO_PRESET ?? "node-server",
+  },
 });
