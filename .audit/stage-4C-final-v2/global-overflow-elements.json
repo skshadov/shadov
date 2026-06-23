@@ -1,13 +1,5 @@
 {
-  "summary": {
-    "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
-    "totalChecks": 795,
-    "routesChecked": 53,
-    "viewportsChecked": 15,
-    "pageLevelOverflowCount": 0,
-    "globalHorizontalOverflow": false,
-    "headerFitFailures": 0,
-    "errors": 0
-  },
-  "overflowing": []
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "pageLevelOverflowCount": 0,
+  "overflowPages": []
 }
