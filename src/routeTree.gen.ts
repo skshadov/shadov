@@ -66,6 +66,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
 import { Route as ClientProjectIdRouteImport } from './routes/client.project.$id'
 import { Route as AdminApplicationsIdRouteImport } from './routes/admin.applications.$id'
@@ -358,6 +359,11 @@ const AdminDashboardRoute = AdminDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminClientsRoute = AdminClientsRouteImport.update({
+  id: '/clients',
+  path: '/clients',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminApplicationsRoute = AdminApplicationsRouteImport.update({
   id: '/applications',
   path: '/applications',
@@ -431,6 +437,7 @@ export interface FileRoutesByFullPath {
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
+  '/admin/clients': typeof AdminClientsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
@@ -493,6 +500,7 @@ export interface FileRoutesByTo {
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
+  '/admin/clients': typeof AdminClientsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
@@ -556,6 +564,7 @@ export interface FileRoutesById {
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
+  '/admin/clients': typeof AdminClientsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
@@ -620,6 +629,7 @@ export interface FileRouteTypes {
     | '/ukladka-plitki'
     | '/vodosnabzhenie-kanalizatsiya'
     | '/admin/applications'
+    | '/admin/clients'
     | '/admin/dashboard'
     | '/portfolio/$slug'
     | '/admin/applications/$id'
@@ -682,6 +692,7 @@ export interface FileRouteTypes {
     | '/ukladka-plitki'
     | '/vodosnabzhenie-kanalizatsiya'
     | '/admin/applications'
+    | '/admin/clients'
     | '/admin/dashboard'
     | '/portfolio/$slug'
     | '/admin/applications/$id'
@@ -744,6 +755,7 @@ export interface FileRouteTypes {
     | '/ukladka-plitki'
     | '/vodosnabzhenie-kanalizatsiya'
     | '/admin/applications'
+    | '/admin/clients'
     | '/admin/dashboard'
     | '/portfolio/$slug'
     | '/admin/applications/$id'
@@ -1209,6 +1221,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminDashboardRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/clients': {
+      id: '/admin/clients'
+      path: '/clients'
+      fullPath: '/admin/clients'
+      preLoaderRoute: typeof AdminClientsRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/applications': {
       id: '/admin/applications'
       path: '/applications'
@@ -1246,11 +1265,13 @@ const AdminApplicationsRouteWithChildren =
 
 interface AdminRouteChildren {
   AdminApplicationsRoute: typeof AdminApplicationsRouteWithChildren
+  AdminClientsRoute: typeof AdminClientsRoute
   AdminDashboardRoute: typeof AdminDashboardRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
   AdminApplicationsRoute: AdminApplicationsRouteWithChildren,
+  AdminClientsRoute: AdminClientsRoute,
   AdminDashboardRoute: AdminDashboardRoute,
 }
 
