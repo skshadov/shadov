@@ -12,7 +12,7 @@ interface PriceDisclaimerProps {
 export function PriceDisclaimer({ className, showDate = true }: PriceDisclaimerProps) {
   return (
     <div
-      className={`rounded-md border border-border/60 bg-muted/40 p-4 text-sm leading-relaxed text-muted-foreground ${className ?? ""}`}
+      className={`rounded-md border border-border bg-muted p-4 text-sm leading-relaxed text-foreground ${className ?? ""}`}
     >
       <p>
         Цены указаны за работы. Материалы рассчитываются отдельно, если иное прямо не предусмотрено выбранной комплектацией.

@@ -107,7 +107,9 @@
   --surface-deep: var(--background-deep);
   --surface-medium: var(--surface-medium-raw);
   --success: var(--success-raw);
-  --warning: var(--warning-raw);
+  /* Stage 4C (final): dark-theme warning must reach WCAG AA on dark bg.
+     #D4A14E gives ~6.4:1 on --background-dark and ~4.7:1 on --surface-medium. */
+  --warning: #D4A14E;
   --error: var(--error-raw);
 
   --chart-1: var(--accent-raw);
@@ -146,6 +148,12 @@
   --primary: #6B5526;
   --primary-foreground: #FFFFFF;
   --ring: #6B5526;
+  /* Stage 4C (final): re-map surface-medium and warning to light-context
+     values so utilities like bg-[color:var(--surface-medium)] and
+     text-[color:var(--warning)] keep WCAG AA contrast when used inside a
+     light surface (axe-core color-contrast). */
+  --surface-medium: #E9E6DB;
+  --warning: #6B4416;
 
   background-color: var(--background);
   color: var(--foreground);
@@ -163,6 +171,8 @@
   --primary: #6B5526;
   --primary-foreground: #FFFFFF;
   --ring: #6B5526;
+  --surface-medium: #F3F1E9;
+  --warning: #6B4416;
 
   background-color: var(--background);
   color: var(--foreground);
