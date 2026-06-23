@@ -18,6 +18,7 @@ import { Route as StroitelstvoDomovPodKlyuchRouteImport } from './routes/stroite
 import { Route as StroitelstvoRouteImport } from './routes/stroitelstvo'
 import { Route as StandartnyyRemontRouteImport } from './routes/standartnyy-remont'
 import { Route as SroIDokumentyRouteImport } from './routes/sro-i-dokumenty'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SantehnikaRouteImport } from './routes/santehnika'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as RequisitesRouteImport } from './routes/requisites'
@@ -134,6 +135,11 @@ const StandartnyyRemontRoute = StandartnyyRemontRouteImport.update({
 const SroIDokumentyRoute = SroIDokumentyRouteImport.update({
   id: '/sro-i-dokumenty',
   path: '/sro-i-dokumenty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SantehnikaRoute = SantehnikaRouteImport.update({
@@ -537,6 +543,7 @@ export interface FileRoutesByFullPath {
   '/requisites': typeof RequisitesRoute
   '/reviews': typeof ReviewsRoute
   '/santehnika': typeof SantehnikaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sro-i-dokumenty': typeof SroIDokumentyRoute
   '/standartnyy-remont': typeof StandartnyyRemontRoute
   '/stroitelstvo': typeof StroitelstvoRoute
@@ -617,6 +624,7 @@ export interface FileRoutesByTo {
   '/requisites': typeof RequisitesRoute
   '/reviews': typeof ReviewsRoute
   '/santehnika': typeof SantehnikaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sro-i-dokumenty': typeof SroIDokumentyRoute
   '/standartnyy-remont': typeof StandartnyyRemontRoute
   '/stroitelstvo': typeof StroitelstvoRoute
@@ -699,6 +707,7 @@ export interface FileRoutesById {
   '/requisites': typeof RequisitesRoute
   '/reviews': typeof ReviewsRoute
   '/santehnika': typeof SantehnikaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sro-i-dokumenty': typeof SroIDokumentyRoute
   '/standartnyy-remont': typeof StandartnyyRemontRoute
   '/stroitelstvo': typeof StroitelstvoRoute
@@ -782,6 +791,7 @@ export interface FileRouteTypes {
     | '/requisites'
     | '/reviews'
     | '/santehnika'
+    | '/sitemap.xml'
     | '/sro-i-dokumenty'
     | '/standartnyy-remont'
     | '/stroitelstvo'
@@ -862,6 +872,7 @@ export interface FileRouteTypes {
     | '/requisites'
     | '/reviews'
     | '/santehnika'
+    | '/sitemap.xml'
     | '/sro-i-dokumenty'
     | '/standartnyy-remont'
     | '/stroitelstvo'
@@ -943,6 +954,7 @@ export interface FileRouteTypes {
     | '/requisites'
     | '/reviews'
     | '/santehnika'
+    | '/sitemap.xml'
     | '/sro-i-dokumenty'
     | '/standartnyy-remont'
     | '/stroitelstvo'
@@ -1025,6 +1037,7 @@ export interface RootRouteChildren {
   RequisitesRoute: typeof RequisitesRoute
   ReviewsRoute: typeof ReviewsRoute
   SantehnikaRoute: typeof SantehnikaRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SroIDokumentyRoute: typeof SroIDokumentyRoute
   StandartnyyRemontRoute: typeof StandartnyyRemontRoute
   StroitelstvoRoute: typeof StroitelstvoRoute
@@ -1099,6 +1112,13 @@ declare module '@tanstack/react-router' {
       path: '/sro-i-dokumenty'
       fullPath: '/sro-i-dokumenty'
       preLoaderRoute: typeof SroIDokumentyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/santehnika': {
@@ -1773,6 +1793,7 @@ const rootRouteChildren: RootRouteChildren = {
   RequisitesRoute: RequisitesRoute,
   ReviewsRoute: ReviewsRoute,
   SantehnikaRoute: SantehnikaRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SroIDokumentyRoute: SroIDokumentyRoute,
   StandartnyyRemontRoute: StandartnyyRemontRoute,
   StroitelstvoRoute: StroitelstvoRoute,
