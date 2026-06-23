@@ -91,7 +91,7 @@
   --popover: var(--surface-dark-raw);
   --popover-foreground: var(--text-light);
   --primary: var(--accent-raw);
-  --primary-foreground: #1A1408;
+  --primary-foreground: #1A0E04;
   --secondary: var(--surface-medium-raw);
   --secondary-foreground: var(--text-light);
   --muted: var(--surface-medium-raw);
@@ -115,8 +115,8 @@
   /* Stage 4C (final): semantic scrim token for modal/dialog/sheet overlays
      so primitives never hardcode opaque dark utility classes. Light surfaces
      override below to keep contrast appropriate. */
-  --scrim: rgba(7, 23, 16, 0.78);
-  --image-caption-bg: rgba(11, 31, 24, 0.62);
+  --scrim: rgba(10, 12, 16, 0.80);
+  --image-caption-bg: rgba(10, 12, 16, 0.62);
   --image-caption-fg: rgba(247, 248, 245, 0.92);
 
   --chart-1: var(--accent-raw);
@@ -128,7 +128,7 @@
   --sidebar: var(--surface-dark-raw);
   --sidebar-foreground: var(--text-light);
   --sidebar-primary: var(--accent-raw);
-  --sidebar-primary-foreground: #1A1408;
+  --sidebar-primary-foreground: #1A0E04;
   --sidebar-accent: var(--surface-medium-raw);
   --sidebar-accent-foreground: var(--text-light);
   --sidebar-border: var(--border-dark-raw);
@@ -143,24 +143,24 @@
   --card-foreground: var(--text-dark);
   --popover: var(--background-white);
   --popover-foreground: var(--text-dark);
-  --secondary: #E9E6DB;
+  --secondary: #ECEEF1;
   --secondary-foreground: var(--text-dark);
-  --muted: #E9E6DB;
+  --muted: #ECEEF1;
   --muted-foreground: var(--text-muted-light);
-  --accent: #E9E6DB;
+  --accent: #ECEEF1;
   --accent-foreground: var(--text-dark);
   --border: var(--border-light);
   --input: var(--border-light);
-  /* Stage 4C: ensure WCAG AA contrast for primary on cream surfaces. */
-  --primary: #6B5526;
+  /* WCAG AA на светлом фоне: затемнённый оранжевый. */
+  --primary: #C2410C;
   --primary-foreground: #FFFFFF;
-  --ring: #6B5526;
+  --ring: #C2410C;
   /* Stage 4C (final): re-map surface-medium and warning to light-context
      values so utilities like bg-[color:var(--surface-medium)] and
      text-[color:var(--warning)] keep WCAG AA contrast when used inside a
      light surface (axe-core color-contrast). */
-  --surface-medium: #E9E6DB;
-  --warning: #6B4416;
+  --surface-medium: #ECEEF1;
+  --warning: #92400E;
 
   background-color: var(--background);
   color: var(--foreground);
@@ -171,15 +171,15 @@
   --foreground: var(--text-dark);
   --card: var(--background-white);
   --card-foreground: var(--text-dark);
-  --muted: #F3F1E9;
+  --muted: #F4F5F7;
   --muted-foreground: var(--text-muted-light);
   --border: var(--border-light);
   --input: var(--border-light);
-  --primary: #6B5526;
+  --primary: #C2410C;
   --primary-foreground: #FFFFFF;
-  --ring: #6B5526;
-  --surface-medium: #F3F1E9;
-  --warning: #6B4416;
+  --ring: #C2410C;
+  --surface-medium: #F4F5F7;
+  --warning: #92400E;
 
   background-color: var(--background);
   color: var(--foreground);
