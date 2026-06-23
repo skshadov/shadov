@@ -206,6 +206,16 @@
     font-family: var(--font-display);
     font-weight: 600;
     letter-spacing: -0.01em;
+    /* Stage 4C (final): long Russian compounds (e.g. "конфиденциальности")
+       must wrap inside 288px content columns on 320px screens. */
+    overflow-wrap: anywhere;
+  }
+
+  /* Stage 4C (final): <fieldset> defaults to min-width: min-content, which
+     ignores grid/flex shrink and inflates parent width on 320–375px
+     screens (e.g. /kalkulyator-stoimosti). */
+  fieldset {
+    min-width: 0;
   }
 
   :focus-visible {
