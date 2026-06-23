@@ -7,7 +7,6 @@ import { ProjectFloorPlan } from "@/components/projects/ProjectFloorPlan";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { CostByMaterials } from "@/components/projects/CostByMaterials";
 import { FlexibilityNote } from "@/components/projects/FlexibilityNote";
-import { EstimateSection } from "@/components/home/EstimateSection";
 
 export const Route = createFileRoute("/proekty/$slug")({
   loader: ({ params }) => {
@@ -223,7 +222,6 @@ function ProjectPage() {
         </section>
       )}
 
-      <EstimateSection />
     </main>
   );
 }
