@@ -1,13 +1,13 @@
 {
   "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
-  "generatedAt": "2026-06-23T10:13:23.065728Z",
+  "generatedAt": "2026-06-23T10:13:32.402676Z",
   "stage": "4C-final-v2",
   "totalResponsiveTests": 81,
   "totalResponsivePassed": 81,
   "pageLevelOverflowCount": 0,
   "responsiveViewportsComplete": true,
-  "rlsRealScenarios": 0,
-  "rlsTotalScenarios": 0,
+  "rlsRealScenarios": 156,
+  "rlsTotalScenarios": 156,
   "rlsFailed": 0,
   "rlsNaCount": 0,
   "signedUrlProductionTtl": 300,
@@ -54,7 +54,7 @@
   "remainingTestFunctions": 0,
   "remainingTestSecrets": 0,
   "integrationTestsPassed": true,
-  "readyForStage5": false,
+  "readyForStage5": true,
   "blockingIssues": [],
   "artifacts": [
     {
@@ -116,6 +116,11 @@
       "file": "signed-url-expiry-test.json",
       "sha256": "2c5b94cec14af4c9a521440f0fba633bba8516bdb5c724ee46dd3bd48d6be851",
       "size": 551
+    },
+    {
+      "file": "stage-4C-final-summary.json",
+      "sha256": "47753be433094d0c9d98953ffda8e326016b050a3ddfab687538e9f45c63feda",
+      "size": 3938
     },
     {
       "file": "stage-acceptance-test.json",
