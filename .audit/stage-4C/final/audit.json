@@ -44,7 +44,9 @@
     "rlsScenarios": 85,
     "rlsPassed": 85,
     "rlsFailed": 0,
-    "naCount": 8
+    "naCount": 8,
+    "rlsRealScenarios": 85,
+    "rlsNotApplicable": 8
   },
   "regressions": {
     "validate_prices": 0,
