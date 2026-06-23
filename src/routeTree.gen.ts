@@ -67,6 +67,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CatalogIndexRouteImport } from './routes/catalog.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as CatalogCategoryRouteImport } from './routes/catalog.$category'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
 import { Route as AdminPagesRouteImport } from './routes/admin.pages'
@@ -380,6 +381,11 @@ const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => PortfolioRoute,
 } as any)
+const CatalogCategoryRoute = CatalogCategoryRouteImport.update({
+  id: '/$category',
+  path: '/$category',
+  getParentRoute: () => CatalogRoute,
+} as any)
 const AdminSettingsRoute = AdminSettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -541,6 +547,7 @@ export interface FileRoutesByFullPath {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
+  '/catalog/$category': typeof CatalogCategoryRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/catalog/': typeof CatalogIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
@@ -619,6 +626,7 @@ export interface FileRoutesByTo {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
+  '/catalog/$category': typeof CatalogCategoryRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/catalog': typeof CatalogIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
@@ -699,6 +707,7 @@ export interface FileRoutesById {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
+  '/catalog/$category': typeof CatalogCategoryRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/catalog/': typeof CatalogIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
@@ -780,6 +789,7 @@ export interface FileRouteTypes {
     | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
+    | '/catalog/$category'
     | '/portfolio/$slug'
     | '/catalog/'
     | '/admin/applications/$id'
@@ -858,6 +868,7 @@ export interface FileRouteTypes {
     | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
+    | '/catalog/$category'
     | '/portfolio/$slug'
     | '/catalog'
     | '/admin/applications/$id'
@@ -937,6 +948,7 @@ export interface FileRouteTypes {
     | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
+    | '/catalog/$category'
     | '/portfolio/$slug'
     | '/catalog/'
     | '/admin/applications/$id'
@@ -1420,6 +1432,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioSlugRouteImport
       parentRoute: typeof PortfolioRoute
     }
+    '/catalog/$category': {
+      id: '/catalog/$category'
+      path: '/$category'
+      fullPath: '/catalog/$category'
+      preLoaderRoute: typeof CatalogCategoryRouteImport
+      parentRoute: typeof CatalogRoute
+    }
     '/admin/settings': {
       id: '/admin/settings'
       path: '/settings'
@@ -1640,10 +1659,12 @@ const AdminRouteChildren: AdminRouteChildren = {
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 interface CatalogRouteChildren {
+  CatalogCategoryRoute: typeof CatalogCategoryRoute
   CatalogIndexRoute: typeof CatalogIndexRoute
 }
 
 const CatalogRouteChildren: CatalogRouteChildren = {
+  CatalogCategoryRoute: CatalogCategoryRoute,
   CatalogIndexRoute: CatalogIndexRoute,
 }
 
