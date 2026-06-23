@@ -16,9 +16,7 @@ import { HowWeWorkSection } from "@/components/home/HowWeWorkSection";
 import { TeamPreview } from "@/components/home/TeamPreview";
 import { DocumentsSection } from "@/components/home/DocumentsSection";
 import { ReviewsPreview } from "@/components/home/ReviewsPreview";
-import { EstimateSection } from "@/components/home/EstimateSection";
 import { FaqSection } from "@/components/home/FaqSection";
-import { ContactsSection } from "@/components/home/ContactsSection";
 
 const TITLE =
   "Шадов и партнёры — строительство и ремонт под ключ в Москве и МО";
@@ -61,9 +59,7 @@ function HomePage() {
         <TeamPreview />
         <DocumentsSection />
         <ReviewsPreview />
-        <EstimateSection />
         <FaqSection />
-        <ContactsSection />
       </main>
       <Footer />
     </div>

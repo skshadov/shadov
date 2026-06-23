@@ -22,7 +22,6 @@ import { EngineeringPackageCard } from "@/components/engineering/EngineeringPack
 import { EmptyPortfolioState } from "@/components/content/EmptyPortfolioState";
 import { ServiceFaq } from "@/components/services/ServiceFaq";
 import { ServiceEstimateExample, type EstimateExampleRow } from "@/components/services/ServiceEstimateExample";
-import { EstimateForm } from "@/components/forms/EstimateForm";
 import { RelatedServices } from "@/components/services/RelatedServices";
 import { Illustration } from "@/components/common/Illustration";
 import { engineeringPicture } from "@/assets/illustrations/sources";
@@ -164,12 +163,6 @@ export function EngineeringServicePage({ slug }: Props) {
         <ServiceFaq items={faq} />
 
         <CalculatorCta slug={slug} />
-
-        <section className="border-b border-border py-10">
-          <div className="container-page">
-            <EstimateForm />
-          </div>
-        </section>
 
         <RelatedServices items={related} />
 
