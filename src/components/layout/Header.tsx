@@ -46,7 +46,7 @@ export function Header() {
         >
           <Logo
             variant="full"
-            className="shrink-0 text-foreground [&_[data-logo-subtitle]]:hidden 2xl:[&_[data-logo-subtitle]]:block"
+            className="shrink-0 text-foreground"
           />
 
           <DesktopNavigation />
