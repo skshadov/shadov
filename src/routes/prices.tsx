@@ -11,7 +11,6 @@ import { PriceModeToggle } from "@/components/prices/PriceModeToggle";
 import { PriceCoefficients } from "@/components/prices/PriceCoefficients";
 import { PricePackageCard } from "@/components/prices/PricePackageCard";
 import { ServiceEstimateExample } from "@/components/services/ServiceEstimateExample";
-import { EstimateForm } from "@/components/forms/EstimateForm";
 import { Button } from "@/components/ui/button";
 
 import { getPricesByCategory } from "@/data/prices";
@@ -567,16 +566,19 @@ function PricesPage() {
         {/* ── 14. Пример структуры сметы ──────────────────────────── */}
         <ServiceEstimateExample rows={estimateRows} />
 
-        {/* ── 15. DEMO-форма ──────────────────────────────────────── */}
+        {/* ── 15. Переход в калькулятор ───────────────────────────── */}
         <section id="prices-estimate-form" style={{ scrollMarginTop: "96px" }} className="border-b border-border py-12">
-          <div className="container-page max-w-4xl space-y-6">
+          <div className="container-page max-w-4xl space-y-4">
             <header className="space-y-2">
-              <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Форма предварительного расчёта</h2>
+              <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Предварительный расчёт</h2>
               <p className="text-sm text-muted-foreground md:text-base">
-                Опишите задачу — мы свяжемся, уточним детали и подготовим предварительную оценку. На этом этапе форма работает в демонстрационном режиме.
+                Откройте калькулятор: выберите режим, добавьте позиции и
+                получите ориентировочную стоимость. Менеджер свяжется по итогу.
               </p>
             </header>
-            <EstimateForm />
+            <Button asChild>
+              <Link to="/kalkulyator-stoimosti">Открыть калькулятор</Link>
+            </Button>
           </div>
         </section>
 
