@@ -56,7 +56,6 @@ function HomePage() {
         <QualityPriceSection />
         <HowWeWorkSection />
         <TeamPreview />
-        <DocumentsSection />
         <ReviewsPreview />
         <FaqSection />
       </main>
