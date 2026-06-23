@@ -45,9 +45,9 @@ export function Footer() {
         <div className="grid gap-8 md:col-span-8 md:grid-cols-3">
           {SERVICE_COLUMNS.map((col) => (
             <div key={col.title}>
-              <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-foreground">
+              <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-foreground">
                 {col.title}
-              </h3>
+              </h2>
               <ul className="mt-3 flex flex-col gap-2 text-sm text-muted-foreground">
                 {col.items.slice(0, 6).map((item) => (
                   <li key={item.to}>
@@ -70,9 +70,9 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-6">
-          <h3 className="font-display text-sm font-semibold uppercase tracking-wider">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-wider">
             Компания
-          </h3>
+          </h2>
           <ul className="mt-3 grid grid-cols-2 gap-2 text-sm text-muted-foreground">
             {FOOTER_INFO_LINKS.map((l) => (
               <li key={l.to}>
@@ -85,9 +85,9 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-6">
-          <h3 className="font-display text-sm font-semibold uppercase tracking-wider">
+          <h2 className="font-display text-sm font-semibold uppercase tracking-wider">
             Контакты
-          </h3>
+          </h2>
           {hasAnyContact ? (
             <ul className="mt-3 flex flex-col gap-2 text-sm text-muted-foreground">
               {isFilled(company.phone) ? (
