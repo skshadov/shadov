@@ -47,7 +47,9 @@ const isAuditOrTest = (f: string) =>
   /(?:^|\/)(auth|rls|edge-function|estimate-submission|calculator|storage)-tests?\.ts$/.test(f) ||
   /(?:^|\/)stage-[^/]*-(?:storage|edge|rls)-tests?\.ts$/.test(f) ||
   /(?:^|\/)stage-[^/]*-integration\.ts$/.test(f) ||
-  /(?:^|\/)validate-[^/]*\.ts$/.test(f);
+  /(?:^|\/)validate-[^/]*\.ts$/.test(f) ||
+  /(?:^|\/)_stage[0-9a-z]+-[^/]*\.ts$/.test(f) ||
+  /(?:^|\/)rls-tests(-[^/]*)?\.ts$/.test(f);
 const srcFiles = findFiles(resolve(root, "src"), /\.(ts|tsx)$/).filter((f) => !isAuditOrTest(f));
 const serviceRoleLeaks: string[] = [];
 for (const f of srcFiles) {
