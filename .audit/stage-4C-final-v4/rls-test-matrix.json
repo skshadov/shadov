@@ -1,7 +1,7 @@
 {
   "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
-  "runTag": "stage4c-v4-7b857074-1782211591123",
-  "generatedAt": "2026-06-23T10:46:38.700Z",
+  "runTag": "stage4c-v4-7b857074-1782211615609",
+  "generatedAt": "2026-06-23T10:47:02.767Z",
   "requirements": {
     "rlsRealScenariosMinimum": 90,
     "adminCrudScenariosMinimum": 44,
@@ -9,26 +9,26 @@
   },
   "totals": {
     "rlsRealScenarios": 100,
-    "rlsPassed": 96,
-    "rlsFailed": 4,
+    "rlsPassed": 100,
+    "rlsFailed": 0,
     "rlsNaCount": 0,
     "adminCrudScenarios": 44,
-    "adminCrudPassed": false
+    "adminCrudPassed": true
   },
   "actors": {
     "adminTest": {
-      "userId": "a3d0b666-047e-4bbc-8577-7f9afe699194",
-      "email": "stage4c-v4-7b857074-1782211591123-adminTest@example.test",
+      "userId": "171f4cbe-5363-403e-9224-e62b22095532",
+      "email": "stage4c-v4-7b857074-1782211615609-adminTest@example.test",
       "role": "admin"
     },
     "clientA": {
-      "userId": "b472f78e-c4e3-47e6-a3eb-40ba30f96e6e",
-      "email": "stage4c-v4-7b857074-1782211591123-clientA@example.test",
+      "userId": "9ed9f6b9-837c-41ee-8e09-b9c9eb4c6a04",
+      "email": "stage4c-v4-7b857074-1782211615609-clientA@example.test",
       "role": "client"
     },
     "clientB": {
-      "userId": "b18c7a42-e3aa-4536-9437-180e48550e0c",
-      "email": "stage4c-v4-7b857074-1782211591123-clientB@example.test",
+      "userId": "48d6f095-7571-4081-9e47-0cf1d14b56ff",
+      "email": "stage4c-v4-7b857074-1782211615609-clientB@example.test",
       "role": "client"
     }
   },
@@ -78,9 +78,9 @@
       "table": "project_members",
       "operation": "INSERT",
       "expected": "allow",
-      "actual": "deny",
-      "httpStatus": 400,
-      "passed": false,
+      "actual": "allow",
+      "httpStatus": 201,
+      "passed": true,
       "adminCrud": true
     },
     {
@@ -88,9 +88,9 @@
       "table": "project_members",
       "operation": "SELECT",
       "expected": "allow",
-      "actual": "deny",
+      "actual": "allow",
       "httpStatus": 200,
-      "passed": false,
+      "passed": true,
       "adminCrud": true
     },
     {
@@ -98,9 +98,9 @@
       "table": "project_members",
       "operation": "UPDATE",
       "expected": "allow",
-      "actual": "deny",
+      "actual": "allow",
       "httpStatus": 200,
-      "passed": false,
+      "passed": true,
       "adminCrud": true
     },
     {
@@ -108,9 +108,9 @@
       "table": "project_members",
       "operation": "DELETE",
       "expected": "allow",
-      "actual": "deny",
+      "actual": "allow",
       "httpStatus": 200,
-      "passed": false,
+      "passed": true,
       "adminCrud": true
     },
     {
@@ -1090,46 +1090,5 @@
       "rowCount": 0
     }
   ],
-  "failed": [
-    {
-      "actor": "adminTest",
-      "table": "project_members",
-      "operation": "INSERT",
-      "expected": "allow",
-      "actual": "deny",
-      "httpStatus": 400,
-      "passed": false,
-      "adminCrud": true
-    },
-    {
-      "actor": "adminTest",
-      "table": "project_members",
-      "operation": "SELECT",
-      "expected": "allow",
-      "actual": "deny",
-      "httpStatus": 200,
-      "passed": false,
-      "adminCrud": true
-    },
-    {
-      "actor": "adminTest",
-      "table": "project_members",
-      "operation": "UPDATE",
-      "expected": "allow",
-      "actual": "deny",
-      "httpStatus": 200,
-      "passed": false,
-      "adminCrud": true
-    },
-    {
-      "actor": "adminTest",
-      "table": "project_members",
-      "operation": "DELETE",
-      "expected": "allow",
-      "actual": "deny",
-      "httpStatus": 200,
-      "passed": false,
-      "adminCrud": true
-    }
-  ]
+  "failed": []
 }

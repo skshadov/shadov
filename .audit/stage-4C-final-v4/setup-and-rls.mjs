@@ -108,7 +108,7 @@ async function adminCrud(table, payload, filterParts, patch) {
 const crudProjectId = crypto.randomUUID();
 await adminCrud('projects', { id: crudProjectId, title: `${runTag} admin crud project`, status: 'draft', description: 'admin insert', is_demo: false }, [eq('id', crudProjectId)], { description: 'admin update' });
 const pmProject = await insert('projects', { title: `${runTag} pm prereq`, status: 'active', is_demo: false });
-await adminCrud('project_members', { project_id: pmProject.id, user_id: actors.clientB.id, member_role: 'viewer' }, [eq('project_id', pmProject.id), eq('user_id', actors.clientB.id)], { member_role: 'client' });
+await adminCrud('project_members', { project_id: pmProject.id, user_id: actors.clientB.id, member_role: 'manager' }, [eq('project_id', pmProject.id), eq('user_id', actors.clientB.id)], { member_role: 'client' });
 const stProject = await insert('projects', { title: `${runTag} stage prereq`, status: 'active', is_demo: false });
 const stId = crypto.randomUUID();
 await adminCrud('project_stages', { id: stId, project_id: stProject.id, sort_order: 10, title: `${runTag} admin stage`, description: 'admin insert', status: 'planned' }, [eq('id', stId)], { description: 'admin update' });
@@ -151,7 +151,7 @@ async function clientWrite(actor, operation, table, method, filterParts, payload
 }
 const own = [
   ['projects', [eq('id', projectA.id)], [eq('id', projectB.id)], { title: `${runTag} client project insert`, status: 'draft', is_demo: false }, [eq('id', projectA.id)], { description: 'client update denied' }],
-  ['project_members', [eq('project_id', projectA.id), eq('user_id', actors.clientA.id)], [eq('project_id', projectB.id)], { project_id: projectA.id, user_id: actors.adminTest.id, member_role: 'client' }, [eq('project_id', projectA.id), eq('user_id', actors.clientA.id)], { member_role: 'viewer' }],
+  ['project_members', [eq('project_id', projectA.id), eq('user_id', actors.clientA.id)], [eq('project_id', projectB.id)], { project_id: projectA.id, user_id: actors.adminTest.id, member_role: 'client' }, [eq('project_id', projectA.id), eq('user_id', actors.clientA.id)], { member_role: 'manager' }],
   ['project_stages', [eq('id', stageA.id)], [eq('id', stageB.id)], { project_id: projectA.id, sort_order: 99, title: 'client denied stage', status: 'planned' }, [eq('id', stageA.id)], { description: 'client update denied' }],
   ['project_daily_reports', [eq('id', reportA.id)], [eq('id', reportB.id)], { project_id: projectA.id, report_date: today, title: 'client denied report', summary: 'denied', work_completed: [], next_steps: [], issues: [], published_at: now }, [eq('id', reportA.id)], { summary: 'client update denied' }],
   ['project_daily_report_documents', [eq('report_id', reportA.id), eq('document_id', docA.id)], [eq('report_id', reportB.id), eq('document_id', docB.id)], { report_id: reportA.id, document_id: docB.id, sort_order: 9 }, [eq('report_id', reportA.id), eq('document_id', docA.id)], { sort_order: 9 }],
