@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
-import { listPublishedCategories } from "@/lib/catalog-public.functions";
+import { listPublishedCategories, type PublicCategory } from "@/lib/catalog-public.functions";
 
 const TITLE = "Каталог услуг — Шадов и партнёры";
 const DESCRIPTION = "Категории строительных и ремонтных услуг компании Шадов и партнёры.";
@@ -36,8 +36,8 @@ function CatalogError() {
 }
 
 function CatalogIndex() {
-  const categories = Route.useLoaderData();
-  const roots = categories.filter((c) => !c.parent_id);
+  const categories = Route.useLoaderData() as PublicCategory[];
+  const roots = categories.filter((c: PublicCategory) => !c.parent_id);
   return (
     <div className="min-h-screen">
       <Header />

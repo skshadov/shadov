@@ -65,6 +65,7 @@ import { Route as BiznesRemontRouteImport } from './routes/biznes-remont'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CatalogIndexRouteImport } from './routes/catalog.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
@@ -369,6 +370,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CatalogIndexRoute = CatalogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CatalogRoute,
+} as any)
 const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -476,7 +482,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
   '/biznes-remont': typeof BiznesRemontRoute
-  '/catalog': typeof CatalogRoute
+  '/catalog': typeof CatalogRouteWithChildren
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
   '/client': typeof ClientRouteWithChildren
@@ -536,6 +542,7 @@ export interface FileRoutesByFullPath {
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/catalog/': typeof CatalogIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
   '/admin/catalog/prices': typeof AdminCatalogPricesRoute
@@ -554,7 +561,6 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
   '/biznes-remont': typeof BiznesRemontRoute
-  '/catalog': typeof CatalogRoute
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
   '/client': typeof ClientRouteWithChildren
@@ -614,6 +620,7 @@ export interface FileRoutesByTo {
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/catalog': typeof CatalogIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
   '/admin/catalog/prices': typeof AdminCatalogPricesRoute
@@ -633,7 +640,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
   '/biznes-remont': typeof BiznesRemontRoute
-  '/catalog': typeof CatalogRoute
+  '/catalog': typeof CatalogRouteWithChildren
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
   '/client': typeof ClientRouteWithChildren
@@ -693,6 +700,7 @@ export interface FileRoutesById {
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/catalog/': typeof CatalogIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
   '/admin/catalog/prices': typeof AdminCatalogPricesRoute
@@ -773,6 +781,7 @@ export interface FileRouteTypes {
     | '/admin/projects'
     | '/admin/settings'
     | '/portfolio/$slug'
+    | '/catalog/'
     | '/admin/applications/$id'
     | '/admin/catalog/categories'
     | '/admin/catalog/prices'
@@ -791,7 +800,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/admin'
     | '/biznes-remont'
-    | '/catalog'
     | '/chernovoy-remont'
     | '/chistovaya-otdelka'
     | '/client'
@@ -851,6 +859,7 @@ export interface FileRouteTypes {
     | '/admin/projects'
     | '/admin/settings'
     | '/portfolio/$slug'
+    | '/catalog'
     | '/admin/applications/$id'
     | '/admin/catalog/categories'
     | '/admin/catalog/prices'
@@ -929,6 +938,7 @@ export interface FileRouteTypes {
     | '/admin/projects'
     | '/admin/settings'
     | '/portfolio/$slug'
+    | '/catalog/'
     | '/admin/applications/$id'
     | '/admin/catalog/categories'
     | '/admin/catalog/prices'
@@ -948,7 +958,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AdminRoute: typeof AdminRouteWithChildren
   BiznesRemontRoute: typeof BiznesRemontRoute
-  CatalogRoute: typeof CatalogRoute
+  CatalogRoute: typeof CatalogRouteWithChildren
   ChernovoyRemontRoute: typeof ChernovoyRemontRoute
   ChistovayaOtdelkaRoute: typeof ChistovayaOtdelkaRoute
   ClientRoute: typeof ClientRouteWithChildren
@@ -1396,6 +1406,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/catalog/': {
+      id: '/catalog/'
+      path: '/'
+      fullPath: '/catalog/'
+      preLoaderRoute: typeof CatalogIndexRouteImport
+      parentRoute: typeof CatalogRoute
+    }
     '/portfolio/$slug': {
       id: '/portfolio/$slug'
       path: '/$slug'
@@ -1622,6 +1639,17 @@ const AdminRouteChildren: AdminRouteChildren = {
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
+interface CatalogRouteChildren {
+  CatalogIndexRoute: typeof CatalogIndexRoute
+}
+
+const CatalogRouteChildren: CatalogRouteChildren = {
+  CatalogIndexRoute: CatalogIndexRoute,
+}
+
+const CatalogRouteWithChildren =
+  CatalogRoute._addFileChildren(CatalogRouteChildren)
+
 interface ClientRouteChildren {
   ClientProjectIdRoute: typeof ClientProjectIdRoute
 }
@@ -1650,7 +1678,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AdminRoute: AdminRouteWithChildren,
   BiznesRemontRoute: BiznesRemontRoute,
-  CatalogRoute: CatalogRoute,
+  CatalogRoute: CatalogRouteWithChildren,
   ChernovoyRemontRoute: ChernovoyRemontRoute,
   ChistovayaOtdelkaRoute: ChistovayaOtdelkaRoute,
   ClientRoute: ClientRouteWithChildren,
