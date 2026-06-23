@@ -1,0 +1,24 @@
+{
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "call1": {
+    "error": null,
+    "row": {
+      "request_number": "TEST-A843BF81",
+      "created": true
+    }
+  },
+  "call2": {
+    "error": null,
+    "row": {
+      "request_number": "TEST-A843BF81",
+      "created": false
+    }
+  },
+  "rowsBeforeCleanup": 1,
+  "firstCreatedTrue": true,
+  "secondCreatedFalse": true,
+  "requestNumbersMatch": true,
+  "exactlyOneRow": true,
+  "remainingTestRows": 0,
+  "passed": true
+}
