@@ -405,7 +405,7 @@ export function EstimateForm() {
                 key={c.value}
                 className="flex min-h-11 cursor-pointer items-center gap-2 rounded-md border border-border bg-background px-3 text-sm hover:border-primary/60"
               >
-                <RadioGroupItem value={c.value} />
+                <RadioGroupItem value={c.value} aria-label={c.label} />
                 <span>{c.label}</span>
               </label>
             ))}
@@ -434,6 +434,7 @@ export function EstimateForm() {
             setValue("consent", Boolean(v) as unknown as true, { shouldValidate: isSubmitted })
           }
           aria-invalid={Boolean(errors.consent)}
+          aria-label="Согласие с обработкой персональных данных"
           className="mt-0.5"
         />
         <span className="leading-snug text-muted-foreground">
