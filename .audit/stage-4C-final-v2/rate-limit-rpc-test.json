@@ -1,0 +1,66 @@
+{
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "attempts": [
+    {
+      "i": 1,
+      "row": {
+        "allowed": true,
+        "attempt_count": 1,
+        "retry_after_seconds": 0
+      },
+      "error": null
+    },
+    {
+      "i": 2,
+      "row": {
+        "allowed": true,
+        "attempt_count": 2,
+        "retry_after_seconds": 0
+      },
+      "error": null
+    },
+    {
+      "i": 3,
+      "row": {
+        "allowed": true,
+        "attempt_count": 3,
+        "retry_after_seconds": 0
+      },
+      "error": null
+    },
+    {
+      "i": 4,
+      "row": {
+        "allowed": true,
+        "attempt_count": 4,
+        "retry_after_seconds": 0
+      },
+      "error": null
+    },
+    {
+      "i": 5,
+      "row": {
+        "allowed": true,
+        "attempt_count": 5,
+        "retry_after_seconds": 0
+      },
+      "error": null
+    },
+    {
+      "i": 6,
+      "row": {
+        "allowed": false,
+        "attempt_count": 6,
+        "retry_after_seconds": 58
+      },
+      "error": null
+    }
+  ],
+  "firstFiveAllowed": true,
+  "sixthDenied": true,
+  "sixthHasRetryAfter": true,
+  "sixthAttemptCount": 6,
+  "cleanupError": null,
+  "remainingTestRows": 0,
+  "passed": true
+}
