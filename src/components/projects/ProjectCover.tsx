@@ -25,13 +25,15 @@ export function ProjectCover({ project, className, ariaLabel }: Props) {
   const photo = getProjectRender(project.slug);
   if (photo) {
     return (
-      <img
-        src={photo}
-        alt={ariaLabel ?? `${project.title}, фасад, ${project.slug}`}
-        loading="lazy"
-        decoding="async"
-        className={className}
-      />
+      <div className={`relative overflow-hidden ${className ?? ""}`}>
+        <img
+          src={photo}
+          alt={ariaLabel ?? `${project.title}, фасад, ${project.slug}`}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
     );
   }
   const p = PALETTE[project.primaryMaterial];
