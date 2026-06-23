@@ -1,12 +1,12 @@
 {
   "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
   "route": "/client/project/$id?tab=stages",
-  "fixtureProjectId": "e5305649-98b0-4c0d-a48f-e17045fbebf2",
-  "fixtureAcceptanceId": "a236a9cc-ce4d-4d89-9f21-38404cafa025",
+  "fixtureProjectId": "662ffd6f-6662-403e-bb35-6e330b77ca09",
+  "fixtureAcceptanceId": "304a2435-b913-4b42-94da-e78692c57c6a",
   "component": "AcceptanceDialog",
   "focusableCount": 3,
   "checks": {
-    "triggerFound": false,
+    "triggerFound": true,
     "dialogOpened": true,
     "roleDialog": true,
     "ariaModalTrue": true,

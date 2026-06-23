@@ -1,104 +1,104 @@
 {
   "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
-  "runTag": "stage4c-v4-7b857074-1782212251745",
-  "password": "S4cV4!367045d2-df08-4a25-a617-79a9688967e7aA1",
+  "runTag": "stage4c-v4-7b857074-1782212608177",
+  "password": "S4cV4!47e792a0-1d52-4341-a507-18c507046379aA1",
   "actors": {
     "adminTest": {
       "name": "adminTest",
-      "email": "stage4c-v4-7b857074-1782212251745-adminTest@example.test",
-      "id": "1993f5f1-0c09-4ef3-a1ae-e5124cd97373",
-      "access_token": "eyJhbGciOiJFUzI1NiIsImtpZCI6ImEzOTA0ZDcwLWQ2ODAtNGNiYi05ZTZjLTUxODgyOTJhOGUxOCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3NoYmdzcnJ5cmVkbWVtZW13Z3RuLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIxOTkzZjVmMS0wYzA5LTRlZjMtYTFhZS1lNTEyNGNkOTczNzMiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzgyMjE1ODUyLCJpYXQiOjE3ODIyMTIyNTIsImVtYWlsIjoic3RhZ2U0Yy12NC03Yjg1NzA3NC0xNzgyMjEyMjUxNzQ1LWFkbWludGVzdEBleGFtcGxlLnRlc3QiLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImFjdG9yIjoiYWRtaW5UZXN0IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInN0YWdlNGMiOiJzdGFnZTRjLXY0LTdiODU3MDc0LTE3ODIyMTIyNTE3NDUifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTc4MjIxMjI1Mn1dLCJzZXNzaW9uX2lkIjoiZDVjYjgwYmYtMzE5MC00YjUzLWFlNjItMTg1NGVjZDM3MzVhIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.0LJEY7GaTmI4n2ViYfBrrCQOkmPoaRi-B8n-O8mMe60sUPZdaW4GSNrs7Q2AxgQTlJTOT3JW1XNbZNevavh5ew"
+      "email": "stage4c-v4-7b857074-1782212608177-adminTest@example.test",
+      "id": "57d12136-2f93-4e41-95de-cabcbc1c7da8",
+      "access_token": "eyJhbGciOiJFUzI1NiIsImtpZCI6ImEzOTA0ZDcwLWQ2ODAtNGNiYi05ZTZjLTUxODgyOTJhOGUxOCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3NoYmdzcnJ5cmVkbWVtZW13Z3RuLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI1N2QxMjEzNi0yZjkzLTRlNDEtOTVkZS1jYWJjYmMxYzdkYTgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzgyMjE2MjA4LCJpYXQiOjE3ODIyMTI2MDgsImVtYWlsIjoic3RhZ2U0Yy12NC03Yjg1NzA3NC0xNzgyMjEyNjA4MTc3LWFkbWludGVzdEBleGFtcGxlLnRlc3QiLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImFjdG9yIjoiYWRtaW5UZXN0IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInN0YWdlNGMiOiJzdGFnZTRjLXY0LTdiODU3MDc0LTE3ODIyMTI2MDgxNzcifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTc4MjIxMjYwOH1dLCJzZXNzaW9uX2lkIjoiZjAzNGVmY2EtZmFkZS00ZDFkLTg4MzUtZWNmM2UzNmU5OWU5IiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.UcXmLKaS9QDVo9_ATPv57Wv7vDmxcgk28X7BB7LSkV2nV_VXQwwffdXTzWd61abqHMMgr6nSKpSqrAYh1VuEOg"
     },
     "clientA": {
       "name": "clientA",
-      "email": "stage4c-v4-7b857074-1782212251745-clientA@example.test",
-      "id": "dbb9b48e-b32a-4cab-ab84-f6d33b6d77ac",
-      "access_token": "eyJhbGciOiJFUzI1NiIsImtpZCI6ImEzOTA0ZDcwLWQ2ODAtNGNiYi05ZTZjLTUxODgyOTJhOGUxOCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3NoYmdzcnJ5cmVkbWVtZW13Z3RuLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJkYmI5YjQ4ZS1iMzJhLTRjYWItYWI4NC1mNmQzM2I2ZDc3YWMiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzgyMjE1ODUyLCJpYXQiOjE3ODIyMTIyNTIsImVtYWlsIjoic3RhZ2U0Yy12NC03Yjg1NzA3NC0xNzgyMjEyMjUxNzQ1LWNsaWVudGFAZXhhbXBsZS50ZXN0IiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJhY3RvciI6ImNsaWVudEEiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwic3RhZ2U0YyI6InN0YWdlNGMtdjQtN2I4NTcwNzQtMTc4MjIxMjI1MTc0NSJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzgyMjEyMjUyfV0sInNlc3Npb25faWQiOiJmYzBiZWVhZS0zYTY2LTQ5MjMtYmUzMS01YzEzNjcyY2IyZTMiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.tKZUDqQVdz_v_X1PtE65w-cLRH1rydgMJrP6Kzm9rt_8f_4WOPnUDVHiMDBbBLRR-MGLqG1XBEyPgDgGjXFnaw"
+      "email": "stage4c-v4-7b857074-1782212608177-clientA@example.test",
+      "id": "d135ee4a-0f6c-42e2-ba94-b934308f1d34",
+      "access_token": "eyJhbGciOiJFUzI1NiIsImtpZCI6ImEzOTA0ZDcwLWQ2ODAtNGNiYi05ZTZjLTUxODgyOTJhOGUxOCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3NoYmdzcnJ5cmVkbWVtZW13Z3RuLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJkMTM1ZWU0YS0wZjZjLTQyZTItYmE5NC1iOTM0MzA4ZjFkMzQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzgyMjE2MjA5LCJpYXQiOjE3ODIyMTI2MDksImVtYWlsIjoic3RhZ2U0Yy12NC03Yjg1NzA3NC0xNzgyMjEyNjA4MTc3LWNsaWVudGFAZXhhbXBsZS50ZXN0IiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJhY3RvciI6ImNsaWVudEEiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwic3RhZ2U0YyI6InN0YWdlNGMtdjQtN2I4NTcwNzQtMTc4MjIxMjYwODE3NyJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzgyMjEyNjA5fV0sInNlc3Npb25faWQiOiI3YmZjODZhMS0wNjg5LTQyY2YtODhmZC1lMmUxNGM3YjFlYmQiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.BgX7sGwZHJrptE54vvUFMPc3uk2jNgdbegU948ZZzXwQ8f4ixx7kHUIbAdef9lL_qfvWqOaDN5gk6R_H5Vbqug"
     },
     "clientB": {
       "name": "clientB",
-      "email": "stage4c-v4-7b857074-1782212251745-clientB@example.test",
-      "id": "d19aae76-1c2d-4632-ab51-9b9fccf49115",
-      "access_token": "eyJhbGciOiJFUzI1NiIsImtpZCI6ImEzOTA0ZDcwLWQ2ODAtNGNiYi05ZTZjLTUxODgyOTJhOGUxOCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3NoYmdzcnJ5cmVkbWVtZW13Z3RuLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJkMTlhYWU3Ni0xYzJkLTQ2MzItYWI1MS05YjlmY2NmNDkxMTUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzgyMjE1ODUzLCJpYXQiOjE3ODIyMTIyNTMsImVtYWlsIjoic3RhZ2U0Yy12NC03Yjg1NzA3NC0xNzgyMjEyMjUxNzQ1LWNsaWVudGJAZXhhbXBsZS50ZXN0IiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJhY3RvciI6ImNsaWVudEIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwic3RhZ2U0YyI6InN0YWdlNGMtdjQtN2I4NTcwNzQtMTc4MjIxMjI1MTc0NSJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzgyMjEyMjUzfV0sInNlc3Npb25faWQiOiIxYmE1YzllYy04MmJjLTRhNWYtYWY0OS0wNjNhNTc4YzdlMDEiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.Y8tOTJpruosxgbGSUcY7M5wlpFFTSe0xMZ_Bjlwf0nfqfiuZSQ9ZOfQLCqi0rnbQY7DmKdOiX8SVmeHWByx4Cw"
+      "email": "stage4c-v4-7b857074-1782212608177-clientB@example.test",
+      "id": "e61d4729-db48-4ece-9fec-0e29b19ee7b5",
+      "access_token": "eyJhbGciOiJFUzI1NiIsImtpZCI6ImEzOTA0ZDcwLWQ2ODAtNGNiYi05ZTZjLTUxODgyOTJhOGUxOCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3NoYmdzcnJ5cmVkbWVtZW13Z3RuLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJlNjFkNDcyOS1kYjQ4LTRlY2UtOWZlYy0wZTI5YjE5ZWU3YjUiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzgyMjE2MjA5LCJpYXQiOjE3ODIyMTI2MDksImVtYWlsIjoic3RhZ2U0Yy12NC03Yjg1NzA3NC0xNzgyMjEyNjA4MTc3LWNsaWVudGJAZXhhbXBsZS50ZXN0IiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJhY3RvciI6ImNsaWVudEIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwic3RhZ2U0YyI6InN0YWdlNGMtdjQtN2I4NTcwNzQtMTc4MjIxMjYwODE3NyJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzgyMjEyNjA5fV0sInNlc3Npb25faWQiOiIzMjcwODk0MS04NDAxLTQ0ZjUtYWY1ZS1iMjk0OGJmNTIxOTciLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.LM-gFshceiur8E6A_ZT7rCaej7XAjdyRl74WZ4MdJWKP7jP8l9viqpz6zyVaOkv_m8s2dJXVEGd0mEVZSoTwxg"
     }
   },
   "projectA": {
-    "id": "e5305649-98b0-4c0d-a48f-e17045fbebf2",
-    "title": "stage4c-v4-7b857074-1782212251745 clientA project",
+    "id": "662ffd6f-6662-403e-bb35-6e330b77ca09",
+    "title": "stage4c-v4-7b857074-1782212608177 clientA project",
     "status": "active",
     "description": "Stage 4C v4 clientA fixture",
-    "created_at": "2026-06-23T10:57:33.232806+00:00",
-    "updated_at": "2026-06-23T10:57:33.232806+00:00",
+    "created_at": "2026-06-23T11:03:29.74666+00:00",
+    "updated_at": "2026-06-23T11:03:29.74666+00:00",
     "is_demo": false
   },
   "projectB": {
-    "id": "d7e0a56d-e73b-40d6-9387-21da095d64b8",
-    "title": "stage4c-v4-7b857074-1782212251745 clientB foreign project",
+    "id": "ec0a6e3b-119e-411b-925e-1e22d04c9221",
+    "title": "stage4c-v4-7b857074-1782212608177 clientB foreign project",
     "status": "active",
     "description": "Stage 4C v4 clientB fixture",
-    "created_at": "2026-06-23T10:57:33.271576+00:00",
-    "updated_at": "2026-06-23T10:57:33.271576+00:00",
+    "created_at": "2026-06-23T11:03:29.790144+00:00",
+    "updated_at": "2026-06-23T11:03:29.790144+00:00",
     "is_demo": false
   },
   "stageA": {
-    "id": "f836456d-79e3-46fd-9802-cf1805b7c66e",
-    "project_id": "e5305649-98b0-4c0d-a48f-e17045fbebf2",
+    "id": "2c9527eb-130e-4fbf-af77-82d100094b10",
+    "project_id": "662ffd6f-6662-403e-bb35-6e330b77ca09",
     "sort_order": 1,
-    "title": "stage4c-v4-7b857074-1782212251745 pending stage",
+    "title": "stage4c-v4-7b857074-1782212608177 pending stage",
     "description": "AcceptanceDialog fixture",
     "status": "waiting_acceptance",
     "planned_start": "2026-06-23",
     "planned_end": "2026-06-23",
     "actual_start": null,
     "actual_end": null,
-    "created_at": "2026-06-23T10:57:33.388262+00:00",
-    "updated_at": "2026-06-23T10:57:33.388262+00:00"
+    "created_at": "2026-06-23T11:03:29.91838+00:00",
+    "updated_at": "2026-06-23T11:03:29.91838+00:00"
   },
   "stageB": {
-    "id": "ecf713a7-32fe-46e2-8e55-a2bc071e56a3",
-    "project_id": "d7e0a56d-e73b-40d6-9387-21da095d64b8",
+    "id": "2f656632-23c1-41c8-8968-7c93d9a05b00",
+    "project_id": "ec0a6e3b-119e-411b-925e-1e22d04c9221",
     "sort_order": 1,
-    "title": "stage4c-v4-7b857074-1782212251745 foreign stage",
+    "title": "stage4c-v4-7b857074-1782212608177 foreign stage",
     "description": "Foreign fixture",
     "status": "in_progress",
     "planned_start": null,
     "planned_end": null,
     "actual_start": null,
     "actual_end": null,
-    "created_at": "2026-06-23T10:57:33.428006+00:00",
-    "updated_at": "2026-06-23T10:57:33.428006+00:00"
+    "created_at": "2026-06-23T11:03:29.960722+00:00",
+    "updated_at": "2026-06-23T11:03:29.960722+00:00"
   },
   "acceptanceA": {
-    "id": "a236a9cc-ce4d-4d89-9f21-38404cafa025",
-    "stage_id": "f836456d-79e3-46fd-9802-cf1805b7c66e",
+    "id": "304a2435-b913-4b42-94da-e78692c57c6a",
+    "stage_id": "2c9527eb-130e-4fbf-af77-82d100094b10",
     "attempt_number": 1,
     "status": "pending",
-    "requested_at": "2026-06-23T10:57:33.466437+00:00",
-    "requested_by": "1993f5f1-0c09-4ef3-a1ae-e5124cd97373",
+    "requested_at": "2026-06-23T11:03:30.001393+00:00",
+    "requested_by": "57d12136-2f93-4e41-95de-cabcbc1c7da8",
     "responded_at": null,
     "responded_by": null,
     "client_comment": null,
-    "created_at": "2026-06-23T10:57:33.466437+00:00",
-    "updated_at": "2026-06-23T10:57:33.466437+00:00"
+    "created_at": "2026-06-23T11:03:30.001393+00:00",
+    "updated_at": "2026-06-23T11:03:30.001393+00:00"
   },
   "acceptanceB": {
-    "id": "629b8f9a-ed77-45ae-bafd-2ad293f92c87",
-    "stage_id": "ecf713a7-32fe-46e2-8e55-a2bc071e56a3",
+    "id": "915a4ff7-6996-469d-b741-2e441386c8d7",
+    "stage_id": "2f656632-23c1-41c8-8968-7c93d9a05b00",
     "attempt_number": 1,
     "status": "pending",
-    "requested_at": "2026-06-23T10:57:33.504759+00:00",
-    "requested_by": "1993f5f1-0c09-4ef3-a1ae-e5124cd97373",
+    "requested_at": "2026-06-23T11:03:30.045567+00:00",
+    "requested_by": "57d12136-2f93-4e41-95de-cabcbc1c7da8",
     "responded_at": null,
     "responded_by": null,
     "client_comment": null,
-    "created_at": "2026-06-23T10:57:33.504759+00:00",
-    "updated_at": "2026-06-23T10:57:33.504759+00:00"
+    "created_at": "2026-06-23T11:03:30.045567+00:00",
+    "updated_at": "2026-06-23T11:03:30.045567+00:00"
   },
   "reportA": {
-    "id": "aba05f94-31de-4979-8fd8-5f903cbd558e",
-    "project_id": "e5305649-98b0-4c0d-a48f-e17045fbebf2",
+    "id": "1529b7f3-1669-4028-a259-d41d723004dd",
+    "project_id": "662ffd6f-6662-403e-bb35-6e330b77ca09",
     "report_date": "2026-06-23",
-    "title": "stage4c-v4-7b857074-1782212251745 report A",
+    "title": "stage4c-v4-7b857074-1782212608177 report A",
     "summary": "Published report A",
     "work_completed": [
       "work"
@@ -107,16 +107,16 @@
       "next"
     ],
     "issues": [],
-    "created_by": "1993f5f1-0c09-4ef3-a1ae-e5124cd97373",
-    "published_at": "2026-06-23T10:57:33.206+00:00",
-    "created_at": "2026-06-23T10:57:33.543671+00:00",
-    "updated_at": "2026-06-23T10:57:33.543671+00:00"
+    "created_by": "57d12136-2f93-4e41-95de-cabcbc1c7da8",
+    "published_at": "2026-06-23T11:03:29.72+00:00",
+    "created_at": "2026-06-23T11:03:30.088357+00:00",
+    "updated_at": "2026-06-23T11:03:30.088357+00:00"
   },
   "reportB": {
-    "id": "40a078e7-46b1-4f44-a195-c58190b26979",
-    "project_id": "d7e0a56d-e73b-40d6-9387-21da095d64b8",
+    "id": "45eb5757-1f78-4ac4-b752-f1416adb74eb",
+    "project_id": "ec0a6e3b-119e-411b-925e-1e22d04c9221",
     "report_date": "2026-06-23",
-    "title": "stage4c-v4-7b857074-1782212251745 report B",
+    "title": "stage4c-v4-7b857074-1782212608177 report B",
     "summary": "Published report B",
     "work_completed": [
       "work"
@@ -125,119 +125,119 @@
       "next"
     ],
     "issues": [],
-    "created_by": "1993f5f1-0c09-4ef3-a1ae-e5124cd97373",
-    "published_at": "2026-06-23T10:57:33.206+00:00",
-    "created_at": "2026-06-23T10:57:33.587407+00:00",
-    "updated_at": "2026-06-23T10:57:33.587407+00:00"
+    "created_by": "57d12136-2f93-4e41-95de-cabcbc1c7da8",
+    "published_at": "2026-06-23T11:03:29.72+00:00",
+    "created_at": "2026-06-23T11:03:30.13322+00:00",
+    "updated_at": "2026-06-23T11:03:30.13322+00:00"
   },
   "docA": {
-    "id": "de9bb8ed-4d92-4566-9f9f-4e9c605b8347",
-    "project_id": "e5305649-98b0-4c0d-a48f-e17045fbebf2",
-    "storage_path": "stage4c-v4-7b857074-1782212251745/clientA-document.txt",
+    "id": "7653d939-99ba-4679-9395-d8393a76b9aa",
+    "project_id": "662ffd6f-6662-403e-bb35-6e330b77ca09",
+    "storage_path": "stage4c-v4-7b857074-1782212608177/clientA-document.txt",
     "file_name": "clientA-document.txt",
     "mime_type": "text/plain",
     "size_bytes": 20,
     "document_category": "audit",
-    "uploaded_by": "1993f5f1-0c09-4ef3-a1ae-e5124cd97373",
-    "created_at": "2026-06-23T10:57:33.984735+00:00",
-    "title": "stage4c-v4-7b857074-1782212251745 doc A",
+    "uploaded_by": "57d12136-2f93-4e41-95de-cabcbc1c7da8",
+    "created_at": "2026-06-23T11:03:30.463754+00:00",
+    "title": "stage4c-v4-7b857074-1782212608177 doc A",
     "description": "Visible fixture",
     "document_date": "2026-06-23",
     "is_visible_to_client": true
   },
   "docB": {
-    "id": "e61524e0-ed04-4ab8-8dbe-3f5da601fe95",
-    "project_id": "d7e0a56d-e73b-40d6-9387-21da095d64b8",
-    "storage_path": "stage4c-v4-7b857074-1782212251745/clientB-document.txt",
+    "id": "5124b33a-37ad-471d-8667-0bcc539ad2b2",
+    "project_id": "ec0a6e3b-119e-411b-925e-1e22d04c9221",
+    "storage_path": "stage4c-v4-7b857074-1782212608177/clientB-document.txt",
     "file_name": "clientB-document.txt",
     "mime_type": "text/plain",
     "size_bytes": 20,
     "document_category": "audit",
-    "uploaded_by": "1993f5f1-0c09-4ef3-a1ae-e5124cd97373",
-    "created_at": "2026-06-23T10:57:34.023588+00:00",
-    "title": "stage4c-v4-7b857074-1782212251745 doc B",
+    "uploaded_by": "57d12136-2f93-4e41-95de-cabcbc1c7da8",
+    "created_at": "2026-06-23T11:03:30.511433+00:00",
+    "title": "stage4c-v4-7b857074-1782212608177 doc B",
     "description": "Foreign fixture",
     "document_date": "2026-06-23",
     "is_visible_to_client": true
   },
   "cameraA": {
-    "id": "d06ac892-a16a-4823-a3b6-ea8f37031fa8",
-    "project_id": "e5305649-98b0-4c0d-a48f-e17045fbebf2",
-    "name": "stage4c-v4-7b857074-1782212251745 camera A",
+    "id": "37a9b031-8357-4c34-a386-72aaf96b3cb5",
+    "project_id": "662ffd6f-6662-403e-bb35-6e330b77ca09",
+    "name": "stage4c-v4-7b857074-1782212608177 camera A",
     "description": "Camera fixture",
     "status": "online",
     "sort_order": 1,
-    "last_checked_at": "2026-06-23T10:57:33.206+00:00",
-    "created_at": "2026-06-23T10:57:34.158247+00:00",
-    "updated_at": "2026-06-23T10:57:34.158247+00:00"
+    "last_checked_at": "2026-06-23T11:03:29.72+00:00",
+    "created_at": "2026-06-23T11:03:30.642104+00:00",
+    "updated_at": "2026-06-23T11:03:30.642104+00:00"
   },
   "cameraB": {
-    "id": "f5f86fe3-1362-4884-a54d-0c77939f428d",
-    "project_id": "d7e0a56d-e73b-40d6-9387-21da095d64b8",
-    "name": "stage4c-v4-7b857074-1782212251745 camera B",
+    "id": "550db821-c54b-43d2-977f-bf3717e10b70",
+    "project_id": "ec0a6e3b-119e-411b-925e-1e22d04c9221",
+    "name": "stage4c-v4-7b857074-1782212608177 camera B",
     "description": "Camera foreign fixture",
     "status": "online",
     "sort_order": 1,
-    "last_checked_at": "2026-06-23T10:57:33.206+00:00",
-    "created_at": "2026-06-23T10:57:34.200471+00:00",
-    "updated_at": "2026-06-23T10:57:34.200471+00:00"
+    "last_checked_at": "2026-06-23T11:03:29.72+00:00",
+    "created_at": "2026-06-23T11:03:30.684407+00:00",
+    "updated_at": "2026-06-23T11:03:30.684407+00:00"
   },
   "cameraNoSource": {
-    "id": "12d0ec5d-c7fb-46c1-bde1-87dffed8ee5b",
-    "project_id": "e5305649-98b0-4c0d-a48f-e17045fbebf2",
-    "name": "stage4c-v4-7b857074-1782212251745 camera no source",
+    "id": "8c2ea670-583a-482b-8461-ed9ffafcb6f2",
+    "project_id": "662ffd6f-6662-403e-bb35-6e330b77ca09",
+    "name": "stage4c-v4-7b857074-1782212608177 camera no source",
     "description": "Insert deny target",
     "status": "not_configured",
     "sort_order": 2,
     "last_checked_at": null,
-    "created_at": "2026-06-23T10:57:34.236563+00:00",
-    "updated_at": "2026-06-23T10:57:34.236563+00:00"
+    "created_at": "2026-06-23T11:03:30.724713+00:00",
+    "updated_at": "2026-06-23T11:03:30.724713+00:00"
   },
   "messageA": {
-    "id": "fcaca369-aa1b-41d4-9599-409607c90315",
-    "project_id": "e5305649-98b0-4c0d-a48f-e17045fbebf2",
-    "sender_id": "1993f5f1-0c09-4ef3-a1ae-e5124cd97373",
+    "id": "d8ed6eec-48fc-4703-8ad4-8233d80bc523",
+    "project_id": "662ffd6f-6662-403e-bb35-6e330b77ca09",
+    "sender_id": "57d12136-2f93-4e41-95de-cabcbc1c7da8",
     "message_type": "system",
-    "body": "stage4c-v4-7b857074-1782212251745 message A",
-    "created_at": "2026-06-23T10:57:34.360719+00:00"
+    "body": "stage4c-v4-7b857074-1782212608177 message A",
+    "created_at": "2026-06-23T11:03:30.858915+00:00"
   },
   "messageB": {
-    "id": "868db278-ecb4-4043-97b6-d1f1feba86c1",
-    "project_id": "d7e0a56d-e73b-40d6-9387-21da095d64b8",
-    "sender_id": "1993f5f1-0c09-4ef3-a1ae-e5124cd97373",
+    "id": "8cb74e6a-14cb-475f-a31f-25fd10a394a7",
+    "project_id": "ec0a6e3b-119e-411b-925e-1e22d04c9221",
+    "sender_id": "57d12136-2f93-4e41-95de-cabcbc1c7da8",
     "message_type": "system",
-    "body": "stage4c-v4-7b857074-1782212251745 message B",
-    "created_at": "2026-06-23T10:57:34.400514+00:00"
+    "body": "stage4c-v4-7b857074-1782212608177 message B",
+    "created_at": "2026-06-23T11:03:30.904326+00:00"
   },
   "paymentA": {
-    "id": "ffe2dac3-e8f0-453c-833a-716017d8f9c1",
-    "project_id": "e5305649-98b0-4c0d-a48f-e17045fbebf2",
-    "stage_id": "f836456d-79e3-46fd-9802-cf1805b7c66e",
-    "title": "stage4c-v4-7b857074-1782212251745 payment A",
+    "id": "df1ba592-e45c-4aff-bb7f-66314f59f436",
+    "project_id": "662ffd6f-6662-403e-bb35-6e330b77ca09",
+    "stage_id": "2c9527eb-130e-4fbf-af77-82d100094b10",
+    "title": "stage4c-v4-7b857074-1782212608177 payment A",
     "description": "Payment fixture",
     "amount": 1000,
     "currency": "RUB",
     "status": "planned",
     "due_date": "2026-06-23",
     "paid_at": null,
-    "created_at": "2026-06-23T10:57:34.440055+00:00",
-    "updated_at": "2026-06-23T10:57:34.440055+00:00"
+    "created_at": "2026-06-23T11:03:30.950201+00:00",
+    "updated_at": "2026-06-23T11:03:30.950201+00:00"
   },
   "paymentB": {
-    "id": "89365ea1-4b1f-4309-833e-2838107487ea",
-    "project_id": "d7e0a56d-e73b-40d6-9387-21da095d64b8",
-    "stage_id": "ecf713a7-32fe-46e2-8e55-a2bc071e56a3",
-    "title": "stage4c-v4-7b857074-1782212251745 payment B",
+    "id": "19a3b2ae-03c9-4997-8104-ab94b5d217d5",
+    "project_id": "ec0a6e3b-119e-411b-925e-1e22d04c9221",
+    "stage_id": "2f656632-23c1-41c8-8968-7c93d9a05b00",
+    "title": "stage4c-v4-7b857074-1782212608177 payment B",
     "description": "Payment foreign fixture",
     "amount": 1000,
     "currency": "RUB",
     "status": "planned",
     "due_date": "2026-06-23",
     "paid_at": null,
-    "created_at": "2026-06-23T10:57:34.479293+00:00",
-    "updated_at": "2026-06-23T10:57:34.479293+00:00"
+    "created_at": "2026-06-23T11:03:30.99566+00:00",
+    "updated_at": "2026-06-23T11:03:30.99566+00:00"
   },
   "storagePaths": [
-    "stage4c-v4-7b857074-1782212251745/clientA-document.txt"
+    "stage4c-v4-7b857074-1782212608177/clientA-document.txt"
   ]
 }
