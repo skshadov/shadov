@@ -14,7 +14,6 @@ import { PortfolioPreview } from "@/components/home/PortfolioPreview";
 import { QualityPriceSection } from "@/components/home/QualityPriceSection";
 import { HowWeWorkSection } from "@/components/home/HowWeWorkSection";
 import { TeamPreview } from "@/components/home/TeamPreview";
-import { DocumentsSection } from "@/components/home/DocumentsSection";
 import { ReviewsPreview } from "@/components/home/ReviewsPreview";
 import { FaqSection } from "@/components/home/FaqSection";
 
