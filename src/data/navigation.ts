@@ -74,7 +74,6 @@ export const MAIN_NAV: NavItem[] = [
   { label: "Проекты домов", to: "/proekty" },
   { label: "Наши работы", to: "/portfolio" },
   { label: "Цены", to: "/prices" },
-  { label: "Калькулятор", to: "/kalkulyator-stoimosti" },
   { label: "О компании", to: "/about" },
   { label: "Контакты", to: "/contacts" },
 ];
