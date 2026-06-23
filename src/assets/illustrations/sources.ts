@@ -47,6 +47,55 @@ import controlWebp800 from "./control-foreman-800.webp";
 import controlAvif from "./control-foreman.avif";
 import controlAvif800 from "./control-foreman-800.avif";
 
+import apartmentsJpg from "./direction-apartments.jpg";
+import apartmentsJpg800 from "./direction-apartments-800.jpg";
+import apartmentsWebp from "./direction-apartments.webp";
+import apartmentsWebp800 from "./direction-apartments-800.webp";
+import apartmentsAvif from "./direction-apartments.avif";
+import apartmentsAvif800 from "./direction-apartments-800.avif";
+
+import generalJpg from "./direction-general.jpg";
+import generalJpg800 from "./direction-general-800.jpg";
+import generalWebp from "./direction-general.webp";
+import generalWebp800 from "./direction-general-800.webp";
+import generalAvif from "./direction-general.avif";
+import generalAvif800 from "./direction-general-800.avif";
+
+import masonryJpg from "./direction-masonry.jpg";
+import masonryJpg800 from "./direction-masonry-800.jpg";
+import masonryWebp from "./direction-masonry.webp";
+import masonryWebp800 from "./direction-masonry-800.webp";
+import masonryAvif from "./direction-masonry.avif";
+import masonryAvif800 from "./direction-masonry-800.avif";
+
+import roofJpg from "./direction-roof.jpg";
+import roofJpg800 from "./direction-roof-800.jpg";
+import roofWebp from "./direction-roof.webp";
+import roofWebp800 from "./direction-roof-800.webp";
+import roofAvif from "./direction-roof.avif";
+import roofAvif800 from "./direction-roof-800.avif";
+
+import plumbingJpg from "./direction-plumbing.jpg";
+import plumbingJpg800 from "./direction-plumbing-800.jpg";
+import plumbingWebp from "./direction-plumbing.webp";
+import plumbingWebp800 from "./direction-plumbing-800.webp";
+import plumbingAvif from "./direction-plumbing.avif";
+import plumbingAvif800 from "./direction-plumbing-800.avif";
+
+import heatingJpg from "./direction-heating.jpg";
+import heatingJpg800 from "./direction-heating-800.jpg";
+import heatingWebp from "./direction-heating.webp";
+import heatingWebp800 from "./direction-heating-800.webp";
+import heatingAvif from "./direction-heating.avif";
+import heatingAvif800 from "./direction-heating-800.avif";
+
+import tileJpg from "./direction-tile.jpg";
+import tileJpg800 from "./direction-tile-800.jpg";
+import tileWebp from "./direction-tile.webp";
+import tileWebp800 from "./direction-tile-800.webp";
+import tileAvif from "./direction-tile.avif";
+import tileAvif800 from "./direction-tile-800.avif";
+
 import type { IllustrationSource } from "@/components/common/Illustration";
 
 export const heroPicture = {
@@ -105,3 +154,10 @@ export const renovationPicture = card(renovationAvif, renovationAvif800, renovat
 export const monolithPicture = card(monolithAvif, monolithAvif800, monolithWebp, monolithWebp800, monolithJpg, monolithJpg800);
 export const engineeringPicture = card(engineeringAvif, engineeringAvif800, engineeringWebp, engineeringWebp800, engineeringJpg, engineeringJpg800);
 export const controlPicture = card(controlAvif, controlAvif800, controlWebp, controlWebp800, controlJpg, controlJpg800);
+export const apartmentsPicture = card(apartmentsAvif, apartmentsAvif800, apartmentsWebp, apartmentsWebp800, apartmentsJpg, apartmentsJpg800);
+export const generalPicture = card(generalAvif, generalAvif800, generalWebp, generalWebp800, generalJpg, generalJpg800);
+export const masonryPicture = card(masonryAvif, masonryAvif800, masonryWebp, masonryWebp800, masonryJpg, masonryJpg800);
+export const roofPicture = card(roofAvif, roofAvif800, roofWebp, roofWebp800, roofJpg, roofJpg800);
+export const plumbingPicture = card(plumbingAvif, plumbingAvif800, plumbingWebp, plumbingWebp800, plumbingJpg, plumbingJpg800);
+export const heatingPicture = card(heatingAvif, heatingAvif800, heatingWebp, heatingWebp800, heatingJpg, heatingJpg800);
+export const tilePicture = card(tileAvif, tileAvif800, tileWebp, tileWebp800, tileJpg, tileJpg800);

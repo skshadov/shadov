@@ -12,6 +12,13 @@ import {
   renovationPicture,
   monolithPicture,
   engineeringPicture,
+  apartmentsPicture,
+  generalPicture,
+  masonryPicture,
+  roofPicture,
+  plumbingPicture,
+  heatingPicture,
+  tilePicture,
 } from "@/assets/illustrations/sources";
 
 type PicBundle = typeof housesPicture;
@@ -20,6 +27,13 @@ const ILLUSTRATIONS: Record<string, { pic: PicBundle; description: string } | un
   "Ремонт под ключ": { pic: renovationPicture, description: "интерьер квартиры на этапе подготовки под чистовую отделку" },
   "Монолитные работы": { pic: monolithPicture, description: "монолитное перекрытие с армированием и бетонированием" },
   "Электрика": { pic: engineeringPicture, description: "инженерное помещение с коллектором, электрощитом и трассами" },
+  "Многоквартирное строительство": { pic: apartmentsPicture, description: "монолитный жилой комплекс с башенным краном" },
+  "Генеральный подряд": { pic: generalPicture, description: "инженеры с чертежами на стройплощадке" },
+  "Кладочные работы": { pic: masonryPicture, description: "каменщик кладёт стену из газобетонных блоков" },
+  "Кровля": { pic: roofPicture, description: "монтаж фальцевой кровли на частном доме" },
+  "Сантехника": { pic: plumbingPicture, description: "монтаж сантехники в санузле" },
+  "Отопление": { pic: heatingPicture, description: "укладка водяного тёплого пола с коллектором" },
+  "Плитка": { pic: tilePicture, description: "укладка крупноформатного керамогранита" },
 };
 
 export function ServiceDirections() {
