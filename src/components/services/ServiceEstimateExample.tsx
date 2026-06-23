@@ -23,7 +23,7 @@ export function ServiceEstimateExample({ rows }: ServiceEstimateExampleProps) {
     <section className="border-b border-border py-10">
       <div className="container-page space-y-4">
         <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Пример структуры сметы</h2>
-        <div className="overflow-x-auto rounded-lg border border-border bg-card">
+        <div className="overflow-x-auto rounded-lg border border-border bg-card" tabIndex={0} aria-label="Прокручиваемая таблица примера сметы">
           <table className="w-full min-w-[640px] text-left text-sm">
             <caption className="sr-only">Пример структуры сметы</caption>
             <thead className="bg-[color:var(--surface-medium)] text-xs uppercase tracking-wider text-muted-foreground">
