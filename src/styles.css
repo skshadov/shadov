@@ -206,6 +206,9 @@
     font-family: var(--font-display);
     font-weight: 600;
     letter-spacing: -0.01em;
+    /* Stage 4C (final): long Russian compounds (e.g. "конфиденциальности")
+       must wrap inside 288px content columns on 320px screens. */
+    overflow-wrap: anywhere;
   }
 
   :focus-visible {
