@@ -50,6 +50,14 @@ function ProjectDetailPage() {
         : (
           <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
             <div className="space-y-6">
+              <div className="flex flex-wrap gap-2">
+                <Button asChild size="sm" variant="outline">
+                  <Link to="/admin/projects/$id/documents" params={{ id: project.id }}>Документы</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline">
+                  <Link to="/admin/projects/$id/reports" params={{ id: project.id }}>Ежедневные отчёты</Link>
+                </Button>
+              </div>
               <ProjectMeta project={project} canWrite={canWrite} onSaved={reload} />
               <StagesSection project={project} canWrite={canWrite} onChanged={reload} />
             </div>
