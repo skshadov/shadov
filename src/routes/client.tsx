@@ -1,4 +1,4 @@
-import { createFileRoute, Link, Navigate } from "@tanstack/react-router";
+import { createFileRoute, Link, Navigate, Outlet, useMatchRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { ClientPortalLayout } from "@/components/client/ClientPortalLayout";
@@ -21,23 +21,29 @@ export const Route = createFileRoute("/client")({
 
 function Page() {
   const session = useClientSession();
+  const matchRoute = useMatchRoute();
+  const isChild = !!matchRoute({ to: "/client/project/$id" });
   const [projects, setProjects] = useState<ProjectRow[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (session.status !== "authenticated") return;
+    if (session.status !== "authenticated" || isChild) return;
     let active = true;
     listMyProjects()
       .then((p) => { if (active) setProjects(p); })
       .catch(() => { if (active) setError("Не удалось загрузить список проектов. Попробуйте обновить страницу."); });
     return () => { active = false; };
-  }, [session.status]);
+  }, [session.status, isChild]);
 
   if (session.status === "loading") {
     return <Skeleton />;
   }
   if (session.status === "anonymous") {
     return <Navigate to="/login" search={{ returnTo: "/client" } as never} replace />;
+  }
+
+  if (isChild) {
+    return <Outlet />;
   }
 
   return (
