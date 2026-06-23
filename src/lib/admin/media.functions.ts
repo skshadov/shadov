@@ -141,7 +141,11 @@ export const updateMediaAsset = createServerFn({ method: "POST" })
     await ensurePerm(context, "admin.media.write");
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { data: row, error } = await supabaseAdmin
-      .from("media_assets").update(data.patch).eq("id", data.id).select("*").single();
+      .from("media_assets")
+      .update(data.patch as Database["public"]["Tables"]["media_assets"]["Update"])
+      .eq("id", data.id)
+      .select("*")
+      .single();
     if (error) throw new Error(error.message);
 
     const { logAdminAction } = await import("./audit.server");
