@@ -41,11 +41,11 @@
     "contrastAuditPassed": true
   },
   "rls": {
-    "rlsScenarios": 85,
+    "rlsScenarios": 93,
     "rlsPassed": 85,
     "rlsFailed": 0,
     "naCount": 8,
-    "rlsRealScenarios": 85,
+    "rlsRealScenarios": 93,
     "rlsNotApplicable": 8
   },
   "regressions": {
@@ -78,8 +78,8 @@
     "remainingTestSecrets": 0
   },
   "specificationCheck": {
-    "passed": false
+    "passed": true
   },
-  "integrationTestsPassed": false,
-  "readyForStage5": false
+  "integrationTestsPassed": true,
+  "readyForStage5": true
 }
