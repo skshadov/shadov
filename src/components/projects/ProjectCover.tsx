@@ -1,5 +1,6 @@
 import type { HouseProject } from "@/data/projects";
 import type { MaterialKey } from "@/data/projects-pricing";
+import { getProjectRender } from "@/assets/projects";
 
 /**
  * Стилизованный SVG-рендер фасада дома. Используется как обложка проекта
@@ -21,6 +22,20 @@ interface Props {
 }
 
 export function ProjectCover({ project, className, ariaLabel }: Props) {
+  const photo = getProjectRender(project.slug);
+  if (photo) {
+    return (
+      <div className={`relative overflow-hidden ${className ?? ""}`}>
+        <img
+          src={photo}
+          alt={ariaLabel ?? `${project.title}, фасад, ${project.slug}`}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
+    );
+  }
   const p = PALETTE[project.primaryMaterial];
   const id = project.slug;
   const floors = project.floors;
