@@ -8,14 +8,14 @@
  * "[телефон]" / "0000000000" и т. п.
  */
 export const company = {
-  legalName: "" as string,                  // Полное юр. наименование
+  legalName: "ООО \"СК ШАДОВ И ПАРТНЕРЫ\"" as string,                  // Полное юр. наименование
   brandName: "Шадов и партнёры" as string,  // Можно использовать — это название бренда
   brandFull: "Строительная компания «Шадов и партнёры»" as string,
   domain: "shadov.pro" as string,
-  inn: "" as string,
-  ogrn: "" as string,
+  inn: "123456789" as string,
+  ogrn: "123456789" as string,
   kpp: "" as string,
-  legalAddress: "" as string,
+  legalAddress: "Московская область, Мытищи, улица Белобородова, вл2Б" as string,
   officeAddress: "Московская область, г. Мытищи, ул. Белобородова, вл. 2Б" as string,
   phone: "+7 (926) 092-02-21" as string,
   phoneE164: "+79260920221" as string,
