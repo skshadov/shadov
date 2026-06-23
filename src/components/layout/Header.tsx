@@ -56,12 +56,13 @@ export function Header() {
               asChild
               variant="ghost"
               size="sm"
-              className="hidden 2xl:inline-flex"
+              className="hidden md:inline-flex whitespace-nowrap"
               aria-label="Личный кабинет"
             >
               <Link to="/login">
                 <LogIn aria-hidden="true" className="mr-1 h-4 w-4" />
-                <span>Личный кабинет</span>
+                <span className="hidden xl:inline">Личный кабинет</span>
+                <span className="xl:hidden">Кабинет</span>
               </Link>
             </Button>
             <Button asChild size="sm" className="hidden md:inline-flex whitespace-nowrap">

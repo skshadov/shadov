@@ -63,13 +63,13 @@ function LogoFull() {
   return (
     <>
       <LogoMark />
-      <span className="hidden 2xl:flex flex-col leading-tight whitespace-nowrap">
-        <span className="font-display text-[15px] font-semibold tracking-[0.14em] uppercase">
+      <span className="hidden sm:flex flex-col leading-tight whitespace-nowrap">
+        <span className="font-display text-[13px] lg:text-[15px] font-semibold tracking-[0.14em] uppercase">
           Шадов&nbsp;и&nbsp;партнёры
         </span>
         <span
           data-logo-subtitle
-          className="text-[9px] tracking-[0.22em] uppercase text-muted-foreground"
+          className="text-[8px] lg:text-[9px] tracking-[0.22em] uppercase text-muted-foreground"
         >
           Строительная компания
         </span>
