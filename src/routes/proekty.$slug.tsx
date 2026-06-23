@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
-import { getProject, getSimilar, type FloorKey } from "@/data/projects";
+import { getProject, getSimilar, type FloorKey, type HouseProject } from "@/data/projects";
 import { MATERIAL_LABEL, MATERIAL_SERVICE_SLUG } from "@/data/projects-pricing";
 import { ProjectCover } from "@/components/projects/ProjectCover";
 import { ProjectFloorPlan } from "@/components/projects/ProjectFloorPlan";
@@ -78,7 +78,7 @@ export const Route = createFileRoute("/proekty/$slug")({
 });
 
 function ProjectPage() {
-  const { project: p } = Route.useLoaderData();
+  const { project: p } = Route.useLoaderData() as { project: HouseProject };
   const floors: FloorKey[] = uniqueFloors(p.rooms.map((r) => r.floor));
   const [floor, setFloor] = useState<FloorKey>(floors[0]);
   const similar = getSimilar(p);
