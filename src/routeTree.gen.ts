@@ -76,6 +76,7 @@ import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
 import { Route as ClientProjectIdRouteImport } from './routes/client.project.$id'
+import { Route as CatalogCategoryServiceRouteImport } from './routes/catalog.$category.$service'
 import { Route as AdminProjectsIdRouteImport } from './routes/admin.projects.$id'
 import { Route as AdminClientsIdRouteImport } from './routes/admin.clients.$id'
 import { Route as AdminCatalogServicesRouteImport } from './routes/admin.catalog.services'
@@ -426,6 +427,11 @@ const ClientProjectIdRoute = ClientProjectIdRouteImport.update({
   path: '/project/$id',
   getParentRoute: () => ClientRoute,
 } as any)
+const CatalogCategoryServiceRoute = CatalogCategoryServiceRouteImport.update({
+  id: '/$service',
+  path: '/$service',
+  getParentRoute: () => CatalogCategoryRoute,
+} as any)
 const AdminProjectsIdRoute = AdminProjectsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -547,7 +553,7 @@ export interface FileRoutesByFullPath {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
-  '/catalog/$category': typeof CatalogCategoryRoute
+  '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/catalog/': typeof CatalogIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
@@ -556,6 +562,7 @@ export interface FileRoutesByFullPath {
   '/admin/catalog/services': typeof AdminCatalogServicesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
+  '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
   '/client/project/$id': typeof ClientProjectIdRoute
   '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
   '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
@@ -626,7 +633,7 @@ export interface FileRoutesByTo {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
-  '/catalog/$category': typeof CatalogCategoryRoute
+  '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/catalog': typeof CatalogIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
@@ -635,6 +642,7 @@ export interface FileRoutesByTo {
   '/admin/catalog/services': typeof AdminCatalogServicesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
+  '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
   '/client/project/$id': typeof ClientProjectIdRoute
   '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
   '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
@@ -707,7 +715,7 @@ export interface FileRoutesById {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
-  '/catalog/$category': typeof CatalogCategoryRoute
+  '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/catalog/': typeof CatalogIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
@@ -716,6 +724,7 @@ export interface FileRoutesById {
   '/admin/catalog/services': typeof AdminCatalogServicesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
+  '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
   '/client/project/$id': typeof ClientProjectIdRoute
   '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
   '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
@@ -798,6 +807,7 @@ export interface FileRouteTypes {
     | '/admin/catalog/services'
     | '/admin/clients/$id'
     | '/admin/projects/$id'
+    | '/catalog/$category/$service'
     | '/client/project/$id'
     | '/admin/projects/$id/cameras'
     | '/admin/projects/$id/documents'
@@ -877,6 +887,7 @@ export interface FileRouteTypes {
     | '/admin/catalog/services'
     | '/admin/clients/$id'
     | '/admin/projects/$id'
+    | '/catalog/$category/$service'
     | '/client/project/$id'
     | '/admin/projects/$id/cameras'
     | '/admin/projects/$id/documents'
@@ -957,6 +968,7 @@ export interface FileRouteTypes {
     | '/admin/catalog/services'
     | '/admin/clients/$id'
     | '/admin/projects/$id'
+    | '/catalog/$category/$service'
     | '/client/project/$id'
     | '/admin/projects/$id/cameras'
     | '/admin/projects/$id/documents'
@@ -1495,6 +1507,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClientProjectIdRouteImport
       parentRoute: typeof ClientRoute
     }
+    '/catalog/$category/$service': {
+      id: '/catalog/$category/$service'
+      path: '/$service'
+      fullPath: '/catalog/$category/$service'
+      preLoaderRoute: typeof CatalogCategoryServiceRouteImport
+      parentRoute: typeof CatalogCategoryRoute
+    }
     '/admin/projects/$id': {
       id: '/admin/projects/$id'
       path: '/$id'
@@ -1658,13 +1677,25 @@ const AdminRouteChildren: AdminRouteChildren = {
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
+interface CatalogCategoryRouteChildren {
+  CatalogCategoryServiceRoute: typeof CatalogCategoryServiceRoute
+}
+
+const CatalogCategoryRouteChildren: CatalogCategoryRouteChildren = {
+  CatalogCategoryServiceRoute: CatalogCategoryServiceRoute,
+}
+
+const CatalogCategoryRouteWithChildren = CatalogCategoryRoute._addFileChildren(
+  CatalogCategoryRouteChildren,
+)
+
 interface CatalogRouteChildren {
-  CatalogCategoryRoute: typeof CatalogCategoryRoute
+  CatalogCategoryRoute: typeof CatalogCategoryRouteWithChildren
   CatalogIndexRoute: typeof CatalogIndexRoute
 }
 
 const CatalogRouteChildren: CatalogRouteChildren = {
-  CatalogCategoryRoute: CatalogCategoryRoute,
+  CatalogCategoryRoute: CatalogCategoryRouteWithChildren,
   CatalogIndexRoute: CatalogIndexRoute,
 }
 

@@ -1,0 +1,16 @@
+{
+  "checkpoint": "5.3.4",
+  "title": "Public Catalog Storefront",
+  "status": "done",
+  "changes": [
+    "src/lib/catalog-public.functions.ts: публичные серверные функции каталога (server publishable client, только published)",
+    "src/routes/catalog.tsx: layout-роут /catalog",
+    "src/routes/catalog.index.tsx: список корневых категорий с SSR и SEO",
+    "src/routes/catalog.$category.tsx: страница категории с услугами, head() из БД",
+    "src/routes/catalog.$category.$service.tsx: детальная страница услуги, body_md, SEO"
+  ],
+  "notes": [
+    "Loader'ы вызывают только публичные server fn без requireSupabaseAuth, SSR/prerender безопасен.",
+    "Использован server publishable client; RLS-политики anon уже допускают SELECT при status='published'."
+  ]
+}
