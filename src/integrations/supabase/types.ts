@@ -112,6 +112,111 @@ export type Database = {
           },
         ]
       }
+      company_settings: {
+        Row: {
+          bank_account: string
+          bank_bik: string
+          bank_corr_account: string
+          bank_name: string
+          brand_full: string
+          brand_name: string
+          created_at: string
+          domain: string
+          email: string
+          id: string
+          inn: string
+          kpp: string
+          legal_address: string
+          legal_name: string
+          office_address: string
+          ogrn: string
+          phone: string
+          phone_e164: string
+          projects_count: string
+          published: boolean
+          singleton: boolean
+          sro_name: string
+          sro_number: string
+          sro_registry_url: string
+          staff_count: string
+          telegram: string
+          updated_at: string
+          updated_by: string | null
+          warranty_years: string
+          whatsapp: string
+          working_hours: string
+          years_on_market: string
+        }
+        Insert: {
+          bank_account?: string
+          bank_bik?: string
+          bank_corr_account?: string
+          bank_name?: string
+          brand_full?: string
+          brand_name?: string
+          created_at?: string
+          domain?: string
+          email?: string
+          id?: string
+          inn?: string
+          kpp?: string
+          legal_address?: string
+          legal_name?: string
+          office_address?: string
+          ogrn?: string
+          phone?: string
+          phone_e164?: string
+          projects_count?: string
+          published?: boolean
+          singleton?: boolean
+          sro_name?: string
+          sro_number?: string
+          sro_registry_url?: string
+          staff_count?: string
+          telegram?: string
+          updated_at?: string
+          updated_by?: string | null
+          warranty_years?: string
+          whatsapp?: string
+          working_hours?: string
+          years_on_market?: string
+        }
+        Update: {
+          bank_account?: string
+          bank_bik?: string
+          bank_corr_account?: string
+          bank_name?: string
+          brand_full?: string
+          brand_name?: string
+          created_at?: string
+          domain?: string
+          email?: string
+          id?: string
+          inn?: string
+          kpp?: string
+          legal_address?: string
+          legal_name?: string
+          office_address?: string
+          ogrn?: string
+          phone?: string
+          phone_e164?: string
+          projects_count?: string
+          published?: boolean
+          singleton?: boolean
+          sro_name?: string
+          sro_number?: string
+          sro_registry_url?: string
+          staff_count?: string
+          telegram?: string
+          updated_at?: string
+          updated_by?: string | null
+          warranty_years?: string
+          whatsapp?: string
+          working_hours?: string
+          years_on_market?: string
+        }
+        Relationships: []
+      }
       consent_records: {
         Row: {
           accepted_at: string
