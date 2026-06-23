@@ -343,6 +343,41 @@ async function run() {
     const r = await anon.rpc("get_my_projects");
     return { error: r.error || (Array.isArray(r.data) && r.data.length === 0 ? { code: "empty" } : null) };
   });
+
+  // Extra cross-project scenarios to round matrix to >=90
+  console.log("== cross-project ==");
+  await exec("clientB-foreign-projects-select","clientB","select","projects(foreign)","deny", async () => {
+    const r = await cB.from("projects").select("id").eq("id", projectA);
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+  await exec("clientB-foreign-stages-select","clientB","select","project_stages(foreign)","deny", async () => {
+    const r = await cB.from("project_stages").select("id").eq("project_id", projectA);
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+  await exec("clientB-foreign-messages-select","clientB","select","project_messages(foreign)","deny", async () => {
+    const r = await cB.from("project_messages").select("id").eq("project_id", projectA);
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+  await exec("clientB-foreign-payments-select","clientB","select","project_payments(foreign)","deny", async () => {
+    const r = await cB.from("project_payments").select("id").eq("project_id", projectA);
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+  await exec("clientB-foreign-cameras-select","clientB","select","project_cameras(foreign)","deny", async () => {
+    const r = await cB.from("project_cameras").select("id").eq("project_id", projectA);
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+  await exec("clientB-foreign-documents-select","clientB","select","project_documents(foreign)","deny", async () => {
+    const r = await cB.from("project_documents").select("id").eq("project_id", projectA);
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+  await exec("clientB-foreign-reports-select","clientB","select","project_daily_reports(foreign)","deny", async () => {
+    const r = await cB.from("project_daily_reports").select("id").eq("project_id", projectA);
+    return { error: r.error || ((r.data?.length ?? 0) === 0 ? { code: "rls-empty" } : null) };
+  });
+  await exec("clientA-admin-role-self-grant-deny","clientA","insert","user_roles(self-admin)","deny", async () => {
+    const r = await cA.from("user_roles").insert({ user_id: uidA, role: "admin" });
+    return { error: r.error };
+  });
 }
 
 mkdirSync(".audit/stage-4C/final", { recursive: true });
