@@ -1,0 +1,908 @@
+{
+  "finalRunId": "623bbba1-8134-463d-8c21-7d295180e01b",
+  "generatedAt": "2026-06-23T09:28:41.987Z",
+  "totalScenarios": 93,
+  "passed": 93,
+  "failed": 0,
+  "naCount": 8,
+  "rlsScenarios": 93,
+  "rlsFailed": 0,
+  "results": [
+    {
+      "testName": "anon-project_daily_reports-select",
+      "actor": "anon",
+      "operation": "select",
+      "resource": "project_daily_reports",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "anon-project_daily_reports-insert",
+      "actor": "anon",
+      "operation": "insert",
+      "resource": "project_daily_reports",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "anon-project_daily_report_documents-select",
+      "actor": "anon",
+      "operation": "select",
+      "resource": "project_daily_report_documents",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "anon-project_daily_report_documents-insert",
+      "actor": "anon",
+      "operation": "insert",
+      "resource": "project_daily_report_documents",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "anon-project_stage_acceptances-select",
+      "actor": "anon",
+      "operation": "select",
+      "resource": "project_stage_acceptances",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "anon-project_stage_acceptances-insert",
+      "actor": "anon",
+      "operation": "insert",
+      "resource": "project_stage_acceptances",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "anon-project_messages-select",
+      "actor": "anon",
+      "operation": "select",
+      "resource": "project_messages",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "anon-project_messages-insert",
+      "actor": "anon",
+      "operation": "insert",
+      "resource": "project_messages",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "anon-project_payments-select",
+      "actor": "anon",
+      "operation": "select",
+      "resource": "project_payments",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "anon-project_payments-insert",
+      "actor": "anon",
+      "operation": "insert",
+      "resource": "project_payments",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "anon-project_cameras-select",
+      "actor": "anon",
+      "operation": "select",
+      "resource": "project_cameras",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "anon-project_cameras-insert",
+      "actor": "anon",
+      "operation": "insert",
+      "resource": "project_cameras",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "anon-project_camera_sources-select",
+      "actor": "anon",
+      "operation": "select",
+      "resource": "project_camera_sources",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "anon-project_camera_sources-insert",
+      "actor": "anon",
+      "operation": "insert",
+      "resource": "project_camera_sources",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "clientA-own-project_daily_reports-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_daily_reports(own)",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-own-project_daily_report_documents-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_daily_report_documents(own)",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-own-project_stage_acceptances-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_stage_acceptances(own)",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-own-project_messages-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_messages(own)",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-own-project_payments-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_payments(own)",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-own-project_cameras-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_cameras(own)",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-own-project_camera_sources-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_camera_sources(own)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-foreign-project_daily_reports-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_daily_reports(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-foreign-project_daily_report_documents-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_daily_report_documents(foreign)",
+      "expected": "n/a",
+      "actual": "n/a",
+      "passed": true,
+      "note": "no foreign fixture for join table"
+    },
+    {
+      "testName": "clientA-foreign-project_stage_acceptances-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_stage_acceptances(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42703"
+    },
+    {
+      "testName": "clientA-foreign-project_messages-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_messages(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-foreign-project_payments-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_payments(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-foreign-project_cameras-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_cameras(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-foreign-project_camera_sources-select",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_camera_sources(foreign)",
+      "expected": "n/a",
+      "actual": "n/a",
+      "passed": true,
+      "note": "no foreign fixture for join table"
+    },
+    {
+      "testName": "clientA-project_daily_reports-insert",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "project_daily_reports",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "clientA-project_daily_report_documents-insert",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "project_daily_report_documents",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "clientA-project_stage_acceptances-insert",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "project_stage_acceptances",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "clientA-project_messages-insert",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "project_messages",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-project_payments-insert",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "project_payments",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "clientA-project_cameras-insert",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "project_cameras",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "clientA-project_camera_sources-insert",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "project_camera_sources",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "clientA-project_daily_reports-update",
+      "actor": "clientA",
+      "operation": "update",
+      "resource": "project_daily_reports",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-project_daily_report_documents-update",
+      "actor": "clientA",
+      "operation": "update",
+      "resource": "project_daily_report_documents",
+      "expected": "n/a",
+      "actual": "n/a",
+      "passed": true,
+      "note": "no row id for update probe"
+    },
+    {
+      "testName": "clientA-project_stage_acceptances-update",
+      "actor": "clientA",
+      "operation": "update",
+      "resource": "project_stage_acceptances",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-project_messages-update",
+      "actor": "clientA",
+      "operation": "update",
+      "resource": "project_messages",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-project_payments-update",
+      "actor": "clientA",
+      "operation": "update",
+      "resource": "project_payments",
+      "expected": "n/a",
+      "actual": "n/a",
+      "passed": true,
+      "note": "no row id for update probe"
+    },
+    {
+      "testName": "clientA-project_cameras-update",
+      "actor": "clientA",
+      "operation": "update",
+      "resource": "project_cameras",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "PGRST204"
+    },
+    {
+      "testName": "clientA-project_camera_sources-update",
+      "actor": "clientA",
+      "operation": "update",
+      "resource": "project_camera_sources",
+      "expected": "n/a",
+      "actual": "n/a",
+      "passed": true,
+      "note": "no row id for update probe"
+    },
+    {
+      "testName": "clientA-project_daily_reports-delete",
+      "actor": "clientA",
+      "operation": "delete",
+      "resource": "project_daily_reports",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-project_daily_report_documents-delete",
+      "actor": "clientA",
+      "operation": "delete",
+      "resource": "project_daily_report_documents",
+      "expected": "n/a",
+      "actual": "n/a",
+      "passed": true,
+      "note": "no row id for delete probe"
+    },
+    {
+      "testName": "clientA-project_stage_acceptances-delete",
+      "actor": "clientA",
+      "operation": "delete",
+      "resource": "project_stage_acceptances",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-project_messages-delete",
+      "actor": "clientA",
+      "operation": "delete",
+      "resource": "project_messages",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-project_payments-delete",
+      "actor": "clientA",
+      "operation": "delete",
+      "resource": "project_payments",
+      "expected": "n/a",
+      "actual": "n/a",
+      "passed": true,
+      "note": "no row id for delete probe"
+    },
+    {
+      "testName": "clientA-project_cameras-delete",
+      "actor": "clientA",
+      "operation": "delete",
+      "resource": "project_cameras",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-project_camera_sources-delete",
+      "actor": "clientA",
+      "operation": "delete",
+      "resource": "project_camera_sources",
+      "expected": "n/a",
+      "actual": "n/a",
+      "passed": true,
+      "note": "no row id for delete probe"
+    },
+    {
+      "testName": "admin-project_daily_reports-select",
+      "actor": "admin",
+      "operation": "select",
+      "resource": "project_daily_reports",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_daily_reports-insert",
+      "actor": "admin",
+      "operation": "insert",
+      "resource": "project_daily_reports",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_daily_reports-update",
+      "actor": "admin",
+      "operation": "update",
+      "resource": "project_daily_reports",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_daily_reports-delete",
+      "actor": "admin",
+      "operation": "delete",
+      "resource": "project_daily_reports",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_daily_report_documents-select",
+      "actor": "admin",
+      "operation": "select",
+      "resource": "project_daily_report_documents",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_daily_report_documents-insert",
+      "actor": "admin",
+      "operation": "insert",
+      "resource": "project_daily_report_documents",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_stage_acceptances-select",
+      "actor": "admin",
+      "operation": "select",
+      "resource": "project_stage_acceptances",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_stage_acceptances-insert",
+      "actor": "admin",
+      "operation": "insert",
+      "resource": "project_stage_acceptances",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_stage_acceptances-update",
+      "actor": "admin",
+      "operation": "update",
+      "resource": "project_stage_acceptances",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_stage_acceptances-delete",
+      "actor": "admin",
+      "operation": "delete",
+      "resource": "project_stage_acceptances",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_messages-select",
+      "actor": "admin",
+      "operation": "select",
+      "resource": "project_messages",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_messages-insert",
+      "actor": "admin",
+      "operation": "insert",
+      "resource": "project_messages",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_messages-update",
+      "actor": "admin",
+      "operation": "update",
+      "resource": "project_messages",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_messages-delete",
+      "actor": "admin",
+      "operation": "delete",
+      "resource": "project_messages",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_payments-select",
+      "actor": "admin",
+      "operation": "select",
+      "resource": "project_payments",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_payments-insert",
+      "actor": "admin",
+      "operation": "insert",
+      "resource": "project_payments",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_payments-update",
+      "actor": "admin",
+      "operation": "update",
+      "resource": "project_payments",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_payments-delete",
+      "actor": "admin",
+      "operation": "delete",
+      "resource": "project_payments",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_cameras-select",
+      "actor": "admin",
+      "operation": "select",
+      "resource": "project_cameras",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_cameras-insert",
+      "actor": "admin",
+      "operation": "insert",
+      "resource": "project_cameras",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_cameras-update",
+      "actor": "admin",
+      "operation": "update",
+      "resource": "project_cameras",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_cameras-delete",
+      "actor": "admin",
+      "operation": "delete",
+      "resource": "project_cameras",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_camera_sources-select",
+      "actor": "admin",
+      "operation": "select",
+      "resource": "project_camera_sources",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "admin-project_camera_sources-insert",
+      "actor": "admin",
+      "operation": "insert",
+      "resource": "project_camera_sources",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-is_member-projectB-deny",
+      "actor": "clientA",
+      "operation": "rpc",
+      "resource": "is_project_member(other)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "false"
+    },
+    {
+      "testName": "clientA-has_role-admin-deny",
+      "actor": "clientA",
+      "operation": "rpc",
+      "resource": "has_role(admin)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "false"
+    },
+    {
+      "testName": "admin-has_role-admin-allow",
+      "actor": "admin",
+      "operation": "rpc",
+      "resource": "has_role(admin)",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientA-unpublished-report-select-deny",
+      "actor": "clientA",
+      "operation": "select",
+      "resource": "project_daily_reports(unpublished)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-message-spoof-sender-deny",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "project_messages(spoofed sender)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "clientA-message-system-type-deny",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "project_messages(system type)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "clientA-message-foreign-project-deny",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "project_messages(foreign project)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "anon-storage-list-deny",
+      "actor": "anon",
+      "operation": "list",
+      "resource": "storage:project-documents",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-storage-list-deny",
+      "actor": "clientA",
+      "operation": "list",
+      "resource": "storage:project-documents",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-get_my_projects",
+      "actor": "clientA",
+      "operation": "rpc",
+      "resource": "get_my_projects",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "clientB-get_my_projects",
+      "actor": "clientB",
+      "operation": "rpc",
+      "resource": "get_my_projects",
+      "expected": "allow",
+      "actual": "allow",
+      "passed": true
+    },
+    {
+      "testName": "anon-get_my_projects-deny",
+      "actor": "anon",
+      "operation": "rpc",
+      "resource": "get_my_projects",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    },
+    {
+      "testName": "clientB-foreign-projects-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "projects(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientB-foreign-stages-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "project_stages(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientB-foreign-messages-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "project_messages(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientB-foreign-payments-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "project_payments(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientB-foreign-cameras-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "project_cameras(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientB-foreign-documents-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "project_documents(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientB-foreign-reports-select",
+      "actor": "clientB",
+      "operation": "select",
+      "resource": "project_daily_reports(foreign)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "rls-empty"
+    },
+    {
+      "testName": "clientA-admin-role-self-grant-deny",
+      "actor": "clientA",
+      "operation": "insert",
+      "resource": "user_roles(self-admin)",
+      "expected": "deny",
+      "actual": "deny",
+      "passed": true,
+      "note": "42501"
+    }
+  ]
+}

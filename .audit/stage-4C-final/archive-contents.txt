@@ -1,0 +1,43 @@
+Archive:  stage-4C-final-audit.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+     2101  06-23-2026 09:29   audit.json
+      251  06-23-2026 09:29   axe-core-final.json
+    45928  06-23-2026 09:29   build.log
+      846  06-23-2026 09:29   checkpoint.json
+      232  06-23-2026 09:29   cleanup-state.json
+      282  06-23-2026 09:29   cloud-functions-after.json
+      274  06-23-2026 09:29   cloud-secrets-after.json
+    18881  06-23-2026 09:29   color-token-audit.json
+      173  06-23-2026 09:29   contrast-audit.json
+      788  06-23-2026 09:29   database-functions-after.json
+      418  06-23-2026 09:29   global-overflow-elements.json
+     8788  06-23-2026 09:29   global-responsive-tests.json
+      748  06-23-2026 09:29   keyboard-a11y-dialog.json
+      480  06-23-2026 09:29   mobile-desktop-color-comparison.json
+     1102  06-23-2026 09:29   realtime-tests.json
+        0  06-23-2026 09:29   regressions/
+      725  06-23-2026 09:29   regressions/validate-prices.log
+      336  06-23-2026 09:29   regressions/validate-content.log
+     1972  06-23-2026 09:29   regressions/calculator-tests.log
+    17101  06-23-2026 09:29   regressions/audit-construction.log
+      313  06-23-2026 09:29   regressions/audit-stage-2-reg-3.log
+     3919  06-23-2026 09:29   regressions/audit-stage-3.log
+       91  06-23-2026 09:29   regressions/audit-stage-3d.log
+     1213  06-23-2026 09:29   regressions/audit-stage-3e.log
+     1383  06-23-2026 09:29   regressions/audit-stage-3f.log
+     1249  06-23-2026 09:29   regressions/test-auth.log
+     2792  06-23-2026 09:29   regressions/test-estimate-submission.log
+      821  06-23-2026 09:29   regressions/test-edge-function.log
+     4261  06-23-2026 09:29   regressions/test-rls.log
+     1129  06-23-2026 09:29   regressions/test-storage.log
+    24069  06-23-2026 09:29   rls-test-matrix.json
+     3522  06-23-2026 09:29   status.json
+       12  06-23-2026 09:29   typescript.log
+    23242  06-23-2026 09:29   audit-source.ts
+        2  06-23-2026 09:29   audit-exit-code.txt
+      943  06-23-2026 09:29   files-manifest.txt
+     3187  06-23-2026 09:29   checksums.sha256
+     1079  06-23-2026 09:29   checksums-verify.log
+---------                     -------
+   174653                     38 files

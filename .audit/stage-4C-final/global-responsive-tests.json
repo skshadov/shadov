@@ -1,0 +1,428 @@
+{
+  "finalRunId": "623bbba1-8134-463d-8c21-7d295180e01b",
+  "responsiveChecks": 60,
+  "pageLevelOverflowCount": 0,
+  "globalHorizontalOverflow": false,
+  "results": [
+    {
+      "route": "/",
+      "viewport": 320,
+      "documentWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "viewport": 375,
+      "documentWidth": 375,
+      "innerWidth": 375,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "viewport": 768,
+      "documentWidth": 768,
+      "innerWidth": 768,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "innerWidth": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "innerWidth": 1920,
+      "overflow": false
+    },
+    {
+      "route": "/about",
+      "viewport": 320,
+      "documentWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "route": "/about",
+      "viewport": 375,
+      "documentWidth": 375,
+      "innerWidth": 375,
+      "overflow": false
+    },
+    {
+      "route": "/about",
+      "viewport": 768,
+      "documentWidth": 768,
+      "innerWidth": 768,
+      "overflow": false
+    },
+    {
+      "route": "/about",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "innerWidth": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/about",
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "innerWidth": 1920,
+      "overflow": false
+    },
+    {
+      "route": "/login",
+      "viewport": 320,
+      "documentWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "route": "/login",
+      "viewport": 375,
+      "documentWidth": 375,
+      "innerWidth": 375,
+      "overflow": false
+    },
+    {
+      "route": "/login",
+      "viewport": 768,
+      "documentWidth": 768,
+      "innerWidth": 768,
+      "overflow": false
+    },
+    {
+      "route": "/login",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "innerWidth": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/login",
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "innerWidth": 1920,
+      "overflow": false
+    },
+    {
+      "route": "/contacts",
+      "viewport": 320,
+      "documentWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "route": "/contacts",
+      "viewport": 375,
+      "documentWidth": 375,
+      "innerWidth": 375,
+      "overflow": false
+    },
+    {
+      "route": "/contacts",
+      "viewport": 768,
+      "documentWidth": 768,
+      "innerWidth": 768,
+      "overflow": false
+    },
+    {
+      "route": "/contacts",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "innerWidth": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/contacts",
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "innerWidth": 1920,
+      "overflow": false
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "viewport": 320,
+      "documentWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "viewport": 375,
+      "documentWidth": 375,
+      "innerWidth": 375,
+      "overflow": false
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "viewport": 768,
+      "documentWidth": 768,
+      "innerWidth": 768,
+      "overflow": false
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "innerWidth": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "innerWidth": 1920,
+      "overflow": false
+    },
+    {
+      "route": "/uslugi",
+      "viewport": 320,
+      "documentWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "route": "/uslugi",
+      "viewport": 375,
+      "documentWidth": 375,
+      "innerWidth": 375,
+      "overflow": false
+    },
+    {
+      "route": "/uslugi",
+      "viewport": 768,
+      "documentWidth": 768,
+      "innerWidth": 768,
+      "overflow": false
+    },
+    {
+      "route": "/uslugi",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "innerWidth": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/uslugi",
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "innerWidth": 1920,
+      "overflow": false
+    },
+    {
+      "route": "/uslugi/remont-pod-klyuch",
+      "viewport": 320,
+      "documentWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "route": "/uslugi/remont-pod-klyuch",
+      "viewport": 375,
+      "documentWidth": 375,
+      "innerWidth": 375,
+      "overflow": false
+    },
+    {
+      "route": "/uslugi/remont-pod-klyuch",
+      "viewport": 768,
+      "documentWidth": 768,
+      "innerWidth": 768,
+      "overflow": false
+    },
+    {
+      "route": "/uslugi/remont-pod-klyuch",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "innerWidth": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/uslugi/remont-pod-klyuch",
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "innerWidth": 1920,
+      "overflow": false
+    },
+    {
+      "route": "/portfolio",
+      "viewport": 320,
+      "documentWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "route": "/portfolio",
+      "viewport": 375,
+      "documentWidth": 375,
+      "innerWidth": 375,
+      "overflow": false
+    },
+    {
+      "route": "/portfolio",
+      "viewport": 768,
+      "documentWidth": 768,
+      "innerWidth": 768,
+      "overflow": false
+    },
+    {
+      "route": "/portfolio",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "innerWidth": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/portfolio",
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "innerWidth": 1920,
+      "overflow": false
+    },
+    {
+      "route": "/faq",
+      "viewport": 320,
+      "documentWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "route": "/faq",
+      "viewport": 375,
+      "documentWidth": 375,
+      "innerWidth": 375,
+      "overflow": false
+    },
+    {
+      "route": "/faq",
+      "viewport": 768,
+      "documentWidth": 768,
+      "innerWidth": 768,
+      "overflow": false
+    },
+    {
+      "route": "/faq",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "innerWidth": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/faq",
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "innerWidth": 1920,
+      "overflow": false
+    },
+    {
+      "route": "/team",
+      "viewport": 320,
+      "documentWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "route": "/team",
+      "viewport": 375,
+      "documentWidth": 375,
+      "innerWidth": 375,
+      "overflow": false
+    },
+    {
+      "route": "/team",
+      "viewport": 768,
+      "documentWidth": 768,
+      "innerWidth": 768,
+      "overflow": false
+    },
+    {
+      "route": "/team",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "innerWidth": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/team",
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "innerWidth": 1920,
+      "overflow": false
+    },
+    {
+      "route": "/privacy",
+      "viewport": 320,
+      "documentWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "route": "/privacy",
+      "viewport": 375,
+      "documentWidth": 375,
+      "innerWidth": 375,
+      "overflow": false
+    },
+    {
+      "route": "/privacy",
+      "viewport": 768,
+      "documentWidth": 768,
+      "innerWidth": 768,
+      "overflow": false
+    },
+    {
+      "route": "/privacy",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "innerWidth": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/privacy",
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "innerWidth": 1920,
+      "overflow": false
+    },
+    {
+      "route": "/personal-data-consent",
+      "viewport": 320,
+      "documentWidth": 320,
+      "innerWidth": 320,
+      "overflow": false
+    },
+    {
+      "route": "/personal-data-consent",
+      "viewport": 375,
+      "documentWidth": 375,
+      "innerWidth": 375,
+      "overflow": false
+    },
+    {
+      "route": "/personal-data-consent",
+      "viewport": 768,
+      "documentWidth": 768,
+      "innerWidth": 768,
+      "overflow": false
+    },
+    {
+      "route": "/personal-data-consent",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "innerWidth": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/personal-data-consent",
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "innerWidth": 1920,
+      "overflow": false
+    }
+  ]
+}

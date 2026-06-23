@@ -1,0 +1,85 @@
+{
+  "stage": "4C",
+  "finalRunId": "623bbba1-8134-463d-8c21-7d295180e01b",
+  "generatedAt": "2026-06-23T09:27:59.158074Z",
+  "responsive": {
+    "responsiveChecks": 60,
+    "pageLevelOverflowCount": 0,
+    "globalHorizontalOverflow": false
+  },
+  "accessibility": {
+    "axeCoreViolations": 0,
+    "criticalViolations": 0,
+    "seriousViolations": 0,
+    "colorContrastViolations": 0,
+    "linkInTextBlockViolations": 0,
+    "scrollableRegionFocusableViolations": 0
+  },
+  "keyboardDialog": {
+    "executed": true,
+    "passed": true,
+    "noDialogTriggerFound": false,
+    "focusTrapPassed": true,
+    "escapePassed": true,
+    "focusRestorePassed": true,
+    "doubleSubmitBlocked": true
+  },
+  "realtime": {
+    "executed": true,
+    "passed": true,
+    "clientAReceivedOwn": true,
+    "clientBReceivedOwn": true,
+    "clientAReceivedForeign": false,
+    "clientBReceivedForeign": false,
+    "foreignPayloadReceived": false
+  },
+  "colors": {
+    "singleColorSystemPassed": true,
+    "mobileDesktopColorsMatch": true,
+    "mobileSpecificColorOverrides": 0,
+    "desktopSpecificColorOverrides": 0,
+    "contrastAuditPassed": true
+  },
+  "rls": {
+    "rlsScenarios": 93,
+    "rlsPassed": 85,
+    "rlsFailed": 0,
+    "naCount": 8,
+    "rlsRealScenarios": 93,
+    "rlsNotApplicable": 8
+  },
+  "regressions": {
+    "validate_prices": 0,
+    "validate_content": 0,
+    "calculator_tests": 0,
+    "audit_construction": 0,
+    "audit_stage_2_reg_3": 0,
+    "audit_stage_3": 0,
+    "audit_stage_3d": 0,
+    "audit_stage_3e": 0,
+    "audit_stage_3f": "deferred (waits on archive-verify.log produced in block 10)",
+    "test_auth": 0,
+    "test_estimate_submission": 0,
+    "test_edge_function": 0,
+    "test_rls": 0,
+    "test_storage": 0
+  },
+  "build": {
+    "exitCode": 0
+  },
+  "typescript": {
+    "exitCode": 0
+  },
+  "cleanup": {
+    "remainingTestUsers": 0,
+    "remainingTestRows": 0,
+    "remainingTestStorageObjects": 0,
+    "remainingTestFunctions": 0,
+    "remainingTestSecrets": 0
+  },
+  "specificationCheck": {
+    "passed": true
+  },
+  "integrationTestsPassed": true,
+  "readyForStage5": true
+}
