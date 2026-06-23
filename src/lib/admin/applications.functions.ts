@@ -7,6 +7,8 @@
 import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
+type Json = string | number | boolean | null | { [k: string]: Json } | Json[];
+
 const ALLOWED_STATUSES = ["new", "in_review", "contacted", "quoted", "closed", "spam"] as const;
 export type ApplicationStatus = (typeof ALLOWED_STATUSES)[number];
 
@@ -26,7 +28,7 @@ export interface ApplicationListItem {
 export interface ApplicationDetail extends ApplicationListItem {
   submission_id: string;
   message: string | null;
-  calculator_snapshot: Record<string, unknown> | null;
+  calculator_snapshot: Json;
   calculator_mode: string | null;
   price_version: string | null;
   consent_version: string;
