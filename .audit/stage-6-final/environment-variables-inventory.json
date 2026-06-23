@@ -1,0 +1,71 @@
+{
+  "createdAt": "2026-06-23",
+  "scopeNote": "Сканированы только src/routes, src/components, src/integrations, src/lib (без audit-скриптов).",
+  "variables": [
+    {
+      "name": "VITE_SUPABASE_URL",
+      "environment": ["development", "preview", "production"],
+      "required": true,
+      "configured": true,
+      "secret": false,
+      "exposedToBrowser": true,
+      "usedBy": ["src/integrations/supabase/client.ts"]
+    },
+    {
+      "name": "VITE_SUPABASE_PUBLISHABLE_KEY",
+      "environment": ["development", "preview", "production"],
+      "required": true,
+      "configured": true,
+      "secret": false,
+      "exposedToBrowser": true,
+      "usedBy": ["src/integrations/supabase/client.ts"]
+    },
+    {
+      "name": "SUPABASE_URL",
+      "environment": ["development", "preview", "production"],
+      "required": true,
+      "configured": true,
+      "secret": false,
+      "exposedToBrowser": false,
+      "usedBy": [
+        "src/integrations/supabase/auth-middleware.ts",
+        "src/integrations/supabase/client.server.ts",
+        "src/lib/portfolio-public.functions.ts",
+        "src/lib/catalog-public.functions.ts"
+      ]
+    },
+    {
+      "name": "SUPABASE_PUBLISHABLE_KEY",
+      "environment": ["development", "preview", "production"],
+      "required": true,
+      "configured": true,
+      "secret": false,
+      "exposedToBrowser": false,
+      "usedBy": ["server functions, requireSupabaseAuth, публичные read-only клиенты"]
+    },
+    {
+      "name": "SUPABASE_SERVICE_ROLE_KEY",
+      "environment": ["development", "preview", "production"],
+      "required": true,
+      "configured": true,
+      "secret": true,
+      "exposedToBrowser": false,
+      "usedBy": ["src/integrations/supabase/client.server.ts (динамический import внутри handler)"]
+    },
+    {
+      "name": "LOVABLE_API_KEY",
+      "environment": ["preview", "production"],
+      "required": false,
+      "configured": true,
+      "secret": true,
+      "exposedToBrowser": false,
+      "usedBy": ["Lovable AI / connector gateway (если будет использоваться)"]
+    }
+  ],
+  "browserSecretLeaks": [],
+  "missingForProduction": [
+    "SMTP/Lovable Emails domain (для уведомлений по заявкам)",
+    "ANALYTICS_YANDEX_METRIKA_ID (планируется в роли VITE_ публичного ID счётчика)",
+    "GOOGLE_SEARCH_CONSOLE_VERIFICATION (META-токен в head root route)"
+  ]
+}
