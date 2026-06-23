@@ -1,0 +1,25 @@
+{
+  "finalRunId": "623bbba1-8134-463d-8c21-7d295180e01b",
+  "executed": true,
+  "pagesAudited": [
+    "/",
+    "/about",
+    "/login",
+    "/contacts",
+    "/kalkulyator-stoimosti",
+    "/uslugi"
+  ],
+  "selectors": [
+    "body",
+    "topbar",
+    "main_h1",
+    "main_text",
+    "primary_cta",
+    "footer"
+  ],
+  "differences": [],
+  "mobileSpecificColorOverrides": 0,
+  "desktopSpecificColorOverrides": 0,
+  "singleColorSystemPassed": true,
+  "mobileDesktopColorsMatch": true
+}

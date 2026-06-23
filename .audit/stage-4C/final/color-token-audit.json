@@ -1,0 +1,545 @@
+{
+  "finalRunId": "623bbba1-8134-463d-8c21-7d295180e01b",
+  "computedStyles": {
+    "/": {
+      "mobile": {
+        "body": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "topbar": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_h1": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_text": {
+          "color": "rgb(170, 181, 174)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(170, 181, 174)",
+          "textDecoration": "none"
+        },
+        "primary_cta": {
+          "color": "rgb(26, 20, 8)",
+          "backgroundColor": "rgb(193, 161, 102)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(26, 20, 8)",
+          "textDecoration": "none"
+        },
+        "footer": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(7, 23, 16)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        }
+      },
+      "desktop": {
+        "body": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "topbar": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_h1": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_text": {
+          "color": "rgb(170, 181, 174)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(170, 181, 174)",
+          "textDecoration": "none"
+        },
+        "primary_cta": {
+          "color": "rgb(26, 20, 8)",
+          "backgroundColor": "rgb(193, 161, 102)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(26, 20, 8)",
+          "textDecoration": "none"
+        },
+        "footer": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(7, 23, 16)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        }
+      }
+    },
+    "/about": {
+      "mobile": {
+        "body": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "topbar": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_h1": {
+          "color": "rgb(23, 32, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(23, 32, 25)",
+          "textDecoration": "none"
+        },
+        "main_text": {
+          "color": "rgb(90, 100, 93)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(90, 100, 93)",
+          "textDecoration": "none"
+        },
+        "primary_cta": {
+          "color": "rgb(107, 85, 38)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(107, 85, 38)",
+          "textDecoration": "none"
+        },
+        "footer": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(7, 23, 16)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        }
+      },
+      "desktop": {
+        "body": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "topbar": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_h1": {
+          "color": "rgb(23, 32, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(23, 32, 25)",
+          "textDecoration": "none"
+        },
+        "main_text": {
+          "color": "rgb(90, 100, 93)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(90, 100, 93)",
+          "textDecoration": "none"
+        },
+        "primary_cta": {
+          "color": "rgb(107, 85, 38)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(107, 85, 38)",
+          "textDecoration": "none"
+        },
+        "footer": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(7, 23, 16)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        }
+      }
+    },
+    "/login": {
+      "mobile": {
+        "body": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "topbar": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_h1": {
+          "color": "rgb(23, 32, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(23, 32, 25)",
+          "textDecoration": "none"
+        },
+        "main_text": {
+          "color": "rgb(90, 100, 93)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(90, 100, 93)",
+          "textDecoration": "none"
+        },
+        "primary_cta": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(107, 85, 38)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(255, 255, 255)",
+          "textDecoration": "none"
+        },
+        "footer": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(7, 23, 16)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        }
+      },
+      "desktop": {
+        "body": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "topbar": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_h1": {
+          "color": "rgb(23, 32, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(23, 32, 25)",
+          "textDecoration": "none"
+        },
+        "main_text": {
+          "color": "rgb(90, 100, 93)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(90, 100, 93)",
+          "textDecoration": "none"
+        },
+        "primary_cta": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(107, 85, 38)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(255, 255, 255)",
+          "textDecoration": "none"
+        },
+        "footer": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(7, 23, 16)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        }
+      }
+    },
+    "/contacts": {
+      "mobile": {
+        "body": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "topbar": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_h1": {
+          "color": "rgb(23, 32, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(23, 32, 25)",
+          "textDecoration": "none"
+        },
+        "main_text": {
+          "color": "rgb(90, 100, 93)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(90, 100, 93)",
+          "textDecoration": "none"
+        },
+        "primary_cta": {
+          "color": "rgb(107, 85, 38)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(107, 85, 38)",
+          "outlineColor": "rgb(107, 85, 38)",
+          "textDecoration": "none"
+        },
+        "footer": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(7, 23, 16)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        }
+      },
+      "desktop": {
+        "body": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "topbar": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_h1": {
+          "color": "rgb(23, 32, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(23, 32, 25)",
+          "textDecoration": "none"
+        },
+        "main_text": {
+          "color": "rgb(90, 100, 93)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(90, 100, 93)",
+          "textDecoration": "none"
+        },
+        "primary_cta": {
+          "color": "rgb(107, 85, 38)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(107, 85, 38)",
+          "outlineColor": "rgb(107, 85, 38)",
+          "textDecoration": "none"
+        },
+        "footer": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(7, 23, 16)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        }
+      }
+    },
+    "/kalkulyator-stoimosti": {
+      "mobile": {
+        "body": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "topbar": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_h1": {
+          "color": "rgb(23, 32, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(23, 32, 25)",
+          "textDecoration": "none"
+        },
+        "main_text": {
+          "color": "rgb(90, 100, 93)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(90, 100, 93)",
+          "textDecoration": "none"
+        },
+        "primary_cta": {
+          "color": "rgb(107, 85, 38)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(107, 85, 38)",
+          "outlineColor": "rgb(107, 85, 38)",
+          "textDecoration": "none"
+        },
+        "footer": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(7, 23, 16)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        }
+      },
+      "desktop": {
+        "body": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "topbar": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_h1": {
+          "color": "rgb(23, 32, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(23, 32, 25)",
+          "textDecoration": "none"
+        },
+        "main_text": {
+          "color": "rgb(90, 100, 93)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(90, 100, 93)",
+          "textDecoration": "none"
+        },
+        "primary_cta": {
+          "color": "rgb(107, 85, 38)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(107, 85, 38)",
+          "outlineColor": "rgb(107, 85, 38)",
+          "textDecoration": "none"
+        },
+        "footer": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(7, 23, 16)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        }
+      }
+    },
+    "/uslugi": {
+      "mobile": {
+        "body": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "topbar": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_h1": {
+          "color": "rgb(23, 32, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(23, 32, 25)",
+          "textDecoration": "none"
+        },
+        "main_text": {
+          "color": "rgb(107, 85, 38)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(107, 85, 38)",
+          "textDecoration": "none"
+        },
+        "primary_cta": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(107, 85, 38)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(255, 255, 255)",
+          "textDecoration": "none"
+        },
+        "footer": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(7, 23, 16)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        }
+      },
+      "desktop": {
+        "body": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "topbar": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(11, 31, 24)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        },
+        "main_h1": {
+          "color": "rgb(23, 32, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(23, 32, 25)",
+          "textDecoration": "none"
+        },
+        "main_text": {
+          "color": "rgb(107, 85, 38)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(107, 85, 38)",
+          "textDecoration": "none"
+        },
+        "primary_cta": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(107, 85, 38)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(255, 255, 255)",
+          "textDecoration": "none"
+        },
+        "footer": {
+          "color": "rgb(247, 248, 245)",
+          "backgroundColor": "rgb(7, 23, 16)",
+          "borderColor": "rgba(255, 255, 255, 0.12)",
+          "outlineColor": "rgb(247, 248, 245)",
+          "textDecoration": "none"
+        }
+      }
+    }
+  }
+}
