@@ -4,11 +4,8 @@
  * desktop и mobile навигацию, CTA «Личный кабинет», «Получить расчёт».
  */
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
-import { ArrowRight, LogIn } from "lucide-react";
 
 import { Logo } from "@/components/brand/Logo";
-import { Button } from "@/components/ui/button";
 import { DesktopNavigation } from "./DesktopNavigation";
 import { MobileNavigation } from "./MobileNavigation";
 import { TopInfoBar } from "./TopInfoBar";
@@ -52,25 +49,6 @@ export function Header() {
           <DesktopNavigation />
 
           <div className="flex shrink-0 items-center gap-2">
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className="hidden md:inline-flex whitespace-nowrap"
-              aria-label="Личный кабинет"
-            >
-              <Link to="/login">
-                <LogIn aria-hidden="true" className="h-4 w-4 2xl:mr-1" />
-                <span className="hidden 2xl:inline">Личный кабинет</span>
-              </Link>
-            </Button>
-            <Button asChild size="sm" className="hidden md:inline-flex whitespace-nowrap">
-              <Link to="/kalkulyator-stoimosti">
-                <span className="hidden 2xl:inline">Получить расчёт</span>
-                <span className="2xl:hidden">Расчёт</span>
-                <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
             <MobileNavigation />
           </div>
         </div>
