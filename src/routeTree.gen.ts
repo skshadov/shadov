@@ -65,6 +65,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as ClientProjectIdRouteImport } from './routes/client.project.$id'
 
 const VodosnabzhenieKanalizatsiyaRoute =
@@ -350,6 +351,11 @@ const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => PortfolioRoute,
 } as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AdminRoute,
+} as any)
 const ClientProjectIdRoute = ClientProjectIdRouteImport.update({
   id: '/project/$id',
   path: '/project/$id',
@@ -359,7 +365,7 @@ const ClientProjectIdRoute = ClientProjectIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/biznes-remont': typeof BiznesRemontRoute
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
@@ -412,13 +418,14 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/biznes-remont': typeof BiznesRemontRoute
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
@@ -471,6 +478,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/client/project/$id': typeof ClientProjectIdRoute
 }
@@ -478,7 +486,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/biznes-remont': typeof BiznesRemontRoute
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
@@ -531,6 +539,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/client/project/$id': typeof ClientProjectIdRoute
 }
@@ -592,6 +601,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/ukladka-plitki'
     | '/vodosnabzhenie-kanalizatsiya'
+    | '/admin/dashboard'
     | '/portfolio/$slug'
     | '/client/project/$id'
   fileRoutesByTo: FileRoutesByTo
@@ -651,6 +661,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/ukladka-plitki'
     | '/vodosnabzhenie-kanalizatsiya'
+    | '/admin/dashboard'
     | '/portfolio/$slug'
     | '/client/project/$id'
   id:
@@ -710,6 +721,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/ukladka-plitki'
     | '/vodosnabzhenie-kanalizatsiya'
+    | '/admin/dashboard'
     | '/portfolio/$slug'
     | '/client/project/$id'
   fileRoutesById: FileRoutesById
@@ -717,7 +729,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  AdminRoute: typeof AdminRoute
+  AdminRoute: typeof AdminRouteWithChildren
   BiznesRemontRoute: typeof BiznesRemontRoute
   ChernovoyRemontRoute: typeof ChernovoyRemontRoute
   ChistovayaOtdelkaRoute: typeof ChistovayaOtdelkaRoute
@@ -1166,6 +1178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioSlugRouteImport
       parentRoute: typeof PortfolioRoute
     }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/client/project/$id': {
       id: '/client/project/$id'
       path: '/project/$id'
@@ -1175,6 +1194,16 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface AdminRouteChildren {
+  AdminDashboardRoute: typeof AdminDashboardRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminDashboardRoute: AdminDashboardRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 interface ClientRouteChildren {
   ClientProjectIdRoute: typeof ClientProjectIdRoute
@@ -1202,7 +1231,7 @@ const PortfolioRouteWithChildren = PortfolioRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  AdminRoute: AdminRoute,
+  AdminRoute: AdminRouteWithChildren,
   BiznesRemontRoute: BiznesRemontRoute,
   ChernovoyRemontRoute: ChernovoyRemontRoute,
   ChistovayaOtdelkaRoute: ChistovayaOtdelkaRoute,

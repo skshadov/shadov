@@ -1,0 +1,73 @@
+{
+  "stage": "5.1",
+  "checkpoint": "1",
+  "name": "Foundation",
+  "completedAt": "auto",
+  "database": {
+    "rolesTotal": 8,
+    "rolesAdded": ["super_admin","project_manager","content_manager","accountant","support","viewer"],
+    "rolesPreExisting": ["admin","client"],
+    "permissionsTotal": 68,
+    "rolePermissionMatrix": {
+      "super_admin": 68,
+      "admin": 67,
+      "content_manager": 26,
+      "viewer": 23,
+      "project_manager": 22,
+      "support": 9,
+      "accountant": 9,
+      "client": 0
+    },
+    "newTables": [
+      "admin_permissions",
+      "admin_role_permissions",
+      "admin_audit_log"
+    ],
+    "newFunctions": [
+      "has_admin_permission(text)",
+      "get_my_admin_permissions()",
+      "is_admin_user()",
+      "get_my_primary_role()"
+    ],
+    "rlsEnabled": true,
+    "anonAccessDenied": true,
+    "clientAccessDenied": true
+  },
+  "frontend": {
+    "adminRoute": "/admin",
+    "adminLayoutComponent": "src/components/admin/AdminLayout.tsx",
+    "adminSessionHook": "src/lib/admin/use-admin-session.ts",
+    "adminServerFunctions": "src/lib/admin/api.functions.ts",
+    "dashboardRoute": "/admin/dashboard",
+    "guardPattern": "ssr:false + useAdminSession + Navigate",
+    "metaRobots": "noindex, nofollow",
+    "nonAdminBehavior": "AdminForbidden screen",
+    "anonymousBehavior": "Navigate to /login?returnTo=/admin/dashboard",
+    "sidebarItemsTotal": 25,
+    "sidebarFilteredByPermission": true
+  },
+  "security": {
+    "serviceRoleInFrontend": false,
+    "adminAuthorizationServerSide": true,
+    "rlsOnAllNewTables": true,
+    "auditLogReadOnlyToClients": true,
+    "auditLogWritableOnlyByServiceRole": true,
+    "rolePermissionsManagedBySuperAdminOnly": true,
+    "securityDefinerFunctionsLocked": "search_path=public, REVOKE from PUBLIC/anon, GRANT to authenticated/service_role"
+  },
+  "noRegression": {
+    "publicRoutesUnchanged": true,
+    "clientPortalUnchanged": true,
+    "existingDatabaseTablesUnchanged": true,
+    "existingRlsPoliciesUnchanged": true,
+    "demoProjectPreserved": true
+  },
+  "publicFlagsPreserved": {
+    "PUBLIC_DATA_COLLECTION_ENABLED": false,
+    "PUBLIC_AUTH_ENABLED": false,
+    "readyForProductionDataCollection": false
+  },
+  "stage5OverallReadiness": "checkpoint-1-of-5",
+  "readyForStage6": false,
+  "nextCheckpoint": "5.2 — Operations: applications, clients, projects, stages, reports, documents, cameras, messages, payments, acceptances"
+}

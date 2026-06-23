@@ -1,28 +1,43 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { RouteStub } from "@/components/common/RouteStub";
+import { createFileRoute, Navigate, Outlet, useMatchRoute } from "@tanstack/react-router";
+import { useAdminSession } from "@/lib/admin/use-admin-session";
+import { AdminForbidden } from "@/components/admin/AdminLayout";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
       { title: "Административная панель — Шадов и партнёры" },
-      { name: "robots", content: "noindex, follow" },
-      { name: "description", content: "Раздел готовится. Полное наполнение появится на следующем этапе развития сайта." },
+      // Жёсткий noindex для всей админки: индексация запрещена, ссылки не считать.
+      { name: "robots", content: "noindex, nofollow" },
+      { name: "googlebot", content: "noindex, nofollow" },
+      { name: "description", content: "Административная панель компании. Доступ только для авторизованных сотрудников." },
     ],
     links: [{ rel: "canonical", href: "/admin" }],
   }),
-  component: Page,
+  ssr: false,
+  component: AdminGate,
 });
 
-function Page() {
-  return (
-    <RouteStub
-      title="Административная панель"
-      
-      breadcrumbs={[
-        { label: "Главная", to: "/" },
-        { label: "Личный кабинет" },
-        { label: "Административная панель" },
-      ]}
-    />
-  );
+function AdminGate() {
+  const session = useAdminSession();
+  const matchRoute = useMatchRoute();
+  const isExactAdminRoot = !!matchRoute({ to: "/admin" });
+
+  if (session.status === "loading") {
+    return (
+      <div className="flex min-h-dvh items-center justify-center bg-background">
+        <p className="text-sm text-muted-foreground">Проверка доступа…</p>
+      </div>
+    );
+  }
+  if (session.status === "anonymous") {
+    return <Navigate to="/login" search={{ returnTo: "/admin/dashboard" } as never} replace />;
+  }
+  if (session.status === "forbidden") {
+    return <AdminForbidden email={session.email} />;
+  }
+  // Голый /admin — редирект на дашборд.
+  if (isExactAdminRoot) {
+    return <Navigate to="/admin/dashboard" replace />;
+  }
+  return <Outlet />;
 }
