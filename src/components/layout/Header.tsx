@@ -60,15 +60,14 @@ export function Header() {
               aria-label="Личный кабинет"
             >
               <Link to="/login">
-                <LogIn aria-hidden="true" className="mr-1 h-4 w-4" />
-                <span className="hidden xl:inline">Личный кабинет</span>
-                <span className="xl:hidden">Кабинет</span>
+                <LogIn aria-hidden="true" className="h-4 w-4 2xl:mr-1" />
+                <span className="hidden 2xl:inline">Личный кабинет</span>
               </Link>
             </Button>
             <Button asChild size="sm" className="hidden md:inline-flex whitespace-nowrap">
               <Link to="/kalkulyator-stoimosti">
-                <span className="hidden xl:inline">Получить расчёт</span>
-                <span className="xl:hidden">Расчёт</span>
+                <span className="hidden 2xl:inline">Получить расчёт</span>
+                <span className="2xl:hidden">Расчёт</span>
                 <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4" />
               </Link>
             </Button>
