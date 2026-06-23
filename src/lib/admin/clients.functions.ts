@@ -170,7 +170,7 @@ export const updateClientProfile = createServerFn({ method: "POST" })
   .handler(async ({ data, context }): Promise<{ ok: true }> => {
     await ensurePerm(context, "admin.clients.write");
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const patch: Record<string, unknown> = {};
+    const patch: { display_name?: string | null; phone?: string | null } = {};
     if (data.display_name !== undefined) patch.display_name = data.display_name;
     if (data.phone !== undefined) patch.phone = data.phone;
     if (Object.keys(patch).length === 0) return { ok: true };
@@ -185,7 +185,7 @@ export const updateClientProfile = createServerFn({ method: "POST" })
       entityType: "profile",
       entityId: data.id,
       oldValue: prev ? { display_name: prev.display_name, phone: prev.phone } : null,
-      newValue: patch as Record<string, string | null>,
+      newValue: patch as { [k: string]: string | null },
     });
     return { ok: true };
   });
