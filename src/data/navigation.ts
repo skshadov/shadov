@@ -71,6 +71,7 @@ export const MAIN_NAV: NavItem[] = [
   NAV_STROITELSTVO,
   NAV_REMONT,
   NAV_INZHENERNYE,
+  { label: "Проекты домов", to: "/proekty" },
   { label: "Наши работы", to: "/portfolio" },
   { label: "Цены", to: "/prices" },
   { label: "Калькулятор", to: "/kalkulyator-stoimosti" },
