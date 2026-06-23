@@ -64,24 +64,24 @@
 :root {
   --radius: 0.5rem;
 
-  /* Палитра §8 ТЗ */
-  --background-dark: #0B1F18;
-  --background-deep: #071710;
-  --surface-dark-raw: #132A21;
-  --surface-medium-raw: #1C372B;
-  --background-light: #F3F1E9;
+  /* Палитра в стиле Monolitium: глубокий тёмно-серый + оранжевый акцент */
+  --background-dark: #0E1116;
+  --background-deep: #0A0C10;
+  --surface-dark-raw: #161A20;
+  --surface-medium-raw: #1F242C;
+  --background-light: #F4F5F7;
   --background-white: #FFFFFF;
-  --text-light: #F7F8F5;
-  --text-dark: #172019;
-  --text-muted-dark: #AAB5AE;
-  --text-muted-light: #5A645D;
-  --border-dark-raw: rgba(255, 255, 255, 0.12);
-  --border-light: #D9DED9;
-  --accent-raw: #C1A166;
-  --accent-hover: #D0B47B;
-  --success-raw: #3F7B5A;
-  --warning-raw: #8A5E1F;
-  --error-raw: #A94D45;
+  --text-light: #F5F7FA;
+  --text-dark: #15181D;
+  --text-muted-dark: #9AA3AE;
+  --text-muted-light: #5A636E;
+  --border-dark-raw: rgba(255, 255, 255, 0.10);
+  --border-light: #E1E4E8;
+  --accent-raw: #F97316;
+  --accent-hover: #FB8C3A;
+  --success-raw: #3F8F62;
+  --warning-raw: #F5B544;
+  --error-raw: #DC4B41;
 
   /* shadcn-токены, отображённые на палитру (по умолчанию — тёмная тема) */
   --background: var(--background-dark);
