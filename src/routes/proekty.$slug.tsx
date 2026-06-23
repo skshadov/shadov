@@ -7,6 +7,8 @@ import { ProjectFloorPlan } from "@/components/projects/ProjectFloorPlan";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { CostByMaterials } from "@/components/projects/CostByMaterials";
 import { FlexibilityNote } from "@/components/projects/FlexibilityNote";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 export const Route = createFileRoute("/proekty/$slug")({
   loader: ({ params }) => {
