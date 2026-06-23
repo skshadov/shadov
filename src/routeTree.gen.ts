@@ -68,6 +68,7 @@ import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
 import { Route as ClientProjectIdRouteImport } from './routes/client.project.$id'
+import { Route as AdminApplicationsIdRouteImport } from './routes/admin.applications.$id'
 
 const VodosnabzhenieKanalizatsiyaRoute =
   VodosnabzhenieKanalizatsiyaRouteImport.update({
@@ -367,6 +368,11 @@ const ClientProjectIdRoute = ClientProjectIdRouteImport.update({
   path: '/project/$id',
   getParentRoute: () => ClientRoute,
 } as any)
+const AdminApplicationsIdRoute = AdminApplicationsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => AdminApplicationsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -424,9 +430,10 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
-  '/admin/applications': typeof AdminApplicationsRoute
+  '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRoutesByTo {
@@ -485,9 +492,10 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
-  '/admin/applications': typeof AdminApplicationsRoute
+  '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRoutesById {
@@ -547,9 +555,10 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/ukladka-plitki': typeof UkladkaPlitkiRoute
   '/vodosnabzhenie-kanalizatsiya': typeof VodosnabzhenieKanalizatsiyaRoute
-  '/admin/applications': typeof AdminApplicationsRoute
+  '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/client/project/$id': typeof ClientProjectIdRoute
 }
 export interface FileRouteTypes {
@@ -613,6 +622,7 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/dashboard'
     | '/portfolio/$slug'
+    | '/admin/applications/$id'
     | '/client/project/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -674,6 +684,7 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/dashboard'
     | '/portfolio/$slug'
+    | '/admin/applications/$id'
     | '/client/project/$id'
   id:
     | '__root__'
@@ -735,6 +746,7 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/dashboard'
     | '/portfolio/$slug'
+    | '/admin/applications/$id'
     | '/client/project/$id'
   fileRoutesById: FileRoutesById
 }
@@ -1211,16 +1223,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClientProjectIdRouteImport
       parentRoute: typeof ClientRoute
     }
+    '/admin/applications/$id': {
+      id: '/admin/applications/$id'
+      path: '/$id'
+      fullPath: '/admin/applications/$id'
+      preLoaderRoute: typeof AdminApplicationsIdRouteImport
+      parentRoute: typeof AdminApplicationsRoute
+    }
   }
 }
 
+interface AdminApplicationsRouteChildren {
+  AdminApplicationsIdRoute: typeof AdminApplicationsIdRoute
+}
+
+const AdminApplicationsRouteChildren: AdminApplicationsRouteChildren = {
+  AdminApplicationsIdRoute: AdminApplicationsIdRoute,
+}
+
+const AdminApplicationsRouteWithChildren =
+  AdminApplicationsRoute._addFileChildren(AdminApplicationsRouteChildren)
+
 interface AdminRouteChildren {
-  AdminApplicationsRoute: typeof AdminApplicationsRoute
+  AdminApplicationsRoute: typeof AdminApplicationsRouteWithChildren
   AdminDashboardRoute: typeof AdminDashboardRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
-  AdminApplicationsRoute: AdminApplicationsRoute,
+  AdminApplicationsRoute: AdminApplicationsRouteWithChildren,
   AdminDashboardRoute: AdminDashboardRoute,
 }
 
