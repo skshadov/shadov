@@ -28,7 +28,7 @@ async function createUser(name, role) {
   if (error) throw new Error(`createUser ${name}: ${error.message}`);
   const id = data.user.id;
   await must(`profile ${name}`, admin.from('profiles').upsert({ id, display_name: name }));
-  await must(`role ${name}`, admin.from('user_roles').insert({ user_id: id, role }));
+  await must(`role ${name}`, admin.from('user_roles').upsert({ user_id: id, role }));
   const sign = await publicAdmin.auth.signInWithPassword({ email: email(name), password });
   if (sign.error) throw new Error(`signIn ${name}: ${sign.error.message}`);
   return { name, email: email(name), id, access_token: sign.data.session.access_token };
