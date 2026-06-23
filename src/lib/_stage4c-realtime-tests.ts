@@ -87,7 +87,7 @@ try {
   const chB_A = await subscribe(cB, "clientB-on-A", projectA);
   const chB_B = await subscribe(cB, "clientB", projectB);
   // wait subscriptions
-  await new Promise(r => setTimeout(r, 1500));
+  await new Promise(r => setTimeout(r, 3000));
 
   // clientA inserts into projectA via authenticated client
   const httpA = createClient(URL_, ANON, { auth: { persistSession: false }, global: { headers: { Authorization: `Bearer ${tokenA}` } } });
@@ -100,7 +100,7 @@ try {
   if (msgB.error) throw new Error("insertB: " + msgB.error.message);
 
   // wait for events
-  await new Promise(r => setTimeout(r, 3500));
+  await new Promise(r => setTimeout(r, 6000));
 
   await cA.removeAllChannels();
   await cB.removeAllChannels();
