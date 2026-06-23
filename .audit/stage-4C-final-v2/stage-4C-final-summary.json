@@ -1,0 +1,131 @@
+{
+  "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "generatedAt": "2026-06-23T10:13:32.402676Z",
+  "stage": "4C-final-v2",
+  "totalResponsiveTests": 81,
+  "totalResponsivePassed": 81,
+  "pageLevelOverflowCount": 0,
+  "responsiveViewportsComplete": true,
+  "rlsRealScenarios": 156,
+  "rlsTotalScenarios": 156,
+  "rlsFailed": 0,
+  "rlsNaCount": 0,
+  "signedUrlProductionTtl": 300,
+  "signedUrlTestTtl": 2,
+  "signedUrlImmediateAllowed": true,
+  "signedUrlExpiredDenied": true,
+  "signedUrlPassed": true,
+  "realtimeDeliveryVerified": true,
+  "realtimeProjectIsolationVerified": true,
+  "realtimePassed": true,
+  "rateLimitFirstFiveAllowed": true,
+  "rateLimitSixthDenied": true,
+  "rateLimitPassed": true,
+  "idempotencyFirstCreatedTrue": true,
+  "idempotencySecondCreatedFalse": true,
+  "idempotencyRequestNumbersMatch": true,
+  "idempotencyExactlyOneRow": true,
+  "idempotencyPassed": true,
+  "consentBothSlugsPresent": true,
+  "consentVersionsMatch": true,
+  "consentPassed": true,
+  "stageAcceptAccepted": true,
+  "stageAcceptChangesRequested": true,
+  "stageAcceptInvalidDecisionError": true,
+  "stageAcceptCommentRequiredError": true,
+  "stageAcceptForbiddenError": true,
+  "stageAcceptAlreadyResolvedError": true,
+  "stageAcceptancePassed": true,
+  "axeCoreTotalViolations": 0,
+  "axeCorePassed": true,
+  "colorAuditProductionHits": 0,
+  "colorAuditAllowlistedHits": 2,
+  "colorAuditPassed": true,
+  "mobileDesktopColorsMatch": true,
+  "productionEdgeFunctionsPresent": true,
+  "productionRpcFunctionsPresent": true,
+  "allRegressionsExitCode": 0,
+  "buildExitCode": 0,
+  "typescriptExitCode": 0,
+  "screenshotsIncluded": true,
+  "remainingTestUsers": 0,
+  "remainingTestRows": 0,
+  "remainingTestStorageObjects": 0,
+  "remainingTestFunctions": 0,
+  "remainingTestSecrets": 0,
+  "integrationTestsPassed": true,
+  "readyForStage5": true,
+  "blockingIssues": [],
+  "artifacts": [
+    {
+      "file": "axe-core-audit.json",
+      "sha256": "b9aba112a2ea174b3a9ff44fc5c1f972b121ed1cbd69c2634b4819778cb14972",
+      "size": 516
+    },
+    {
+      "file": "color-audit.json",
+      "sha256": "85d7eadaf1405dda710d5435c6a8a47d343385f631553296abad12743157268d",
+      "size": 1078
+    },
+    {
+      "file": "consent-records-test.json",
+      "sha256": "8ab4d5eda840f6645588e50deb918a12612acd3d5d55026ea30cc7613681df93",
+      "size": 230
+    },
+    {
+      "file": "finalRunId.txt",
+      "sha256": "c0605297ac8ec1ff76c5d802f38aaa2da4fae0a43d2a03e35820b5c72eb7ba9a",
+      "size": 37
+    },
+    {
+      "file": "global-overflow-elements.json",
+      "sha256": "9541c01fa5f8db401ff65b088219f54b413f3596ea5e3c5b235b8061e0fdab9a",
+      "size": 107
+    },
+    {
+      "file": "global-responsive-tests.json",
+      "sha256": "41f9256d5d99051cbd58d36aaf6896c4cf19976298cae36c78d8458818147bac",
+      "size": 25559
+    },
+    {
+      "file": "idempotency-test.json",
+      "sha256": "40857b70425d2214f291ee661eae6aa81081f8f851f3c4af8cc91df250c59a24",
+      "size": 476
+    },
+    {
+      "file": "mobile-desktop-color-match.json",
+      "sha256": "9c20fbb502d1c0b8a6a866f9f04ce1685aaa79f8b32d8e635a8e7712fa1e4810",
+      "size": 2944
+    },
+    {
+      "file": "rate-limit-rpc-test.json",
+      "sha256": "768a4e6a518572ebecebaa71a05cfbe189746a6f4b0dfb62ad7560b0a85a4d2b",
+      "size": 1192
+    },
+    {
+      "file": "realtime-two-client-test.json",
+      "sha256": "2841829f9562647c5ef4df345f05b9a531a5e4668ed204d5a00d8639ad0a9fa5",
+      "size": 388
+    },
+    {
+      "file": "rls-test-matrix.json",
+      "sha256": "d709e67dd51024d1274267cf7f81e23858e001177b75deefa1759588c927c3ee",
+      "size": 40892
+    },
+    {
+      "file": "signed-url-expiry-test.json",
+      "sha256": "2c5b94cec14af4c9a521440f0fba633bba8516bdb5c724ee46dd3bd48d6be851",
+      "size": 551
+    },
+    {
+      "file": "stage-4C-final-summary.json",
+      "sha256": "47753be433094d0c9d98953ffda8e326016b050a3ddfab687538e9f45c63feda",
+      "size": 3938
+    },
+    {
+      "file": "stage-acceptance-test.json",
+      "sha256": "f0bb2f2198ba5d5e7e66c5e6af577400f62561dcd3376863dccdfdb66ffc2d6f",
+      "size": 1065
+    }
+  ]
+}
