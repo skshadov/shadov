@@ -6,6 +6,7 @@
  * административную панель.
  */
 import { Link } from "@tanstack/react-router";
+import logoSrc from "@/assets/brand/shadov-logo.png";
 
 interface LogoProps {
   variant?: "full" | "compact";
@@ -46,35 +47,15 @@ export function Logo({
 }
 
 function LogoMark() {
-  // Геометрическая марка: пара пересекающихся линий — символ
-  // «прямого договора и партнёрства». Никаких крыш/касок/кирпичей.
   return (
-    <svg
-      width="40"
-      height="40"
-      viewBox="0 0 40 40"
-      xmlns="http://www.w3.org/2000/svg"
+    <img
+      src={logoSrc}
+      alt=""
       aria-hidden="true"
-      className="shrink-0"
-    >
-      <rect x="0.5" y="0.5" width="39" height="39" rx="6" fill="none" stroke="currentColor" strokeOpacity="0.45" />
-      <path
-        d="M9 30 L20 10 L31 30"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="square"
-        strokeLinejoin="miter"
-      />
-      <path
-        d="M14 30 L20 19 L26 30"
-        fill="none"
-        stroke="var(--color-primary)"
-        strokeWidth="2"
-        strokeLinecap="square"
-        strokeLinejoin="miter"
-      />
-    </svg>
+      className="h-10 w-10 shrink-0 object-contain"
+      width={40}
+      height={40}
+    />
   );
 }
 
@@ -82,13 +63,13 @@ function LogoFull() {
   return (
     <>
       <LogoMark />
-      <span className="flex flex-col leading-tight">
+      <span className="flex flex-col leading-tight whitespace-nowrap">
         <span className="font-display text-[15px] font-semibold tracking-[0.14em] uppercase">
           Шадов&nbsp;и&nbsp;партнёры
         </span>
         <span
           data-logo-subtitle
-          className="text-[10px] tracking-[0.22em] uppercase text-muted-foreground"
+          className="text-[9px] tracking-[0.22em] uppercase text-muted-foreground"
         >
           Строительная компания
         </span>
