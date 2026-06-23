@@ -16,7 +16,11 @@ export function PriceTable({ caption, items, showActualDate = true, className }:
   const hasNotes = items.some((i) => i.note);
 
   return (
-    <div className={`overflow-x-auto rounded-lg border border-border bg-card ${className ?? ""}`}>
+    <div
+      className={`overflow-x-auto rounded-lg border border-border bg-card ${className ?? ""}`}
+      tabIndex={0}
+      aria-label="Прокручиваемая таблица цен"
+    >
       <table className="w-full min-w-[480px] text-left text-sm">
         <caption className="sr-only">{caption}</caption>
         <thead className="bg-[color:var(--surface-medium)] text-xs uppercase tracking-wider text-muted-foreground">

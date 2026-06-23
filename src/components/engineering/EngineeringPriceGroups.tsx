@@ -40,7 +40,7 @@ export function EngineeringPriceGroups({ packageCategoryIds = [], priceCategoryI
         {sections.map((sec) => (
           <div key={sec.title}>
             <h2 className="font-display text-2xl font-semibold">{sec.title}</h2>
-            <div className="mt-4 overflow-x-auto">
+            <div className="mt-4 overflow-x-auto" tabIndex={0} aria-label="Прокручиваемая таблица услуг">
               <table className="w-full min-w-[480px] text-left text-sm">
                 <caption className="sr-only">{sec.title}</caption>
                 <thead>
