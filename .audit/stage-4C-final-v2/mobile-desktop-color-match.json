@@ -1,0 +1,108 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "mobile": {
+        "bodyBg": "rgb(11, 31, 24)",
+        "bodyFg": "rgb(247, 248, 245)",
+        "tokenBackground": "#0b1f18",
+        "tokenForeground": "#f7f8f5",
+        "tokenPrimary": "#c1a166",
+        "tokenScrim": "#071710c7"
+      },
+      "desktop": {
+        "bodyBg": "rgb(11, 31, 24)",
+        "bodyFg": "rgb(247, 248, 245)",
+        "tokenBackground": "#0b1f18",
+        "tokenForeground": "#f7f8f5",
+        "tokenPrimary": "#c1a166",
+        "tokenScrim": "#071710c7"
+      },
+      "match": true
+    },
+    {
+      "route": "/uslugi",
+      "mobile": {
+        "bodyBg": "rgb(11, 31, 24)",
+        "bodyFg": "rgb(247, 248, 245)",
+        "tokenBackground": "#0b1f18",
+        "tokenForeground": "#f7f8f5",
+        "tokenPrimary": "#c1a166",
+        "tokenScrim": "#071710c7"
+      },
+      "desktop": {
+        "bodyBg": "rgb(11, 31, 24)",
+        "bodyFg": "rgb(247, 248, 245)",
+        "tokenBackground": "#0b1f18",
+        "tokenForeground": "#f7f8f5",
+        "tokenPrimary": "#c1a166",
+        "tokenScrim": "#071710c7"
+      },
+      "match": true
+    },
+    {
+      "route": "/kalkulyator-stoimosti",
+      "mobile": {
+        "bodyBg": "rgb(11, 31, 24)",
+        "bodyFg": "rgb(247, 248, 245)",
+        "tokenBackground": "#0b1f18",
+        "tokenForeground": "#f7f8f5",
+        "tokenPrimary": "#c1a166",
+        "tokenScrim": "#071710c7"
+      },
+      "desktop": {
+        "bodyBg": "rgb(11, 31, 24)",
+        "bodyFg": "rgb(247, 248, 245)",
+        "tokenBackground": "#0b1f18",
+        "tokenForeground": "#f7f8f5",
+        "tokenPrimary": "#c1a166",
+        "tokenScrim": "#071710c7"
+      },
+      "match": true
+    },
+    {
+      "route": "/kontakty",
+      "mobile": {
+        "bodyBg": "rgb(11, 31, 24)",
+        "bodyFg": "rgb(247, 248, 245)",
+        "tokenBackground": "#0b1f18",
+        "tokenForeground": "#f7f8f5",
+        "tokenPrimary": "#c1a166",
+        "tokenScrim": "#071710c7"
+      },
+      "desktop": {
+        "bodyBg": "rgb(11, 31, 24)",
+        "bodyFg": "rgb(247, 248, 245)",
+        "tokenBackground": "#0b1f18",
+        "tokenForeground": "#f7f8f5",
+        "tokenPrimary": "#c1a166",
+        "tokenScrim": "#071710c7"
+      },
+      "match": true
+    },
+    {
+      "route": "/auth",
+      "mobile": {
+        "bodyBg": "rgb(11, 31, 24)",
+        "bodyFg": "rgb(247, 248, 245)",
+        "tokenBackground": "#0b1f18",
+        "tokenForeground": "#f7f8f5",
+        "tokenPrimary": "#c1a166",
+        "tokenScrim": "#071710c7"
+      },
+      "desktop": {
+        "bodyBg": "rgb(11, 31, 24)",
+        "bodyFg": "rgb(247, 248, 245)",
+        "tokenBackground": "#0b1f18",
+        "tokenForeground": "#f7f8f5",
+        "tokenPrimary": "#c1a166",
+        "tokenScrim": "#071710c7"
+      },
+      "match": true
+    }
+  ],
+  "mismatches": [],
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "mobileDesktopColorsMatch": true,
+  "passed": true
+}
