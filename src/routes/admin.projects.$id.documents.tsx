@@ -43,7 +43,7 @@ function ProjectDocumentsPage() {
       breadcrumbs={[
         { label: "Админ-панель", to: "/admin" },
         { label: "Проекты", to: "/admin/projects" },
-        { label: "Проект", to: "/admin/projects/$id", params: { id } },
+        { label: "Проект", to: `/admin/projects/${id}` },
         { label: "Документы" },
       ]}>
       {error ? <div role="alert" className="mb-4 rounded-md border border-destructive/40 bg-destructive/10 p-3 text-sm">{error}</div> : null}
