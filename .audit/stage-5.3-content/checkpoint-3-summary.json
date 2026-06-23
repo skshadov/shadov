@@ -1,0 +1,43 @@
+{
+  "stage": "5.3.3",
+  "title": "Catalog: categories + services + price list",
+  "status": "completed",
+  "migration": "service_categories, services, price_items; admin.catalog.read/write perms; granted to super_admin/admin/content_manager",
+  "server_functions": [
+    "catalog.functions.ts::listServiceCategories",
+    "catalog.functions.ts::upsertServiceCategory",
+    "catalog.functions.ts::deleteServiceCategory",
+    "catalog.functions.ts::listServices",
+    "catalog.functions.ts::upsertService",
+    "catalog.functions.ts::deleteService",
+    "catalog.functions.ts::listPriceItems",
+    "catalog.functions.ts::upsertPriceItem",
+    "catalog.functions.ts::deletePriceItem"
+  ],
+  "routes": [
+    "/admin/catalog/categories",
+    "/admin/catalog/services",
+    "/admin/catalog/prices"
+  ],
+  "permissions_added": ["admin.catalog.read", "admin.catalog.write"],
+  "audit_actions": [
+    "service_category.create/update/delete",
+    "service.create/update/delete",
+    "price_item.create/update/delete"
+  ],
+  "rls": {
+    "public_read": "только status = 'published' (TO anon, authenticated) — для будущих публичных страниц каталога",
+    "admin_read":  "has_admin_permission('admin.catalog.read')",
+    "admin_write": "has_admin_permission('admin.catalog.write')"
+  },
+  "constraints": [
+    "service_categories.slug ^[a-z0-9][a-z0-9-]{0,80}$; parent_id self-FK ON DELETE SET NULL",
+    "services.slug ^[a-z0-9][a-z0-9-]{0,120}$; base_price ≥ 0; currency ^[A-Z]{3}$",
+    "price_items.group_slug/subgroup_slug ^[a-z0-9][a-z0-9-_]{0,80}$; price_max ≥ price_min; неотрицательные значения"
+  ],
+  "security_notes": [
+    "Линтер: те же 7 пре-существующих WARN'ов о SECURITY DEFINER (RBAC хелперы) — не относятся к 5.3.3.",
+    "Все мутации проходят через has_admin_permission + аудит."
+  ],
+  "next": "5.3.4 — публичная витрина каталога / привязка к публичным маршрутам (или иное)."
+}
