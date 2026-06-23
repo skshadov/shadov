@@ -21,8 +21,8 @@ import { ArrowRight } from "lucide-react";
 
 export function DesktopNavigation() {
   return (
-    <NavigationMenu className="hidden min-w-0 xl:flex">
-      <NavigationMenuList className="gap-0.5">
+    <NavigationMenu className="hidden min-w-0 flex-1 justify-center lg:flex">
+      <NavigationMenuList className="gap-0">
         {MAIN_NAV.map((item) =>
           isDropdown(item) ? (
             <DropdownItem key={item.to} item={item} />
@@ -33,7 +33,7 @@ export function DesktopNavigation() {
                   to={item.to}
                   activeOptions={{ exact: true }}
                   activeProps={{ "data-status": "active" }}
-                  className="text-sm"
+                  className="!px-2 text-[13px] xl:!px-3 xl:text-sm"
                 >
                   {item.label}
                 </Link>
@@ -49,7 +49,7 @@ export function DesktopNavigation() {
 function DropdownItem({ item }: { item: NavDropdown }) {
   return (
     <NavigationMenuItem>
-      <NavigationMenuTrigger className="text-sm">{item.label}</NavigationMenuTrigger>
+      <NavigationMenuTrigger className="!px-2 text-[13px] xl:!px-3 xl:text-sm">{item.label}</NavigationMenuTrigger>
       <NavigationMenuContent>
         <div className="grid w-[640px] grid-cols-[1fr_1.4fr] gap-0 overflow-hidden rounded-md border border-border bg-popover">
           <div className="flex flex-col justify-between gap-6 border-r border-border bg-[color:var(--surface-deep)] p-5">
