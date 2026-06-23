@@ -1,0 +1,134 @@
+{
+  "stage": "6",
+  "checkpoint": "1",
+  "title": "Спецификация, контент, окружения, домен, hosting, SSL",
+  "createdAt": "2026-06-23",
+  "status": "blocked",
+  "build": { "exitCode": 0, "log": "build.log" },
+  "typescript": { "exitCode": 0, "log": "typescript.log" },
+  "routeCounts": {
+    "totalRouteFiles": 82,
+    "publicRouteFiles": 57,
+    "adminRouteFiles": 19,
+    "clientRouteFiles": 2,
+    "serverRouteFiles": 2,
+    "comment": "Сервисных публичных страниц-маршрутов 35+ (по списку каталога). Точное соответствие 35 пунктам ТЗ подтверждается матрицей в original-specification-matrix.json."
+  },
+  "databaseCatalogCounts": {
+    "price_items": 0,
+    "service_categories": 0,
+    "services": 0,
+    "content_blocks": 0,
+    "media_assets": 0,
+    "portfolio_projects_published": 0,
+    "portfolio_reviews_published": 0,
+    "company_settings_rows": 1,
+    "admin_permissions": 77,
+    "user_roles_rows": 34,
+    "projects_demo": 1
+  },
+  "expectedByTZ": {
+    "priceItems": 334,
+    "serviceCategories": 24,
+    "servicePages": 35
+  },
+  "frontendSecretScan": {
+    "serviceRoleInClientBundle": false,
+    "comment": "Совпадения по 'service_role' встречаются только в audit-скриптах src/lib/audit-stage-*.ts, rls-tests.ts, stage-3*.ts, stage-4c-*.ts. Эти файлы не импортируются из src/routes/** и src/components/**, поэтому в client bundle не попадают.",
+    "auditScripts": [
+      "src/lib/audit-stage-3.ts",
+      "src/lib/audit-stage-3b.ts",
+      "src/lib/audit-stage-4.ts",
+      "src/lib/rls-tests.ts",
+      "src/lib/rls-tests-stage4c.ts",
+      "src/lib/stage-3c-integration.ts",
+      "src/lib/stage-3f-storage-tests.ts",
+      "src/lib/_stage4c-realtime-tests.ts",
+      "src/lib/_stage4c-dialog-setup.ts",
+      "src/lib/_stage4c-dialog-teardown.ts"
+    ],
+    "recommendation": "Перенести audit-скрипты в каталог вне src/ (например, scripts/audit/) либо переименовать в *.server.ts, чтобы исключить любые риски при будущих рефакторингах."
+  },
+  "domainAndHosting": {
+    "targetProductionDomain": "https://shadov.pro",
+    "currentLovablePreview": "https://id-preview--8fa6e8cc-201f-4ed8-9f71-597d02cd00c0.lovable.app",
+    "currentLovablePublished": "https://shadov.lovable.app",
+    "customDomainConfigured": "unknown_from_sandbox",
+    "russiaAvailabilityTest": "not_performed",
+    "reason": "Из песочницы агента невозможно достоверно проверить DNS, SSL-цепочку, доступность из РФ и заблокированность Lovable preview для российских пользователей. Эти проверки требуют либо подключения внешнего мониторинга (UptimeRobot/Sbermetrics/Яндекс.Метрика регионального теста), либо ручной проверки владельцем через VPN/российский IP."
+  },
+  "sslChecks": {
+    "performed": false,
+    "reason": "SSL для shadov.pro / www.shadov.pro / admin.shadov.pro выдаётся хостингом после подключения домена. Проверить можно только после фактического делегирования DNS на Lovable."
+  },
+  "productionContent": {
+    "companySettingsFilled": "partial",
+    "comment": "company_settings содержит 1 запись (заглушки). Реальные ИНН, ОГРН, КПП, расчётный счёт, номер СРО, номер телефона, реальный email получателя заявок — НЕ предоставлены владельцем."
+  },
+  "blockingIssues": [
+    {
+      "id": "BLK-1",
+      "severity": "blocker",
+      "area": "data",
+      "title": "База каталога пустая",
+      "detail": "В таблицах service_categories, services, price_items, content_blocks, media_assets ноль записей. ТЗ требует 334 позиции прайса, 24 категории, 35 услуг. Без сидинга/импорта реальных данных от владельца Stage 6 acceptance невозможен.",
+      "owner": "client+lovable",
+      "requires": "Файл прайса (CSV/XLSX) и список категорий/услуг от владельца, либо подтверждённое решение публиковать БЕЗ прайса и каталога."
+    },
+    {
+      "id": "BLK-2",
+      "severity": "blocker",
+      "area": "content",
+      "title": "Реальные реквизиты компании не получены",
+      "detail": "ИНН, ОГРН, КПП, банковские реквизиты, СРО, телефон, email для получения заявок, юридический и фактический адрес — placeholder.",
+      "owner": "client",
+      "requires": "Письменно: полный пакет реквизитов и контактов."
+    },
+    {
+      "id": "BLK-3",
+      "severity": "blocker",
+      "area": "domain",
+      "title": "DNS/SSL/доступность из РФ не проверены",
+      "detail": "Невозможно подтвердить из песочницы агента. Требуется фактическое подключение домена shadov.pro к Lovable Cloud (или альтернативному хостингу) и независимая проверка с российского IP.",
+      "owner": "client+lovable",
+      "requires": "Подключение домена через Project Settings → Domains, ожидание DNS propagation, внешний test с RU IP."
+    },
+    {
+      "id": "BLK-4",
+      "severity": "blocker",
+      "area": "email",
+      "title": "Email и notifications не настроены для продакшена",
+      "detail": "Domain не подтверждён, SPF/DKIM/DMARC не настроены, нет получателя для новых заявок. Без этого пункт 14 ТЗ невыполним.",
+      "owner": "client",
+      "requires": "Реальный email для уведомлений, либо подтверждение настройки Lovable Emails через email setup wizard."
+    },
+    {
+      "id": "BLK-5",
+      "severity": "blocker",
+      "area": "analytics",
+      "title": "ID Яндекс.Метрики и Google Search Console не получены",
+      "detail": "Без счётчика и подтверждения в GSC аналитика и индексация не настраиваются.",
+      "owner": "client",
+      "requires": "ID счётчика Яндекс.Метрики; подтверждение готовности подключения GSC."
+    },
+    {
+      "id": "BLK-6",
+      "severity": "blocker",
+      "area": "monitoring",
+      "title": "Мониторинг и backup не настроены",
+      "detail": "ТЗ требует uptime monitoring, alerts, backup и restore test. Внешние сервисы (UptimeRobot, healthchecks.io и т.п.) — за счёт владельца. Lovable Cloud предоставляет автоматические бэкапы Supabase, но restore test и DR-план — отдельная активность.",
+      "owner": "client",
+      "requires": "Решение: использовать встроенный backup Supabase и заранее задокументированный restore-процесс, или подключать сторонний сервис."
+    },
+    {
+      "id": "BLK-7",
+      "severity": "warn",
+      "area": "code-hygiene",
+      "title": "audit-скрипты лежат в src/lib/ под общим алиасом",
+      "detail": "Хотя их никто не импортирует из бандла, расположение нарушает правило 'server-only код должен быть в *.server.ts или вне src/'. Лучше перенести в scripts/.",
+      "owner": "lovable",
+      "requires": "Рефакторинг (~30 мин)."
+    }
+  ],
+  "nextStep": "Дождаться от владельца входных данных по BLK-1..BLK-6. Параллельно — закрыть BLK-7 рефакторингом, продолжить Чекпойнты 2 (SEO/sitemap/robots/redirects/broken links) и 4 (a11y/responsive/colors), которые можно делать без внешних данных."
+}
