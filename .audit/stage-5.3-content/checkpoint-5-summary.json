@@ -1,0 +1,13 @@
+{
+  "checkpoint": "5.3.5",
+  "title": "SEO surfaces: dynamic sitemap.xml and robots.txt",
+  "status": "done",
+  "changes": [
+    "src/routes/sitemap[.]xml.ts: server route /sitemap.xml — статические страницы + опубликованные категории и услуги из БД, lastmod = updated_at",
+    "src/routes/robots[.]txt.ts: server route /robots.txt — запрет /admin, /client, ссылка на sitemap"
+  ],
+  "notes": [
+    "Используется server publishable client (anon) — учитываются RLS-политики published.",
+    "Cache-Control 5 мин на edge, 15 мин на shared cache."
+  ]
+}
