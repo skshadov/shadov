@@ -1,0 +1,45 @@
+{
+  "stage": "5.2.3",
+  "title": "Documents + Daily reports",
+  "status": "completed",
+  "server_functions": [
+    "documents.functions.ts::listProjectDocuments",
+    "documents.functions.ts::createDocumentUploadUrl",
+    "documents.functions.ts::registerUploadedDocument",
+    "documents.functions.ts::updateDocumentMeta",
+    "documents.functions.ts::deleteDocument",
+    "documents.functions.ts::getDocumentDownloadUrl",
+    "documents.functions.ts::listDailyReports",
+    "documents.functions.ts::getDailyReport",
+    "documents.functions.ts::upsertDailyReport",
+    "documents.functions.ts::deleteDailyReport",
+    "documents.functions.ts::linkDocumentToReport",
+    "documents.functions.ts::unlinkDocumentFromReport"
+  ],
+  "routes": [
+    "/admin/projects/$id/documents",
+    "/admin/projects/$id/reports"
+  ],
+  "permissions_required": [
+    "admin.documents.read", "admin.documents.write",
+    "admin.reports.read", "admin.reports.write"
+  ],
+  "audit_actions": [
+    "document.create", "document.update_meta", "document.delete",
+    "report.create", "report.update", "report.delete"
+  ],
+  "upload_flow": {
+    "bucket": "project-documents (private)",
+    "client": "supabase.storage.uploadToSignedUrl()",
+    "url_source": "createDocumentUploadUrl (server fn выдаёт signed upload token)",
+    "limits": { "max_bytes": 52428800, "allowed_mime": "pdf/doc(x)/xls(x)/jpg/png/webp/txt/csv" },
+    "download": "createSignedUrl(5 минут), открывается в новой вкладке"
+  },
+  "notes": [
+    "Server functions защищены requireSupabaseAuth + has_admin_permission.",
+    "Имена файлов санитизуются, путь в bucket: <project_id>/<ts>_<rand>_<file>.",
+    "Видимость для клиента отдельным булевым полем is_visible_to_client.",
+    "Удаление документа удаляет и blob из storage."
+  ],
+  "next": "5.2.4 — Messages + Payments + Cameras"
+}
