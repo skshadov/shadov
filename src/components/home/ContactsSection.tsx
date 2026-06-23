@@ -8,6 +8,7 @@ import { SectionHeading } from "@/components/common/SectionHeading";
 import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
 import { Button } from "@/components/ui/button";
 import { company, isFilled } from "@/config/company";
+import { MessengerLinks } from "@/components/common/MessengerLinks";
 
 export function ContactsSection() {
   const items: { Icon: typeof Phone; label: string; value: string; href?: string }[] = [];
@@ -29,6 +30,7 @@ export function ContactsSection() {
 
         <div className="flex flex-col gap-6">
           {items.length > 0 ? (
+            <>
             <ul className="grid gap-3">
               {items.map(({ Icon, label, value, href }) => (
                 <li key={label} className="flex items-start gap-3 rounded-lg border border-border bg-card p-4">
@@ -46,6 +48,11 @@ export function ContactsSection() {
                 </li>
               ))}
             </ul>
+            <div>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Мессенджеры</p>
+              <MessengerLinks />
+            </div>
+            </>
           ) : (
             <PlaceholderNotice
               variant="soft"

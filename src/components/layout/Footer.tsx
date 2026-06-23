@@ -14,6 +14,7 @@ import {
 import { company, isFilled } from "@/config/company";
 import { Logo } from "@/components/brand/Logo";
 import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
+import { MessengerLinks } from "@/components/common/MessengerLinks";
 
 const SERVICE_COLUMNS = [
   { title: "Строительство", items: NAV_STROITELSTVO.items, hub: NAV_STROITELSTVO.to },
@@ -89,6 +90,7 @@ export function Footer() {
             Контакты
           </h2>
           {hasAnyContact ? (
+            <>
             <ul className="mt-3 flex flex-col gap-2 text-sm text-muted-foreground">
               {isFilled(company.phone) ? (
                 <li>
@@ -119,6 +121,10 @@ export function Footer() {
                 </li>
               ) : null}
             </ul>
+            <div className="mt-4">
+              <MessengerLinks variant="compact" />
+            </div>
+            </>
           ) : (
             <div className="mt-3">
               <PlaceholderNotice

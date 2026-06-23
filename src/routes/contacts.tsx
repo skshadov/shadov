@@ -4,6 +4,7 @@ import { InfoPageLayout, InfoSection, InfoList, buildInfoHead } from "@/componen
 import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
 import { Button } from "@/components/ui/button";
 import { company, isFilled, regions } from "@/config/company";
+import { MessengerLinks } from "@/components/common/MessengerLinks";
 
 const PATH = "/contacts";
 const TITLE = "Контакты — Шадов и партнёры";
@@ -51,6 +52,7 @@ function Page() {
     >
       <InfoSection title="Способы связи">
         {items.length > 0 ? (
+          <>
           <ul className="space-y-2 text-base leading-relaxed">
             {items.map((it) => (
               <li key={it.label} className="flex flex-wrap gap-x-3">
@@ -63,6 +65,11 @@ function Page() {
               </li>
             ))}
           </ul>
+          <div className="mt-5">
+            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Мессенджеры</p>
+            <MessengerLinks />
+          </div>
+          </>
         ) : (
           <PlaceholderNotice
             title="Контактные данные будут опубликованы после заполнения и проверки реквизитов"
