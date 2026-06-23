@@ -1,7 +1,7 @@
 {
   "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
-  "runTag": "stage4c-v4-7b857074-1782211780370",
-  "generatedAt": "2026-06-23T10:49:47.225Z",
+  "runTag": "stage4c-v4-7b857074-1782212251745",
+  "generatedAt": "2026-06-23T10:57:39.326Z",
   "requirements": {
     "rlsRealScenariosMinimum": 90,
     "adminCrudScenariosMinimum": 44,
@@ -17,18 +17,18 @@
   },
   "actors": {
     "adminTest": {
-      "userId": "146caeba-10b5-4794-be12-2e01bd96e130",
-      "email": "stage4c-v4-7b857074-1782211780370-adminTest@example.test",
+      "userId": "1993f5f1-0c09-4ef3-a1ae-e5124cd97373",
+      "email": "stage4c-v4-7b857074-1782212251745-adminTest@example.test",
       "role": "admin"
     },
     "clientA": {
-      "userId": "7c09ec05-311a-4da9-aa23-180733dd150a",
-      "email": "stage4c-v4-7b857074-1782211780370-clientA@example.test",
+      "userId": "dbb9b48e-b32a-4cab-ab84-f6d33b6d77ac",
+      "email": "stage4c-v4-7b857074-1782212251745-clientA@example.test",
       "role": "client"
     },
     "clientB": {
-      "userId": "3365a2f4-db7e-46a3-ac2e-332db4c598e7",
-      "email": "stage4c-v4-7b857074-1782211780370-clientB@example.test",
+      "userId": "d19aae76-1c2d-4632-ab51-9b9fccf49115",
+      "email": "stage4c-v4-7b857074-1782212251745-clientB@example.test",
       "role": "client"
     }
   },

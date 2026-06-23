@@ -1,8 +1,8 @@
 {
   "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
   "route": "/client/project/$id?tab=stages",
-  "fixtureProjectId": "3222a8a0-5ad3-4b1f-96ef-ac11d3b8203d",
-  "fixtureAcceptanceId": "ad8ee32e-0eb3-4763-b323-3ea774547760",
+  "fixtureProjectId": "e5305649-98b0-4c0d-a48f-e17045fbebf2",
+  "fixtureAcceptanceId": "a236a9cc-ce4d-4d89-9f21-38404cafa025",
   "component": "AcceptanceDialog",
   "focusableCount": 3,
   "checks": {
