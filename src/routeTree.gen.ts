@@ -75,6 +75,7 @@ import { Route as AdminApplicationsRouteImport } from './routes/admin.applicatio
 import { Route as ClientProjectIdRouteImport } from './routes/client.project.$id'
 import { Route as AdminProjectsIdRouteImport } from './routes/admin.projects.$id'
 import { Route as AdminClientsIdRouteImport } from './routes/admin.clients.$id'
+import { Route as AdminCatalogServicesRouteImport } from './routes/admin.catalog.services'
 import { Route as AdminCatalogCategoriesRouteImport } from './routes/admin.catalog.categories'
 import { Route as AdminApplicationsIdRouteImport } from './routes/admin.applications.$id'
 import { Route as AdminProjectsIdReportsRouteImport } from './routes/admin.projects.$id.reports'
@@ -416,6 +417,11 @@ const AdminClientsIdRoute = AdminClientsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => AdminClientsRoute,
 } as any)
+const AdminCatalogServicesRoute = AdminCatalogServicesRouteImport.update({
+  id: '/catalog/services',
+  path: '/catalog/services',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminCatalogCategoriesRoute = AdminCatalogCategoriesRouteImport.update({
   id: '/catalog/categories',
   path: '/catalog/categories',
@@ -519,6 +525,7 @@ export interface FileRoutesByFullPath {
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
+  '/admin/catalog/services': typeof AdminCatalogServicesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
   '/client/project/$id': typeof ClientProjectIdRoute
@@ -594,6 +601,7 @@ export interface FileRoutesByTo {
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
+  '/admin/catalog/services': typeof AdminCatalogServicesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
   '/client/project/$id': typeof ClientProjectIdRoute
@@ -670,6 +678,7 @@ export interface FileRoutesById {
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
+  '/admin/catalog/services': typeof AdminCatalogServicesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
   '/client/project/$id': typeof ClientProjectIdRoute
@@ -747,6 +756,7 @@ export interface FileRouteTypes {
     | '/portfolio/$slug'
     | '/admin/applications/$id'
     | '/admin/catalog/categories'
+    | '/admin/catalog/services'
     | '/admin/clients/$id'
     | '/admin/projects/$id'
     | '/client/project/$id'
@@ -822,6 +832,7 @@ export interface FileRouteTypes {
     | '/portfolio/$slug'
     | '/admin/applications/$id'
     | '/admin/catalog/categories'
+    | '/admin/catalog/services'
     | '/admin/clients/$id'
     | '/admin/projects/$id'
     | '/client/project/$id'
@@ -897,6 +908,7 @@ export interface FileRouteTypes {
     | '/portfolio/$slug'
     | '/admin/applications/$id'
     | '/admin/catalog/categories'
+    | '/admin/catalog/services'
     | '/admin/clients/$id'
     | '/admin/projects/$id'
     | '/client/project/$id'
@@ -1429,6 +1441,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminClientsIdRouteImport
       parentRoute: typeof AdminClientsRoute
     }
+    '/admin/catalog/services': {
+      id: '/admin/catalog/services'
+      path: '/catalog/services'
+      fullPath: '/admin/catalog/services'
+      preLoaderRoute: typeof AdminCatalogServicesRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/catalog/categories': {
       id: '/admin/catalog/categories'
       path: '/catalog/categories'
@@ -1545,6 +1564,7 @@ interface AdminRouteChildren {
   AdminProjectsRoute: typeof AdminProjectsRouteWithChildren
   AdminSettingsRoute: typeof AdminSettingsRoute
   AdminCatalogCategoriesRoute: typeof AdminCatalogCategoriesRoute
+  AdminCatalogServicesRoute: typeof AdminCatalogServicesRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
@@ -1556,6 +1576,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminProjectsRoute: AdminProjectsRouteWithChildren,
   AdminSettingsRoute: AdminSettingsRoute,
   AdminCatalogCategoriesRoute: AdminCatalogCategoriesRoute,
+  AdminCatalogServicesRoute: AdminCatalogServicesRoute,
 }
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
