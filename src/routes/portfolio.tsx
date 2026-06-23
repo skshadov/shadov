@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { InfoPageLayout, InfoSection, buildInfoHead } from "@/components/info/InfoPageLayout";
 import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
 import { Button } from "@/components/ui/button";
+import { listPublishedPortfolioProjects, type PortfolioProjectListItem } from "@/lib/portfolio-public.functions";
 
 const PATH = "/portfolio";
 const TITLE = "Наши работы — Шадов и партнёры";
@@ -15,10 +16,13 @@ export const Route = createFileRoute("/portfolio")({
       { name: "Наши работы", path: PATH },
     ],
   }),
+  loader: () => listPublishedPortfolioProjects({ data: { limit: 60 } }),
   component: Page,
+  errorComponent: () => <Page />,
 });
 
 function Page() {
+  const projects = (Route.useLoaderData?.() ?? []) as PortfolioProjectListItem[];
   return (
     <InfoPageLayout
       breadcrumbs={[{ label: "Главная", to: "/" }, { label: "Наши работы" }]}
@@ -31,14 +35,38 @@ function Page() {
         </p>
       }
     >
-      <InfoSection title="Что будет опубликовано">
-        <ul className="list-disc space-y-2 pl-5">
-          <li>Фотографии этапов и сданных объектов с разрешения заказчика</li>
-          <li>Описание выполненных работ и применённых решений</li>
-          <li>Сроки выполнения и характеристики объекта</li>
-          <li>Фильтры по направлениям — после появления подтверждённых материалов</li>
-        </ul>
-      </InfoSection>
+      {projects.length > 0 ? (
+        <InfoSection title="Сданные объекты">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((p) => (
+              <Link
+                key={p.id}
+                to="/portfolio/$slug"
+                params={{ slug: p.slug }}
+                className="group overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-foreground/40"
+              >
+                {p.cover_url ? (
+                  <div className="aspect-[4/3] overflow-hidden bg-muted">
+                    <img src={p.cover_url} alt={p.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                ) : null}
+                <div className="p-4">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">{p.category}</p>
+                  <h3 className="mt-1 line-clamp-2 text-base font-semibold">{p.title}</h3>
+                  {p.location ? <p className="mt-1 text-sm text-muted-foreground">{p.location}</p> : null}
+                  {(p.area_m2 || p.year_completed) ? (
+                    <p className="mt-2 text-xs text-muted-foreground">
+                      {p.area_m2 ? `${p.area_m2} м²` : null}
+                      {p.area_m2 && p.year_completed ? " · " : ""}
+                      {p.year_completed ? `${p.year_completed}` : null}
+                    </p>
+                  ) : null}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </InfoSection>
+      ) : (
       <InfoSection title="Раздел готовится">
         <PlaceholderNotice
           title="Раздел наполняется подтверждёнными материалами выполненных объектов"
@@ -61,6 +89,7 @@ function Page() {
           <Link to="/inzhenernye-sistemy" className="text-primary underline underline-offset-2 hover:opacity-80">инженерные системы</Link>.
         </p>
       </InfoSection>
+      )}
     </InfoPageLayout>
   );
 }

@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Star } from "lucide-react";
 import { InfoPageLayout, InfoSection, buildInfoHead } from "@/components/info/InfoPageLayout";
 import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
+import { listPublishedReviews, type PublicReview } from "@/lib/portfolio-public.functions";
 
 const PATH = "/reviews";
 const TITLE = "Отзывы — Шадов и партнёры";
@@ -14,10 +16,13 @@ export const Route = createFileRoute("/reviews")({
       { name: "Отзывы", path: PATH },
     ],
   }),
+  loader: () => listPublishedReviews({ data: { limit: 60 } }),
   component: Page,
+  errorComponent: () => <Page />,
 });
 
 function Page() {
+  const reviews = (Route.useLoaderData?.() ?? []) as PublicReview[];
   return (
     <InfoPageLayout
       breadcrumbs={[{ label: "Главная", to: "/" }, { label: "Отзывы" }]}
@@ -29,20 +34,42 @@ function Page() {
         </p>
       }
     >
-      <InfoSection title="Что и как публикуется">
-        <ul className="list-disc space-y-2 pl-5">
-          <li>Отзывы заказчиков, подтвердивших факт выполнения работ</li>
-          <li>Проверка источника отзыва до публикации</li>
-          <li>Персональные данные размещаются только с согласия автора</li>
-          <li>Модерация отзывов подключается на этапе административной панели</li>
-        </ul>
-      </InfoSection>
-      <InfoSection title="Раздел готовится">
-        <PlaceholderNotice
-          title="Подтверждённые отзывы появятся после подключения модерации"
-          description="Вымышленные или демонстрационные отзывы не используются. Сводный рейтинг и количество отзывов появятся только после публикации реальных оценок."
-        />
-      </InfoSection>
+      {reviews.length > 0 ? (
+        <InfoSection title="Подтверждённые отзывы">
+          <div className="grid gap-5 sm:grid-cols-2">
+            {reviews.map((r) => (
+              <article key={r.id} className="rounded-lg border border-border bg-card p-5">
+                <div className="flex items-center gap-1 text-primary" aria-label={`Оценка ${r.rating} из 5`}>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4" fill={i < r.rating ? "currentColor" : "none"} />
+                  ))}
+                </div>
+                <p className="mt-3 whitespace-pre-wrap text-sm leading-relaxed">{r.body}</p>
+                <div className="mt-4 flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <p className="text-sm font-semibold">{r.author_name}</p>
+                    {r.author_role ? <p className="text-xs text-muted-foreground">{r.author_role}</p> : null}
+                  </div>
+                  {r.source ? (
+                    r.source_url ? (
+                      <a href={r.source_url} target="_blank" rel="noopener noreferrer" className="text-xs text-primary underline underline-offset-2">{r.source}</a>
+                    ) : (
+                      <span className="text-xs text-muted-foreground">{r.source}</span>
+                    )
+                  ) : null}
+                </div>
+              </article>
+            ))}
+          </div>
+        </InfoSection>
+      ) : (
+        <InfoSection title="Раздел готовится">
+          <PlaceholderNotice
+            title="Подтверждённые отзывы появятся после подключения модерации"
+            description="Вымышленные или демонстрационные отзывы не используются."
+          />
+        </InfoSection>
+      )}
     </InfoPageLayout>
   );
 }
