@@ -402,6 +402,57 @@ export type Database = {
         }
         Relationships: []
       }
+      price_items: {
+        Row: {
+          created_at: string
+          currency: string
+          group_slug: string
+          id: string
+          notes: string
+          price_max: number | null
+          price_min: number | null
+          sort_order: number
+          status: string
+          subgroup_slug: string
+          title: string
+          unit: string
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          currency?: string
+          group_slug: string
+          id?: string
+          notes?: string
+          price_max?: number | null
+          price_min?: number | null
+          sort_order?: number
+          status?: string
+          subgroup_slug?: string
+          title: string
+          unit?: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          currency?: string
+          group_slug?: string
+          id?: string
+          notes?: string
+          price_max?: number | null
+          price_min?: number | null
+          sort_order?: number
+          status?: string
+          subgroup_slug?: string
+          title?: string
+          unit?: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
@@ -906,6 +957,144 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      service_categories: {
+        Row: {
+          created_at: string
+          hero_media_id: string | null
+          id: string
+          parent_id: string | null
+          seo_description: string
+          seo_title: string
+          slug: string
+          sort_order: number
+          status: string
+          summary: string
+          title: string
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          hero_media_id?: string | null
+          id?: string
+          parent_id?: string | null
+          seo_description?: string
+          seo_title?: string
+          slug: string
+          sort_order?: number
+          status?: string
+          summary?: string
+          title: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          hero_media_id?: string | null
+          id?: string
+          parent_id?: string | null
+          seo_description?: string
+          seo_title?: string
+          slug?: string
+          sort_order?: number
+          status?: string
+          summary?: string
+          title?: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "service_categories_hero_media_id_fkey"
+            columns: ["hero_media_id"]
+            isOneToOne: false
+            referencedRelation: "media_assets"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "service_categories_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "service_categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      services: {
+        Row: {
+          base_price: number | null
+          body_md: string
+          category_id: string | null
+          created_at: string
+          currency: string
+          hero_media_id: string | null
+          id: string
+          price_unit: string
+          seo_description: string
+          seo_title: string
+          slug: string
+          sort_order: number
+          status: string
+          summary: string
+          title: string
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          base_price?: number | null
+          body_md?: string
+          category_id?: string | null
+          created_at?: string
+          currency?: string
+          hero_media_id?: string | null
+          id?: string
+          price_unit?: string
+          seo_description?: string
+          seo_title?: string
+          slug: string
+          sort_order?: number
+          status?: string
+          summary?: string
+          title: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          base_price?: number | null
+          body_md?: string
+          category_id?: string | null
+          created_at?: string
+          currency?: string
+          hero_media_id?: string | null
+          id?: string
+          price_unit?: string
+          seo_description?: string
+          seo_title?: string
+          slug?: string
+          sort_order?: number
+          status?: string
+          summary?: string
+          title?: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "services_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "service_categories"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "services_hero_media_id_fkey"
+            columns: ["hero_media_id"]
+            isOneToOne: false
+            referencedRelation: "media_assets"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       submission_rate_limits: {
         Row: {
