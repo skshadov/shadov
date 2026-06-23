@@ -1,0 +1,19 @@
+{
+  "finalRunId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "executed": true,
+  "productionTtl": 300,
+  "productionFunction": "get-project-document-url (unchanged)",
+  "testTtl": 2,
+  "testPath": "stage4c-signed-url-test/586446d6.txt",
+  "uploadStatus": 200,
+  "signedUrlIssued": true,
+  "immediateDownloadStatus": 200,
+  "immediateDownloadAllowed": true,
+  "waitSeconds": 4,
+  "expiredDownloadStatus": 400,
+  "expiredDownloadDenied": true,
+  "objectDeleted": true,
+  "remainingTestStorageObjects": 0,
+  "remainingTestFunctions": 0,
+  "passed": true
+}
