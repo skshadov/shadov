@@ -65,6 +65,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminClientsRouteImport } from './routes/admin.clients'
@@ -362,6 +363,11 @@ const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => PortfolioRoute,
 } as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminProjectsRoute = AdminProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
@@ -489,6 +495,7 @@ export interface FileRoutesByFullPath {
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
+  '/admin/settings': typeof AdminSettingsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
@@ -560,6 +567,7 @@ export interface FileRoutesByTo {
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
+  '/admin/settings': typeof AdminSettingsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
@@ -632,6 +640,7 @@ export interface FileRoutesById {
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
+  '/admin/settings': typeof AdminSettingsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
@@ -705,6 +714,7 @@ export interface FileRouteTypes {
     | '/admin/clients'
     | '/admin/dashboard'
     | '/admin/projects'
+    | '/admin/settings'
     | '/portfolio/$slug'
     | '/admin/applications/$id'
     | '/admin/clients/$id'
@@ -776,6 +786,7 @@ export interface FileRouteTypes {
     | '/admin/clients'
     | '/admin/dashboard'
     | '/admin/projects'
+    | '/admin/settings'
     | '/portfolio/$slug'
     | '/admin/applications/$id'
     | '/admin/clients/$id'
@@ -847,6 +858,7 @@ export interface FileRouteTypes {
     | '/admin/clients'
     | '/admin/dashboard'
     | '/admin/projects'
+    | '/admin/settings'
     | '/portfolio/$slug'
     | '/admin/applications/$id'
     | '/admin/clients/$id'
@@ -1311,6 +1323,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioSlugRouteImport
       parentRoute: typeof PortfolioRoute
     }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/projects': {
       id: '/admin/projects'
       path: '/projects'
@@ -1465,6 +1484,7 @@ interface AdminRouteChildren {
   AdminClientsRoute: typeof AdminClientsRouteWithChildren
   AdminDashboardRoute: typeof AdminDashboardRoute
   AdminProjectsRoute: typeof AdminProjectsRouteWithChildren
+  AdminSettingsRoute: typeof AdminSettingsRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
@@ -1472,6 +1492,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminClientsRoute: AdminClientsRouteWithChildren,
   AdminDashboardRoute: AdminDashboardRoute,
   AdminProjectsRoute: AdminProjectsRouteWithChildren,
+  AdminSettingsRoute: AdminSettingsRoute,
 }
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)

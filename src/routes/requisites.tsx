@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InfoPageLayout, InfoSection, buildInfoHead } from "@/components/info/InfoPageLayout";
 import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
 import { company, isFilled } from "@/config/company";
+import { getPublicCompanyRequisites } from "@/lib/admin/settings.functions";
 
 const PATH = "/requisites";
 const TITLE = "Реквизиты — Шадов и партнёры";
@@ -15,22 +16,35 @@ export const Route = createFileRoute("/requisites")({
       { name: "Реквизиты", path: PATH },
     ],
   }),
+  loader: async () => {
+    const data = await getPublicCompanyRequisites().catch(() => null);
+    return { remote: data };
+  },
   component: Page,
 });
 
 function Page() {
+  const { remote } = Route.useLoaderData();
   const fields: { label: string; value: string }[] = [];
-  for (const [label, value] of [
-    ["Полное наименование", company.legalName],
-    ["Бренд", company.brandName],
-    ["ИНН", company.inn],
-    ["КПП", company.kpp],
-    ["ОГРН", company.ogrn],
-    ["Юридический адрес", company.legalAddress],
-    ["Адрес офиса", company.officeAddress],
-    ["Телефон", company.phone],
-    ["Email", company.email],
-  ] as const) {
+  const pairs: Array<readonly [string, string | undefined | null]> = [
+    ["Полное наименование", remote?.legal_name ?? company.legalName],
+    ["Бренд", remote?.brand_name ?? company.brandName],
+    ["ИНН", remote?.inn ?? company.inn],
+    ["КПП", remote?.kpp ?? company.kpp],
+    ["ОГРН", remote?.ogrn ?? company.ogrn],
+    ["Юридический адрес", remote?.legal_address ?? company.legalAddress],
+    ["Адрес офиса", remote?.office_address ?? company.officeAddress],
+    ["Телефон", remote?.phone ?? company.phone],
+    ["Email", remote?.email ?? company.email],
+    ["СРО", remote?.sro_name ?? ""],
+    ["Номер СРО", remote?.sro_number ?? ""],
+    ["Реестр СРО", remote?.sro_registry_url ?? ""],
+    ["Банк", remote?.bank_name ?? ""],
+    ["БИК", remote?.bank_bik ?? ""],
+    ["Расчётный счёт", remote?.bank_account ?? ""],
+    ["Корр. счёт", remote?.bank_corr_account ?? ""],
+  ];
+  for (const [label, value] of pairs) {
     if (isFilled(value)) fields.push({ label, value });
   }
 
