@@ -10,6 +10,7 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import type { Database } from "@/integrations/supabase/types";
 
 type Row = Database["public"]["Tables"]["content_blocks"]["Row"];
+type Insert = Database["public"]["Tables"]["content_blocks"]["Insert"];
 type Update = Database["public"]["Tables"]["content_blocks"]["Update"];
 
 export type ContentBlock = Row;
@@ -106,16 +107,16 @@ export const upsertContentBlock = createServerFn({ method: "POST" })
     await ensurePerm(context, "admin.content.write");
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
-    const patch: Update = {
+    const patch = {
       slug: data.slug,
       locale: data.locale,
       title: data.title,
       body_md: data.body_md,
       body_html: data.body_html,
       status: data.status,
-      published_at: data.status === "published" ? new Date().toISOString() : null,
+      published_at: (data.status === "published" ? new Date().toISOString() : null) as string | null,
       updated_by: context.userId,
-    };
+    } satisfies Insert;
 
     let result: ContentBlock;
     let oldValue: ContentBlock | null = null;
@@ -124,10 +125,10 @@ export const upsertContentBlock = createServerFn({ method: "POST" })
       oldValue = prev ?? null;
       // Preserve published_at if already published and still published
       if (oldValue?.status === "published" && data.status === "published" && oldValue.published_at) {
-        patch.published_at = oldValue.published_at;
+        (patch as { published_at: string | null }).published_at = oldValue.published_at;
       }
       const { data: row, error } = await supabaseAdmin
-        .from("content_blocks").update(patch).eq("id", data.id).select("*").single();
+        .from("content_blocks").update(patch as Update).eq("id", data.id).select("*").single();
       if (error) throw new Error(error.message);
       result = row;
     } else {
