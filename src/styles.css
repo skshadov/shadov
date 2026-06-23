@@ -211,6 +211,13 @@
     overflow-wrap: anywhere;
   }
 
+  /* Stage 4C (final): <fieldset> defaults to min-width: min-content, which
+     ignores grid/flex shrink and inflates parent width on 320–375px
+     screens (e.g. /kalkulyator-stoimosti). */
+  fieldset {
+    min-width: 0;
+  }
+
   :focus-visible {
     outline: 2px solid var(--color-ring);
     outline-offset: 2px;
