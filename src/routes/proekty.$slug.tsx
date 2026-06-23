@@ -86,7 +86,9 @@ function ProjectPage() {
   const floorsLabel = p.floors === 1 ? "1 этаж" : p.floors === 1.5 ? "С мансардой" : "2 этажа";
 
   return (
-    <main id="main">
+    <div className="flex min-h-dvh flex-col">
+      <Header />
+      <main id="main" className="flex-1">
       <section className="surface-light border-b border-border">
         <div className="container-page py-8 md:py-12">
           <nav aria-label="Хлебные крошки" className="text-xs text-muted-foreground">
@@ -224,7 +226,9 @@ function ProjectPage() {
         </section>
       )}
 
-    </main>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
