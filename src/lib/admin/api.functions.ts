@@ -47,7 +47,7 @@ export interface DashboardCounters {
   newApplications: number;
   activeProjects: number;
   pendingAcceptances: number;
-  unreadMessages: number;
+  recentMessages: number;
   unpaidPayments: number;
   recentReports: number;
   recentAuditEntries: number;
@@ -72,7 +72,7 @@ export const getDashboardCounters = createServerFn({ method: "GET" })
       supabase.from("estimate_requests").select("id", { count: "exact", head: true }).eq("status", "new"),
       supabase.from("projects").select("id", { count: "exact", head: true }).eq("status", "active"),
       supabase.from("project_stage_acceptances").select("id", { count: "exact", head: true }).eq("status", "pending"),
-      supabase.from("project_messages").select("id", { count: "exact", head: true }).eq("is_read", false),
+      supabase.from("project_messages").select("id", { count: "exact", head: true }).gte("created_at", sinceISO),
       supabase.from("project_payments").select("id", { count: "exact", head: true }).in("status", ["planned", "invoice_issued", "pending", "overdue"]),
       supabase.from("project_daily_reports").select("id", { count: "exact", head: true }).gte("created_at", sinceISO),
       supabase.from("admin_audit_log").select("id", { count: "exact", head: true }).gte("created_at", sinceISO),
@@ -82,7 +82,7 @@ export const getDashboardCounters = createServerFn({ method: "GET" })
       newApplications: apps.count ?? 0,
       activeProjects: projects.count ?? 0,
       pendingAcceptances: acceptances.count ?? 0,
-      unreadMessages: messages.count ?? 0,
+      recentMessages: messages.count ?? 0,
       unpaidPayments: payments.count ?? 0,
       recentReports: reports.count ?? 0,
       recentAuditEntries: audit.count ?? 0,
