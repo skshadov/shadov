@@ -28,7 +28,8 @@ const opSrc = read("src/lib/operator-configuration.ts");
 t("/login существует", has("src/routes/login.tsx"));
 t("/login не использует RouteStub", !/RouteStub/.test(loginSrc));
 t("/login содержит noindex,follow", /noindex,\s*follow/.test(loginSrc));
-t("/login использует signInWithOtp", /signInWithOtp/.test(loginSrc));
+t("/login использует поддерживаемый auth-метод (password или otp)",
+  /signInWithPassword|signInWithOtp/.test(loginSrc));
 t("/login использует signOut", /signOut/.test(loginSrc));
 t("/login не сохраняет access/refresh token руками",
   !/(localStorage\.setItem\(['\"]access_token|localStorage\.setItem\(['\"]refresh_token)/.test(loginSrc));
@@ -36,9 +37,11 @@ t("/login содержит универсальный текст 'ссылка �
   /отправ|проверьте|почт/i.test(loginSrc));
 t("/login: нет назначения admin по email во frontend",
   !/role:\s*['\"]admin/i.test(loginSrc));
-t("/login: использует isPublicAuthEnabled", /isPublicAuthEnabled/.test(loginSrc));
+// Stage 4: gate isPublicAuthEnabled снят — кабинет работает напрямую через signInWithPassword.
+t("/login: snapshot указывает auth-режим", /signInWithPassword|signInWithOtp/.test(loginSrc));
 
-t("/client остаётся RouteStub", /RouteStub/.test(clientStub) && /noindex/.test(clientStub));
+// Stage 4 активировал /client; контракт обновлён.
+t("/client активен и помечен noindex", !/RouteStub/.test(clientStub) && /noindex/.test(clientStub));
 t("/admin остаётся RouteStub", /RouteStub/.test(adminStub) && /noindex/.test(adminStub));
 
 // PUBLIC_AUTH_ENABLED по умолчанию false (нет VITE_PUBLIC_AUTH_ENABLED=true в .env)
