@@ -14,6 +14,104 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_audit_log: {
+        Row: {
+          action: string
+          actor_role: Database["public"]["Enums"]["app_role"] | null
+          actor_user_id: string | null
+          created_at: string
+          entity_id: string | null
+          entity_type: string | null
+          id: string
+          ip_hash: string | null
+          metadata: Json | null
+          new_value: Json | null
+          old_value: Json | null
+          result: string
+          user_agent: string | null
+        }
+        Insert: {
+          action: string
+          actor_role?: Database["public"]["Enums"]["app_role"] | null
+          actor_user_id?: string | null
+          created_at?: string
+          entity_id?: string | null
+          entity_type?: string | null
+          id?: string
+          ip_hash?: string | null
+          metadata?: Json | null
+          new_value?: Json | null
+          old_value?: Json | null
+          result?: string
+          user_agent?: string | null
+        }
+        Update: {
+          action?: string
+          actor_role?: Database["public"]["Enums"]["app_role"] | null
+          actor_user_id?: string | null
+          created_at?: string
+          entity_id?: string | null
+          entity_type?: string | null
+          id?: string
+          ip_hash?: string | null
+          metadata?: Json | null
+          new_value?: Json | null
+          old_value?: Json | null
+          result?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      admin_permissions: {
+        Row: {
+          created_at: string
+          description: string
+          key: string
+          section: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          key: string
+          section: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          key?: string
+          section?: string
+        }
+        Relationships: []
+      }
+      admin_role_permissions: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          permission_key: string
+          role: Database["public"]["Enums"]["app_role"]
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          permission_key: string
+          role: Database["public"]["Enums"]["app_role"]
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          permission_key?: string
+          role?: Database["public"]["Enums"]["app_role"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "admin_role_permissions_permission_key_fkey"
+            columns: ["permission_key"]
+            isOneToOne: false
+            referencedRelation: "admin_permissions"
+            referencedColumns: ["key"]
+          },
+        ]
+      }
       consent_records: {
         Row: {
           accepted_at: string
@@ -680,6 +778,16 @@ export type Database = {
           request_number: string
         }[]
       }
+      get_my_admin_permissions: {
+        Args: never
+        Returns: {
+          permission_key: string
+        }[]
+      }
+      get_my_primary_role: {
+        Args: never
+        Returns: Database["public"]["Enums"]["app_role"]
+      }
       get_my_projects: {
         Args: never
         Returns: {
@@ -691,6 +799,7 @@ export type Database = {
           title: string
         }[]
       }
+      has_admin_permission: { Args: { _permission: string }; Returns: boolean }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -698,6 +807,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_admin_user: { Args: never; Returns: boolean }
       is_project_member: {
         Args: { _project_id: string; _user_id: string }
         Returns: boolean
