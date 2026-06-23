@@ -55,7 +55,7 @@ function Page() {
               <li key={it.label} className="flex flex-wrap gap-x-3">
                 <span className="text-muted-foreground">{it.label}:</span>
                 {it.href ? (
-                  <a href={it.href} className="text-primary underline-offset-2 hover:underline">{it.value}</a>
+                  <a href={it.href} className="text-primary underline underline-offset-2 hover:opacity-80">{it.value}</a>
                 ) : (
                   <span>{it.value}</span>
                 )}
@@ -92,9 +92,9 @@ function Page() {
         <EstimateForm />
         <p className="text-sm text-muted-foreground">
           Условия обработки указаны в{" "}
-          <Link to="/privacy" className="text-primary underline-offset-2 hover:underline">политике конфиденциальности</Link>{" "}
+          <Link to="/privacy" className="text-primary underline underline-offset-2 hover:opacity-80">политике конфиденциальности</Link>{" "}
           и{" "}
-          <Link to="/personal-data-consent" className="text-primary underline-offset-2 hover:underline">согласии на обработку персональных данных</Link>.
+          <Link to="/personal-data-consent" className="text-primary underline underline-offset-2 hover:opacity-80">согласии на обработку персональных данных</Link>.
         </p>
       </InfoSection>
     </InfoPageLayout>
