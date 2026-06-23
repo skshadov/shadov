@@ -52,8 +52,8 @@ export function ServicePageLayout({ resolved, breadcrumbs, estimateExample = [] 
       <ServiceEstimateExample rows={estimateExample} />
       <ServiceDocuments items={data.documents} />
       <ServiceTimeline items={data.timelineFactors} />
-      <ServicePortfolio />
-      <ServiceReviews />
+      <ServicePortfolio category={data.category} />
+      <ServiceReviews category={data.category} />
       <ServiceFaq items={faq} />
       <CalculatorCta slug={data.slug} />
       <RelatedServices items={related} />
