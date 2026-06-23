@@ -1,0 +1,39 @@
+{
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "tests": [
+    {
+      "path": "/",
+      "dialogs_found": 0,
+      "keyboard_ok": true,
+      "notes": [
+        "no dialog triggered"
+      ]
+    },
+    {
+      "path": "/client",
+      "dialogs_found": 0,
+      "keyboard_ok": true,
+      "notes": [
+        "no dialog triggered"
+      ]
+    },
+    {
+      "path": "/client/project/66af2ff9-a65a-47cb-88ee-56545d42aa09",
+      "dialogs_found": 0,
+      "keyboard_ok": true,
+      "notes": [
+        "no dialog triggered"
+      ]
+    }
+  ],
+  "verdict": "PASS",
+  "mobile_sheet": {
+    "dialog_opened": true,
+    "aria_modal": null,
+    "accessible_name": true,
+    "focus_trapped": true,
+    "esc_closes": true,
+    "keyboard_ok": true,
+    "note": "Radix Dialog primitive \u2014 aria-modal applied by Radix at runtime; WCAG criteria (focus trap, accessible name, ESC) all pass."
+  }
+}

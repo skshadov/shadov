@@ -1,0 +1,254 @@
+{
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "tables": {
+    "consent_records": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 0,
+        "body_snippet": "[]"
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": null,
+        "body_snippet": ""
+      }
+    },
+    "estimate_requests": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 0,
+        "body_snippet": "[]"
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": null,
+        "body_snippet": ""
+      }
+    },
+    "profiles": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 1,
+        "body_snippet": "[{\"id\":\"46989676-68df-4ffa-aadd-53973425dd5e\",\"display_name\":null,\"phone\":null,\"created_at\":\"2026-06-23T10:22:21.986822+"
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": null,
+        "body_snippet": ""
+      }
+    },
+    "project_cameras": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 0,
+        "body_snippet": "[]"
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": 200,
+        "body_snippet": "[]"
+      }
+    },
+    "project_daily_reports": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 0,
+        "body_snippet": "[]"
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": 200,
+        "body_snippet": "[]"
+      }
+    },
+    "project_documents": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 0,
+        "body_snippet": "[]"
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": 200,
+        "body_snippet": "[]"
+      }
+    },
+    "project_members": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 1,
+        "body_snippet": "[{\"project_id\":\"66af2ff9-a65a-47cb-88ee-56545d42aa09\",\"user_id\":\"46989676-68df-4ffa-aadd-53973425dd5e\",\"member_role\":\"cl"
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": 200,
+        "body_snippet": "[]"
+      }
+    },
+    "project_messages": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 0,
+        "body_snippet": "[]"
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": 200,
+        "body_snippet": "[]"
+      }
+    },
+    "project_payments": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 0,
+        "body_snippet": "[]"
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": 200,
+        "body_snippet": "[]"
+      }
+    },
+    "project_stage_acceptances": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 1,
+        "body_snippet": "[{\"id\":\"9ec5c285-7109-4b7f-b7f5-85dba91bf3a6\",\"stage_id\":\"e181de49-3434-4fa3-964b-8ed897b04573\",\"attempt_number\":1,\"stat"
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": 400,
+        "body_snippet": "{\"code\":\"42703\",\"details\":null,\"hint\":null,\"message\":\"column project_stage_acceptances.project_id does not exist\"}"
+      }
+    },
+    "project_stages": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 1,
+        "body_snippet": "[{\"id\":\"e181de49-3434-4fa3-964b-8ed897b04573\",\"project_id\":\"66af2ff9-a65a-47cb-88ee-56545d42aa09\",\"sort_order\":1,\"title\""
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": 200,
+        "body_snippet": "[]"
+      }
+    },
+    "projects": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 1,
+        "body_snippet": "[{\"id\":\"66af2ff9-a65a-47cb-88ee-56545d42aa09\",\"title\":\"Stage4C clientA Project\",\"status\":\"active\",\"description\":null,\"cr"
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": 400,
+        "body_snippet": "{\"code\":\"42703\",\"details\":null,\"hint\":null,\"message\":\"column projects.project_id does not exist\"}"
+      }
+    },
+    "user_roles": {
+      "anon_select": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_select": {
+        "status": 200,
+        "rowCount_estimate": 1,
+        "body_snippet": "[{\"user_id\":\"46989676-68df-4ffa-aadd-53973425dd5e\",\"role\":\"client\",\"created_at\":\"2026-06-23T10:22:21.986822+00:00\"}]"
+      },
+      "anon_insert": {
+        "status": 401,
+        "body_snippet": "{\"code\":\"PGRST301\",\"details\":null,\"hint\":null,\"message\":\"Empty JWT is sent in Authorization header\"}"
+      },
+      "auth_foreign_project": {
+        "status": null,
+        "body_snippet": ""
+      }
+    }
+  },
+  "verdict": "PASS",
+  "issues": []
+}
