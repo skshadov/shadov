@@ -1,16 +1,8 @@
 {
   "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
   "filesScanned": 260,
-  "productionHits": 1,
-  "hits": [
-    {
-      "file": "src/styles.css",
-      "line": 116,
-      "pattern": "\\bbg-black\\b",
-      "match": "bg-black",
-      "snippet": "so component primitives never hardcode `bg-black/80`. Light surfaces"
-    }
-  ],
+  "productionHits": 0,
+  "hits": [],
   "allowlistedHits": 2,
   "allowlisted": [
     {
@@ -32,5 +24,5 @@
     "src/routes/__root.tsx#theme-color": "HTML PWA spec requires literal color value in <meta name='theme-color'> \u2014 CSS variables not allowed by browsers",
     "src/components/ui/chart.tsx#[stroke='#ccc']": "CSS attribute selector matching Recharts default stroke value \u2014 NOT applying a color, restyling unstyled SVG elements with semantic tokens"
   },
-  "passed": false
+  "passed": true
 }
