@@ -1,0 +1,14 @@
+{
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "aliceReceivedP1Marker": true,
+  "aliceReceivedP2Marker_shouldBeFalse": false,
+  "bobReceivedP2Marker": true,
+  "bobReceivedP1Marker_shouldBeFalse": false,
+  "aliceMsgCount": 1,
+  "bobMsgCount": 1,
+  "remainingTestRows": 0,
+  "remainingTestUsers": 0,
+  "deliveryVerified": true,
+  "projectIsolationVerified": true,
+  "passed": true
+}
