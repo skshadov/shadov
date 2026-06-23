@@ -162,7 +162,7 @@ export const updateProject = createServerFn({ method: "POST" })
   .handler(async ({ data, context }): Promise<{ ok: true }> => {
     await ensurePerm(context, "admin.projects.write");
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const patch: Record<string, unknown> = {};
+    const patch: { title?: string; description?: string | null; status?: ProjectStatus } = {};
     if (data.title) patch.title = data.title;
     if (data.description !== undefined) patch.description = data.description;
     if (data.status) patch.status = data.status;
