@@ -26,7 +26,7 @@ export interface ApplicationListItem {
 export interface ApplicationDetail extends ApplicationListItem {
   submission_id: string;
   message: string | null;
-  calculator_snapshot: unknown;
+  calculator_snapshot: Record<string, unknown> | null;
   calculator_mode: string | null;
   price_version: string | null;
   consent_version: string;
