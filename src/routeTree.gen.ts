@@ -68,6 +68,7 @@ import { Route as BiznesRemontRouteImport } from './routes/biznes-remont'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProektyIndexRouteImport } from './routes/proekty.index'
 import { Route as CatalogIndexRouteImport } from './routes/catalog.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as CatalogCategoryRouteImport } from './routes/catalog.$category'
@@ -390,6 +391,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProektyIndexRoute = ProektyIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProektyRoute,
+} as any)
 const CatalogIndexRoute = CatalogIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -550,7 +556,7 @@ export interface FileRoutesByFullPath {
   '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
-  '/proekty': typeof ProektyRoute
+  '/proekty': typeof ProektyRouteWithChildren
   '/remont': typeof RemontRoute
   '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
   '/requisites': typeof RequisitesRoute
@@ -577,6 +583,7 @@ export interface FileRoutesByFullPath {
   '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/catalog/': typeof CatalogIndexRoute
+  '/proekty/': typeof ProektyIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
   '/admin/catalog/prices': typeof AdminCatalogPricesRoute
@@ -633,7 +640,6 @@ export interface FileRoutesByTo {
   '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
-  '/proekty': typeof ProektyRoute
   '/remont': typeof RemontRoute
   '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
   '/requisites': typeof RequisitesRoute
@@ -660,6 +666,7 @@ export interface FileRoutesByTo {
   '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/catalog': typeof CatalogIndexRoute
+  '/proekty': typeof ProektyIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
   '/admin/catalog/prices': typeof AdminCatalogPricesRoute
@@ -718,7 +725,7 @@ export interface FileRoutesById {
   '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
-  '/proekty': typeof ProektyRoute
+  '/proekty': typeof ProektyRouteWithChildren
   '/remont': typeof RemontRoute
   '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
   '/requisites': typeof RequisitesRoute
@@ -745,6 +752,7 @@ export interface FileRoutesById {
   '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/catalog/': typeof CatalogIndexRoute
+  '/proekty/': typeof ProektyIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
   '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
   '/admin/catalog/prices': typeof AdminCatalogPricesRoute
@@ -831,6 +839,7 @@ export interface FileRouteTypes {
     | '/catalog/$category'
     | '/portfolio/$slug'
     | '/catalog/'
+    | '/proekty/'
     | '/admin/applications/$id'
     | '/admin/catalog/categories'
     | '/admin/catalog/prices'
@@ -887,7 +896,6 @@ export interface FileRouteTypes {
     | '/premialnyy-remont'
     | '/prices'
     | '/privacy'
-    | '/proekty'
     | '/remont'
     | '/remont-pod-klyuch'
     | '/requisites'
@@ -914,6 +922,7 @@ export interface FileRouteTypes {
     | '/catalog/$category'
     | '/portfolio/$slug'
     | '/catalog'
+    | '/proekty'
     | '/admin/applications/$id'
     | '/admin/catalog/categories'
     | '/admin/catalog/prices'
@@ -998,6 +1007,7 @@ export interface FileRouteTypes {
     | '/catalog/$category'
     | '/portfolio/$slug'
     | '/catalog/'
+    | '/proekty/'
     | '/admin/applications/$id'
     | '/admin/catalog/categories'
     | '/admin/catalog/prices'
@@ -1056,7 +1066,7 @@ export interface RootRouteChildren {
   PremialnyyRemontRoute: typeof PremialnyyRemontRoute
   PricesRoute: typeof PricesRoute
   PrivacyRoute: typeof PrivacyRoute
-  ProektyRoute: typeof ProektyRoute
+  ProektyRoute: typeof ProektyRouteWithChildren
   RemontRoute: typeof RemontRoute
   RemontPodKlyuchRoute: typeof RemontPodKlyuchRoute
   RequisitesRoute: typeof RequisitesRoute
@@ -1490,6 +1500,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/proekty/': {
+      id: '/proekty/'
+      path: '/'
+      fullPath: '/proekty/'
+      preLoaderRoute: typeof ProektyIndexRouteImport
+      parentRoute: typeof ProektyRoute
+    }
     '/catalog/': {
       id: '/catalog/'
       path: '/'
@@ -1785,6 +1802,17 @@ const PortfolioRouteWithChildren = PortfolioRoute._addFileChildren(
   PortfolioRouteChildren,
 )
 
+interface ProektyRouteChildren {
+  ProektyIndexRoute: typeof ProektyIndexRoute
+}
+
+const ProektyRouteChildren: ProektyRouteChildren = {
+  ProektyIndexRoute: ProektyIndexRoute,
+}
+
+const ProektyRouteWithChildren =
+  ProektyRoute._addFileChildren(ProektyRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -1828,7 +1856,7 @@ const rootRouteChildren: RootRouteChildren = {
   PremialnyyRemontRoute: PremialnyyRemontRoute,
   PricesRoute: PricesRoute,
   PrivacyRoute: PrivacyRoute,
-  ProektyRoute: ProektyRoute,
+  ProektyRoute: ProektyRouteWithChildren,
   RemontRoute: RemontRoute,
   RemontPodKlyuchRoute: RemontPodKlyuchRoute,
   RequisitesRoute: RequisitesRoute,
