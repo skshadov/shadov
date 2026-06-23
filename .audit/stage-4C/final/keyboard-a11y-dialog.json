@@ -3,24 +3,14 @@
   "executed": true,
   "passed": false,
   "checks": {
-    "triggerFound": true,
-    "dialogOpened": true,
-    "roleDialog": true,
-    "ariaModal": true,
-    "initialFocusInside": true,
-    "tabTrap": true,
-    "shiftTabTrap": true,
-    "shortCommentError": true,
-    "errorAnnouncedAriaLive": true,
-    "dialogClosedAfterSubmit": true,
-    "focusRestoredToTrigger": false,
-    "secondDecisionBlocked": true,
-    "doubleSubmitBlockedViaDisabled": false
+    "triggerFound": false
   },
-  "errors": [],
-  "noDialogTriggerFound": false,
-  "focusTrapPassed": true,
-  "escapePassed": true,
+  "errors": [
+    "trigger: Locator.wait_for: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Ответить на приёмку\").first to be visible\n"
+  ],
+  "noDialogTriggerFound": true,
+  "focusTrapPassed": null,
   "focusRestorePassed": false,
-  "doubleSubmitBlocked": true
+  "escapePassed": false,
+  "doubleSubmitBlocked": false
 }
