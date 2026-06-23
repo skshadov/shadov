@@ -25,6 +25,7 @@ import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as RequisitesRouteImport } from './routes/requisites'
 import { Route as RemontPodKlyuchRouteImport } from './routes/remont-pod-klyuch'
 import { Route as RemontRouteImport } from './routes/remont'
+import { Route as ProektyRouteImport } from './routes/proekty'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricesRouteImport } from './routes/prices'
 import { Route as PremialnyyRemontRouteImport } from './routes/premialnyy-remont'
@@ -171,6 +172,11 @@ const RemontPodKlyuchRoute = RemontPodKlyuchRouteImport.update({
 const RemontRoute = RemontRouteImport.update({
   id: '/remont',
   path: '/remont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProektyRoute = ProektyRouteImport.update({
+  id: '/proekty',
+  path: '/proekty',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -544,6 +550,7 @@ export interface FileRoutesByFullPath {
   '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
+  '/proekty': typeof ProektyRoute
   '/remont': typeof RemontRoute
   '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
   '/requisites': typeof RequisitesRoute
@@ -626,6 +633,7 @@ export interface FileRoutesByTo {
   '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
+  '/proekty': typeof ProektyRoute
   '/remont': typeof RemontRoute
   '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
   '/requisites': typeof RequisitesRoute
@@ -710,6 +718,7 @@ export interface FileRoutesById {
   '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
+  '/proekty': typeof ProektyRoute
   '/remont': typeof RemontRoute
   '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
   '/requisites': typeof RequisitesRoute
@@ -795,6 +804,7 @@ export interface FileRouteTypes {
     | '/premialnyy-remont'
     | '/prices'
     | '/privacy'
+    | '/proekty'
     | '/remont'
     | '/remont-pod-klyuch'
     | '/requisites'
@@ -877,6 +887,7 @@ export interface FileRouteTypes {
     | '/premialnyy-remont'
     | '/prices'
     | '/privacy'
+    | '/proekty'
     | '/remont'
     | '/remont-pod-klyuch'
     | '/requisites'
@@ -960,6 +971,7 @@ export interface FileRouteTypes {
     | '/premialnyy-remont'
     | '/prices'
     | '/privacy'
+    | '/proekty'
     | '/remont'
     | '/remont-pod-klyuch'
     | '/requisites'
@@ -1044,6 +1056,7 @@ export interface RootRouteChildren {
   PremialnyyRemontRoute: typeof PremialnyyRemontRoute
   PricesRoute: typeof PricesRoute
   PrivacyRoute: typeof PrivacyRoute
+  ProektyRoute: typeof ProektyRoute
   RemontRoute: typeof RemontRoute
   RemontPodKlyuchRoute: typeof RemontPodKlyuchRoute
   RequisitesRoute: typeof RequisitesRoute
@@ -1174,6 +1187,13 @@ declare module '@tanstack/react-router' {
       path: '/remont'
       fullPath: '/remont'
       preLoaderRoute: typeof RemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proekty': {
+      id: '/proekty'
+      path: '/proekty'
+      fullPath: '/proekty'
+      preLoaderRoute: typeof ProektyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -1808,6 +1828,7 @@ const rootRouteChildren: RootRouteChildren = {
   PremialnyyRemontRoute: PremialnyyRemontRoute,
   PricesRoute: PricesRoute,
   PrivacyRoute: PrivacyRoute,
+  ProektyRoute: ProektyRoute,
   RemontRoute: RemontRoute,
   RemontPodKlyuchRoute: RemontPodKlyuchRoute,
   RequisitesRoute: RequisitesRoute,
