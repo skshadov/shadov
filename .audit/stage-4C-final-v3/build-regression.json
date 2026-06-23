@@ -1,0 +1,6 @@
+{
+  "runId": "7b857074-2fb9-42f9-b676-8cfcee42a44f",
+  "typecheck": { "command": "tsc --noEmit", "exitCode": 0, "errors": 0 },
+  "build": { "command": "vite build", "exitCode": 0, "status": "success", "ssrBundle": "dist/server", "clientBundle": "dist/client" },
+  "verdict": "PASS"
+}
