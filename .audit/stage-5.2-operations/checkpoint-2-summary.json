@@ -1,0 +1,34 @@
+{
+  "stage": "5.2.2",
+  "title": "Projects + Stages + Acceptances",
+  "status": "completed",
+  "server_functions": [
+    "src/lib/admin/projects.functions.ts::listProjects",
+    "src/lib/admin/projects.functions.ts::getProject",
+    "src/lib/admin/projects.functions.ts::updateProject",
+    "src/lib/admin/projects.functions.ts::upsertStage",
+    "src/lib/admin/projects.functions.ts::deleteStage",
+    "src/lib/admin/projects.functions.ts::requestStageAcceptance"
+  ],
+  "routes": [
+    "/admin/projects",
+    "/admin/projects/$id"
+  ],
+  "permissions_required": [
+    "admin.projects.read",
+    "admin.projects.write"
+  ],
+  "audit_actions": [
+    "project.update",
+    "stage.create",
+    "stage.update",
+    "stage.delete",
+    "stage.request_acceptance"
+  ],
+  "notes": [
+    "Все мутации защищены requireSupabaseAuth + has_admin_permission.",
+    "После авторизации используем supabaseAdmin, чтобы менеджеры могли управлять проектами вне зависимости от членства в project_members.",
+    "Запрос приёмки переводит этап в статус 'review'; реакция клиента — через существующую RPC respond_to_stage_acceptance (clientская часть, Stage 4)."
+  ],
+  "next": "5.2.3 — Documents + Daily reports"
+}
