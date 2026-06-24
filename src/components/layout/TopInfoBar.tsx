@@ -25,7 +25,6 @@ export function TopInfoBar() {
           {isFilled(company.phone) && (
             <Button
               asChild
-              variant="outline"
               size="sm"
               className="h-7 px-3 text-[12px] whitespace-nowrap"
             >
