@@ -3,8 +3,9 @@
  * договора (§1 + §3 ТЗ). На мобильном — крупная одна строка.
  */
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, LogIn, MapPin, ShieldCheck } from "lucide-react";
+import { ArrowRight, LogIn, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { company, isFilled } from "@/config/company";
 
 export function TopInfoBar() {
   return (
@@ -21,12 +22,19 @@ export function TopInfoBar() {
           </span>
         </div>
         <div className="flex shrink-0 items-center gap-2">
-          <Link
-            to="/how-we-work"
-            className="hidden lg:inline rounded-sm px-1 transition-colors hover:text-foreground"
-          >
-            Как мы работаем
-          </Link>
+          {isFilled(company.phone) && (
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="h-7 px-3 text-[12px] whitespace-nowrap"
+            >
+              <a href={`tel:${company.phoneE164 || company.phone}`}>
+                <Phone aria-hidden="true" className="h-3.5 w-3.5 mr-1" />
+                {company.phone}
+              </a>
+            </Button>
+          )}
           <Button
             asChild
             variant="ghost"
