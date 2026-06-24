@@ -34,6 +34,7 @@ import {
 } from "@/components/ui/radio-group";
 import { supabase } from "@/integrations/supabase/client";
 import { isPublicDataCollectionEnabled, CONSENT_VERSION } from "@/lib/operator-configuration";
+import { readUtm, formatUtmForMessage } from "@/lib/utm";
 
 const STORAGE_KEY = "shadov:estimate-draft";
 
@@ -184,6 +185,9 @@ export function EstimateForm() {
     if (submitting) return;
     setSubmitting(true);
     try {
+      const utm = readUtm();
+      const utmSuffix = formatUtmForMessage(utm);
+      const messageWithUtm = ((values.comment ?? "") + utmSuffix).slice(0, 1000) || null;
       if (backendEnabled) {
         const submissionId = (typeof crypto !== "undefined" && "randomUUID" in crypto)
           ? crypto.randomUUID()
@@ -196,7 +200,7 @@ export function EstimateForm() {
             contact_name: values.name,
             phone: values.phone,
             email: null,
-            message: values.comment ?? null,
+            message: messageWithUtm,
             consent_accepted: true,
             consent_version: CONSENT_VERSION,
             website: "", // honeypot
@@ -212,6 +216,7 @@ export function EstimateForm() {
         window.localStorage.removeItem(STORAGE_KEY);
         reset(DEFAULTS);
         setHasDraft(false);
+        reachMetrikaGoal("estimate_submitted");
         toast.success("Заявка зарегистрирована", {
           description: `Номер заявки: ${requestNumber}`,
           duration: 10000,
@@ -222,9 +227,10 @@ export function EstimateForm() {
       void _consent;
       window.localStorage.setItem(
         STORAGE_KEY,
-        JSON.stringify({ ...persistable, savedAt: new Date().toISOString() }),
+        JSON.stringify({ ...persistable, utm, savedAt: new Date().toISOString() }),
       );
       setHasDraft(true);
+      reachMetrikaGoal("estimate_submitted_demo");
       toast.success("Данные сохранены локально", {
         description:
           "Данные сохранены на этом устройстве в демонстрационном режиме. Отправка заявки будет подключена после настройки защищённой базы данных.",
