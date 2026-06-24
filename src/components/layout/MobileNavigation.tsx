@@ -25,24 +25,6 @@ export function MobileNavigation() {
   useEffect(() => {
     if (!open) return;
 
-    // Сохраняем позицию скролла и фиксируем body так, чтобы при закрытии
-    // вернуться ровно туда же (иначе iOS/часть браузеров сбрасывают позицию).
-    const scrollY = window.scrollY;
-    const body = document.body;
-    const prev = {
-      position: body.style.position,
-      top: body.style.top,
-      left: body.style.left,
-      right: body.style.right,
-      width: body.style.width,
-      overflow: body.style.overflow,
-    };
-    body.style.position = "fixed";
-    body.style.top = `-${scrollY}px`;
-    body.style.left = "0";
-    body.style.right = "0";
-    body.style.width = "100%";
-    body.style.overflow = "hidden";
     closeRef.current?.focus({ preventScroll: true });
 
     const onKeyDown = (event: KeyboardEvent) => {
@@ -53,13 +35,6 @@ export function MobileNavigation() {
 
     window.addEventListener("keydown", onKeyDown);
     return () => {
-      body.style.position = prev.position;
-      body.style.top = prev.top;
-      body.style.left = prev.left;
-      body.style.right = prev.right;
-      body.style.width = prev.width;
-      body.style.overflow = prev.overflow;
-      window.scrollTo(0, scrollY);
       window.removeEventListener("keydown", onKeyDown);
       triggerRef.current?.focus({ preventScroll: true });
     };
