@@ -50,6 +50,36 @@ import m47 from "@/assets/team/member-47.jpg";
 import m48 from "@/assets/team/member-48.jpg";
 import m49 from "@/assets/team/member-49.jpg";
 import m50 from "@/assets/team/member-50.jpg";
+import m51 from "@/assets/team/member-51.jpg";
+import m52 from "@/assets/team/member-52.jpg";
+import m53 from "@/assets/team/member-53.jpg";
+import m54 from "@/assets/team/member-54.jpg";
+import m55 from "@/assets/team/member-55.jpg";
+import m56 from "@/assets/team/member-56.jpg";
+import m57 from "@/assets/team/member-57.jpg";
+import m58 from "@/assets/team/member-58.jpg";
+import m59 from "@/assets/team/member-59.jpg";
+import m60 from "@/assets/team/member-60.jpg";
+import m61 from "@/assets/team/member-61.jpg";
+import m62 from "@/assets/team/member-62.jpg";
+import m63 from "@/assets/team/member-63.jpg";
+import m64 from "@/assets/team/member-64.jpg";
+import m65 from "@/assets/team/member-65.jpg";
+import m66 from "@/assets/team/member-66.jpg";
+import m67 from "@/assets/team/member-67.jpg";
+import m68 from "@/assets/team/member-68.jpg";
+import m69 from "@/assets/team/member-69.jpg";
+import m70 from "@/assets/team/member-70.jpg";
+import m71 from "@/assets/team/member-71.jpg";
+import m72 from "@/assets/team/member-72.jpg";
+import m73 from "@/assets/team/member-73.jpg";
+import m74 from "@/assets/team/member-74.jpg";
+import m75 from "@/assets/team/member-75.jpg";
+import m76 from "@/assets/team/member-76.jpg";
+import m77 from "@/assets/team/member-77.jpg";
+import m78 from "@/assets/team/member-78.jpg";
+import m79 from "@/assets/team/member-79.jpg";
+import m80 from "@/assets/team/member-80.jpg";
 
 const PATH = "/team";
 const TITLE = "Команда — Шадов и партнёры";
@@ -108,6 +138,36 @@ const members: { name: string; role: string; photo: string }[] = [
   { name: "Валерий Сидоров",     role: "Мастер сантехнических систем",            photo: m48 },
   { name: "Алина Куликова",      role: "Архитектор",                              photo: m49 },
   { name: "Руслан Маркин",       role: "Заведующий складом",                      photo: m50 },
+  { name: "Аслан Дудаев",        role: "Бригадир монолитных работ",               photo: m51 },
+  { name: "Магомед Закаев",      role: "Каменщик",                                photo: m52 },
+  { name: "Ислам Эдильгериев",   role: "Сварщик",                                 photo: m53 },
+  { name: "Адам Кадыров",        role: "Плотник",                                 photo: m54 },
+  { name: "Хасан Бакаев",        role: "Прораб",                                  photo: m55 },
+  { name: "Хусейн Дадаев",       role: "Электромонтажник",                        photo: m56 },
+  { name: "Рамзан Висаитов",     role: "Кровельщик",                              photo: m57 },
+  { name: "Ахмед Алиханов",      role: "Бригадир общестроительных работ",         photo: m58 },
+  { name: "Беслан Юсупов",       role: "Монтажник ГКЛ",                           photo: m59 },
+  { name: "Анзор Тагаев",        role: "Штукатур-маляр",                          photo: m60 },
+  { name: "Иса Хамзатов",        role: "Плиточник-облицовщик",                    photo: m61 },
+  { name: "Муса Эльмурзаев",     role: "Бетонщик",                                photo: m62 },
+  { name: "Тимур Сулейманов",    role: "Мастер-отделочник",                       photo: m63 },
+  { name: "Шамиль Исраилов",     role: "Монтажник окон и фасадных систем",        photo: m64 },
+  { name: "Заурбек Цечоев",      role: "Сантехник-монтажник",                     photo: m65 },
+  { name: "Магомед Гаджиев",     role: "Бригадир отделочных работ",               photo: m66 },
+  { name: "Расул Магомедов",     role: "Каменщик",                                photo: m67 },
+  { name: "Гаджи Алиев",         role: "Электромонтажник",                        photo: m68 },
+  { name: "Ибрагим Курбанов",    role: "Прораб",                                  photo: m69 },
+  { name: "Шамиль Абдулаев",     role: "Плотник",                                 photo: m70 },
+  { name: "Курбан Исаев",        role: "Сварщик аргонщик",                        photo: m71 },
+  { name: "Али Османов",         role: "Кровельщик мягких кровель",               photo: m72 },
+  { name: "Камиль Рамазанов",    role: "Штукатур",                                photo: m73 },
+  { name: "Юсуп Магомедов",      role: "Плиточник",                               photo: m74 },
+  { name: "Арсен Гасанов",       role: "Бригадир монолитных работ",               photo: m75 },
+  { name: "Заур Ибрагимов",      role: "Монтажник систем вентиляции",             photo: m76 },
+  { name: "Мурад Алибеков",      role: "Сантехник-монтажник",                     photo: m77 },
+  { name: "Саид Меджидов",       role: "Монтажник фасадных систем",               photo: m78 },
+  { name: "Абдул Нурмагомедов",  role: "Маляр",                                   photo: m79 },
+  { name: "Магомедрасул Багиров", role: "Бетонщик",                               photo: m80 },
 ];
 
 export const Route = createFileRoute("/team")({
