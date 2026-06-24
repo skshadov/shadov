@@ -23,7 +23,7 @@ export const company = {
   telegram: "https://t.me/+79260920221" as string,
   whatsapp: "https://wa.me/79260920221" as string,
   max: "https://max.ru/+79260920221" as string,
-  workingHours: "Пн–Сб, 9:00–20:00" as string,
+  workingHours: "Пн–Пт, 9:00–18:00" as string,
   sroName: "" as string,
   sroNumber: "" as string,
   sroRegistryUrl: "" as string,
