@@ -22,9 +22,23 @@ function TelegramIcon(props: React.SVGProps<SVGSVGElement>) {
 
 function MaxIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <path d="M7 16V8l5 5 5-5v8" />
+    // Официальный знак мессенджера MAX (max.ru). Фирменный градиент задан
+    // через SVG linearGradient вместо foreignObject из исходника — это
+    // надёжно работает во всех браузерах и при ретина-рендеринге.
+    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" {...props}>
+      <defs>
+        <linearGradient id="max-brand-gradient" x1="6" y1="4" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#06AFFB" />
+          <stop offset="0.55" stopColor="#001CF1" />
+          <stop offset="1" stopColor="#8900AC" />
+        </linearGradient>
+      </defs>
+      <path
+        fill="url(#max-brand-gradient)"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M22.39 41.89c-3.93 0-5.75-.58-8.9-2.9-2.02 2.61-8.34 4.63-8.62 1.17 0-2.6-.58-4.8-1.22-7.2C2.87 30 2 26.72 2 21.94 2 10.56 11.28 2 22.28 2c11 0 19.63 8.98 19.63 20.06 0 11.07-8.9 19.83-19.52 19.83Zm.2-30.02c-5.22-.27-9.3 3.37-10.2 9.08-.74 4.72.58 10.48 1.7 10.77.54.13 1.9-.98 2.74-1.82 1.39.9 2.97 1.6 4.73 1.7a9.96 9.96 0 0 0 10.4-9.34 10 10 0 0 0-9.37-10.39Z"
+      />
     </svg>
   );
 }
@@ -43,7 +57,9 @@ export function MessengerLinks({ variant = "default", className }: MessengerLink
     links.push({ label: "Telegram", href: company.telegram, Icon: TelegramIcon, color: "#229ED9" });
   }
   if (isFilled((company as { max?: string }).max)) {
-    links.push({ label: "MAX", href: (company as { max: string }).max, Icon: MaxIcon, color: "#0077FF" });
+    // Для MAX используем прозрачный контейнер — фирменный знак уже содержит
+    // собственный градиент и должен показываться в оригинальном виде.
+    links.push({ label: "MAX", href: (company as { max: string }).max, Icon: MaxIcon, color: "transparent" });
   }
   if (links.length === 0) return null;
 
@@ -58,10 +74,10 @@ export function MessengerLinks({ variant = "default", className }: MessengerLink
             rel="noopener noreferrer"
             aria-label={`Написать в ${label}`}
             title={`Написать в ${label}`}
-            style={{ backgroundColor: color }}
-            className={`inline-flex ${size} items-center justify-center rounded-full text-white shadow-sm transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}
+            style={label === "MAX" ? undefined : { backgroundColor: color }}
+            className={`inline-flex ${size} items-center justify-center rounded-full ${label === "MAX" ? "" : "text-white shadow-sm"} transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}
           >
-            <Icon className={variant === "compact" ? "h-4 w-4" : "h-5 w-5"} />
+            <Icon className={label === "MAX" ? (variant === "compact" ? "h-9 w-9" : "h-11 w-11") : (variant === "compact" ? "h-4 w-4" : "h-5 w-5")} />
           </a>
         </li>
       ))}
