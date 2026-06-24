@@ -193,7 +193,7 @@ function PricesPage() {
   return (
     <div className="flex min-h-dvh flex-col">
       <Header />
-      <main id="main" className="flex-1 surface-light">
+      <main id="main" className="flex-1">
         {/* ── Первый экран ─────────────────────────────────────────── */}
         <section className="border-b border-border bg-background">
           <div className="container-page py-10 md:py-14">

@@ -31,7 +31,7 @@ function CatalogPage() {
   return (
     <div className="flex min-h-dvh flex-col">
       <Header />
-      <main id="main" className="flex-1 surface-light">
+      <main id="main" className="flex-1">
       <div className="container-page py-10 md:py-14">
         <nav aria-label="Хлебные крошки" className="text-xs text-muted-foreground">
           <Link to="/" className="hover:text-foreground">Главная</Link>

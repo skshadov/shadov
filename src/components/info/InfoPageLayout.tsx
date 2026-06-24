@@ -19,7 +19,7 @@ export function InfoPageLayout({ breadcrumbs, h1, intro, children }: InfoPageLay
   return (
     <div className="flex min-h-dvh flex-col">
       <Header />
-      <main id="main" className="flex-1 surface-light">
+      <main id="main" className="flex-1">
         <div className="container-page py-10 md:py-16">
           <Breadcrumbs items={breadcrumbs} className="mb-6" />
           <header className="max-w-3xl">

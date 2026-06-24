@@ -89,7 +89,7 @@ function ProjectPage() {
     <div className="flex min-h-dvh flex-col">
       <Header />
       <main id="main" className="flex-1">
-      <section className="surface-light border-b border-border">
+      <section className="border-b border-border">
         <div className="container-page py-8 md:py-12">
           <nav aria-label="Хлебные крошки" className="text-xs text-muted-foreground">
             <Link to="/" className="hover:text-foreground">Главная</Link>
@@ -179,7 +179,7 @@ function ProjectPage() {
         </div>
       </section>
 
-      <section className="surface-light border-b border-border">
+      <section className="border-b border-border">
         <div className="container-page py-12 md:py-16">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
             <article className="max-w-none text-foreground">
