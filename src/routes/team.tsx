@@ -20,6 +20,36 @@ import m17 from "@/assets/team/member-17.jpg";
 import m18 from "@/assets/team/member-18.jpg";
 import m19 from "@/assets/team/member-19.jpg";
 import m20 from "@/assets/team/member-20.jpg";
+import m21 from "@/assets/team/member-21.jpg";
+import m22 from "@/assets/team/member-22.jpg";
+import m23 from "@/assets/team/member-23.jpg";
+import m24 from "@/assets/team/member-24.jpg";
+import m25 from "@/assets/team/member-25.jpg";
+import m26 from "@/assets/team/member-26.jpg";
+import m27 from "@/assets/team/member-27.jpg";
+import m28 from "@/assets/team/member-28.jpg";
+import m29 from "@/assets/team/member-29.jpg";
+import m30 from "@/assets/team/member-30.jpg";
+import m31 from "@/assets/team/member-31.jpg";
+import m32 from "@/assets/team/member-32.jpg";
+import m33 from "@/assets/team/member-33.jpg";
+import m34 from "@/assets/team/member-34.jpg";
+import m35 from "@/assets/team/member-35.jpg";
+import m36 from "@/assets/team/member-36.jpg";
+import m37 from "@/assets/team/member-37.jpg";
+import m38 from "@/assets/team/member-38.jpg";
+import m39 from "@/assets/team/member-39.jpg";
+import m40 from "@/assets/team/member-40.jpg";
+import m41 from "@/assets/team/member-41.jpg";
+import m42 from "@/assets/team/member-42.jpg";
+import m43 from "@/assets/team/member-43.jpg";
+import m44 from "@/assets/team/member-44.jpg";
+import m45 from "@/assets/team/member-45.jpg";
+import m46 from "@/assets/team/member-46.jpg";
+import m47 from "@/assets/team/member-47.jpg";
+import m48 from "@/assets/team/member-48.jpg";
+import m49 from "@/assets/team/member-49.jpg";
+import m50 from "@/assets/team/member-50.jpg";
 
 const PATH = "/team";
 const TITLE = "Команда — Шадов и партнёры";
@@ -48,6 +78,36 @@ const members: { name: string; role: string; photo: string }[] = [
   { name: "Ольга Никитина",      role: "Инженер по охране труда",                 photo: m18 },
   { name: "Татьяна Ковалёва",    role: "Дизайнер интерьеров",                     photo: m19 },
   { name: "Светлана Морозова",   role: "Проектировщик",                           photo: m20 },
+  { name: "Денис Сорокин",       role: "Бригадир общестроительных работ",         photo: m21 },
+  { name: "Юрий Кулагин",        role: "Плотник",                                 photo: m22 },
+  { name: "Геннадий Антонов",    role: "Сварщик аргонщик",                        photo: m23 },
+  { name: "Ирина Лазарева",      role: "Инженер ПТО",                             photo: m24 },
+  { name: "Олег Тарасов",        role: "Электромонтажник слаботочных систем",     photo: m25 },
+  { name: "Кирилл Жуков",        role: "Плиточник-облицовщик",                    photo: m26 },
+  { name: "Степан Гончаров",     role: "Штукатур",                                photo: m27 },
+  { name: "Тимур Белов",         role: "Кровельщик мягких кровель",               photo: m28 },
+  { name: "Анатолий Карпов",     role: "Каменщик-бригадир",                       photo: m29 },
+  { name: "Максим Шевченко",     role: "Монтажник систем вентиляции",             photo: m30 },
+  { name: "Юлия Дроздова",       role: "Дизайнер интерьеров",                     photo: m31 },
+  { name: "Виталий Кравцов",     role: "Старший прораб",                          photo: m32 },
+  { name: "Дарья Семёнова",      role: "Геодезист",                               photo: m33 },
+  { name: "Леонид Воронин",      role: "Машинист башенного крана",                photo: m34 },
+  { name: "Антон Михайлов",      role: "Бетонщик",                                photo: m35 },
+  { name: "Иван Гусев",          role: "Сантехник-монтажник",                     photo: m36 },
+  { name: "Лариса Дмитриева",    role: "Специалист отдела снабжения",             photo: m37 },
+  { name: "Алексей Поляков",     role: "Монтажник фасадных систем",               photo: m38 },
+  { name: "Наталья Романова",    role: "Инженер по качеству",                     photo: m39 },
+  { name: "Борис Афанасьев",     role: "Старший плотник",                         photo: m40 },
+  { name: "Никита Воробьёв",     role: "Монтажник ГКЛ",                           photo: m41 },
+  { name: "Григорий Соболев",    role: "Монтажник окон и витражей",               photo: m42 },
+  { name: "Екатерина Зорина",    role: "Инженер по охране труда",                 photo: m43 },
+  { name: "Сергей Лысенко",      role: "Инженер тепловых систем",                 photo: m44 },
+  { name: "Артур Беляков",       role: "Помощник прораба",                        photo: m45 },
+  { name: "Денис Прохоров",      role: "Маляр",                                   photo: m46 },
+  { name: "Вера Никонова",       role: "Инженер-сметчик",                         photo: m47 },
+  { name: "Валерий Сидоров",     role: "Мастер сантехнических систем",            photo: m48 },
+  { name: "Алина Куликова",      role: "Архитектор",                              photo: m49 },
+  { name: "Руслан Маркин",       role: "Заведующий складом",                      photo: m50 },
 ];
 
 export const Route = createFileRoute("/team")({
@@ -79,10 +139,6 @@ function Page() {
       </InfoSection>
 
       <InfoSection title="Специалисты и линейный персонал">
-        <p className="mb-6 text-muted-foreground">
-          Состав специалистов и бригад. Фото сделаны в корпоративной фотостудии в единой
-          форме и на едином фоне — это часть стандарта компании.
-        </p>
         <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
           {members.map((m) => (
             <li key={m.name} className="flex flex-col">
