@@ -47,9 +47,6 @@ export function DocumentsSection() {
           ))}
         </ul>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Button asChild variant="outline">
-            <Link to="/sro-i-dokumenty">Раздел СРО и документы</Link>
-          </Button>
           <Button asChild variant="ghost">
             <Link to="/requisites">Реквизиты компании</Link>
           </Button>

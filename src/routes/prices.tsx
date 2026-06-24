@@ -114,7 +114,6 @@ const RELATED: { to: string; label: string }[] = [
   { to: "/inzhenernye-sistemy",  label: "Инженерные системы" },
   { to: "/generalnyy-podryad",   label: "Генеральный подряд" },
   { to: "/how-we-work",          label: "Как мы работаем" },
-  { to: "/sro-i-dokumenty",      label: "СРО и документы" },
 ];
 
 // ───────────────────────────────────────────────────────────────────────────

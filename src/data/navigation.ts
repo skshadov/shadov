@@ -83,7 +83,6 @@ export const FOOTER_INFO_LINKS: NavLink[] = [
   { label: "Команда", to: "/team" },
   { label: "Как мы работаем", to: "/how-we-work" },
   { label: "Контроль качества", to: "/kontrol-kachestva" },
-  { label: "СРО и документы", to: "/sro-i-dokumenty" },
   { label: "Наши работы", to: "/portfolio" },
   { label: "Отзывы", to: "/reviews" },
   { label: "Вопросы и ответы", to: "/faq" },
