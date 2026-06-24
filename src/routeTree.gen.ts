@@ -17,7 +17,6 @@ import { Route as TeamRouteImport } from './routes/team'
 import { Route as StroitelstvoDomovPodKlyuchRouteImport } from './routes/stroitelstvo-domov-pod-klyuch'
 import { Route as StroitelstvoRouteImport } from './routes/stroitelstvo'
 import { Route as StandartnyyRemontRouteImport } from './routes/standartnyy-remont'
-import { Route as SroIDokumentyRouteImport } from './routes/sro-i-dokumenty'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SantehnikaRouteImport } from './routes/santehnika'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
@@ -134,11 +133,6 @@ const StroitelstvoRoute = StroitelstvoRouteImport.update({
 const StandartnyyRemontRoute = StandartnyyRemontRouteImport.update({
   id: '/standartnyy-remont',
   path: '/standartnyy-remont',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SroIDokumentyRoute = SroIDokumentyRouteImport.update({
-  id: '/sro-i-dokumenty',
-  path: '/sro-i-dokumenty',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -570,7 +564,6 @@ export interface FileRoutesByFullPath {
   '/robots.txt': typeof RobotsDottxtRoute
   '/santehnika': typeof SantehnikaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/sro-i-dokumenty': typeof SroIDokumentyRoute
   '/standartnyy-remont': typeof StandartnyyRemontRoute
   '/stroitelstvo': typeof StroitelstvoRoute
   '/stroitelstvo-domov-pod-klyuch': typeof StroitelstvoDomovPodKlyuchRoute
@@ -654,7 +647,6 @@ export interface FileRoutesByTo {
   '/robots.txt': typeof RobotsDottxtRoute
   '/santehnika': typeof SantehnikaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/sro-i-dokumenty': typeof SroIDokumentyRoute
   '/standartnyy-remont': typeof StandartnyyRemontRoute
   '/stroitelstvo': typeof StroitelstvoRoute
   '/stroitelstvo-domov-pod-klyuch': typeof StroitelstvoDomovPodKlyuchRoute
@@ -741,7 +733,6 @@ export interface FileRoutesById {
   '/robots.txt': typeof RobotsDottxtRoute
   '/santehnika': typeof SantehnikaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/sro-i-dokumenty': typeof SroIDokumentyRoute
   '/standartnyy-remont': typeof StandartnyyRemontRoute
   '/stroitelstvo': typeof StroitelstvoRoute
   '/stroitelstvo-domov-pod-klyuch': typeof StroitelstvoDomovPodKlyuchRoute
@@ -829,7 +820,6 @@ export interface FileRouteTypes {
     | '/robots.txt'
     | '/santehnika'
     | '/sitemap.xml'
-    | '/sro-i-dokumenty'
     | '/standartnyy-remont'
     | '/stroitelstvo'
     | '/stroitelstvo-domov-pod-klyuch'
@@ -913,7 +903,6 @@ export interface FileRouteTypes {
     | '/robots.txt'
     | '/santehnika'
     | '/sitemap.xml'
-    | '/sro-i-dokumenty'
     | '/standartnyy-remont'
     | '/stroitelstvo'
     | '/stroitelstvo-domov-pod-klyuch'
@@ -999,7 +988,6 @@ export interface FileRouteTypes {
     | '/robots.txt'
     | '/santehnika'
     | '/sitemap.xml'
-    | '/sro-i-dokumenty'
     | '/standartnyy-remont'
     | '/stroitelstvo'
     | '/stroitelstvo-domov-pod-klyuch'
@@ -1086,7 +1074,6 @@ export interface RootRouteChildren {
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SantehnikaRoute: typeof SantehnikaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  SroIDokumentyRoute: typeof SroIDokumentyRoute
   StandartnyyRemontRoute: typeof StandartnyyRemontRoute
   StroitelstvoRoute: typeof StroitelstvoRoute
   StroitelstvoDomovPodKlyuchRoute: typeof StroitelstvoDomovPodKlyuchRoute
@@ -1153,13 +1140,6 @@ declare module '@tanstack/react-router' {
       path: '/standartnyy-remont'
       fullPath: '/standartnyy-remont'
       preLoaderRoute: typeof StandartnyyRemontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sro-i-dokumenty': {
-      id: '/sro-i-dokumenty'
-      path: '/sro-i-dokumenty'
-      fullPath: '/sro-i-dokumenty'
-      preLoaderRoute: typeof SroIDokumentyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -1885,7 +1865,6 @@ const rootRouteChildren: RootRouteChildren = {
   RobotsDottxtRoute: RobotsDottxtRoute,
   SantehnikaRoute: SantehnikaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  SroIDokumentyRoute: SroIDokumentyRoute,
   StandartnyyRemontRoute: StandartnyyRemontRoute,
   StroitelstvoRoute: StroitelstvoRoute,
   StroitelstvoDomovPodKlyuchRoute: StroitelstvoDomovPodKlyuchRoute,
