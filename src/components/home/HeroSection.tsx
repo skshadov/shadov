@@ -29,7 +29,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
       </div>
 
-      <div className="container-page relative grid gap-10 py-14 md:py-20 lg:grid-cols-12 lg:gap-12 lg:py-28">
+      <div className="container-page relative grid gap-10 pt-4 pb-14 md:pt-6 md:pb-20 lg:grid-cols-12 lg:gap-12 lg:pt-8 lg:pb-28">
         <div className="lg:col-span-7">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">
             <ShieldCheck aria-hidden="true" className="h-3.5 w-3.5 text-primary" />
