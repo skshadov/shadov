@@ -17,7 +17,6 @@ const STATIC_PATHS = [
   "/team",
   "/portfolio",
   "/reviews",
-  "/sro-i-dokumenty",
   "/kontrol-kachestva",
   // Construction services
   "/stroitelstvo",

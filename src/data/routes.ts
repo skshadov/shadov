@@ -66,7 +66,6 @@ export const ROUTES: RouteEntry[] = [
   { path: "/prices", title: "Цены", group: "info", stub: true },
   { path: "/about", title: "О компании", group: "info", stub: true },
   { path: "/team", title: "Команда", group: "info", stub: true },
-  { path: "/sro-i-dokumenty", title: "СРО и документы", group: "info", stub: true },
   { path: "/kontrol-kachestva", title: "Контроль качества", group: "info", stub: true },
   { path: "/how-we-work", title: "Как мы работаем", group: "info", stub: true },
   { path: "/reviews", title: "Отзывы", group: "info", stub: true },
