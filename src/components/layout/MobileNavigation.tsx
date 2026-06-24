@@ -21,10 +21,17 @@ export function MobileNavigation() {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const scrollRef = useRef(0);
 
   useEffect(() => {
     if (!open) return;
 
+    const restoreScroll = () => {
+      window.scrollTo({ top: scrollRef.current, left: 0, behavior: "auto" });
+    };
+
+    restoreScroll();
+    requestAnimationFrame(restoreScroll);
     closeRef.current?.focus({ preventScroll: true });
 
     const onKeyDown = (event: KeyboardEvent) => {
@@ -36,9 +43,16 @@ export function MobileNavigation() {
     window.addEventListener("keydown", onKeyDown);
     return () => {
       window.removeEventListener("keydown", onKeyDown);
-      triggerRef.current?.focus({ preventScroll: true });
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: scrollRef.current, left: 0, behavior: "auto" });
+      });
     };
   }, [open]);
+
+  const openMenu = () => {
+    scrollRef.current = window.scrollY;
+    setOpen(true);
+  };
 
   return (
     <>
@@ -48,7 +62,7 @@ export function MobileNavigation() {
         aria-label="Открыть меню"
         aria-controls="mobile-navigation-panel"
         aria-expanded={open}
-        onClick={() => setOpen(true)}
+        onClick={openMenu}
         className="relative z-[60] inline-flex min-h-11 min-w-11 touch-manipulation items-center justify-center rounded-md text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:hidden"
       >
         <Menu aria-hidden="true" className="h-5 w-5" />
