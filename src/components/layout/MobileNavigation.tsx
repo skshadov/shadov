@@ -5,7 +5,7 @@
  */
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, ArrowRight, LogIn } from "lucide-react";
+import { Menu, ArrowRight, LogIn } from "lucide-react";
 
 import {
   Sheet,
@@ -13,7 +13,6 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-  SheetClose,
 } from "@/components/ui/sheet";
 import {
   Accordion,
@@ -44,20 +43,10 @@ export function MobileNavigation() {
         side="right"
         className="flex w-full max-w-sm flex-col gap-0 border-l border-border bg-background p-0 sm:max-w-md"
       >
-        <SheetHeader className="flex flex-row items-center justify-between border-b border-border px-4 py-3">
+        <SheetHeader className="flex flex-row items-center justify-between border-b border-border px-4 py-3 pr-14">
           <SheetTitle asChild>
             <Logo variant="compact" />
           </SheetTitle>
-          <SheetClose asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label="Закрыть меню"
-              className="min-h-11 min-w-11"
-            >
-              <X aria-hidden="true" className="h-5 w-5" />
-            </Button>
-          </SheetClose>
         </SheetHeader>
 
         <nav
