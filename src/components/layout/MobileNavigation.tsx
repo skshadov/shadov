@@ -28,6 +28,23 @@ export function MobileNavigation() {
 
     closeRef.current?.focus({ preventScroll: true });
 
+    // Lock background scroll without losing position.
+    // Using position: fixed + top = -scrollY preserves the exact viewport
+    // location on iOS Safari, which ignores plain `overflow: hidden`.
+    const scrollY = window.scrollY;
+    const { body, documentElement } = document;
+    const prevBodyPosition = body.style.position;
+    const prevBodyTop = body.style.top;
+    const prevBodyWidth = body.style.width;
+    const prevBodyOverflow = body.style.overflow;
+    const prevHtmlScrollBehavior = documentElement.style.scrollBehavior;
+
+    documentElement.style.scrollBehavior = "auto";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
+    body.style.overflow = "hidden";
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setOpen(false);
@@ -37,6 +54,14 @@ export function MobileNavigation() {
     window.addEventListener("keydown", onKeyDown);
     return () => {
       window.removeEventListener("keydown", onKeyDown);
+
+      body.style.position = prevBodyPosition;
+      body.style.top = prevBodyTop;
+      body.style.width = prevBodyWidth;
+      body.style.overflow = prevBodyOverflow;
+      window.scrollTo(0, scrollY);
+      documentElement.style.scrollBehavior = prevHtmlScrollBehavior;
+
       triggerRef.current?.focus({ preventScroll: true });
     };
   }, [open]);
