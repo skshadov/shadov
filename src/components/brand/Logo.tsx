@@ -63,13 +63,13 @@ function LogoFull() {
   return (
     <>
       <LogoMark />
-      <span className="hidden sm:flex flex-col leading-tight whitespace-nowrap">
-        <span className="font-display text-[13px] lg:text-[15px] font-semibold tracking-[0.14em] uppercase">
+      <span className="flex flex-col leading-tight whitespace-nowrap">
+        <span className="font-display text-[11px] sm:text-[13px] lg:text-[15px] font-semibold tracking-[0.14em] uppercase">
           Шадов&nbsp;и&nbsp;партнёры
         </span>
         <span
           data-logo-subtitle
-          className="text-[8px] lg:text-[9px] tracking-[0.2em] uppercase text-muted-foreground"
+          className="text-[7px] sm:text-[8px] lg:text-[9px] tracking-[0.2em] uppercase text-muted-foreground"
         >
           Строительная компания
         </span>
@@ -82,8 +82,13 @@ function LogoCompact() {
   return (
     <>
       <LogoMark />
-      <span className="font-display text-base font-semibold tracking-[0.18em] uppercase">
-        SHADOV.PRO
+      <span className="flex flex-col leading-tight whitespace-nowrap">
+        <span className="font-display text-[13px] font-semibold tracking-[0.14em] uppercase">
+          Шадов&nbsp;и&nbsp;партнёры
+        </span>
+        <span className="text-[8px] tracking-[0.2em] uppercase text-muted-foreground">
+          Строительная компания
+        </span>
       </span>
     </>
   );
