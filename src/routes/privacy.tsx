@@ -89,14 +89,13 @@ function Page() {
         {hasOperator ? (
           <ul className="space-y-2">
             {isFilled(company.legalName) ? <li>Оператор: {company.legalName}</li> : null}
-            {isFilled(company.inn) ? <li>ИНН: {company.inn}</li> : null}
             {isFilled(company.officeAddress) ? <li>Адрес: {company.officeAddress}</li> : null}
             {isFilled(company.email) ? <li>Email: <a href={`mailto:${company.email}`} className="text-primary underline underline-offset-2 hover:opacity-80">{company.email}</a></li> : null}
           </ul>
         ) : (
           <PlaceholderNotice
-            title="Сведения об операторе публикуются на странице реквизитов"
-            description="Полные сведения об операторе размещаются на странице «Реквизиты» после заполнения административной панели."
+            title="Сведения об операторе будут опубликованы после заполнения"
+            description="Полные сведения об операторе размещаются на сайте после заполнения административной панели."
           />
         )}
       </InfoSection>

@@ -12,7 +12,6 @@ const STATIC_PATHS = [
   "/catalog",
   "/how-we-work",
   "/faq",
-  "/requisites",
   "/kalkulyator-stoimosti",
   "/team",
   "/portfolio",

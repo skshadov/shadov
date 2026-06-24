@@ -86,7 +86,6 @@ export const ROUTES: RouteEntry[] = [
   { path: "/personal-data-consent", title: "Согласие на обработку персональных данных", shortTitle: "Согласие на ОПД", group: "legal", stub: true },
   { path: "/cookies", title: "Политика использования cookies", shortTitle: "Cookies", group: "legal", stub: true },
   { path: "/terms", title: "Пользовательское соглашение", group: "legal", stub: true },
-  { path: "/requisites", title: "Реквизиты", group: "legal", stub: true },
 ];
 
 export function findRoute(path: string): RouteEntry | undefined {

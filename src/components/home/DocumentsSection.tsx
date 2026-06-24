@@ -2,9 +2,6 @@
  * §12.8 ТЗ + уточнение 4 — СРО и документы без выдуманных номеров.
  */
 import { SectionHeading } from "@/components/common/SectionHeading";
-import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
-import { Button } from "@/components/ui/button";
-import { Link } from "@tanstack/react-router";
 import { ShieldCheck, FileText, ScrollText } from "lucide-react";
 
 const CARDS = [
@@ -16,7 +13,7 @@ const CARDS = [
   {
     Icon: FileText,
     title: "Регистрационные документы компании",
-    text: "Свидетельства, ОГРН, ИНН и реквизиты публикуются на странице «Реквизиты» сразу после их внесения в систему.",
+    text: "Свидетельства и регистрационные данные публикуются на сайте сразу после их внесения в систему.",
   },
   {
     Icon: ScrollText,
@@ -32,7 +29,7 @@ export function DocumentsSection() {
         <SectionHeading
           eyebrow="СРО и документы"
           title="Все документы публикуются на сайте только после подтверждения"
-          description="Мы не выводим в публичную часть никаких незаполненных реквизитов и фиктивных номеров. Каждый документ загружается через административную панель и привязывается к карточке."
+          description="Мы не выводим в публичную часть никаких незаполненных данных и фиктивных номеров. Каждый документ загружается через административную панель и привязывается к карточке."
         />
         <ul className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
           {CARDS.map(({ Icon, title, text }) => (
@@ -46,11 +43,6 @@ export function DocumentsSection() {
             </li>
           ))}
         </ul>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Button asChild variant="ghost">
-            <Link to="/requisites">Реквизиты компании</Link>
-          </Button>
-        </div>
       </div>
     </section>
   );

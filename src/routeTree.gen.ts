@@ -21,7 +21,6 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SantehnikaRouteImport } from './routes/santehnika'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as ReviewsRouteImport } from './routes/reviews'
-import { Route as RequisitesRouteImport } from './routes/requisites'
 import { Route as RemontPodKlyuchRouteImport } from './routes/remont-pod-klyuch'
 import { Route as RemontRouteImport } from './routes/remont'
 import { Route as ProektyRouteImport } from './routes/proekty'
@@ -153,11 +152,6 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RequisitesRoute = RequisitesRouteImport.update({
-  id: '/requisites',
-  path: '/requisites',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RemontPodKlyuchRoute = RemontPodKlyuchRouteImport.update({
@@ -559,7 +553,6 @@ export interface FileRoutesByFullPath {
   '/proekty': typeof ProektyRouteWithChildren
   '/remont': typeof RemontRoute
   '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
-  '/requisites': typeof RequisitesRoute
   '/reviews': typeof ReviewsRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/santehnika': typeof SantehnikaRoute
@@ -642,7 +635,6 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/remont': typeof RemontRoute
   '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
-  '/requisites': typeof RequisitesRoute
   '/reviews': typeof ReviewsRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/santehnika': typeof SantehnikaRoute
@@ -728,7 +720,6 @@ export interface FileRoutesById {
   '/proekty': typeof ProektyRouteWithChildren
   '/remont': typeof RemontRoute
   '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
-  '/requisites': typeof RequisitesRoute
   '/reviews': typeof ReviewsRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/santehnika': typeof SantehnikaRoute
@@ -815,7 +806,6 @@ export interface FileRouteTypes {
     | '/proekty'
     | '/remont'
     | '/remont-pod-klyuch'
-    | '/requisites'
     | '/reviews'
     | '/robots.txt'
     | '/santehnika'
@@ -898,7 +888,6 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/remont'
     | '/remont-pod-klyuch'
-    | '/requisites'
     | '/reviews'
     | '/robots.txt'
     | '/santehnika'
@@ -983,7 +972,6 @@ export interface FileRouteTypes {
     | '/proekty'
     | '/remont'
     | '/remont-pod-klyuch'
-    | '/requisites'
     | '/reviews'
     | '/robots.txt'
     | '/santehnika'
@@ -1069,7 +1057,6 @@ export interface RootRouteChildren {
   ProektyRoute: typeof ProektyRouteWithChildren
   RemontRoute: typeof RemontRoute
   RemontPodKlyuchRoute: typeof RemontPodKlyuchRoute
-  RequisitesRoute: typeof RequisitesRoute
   ReviewsRoute: typeof ReviewsRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SantehnikaRoute: typeof SantehnikaRoute
@@ -1168,13 +1155,6 @@ declare module '@tanstack/react-router' {
       path: '/reviews'
       fullPath: '/reviews'
       preLoaderRoute: typeof ReviewsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/requisites': {
-      id: '/requisites'
-      path: '/requisites'
-      fullPath: '/requisites'
-      preLoaderRoute: typeof RequisitesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/remont-pod-klyuch': {
@@ -1860,7 +1840,6 @@ const rootRouteChildren: RootRouteChildren = {
   ProektyRoute: ProektyRouteWithChildren,
   RemontRoute: RemontRoute,
   RemontPodKlyuchRoute: RemontPodKlyuchRoute,
-  RequisitesRoute: RequisitesRoute,
   ReviewsRoute: ReviewsRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SantehnikaRoute: SantehnikaRoute,
