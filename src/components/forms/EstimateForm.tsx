@@ -34,7 +34,7 @@ import {
 } from "@/components/ui/radio-group";
 import { supabase } from "@/integrations/supabase/client";
 import { isPublicDataCollectionEnabled, CONSENT_VERSION } from "@/lib/operator-configuration";
-import { readUtm, formatUtmForMessage } from "@/lib/utm";
+import { readUtm, formatUtmForMessage, reachMetrikaGoal } from "@/lib/utm";
 
 const STORAGE_KEY = "shadov:estimate-draft";
 
