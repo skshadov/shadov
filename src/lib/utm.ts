@@ -60,3 +60,16 @@ export function formatUtmForMessage(utm: UtmData): string {
   const lines = entries.map(([k, v]) => `${k}=${v}`).join("\n");
   return `\n\n— Источник перехода —\n${lines}`;
 }
+
+/** Безопасно отправляет цель в Яндекс.Метрику (если счётчик загружен). */
+export function reachMetrikaGoal(goal: string, params?: Record<string, unknown>): void {
+  if (typeof window === "undefined") return;
+  try {
+    const ym = (window as unknown as { ym?: (id: number, action: string, goal: string, params?: unknown) => void }).ym;
+    if (typeof ym === "function") {
+      ym(110098177, "reachGoal", goal, params);
+    }
+  } catch {
+    /* нет счётчика — игнорируем */
+  }
+}
