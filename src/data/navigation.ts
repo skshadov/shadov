@@ -93,5 +93,4 @@ export const FOOTER_LEGAL_LINKS: NavLink[] = [
   { label: "Согласие на обработку ПД", to: "/personal-data-consent" },
   { label: "Политика cookies", to: "/cookies" },
   { label: "Пользовательское соглашение", to: "/terms" },
-  { label: "Реквизиты", to: "/requisites" },
 ];
