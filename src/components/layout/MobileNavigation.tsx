@@ -43,7 +43,7 @@ export function MobileNavigation() {
     body.style.right = "0";
     body.style.width = "100%";
     body.style.overflow = "hidden";
-    closeRef.current?.focus();
+    closeRef.current?.focus({ preventScroll: true });
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -61,7 +61,7 @@ export function MobileNavigation() {
       body.style.overflow = prev.overflow;
       window.scrollTo(0, scrollY);
       window.removeEventListener("keydown", onKeyDown);
-      triggerRef.current?.focus();
+      triggerRef.current?.focus({ preventScroll: true });
     };
   }, [open]);
 
