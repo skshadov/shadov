@@ -4,8 +4,6 @@
  * aria-describedby.
  */
 import { useId } from "react";
-import { HOUSE_COMPLETION_LEVELS_SPEC } from "@/data/calculator-specification";
-import { HOUSE_TECHNOLOGIES } from "@/data/house-technologies";
 import type { CalculatorInput, CalculatorMode, HouseCompletionLevel } from "@/types/calculator";
 
 interface Props {
@@ -23,11 +21,9 @@ function sanitizeNumber(raw: string): number | undefined {
   return n;
 }
 
-export function CalculatorInputs({ mode, area, technologySlug, completionLevel, onChange }: Props) {
+export function CalculatorInputs({ mode, area, onChange }: Props) {
   const areaId = useId();
   const areaHintId = useId();
-  const techId = useId();
-  const levelId = useId();
 
   if (mode === "construction") {
     return (
@@ -43,7 +39,11 @@ export function CalculatorInputs({ mode, area, technologySlug, completionLevel, 
     );
   }
 
-  if (mode === "repair") {
+  // Для режимов «Ремонт» и «Строительство дома» площадь, технология и
+  // уровень готовности больше не запрашиваются отдельно — пользователь
+  // выбирает позиции и вводит объём прямо в списке позиций ниже. Это
+  // убирает «второй расчёт» и путаницу.
+  if (mode === "repair" || mode === "house") {
     return null;
   }
 
@@ -53,7 +53,7 @@ export function CalculatorInputs({ mode, area, technologySlug, completionLevel, 
       <div className="mt-3 grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor={areaId} className="text-sm font-medium">
-            {mode === "house" ? "Площадь дома, м²" : "Площадь по полу, м²"}
+            Площадь по полу, м²
           </label>
           <input
             id={areaId}
@@ -67,48 +67,9 @@ export function CalculatorInputs({ mode, area, technologySlug, completionLevel, 
             className="mt-1 min-h-11 w-full rounded-lg border border-border bg-background px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           />
           <p id={areaHintId} className="mt-1 text-xs text-muted-foreground">
-            {mode === "house"
-              ? "Используется только для расчёта позиций с единицей «м² площади дома»."
-              : "Используется только для пакетных позиций с единицей «м²»."}
+            Используется только для пакетных позиций с единицей «м²».
           </p>
         </div>
-
-        {mode === "house" ? (
-          <>
-            <div>
-              <label htmlFor={techId} className="text-sm font-medium">
-                Технология дома
-              </label>
-              <select
-                id={techId}
-                value={technologySlug ?? ""}
-                onChange={(e) => onChange({ technologySlug: e.target.value || undefined })}
-                className="mt-1 min-h-11 w-full rounded-lg border border-border bg-background px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                <option value="">Не выбрано</option>
-                {HOUSE_TECHNOLOGIES.map((t) => (
-                  <option key={t.slug} value={t.slug}>{t.name}</option>
-                ))}
-              </select>
-            </div>
-            <div className="sm:col-span-2">
-              <label htmlFor={levelId} className="text-sm font-medium">
-                Уровень готовности
-              </label>
-              <select
-                id={levelId}
-                value={completionLevel ?? ""}
-                onChange={(e) => onChange({ completionLevel: (e.target.value || undefined) as HouseCompletionLevel | undefined })}
-                className="mt-1 min-h-11 w-full rounded-lg border border-border bg-background px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                <option value="">Не выбрано</option>
-                {HOUSE_COMPLETION_LEVELS_SPEC.map((l) => (
-                  <option key={l.id} value={l.id}>{l.label}</option>
-                ))}
-              </select>
-            </div>
-          </>
-        ) : null}
       </div>
     </fieldset>
   );
