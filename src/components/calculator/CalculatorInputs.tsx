@@ -4,8 +4,6 @@
  * aria-describedby.
  */
 import { useId } from "react";
-import { HOUSE_COMPLETION_LEVELS_SPEC } from "@/data/calculator-specification";
-import { HOUSE_TECHNOLOGIES } from "@/data/house-technologies";
 import type { CalculatorInput, CalculatorMode, HouseCompletionLevel } from "@/types/calculator";
 
 interface Props {
@@ -23,11 +21,9 @@ function sanitizeNumber(raw: string): number | undefined {
   return n;
 }
 
-export function CalculatorInputs({ mode, area, technologySlug, completionLevel, onChange }: Props) {
+export function CalculatorInputs({ mode, area, onChange }: Props) {
   const areaId = useId();
   const areaHintId = useId();
-  const techId = useId();
-  const levelId = useId();
 
   if (mode === "construction") {
     return (
