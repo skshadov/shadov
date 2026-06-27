@@ -234,6 +234,18 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
     }
   }, [reset]);
 
+  // В компактном режиме поля "Тип объекта / Услуга / Площадь / Единица"
+  // скрыты — они берутся из калькулятора. Чтобы пройти валидацию,
+  // заполняем их значениями по умолчанию или из снапшота калькулятора.
+  useEffect(() => {
+    if (!compact) return;
+    const snap = readCalculatorSnapshot();
+    setValue("objectType", "Из калькулятора");
+    setValue("service", snap?.modeLabel ?? "Из калькулятора");
+    setValue("area", snap?.area ? String(snap.area) : "1");
+    setValue("unit", "м²");
+  }, [compact, setValue]);
+
   const watched = watch();
 
   const onSubmit = async (values: FormValues) => {
@@ -355,6 +367,7 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
       )}
 
       <div className="grid gap-4 md:grid-cols-2">
+        {compact ? null : (
         <Field label="Тип объекта" error={errors.objectType?.message} required>
           <Select
             value={watched.objectType || undefined}
@@ -368,7 +381,9 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
             </SelectContent>
           </Select>
         </Field>
+        )}
 
+        {compact ? null : (
         <Field label="Нужная услуга" error={errors.service?.message} required>
           <Select
             value={watched.service || undefined}
@@ -382,7 +397,9 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
             </SelectContent>
           </Select>
         </Field>
+        )}
 
+        {compact ? null : (
         <Field label="Площадь или объём" error={errors.area?.message} required>
           <Input
             type="text"
@@ -392,7 +409,9 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
             {...register("area")}
           />
         </Field>
+        )}
 
+        {compact ? null : (
         <Field label="Единица" error={errors.unit?.message} required>
           <Select
             value={watched.unit || undefined}
@@ -406,6 +425,7 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
             </SelectContent>
           </Select>
         </Field>
+        )}
 
         <Field label="Текущее состояние объекта" error={errors.state?.message}>
           <Select
