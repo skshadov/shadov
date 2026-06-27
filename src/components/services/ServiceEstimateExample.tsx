@@ -45,14 +45,7 @@ export function ServiceEstimateExample({ rows }: ServiceEstimateExampleProps) {
                     <th scope="row" className="px-4 py-3 font-medium">{r.item.name}</th>
                     <td className="px-4 py-3">
                       {typeof vol === "number" ? (
-                        <span className="flex flex-col">
-                          <span>{vol}</span>
-                          {volLabel ? (
-                            <span className="text-[11px] uppercase tracking-wide text-muted-foreground">
-                              {volLabel}
-                            </span>
-                          ) : null}
-                        </span>
+                        <span>{vol}</span>
                       ) : (
                         <span className="text-muted-foreground">—</span>
                       )}
