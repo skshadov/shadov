@@ -300,6 +300,9 @@ export function createHandler(config: HandlerConfig) {
           source: body.source_path,
           service: serviceSlug,
           message: body.message ?? null,
+          calcMode: calcMode,
+          priceVersion: body.price_version ?? null,
+          snapshot: snap.value,
         });
       } catch (e) {
         console.error("telegram_notify_failed", e);
@@ -318,6 +321,9 @@ async function sendTelegramNotification(p: {
   source: string;
   service: string | null;
   message: string | null;
+  calcMode: string | null;
+  priceVersion: string | null;
+  snapshot: any;
 }): Promise<void> {
   const token = Deno.env.get("TELEGRAM_BOT_TOKEN");
   const chatId = Deno.env.get("TELEGRAM_CHAT_ID");
@@ -333,6 +339,40 @@ async function sendTelegramNotification(p: {
   if (p.email) lines.push(`Email: ${escapeHtml(p.email)}`);
   if (p.service) lines.push(`Услуга: ${escapeHtml(p.service)}`);
   lines.push(`Источник: ${escapeHtml(p.source)}`);
+  const modeLabels: Record<string, string> = {
+    repair: "Ремонт квартиры",
+    house: "Строительство дома",
+    construction: "Строительные работы",
+    engineering: "Инженерные системы",
+  };
+  const mode = p.calcMode ?? p.snapshot?.mode ?? null;
+  if (mode) lines.push(`Калькулятор: ${escapeHtml(modeLabels[mode] ?? mode)}`);
+  if (p.priceVersion) lines.push(`Версия цен: ${escapeHtml(p.priceVersion)}`);
+  const items = Array.isArray(p.snapshot?.items) ? p.snapshot.items : [];
+  if (items.length) {
+    lines.push("", `<b>Позиции (${items.length}):</b>`);
+    const shown = items.slice(0, 40);
+    for (const it of shown) {
+      lines.push(`• <code>${escapeHtml(String(it.id))}</code> — ${escapeHtml(String(it.quantity))} ${escapeHtml(String(it.unit))}`);
+    }
+    if (items.length > shown.length) lines.push(`… и ещё ${items.length - shown.length}`);
+  }
+  const totals = p.snapshot?.totals && typeof p.snapshot.totals === "object" ? p.snapshot.totals : null;
+  if (totals) {
+    const entries = Object.entries(totals);
+    if (entries.length) {
+      lines.push("", `<b>Итоги:</b>`);
+      for (const [k, v] of entries) {
+        const num = typeof v === "number" ? v.toLocaleString("ru-RU") : String(v);
+        lines.push(`• ${escapeHtml(k)}: ${escapeHtml(num)}`);
+      }
+    }
+  }
+  const warnings = Array.isArray(p.snapshot?.warnings) ? p.snapshot.warnings : [];
+  if (warnings.length) {
+    lines.push("", `<b>Предупреждения:</b>`);
+    for (const w of warnings.slice(0, 10)) lines.push(`⚠️ ${escapeHtml(String(w))}`);
+  }
   if (p.message) {
     const trimmed = p.message.length > 800 ? p.message.slice(0, 800) + "…" : p.message;
     lines.push("", escapeHtml(trimmed));
