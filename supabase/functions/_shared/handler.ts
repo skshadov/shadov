@@ -271,8 +271,67 @@ export function createHandler(config: HandlerConfig) {
         return reject(500, "store_failed", originAllowed);
       }
       const row = Array.isArray(data) ? data[0] : data;
-      return accept(200, { success: true, requestNumber: row?.request_number ?? requestNumber }, originAllowed);
+      const finalNumber = row?.request_number ?? requestNumber;
+      // Fire-and-forget Telegram notification. Failure must NOT break submission.
+      try {
+        await sendTelegramNotification({
+          requestNumber: finalNumber,
+          name: body.contact_name.trim(),
+          phone: phone || null,
+          email: email || null,
+          source: body.source_path,
+          service: serviceSlug,
+          message: body.message ?? null,
+        });
+      } catch (e) {
+        console.error("telegram_notify_failed", e);
+      }
+      return accept(200, { success: true, requestNumber: finalNumber }, originAllowed);
     }
     return reject(500, "store_failed", originAllowed);
   };
+}
+
+async function sendTelegramNotification(p: {
+  requestNumber: string;
+  name: string;
+  phone: string | null;
+  email: string | null;
+  source: string;
+  service: string | null;
+  message: string | null;
+}): Promise<void> {
+  const token = Deno.env.get("TELEGRAM_BOT_TOKEN");
+  const chatId = Deno.env.get("TELEGRAM_CHAT_ID");
+  if (!token || !chatId) return; // not configured — silently skip
+  const isCallback = p.source === "/popup-callback" || (p.message ?? "").includes("Запрос обратного звонка");
+  const title = isCallback ? "📞 Новая заявка на обратный звонок" : "🧮 Новая заявка с сайта";
+  const lines: string[] = [
+    `<b>${title}</b>`,
+    `№ <code>${escapeHtml(p.requestNumber)}</code>`,
+    `Имя: ${escapeHtml(p.name)}`,
+  ];
+  if (p.phone) lines.push(`Тел: <a href="tel:${escapeHtml(p.phone)}">${escapeHtml(p.phone)}</a>`);
+  if (p.email) lines.push(`Email: ${escapeHtml(p.email)}`);
+  if (p.service) lines.push(`Услуга: ${escapeHtml(p.service)}`);
+  lines.push(`Источник: ${escapeHtml(p.source)}`);
+  if (p.message) {
+    const trimmed = p.message.length > 800 ? p.message.slice(0, 800) + "…" : p.message;
+    lines.push("", escapeHtml(trimmed));
+  }
+  const text = lines.join("\n");
+  const chats = chatId.split(",").map((s) => s.trim()).filter(Boolean);
+  await Promise.all(chats.map((cid) =>
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: cid, text, parse_mode: "HTML", disable_web_page_preview: true }),
+    }).then(async (r) => {
+      if (!r.ok) console.error("telegram_send_failed", r.status, await r.text().catch(() => ""));
+    })
+  ));
+}
+
+function escapeHtml(s: string): string {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
