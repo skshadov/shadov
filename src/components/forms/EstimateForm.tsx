@@ -491,10 +491,10 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
             {CONTACT_PREF.map((c) => (
               <label
                 key={c.value}
-                className="flex min-h-11 cursor-pointer items-center gap-2 rounded-md border border-border bg-background px-3 text-sm hover:border-primary/60"
+                className="flex min-h-11 min-w-0 cursor-pointer items-center gap-2 rounded-md border border-border bg-background px-2 text-sm hover:border-primary/60 sm:px-3"
               >
-                <RadioGroupItem value={c.value} aria-label={c.label} />
-                <span>{c.label}</span>
+                <RadioGroupItem value={c.value} aria-label={c.label} className="shrink-0" />
+                <span className="min-w-0 flex-1 truncate">{c.label}</span>
               </label>
             ))}
           </RadioGroup>
