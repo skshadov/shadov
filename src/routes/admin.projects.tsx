@@ -92,7 +92,6 @@ function ProjectsListPage() {
                 <tr key={p.id}>
                   <td className="px-3 py-2">
                     <div className="font-medium">{p.title}</div>
-                    {p.is_demo ? <span className="text-xs text-amber-700 dark:text-amber-300">demo</span> : null}
                   </td>
                   <td className="px-3 py-2"><StatusPill status={p.status} /></td>
                   <td className="px-3 py-2 text-xs">{p.members_count}</td>

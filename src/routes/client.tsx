@@ -69,10 +69,7 @@ function Page() {
             <li key={p.id} className="rounded-lg border border-border bg-card p-5">
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  {p.is_demo ? (
-                    <span className="inline-block rounded bg-warning/15 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-warning-foreground">DEMO</span>
-                  ) : null}
-                  <h2 className="mt-2 font-display text-lg font-semibold">{p.title}</h2>
+                  <h2 className="font-display text-lg font-semibold">{p.title}</h2>
                 </div>
                 <span className="rounded-full border border-border px-2 py-0.5 text-xs">{statusLabel(p.status)}</span>
               </div>

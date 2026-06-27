@@ -174,7 +174,7 @@ function PricesPage() {
   const additionalRep = getPricesByCategory("additional_repairs");
   const demolition    = getPricesByCategory("demolition");
 
-  // Демо-пример сметы: 5 позиций из категории сантехники.
+  // Пример сметы: 5 позиций из категории сантехники.
   const estimateRows = [
     { id: "plumbing-tochka-vody",         volume: 8  },
     { id: "plumbing-tochka-kanalizatsii", volume: 5  },
@@ -184,7 +184,7 @@ function PricesPage() {
   ]
     .map((r) => {
       const item = plumb.find((p) => p.id === r.id);
-      return item ? { item, volume: r.volume, note: "Демонстрационный объём" } : null;
+      return item ? { item, volume: r.volume } : null;
     })
     .filter((r): r is NonNullable<typeof r> => Boolean(r));
 

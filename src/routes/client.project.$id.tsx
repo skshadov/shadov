@@ -75,12 +75,9 @@ function Page() {
       breadcrumbs={[
         { label: "Главная", to: "/" },
         { label: "Личный кабинет", to: "/client" },
-        { label: project.is_demo ? "DEMO-проект" : "Проект" },
+        { label: "Проект" },
       ]}
     >
-      {project.is_demo ? (
-        <p className="mb-4 inline-block rounded bg-warning/15 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-warning-foreground">DEMO — демонстрационный проект</p>
-      ) : null}
       <ProjectTabs projectId={project.id} activeTab={tab} project={project} userId={session.userId} />
     </ClientPortalLayout>
   );

@@ -61,14 +61,7 @@ export type ServicePageData = {
    * структуры сметы». Автоматический выбор первых строк категории запрещён.
    */
   estimateExampleItemIds?: string[];
-  /**
-   * Подэтап 2.3A — демонстрационные объёмы по ID позиции. Объём всегда
-   * подписан в интерфейсе как «Демонстрационный объём».
-   */
-  estimateExampleVolumes?: Record<
-    string,
-    { value: number; label: "Демонстрационный объём" }
-  >;
+  estimateExampleVolumes?: Record<string, { value: number }>;
   /**
    * Подэтап 2.3A — необязательные пометки для отдельных строк примера
    * (например, «Вариант отделки»).

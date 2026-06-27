@@ -6,10 +6,7 @@ import { formatPriceItem, formatRubles } from "@/lib/format-price";
 
 export type EstimateExampleRow = {
   item: PriceItem;
-  /** Демонстрационный объём; не итог объекта. Может отсутствовать. */
   volume?: number;
-  /** Подпись к объёму, всегда «Демонстрационный объём» (подэтап 2.3A). */
-  volumeLabel?: "Демонстрационный объём";
   note?: string;
 };
 
@@ -43,22 +40,12 @@ export function ServiceEstimateExample({ rows }: ServiceEstimateExampleProps) {
                   r.item.priceFrom && typeof vol === "number"
                     ? r.item.priceFrom * vol
                     : undefined;
-                const volLabel =
-                  r.volumeLabel ??
-                  (typeof vol === "number" ? "Демонстрационный объём" : undefined);
                 return (
                   <tr key={r.item.id} className="border-t border-border">
                     <th scope="row" className="px-4 py-3 font-medium">{r.item.name}</th>
                     <td className="px-4 py-3">
                       {typeof vol === "number" ? (
-                        <span className="flex flex-col">
-                          <span>{vol}</span>
-                          {volLabel ? (
-                            <span className="text-[11px] uppercase tracking-wide text-muted-foreground">
-                              {volLabel}
-                            </span>
-                          ) : null}
-                        </span>
+                        <span>{vol}</span>
                       ) : (
                         <span className="text-muted-foreground">—</span>
                       )}

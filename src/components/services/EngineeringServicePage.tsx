@@ -57,7 +57,6 @@ export function EngineeringServicePage({ slug }: Props) {
     const row: EstimateExampleRow = { item };
     if (vol) {
       row.volume = vol.value;
-      row.volumeLabel = vol.label;
     }
     const note = data.estimateExampleNotes?.[id];
     if (note) row.note = note;
