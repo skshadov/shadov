@@ -86,7 +86,7 @@ function packageBased(opts: {
   technology: string[];
   related: string[];
   estimateExampleItemIds: string[];
-  estimateExampleVolumes?: DemoVolumes;
+  estimateExampleVolumes?: Record<string, { value: number }>;
   estimateExampleNotes?: Record<string, string>;
 }): ServicePageData {
   const pkg = REPAIR_PACKAGES.find((p) => p.id === opts.packageId)!;
