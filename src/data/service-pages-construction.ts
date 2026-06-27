@@ -216,8 +216,7 @@ const RELATED_HOUSE = [
   "fasadnye-raboty",
 ];
 
-const VOL = (value: number) =>
-  ({ value, label: "Демонстрационный объём" } as const);
+const VOL = (value: number) => ({ value } as const);
 
 const NOTE_BREAKDOWN =
   "Окончательная разбивка зависит от проекта и комплектации.";
@@ -455,7 +454,7 @@ type TechRule = {
   metaTitle: string;
   metaDescription: string;
   estimateIds: string[];
-  estimateVol: Record<string, { value: number; label: "Демонстрационный объём" }>;
+  estimateVol: Record<string, { value: number }>;
   estimateNotes: Record<string, string>;
 };
 

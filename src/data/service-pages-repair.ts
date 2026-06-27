@@ -67,11 +67,9 @@ const SHARED_TIMELINE = [
   "Согласование заказчиком этапов и решений",
 ];
 
-const DEMO: "Демонстрационный объём" = "Демонстрационный объём";
-type DemoVolumes = Record<string, { value: number; label: "Демонстрационный объём" }>;
-const v = (entries: Array<[string, number]>): DemoVolumes => {
-  const out: DemoVolumes = {};
-  for (const [id, value] of entries) out[id] = { value, label: DEMO };
+const v = (entries: Array<[string, number]>) => {
+  const out: Record<string, { value: number }> = {};
+  for (const [id, value] of entries) out[id] = { value };
   return out;
 };
 
@@ -907,7 +905,7 @@ export const REPAIR_SERVICE_PAGES: ServicePageData[] = [
     ]),
     estimateExampleNotes: {
       "tiling-standart-keram":
-        "Демонстрационный объём. Окончательная разбивка зависит от основания, формата материала, раскладки и состава работ.",
+        "Окончательная разбивка зависит от основания, формата материала, раскладки и состава работ.",
     },
   },
 ];
