@@ -6,10 +6,7 @@ import { formatPriceItem, formatRubles } from "@/lib/format-price";
 
 export type EstimateExampleRow = {
   item: PriceItem;
-  /** Демонстрационный объём; не итог объекта. Может отсутствовать. */
   volume?: number;
-  /** Подпись к объёму, всегда «Демонстрационный объём» (подэтап 2.3A). */
-  volumeLabel?: "Демонстрационный объём";
   note?: string;
 };
 
