@@ -110,7 +110,7 @@ function CalculatorPage() {
 
         <section className="border-b border-border py-10">
           <div className="container-page">
-            <EstimateForm />
+            <EstimateForm compact />
           </div>
         </section>
 
