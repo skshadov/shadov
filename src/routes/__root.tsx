@@ -15,6 +15,7 @@ import { captureUtmFromUrl } from "@/lib/utm";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/sonner";
+import { CallbackPopup } from "@/components/popups/CallbackPopup";
 
 function NotFoundComponent() {
   return (
@@ -178,6 +179,7 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
       <Toaster richColors position="top-right" />
+      <CallbackPopup />
     </QueryClientProvider>
   );
 }
