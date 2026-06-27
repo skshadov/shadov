@@ -133,7 +133,7 @@ export function createHandler(config: HandlerConfig) {
   function corsHeadersFor(originAllowed: string | null): HeadersInit {
     const h: Record<string,string> = {
       "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization, apikey, X-Test-Run-Token",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization, apikey, x-client-info, X-Client-Info, X-Test-Run-Token",
       "Access-Control-Max-Age": "86400",
       "Content-Type": "application/json",
       "Vary": "Origin",

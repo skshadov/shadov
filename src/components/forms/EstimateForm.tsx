@@ -277,7 +277,7 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
           body: {
             submission_id: submissionId,
             source_path: typeof window !== "undefined" ? window.location.pathname : "/",
-            service_slug: effective.service,
+            service_slug: null,
             contact_name: effective.name,
             phone: effective.phone,
             email: null,
