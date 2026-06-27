@@ -40,9 +40,6 @@ export function ServiceEstimateExample({ rows }: ServiceEstimateExampleProps) {
                   r.item.priceFrom && typeof vol === "number"
                     ? r.item.priceFrom * vol
                     : undefined;
-                const volLabel =
-                  r.volumeLabel ??
-                  (typeof vol === "number" ? "Демонстрационный объём" : undefined);
                 return (
                   <tr key={r.item.id} className="border-t border-border">
                     <th scope="row" className="px-4 py-3 font-medium">{r.item.name}</th>
