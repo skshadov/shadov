@@ -35,6 +35,8 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { isPublicDataCollectionEnabled, CONSENT_VERSION } from "@/lib/operator-configuration";
 import { readUtm, formatUtmForMessage, reachMetrikaGoal } from "@/lib/utm";
+import { CALCULATOR_LOCAL_STORAGE_KEY, CALCULATOR_MODES } from "@/types/calculator";
+import { CALCULATOR_MODE_SPECS, HOUSE_COMPLETION_LEVELS_SPEC } from "@/data/calculator-specification";
 
 const STORAGE_KEY = "shadov:estimate-draft";
 
@@ -143,7 +145,60 @@ const DEFAULTS: FormValues = {
   consent: false as unknown as true,
 };
 
-export function EstimateForm() {
+function readCalculatorSnapshot(): {
+  modeLabel?: string;
+  modeId?: string;
+  area?: number;
+  completionLabel?: string;
+  linesCount: number;
+  summary: string;
+} | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(CALCULATOR_LOCAL_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as {
+      mode?: string;
+      area?: number;
+      completionLevel?: string;
+      technologySlug?: string;
+      lines?: Array<{ id: string; volume?: number }>;
+    };
+    const modeId = parsed.mode && (CALCULATOR_MODES as readonly string[]).includes(parsed.mode)
+      ? parsed.mode
+      : undefined;
+    const modeSpec = modeId ? CALCULATOR_MODE_SPECS.find((m) => m.id === modeId) : undefined;
+    const completion = parsed.completionLevel
+      ? HOUSE_COMPLETION_LEVELS_SPEC.find((l) => l.id === parsed.completionLevel)
+      : undefined;
+    const lines = Array.isArray(parsed.lines) ? parsed.lines : [];
+    const parts: string[] = [];
+    if (modeSpec) parts.push(`Раздел калькулятора: ${modeSpec.label}`);
+    if (parsed.area) parts.push(`Площадь/объём: ${parsed.area}`);
+    if (completion) parts.push(`Уровень готовности: ${completion.label}`);
+    if (parsed.technologySlug) parts.push(`Технология: ${parsed.technologySlug}`);
+    if (lines.length) {
+      parts.push(
+        `Позиции (${lines.length}): ` +
+          lines
+            .map((l) => `${l.id}${l.volume ? ` × ${l.volume}` : ""}`)
+            .join("; "),
+      );
+    }
+    return {
+      modeId,
+      modeLabel: modeSpec?.label,
+      area: parsed.area,
+      completionLabel: completion?.label,
+      linesCount: lines.length,
+      summary: parts.join("\n"),
+    };
+  } catch {
+    return null;
+  }
+}
+
+export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
   const formId = useId();
   const [submitting, setSubmitting] = useState(false);
   const [hasDraft, setHasDraft] = useState(false);
@@ -179,6 +234,18 @@ export function EstimateForm() {
     }
   }, [reset]);
 
+  // В компактном режиме поля "Тип объекта / Услуга / Площадь / Единица"
+  // скрыты — они берутся из калькулятора. Чтобы пройти валидацию,
+  // заполняем их значениями по умолчанию или из снапшота калькулятора.
+  useEffect(() => {
+    if (!compact) return;
+    const snap = readCalculatorSnapshot();
+    setValue("objectType", "Из калькулятора");
+    setValue("service", snap?.modeLabel ?? "Из калькулятора");
+    setValue("area", snap?.area ? String(snap.area) : "1");
+    setValue("unit", "м²");
+  }, [compact, setValue]);
+
   const watched = watch();
 
   const onSubmit = async (values: FormValues) => {
@@ -187,7 +254,21 @@ export function EstimateForm() {
     try {
       const utm = readUtm();
       const utmSuffix = formatUtmForMessage(utm);
-      const messageWithUtm = ((values.comment ?? "") + utmSuffix).slice(0, 1000) || null;
+      const calcSnap = compact ? readCalculatorSnapshot() : null;
+      const calcPrefix = calcSnap?.summary
+        ? `Данные из калькулятора:\n${calcSnap.summary}\n\n`
+        : "";
+      const messageWithUtm =
+        (calcPrefix + (values.comment ?? "") + utmSuffix).slice(0, 1000) || null;
+      const effective: FormValues = compact
+        ? {
+            ...values,
+            objectType: values.objectType || "Из калькулятора",
+            service: values.service || (calcSnap?.modeLabel ?? "Из калькулятора"),
+            area: values.area || (calcSnap?.area ? String(calcSnap.area) : "—"),
+            unit: values.unit || "м²",
+          }
+        : values;
       if (backendEnabled) {
         const submissionId = (typeof crypto !== "undefined" && "randomUUID" in crypto)
           ? crypto.randomUUID()
@@ -196,9 +277,9 @@ export function EstimateForm() {
           body: {
             submission_id: submissionId,
             source_path: typeof window !== "undefined" ? window.location.pathname : "/",
-            service_slug: values.service,
-            contact_name: values.name,
-            phone: values.phone,
+            service_slug: effective.service,
+            contact_name: effective.name,
+            phone: effective.phone,
             email: null,
             message: messageWithUtm,
             consent_accepted: true,
@@ -223,11 +304,16 @@ export function EstimateForm() {
         });
         return;
       }
-      const { consent: _consent, ...persistable } = values;
+      const { consent: _consent, ...persistable } = effective;
       void _consent;
       window.localStorage.setItem(
         STORAGE_KEY,
-        JSON.stringify({ ...persistable, utm, savedAt: new Date().toISOString() }),
+        JSON.stringify({
+          ...persistable,
+          calculator: calcSnap ?? undefined,
+          utm,
+          savedAt: new Date().toISOString(),
+        }),
       );
       setHasDraft(true);
       reachMetrikaGoal("estimate_submitted_demo");
@@ -281,6 +367,7 @@ export function EstimateForm() {
       )}
 
       <div className="grid gap-4 md:grid-cols-2">
+        {compact ? null : (
         <Field label="Тип объекта" error={errors.objectType?.message} required>
           <Select
             value={watched.objectType || undefined}
@@ -294,7 +381,9 @@ export function EstimateForm() {
             </SelectContent>
           </Select>
         </Field>
+        )}
 
+        {compact ? null : (
         <Field label="Нужная услуга" error={errors.service?.message} required>
           <Select
             value={watched.service || undefined}
@@ -308,7 +397,9 @@ export function EstimateForm() {
             </SelectContent>
           </Select>
         </Field>
+        )}
 
+        {compact ? null : (
         <Field label="Площадь или объём" error={errors.area?.message} required>
           <Input
             type="text"
@@ -318,7 +409,9 @@ export function EstimateForm() {
             {...register("area")}
           />
         </Field>
+        )}
 
+        {compact ? null : (
         <Field label="Единица" error={errors.unit?.message} required>
           <Select
             value={watched.unit || undefined}
@@ -332,6 +425,7 @@ export function EstimateForm() {
             </SelectContent>
           </Select>
         </Field>
+        )}
 
         <Field label="Текущее состояние объекта" error={errors.state?.message}>
           <Select
