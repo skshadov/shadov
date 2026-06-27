@@ -555,10 +555,10 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
           {submitting ? (
             <>
               <Loader2 aria-hidden="true" className="mr-2 h-4 w-4 animate-spin" />
-              Сохраняем…
+              Отправляем…
             </>
           ) : (
-            "Сохранить расчёт (демо)"
+            "Отправь на расчёт инженеру"
           )}
         </Button>
       </div>
