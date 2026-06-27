@@ -43,6 +43,10 @@ export function CalculatorInputs({ mode, area, technologySlug, completionLevel, 
     );
   }
 
+  if (mode === "repair") {
+    return null;
+  }
+
   return (
     <fieldset className="rounded-xl border border-border bg-card p-5">
       <legend className="px-2 text-sm font-semibold">Основные параметры</legend>
