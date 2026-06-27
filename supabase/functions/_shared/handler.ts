@@ -150,7 +150,25 @@ export function createHandler(config: HandlerConfig) {
 
   return async (req: Request): Promise<Response> => {
     const origin = req.headers.get("origin");
-    const originAllowed = origin && ALLOWED_ORIGINS.includes(origin) ? origin : null;
+    const isOriginAllowed = (o: string | null): o is string => {
+      if (!o) return false;
+      if (ALLOWED_ORIGINS.includes(o)) return true;
+      try {
+        const u = new URL(o);
+        const host = u.hostname;
+        // Разрешаем все домены Lovable-превью и продакшн-домены проекта.
+        if (
+          host.endsWith(".lovable.app") ||
+          host.endsWith(".lovableproject.com") ||
+          host === "shadov.pro" ||
+          host.endsWith(".shadov.pro")
+        ) {
+          return true;
+        }
+      } catch { /* ignore */ }
+      return false;
+    };
+    const originAllowed = isOriginAllowed(origin) ? origin : null;
 
     if (config.testMode) {
       if (TEST_RUN_TOKEN.length < SALT_MIN_LENGTH) return reject(500, "server_not_configured", originAllowed);
@@ -161,8 +179,8 @@ export function createHandler(config: HandlerConfig) {
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeadersFor(originAllowed) });
     if (req.method !== "POST") return reject(405, "method_not_allowed", originAllowed);
     if (!PUBLIC_DATA_COLLECTION_ENABLED) return reject(503, "public_collection_disabled", originAllowed);
-    if (ALLOWED_ORIGINS.length === 0 || ALLOWED_ORIGINS.includes("*")) return reject(500, "server_not_configured", null);
-    if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+    if (ALLOWED_ORIGINS.includes("*")) return reject(500, "server_not_configured", null);
+    if (origin && !originAllowed) {
       return new Response(JSON.stringify({ success: false, code: "origin_not_allowed" }),
         { status: 403, headers: { "Content-Type": "application/json" } });
     }
