@@ -259,15 +259,7 @@ export function EstimateForm() {
       className="grid gap-5"
     >
       <div className="flex items-center justify-between gap-3">
-        {backendEnabled ? (
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-primary">
-            Защищённая отправка
-          </span>
-        ) : (
-          <span className="inline-flex items-center gap-2 rounded-full border border-warning/40 bg-warning/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-[color:var(--warning)]">
-            DEMO режим
-          </span>
-        )}
+        <span />
         {hasDraft ? (
           <Button
             type="button"
@@ -282,13 +274,9 @@ export function EstimateForm() {
         ) : null}
       </div>
 
-      {backendEnabled ? (
+      {backendEnabled ? null : (
         <p className="rounded-md border border-border bg-muted/50 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
-          Данные отправляются в защищённую базу. Подробнее — в политике конфиденциальности.
-        </p>
-      ) : (
-        <p className="rounded-md border border-border bg-muted/50 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
-          До подключения защищённой базы данных форма работает в демонстрационном режиме: введённые данные сохраняются только на этом устройстве, никуда не отправляются и не передаются третьим лицам.
+          Форма временно работает в локальном режиме: введённые данные сохраняются только на этом устройстве.
         </p>
       )}
 
