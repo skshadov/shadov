@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { InfoPageLayout, InfoSection, InfoList, buildInfoHead } from "@/components/info/InfoPageLayout";
-import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
 import { regions, company } from "@/config/company";
 
 const PATH = "/about";
