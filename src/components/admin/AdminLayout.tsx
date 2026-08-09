@@ -215,3 +215,23 @@ export function AdminForbidden({ email, onRetry }: { email: string | null; onRet
     </div>
   );
 }
+
+export function AdminAccessError({ onRetry }: { onRetry: () => void }) {
+  return (
+    <div className="flex min-h-dvh items-center justify-center bg-background p-6">
+      <div className="max-w-md rounded-lg border border-destructive/40 bg-destructive/5 p-6 text-center">
+        <ShieldAlert aria-hidden className="mx-auto h-10 w-10 text-destructive" />
+        <h1 className="mt-3 font-display text-xl font-semibold">Не удалось проверить доступ</h1>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Возник временный сбой проверки. Административные права не отклонены — повторите запрос.
+        </p>
+        <div className="mt-4 flex flex-wrap justify-center gap-2">
+          <Button size="sm" onClick={onRetry}>Повторить проверку</Button>
+          <Button asChild variant="outline" size="sm">
+            <Link to="/">На сайт</Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}

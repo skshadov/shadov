@@ -10,6 +10,7 @@ export type AdminSessionState =
   | { status: "loading" }
   | { status: "anonymous" }
   | { status: "forbidden"; email: string | null; retry: () => void }
+  | { status: "error"; retry: () => void }
   | { status: "authenticated"; admin: AdminContext };
 
 export function useAdminSession(): AdminSessionState {
@@ -58,7 +59,7 @@ export function useAdminSession(): AdminSessionState {
         });
       } catch {
         if (!active) return;
-        setState({ status: "forbidden", email, retry: () => setAttempt((n) => n + 1) });
+        setState({ status: "error", retry: () => setAttempt((n) => n + 1) });
       }
     }
 

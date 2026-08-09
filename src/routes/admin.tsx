@@ -1,6 +1,6 @@
 import { createFileRoute, Navigate, Outlet, useMatchRoute } from "@tanstack/react-router";
 import { useAdminSession } from "@/lib/admin/use-admin-session";
-import { AdminForbidden } from "@/components/admin/AdminLayout";
+import { AdminAccessError, AdminForbidden } from "@/components/admin/AdminLayout";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
@@ -34,6 +34,9 @@ function AdminGate() {
   }
   if (session.status === "forbidden") {
     return <AdminForbidden email={session.email} onRetry={session.retry} />;
+  }
+  if (session.status === "error") {
+    return <AdminAccessError onRetry={session.retry} />;
   }
   // Голый /admin — редирект на дашборд.
   if (isExactAdminRoot) {
