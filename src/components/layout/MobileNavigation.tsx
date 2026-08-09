@@ -6,7 +6,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "@tanstack/react-router";
-import { Menu, ArrowRight, LogIn, X } from "lucide-react";
+import { Menu, ArrowRight, X } from "lucide-react";
 
 import {
   Accordion,

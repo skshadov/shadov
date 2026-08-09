@@ -3,7 +3,7 @@
  * договора (§1 + §3 ТЗ). На мобильном — крупная одна строка.
  */
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, LogIn, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { company, isFilled } from "@/config/company";
 
