@@ -1,36 +1,22 @@
 /**
- * §12.1 ТЗ — первый экран. AI-иллюстрация помечена через
- * <Illustration>, не выдаётся за реальный объект.
+ * Первый экран: короткое позиционирование слева и визуальная карта реальных
+ * строительных процессов справа.
  */
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Building2, Wrench } from "lucide-react";
-import { heroPicture } from "@/assets/illustrations/sources";
+import { ArrowRight, Building2, ShieldCheck, Wrench } from "lucide-react";
+import {
+  engineeringPicture,
+  heatingPicture,
+  monolithPicture,
+} from "@/assets/illustrations/sources";
 import { Illustration } from "@/components/common/Illustration";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden border-b border-border bg-background">
-      <div className="absolute inset-0 -z-10">
-        <Illustration
-          src={heroPicture.src}
-          sources={heroPicture.sources}
-          imgSrcSet={heroPicture.imgSrcSet}
-          imgSizes={heroPicture.imgSizes}
-          description="бригада наносит механизированную штукатурку на стены квартиры в новостройке"
-          width={heroPicture.width}
-          height={heroPicture.height}
-          priority
-          caption={false}
-          rounded={false}
-          imgClassName="h-full w-full object-cover opacity-30"
-          className="h-full w-full"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
-      </div>
-
-      <div className="container-page relative grid gap-10 pt-4 pb-14 md:pt-6 md:pb-20 lg:grid-cols-12 lg:gap-12 lg:pt-8 lg:pb-28">
-        <div className="lg:col-span-7">
+      <div className="container-page relative grid gap-10 py-10 md:py-14 lg:grid-cols-12 lg:items-center lg:gap-12 lg:py-16">
+        <div className="lg:col-span-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">
             <ShieldCheck aria-hidden="true" className="h-3.5 w-3.5 text-primary" />
             Специализация: черновой цикл под чистовую отделку
@@ -59,8 +45,89 @@ export function HeroSection() {
             <FactCard Icon={ShieldCheck} title="Гарантия 3 года" text="Выезд и устранение за наш счёт" />
           </ul>
         </div>
+
+        <HeroProcessVisual />
       </div>
     </section>
+  );
+}
+
+function HeroProcessVisual() {
+  return (
+    <div className="relative min-h-[430px] lg:col-span-6 lg:min-h-[620px]">
+      <div className="grid h-full min-h-[430px] grid-cols-10 grid-rows-10 gap-3 sm:min-h-[540px] lg:min-h-[620px]">
+        <ProcessImage
+          picture={monolithPicture}
+          description="Рабочий процесс устройства бетонной стяжки на строительном объекте"
+          label="Стяжка пола"
+          detail="Заливка и выравнивание"
+          className="col-span-8 col-start-3 row-span-6 row-start-1"
+          labelPosition="bottom"
+        />
+        <ProcessImage
+          picture={heatingPicture}
+          description="Монтаж контуров тёплого пола и коллекторного узла на объекте"
+          label="Тёплый пол"
+          detail="Контуры и коллектор"
+          className="col-span-7 col-start-1 row-span-5 row-start-6"
+          labelPosition="bottom"
+        />
+        <ProcessImage
+          picture={engineeringPicture}
+          description="Собранный узел черновой инженерии с трубами и электрикой"
+          label="Черновая инженерия"
+          detail="Сантехника и электрика"
+          className="col-span-4 col-start-1 row-span-3 row-start-4 sm:col-span-3"
+          labelPosition="top"
+        />
+      </div>
+    </div>
+  );
+}
+
+function ProcessImage({
+  picture,
+  description,
+  label,
+  detail,
+  className,
+  labelPosition,
+}: {
+  picture: typeof monolithPicture;
+  description: string;
+  label: string;
+  detail: string;
+  className: string;
+  labelPosition: "top" | "bottom";
+}) {
+  return (
+    <figure
+      className={`group relative min-h-0 overflow-hidden rounded-xl border border-border bg-card shadow-2xl transition-transform duration-700 ${className} ${
+        labelPosition === "top" ? "hover:-translate-y-1" : "hover:translate-y-1"
+      }`}
+    >
+      <Illustration
+        src={picture.src}
+        sources={picture.sources}
+        imgSrcSet={picture.imgSrcSet}
+        imgSizes={picture.imgSizes}
+        description={description}
+        width={picture.width}
+        height={picture.height}
+        priority
+        caption={false}
+        rounded={false}
+        imgClassName="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        className="h-full w-full"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-transparent" />
+      <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-0.5 p-4 sm:p-5">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">
+          {label}
+        </span>
+        <span className="text-sm font-semibold text-foreground sm:text-base">{detail}</span>
+      </figcaption>
+    </figure>
   );
 }
 
