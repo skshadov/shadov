@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { InfoPageLayout, InfoSection, InfoList, buildInfoHead } from "@/components/info/InfoPageLayout";
-import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
 import { regions, company } from "@/config/company";
 
 const PATH = "/about";
@@ -137,13 +136,6 @@ function Page() {
 
       <InfoSection title="География работ">
         <InfoList items={regions} />
-      </InfoSection>
-
-      <InfoSection title="Команда">
-        <PlaceholderNotice
-          title="Состав команды публикуется после подтверждения данных"
-          description="Состав команды публикуется через административную панель после подтверждения данных и согласия на размещение. До этого момента публичные карточки сотрудников не отображаются."
-        />
       </InfoSection>
 
       <InfoSection title="Готовы обсудить ваш объект?">
