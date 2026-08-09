@@ -13,7 +13,6 @@ const STATIC_PATHS = [
   "/how-we-work",
   "/faq",
   "/kalkulyator-stoimosti",
-  "/team",
   "/portfolio",
   "/reviews",
   "/kontrol-kachestva",

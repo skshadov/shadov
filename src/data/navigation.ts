@@ -46,7 +46,6 @@ export const MAIN_NAV: NavItem[] = [
 
 export const FOOTER_INFO_LINKS: NavLink[] = [
   { label: "О компании", to: "/about" },
-  { label: "Команда", to: "/team" },
   { label: "Как мы работаем", to: "/how-we-work" },
   { label: "Контроль качества", to: "/kontrol-kachestva" },
   { label: "Наши работы", to: "/portfolio" },
