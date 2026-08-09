@@ -3,7 +3,13 @@ import { SERVICE_PRICING } from "@/data/pricing";
 import { useLivePricingList } from "@/lib/site-content/store";
 import { ServiceCalculator } from "./ServiceCalculator";
 
-export function ServiceCalculatorTabs({ initialSlug }: { initialSlug?: string }) {
+export function ServiceCalculatorTabs({
+  initialSlug,
+  withLead = false,
+}: {
+  initialSlug?: string;
+  withLead?: boolean;
+}) {
   const services = useLivePricingList();
   const [slug, setSlug] = useState<string>(
     SERVICE_PRICING.some((s) => s.slug === initialSlug) ? (initialSlug as string) : SERVICE_PRICING[0]!.slug,
@@ -31,7 +37,12 @@ export function ServiceCalculatorTabs({ initialSlug }: { initialSlug?: string })
           </button>
         ))}
       </div>
-      <ServiceCalculator key={active.slug} calc={active.calc} serviceName={active.shortName} />
+      <ServiceCalculator
+        key={active.slug}
+        calc={active.calc}
+        serviceName={active.shortName}
+        withLead={withLead}
+      />
     </div>
   );
 }
