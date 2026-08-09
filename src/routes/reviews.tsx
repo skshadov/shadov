@@ -29,8 +29,8 @@ function Page() {
       h1="Отзывы"
       intro={
         <p>
-          Отзывы заказчиков о строительстве, ремонте и инженерных системах.
-          Авторы — частные клиенты, владельцы домов и квартир в Москве и Московской области.
+          Отзывы заказчиков о штукатурке, стяжке пола, тёплом поле и черновой
+          инженерии. Авторы — владельцы квартир и домов в Москве и Московской области.
         </p>
       }
     >
@@ -64,9 +64,9 @@ function Page() {
         </InfoSection>
       ) : (
         <>
-          {(["construction", "repair", "engineering"] as const).map((cat) => {
+          {(["repair", "engineering"] as const).map((cat) => {
             const list = SHOWCASE_REVIEWS.filter((r) => r.category === cat);
-            const titles = { construction: "Отзывы — строительство домов", repair: "Отзывы — ремонт и отделка", engineering: "Отзывы — инженерные системы" };
+            const titles = { repair: "Отзывы — штукатурка и стяжка", engineering: "Отзывы — черновая инженерия" };
             return (
               <InfoSection key={cat} title={titles[cat]}>
                 <div className="grid gap-5 md:grid-cols-2">
