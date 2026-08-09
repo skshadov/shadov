@@ -13,7 +13,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { ServiceCalculatorTabs } from "@/components/service/ServiceCalculatorTabs";
-import { EstimateForm } from "@/components/forms/EstimateForm";
 import { PriceDisclaimer } from "@/components/common/PriceDisclaimer";
 import { CALCULATOR_METADATA, CALCULATOR_ROUTE } from "@/data/calculator-specification";
 import { SERVICE_PRICING } from "@/data/pricing";
@@ -98,13 +97,7 @@ function CalculatorPage() {
 
         <section className="border-b border-border py-10">
           <div className="container-page">
-            <ServiceCalculatorTabs initialSlug={search.mode} />
-          </div>
-        </section>
-
-        <section className="border-b border-border py-10">
-          <div className="container-page">
-            <EstimateForm compact />
+            <ServiceCalculatorTabs initialSlug={search.mode} withLead />
           </div>
         </section>
 
