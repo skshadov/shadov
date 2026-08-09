@@ -4,12 +4,13 @@
  */
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { getMyAdminContext, type AdminContext } from "./api.functions";
+import type { AdminContext } from "./api.functions";
 
 export type AdminSessionState =
   | { status: "loading" }
   | { status: "anonymous" }
   | { status: "forbidden"; email: string | null; retry: () => void }
+  | { status: "error"; retry: () => void }
   | { status: "authenticated"; admin: AdminContext };
 
 export function useAdminSession(): AdminSessionState {
@@ -20,46 +21,45 @@ export function useAdminSession(): AdminSessionState {
     let active = true;
 
     async function evaluate() {
-      const { data } = await supabase.auth.getSession();
+      const { data, error: userError } = await supabase.auth.getUser();
       if (!active) return;
-      if (!data.session?.user) {
+      if (userError || !data.user) {
         setState({ status: "anonymous" });
         return;
       }
-      const email = data.session.user.email ?? null;
+      const email = data.user.email ?? null;
       try {
-        let admin = await getMyAdminContext();
-        if (!admin) {
-          // Возможен устаревший JWT (выдан до назначения роли) — одна попытка
-          // обновления сессии, без повторных ротаций refresh-токена.
-          const refreshed = await supabase.auth.refreshSession().catch(() => null);
-          if (!active) return;
-          if (refreshed?.data?.session) admin = await getMyAdminContext();
+        // Проверяем доступ через защищённые RPC базы под текущей сессией.
+        // Это устраняет ложный forbidden при сбое транспорта serverFn;
+        // реальные операции админки всё равно повторно защищены middleware и RLS.
+        const [adminResult, permissionsResult, roleResult] = await Promise.all([
+          supabase.rpc("is_admin_user"),
+          supabase.rpc("get_my_admin_permissions"),
+          supabase.rpc("get_my_primary_role"),
+        ]);
+        if (adminResult.error || permissionsResult.error || roleResult.error) {
+          throw adminResult.error ?? permissionsResult.error ?? roleResult.error;
         }
         if (!active) return;
-        if (!admin) {
+        if (!adminResult.data) {
           setState({ status: "forbidden", email, retry: () => setAttempt((n) => n + 1) });
           return;
         }
-        setState({ status: "authenticated", admin });
+        const permissions = Array.isArray(permissionsResult.data)
+          ? permissionsResult.data.map((row) => row.permission_key)
+          : [];
+        setState({
+          status: "authenticated",
+          admin: {
+            userId: data.user.id,
+            email,
+            role: roleResult.data ?? null,
+            permissions,
+          },
+        });
       } catch {
-        // Сетевая ошибка/401 — пробуем один раз обновить токен и повторить.
-        const refreshed = await supabase.auth.refreshSession().catch(() => null);
         if (!active) return;
-        if (refreshed?.data?.session) {
-          try {
-            const admin = await getMyAdminContext();
-            if (!active) return;
-            if (admin) {
-              setState({ status: "authenticated", admin });
-              return;
-            }
-          } catch {
-            /* ниже — forbidden */
-          }
-        }
-        if (!active) return;
-        setState({ status: "forbidden", email, retry: () => setAttempt((n) => n + 1) });
+        setState({ status: "error", retry: () => setAttempt((n) => n + 1) });
       }
     }
 
