@@ -9,36 +9,48 @@ import { getMyAdminContext, type AdminContext } from "./api.functions";
 export type AdminSessionState =
   | { status: "loading" }
   | { status: "anonymous" }
-  | { status: "forbidden"; email: string | null }
+  | { status: "forbidden"; email: string | null; retry: () => void }
   | { status: "authenticated"; admin: AdminContext };
 
 export function useAdminSession(): AdminSessionState {
   const [state, setState] = useState<AdminSessionState>({ status: "loading" });
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let active = true;
 
     async function evaluate() {
+      // Обновляем токен: устаревший JWT (выданный до назначения роли) — частая
+      // причина ложного «Недостаточно прав».
       const { data } = await supabase.auth.getSession();
       if (!active) return;
       if (!data.session?.user) {
         setState({ status: "anonymous" });
         return;
       }
+      await supabase.auth.refreshSession().catch(() => null);
+      if (!active) return;
+      const email = data.session.user.email ?? null;
       try {
-        const admin = await getMyAdminContext();
+        let admin = await getMyAdminContext();
+        if (!admin) {
+          // Вторая попытка после принудительного обновления сессии.
+          await supabase.auth.refreshSession().catch(() => null);
+          admin = await getMyAdminContext();
+        }
         if (!active) return;
         if (!admin) {
-          setState({ status: "forbidden", email: data.session.user.email ?? null });
+          setState({ status: "forbidden", email, retry: () => setAttempt((n) => n + 1) });
           return;
         }
         setState({ status: "authenticated", admin });
       } catch {
         if (!active) return;
-        setState({ status: "forbidden", email: data.session.user.email ?? null });
+        setState({ status: "forbidden", email, retry: () => setAttempt((n) => n + 1) });
       }
     }
 
+    setState({ status: "loading" });
     evaluate();
     const { data: sub } = supabase.auth.onAuthStateChange((event) => {
       if (event === "SIGNED_OUT") setState({ status: "anonymous" });
@@ -48,7 +60,7 @@ export function useAdminSession(): AdminSessionState {
       active = false;
       sub.subscription.unsubscribe();
     };
-  }, []);
+  }, [attempt]);
 
   return state;
 }

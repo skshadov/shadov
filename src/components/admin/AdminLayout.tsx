@@ -188,7 +188,11 @@ export function AdminLayout({ admin, title, breadcrumbs, children }: Props) {
   );
 }
 
-export function AdminForbidden({ email }: { email: string | null }) {
+export function AdminForbidden({ email, onRetry }: { email: string | null; onRetry?: () => void }) {
+  async function relogin() {
+    await supabase.auth.signOut();
+    window.location.assign("/login");
+  }
   return (
     <div className="flex min-h-dvh items-center justify-center bg-background p-6">
       <div className="max-w-md rounded-lg border border-destructive/40 bg-destructive/5 p-6 text-center">
@@ -196,9 +200,13 @@ export function AdminForbidden({ email }: { email: string | null }) {
         <h1 className="mt-3 font-display text-xl font-semibold">Недостаточно прав</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Учётная запись {email ?? "(без email)"} не имеет административных прав.
-          Если это ошибка — обратитесь к super_admin.
+          Если права выданы недавно — нажмите «Проверить снова» или войдите заново.
         </p>
-        <div className="mt-4 flex justify-center gap-2">
+        <div className="mt-4 flex flex-wrap justify-center gap-2">
+          {onRetry ? (
+            <Button size="sm" onClick={onRetry}>Проверить снова</Button>
+          ) : null}
+          <Button variant="secondary" size="sm" onClick={relogin}>Войти заново</Button>
           <Button asChild variant="outline" size="sm">
             <Link to="/">На сайт</Link>
           </Button>

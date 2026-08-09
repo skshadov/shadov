@@ -33,7 +33,7 @@ function AdminGate() {
     return <Navigate to="/login" search={{ returnTo: "/admin/dashboard" } as never} replace />;
   }
   if (session.status === "forbidden") {
-    return <AdminForbidden email={session.email} />;
+    return <AdminForbidden email={session.email} onRetry={session.retry} />;
   }
   // Голый /admin — редирект на дашборд.
   if (isExactAdminRoot) {
