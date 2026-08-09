@@ -90,6 +90,7 @@ import { Route as AdminCatalogServicesRouteImport } from './routes/admin.catalog
 import { Route as AdminCatalogPricesRouteImport } from './routes/admin.catalog.prices'
 import { Route as AdminCatalogCategoriesRouteImport } from './routes/admin.catalog.categories'
 import { Route as AdminApplicationsIdRouteImport } from './routes/admin.applications.$id'
+import { Route as ApiPublicSiteImageKeyRouteImport } from './routes/api/public/site-image.$key'
 import { Route as AdminProjectsIdReportsRouteImport } from './routes/admin.projects.$id.reports'
 import { Route as AdminProjectsIdPaymentsRouteImport } from './routes/admin.projects.$id.payments'
 import { Route as AdminProjectsIdMessagesRouteImport } from './routes/admin.projects.$id.messages'
@@ -506,6 +507,11 @@ const AdminApplicationsIdRoute = AdminApplicationsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => AdminApplicationsRoute,
 } as any)
+const ApiPublicSiteImageKeyRoute = ApiPublicSiteImageKeyRouteImport.update({
+  id: '/api/public/site-image/$key',
+  path: '/api/public/site-image/$key',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminProjectsIdReportsRoute = AdminProjectsIdReportsRouteImport.update({
   id: '/reports',
   path: '/reports',
@@ -620,6 +626,7 @@ export interface FileRoutesByFullPath {
   '/admin/projects/$id/messages': typeof AdminProjectsIdMessagesRoute
   '/admin/projects/$id/payments': typeof AdminProjectsIdPaymentsRoute
   '/admin/projects/$id/reports': typeof AdminProjectsIdReportsRoute
+  '/api/public/site-image/$key': typeof ApiPublicSiteImageKeyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -706,6 +713,7 @@ export interface FileRoutesByTo {
   '/admin/projects/$id/messages': typeof AdminProjectsIdMessagesRoute
   '/admin/projects/$id/payments': typeof AdminProjectsIdPaymentsRoute
   '/admin/projects/$id/reports': typeof AdminProjectsIdReportsRoute
+  '/api/public/site-image/$key': typeof ApiPublicSiteImageKeyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -795,6 +803,7 @@ export interface FileRoutesById {
   '/admin/projects/$id/messages': typeof AdminProjectsIdMessagesRoute
   '/admin/projects/$id/payments': typeof AdminProjectsIdPaymentsRoute
   '/admin/projects/$id/reports': typeof AdminProjectsIdReportsRoute
+  '/api/public/site-image/$key': typeof ApiPublicSiteImageKeyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -885,6 +894,7 @@ export interface FileRouteTypes {
     | '/admin/projects/$id/messages'
     | '/admin/projects/$id/payments'
     | '/admin/projects/$id/reports'
+    | '/api/public/site-image/$key'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -971,6 +981,7 @@ export interface FileRouteTypes {
     | '/admin/projects/$id/messages'
     | '/admin/projects/$id/payments'
     | '/admin/projects/$id/reports'
+    | '/api/public/site-image/$key'
   id:
     | '__root__'
     | '/'
@@ -1059,6 +1070,7 @@ export interface FileRouteTypes {
     | '/admin/projects/$id/messages'
     | '/admin/projects/$id/payments'
     | '/admin/projects/$id/reports'
+    | '/api/public/site-image/$key'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1124,6 +1136,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   UkladkaPlitkiRoute: typeof UkladkaPlitkiRoute
   VodosnabzhenieKanalizatsiyaRoute: typeof VodosnabzhenieKanalizatsiyaRoute
+  ApiPublicSiteImageKeyRoute: typeof ApiPublicSiteImageKeyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1695,6 +1708,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminApplicationsIdRouteImport
       parentRoute: typeof AdminApplicationsRoute
     }
+    '/api/public/site-image/$key': {
+      id: '/api/public/site-image/$key'
+      path: '/api/public/site-image/$key'
+      fullPath: '/api/public/site-image/$key'
+      preLoaderRoute: typeof ApiPublicSiteImageKeyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/projects/$id/reports': {
       id: '/admin/projects/$id/reports'
       path: '/reports'
@@ -1929,6 +1949,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   UkladkaPlitkiRoute: UkladkaPlitkiRoute,
   VodosnabzhenieKanalizatsiyaRoute: VodosnabzhenieKanalizatsiyaRoute,
+  ApiPublicSiteImageKeyRoute: ApiPublicSiteImageKeyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
