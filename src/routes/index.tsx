@@ -7,7 +7,6 @@ import { TrustBar } from "@/components/home/TrustBar";
 import { ServiceDirections } from "@/components/home/ServiceDirections";
 import { StartingPrices } from "@/components/home/StartingPrices";
 import { DirectContractSection } from "@/components/home/DirectContractSection";
-import { ProjectControlSection } from "@/components/home/ProjectControlSection";
 import { StagePaymentSection } from "@/components/home/StagePaymentSection";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { PortfolioPreview } from "@/components/home/PortfolioPreview";
@@ -49,7 +48,6 @@ function HomePage() {
         <ServiceDirections />
         <StartingPrices />
         <DirectContractSection />
-        <ProjectControlSection />
         <StagePaymentSection />
         <ServicesOverview />
         <PortfolioPreview />
