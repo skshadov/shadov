@@ -164,12 +164,6 @@ export function MobileNavigation() {
               <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4" />
             </Link>
           </Button>
-          <Button asChild variant="outline" className="min-h-11 w-full">
-            <Link to="/login" onClick={() => setOpen(false)}>
-              <LogIn aria-hidden="true" className="mr-1 h-4 w-4" />
-              Личный кабинет
-            </Link>
-          </Button>
         </div>
       </aside>
     </div>

@@ -7,16 +7,15 @@ import { Label } from "@/components/ui/label";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
-import { safeReturnTo } from "@/lib/client-portal/safe-return-to";
 
 type Search = { returnTo?: string };
 
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Вход в личный кабинет — Шадов и партнёры" },
+      { title: "Служебный вход — Шадов и партнёры" },
       { name: "robots", content: "noindex, follow" },
-      { name: "description", content: "Служебная страница входа в личный кабинет." },
+      { name: "description", content: "Служебная страница входа для сотрудников компании." },
     ],
     links: [{ rel: "canonical", href: "/login" }],
   }),
@@ -30,7 +29,7 @@ export const Route = createFileRoute("/login")({
 function Page() {
   const navigate = useNavigate();
   const search = useSearch({ from: "/login" }) as Search;
-  const returnTo = safeReturnTo(search.returnTo);
+  const returnTo = search.returnTo && /^\/admin(\/|$)/.test(search.returnTo) ? search.returnTo : "/admin/dashboard";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
@@ -72,17 +71,17 @@ function Page() {
       <Header />
       <main id="main" className="surface-light flex-1">
         <div className="container-page py-12 md:py-20">
-          <Breadcrumbs items={[{ label: "Главная", to: "/" }, { label: "Личный кабинет" }, { label: "Вход" }]} />
+          <Breadcrumbs items={[{ label: "Главная", to: "/" }, { label: "Вход" }]} />
           <div className="mx-auto mt-6 max-w-md rounded-xl border border-border bg-card p-6 md:p-8">
-            <h1 className="font-display text-2xl font-semibold md:text-3xl">Вход для клиентов</h1>
+            <h1 className="font-display text-2xl font-semibold md:text-3xl">Служебный вход</h1>
             <p className="mt-2 text-sm text-muted-foreground">
-              Учётные записи создаются администратором. Самостоятельная регистрация на сайте сейчас недоступна.
+              Страница предназначена для сотрудников компании. Регистрация на сайте недоступна.
             </p>
             {userEmail ? (
               <div className="mt-6 space-y-4">
                 <p className="text-sm">Вы вошли как <strong>{userEmail}</strong>.</p>
                 <div className="flex flex-wrap gap-2">
-                  <Button asChild><Link to={returnTo}>Перейти в кабинет</Link></Button>
+                  <Button asChild><Link to={returnTo}>Перейти в панель</Link></Button>
                   <Button type="button" variant="outline" onClick={onLogout}>Выйти</Button>
                 </div>
               </div>

@@ -200,9 +200,6 @@ export function AdminForbidden({ email }: { email: string | null }) {
           <Button asChild variant="outline" size="sm">
             <Link to="/">На сайт</Link>
           </Button>
-          <Button asChild variant="outline" size="sm">
-            <Link to="/client">В личный кабинет</Link>
-          </Button>
         </div>
       </div>
     </div>
