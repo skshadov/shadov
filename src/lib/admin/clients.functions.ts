@@ -4,7 +4,7 @@
  * Чтение PII (email/phone) требует отдельного permission `admin.clients.pii`.
  */
 import { createServerFn } from "@tanstack/react-start";
-import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { requireAdminAuth as requireSupabaseAuth } from "./require-auth";
 
 export interface ClientListItem {
   id: string;

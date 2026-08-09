@@ -5,7 +5,7 @@
  * управлять проектами вне зависимости от членства в project_members.
  */
 import { createServerFn } from "@tanstack/react-start";
-import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { requireAdminAuth as requireSupabaseAuth } from "./require-auth";
 
 /* ===================== shared ===================== */
 

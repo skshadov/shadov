@@ -5,7 +5,7 @@
  * читать/писать данные независимо от своего членства в project_members.
  */
 import { createServerFn } from "@tanstack/react-start";
-import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { requireAdminAuth as requireSupabaseAuth } from "./require-auth";
 
 const PROJECT_STATUSES = ["draft", "planning", "in_progress", "on_hold", "completed", "cancelled"] as const;
 const STAGE_STATUSES = ["pending", "in_progress", "review", "accepted", "blocked"] as const;

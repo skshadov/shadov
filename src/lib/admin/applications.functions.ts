@@ -5,7 +5,7 @@
  * допускает только роль 'admin', а нам нужны и project_manager/viewer и т.д.).
  */
 import { createServerFn } from "@tanstack/react-start";
-import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { requireAdminAuth as requireSupabaseAuth } from "./require-auth";
 
 type Json = string | number | boolean | null | { [k: string]: Json } | Json[];
 
