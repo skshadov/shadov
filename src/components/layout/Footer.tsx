@@ -19,8 +19,6 @@ const SERVICE_COLUMNS = [
   { title: "Черновая инженерия", items: NAV_USLUGI.items.slice(4, 6), hub: NAV_USLUGI.to },
   { title: "Полезное", items: [
       { label: "Мокрая или полусухая стяжка", to: "/mokraya-ili-polusuhaya-styazhka" },
-      { label: "Калькулятор стоимости", to: "/kalkulyator-stoimosti" },
-      { label: "Цены", to: "/prices" },
     ], hub: NAV_USLUGI.to },
 ];
 
