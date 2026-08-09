@@ -10,8 +10,6 @@ import {
   Ruler,
   ClipboardList,
   ShieldCheck,
-  UserCheck,
-  GraduationCap,
 } from "lucide-react";
 
 const ITEMS = [
@@ -21,8 +19,6 @@ const ITEMS = [
   { Icon: Ruler, text: "Бесплатный замер" },
   { Icon: ClipboardList, text: "Фиксированная смета" },
   { Icon: ShieldCheck, text: "Гарантия 3 года" },
-  { Icon: UserCheck, text: "Сотрудники — граждане РФ" },
-  { Icon: GraduationCap, text: "Профильная подготовка" },
 ];
 
 export function TrustBar() {
@@ -32,7 +28,7 @@ export function TrustBar() {
       className="border-y border-border bg-[color:var(--surface-deep)]"
     >
       <div className="container-page py-6">
-        <ul className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-4 lg:grid-cols-8">
+        <ul className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-3 lg:grid-cols-6">
           {ITEMS.map(({ Icon, text }) => (
             <li key={text} className="flex items-center gap-2 text-muted-foreground">
               <Icon aria-hidden="true" className="h-4 w-4 shrink-0 text-primary" />
