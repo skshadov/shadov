@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { InfoPageLayout, InfoSection, buildInfoHead } from "@/components/info/InfoPageLayout";
 import { PriceTable } from "@/components/service/PriceTable";
 import { SERVICE_PRICING, formatRub } from "@/data/pricing";
+import { useLivePricingList } from "@/lib/site-content/store";
 import { PRICES_ACTUAL_DATE } from "@/data/home-prices";
 
 const TITLE = "Цены на штукатурку, стяжку, тёплый пол, электрику и сантехнику | Шадов и партнёры";
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/prices")({
 });
 
 function PricesPage() {
+  const services = useLivePricingList();
   return (
     <InfoPageLayout
       breadcrumbs={[{ label: "Главная", to: "/" }, { label: "Цены" }]}
