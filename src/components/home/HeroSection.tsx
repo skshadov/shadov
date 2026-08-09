@@ -54,34 +54,30 @@ export function HeroSection() {
 
 function HeroProcessVisual() {
   return (
-    <div className="relative min-h-[430px] lg:col-span-6 lg:min-h-[620px]">
-      <div className="grid h-full min-h-[430px] grid-cols-10 grid-rows-10 gap-3 sm:min-h-[540px] lg:min-h-[620px]">
+    <div className="lg:col-span-6">
+      <div className="grid h-[440px] grid-cols-2 grid-rows-2 gap-4 sm:h-[520px] lg:h-[600px]">
         <ProcessImage
           slotKey="home.hero.screed"
           picture={monolithPicture}
           description="Рабочий процесс устройства бетонной стяжки на строительном объекте"
+          index="01"
           label="Стяжка пола"
-          detail="Заливка и выравнивание"
-          className="col-span-8 col-start-3 row-span-6 row-start-1"
-          labelPosition="bottom"
+          className="row-span-2"
         />
         <ProcessImage
           slotKey="home.hero.heating"
           picture={heatingPicture}
           description="Монтаж контуров тёплого пола и коллекторного узла на объекте"
+          index="02"
           label="Тёплый пол"
-          detail="Контуры и коллектор"
-          className="col-span-7 col-start-1 row-span-5 row-start-6"
-          labelPosition="bottom"
         />
         <ProcessImage
           slotKey="home.hero.engineering"
           picture={engineeringPicture}
           description="Собранный узел черновой инженерии с трубами и электрикой"
+          index="03"
           label="Черновая инженерия"
-          detail="Сантехника и электрика"
-          className="col-span-4 col-start-1 row-span-3 row-start-4 sm:col-span-3"
-          labelPosition="top"
+          accent
         />
       </div>
     </div>
@@ -92,38 +88,38 @@ function ProcessImage({
   slotKey,
   picture,
   description,
+  index,
   label,
-  detail,
   className,
-  labelPosition,
+  accent = false,
 }: {
   slotKey: string;
   picture: typeof monolithPicture;
   description: string;
+  index: string;
   label: string;
-  detail: string;
-  className: string;
-  labelPosition: "top" | "bottom";
+  className?: string;
+  accent?: boolean;
 }) {
   return (
     <figure
-      className={`group relative min-h-0 overflow-hidden rounded-xl border border-border bg-card shadow-2xl transition-transform duration-700 ${className} ${
-        labelPosition === "top" ? "hover:-translate-y-1" : "hover:translate-y-1"
-      }`}
+      className={`group relative min-h-0 overflow-hidden rounded-2xl border bg-card shadow-2xl ${
+        accent ? "border-primary/30" : "border-border"
+      } ${className ?? ""}`}
     >
       <SlotImage
         slotKey={slotKey}
         picture={picture}
         description={description}
-        imgClassName="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        imgClassName="h-full w-full object-cover grayscale-[0.15] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03]"
         className="h-full w-full"
       />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
       <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-0.5 p-4 sm:p-5">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">
-          {label}
+        <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary">
+          {index}
         </span>
-        <span className="text-sm font-semibold text-foreground sm:text-base">{detail}</span>
+        <span className="text-sm font-semibold text-foreground sm:text-base">{label}</span>
       </figcaption>
     </figure>
   );
