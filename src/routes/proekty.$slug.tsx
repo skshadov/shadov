@@ -197,7 +197,7 @@ function ProjectPage() {
                   {MATERIAL_LABEL[p.primaryMaterial]} — основная технология проекта. На странице услуги — состав работ, гарантия, сроки и примеры объектов.
                 </p>
                 <Link
-                  to={`/${MATERIAL_SERVICE_SLUG[p.primaryMaterial]}`}
+                  to={`/${MATERIAL_SERVICE_SLUG[p.primaryMaterial]}` as never}
                   className="mt-4 inline-flex text-sm text-primary underline-offset-4 hover:underline"
                 >
                   Подробнее об услуге →

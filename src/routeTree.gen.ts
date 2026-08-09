@@ -14,6 +14,7 @@ import { Route as UkladkaPlitkiRouteImport } from './routes/ukladka-plitki'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TeplyyPolRouteImport } from './routes/teplyy-pol'
 import { Route as TeamRouteImport } from './routes/team'
+import { Route as StyazhkaPolaRouteImport } from './routes/styazhka-pola'
 import { Route as StroitelstvoDomovPodKlyuchRouteImport } from './routes/stroitelstvo-domov-pod-klyuch'
 import { Route as StroitelstvoRouteImport } from './routes/stroitelstvo'
 import { Route as StandartnyyRemontRouteImport } from './routes/standartnyy-remont'
@@ -23,6 +24,8 @@ import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as RemontPodKlyuchRouteImport } from './routes/remont-pod-klyuch'
 import { Route as RemontRouteImport } from './routes/remont'
+import { Route as RazvodkaSantehnikiRouteImport } from './routes/razvodka-santehniki'
+import { Route as RazvodkaElektrikiRouteImport } from './routes/razvodka-elektriki'
 import { Route as ProektyRouteImport } from './routes/proekty'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricesRouteImport } from './routes/prices'
@@ -32,7 +35,9 @@ import { Route as PersonalDataConsentRouteImport } from './routes/personal-data-
 import { Route as OtoplenieRouteImport } from './routes/otoplenie'
 import { Route as MonolitnyeRabotyRouteImport } from './routes/monolitnye-raboty'
 import { Route as MonolitnyeDomaRouteImport } from './routes/monolitnye-doma'
+import { Route as MokrayaIliPolusuhayaStyazhkaRouteImport } from './routes/mokraya-ili-polusuhaya-styazhka'
 import { Route as MnogokvartirnyeDomaRouteImport } from './routes/mnogokvartirnye-doma'
+import { Route as MekhanizirovannayaShtukaturkaRouteImport } from './routes/mekhanizirovannaya-shtukaturka'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as KrovelnyeRabotyRouteImport } from './routes/krovelnye-raboty'
 import { Route as KosmeticheskiyRemontRouteImport } from './routes/kosmeticheskiy-remont'
@@ -118,6 +123,11 @@ const TeamRoute = TeamRouteImport.update({
   path: '/team',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StyazhkaPolaRoute = StyazhkaPolaRouteImport.update({
+  id: '/styazhka-pola',
+  path: '/styazhka-pola',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StroitelstvoDomovPodKlyuchRoute =
   StroitelstvoDomovPodKlyuchRouteImport.update({
     id: '/stroitelstvo-domov-pod-klyuch',
@@ -162,6 +172,16 @@ const RemontPodKlyuchRoute = RemontPodKlyuchRouteImport.update({
 const RemontRoute = RemontRouteImport.update({
   id: '/remont',
   path: '/remont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RazvodkaSantehnikiRoute = RazvodkaSantehnikiRouteImport.update({
+  id: '/razvodka-santehniki',
+  path: '/razvodka-santehniki',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RazvodkaElektrikiRoute = RazvodkaElektrikiRouteImport.update({
+  id: '/razvodka-elektriki',
+  path: '/razvodka-elektriki',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProektyRoute = ProektyRouteImport.update({
@@ -209,11 +229,23 @@ const MonolitnyeDomaRoute = MonolitnyeDomaRouteImport.update({
   path: '/monolitnye-doma',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MokrayaIliPolusuhayaStyazhkaRoute =
+  MokrayaIliPolusuhayaStyazhkaRouteImport.update({
+    id: '/mokraya-ili-polusuhaya-styazhka',
+    path: '/mokraya-ili-polusuhaya-styazhka',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const MnogokvartirnyeDomaRoute = MnogokvartirnyeDomaRouteImport.update({
   id: '/mnogokvartirnye-doma',
   path: '/mnogokvartirnye-doma',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MekhanizirovannayaShtukaturkaRoute =
+  MekhanizirovannayaShtukaturkaRouteImport.update({
+    id: '/mekhanizirovannaya-shtukaturka',
+    path: '/mekhanizirovannaya-shtukaturka',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
@@ -541,7 +573,9 @@ export interface FileRoutesByFullPath {
   '/kosmeticheskiy-remont': typeof KosmeticheskiyRemontRoute
   '/krovelnye-raboty': typeof KrovelnyeRabotyRoute
   '/login': typeof LoginRoute
+  '/mekhanizirovannaya-shtukaturka': typeof MekhanizirovannayaShtukaturkaRoute
   '/mnogokvartirnye-doma': typeof MnogokvartirnyeDomaRoute
+  '/mokraya-ili-polusuhaya-styazhka': typeof MokrayaIliPolusuhayaStyazhkaRoute
   '/monolitnye-doma': typeof MonolitnyeDomaRoute
   '/monolitnye-raboty': typeof MonolitnyeRabotyRoute
   '/otoplenie': typeof OtoplenieRoute
@@ -551,6 +585,8 @@ export interface FileRoutesByFullPath {
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
   '/proekty': typeof ProektyRouteWithChildren
+  '/razvodka-elektriki': typeof RazvodkaElektrikiRoute
+  '/razvodka-santehniki': typeof RazvodkaSantehnikiRoute
   '/remont': typeof RemontRoute
   '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
   '/reviews': typeof ReviewsRoute
@@ -560,6 +596,7 @@ export interface FileRoutesByFullPath {
   '/standartnyy-remont': typeof StandartnyyRemontRoute
   '/stroitelstvo': typeof StroitelstvoRoute
   '/stroitelstvo-domov-pod-klyuch': typeof StroitelstvoDomovPodKlyuchRoute
+  '/styazhka-pola': typeof StyazhkaPolaRoute
   '/team': typeof TeamRoute
   '/teplyy-pol': typeof TeplyyPolRoute
   '/terms': typeof TermsRoute
@@ -624,7 +661,9 @@ export interface FileRoutesByTo {
   '/kosmeticheskiy-remont': typeof KosmeticheskiyRemontRoute
   '/krovelnye-raboty': typeof KrovelnyeRabotyRoute
   '/login': typeof LoginRoute
+  '/mekhanizirovannaya-shtukaturka': typeof MekhanizirovannayaShtukaturkaRoute
   '/mnogokvartirnye-doma': typeof MnogokvartirnyeDomaRoute
+  '/mokraya-ili-polusuhaya-styazhka': typeof MokrayaIliPolusuhayaStyazhkaRoute
   '/monolitnye-doma': typeof MonolitnyeDomaRoute
   '/monolitnye-raboty': typeof MonolitnyeRabotyRoute
   '/otoplenie': typeof OtoplenieRoute
@@ -633,6 +672,8 @@ export interface FileRoutesByTo {
   '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
+  '/razvodka-elektriki': typeof RazvodkaElektrikiRoute
+  '/razvodka-santehniki': typeof RazvodkaSantehnikiRoute
   '/remont': typeof RemontRoute
   '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
   '/reviews': typeof ReviewsRoute
@@ -642,6 +683,7 @@ export interface FileRoutesByTo {
   '/standartnyy-remont': typeof StandartnyyRemontRoute
   '/stroitelstvo': typeof StroitelstvoRoute
   '/stroitelstvo-domov-pod-klyuch': typeof StroitelstvoDomovPodKlyuchRoute
+  '/styazhka-pola': typeof StyazhkaPolaRoute
   '/team': typeof TeamRoute
   '/teplyy-pol': typeof TeplyyPolRoute
   '/terms': typeof TermsRoute
@@ -708,7 +750,9 @@ export interface FileRoutesById {
   '/kosmeticheskiy-remont': typeof KosmeticheskiyRemontRoute
   '/krovelnye-raboty': typeof KrovelnyeRabotyRoute
   '/login': typeof LoginRoute
+  '/mekhanizirovannaya-shtukaturka': typeof MekhanizirovannayaShtukaturkaRoute
   '/mnogokvartirnye-doma': typeof MnogokvartirnyeDomaRoute
+  '/mokraya-ili-polusuhaya-styazhka': typeof MokrayaIliPolusuhayaStyazhkaRoute
   '/monolitnye-doma': typeof MonolitnyeDomaRoute
   '/monolitnye-raboty': typeof MonolitnyeRabotyRoute
   '/otoplenie': typeof OtoplenieRoute
@@ -718,6 +762,8 @@ export interface FileRoutesById {
   '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
   '/proekty': typeof ProektyRouteWithChildren
+  '/razvodka-elektriki': typeof RazvodkaElektrikiRoute
+  '/razvodka-santehniki': typeof RazvodkaSantehnikiRoute
   '/remont': typeof RemontRoute
   '/remont-pod-klyuch': typeof RemontPodKlyuchRoute
   '/reviews': typeof ReviewsRoute
@@ -727,6 +773,7 @@ export interface FileRoutesById {
   '/standartnyy-remont': typeof StandartnyyRemontRoute
   '/stroitelstvo': typeof StroitelstvoRoute
   '/stroitelstvo-domov-pod-klyuch': typeof StroitelstvoDomovPodKlyuchRoute
+  '/styazhka-pola': typeof StyazhkaPolaRoute
   '/team': typeof TeamRoute
   '/teplyy-pol': typeof TeplyyPolRoute
   '/terms': typeof TermsRoute
@@ -794,7 +841,9 @@ export interface FileRouteTypes {
     | '/kosmeticheskiy-remont'
     | '/krovelnye-raboty'
     | '/login'
+    | '/mekhanizirovannaya-shtukaturka'
     | '/mnogokvartirnye-doma'
+    | '/mokraya-ili-polusuhaya-styazhka'
     | '/monolitnye-doma'
     | '/monolitnye-raboty'
     | '/otoplenie'
@@ -804,6 +853,8 @@ export interface FileRouteTypes {
     | '/prices'
     | '/privacy'
     | '/proekty'
+    | '/razvodka-elektriki'
+    | '/razvodka-santehniki'
     | '/remont'
     | '/remont-pod-klyuch'
     | '/reviews'
@@ -813,6 +864,7 @@ export interface FileRouteTypes {
     | '/standartnyy-remont'
     | '/stroitelstvo'
     | '/stroitelstvo-domov-pod-klyuch'
+    | '/styazhka-pola'
     | '/team'
     | '/teplyy-pol'
     | '/terms'
@@ -877,7 +929,9 @@ export interface FileRouteTypes {
     | '/kosmeticheskiy-remont'
     | '/krovelnye-raboty'
     | '/login'
+    | '/mekhanizirovannaya-shtukaturka'
     | '/mnogokvartirnye-doma'
+    | '/mokraya-ili-polusuhaya-styazhka'
     | '/monolitnye-doma'
     | '/monolitnye-raboty'
     | '/otoplenie'
@@ -886,6 +940,8 @@ export interface FileRouteTypes {
     | '/premialnyy-remont'
     | '/prices'
     | '/privacy'
+    | '/razvodka-elektriki'
+    | '/razvodka-santehniki'
     | '/remont'
     | '/remont-pod-klyuch'
     | '/reviews'
@@ -895,6 +951,7 @@ export interface FileRouteTypes {
     | '/standartnyy-remont'
     | '/stroitelstvo'
     | '/stroitelstvo-domov-pod-klyuch'
+    | '/styazhka-pola'
     | '/team'
     | '/teplyy-pol'
     | '/terms'
@@ -960,7 +1017,9 @@ export interface FileRouteTypes {
     | '/kosmeticheskiy-remont'
     | '/krovelnye-raboty'
     | '/login'
+    | '/mekhanizirovannaya-shtukaturka'
     | '/mnogokvartirnye-doma'
+    | '/mokraya-ili-polusuhaya-styazhka'
     | '/monolitnye-doma'
     | '/monolitnye-raboty'
     | '/otoplenie'
@@ -970,6 +1029,8 @@ export interface FileRouteTypes {
     | '/prices'
     | '/privacy'
     | '/proekty'
+    | '/razvodka-elektriki'
+    | '/razvodka-santehniki'
     | '/remont'
     | '/remont-pod-klyuch'
     | '/reviews'
@@ -979,6 +1040,7 @@ export interface FileRouteTypes {
     | '/standartnyy-remont'
     | '/stroitelstvo'
     | '/stroitelstvo-domov-pod-klyuch'
+    | '/styazhka-pola'
     | '/team'
     | '/teplyy-pol'
     | '/terms'
@@ -1045,7 +1107,9 @@ export interface RootRouteChildren {
   KosmeticheskiyRemontRoute: typeof KosmeticheskiyRemontRoute
   KrovelnyeRabotyRoute: typeof KrovelnyeRabotyRoute
   LoginRoute: typeof LoginRoute
+  MekhanizirovannayaShtukaturkaRoute: typeof MekhanizirovannayaShtukaturkaRoute
   MnogokvartirnyeDomaRoute: typeof MnogokvartirnyeDomaRoute
+  MokrayaIliPolusuhayaStyazhkaRoute: typeof MokrayaIliPolusuhayaStyazhkaRoute
   MonolitnyeDomaRoute: typeof MonolitnyeDomaRoute
   MonolitnyeRabotyRoute: typeof MonolitnyeRabotyRoute
   OtoplenieRoute: typeof OtoplenieRoute
@@ -1055,6 +1119,8 @@ export interface RootRouteChildren {
   PricesRoute: typeof PricesRoute
   PrivacyRoute: typeof PrivacyRoute
   ProektyRoute: typeof ProektyRouteWithChildren
+  RazvodkaElektrikiRoute: typeof RazvodkaElektrikiRoute
+  RazvodkaSantehnikiRoute: typeof RazvodkaSantehnikiRoute
   RemontRoute: typeof RemontRoute
   RemontPodKlyuchRoute: typeof RemontPodKlyuchRoute
   ReviewsRoute: typeof ReviewsRoute
@@ -1064,6 +1130,7 @@ export interface RootRouteChildren {
   StandartnyyRemontRoute: typeof StandartnyyRemontRoute
   StroitelstvoRoute: typeof StroitelstvoRoute
   StroitelstvoDomovPodKlyuchRoute: typeof StroitelstvoDomovPodKlyuchRoute
+  StyazhkaPolaRoute: typeof StyazhkaPolaRoute
   TeamRoute: typeof TeamRoute
   TeplyyPolRoute: typeof TeplyyPolRoute
   TermsRoute: typeof TermsRoute
@@ -1106,6 +1173,13 @@ declare module '@tanstack/react-router' {
       path: '/team'
       fullPath: '/team'
       preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/styazhka-pola': {
+      id: '/styazhka-pola'
+      path: '/styazhka-pola'
+      fullPath: '/styazhka-pola'
+      preLoaderRoute: typeof StyazhkaPolaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/stroitelstvo-domov-pod-klyuch': {
@@ -1171,6 +1245,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RemontRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/razvodka-santehniki': {
+      id: '/razvodka-santehniki'
+      path: '/razvodka-santehniki'
+      fullPath: '/razvodka-santehniki'
+      preLoaderRoute: typeof RazvodkaSantehnikiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/razvodka-elektriki': {
+      id: '/razvodka-elektriki'
+      path: '/razvodka-elektriki'
+      fullPath: '/razvodka-elektriki'
+      preLoaderRoute: typeof RazvodkaElektrikiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/proekty': {
       id: '/proekty'
       path: '/proekty'
@@ -1234,11 +1322,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MonolitnyeDomaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mokraya-ili-polusuhaya-styazhka': {
+      id: '/mokraya-ili-polusuhaya-styazhka'
+      path: '/mokraya-ili-polusuhaya-styazhka'
+      fullPath: '/mokraya-ili-polusuhaya-styazhka'
+      preLoaderRoute: typeof MokrayaIliPolusuhayaStyazhkaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/mnogokvartirnye-doma': {
       id: '/mnogokvartirnye-doma'
       path: '/mnogokvartirnye-doma'
       fullPath: '/mnogokvartirnye-doma'
       preLoaderRoute: typeof MnogokvartirnyeDomaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mekhanizirovannaya-shtukaturka': {
+      id: '/mekhanizirovannaya-shtukaturka'
+      path: '/mekhanizirovannaya-shtukaturka'
+      fullPath: '/mekhanizirovannaya-shtukaturka'
+      preLoaderRoute: typeof MekhanizirovannayaShtukaturkaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -1828,7 +1930,9 @@ const rootRouteChildren: RootRouteChildren = {
   KosmeticheskiyRemontRoute: KosmeticheskiyRemontRoute,
   KrovelnyeRabotyRoute: KrovelnyeRabotyRoute,
   LoginRoute: LoginRoute,
+  MekhanizirovannayaShtukaturkaRoute: MekhanizirovannayaShtukaturkaRoute,
   MnogokvartirnyeDomaRoute: MnogokvartirnyeDomaRoute,
+  MokrayaIliPolusuhayaStyazhkaRoute: MokrayaIliPolusuhayaStyazhkaRoute,
   MonolitnyeDomaRoute: MonolitnyeDomaRoute,
   MonolitnyeRabotyRoute: MonolitnyeRabotyRoute,
   OtoplenieRoute: OtoplenieRoute,
@@ -1838,6 +1942,8 @@ const rootRouteChildren: RootRouteChildren = {
   PricesRoute: PricesRoute,
   PrivacyRoute: PrivacyRoute,
   ProektyRoute: ProektyRouteWithChildren,
+  RazvodkaElektrikiRoute: RazvodkaElektrikiRoute,
+  RazvodkaSantehnikiRoute: RazvodkaSantehnikiRoute,
   RemontRoute: RemontRoute,
   RemontPodKlyuchRoute: RemontPodKlyuchRoute,
   ReviewsRoute: ReviewsRoute,
@@ -1847,6 +1953,7 @@ const rootRouteChildren: RootRouteChildren = {
   StandartnyyRemontRoute: StandartnyyRemontRoute,
   StroitelstvoRoute: StroitelstvoRoute,
   StroitelstvoDomovPodKlyuchRoute: StroitelstvoDomovPodKlyuchRoute,
+  StyazhkaPolaRoute: StyazhkaPolaRoute,
   TeamRoute: TeamRoute,
   TeplyyPolRoute: TeplyyPolRoute,
   TermsRoute: TermsRoute,
@@ -1856,13 +1963,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
