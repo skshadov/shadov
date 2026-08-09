@@ -8,7 +8,6 @@ import { ServiceDirections } from "@/components/home/ServiceDirections";
 import { StartingPrices } from "@/components/home/StartingPrices";
 import { DirectContractSection } from "@/components/home/DirectContractSection";
 import { StagePaymentSection } from "@/components/home/StagePaymentSection";
-import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { PortfolioPreview } from "@/components/home/PortfolioPreview";
 import { QualityPriceSection } from "@/components/home/QualityPriceSection";
 import { HowWeWorkSection } from "@/components/home/HowWeWorkSection";
@@ -17,9 +16,9 @@ import { ReviewsPreview } from "@/components/home/ReviewsPreview";
 import { FaqSection } from "@/components/home/FaqSection";
 
 const TITLE =
-  "Шадов и партнёры — строительство и ремонт в Москве";
+  "Штукатурка, стяжка и черновая инженерия в Москве — Шадов и партнёры";
 const DESCRIPTION =
-  "Генподрядчик с допуском СРО: строительство домов и многоквартирных зданий, ремонт квартир под ключ, монолит, кровля, инженерные сети.";
+  "Механизированная штукатурка, мокрая стяжка пола, тёплый пол, черновая разводка электрики и сантехники в Москве и области. Фиксированная цена в смете.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,7 +48,6 @@ function HomePage() {
         <StartingPrices />
         <DirectContractSection />
         <StagePaymentSection />
-        <ServicesOverview />
         <PortfolioPreview />
         <QualityPriceSection />
         <HowWeWorkSection />
