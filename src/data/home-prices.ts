@@ -10,6 +10,7 @@ export interface StartingPrice {
 export const HOME_STARTING_PRICES: StartingPrice[] = [
   { service: "Механизированная штукатурка", price: "550 ₽/м² работа, 740 ₽/м² под ключ", to: "/mekhanizirovannaya-shtukaturka" },
   { service: "Мокрая стяжка пола", price: "550 ₽/м² работа, 810 ₽/м² под ключ", to: "/styazhka-pola" },
+  { service: "Полусухая стяжка пола", price: "450 ₽/м² работа, 690 ₽/м² под ключ", to: "/polusuhaya-styazhka" },
   { service: "Водяной тёплый пол", price: "1 950 ₽/м² под ключ со стяжкой", to: "/teplyy-pol" },
   { service: "Электрика, точка", price: "950 ₽ работа, 1 450 ₽ под ключ", to: "/razvodka-elektriki" },
   { service: "Сантехника, точка воды", price: "2 600 ₽ работа, 3 900 ₽ под ключ", to: "/razvodka-santehniki" },
