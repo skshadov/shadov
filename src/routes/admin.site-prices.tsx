@@ -52,7 +52,7 @@ function AdminSitePricesPage() {
         const rows = await listPricingOverrides();
         if (!alive) return;
         const map: Record<string, PricingOverride> = {};
-        for (const r of rows) map[r.slug] = (r.data ?? {}) as PricingOverride;
+        for (const r of rows) map[r.slug] = JSON.parse(r.data_json) as PricingOverride;
         setOverrides(map);
       } catch (e) {
         if (alive) setError(e instanceof Error ? e.message : "Не удалось загрузить прайс");
@@ -95,7 +95,7 @@ function AdminSitePricesPage() {
         groups: draft.groups,
         calc: draft.calc,
       };
-      await savePricingOverride({ data: { slug: draft.slug, data: payload as unknown as Record<string, unknown> } });
+      await savePricingOverride({ data: { slug: draft.slug, data_json: JSON.stringify(payload) } });
       setOverrides((o) => ({ ...o, [draft.slug]: payload }));
       setSaved("Сохранено. Новые цены уже применены на сайте и в калькуляторе.");
     } catch (e) {

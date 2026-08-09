@@ -76,6 +76,7 @@ import { Route as CatalogIndexRouteImport } from './routes/catalog.index'
 import { Route as ProektySlugRouteImport } from './routes/proekty.$slug'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as CatalogCategoryRouteImport } from './routes/catalog.$category'
+import { Route as AdminSitePricesRouteImport } from './routes/admin.site-prices'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
 import { Route as AdminPagesRouteImport } from './routes/admin.pages'
@@ -437,6 +438,11 @@ const CatalogCategoryRoute = CatalogCategoryRouteImport.update({
   path: '/$category',
   getParentRoute: () => CatalogRoute,
 } as any)
+const AdminSitePricesRoute = AdminSitePricesRouteImport.update({
+  id: '/site-prices',
+  path: '/site-prices',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminSettingsRoute = AdminSettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -609,6 +615,7 @@ export interface FileRoutesByFullPath {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
+  '/admin/site-prices': typeof AdminSitePricesRoute
   '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/proekty/$slug': typeof ProektySlugRoute
@@ -696,6 +703,7 @@ export interface FileRoutesByTo {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
+  '/admin/site-prices': typeof AdminSitePricesRoute
   '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/proekty/$slug': typeof ProektySlugRoute
@@ -786,6 +794,7 @@ export interface FileRoutesById {
   '/admin/pages': typeof AdminPagesRoute
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
+  '/admin/site-prices': typeof AdminSitePricesRoute
   '/catalog/$category': typeof CatalogCategoryRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/proekty/$slug': typeof ProektySlugRoute
@@ -877,6 +886,7 @@ export interface FileRouteTypes {
     | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
+    | '/admin/site-prices'
     | '/catalog/$category'
     | '/portfolio/$slug'
     | '/proekty/$slug'
@@ -964,6 +974,7 @@ export interface FileRouteTypes {
     | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
+    | '/admin/site-prices'
     | '/catalog/$category'
     | '/portfolio/$slug'
     | '/proekty/$slug'
@@ -1053,6 +1064,7 @@ export interface FileRouteTypes {
     | '/admin/pages'
     | '/admin/projects'
     | '/admin/settings'
+    | '/admin/site-prices'
     | '/catalog/$category'
     | '/portfolio/$slug'
     | '/proekty/$slug'
@@ -1610,6 +1622,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CatalogCategoryRouteImport
       parentRoute: typeof CatalogRoute
     }
+    '/admin/site-prices': {
+      id: '/admin/site-prices'
+      path: '/site-prices'
+      fullPath: '/admin/site-prices'
+      preLoaderRoute: typeof AdminSitePricesRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/settings': {
       id: '/admin/settings'
       path: '/settings'
@@ -1816,6 +1835,7 @@ interface AdminRouteChildren {
   AdminPagesRoute: typeof AdminPagesRoute
   AdminProjectsRoute: typeof AdminProjectsRouteWithChildren
   AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminSitePricesRoute: typeof AdminSitePricesRoute
   AdminCatalogCategoriesRoute: typeof AdminCatalogCategoriesRoute
   AdminCatalogPricesRoute: typeof AdminCatalogPricesRoute
   AdminCatalogServicesRoute: typeof AdminCatalogServicesRoute
@@ -1829,6 +1849,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminPagesRoute: AdminPagesRoute,
   AdminProjectsRoute: AdminProjectsRouteWithChildren,
   AdminSettingsRoute: AdminSettingsRoute,
+  AdminSitePricesRoute: AdminSitePricesRoute,
   AdminCatalogCategoriesRoute: AdminCatalogCategoriesRoute,
   AdminCatalogPricesRoute: AdminCatalogPricesRoute,
   AdminCatalogServicesRoute: AdminCatalogServicesRoute,

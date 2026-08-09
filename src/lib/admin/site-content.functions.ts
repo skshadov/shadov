@@ -6,7 +6,7 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
 export interface SitePricingRow {
   slug: string;
-  data: Record<string, unknown>;
+  data_json: string;
   updated_at: string;
 }
 export interface SiteImageRow {
@@ -33,16 +33,20 @@ export const listPricingOverrides = createServerFn({ method: "GET" })
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { data, error } = await supabaseAdmin.from("site_pricing").select("slug, data, updated_at");
     if (error) throw new Error(error.message);
-    return (data ?? []) as SitePricingRow[];
+    return (data ?? []).map((r) => ({
+      slug: r.slug,
+      data_json: JSON.stringify(r.data ?? {}),
+      updated_at: r.updated_at,
+    }));
   });
 
 export const savePricingOverride = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((input: { slug: string; data: Record<string, unknown> }) => {
+  .inputValidator((input: { slug: string; data_json: string }) => {
     const slug = String(input?.slug ?? "").trim();
     if (!slug) throw new Error("slug_required");
-    if (!input?.data || typeof input.data !== "object") throw new Error("data_required");
-    return { slug, data: input.data as Record<string, unknown> };
+    if (typeof input?.data_json !== "string" || input.data_json.length > 400_000) throw new Error("data_required");
+    return { slug, data_json: input.data_json };
   })
   .handler(async ({ data, context }): Promise<{ ok: true }> => {
     await ensurePerm(context, "admin.catalog.write");
@@ -52,7 +56,7 @@ export const savePricingOverride = createServerFn({ method: "POST" })
       .upsert(
         {
           slug: data.slug,
-          data: data.data as never,
+          data: JSON.parse(data.data_json) as never,
           updated_by: context.userId,
           updated_at: new Date().toISOString(),
         },
@@ -66,7 +70,7 @@ export const savePricingOverride = createServerFn({ method: "POST" })
       action: "site_pricing.save",
       entityType: "site_pricing",
       entityId: data.slug,
-      newValue: data.data as never,
+      newValue: JSON.parse(data.data_json) as never,
     });
     return { ok: true };
   });
