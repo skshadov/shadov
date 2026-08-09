@@ -31,7 +31,7 @@ const safeRead = (p: string) => { try { return read(p); } catch { return ""; } }
 
 // ── 1. Route inventory ──────────────────────────────────────────────
 const FUTURE_STUB_ROUTES = new Set([
-  "/login", "/client", "/client/project/$id", "/admin",
+  "/login", "/admin",
 ]);
 const ROUTE_FILES = readdirSync(resolve(ROOT, "src/routes"))
   .filter((f) => /\.(tsx)$/.test(f) && !f.startsWith("__") && f !== "README.md");
