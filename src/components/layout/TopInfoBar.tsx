@@ -3,7 +3,7 @@
  * договора (§1 + §3 ТЗ). На мобильном — крупная одна строка.
  */
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, LogIn, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { company, isFilled } from "@/config/company";
 
@@ -34,17 +34,6 @@ export function TopInfoBar() {
               </a>
             </Button>
           )}
-          <Button
-            asChild
-            variant="ghost"
-            size="sm"
-            className="h-7 px-2 text-[12px] whitespace-nowrap"
-          >
-            <Link to="/login">
-              <LogIn aria-hidden="true" className="h-3.5 w-3.5 mr-1" />
-              Личный кабинет
-            </Link>
-          </Button>
           <Button asChild size="sm" className="h-7 px-3 text-[12px] whitespace-nowrap">
             <Link to="/kalkulyator-stoimosti">
               Получить расчёт

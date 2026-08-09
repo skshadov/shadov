@@ -6,7 +6,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "@tanstack/react-router";
-import { Menu, ArrowRight, LogIn, X } from "lucide-react";
+import { Menu, ArrowRight, X } from "lucide-react";
 
 import {
   Accordion,
@@ -162,12 +162,6 @@ export function MobileNavigation() {
             <Link to="/kalkulyator-stoimosti" onClick={() => setOpen(false)}>
               Получить расчёт
               <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4" />
-            </Link>
-          </Button>
-          <Button asChild variant="outline" className="min-h-11 w-full">
-            <Link to="/login" onClick={() => setOpen(false)}>
-              <LogIn aria-hidden="true" className="mr-1 h-4 w-4" />
-              Личный кабинет
             </Link>
           </Button>
         </div>

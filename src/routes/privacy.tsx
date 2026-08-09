@@ -61,7 +61,7 @@ function Page() {
       </InfoSection>
 
       <InfoSection title="7. Cookie и локальное хранилище">
-        <p>Сайт использует технические cookie и локальное хранилище браузера для работы аутентификации, личного кабинета и сохранения черновиков форм. Аналитические и рекламные cookie не устанавливаются без отдельного согласия. Подробнее — в <Link to="/cookies" className="text-primary underline underline-offset-2 hover:opacity-80">политике использования cookies</Link>.</p>
+        <p>Сайт использует технические cookie и локальное хранилище браузера для работы форм и сохранения их черновиков. Аналитические и рекламные cookie не устанавливаются без отдельного согласия. Подробнее — в <Link to="/cookies" className="text-primary underline underline-offset-2 hover:opacity-80">политике использования cookies</Link>.</p>
       </InfoSection>
 
       <InfoSection title="8. Защита данных">

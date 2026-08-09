@@ -63,7 +63,6 @@ import { Route as DomaIzGazobetonaRouteImport } from './routes/doma-iz-gazobeton
 import { Route as DomaIzBrusaRouteImport } from './routes/doma-iz-brusa'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as ContactsRouteImport } from './routes/contacts'
-import { Route as ClientRouteImport } from './routes/client'
 import { Route as ChistovayaOtdelkaRouteImport } from './routes/chistovaya-otdelka'
 import { Route as ChernovoyRemontRouteImport } from './routes/chernovoy-remont'
 import { Route as CatalogRouteImport } from './routes/catalog'
@@ -83,7 +82,6 @@ import { Route as AdminMediaRouteImport } from './routes/admin.media'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
-import { Route as ClientProjectIdRouteImport } from './routes/client.project.$id'
 import { Route as CatalogCategoryServiceRouteImport } from './routes/catalog.$category.$service'
 import { Route as AdminProjectsIdRouteImport } from './routes/admin.projects.$id'
 import { Route as AdminClientsIdRouteImport } from './routes/admin.clients.$id'
@@ -372,11 +370,6 @@ const ContactsRoute = ContactsRouteImport.update({
   path: '/contacts',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ClientRoute = ClientRouteImport.update({
-  id: '/client',
-  path: '/client',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ChistovayaOtdelkaRoute = ChistovayaOtdelkaRouteImport.update({
   id: '/chistovaya-otdelka',
   path: '/chistovaya-otdelka',
@@ -472,11 +465,6 @@ const AdminApplicationsRoute = AdminApplicationsRouteImport.update({
   path: '/applications',
   getParentRoute: () => AdminRoute,
 } as any)
-const ClientProjectIdRoute = ClientProjectIdRouteImport.update({
-  id: '/project/$id',
-  path: '/project/$id',
-  getParentRoute: () => ClientRoute,
-} as any)
 const CatalogCategoryServiceRoute = CatalogCategoryServiceRouteImport.update({
   id: '/$service',
   path: '/$service',
@@ -547,7 +535,6 @@ export interface FileRoutesByFullPath {
   '/catalog': typeof CatalogRouteWithChildren
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
-  '/client': typeof ClientRouteWithChildren
   '/contacts': typeof ContactsRoute
   '/cookies': typeof CookiesRoute
   '/doma-iz-brusa': typeof DomaIzBrusaRoute
@@ -621,7 +608,6 @@ export interface FileRoutesByFullPath {
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
   '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
-  '/client/project/$id': typeof ClientProjectIdRoute
   '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
   '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
   '/admin/projects/$id/messages': typeof AdminProjectsIdMessagesRoute
@@ -635,7 +621,6 @@ export interface FileRoutesByTo {
   '/biznes-remont': typeof BiznesRemontRoute
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
-  '/client': typeof ClientRouteWithChildren
   '/contacts': typeof ContactsRoute
   '/cookies': typeof CookiesRoute
   '/doma-iz-brusa': typeof DomaIzBrusaRoute
@@ -708,7 +693,6 @@ export interface FileRoutesByTo {
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
   '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
-  '/client/project/$id': typeof ClientProjectIdRoute
   '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
   '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
   '/admin/projects/$id/messages': typeof AdminProjectsIdMessagesRoute
@@ -724,7 +708,6 @@ export interface FileRoutesById {
   '/catalog': typeof CatalogRouteWithChildren
   '/chernovoy-remont': typeof ChernovoyRemontRoute
   '/chistovaya-otdelka': typeof ChistovayaOtdelkaRoute
-  '/client': typeof ClientRouteWithChildren
   '/contacts': typeof ContactsRoute
   '/cookies': typeof CookiesRoute
   '/doma-iz-brusa': typeof DomaIzBrusaRoute
@@ -798,7 +781,6 @@ export interface FileRoutesById {
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
   '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
-  '/client/project/$id': typeof ClientProjectIdRoute
   '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
   '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
   '/admin/projects/$id/messages': typeof AdminProjectsIdMessagesRoute
@@ -815,7 +797,6 @@ export interface FileRouteTypes {
     | '/catalog'
     | '/chernovoy-remont'
     | '/chistovaya-otdelka'
-    | '/client'
     | '/contacts'
     | '/cookies'
     | '/doma-iz-brusa'
@@ -889,7 +870,6 @@ export interface FileRouteTypes {
     | '/admin/clients/$id'
     | '/admin/projects/$id'
     | '/catalog/$category/$service'
-    | '/client/project/$id'
     | '/admin/projects/$id/cameras'
     | '/admin/projects/$id/documents'
     | '/admin/projects/$id/messages'
@@ -903,7 +883,6 @@ export interface FileRouteTypes {
     | '/biznes-remont'
     | '/chernovoy-remont'
     | '/chistovaya-otdelka'
-    | '/client'
     | '/contacts'
     | '/cookies'
     | '/doma-iz-brusa'
@@ -976,7 +955,6 @@ export interface FileRouteTypes {
     | '/admin/clients/$id'
     | '/admin/projects/$id'
     | '/catalog/$category/$service'
-    | '/client/project/$id'
     | '/admin/projects/$id/cameras'
     | '/admin/projects/$id/documents'
     | '/admin/projects/$id/messages'
@@ -991,7 +969,6 @@ export interface FileRouteTypes {
     | '/catalog'
     | '/chernovoy-remont'
     | '/chistovaya-otdelka'
-    | '/client'
     | '/contacts'
     | '/cookies'
     | '/doma-iz-brusa'
@@ -1065,7 +1042,6 @@ export interface FileRouteTypes {
     | '/admin/clients/$id'
     | '/admin/projects/$id'
     | '/catalog/$category/$service'
-    | '/client/project/$id'
     | '/admin/projects/$id/cameras'
     | '/admin/projects/$id/documents'
     | '/admin/projects/$id/messages'
@@ -1081,7 +1057,6 @@ export interface RootRouteChildren {
   CatalogRoute: typeof CatalogRouteWithChildren
   ChernovoyRemontRoute: typeof ChernovoyRemontRoute
   ChistovayaOtdelkaRoute: typeof ChistovayaOtdelkaRoute
-  ClientRoute: typeof ClientRouteWithChildren
   ContactsRoute: typeof ContactsRoute
   CookiesRoute: typeof CookiesRoute
   DomaIzBrusaRoute: typeof DomaIzBrusaRoute
@@ -1518,13 +1493,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/client': {
-      id: '/client'
-      path: '/client'
-      fullPath: '/client'
-      preLoaderRoute: typeof ClientRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/chistovaya-otdelka': {
       id: '/chistovaya-otdelka'
       path: '/chistovaya-otdelka'
@@ -1657,13 +1625,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin/applications'
       preLoaderRoute: typeof AdminApplicationsRouteImport
       parentRoute: typeof AdminRoute
-    }
-    '/client/project/$id': {
-      id: '/client/project/$id'
-      path: '/project/$id'
-      fullPath: '/client/project/$id'
-      preLoaderRoute: typeof ClientProjectIdRouteImport
-      parentRoute: typeof ClientRoute
     }
     '/catalog/$category/$service': {
       id: '/catalog/$category/$service'
@@ -1860,17 +1821,6 @@ const CatalogRouteChildren: CatalogRouteChildren = {
 const CatalogRouteWithChildren =
   CatalogRoute._addFileChildren(CatalogRouteChildren)
 
-interface ClientRouteChildren {
-  ClientProjectIdRoute: typeof ClientProjectIdRoute
-}
-
-const ClientRouteChildren: ClientRouteChildren = {
-  ClientProjectIdRoute: ClientProjectIdRoute,
-}
-
-const ClientRouteWithChildren =
-  ClientRoute._addFileChildren(ClientRouteChildren)
-
 interface PortfolioRouteChildren {
   PortfolioSlugRoute: typeof PortfolioSlugRoute
 }
@@ -1904,7 +1854,6 @@ const rootRouteChildren: RootRouteChildren = {
   CatalogRoute: CatalogRouteWithChildren,
   ChernovoyRemontRoute: ChernovoyRemontRoute,
   ChistovayaOtdelkaRoute: ChistovayaOtdelkaRoute,
-  ClientRoute: ClientRouteWithChildren,
   ContactsRoute: ContactsRoute,
   CookiesRoute: CookiesRoute,
   DomaIzBrusaRoute: DomaIzBrusaRoute,
