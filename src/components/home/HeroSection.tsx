@@ -9,7 +9,7 @@ import {
   heatingPicture,
   monolithPicture,
 } from "@/assets/illustrations/sources";
-import { Illustration } from "@/components/common/Illustration";
+import { SlotImage } from "@/components/common/SlotImage";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
@@ -57,6 +57,7 @@ function HeroProcessVisual() {
     <div className="relative min-h-[430px] lg:col-span-6 lg:min-h-[620px]">
       <div className="grid h-full min-h-[430px] grid-cols-10 grid-rows-10 gap-3 sm:min-h-[540px] lg:min-h-[620px]">
         <ProcessImage
+          slotKey="home.hero.screed"
           picture={monolithPicture}
           description="Рабочий процесс устройства бетонной стяжки на строительном объекте"
           label="Стяжка пола"
@@ -65,6 +66,7 @@ function HeroProcessVisual() {
           labelPosition="bottom"
         />
         <ProcessImage
+          slotKey="home.hero.heating"
           picture={heatingPicture}
           description="Монтаж контуров тёплого пола и коллекторного узла на объекте"
           label="Тёплый пол"
@@ -73,6 +75,7 @@ function HeroProcessVisual() {
           labelPosition="bottom"
         />
         <ProcessImage
+          slotKey="home.hero.engineering"
           picture={engineeringPicture}
           description="Собранный узел черновой инженерии с трубами и электрикой"
           label="Черновая инженерия"
@@ -86,6 +89,7 @@ function HeroProcessVisual() {
 }
 
 function ProcessImage({
+  slotKey,
   picture,
   description,
   label,
@@ -93,6 +97,7 @@ function ProcessImage({
   className,
   labelPosition,
 }: {
+  slotKey: string;
   picture: typeof monolithPicture;
   description: string;
   label: string;
@@ -106,17 +111,10 @@ function ProcessImage({
         labelPosition === "top" ? "hover:-translate-y-1" : "hover:translate-y-1"
       }`}
     >
-      <Illustration
-        src={picture.src}
-        sources={picture.sources}
-        imgSrcSet={picture.imgSrcSet}
-        imgSizes={picture.imgSizes}
+      <SlotImage
+        slotKey={slotKey}
+        picture={picture}
         description={description}
-        width={picture.width}
-        height={picture.height}
-        priority
-        caption={false}
-        rounded={false}
         imgClassName="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
         className="h-full w-full"
       />
