@@ -2,15 +2,18 @@ import { useMemo, useState } from "react";
 import type { CalcConfig } from "@/data/pricing/types";
 import { formatRub } from "@/data/pricing/types";
 import { Link } from "@tanstack/react-router";
+import { CalculatorLeadForm } from "./CalculatorLeadForm";
 
 const STORAGE_KEY = "shadov:calculator-snapshot";
 
 interface Props {
   calc: CalcConfig;
   serviceName: string;
+  /** Показать поля заявки (имя, телефон, местоположение) прямо в калькуляторе. */
+  withLead?: boolean;
 }
 
-export function ServiceCalculator({ calc, serviceName }: Props) {
+export function ServiceCalculator({ calc, serviceName, withLead = false }: Props) {
   const [qty, setQty] = useState<number>(calc.defaultQty);
   const [active, setActive] = useState<string[]>([]);
 
@@ -124,16 +127,36 @@ export function ServiceCalculator({ calc, serviceName }: Props) {
         </div>
       </dl>
 
-      <Link
-        to="/kalkulyator-stoimosti"
-        onClick={saveSnapshot}
-        className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-      >
-        Отправить расчёт инженеру
-      </Link>
-      <p className="mt-2 text-xs text-muted-foreground">
-        Расчёт сохранится и подставится в заявку — заполнять всё заново не нужно.
-      </p>
+      {withLead ? (
+        <CalculatorLeadForm
+          summary={[
+            `Услуга: ${serviceName}`,
+            `Объём: ${result.qty} ${calc.unit}`,
+            calc.options.filter((o) => active.includes(o.id)).length
+              ? `Дополнительно: ${calc.options
+                  .filter((o) => active.includes(o.id))
+                  .map((o) => o.label)
+                  .join(", ")}`
+              : "",
+            `Итого за работу: ${formatRub(result.total)}`,
+          ]
+            .filter(Boolean)
+            .join("\n")}
+        />
+      ) : (
+        <>
+          <Link
+            to="/kalkulyator-stoimosti"
+            onClick={saveSnapshot}
+            className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Отправить расчёт инженеру
+          </Link>
+          <p className="mt-2 text-xs text-muted-foreground">
+            Расчёт сохранится и подставится в заявку — заполнять всё заново не нужно.
+          </p>
+        </>
+      )}
     </div>
   );
 }
