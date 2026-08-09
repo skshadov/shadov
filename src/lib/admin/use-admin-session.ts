@@ -20,23 +20,21 @@ export function useAdminSession(): AdminSessionState {
     let active = true;
 
     async function evaluate() {
-      // Обновляем токен: устаревший JWT (выданный до назначения роли) — частая
-      // причина ложного «Недостаточно прав».
       const { data } = await supabase.auth.getSession();
       if (!active) return;
       if (!data.session?.user) {
         setState({ status: "anonymous" });
         return;
       }
-      await supabase.auth.refreshSession().catch(() => null);
-      if (!active) return;
       const email = data.session.user.email ?? null;
       try {
         let admin = await getMyAdminContext();
         if (!admin) {
-          // Вторая попытка после принудительного обновления сессии.
-          await supabase.auth.refreshSession().catch(() => null);
-          admin = await getMyAdminContext();
+          // Возможен устаревший JWT (выдан до назначения роли) — одна попытка
+          // обновления сессии, без повторных ротаций refresh-токена.
+          const refreshed = await supabase.auth.refreshSession().catch(() => null);
+          if (!active) return;
+          if (refreshed?.data?.session) admin = await getMyAdminContext();
         }
         if (!active) return;
         if (!admin) {
@@ -45,6 +43,21 @@ export function useAdminSession(): AdminSessionState {
         }
         setState({ status: "authenticated", admin });
       } catch {
+        // Сетевая ошибка/401 — пробуем один раз обновить токен и повторить.
+        const refreshed = await supabase.auth.refreshSession().catch(() => null);
+        if (!active) return;
+        if (refreshed?.data?.session) {
+          try {
+            const admin = await getMyAdminContext();
+            if (!active) return;
+            if (admin) {
+              setState({ status: "authenticated", admin });
+              return;
+            }
+          } catch {
+            /* ниже — forbidden */
+          }
+        }
         if (!active) return;
         setState({ status: "forbidden", email, retry: () => setAttempt((n) => n + 1) });
       }
