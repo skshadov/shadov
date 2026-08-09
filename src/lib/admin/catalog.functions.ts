@@ -4,7 +4,7 @@
  * Все мутации логируются в admin_audit_log.
  */
 import { createServerFn } from "@tanstack/react-start";
-import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { requireAdminAuth as requireSupabaseAuth } from "./require-auth";
 import type { Database } from "@/integrations/supabase/types";
 
 type CategoryRow = Database["public"]["Tables"]["service_categories"]["Row"];

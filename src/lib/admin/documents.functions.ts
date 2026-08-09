@@ -5,7 +5,7 @@
  * через signed upload URL, который выдаёт createDocumentUploadUrl.
  */
 import { createServerFn } from "@tanstack/react-start";
-import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { requireAdminAuth as requireSupabaseAuth } from "./require-auth";
 
 const MAX_FILE_BYTES = 50 * 1024 * 1024; // 50 MB
 const ALLOWED_MIME = new Set([

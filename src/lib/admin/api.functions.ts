@@ -6,7 +6,7 @@
  * `get_my_admin_permissions`, `is_admin_user`). Никакого доверия к клиенту.
  */
 import { createServerFn } from "@tanstack/react-start";
-import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { requireAdminAuth as requireSupabaseAuth } from "./require-auth";
 
 export interface AdminContext {
   userId: string;

@@ -2,7 +2,7 @@
  * Серверные функции админки: прайс направлений и фотографии сайта.
  */
 import { createServerFn } from "@tanstack/react-start";
-import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { requireAdminAuth as requireSupabaseAuth } from "./require-auth";
 
 export interface SitePricingRow {
   slug: string;

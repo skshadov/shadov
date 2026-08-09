@@ -4,7 +4,7 @@
  * в `media_assets`. Файлы выдаются по signed URL (срок ~7 дней).
  */
 import { createServerFn } from "@tanstack/react-start";
-import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { requireAdminAuth as requireSupabaseAuth } from "./require-auth";
 import type { Database } from "@/integrations/supabase/types";
 
 type Row = Database["public"]["Tables"]["media_assets"]["Row"];
