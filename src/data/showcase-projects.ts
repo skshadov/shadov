@@ -42,3 +42,7 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   { id: "p12", category: "engineering", tag: "Черновая сантехника", title: "Черновая разводка воды и канализации с опрессовкой", location: "Мытищи", area: "84 м²", year: 2026, image: img_w07 },
   { id: "p13", category: "engineering", tag: "Черновая сантехника", title: "Разводка сантехники на два санузла, коллекторная схема", location: "Балашиха", area: "96 м²", year: 2025, image: img_w07 },
 ];
+
+export function getShowcaseByCategory(category: ServiceCategory, limit = 6): ShowcaseProject[] {
+  return SHOWCASE_PROJECTS.filter((p) => p.category === category).slice(0, limit);
+}
