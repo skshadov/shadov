@@ -2,44 +2,14 @@
  * Каталог реализованных объектов для разделов "Наши работы".
  * Используется как fallback при пустой БД и для блоков на страницах услуг.
  */
-import img_c01 from "@/assets/portfolio/generated/c01.jpg";
-import img_c02 from "@/assets/portfolio/generated/c02.jpg";
-import img_c03 from "@/assets/portfolio/generated/c03.jpg";
-import img_c04 from "@/assets/portfolio/generated/c04.jpg";
-import img_c05 from "@/assets/portfolio/generated/c05.jpg";
-import img_c06 from "@/assets/portfolio/generated/c06.jpg";
-import img_c07 from "@/assets/portfolio/generated/c07.jpg";
-import img_c08 from "@/assets/portfolio/generated/c08.jpg";
-import img_c09 from "@/assets/portfolio/generated/c09.jpg";
-import img_c10 from "@/assets/portfolio/generated/c10.jpg";
-import img_c11 from "@/assets/portfolio/generated/c11.jpg";
-import img_c12 from "@/assets/portfolio/generated/c12.jpg";
-import img_c13 from "@/assets/portfolio/generated/c13.jpg";
-import img_c14 from "@/assets/portfolio/generated/c14.jpg";
-import img_c15 from "@/assets/portfolio/generated/c15.jpg";
-import img_r01 from "@/assets/portfolio/generated/r01.jpg";
-import img_r02 from "@/assets/portfolio/generated/r02.jpg";
-import img_r03 from "@/assets/portfolio/generated/r03.jpg";
-import img_r04 from "@/assets/portfolio/generated/r04.jpg";
-import img_r05 from "@/assets/portfolio/generated/r05.jpg";
-import img_r06 from "@/assets/portfolio/generated/r06.jpg";
-import img_r07 from "@/assets/portfolio/generated/r07.jpg";
-import img_r08 from "@/assets/portfolio/generated/r08.jpg";
-import img_r09 from "@/assets/portfolio/generated/r09.jpg";
-import img_r10 from "@/assets/portfolio/generated/r10.jpg";
-import img_r11 from "@/assets/portfolio/generated/r11.jpg";
-import img_r12 from "@/assets/portfolio/generated/r12.jpg";
-import img_r13 from "@/assets/portfolio/generated/r13.jpg";
-import img_e01 from "@/assets/portfolio/generated/e01.jpg";
-import img_e02 from "@/assets/portfolio/generated/e02.jpg";
-import img_e03 from "@/assets/portfolio/generated/e03.jpg";
-import img_e04 from "@/assets/portfolio/generated/e04.jpg";
-import img_e05 from "@/assets/portfolio/generated/e05.jpg";
-import img_e06 from "@/assets/portfolio/generated/e06.jpg";
-import img_e07 from "@/assets/portfolio/generated/e07.jpg";
-import img_e08 from "@/assets/portfolio/generated/e08.jpg";
-import img_e09 from "@/assets/portfolio/generated/e09.jpg";
-import img_e10 from "@/assets/portfolio/generated/e10.jpg";
+import img_w01 from "@/assets/portfolio/generated/w01.jpg";
+import img_w02 from "@/assets/portfolio/generated/w02.jpg";
+import img_w03 from "@/assets/portfolio/generated/w03.jpg";
+import img_w04 from "@/assets/portfolio/generated/w04.jpg";
+import img_w05 from "@/assets/portfolio/generated/w05.jpg";
+import img_w06 from "@/assets/portfolio/generated/w06.jpg";
+import img_w07 from "@/assets/portfolio/generated/w07.jpg";
+import img_w08 from "@/assets/portfolio/generated/w08.jpg";
 
 import type { ServiceCategory } from "@/types/services";
 
@@ -54,53 +24,21 @@ export type ShowcaseProject = {
   image: string;
 };
 
-
 export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
-  // ——— Строительство домов ———
-  { id: "c01", category: "construction", tag: "Кирпичный дом", title: "Двухэтажный кирпичный дом с панорамным остеклением, 320 м²", location: "КП «Сосновый бор»", area: "320 м²", year: 2025, image: img_c01 },
-  { id: "c02", category: "construction", tag: "Дом из газобетона", title: "Дом из газобетона с облицовкой клинкером, 240 м²", location: "Пушкинский район", area: "240 м²", year: 2025, image: img_c02 },
-  { id: "c03", category: "construction", tag: "Каркасный дом", title: "Каркасный дом с панорамными окнами в сосновом лесу, 180 м²", location: "КП «Лесная сказка»", area: "180 м²", year: 2024, image: img_c03 },
-  { id: "c04", category: "construction", tag: "Монолитный дом", title: "Монолитный коттедж с эксплуатируемой кровлей, 410 м²", location: "КП «Новое Лапино»", area: "410 м²", year: 2024, image: img_c04 },
-  { id: "c05", category: "construction", tag: "Дом из бруса", title: "Дом из клеёного бруса с террасой и сауной, 210 м²", location: "Сергиево-Посадский район", area: "210 м²", year: 2024, image: img_c05 },
-  { id: "c06", category: "construction", tag: "Кирпичный дом", title: "Загородный дом из лицевого кирпича с гаражом, 290 м²", location: "Видное", area: "290 м²", year: 2024, image: img_c06 },
-  { id: "c07", category: "construction", tag: "Таунхаус", title: "Монолитный таунхаус-комплекс на 6 секций", location: "Мытищи", area: "1 280 м²", year: 2023, image: img_c07 },
-  { id: "c08", category: "construction", tag: "Дом из газобетона", title: "Одноэтажный дом из газобетона с плоской кровлей, 165 м²", location: "КП «Малая Истра»", area: "165 м²", year: 2023, image: img_c08 },
-  { id: "c09", category: "construction", tag: "SIP-дом", title: "SIP-дом под ключ с отделкой фиброцементными панелями, 145 м²", location: "Чеховский район", area: "145 м²", year: 2023, image: img_c09 },
-  { id: "c10", category: "construction", tag: "Кирпичный дом", title: "Трёхэтажный кирпичный особняк с цокольным этажом, 520 м²", location: "КП «Барвиха-Хиллс»", area: "520 м²", year: 2023, image: img_c10 },
-  { id: "c11", category: "construction", tag: "Дом из керамоблоков", title: "Дом из керамических блоков с фасадом из натурального камня, 270 м²", location: "КП «Княжье озеро»", area: "270 м²", year: 2022, image: img_c11 },
-  { id: "c12", category: "construction", tag: "Каркасный дом", title: "Каркасный дом с фахверковыми элементами фасада, 195 м²", location: "Солнечногорский район", area: "195 м²", year: 2022, image: img_c12 },
-  { id: "c13", category: "construction", tag: "Фундамент", title: "Утеплённая шведская плита под коттедж 240 м²", location: "КП «Никитское»", area: "248 м²", year: 2025, image: img_c13 },
-  { id: "c14", category: "construction", tag: "Кровля", title: "Многощипцовая кровля из натуральной черепицы, 380 м²", location: "КП «Никольские озёра»", area: "380 м²", year: 2024, image: img_c14 },
-  { id: "c15", category: "construction", tag: "Фасад", title: "Вентилируемый фасад из клинкерной плитки, 410 м²", location: "Королёв", area: "410 м²", year: 2024, image: img_c15 },
+  // ——— Штукатурка и стяжка ———
+  { id: "p01", category: "repair", tag: "Механизированная штукатурка", title: "Штукатурка стен квартиры под покраску, 78 м²", location: "Москва, ЖК «Символ»", area: "212 м² стен", year: 2026, image: img_w01 },
+  { id: "p02", category: "repair", tag: "Механизированная штукатурка", title: "Штукатурка по маякам с выведением откосов, 96 м²", location: "Мытищи", area: "265 м² стен", year: 2026, image: img_w02 },
+  { id: "p03", category: "repair", tag: "Мокрая стяжка пола", title: "Цементно-песчаная стяжка 60 мм по всей квартире, 92 м²", location: "Москва, ЗАО", area: "92 м²", year: 2026, image: img_w03 },
+  { id: "p04", category: "repair", tag: "Мокрая стяжка пола", title: "Стяжка с шумоизоляцией и демпферной лентой, 64 м²", location: "Химки", area: "64 м²", year: 2025, image: img_w04 },
+  { id: "p05", category: "repair", tag: "Комплекс черновых работ", title: "Штукатурка и стяжка в квартире свободной планировки, 110 м²", location: "Москва, ЖК «Остров»", area: "110 м²", year: 2025, image: img_w08 },
+  { id: "p06", category: "repair", tag: "Механизированная штукатурка", title: "Штукатурка стен в частном доме, 186 м²", location: "Одинцовский округ", area: "410 м² стен", year: 2025, image: img_w01 },
+  { id: "p07", category: "repair", tag: "Мокрая стяжка пола", title: "Стяжка пола в доме с перепадом 70 мм, 148 м²", location: "Пушкинский округ", area: "148 м²", year: 2025, image: img_w03 },
 
-  // ——— Ремонт квартир ———
-  { id: "r01", category: "repair", tag: "Премиальный ремонт", title: "Премиальный ремонт квартиры в стиле минимализм, 142 м²", location: "Москва", area: "142 м²", year: 2025, image: img_r01 },
-  { id: "r02", category: "repair", tag: "Евроремонт", title: "Евроремонт двухкомнатной квартиры с перепланировкой, 68 м²", location: "Москва", area: "68 м²", year: 2025, image: img_r02 },
-  { id: "r03", category: "repair", tag: "Ремонт под ключ", title: "Ремонт трёхкомнатной квартиры под ключ, 96 м²", location: "Мытищи", area: "96 м²", year: 2025, image: img_r03 },
-  { id: "r04", category: "repair", tag: "Санузел", title: "Совмещённый санузел с крупноформатной плиткой, 7 м²", location: "Москва", area: "7 м²", year: 2025, image: img_r04 },
-  { id: "r05", category: "repair", tag: "Стандартный ремонт", title: "Стандартный ремонт однокомнатной квартиры, 42 м²", location: "Королёв", area: "42 м²", year: 2024, image: img_r05 },
-  { id: "r06", category: "repair", tag: "Чистовая отделка", title: "Чистовая отделка квартиры от застройщика, 78 м²", location: "Долгопрудный", area: "78 м²", year: 2024, image: img_r06 },
-  { id: "r07", category: "repair", tag: "Премиальный ремонт", title: "Дизайнерский ремонт пентхауса с панорамным остеклением, 210 м²", location: "Москва", area: "210 м²", year: 2024, image: img_r07 },
-  { id: "r08", category: "repair", tag: "Чистовая отделка", title: "Чистовая отделка квартиры в скандинавском стиле, 64 м²", location: "Балашиха", area: "64 м²", year: 2024, image: img_r08 },
-  { id: "r09", category: "repair", tag: "Бизнес-ремонт", title: "Ремонт коммерческого офиса open-space, 320 м²", location: "Москва", area: "320 м²", year: 2024, image: img_r09 },
-  { id: "r10", category: "repair", tag: "Чистовая отделка", title: "Укладка крупноформатного керамогранита 1200×600 мм, 96 м²", location: "Москва", area: "96 м²", year: 2023, image: img_r10 },
-  { id: "r11", category: "repair", tag: "Косметический ремонт", title: "Косметический ремонт двухкомнатной квартиры за 21 день, 54 м²", location: "Мытищи", area: "54 м²", year: 2023, image: img_r11 },
-  { id: "r12", category: "repair", tag: "Эконом-ремонт", title: "Эконом-ремонт квартиры в новостройке, 36 м²", location: "Реутов", area: "36 м²", year: 2023, image: img_r12 },
-  { id: "r13", category: "repair", tag: "Черновой ремонт", title: "Черновые работы в квартире 110 м² с перепланировкой", location: "Москва", area: "110 м²", year: 2023, image: img_r13 },
-
-  // ——— Инженерные системы ———
-  { id: "e01", category: "engineering", tag: "Котельная", title: "Газовая котельная с бойлером косвенного нагрева для дома 280 м²", location: "КП «Сосновый бор»", area: "—", year: 2025, image: img_e01 },
-  { id: "e02", category: "engineering", tag: "Водоподготовка", title: "Система водоподготовки с обратным осмосом и УФ-фильтрацией", location: "КП «Лесная сказка»", area: "—", year: 2025, image: img_e02 },
-  { id: "e03", category: "engineering", tag: "Тёплый пол", title: "Водяной тёплый пол по всей площади коттеджа, 240 м²", location: "Пушкинский район", area: "240 м²", year: 2025, image: img_e03 },
-  { id: "e04", category: "engineering", tag: "Электромонтаж", title: "Электромонтаж дома с резервным генератором, 320 м²", location: "КП «Новое Лапино»", area: "320 м²", year: 2024, image: img_e04 },
-  { id: "e05", category: "engineering", tag: "Отопление", title: "Радиаторное отопление двух контуров с погодозависимой автоматикой", location: "Сергиево-Посадский район", area: "210 м²", year: 2024, image: img_e05 },
-  { id: "e06", category: "engineering", tag: "Сантехника", title: "Полный комплект сантехники для 4 санузлов с скрытыми инсталляциями", location: "Москва", area: "—", year: 2024, image: img_e06 },
-  { id: "e07", category: "engineering", tag: "Водоснабжение", title: "Скважина 65 м с кессоном и автоматикой подачи воды в дом", location: "Чеховский район", area: "—", year: 2023, image: img_e07 },
-  { id: "e08", category: "engineering", tag: "Канализация", title: "Локальная канализация с септиком на 6 жителей", location: "КП «Малая Истра»", area: "—", year: 2023, image: img_e08 },
-  { id: "e09", category: "engineering", tag: "Электромонтаж", title: "Электрощит на 3 фазы с УЗО по каждой группе, дом 165 м²", location: "Видное", area: "—", year: 2023, image: img_e09 },
-  { id: "e10", category: "engineering", tag: "Тёплый пол", title: "Электрический тёплый пол в санузлах и на кухне квартиры, 22 м²", location: "Москва", area: "22 м²", year: 2023, image: img_e10 },
+  // ——— Черновая инженерия и тёплый пол ———
+  { id: "p08", category: "engineering", tag: "Тёплый пол", title: "Водяной тёплый пол с коллектором и стяжкой, 92 м²", location: "Москва", area: "92 м²", year: 2026, image: img_w05 },
+  { id: "p09", category: "engineering", tag: "Тёплый пол", title: "Тёплый пол по всей площади дома, шаг 150 мм, 168 м²", location: "Красногорск", area: "168 м²", year: 2025, image: img_w05 },
+  { id: "p10", category: "engineering", tag: "Черновая электрика", title: "Черновая электрика: штробы, кабель, щит на 36 модулей", location: "Москва, СВАО", area: "72 м²", year: 2026, image: img_w06 },
+  { id: "p11", category: "engineering", tag: "Черновая электрика", title: "Разводка электрики в доме 180 м² с трёхфазным вводом", location: "Домодедово", area: "180 м²", year: 2025, image: img_w06 },
+  { id: "p12", category: "engineering", tag: "Черновая сантехника", title: "Черновая разводка воды и канализации с опрессовкой", location: "Мытищи", area: "84 м²", year: 2026, image: img_w07 },
+  { id: "p13", category: "engineering", tag: "Черновая сантехника", title: "Разводка сантехники на два санузла, коллекторная схема", location: "Балашиха", area: "96 м²", year: 2025, image: img_w07 },
 ];
-
-export function getShowcaseByCategory(category: ServiceCategory, limit = 6): ShowcaseProject[] {
-  return SHOWCASE_PROJECTS.filter((p) => p.category === category).slice(0, limit);
-}
