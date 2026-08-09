@@ -27,7 +27,7 @@ export function CostByMaterials({ area, materials }: { area: number; materials: 
             <div key={m} className="grid grid-cols-[1fr_auto] items-center gap-4 px-5 py-4 sm:grid-cols-[2fr_auto_auto]">
               <div>
                 <Link
-                  to={`/${MATERIAL_SERVICE_SLUG[m]}`}
+                  to={`/${MATERIAL_SERVICE_SLUG[m]}` as never}
                   className="font-medium text-foreground hover:text-primary"
                 >
                   {MATERIAL_LONG_LABEL[m]}

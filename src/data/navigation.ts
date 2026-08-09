@@ -67,13 +67,25 @@ export const NAV_INZHENERNYE: NavDropdown = {
   ],
 };
 
+export const NAV_USLUGI: NavDropdown = {
+  label: "Услуги",
+  to: "/prices",
+  description: "Штукатурка, стяжка, тёплый пол, электрика и сантехника — с прозрачным прайсом",
+  items: [
+    { label: "Механизированная штукатурка", to: "/mekhanizirovannaya-shtukaturka" },
+    { label: "Мокрая стяжка пола", to: "/styazhka-pola" },
+    { label: "Тёплый пол", to: "/teplyy-pol" },
+    { label: "Разводка электрики", to: "/razvodka-elektriki" },
+    { label: "Разводка сантехники", to: "/razvodka-santehniki" },
+    { label: "Мокрая или полусухая стяжка", to: "/mokraya-ili-polusuhaya-styazhka" },
+  ],
+};
+
 export const MAIN_NAV: NavItem[] = [
-  NAV_STROITELSTVO,
-  NAV_REMONT,
-  NAV_INZHENERNYE,
-  { label: "Проекты домов", to: "/proekty" },
-  { label: "Наши работы", to: "/portfolio" },
+  NAV_USLUGI,
   { label: "Цены", to: "/prices" },
+  { label: "Калькулятор", to: "/kalkulyator-stoimosti" },
+  { label: "Наши работы", to: "/portfolio" },
   { label: "О компании", to: "/about" },
   { label: "Контакты", to: "/contacts" },
 ];

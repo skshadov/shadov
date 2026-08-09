@@ -12,12 +12,11 @@ import { z } from "zod";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
-import { CostCalculator } from "@/components/calculator/CostCalculator";
+import { ServiceCalculatorTabs } from "@/components/service/ServiceCalculatorTabs";
 import { EstimateForm } from "@/components/forms/EstimateForm";
 import { PriceDisclaimer } from "@/components/common/PriceDisclaimer";
 import { CALCULATOR_METADATA, CALCULATOR_ROUTE } from "@/data/calculator-specification";
-import { CALCULATOR_MODES } from "@/types/calculator";
-import { ALL_PRICE_CATEGORIES } from "@/types/pricing";
+import { SERVICE_PRICING } from "@/data/pricing";
 
 // Литералы дублируются для аудита, который сверяет точное совпадение строк.
 const URL = "https://shadov.pro/kalkulyator-stoimosti";
@@ -25,12 +24,10 @@ const TITLE = CALCULATOR_METADATA.title;
 const DESCRIPTION = CALCULATOR_METADATA.description;
 const H1 = CALCULATOR_METADATA.h1;
 
+const SERVICE_SLUGS = SERVICE_PRICING.map((s) => s.slug) as [string, ...string[]];
+
 const calculatorSearchSchema = z.object({
-  mode: fallback(z.enum(CALCULATOR_MODES as [string, ...string[]]), "repair").default("repair"),
-  category: fallback(
-    z.enum(ALL_PRICE_CATEGORIES as [string, ...string[]]).optional(),
-    undefined as string | undefined,
-  ).optional(),
+  mode: fallback(z.enum(SERVICE_SLUGS), SERVICE_SLUGS[0]).default(SERVICE_SLUGS[0]),
 });
 
 export const Route = createFileRoute("/kalkulyator-stoimosti")({
@@ -81,7 +78,7 @@ function CalculatorPage() {
   return (
     <div className="flex min-h-dvh flex-col">
       <Header />
-      <main id="main" className="flex-1 surface-light">
+      <main id="main" className="flex-1 ">
         <section className="border-b border-border py-10">
           <div className="container-page">
             <Breadcrumbs
@@ -101,10 +98,7 @@ function CalculatorPage() {
 
         <section className="border-b border-border py-10">
           <div className="container-page">
-            <CostCalculator
-              initialMode={search.mode as "repair" | "house" | "construction" | "engineering"}
-              initialCategory={search.category as never}
-            />
+            <ServiceCalculatorTabs initialSlug={search.mode} />
           </div>
         </section>
 

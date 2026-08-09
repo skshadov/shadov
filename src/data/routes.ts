@@ -20,6 +20,13 @@ export interface RouteEntry {
 export const ROUTES: RouteEntry[] = [
   { path: "/", title: "Главная", group: "root" },
 
+  // Профильные услуги
+  { path: "/mekhanizirovannaya-shtukaturka", title: "Механизированная штукатурка стен", shortTitle: "Штукатурка", group: "inzhenernye" },
+  { path: "/styazhka-pola", title: "Мокрая стяжка пола", shortTitle: "Стяжка пола", group: "inzhenernye" },
+  { path: "/razvodka-elektriki", title: "Разводка электрики в квартире", shortTitle: "Электрика", group: "inzhenernye" },
+  { path: "/razvodka-santehniki", title: "Разводка сантехники в квартире", shortTitle: "Сантехника", group: "inzhenernye" },
+  { path: "/mokraya-ili-polusuhaya-styazhka", title: "Мокрая или полусухая стяжка", group: "info" },
+
   // Строительство
   { path: "/stroitelstvo", title: "Строительство", group: "stroitelstvo", stub: true },
   { path: "/stroitelstvo-domov-pod-klyuch", title: "Строительство частных домов под ключ", shortTitle: "Дома под ключ", group: "stroitelstvo", stub: true },

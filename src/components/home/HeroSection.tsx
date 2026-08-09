@@ -33,13 +33,13 @@ export function HeroSection() {
         <div className="lg:col-span-7">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">
             <ShieldCheck aria-hidden="true" className="h-3.5 w-3.5 text-primary" />
-            Генеральный подрядчик. Допуск СРО.
+            Специализация: черновой цикл под чистовую отделку
           </span>
           <h1 className="mt-5 text-balance font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-            Строим и ремонтируем под ключ — по прямому договору с заказчиком.
+            Штукатурка, стяжка и черновая инженерия по фиксированной цене.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Частные и многоквартирные дома, ремонт квартир и домов, монолит, кладка, кровля, фасады, инженерные системы и плитка. Поэтапная оплата, ежедневные отчёты и личный кабинет с онлайн-камерами на каждом комплексном объекте.
+            Механизированная штукатурка, мокрая стяжка пола, тёплый пол, разводка электрики и сантехники в Москве и области. Прайс без «от»: работа, материал и итог под ключ видны до подписания сметы, надбавки фиксируются на замере.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg" className="min-h-12">
@@ -54,9 +54,9 @@ export function HeroSection() {
           </div>
 
           <ul className="mt-10 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
-            <FactCard Icon={Building2} title="Прямой договор" text="С собственником, застройщиком или официальным техзаказчиком" />
-            <FactCard Icon={Wrench} title="Поэтапная оплата" text="Аванс — только на текущий этап работ" />
-            <FactCard Icon={ShieldCheck} title="Контроль 24/7" text="Личный кабинет, отчёты и онлайн-камеры" />
+            <FactCard Icon={Building2} title="Цена не растёт" text="Все надбавки перечислены в смете до начала работ" />
+            <FactCard Icon={Wrench} title="Пять направлений" text="Делаем только то, в чём специализируемся" />
+            <FactCard Icon={ShieldCheck} title="Гарантия 3 года" text="Выезд и устранение за наш счёт" />
           </ul>
         </div>
       </div>

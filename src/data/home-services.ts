@@ -1,20 +1,8 @@
 /**
- * 11 основных направлений §12.2 ТЗ для карточек на главной.
+ * Пять профильных направлений компании для карточек на главной.
  */
 import type { ComponentType, SVGProps } from "react";
-import {
-  Building2,
-  HardHat,
-  Layers,
-  PaintRoller,
-  Plug,
-  Droplets,
-  Flame,
-  SquareStack,
-  Hammer,
-  Home,
-  Network,
-} from "lucide-react";
+import { Layers, Plug, Droplets, Flame, PaintRoller } from "lucide-react";
 
 export interface DirectionCard {
   title: string;
@@ -26,80 +14,38 @@ export interface DirectionCard {
 
 export const HOME_DIRECTIONS: DirectionCard[] = [
   {
-    title: "Строительство домов",
-    description: "Каркасные, газобетонные, кирпичные, монолитные — частные дома под ключ",
-    startPrice: "от 45 000 ₽/м²",
-    to: "/stroitelstvo-domov-pod-klyuch",
-    Icon: Home,
-  },
-  {
-    title: "Многоквартирное строительство",
-    description: "Полный цикл — от котлована до сдачи в эксплуатацию",
-    startPrice: "по проекту",
-    to: "/mnogokvartirnye-doma",
-    Icon: Building2,
-  },
-  {
-    title: "Генеральный подряд",
-    description: "Управление всем объектом с допуском СРО и единой ответственностью",
-    startPrice: "по проекту",
-    to: "/generalnyy-podryad",
-    Icon: Network,
-  },
-  {
-    title: "Монолитные работы",
-    description: "Фундаментные плиты, перекрытия, колонны, лестницы, армопояса",
-    startPrice: "от 18 000 ₽/м³",
-    to: "/monolitnye-raboty",
-    Icon: Layers,
-  },
-  {
-    title: "Кладочные работы",
-    description: "Газобетон, керамические блоки, кирпич, перегородки",
-    startPrice: "по объёму",
-    to: "/kladochnye-raboty",
-    Icon: SquareStack,
-  },
-  {
-    title: "Кровля",
-    description: "Стропильные системы и кровельные покрытия любой сложности",
-    startPrice: "по проекту",
-    to: "/krovelnye-raboty",
-    Icon: HardHat,
-  },
-  {
-    title: "Ремонт под ключ",
-    description: "От косметического до премиального — с инженерным контролем",
-    startPrice: "от 12 000 ₽/м²",
-    to: "/remont-pod-klyuch",
+    title: "Механизированная штукатурка",
+    description: "Стены и потолки под покраску и обои, маяки, углы, откосы",
+    startPrice: "740 ₽/м² под ключ",
+    to: "/mekhanizirovannaya-shtukaturka",
     Icon: PaintRoller,
   },
   {
-    title: "Электрика",
-    description: "Проектирование, прокладка, сборка щитов, чистовой монтаж",
-    startPrice: "от 2 500 ₽/м²",
-    to: "/elektromontazh",
-    Icon: Plug,
+    title: "Мокрая стяжка пола",
+    description: "Классическая цементно-песчаная стяжка — надёжнее полусухой",
+    startPrice: "810 ₽/м² под ключ",
+    to: "/styazhka-pola",
+    Icon: Layers,
   },
   {
-    title: "Сантехника",
-    description: "Коллекторные системы, защита от протечек, чистовой монтаж приборов",
-    startPrice: "по объёму",
-    to: "/santehnika",
-    Icon: Droplets,
-  },
-  {
-    title: "Отопление",
-    description: "Котельные, радиаторы, тёплые полы, балансировка системы",
-    startPrice: "по проекту",
-    to: "/otoplenie",
+    title: "Тёплый пол",
+    description: "Водяной и электрический контур со стяжкой и опрессовкой",
+    startPrice: "1 950 ₽/м² под ключ",
+    to: "/teplyy-pol",
     Icon: Flame,
   },
   {
-    title: "Плитка",
-    description: "Укладка крупноформатного керамогранита и стандартной плитки",
-    startPrice: "от 2 800 ₽/м²",
-    to: "/ukladka-plitki",
-    Icon: Hammer,
+    title: "Разводка электрики",
+    description: "Черновая электрика: штробы, кабель, подрозетники, щит",
+    startPrice: "1 450 ₽ за точку",
+    to: "/razvodka-elektriki",
+    Icon: Plug,
+  },
+  {
+    title: "Разводка сантехники",
+    description: "Черновая сантехника: вода, канализация, коллектор, опрессовка",
+    startPrice: "3 900 ₽ за точку",
+    to: "/razvodka-santehniki",
+    Icon: Droplets,
   },
 ];
