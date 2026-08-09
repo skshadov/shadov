@@ -17,9 +17,15 @@ import { MessengerLinks } from "@/components/common/MessengerLinks";
 const SERVICE_COLUMNS = [
   { title: "Услуги", items: NAV_USLUGI.items.slice(0, 4), hub: NAV_USLUGI.to },
   { title: "Черновая инженерия", items: NAV_USLUGI.items.slice(4, 6), hub: NAV_USLUGI.to },
-  { title: "Полезное", items: [
+  {
+    title: "Полезное",
+    items: [
       { label: "Мокрая или полусухая стяжка", to: "/mokraya-ili-polusuhaya-styazhka" },
-    ], hub: NAV_USLUGI.to },
+      { label: "Цены", to: "/prices" },
+      { label: "Калькулятор", to: "/kalkulyator-stoimosti" },
+    ],
+    hub: NAV_USLUGI.to,
+  },
 ];
 
 export function Footer() {
