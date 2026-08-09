@@ -63,8 +63,9 @@ export function ServiceLandingPage({ data }: { data: ServicePricing }) {
               Прайс: {data.shortName.toLowerCase()}
             </h2>
             <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-              Мы не пишем «от». Здесь указана цена при конкретных условиях и все надбавки цифрами — чтобы итог в смете
-              совпал с итогом в акте.
+              Мы не пишем «от». Здесь указана цена работы при конкретных условиях и все надбавки цифрами — чтобы итог в
+              смете совпал с итогом в акте. Материалы в цены не входят: их покупает заказчик, а мы при необходимости
+              закупим и доставим — это обсуждается отдельно.
             </p>
             <div className="mt-6 grid gap-6">
               {data.groups.map((g) => (
@@ -125,13 +126,10 @@ export function ServiceLandingPage({ data }: { data: ServicePricing }) {
                   </ul>
                   <dl className="mt-5 space-y-1 border-t border-border pt-4 text-sm">
                     <div className="flex justify-between gap-4">
-                      <dt className="text-muted-foreground">Только работа</dt>
-                      <dd className="text-foreground">{formatRub(p.workTotal)}</dd>
+                      <dt className="font-medium text-foreground">Стоимость работ</dt>
+                      <dd className="font-display text-xl font-semibold text-primary">{formatRub(p.workTotal)}</dd>
                     </div>
-                    <div className="flex items-baseline justify-between gap-4">
-                      <dt className="font-medium text-foreground">Под ключ</dt>
-                      <dd className="font-display text-xl font-semibold text-primary">{formatRub(p.turnkeyTotal)}</dd>
-                    </div>
+                    <div className="pt-1 text-xs text-muted-foreground">Без материалов — их покупает заказчик</div>
                     <div className="pt-1 text-xs text-muted-foreground">Срок: {p.term}</div>
                   </dl>
                 </article>

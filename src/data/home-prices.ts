@@ -8,14 +8,18 @@ export interface StartingPrice {
 }
 
 export const HOME_STARTING_PRICES: StartingPrice[] = [
-  { service: "Механизированная штукатурка", price: "550 ₽/м² работа, 740 ₽/м² под ключ", to: "/mekhanizirovannaya-shtukaturka" },
-  { service: "Мокрая стяжка пола", price: "550 ₽/м² работа, 810 ₽/м² под ключ", to: "/styazhka-pola" },
-  { service: "Полусухая стяжка пола", price: "450 ₽/м² работа, 690 ₽/м² под ключ", to: "/polusuhaya-styazhka" },
-  { service: "Водяной тёплый пол", price: "1 950 ₽/м² под ключ со стяжкой", to: "/teplyy-pol" },
-  { service: "Электрика, точка", price: "950 ₽ работа, 1 450 ₽ под ключ", to: "/razvodka-elektriki" },
-  { service: "Сантехника, точка воды", price: "2 600 ₽ работа, 3 900 ₽ под ключ", to: "/razvodka-santehniki" },
-  { service: "Сантехника, точка канализации", price: "2 400 ₽ работа, 3 500 ₽ под ключ", to: "/razvodka-santehniki" },
+  { service: "Механизированная штукатурка", price: "550 ₽/м² за работу", to: "/mekhanizirovannaya-shtukaturka" },
+  { service: "Мокрая стяжка пола", price: "550 ₽/м² за работу", to: "/styazhka-pola" },
+  { service: "Полусухая стяжка пола", price: "450 ₽/м² за работу", to: "/polusuhaya-styazhka" },
+  { service: "Водяной тёплый пол", price: "700 ₽/м² за работу", to: "/teplyy-pol" },
+  { service: "Электрика, точка", price: "1 100 ₽ за работу", to: "/razvodka-elektriki" },
+  { service: "Сантехника, точка воды", price: "2 400 ₽ за работу", to: "/razvodka-santehniki" },
+  { service: "Сантехника, точка канализации", price: "2 200 ₽ за работу", to: "/razvodka-santehniki" },
 ];
+
+/** Общая оговорка по ценам: только работа, материалы — заказчика. */
+export const PRICES_WORK_ONLY_NOTE =
+  "Все цены указаны только за работу. Материалы заказчик выбирает и покупает сам; при необходимости мы закупим и доставим их — стоимость обсуждается отдельно.";
 
 /** Дата актуализации цен на главной. */
 export const PRICES_ACTUAL_DATE = "Август 2026 года";
