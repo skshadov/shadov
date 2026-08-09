@@ -9,348 +9,149 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as VodosnabzhenieKanalizatsiyaRouteImport } from './routes/vodosnabzhenie-kanalizatsiya'
-import { Route as UkladkaPlitkiRouteImport } from './routes/ukladka-plitki'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as TeplyyPolRouteImport } from './routes/teplyy-pol'
-import { Route as TeamRouteImport } from './routes/team'
-import { Route as StyazhkaPolaRouteImport } from './routes/styazhka-pola'
-import { Route as StroitelstvoDomovPodKlyuchRouteImport } from './routes/stroitelstvo-domov-pod-klyuch'
-import { Route as StroitelstvoRouteImport } from './routes/stroitelstvo'
-import { Route as StandartnyyRemontRouteImport } from './routes/standartnyy-remont'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as SantehnikaRouteImport } from './routes/santehnika'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
-import { Route as ReviewsRouteImport } from './routes/reviews'
-import { Route as RemontPodKlyuchRouteImport } from './routes/remont-pod-klyuch'
-import { Route as RemontRouteImport } from './routes/remont'
-import { Route as RazvodkaSantehnikiRouteImport } from './routes/razvodka-santehniki'
-import { Route as RazvodkaElektrikiRouteImport } from './routes/razvodka-elektriki'
-import { Route as ProektyRouteImport } from './routes/proekty'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as PricesRouteImport } from './routes/prices'
-import { Route as PremialnyyRemontRouteImport } from './routes/premialnyy-remont'
-import { Route as PortfolioRouteImport } from './routes/portfolio'
-import { Route as PolusuhayaStyazhkaRouteImport } from './routes/polusuhaya-styazhka'
-import { Route as PersonalDataConsentRouteImport } from './routes/personal-data-consent'
-import { Route as OtoplenieRouteImport } from './routes/otoplenie'
-import { Route as MonolitnyeRabotyRouteImport } from './routes/monolitnye-raboty'
-import { Route as MonolitnyeDomaRouteImport } from './routes/monolitnye-doma'
-import { Route as MokrayaIliPolusuhayaStyazhkaRouteImport } from './routes/mokraya-ili-polusuhaya-styazhka'
-import { Route as MnogokvartirnyeDomaRouteImport } from './routes/mnogokvartirnye-doma'
-import { Route as MekhanizirovannayaShtukaturkaRouteImport } from './routes/mekhanizirovannaya-shtukaturka'
-import { Route as LoginRouteImport } from './routes/login'
-import { Route as KrovelnyeRabotyRouteImport } from './routes/krovelnye-raboty'
-import { Route as KosmeticheskiyRemontRouteImport } from './routes/kosmeticheskiy-remont'
-import { Route as KontrolKachestvaRouteImport } from './routes/kontrol-kachestva'
-import { Route as KombinirovannyeDomaRouteImport } from './routes/kombinirovannye-doma'
-import { Route as KladochnyeRabotyRouteImport } from './routes/kladochnye-raboty'
-import { Route as KirpichnyeDomaRouteImport } from './routes/kirpichnye-doma'
-import { Route as KarkasnyeDomaRouteImport } from './routes/karkasnye-doma'
-import { Route as KalkulyatorStoimostiRouteImport } from './routes/kalkulyator-stoimosti'
-import { Route as InzhenernyeSistemyRouteImport } from './routes/inzhenernye-sistemy'
-import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
-import { Route as GeneralnyyPodryadRouteImport } from './routes/generalnyy-podryad'
-import { Route as FundamentyRouteImport } from './routes/fundamenty'
-import { Route as FasadnyeRabotyRouteImport } from './routes/fasadnye-raboty'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as EvroremontRouteImport } from './routes/evroremont'
-import { Route as ElektromontazhRouteImport } from './routes/elektromontazh'
-import { Route as EkonomRemontRouteImport } from './routes/ekonom-remont'
-import { Route as DomaIzSipPaneleyRouteImport } from './routes/doma-iz-sip-paneley'
-import { Route as DomaIzKleenogoBrusaRouteImport } from './routes/doma-iz-kleenogo-brusa'
-import { Route as DomaIzKeramicheskihBlokovRouteImport } from './routes/doma-iz-keramicheskih-blokov'
-import { Route as DomaIzGazobetonaRouteImport } from './routes/doma-iz-gazobetona'
-import { Route as DomaIzBrusaRouteImport } from './routes/doma-iz-brusa'
-import { Route as CookiesRouteImport } from './routes/cookies'
-import { Route as ContactsRouteImport } from './routes/contacts'
-import { Route as ChistovayaOtdelkaRouteImport } from './routes/chistovaya-otdelka'
-import { Route as ChernovoyRemontRouteImport } from './routes/chernovoy-remont'
-import { Route as CatalogRouteImport } from './routes/catalog'
-import { Route as BiznesRemontRouteImport } from './routes/biznes-remont'
-import { Route as AdminRouteImport } from './routes/admin'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ProektyIndexRouteImport } from './routes/proekty.index'
-import { Route as CatalogIndexRouteImport } from './routes/catalog.index'
-import { Route as ProektySlugRouteImport } from './routes/proekty.$slug'
-import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
-import { Route as CatalogCategoryRouteImport } from './routes/catalog.$category'
-import { Route as AdminSitePricesRouteImport } from './routes/admin.site-prices'
-import { Route as AdminSiteImagesRouteImport } from './routes/admin.site-images'
-import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
-import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
-import { Route as AdminPagesRouteImport } from './routes/admin.pages'
-import { Route as AdminMediaRouteImport } from './routes/admin.media'
-import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
-import { Route as AdminClientsRouteImport } from './routes/admin.clients'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as BiznesRemontRouteImport } from './routes/biznes-remont'
+import { Route as CatalogRouteImport } from './routes/catalog'
+import { Route as ChernovoyRemontRouteImport } from './routes/chernovoy-remont'
+import { Route as ChistovayaOtdelkaRouteImport } from './routes/chistovaya-otdelka'
+import { Route as ContactsRouteImport } from './routes/contacts'
+import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as DomaIzBrusaRouteImport } from './routes/doma-iz-brusa'
+import { Route as DomaIzGazobetonaRouteImport } from './routes/doma-iz-gazobetona'
+import { Route as DomaIzKeramicheskihBlokovRouteImport } from './routes/doma-iz-keramicheskih-blokov'
+import { Route as DomaIzKleenogoBrusaRouteImport } from './routes/doma-iz-kleenogo-brusa'
+import { Route as DomaIzSipPaneleyRouteImport } from './routes/doma-iz-sip-paneley'
+import { Route as EkonomRemontRouteImport } from './routes/ekonom-remont'
+import { Route as ElektromontazhRouteImport } from './routes/elektromontazh'
+import { Route as EvroremontRouteImport } from './routes/evroremont'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FasadnyeRabotyRouteImport } from './routes/fasadnye-raboty'
+import { Route as FundamentyRouteImport } from './routes/fundamenty'
+import { Route as GeneralnyyPodryadRouteImport } from './routes/generalnyy-podryad'
+import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
+import { Route as InzhenernyeSistemyRouteImport } from './routes/inzhenernye-sistemy'
+import { Route as KalkulyatorStoimostiRouteImport } from './routes/kalkulyator-stoimosti'
+import { Route as KarkasnyeDomaRouteImport } from './routes/karkasnye-doma'
+import { Route as KirpichnyeDomaRouteImport } from './routes/kirpichnye-doma'
+import { Route as KladochnyeRabotyRouteImport } from './routes/kladochnye-raboty'
+import { Route as KombinirovannyeDomaRouteImport } from './routes/kombinirovannye-doma'
+import { Route as KontrolKachestvaRouteImport } from './routes/kontrol-kachestva'
+import { Route as KosmeticheskiyRemontRouteImport } from './routes/kosmeticheskiy-remont'
+import { Route as KrovelnyeRabotyRouteImport } from './routes/krovelnye-raboty'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as MekhanizirovannayaShtukaturkaRouteImport } from './routes/mekhanizirovannaya-shtukaturka'
+import { Route as MnogokvartirnyeDomaRouteImport } from './routes/mnogokvartirnye-doma'
+import { Route as MokrayaIliPolusuhayaStyazhkaRouteImport } from './routes/mokraya-ili-polusuhaya-styazhka'
+import { Route as MonolitnyeDomaRouteImport } from './routes/monolitnye-doma'
+import { Route as MonolitnyeRabotyRouteImport } from './routes/monolitnye-raboty'
+import { Route as OtoplenieRouteImport } from './routes/otoplenie'
+import { Route as PersonalDataConsentRouteImport } from './routes/personal-data-consent'
+import { Route as PolusuhayaStyazhkaRouteImport } from './routes/polusuhaya-styazhka'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as PremialnyyRemontRouteImport } from './routes/premialnyy-remont'
+import { Route as PricesRouteImport } from './routes/prices'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProektyRouteImport } from './routes/proekty'
+import { Route as RazvodkaElektrikiRouteImport } from './routes/razvodka-elektriki'
+import { Route as RazvodkaSantehnikiRouteImport } from './routes/razvodka-santehniki'
+import { Route as RemontRouteImport } from './routes/remont'
+import { Route as RemontPodKlyuchRouteImport } from './routes/remont-pod-klyuch'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SantehnikaRouteImport } from './routes/santehnika'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as StandartnyyRemontRouteImport } from './routes/standartnyy-remont'
+import { Route as StroitelstvoRouteImport } from './routes/stroitelstvo'
+import { Route as StroitelstvoDomovPodKlyuchRouteImport } from './routes/stroitelstvo-domov-pod-klyuch'
+import { Route as StyazhkaPolaRouteImport } from './routes/styazhka-pola'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as TeplyyPolRouteImport } from './routes/teplyy-pol'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as UkladkaPlitkiRouteImport } from './routes/ukladka-plitki'
+import { Route as VodosnabzhenieKanalizatsiyaRouteImport } from './routes/vodosnabzhenie-kanalizatsiya'
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
-import { Route as CatalogCategoryServiceRouteImport } from './routes/catalog.$category.$service'
-import { Route as AdminProjectsIdRouteImport } from './routes/admin.projects.$id'
-import { Route as AdminClientsIdRouteImport } from './routes/admin.clients.$id'
-import { Route as AdminCatalogServicesRouteImport } from './routes/admin.catalog.services'
-import { Route as AdminCatalogPricesRouteImport } from './routes/admin.catalog.prices'
-import { Route as AdminCatalogCategoriesRouteImport } from './routes/admin.catalog.categories'
+import { Route as AdminClientsRouteImport } from './routes/admin.clients'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminMediaRouteImport } from './routes/admin.media'
+import { Route as AdminPagesRouteImport } from './routes/admin.pages'
+import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
+import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
+import { Route as AdminSiteImagesRouteImport } from './routes/admin.site-images'
+import { Route as AdminSitePricesRouteImport } from './routes/admin.site-prices'
+import { Route as CatalogIndexRouteImport } from './routes/catalog.index'
+import { Route as CatalogCategoryRouteImport } from './routes/catalog.$category'
+import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as ProektyIndexRouteImport } from './routes/proekty.index'
+import { Route as ProektySlugRouteImport } from './routes/proekty.$slug'
 import { Route as AdminApplicationsIdRouteImport } from './routes/admin.applications.$id'
-import { Route as ApiPublicSiteImageKeyRouteImport } from './routes/api/public/site-image.$key'
-import { Route as AdminProjectsIdReportsRouteImport } from './routes/admin.projects.$id.reports'
-import { Route as AdminProjectsIdPaymentsRouteImport } from './routes/admin.projects.$id.payments'
-import { Route as AdminProjectsIdMessagesRouteImport } from './routes/admin.projects.$id.messages'
-import { Route as AdminProjectsIdDocumentsRouteImport } from './routes/admin.projects.$id.documents'
+import { Route as AdminCatalogCategoriesRouteImport } from './routes/admin.catalog.categories'
+import { Route as AdminCatalogPricesRouteImport } from './routes/admin.catalog.prices'
+import { Route as AdminCatalogServicesRouteImport } from './routes/admin.catalog.services'
+import { Route as AdminClientsIdRouteImport } from './routes/admin.clients.$id'
+import { Route as AdminProjectsIdRouteImport } from './routes/admin.projects.$id'
+import { Route as CatalogCategoryServiceRouteImport } from './routes/catalog.$category.$service'
 import { Route as AdminProjectsIdCamerasRouteImport } from './routes/admin.projects.$id.cameras'
+import { Route as AdminProjectsIdDocumentsRouteImport } from './routes/admin.projects.$id.documents'
+import { Route as AdminProjectsIdMessagesRouteImport } from './routes/admin.projects.$id.messages'
+import { Route as AdminProjectsIdPaymentsRouteImport } from './routes/admin.projects.$id.payments'
+import { Route as AdminProjectsIdReportsRouteImport } from './routes/admin.projects.$id.reports'
+import { Route as ApiPublicSiteImageKeyRouteImport } from './routes/api/public/site-image.$key'
 
-const VodosnabzhenieKanalizatsiyaRoute =
-  VodosnabzhenieKanalizatsiyaRouteImport.update({
-    id: '/vodosnabzhenie-kanalizatsiya',
-    path: '/vodosnabzhenie-kanalizatsiya',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const UkladkaPlitkiRoute = UkladkaPlitkiRouteImport.update({
-  id: '/ukladka-plitki',
-  path: '/ukladka-plitki',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeplyyPolRoute = TeplyyPolRouteImport.update({
-  id: '/teplyy-pol',
-  path: '/teplyy-pol',
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeamRoute = TeamRouteImport.update({
-  id: '/team',
-  path: '/team',
+const BiznesRemontRoute = BiznesRemontRouteImport.update({
+  id: '/biznes-remont',
+  path: '/biznes-remont',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StyazhkaPolaRoute = StyazhkaPolaRouteImport.update({
-  id: '/styazhka-pola',
-  path: '/styazhka-pola',
+const CatalogRoute = CatalogRouteImport.update({
+  id: '/catalog',
+  path: '/catalog',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StroitelstvoDomovPodKlyuchRoute =
-  StroitelstvoDomovPodKlyuchRouteImport.update({
-    id: '/stroitelstvo-domov-pod-klyuch',
-    path: '/stroitelstvo-domov-pod-klyuch',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const StroitelstvoRoute = StroitelstvoRouteImport.update({
-  id: '/stroitelstvo',
-  path: '/stroitelstvo',
+const ChernovoyRemontRoute = ChernovoyRemontRouteImport.update({
+  id: '/chernovoy-remont',
+  path: '/chernovoy-remont',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StandartnyyRemontRoute = StandartnyyRemontRouteImport.update({
-  id: '/standartnyy-remont',
-  path: '/standartnyy-remont',
+const ChistovayaOtdelkaRoute = ChistovayaOtdelkaRouteImport.update({
+  id: '/chistovaya-otdelka',
+  path: '/chistovaya-otdelka',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const ContactsRoute = ContactsRouteImport.update({
+  id: '/contacts',
+  path: '/contacts',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SantehnikaRoute = SantehnikaRouteImport.update({
-  id: '/santehnika',
-  path: '/santehnika',
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
-  id: '/robots.txt',
-  path: '/robots.txt',
+const DomaIzBrusaRoute = DomaIzBrusaRouteImport.update({
+  id: '/doma-iz-brusa',
+  path: '/doma-iz-brusa',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ReviewsRoute = ReviewsRouteImport.update({
-  id: '/reviews',
-  path: '/reviews',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RemontPodKlyuchRoute = RemontPodKlyuchRouteImport.update({
-  id: '/remont-pod-klyuch',
-  path: '/remont-pod-klyuch',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RemontRoute = RemontRouteImport.update({
-  id: '/remont',
-  path: '/remont',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RazvodkaSantehnikiRoute = RazvodkaSantehnikiRouteImport.update({
-  id: '/razvodka-santehniki',
-  path: '/razvodka-santehniki',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RazvodkaElektrikiRoute = RazvodkaElektrikiRouteImport.update({
-  id: '/razvodka-elektriki',
-  path: '/razvodka-elektriki',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProektyRoute = ProektyRouteImport.update({
-  id: '/proekty',
-  path: '/proekty',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricesRoute = PricesRouteImport.update({
-  id: '/prices',
-  path: '/prices',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PremialnyyRemontRoute = PremialnyyRemontRouteImport.update({
-  id: '/premialnyy-remont',
-  path: '/premialnyy-remont',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PortfolioRoute = PortfolioRouteImport.update({
-  id: '/portfolio',
-  path: '/portfolio',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PolusuhayaStyazhkaRoute = PolusuhayaStyazhkaRouteImport.update({
-  id: '/polusuhaya-styazhka',
-  path: '/polusuhaya-styazhka',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PersonalDataConsentRoute = PersonalDataConsentRouteImport.update({
-  id: '/personal-data-consent',
-  path: '/personal-data-consent',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OtoplenieRoute = OtoplenieRouteImport.update({
-  id: '/otoplenie',
-  path: '/otoplenie',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MonolitnyeRabotyRoute = MonolitnyeRabotyRouteImport.update({
-  id: '/monolitnye-raboty',
-  path: '/monolitnye-raboty',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MonolitnyeDomaRoute = MonolitnyeDomaRouteImport.update({
-  id: '/monolitnye-doma',
-  path: '/monolitnye-doma',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MokrayaIliPolusuhayaStyazhkaRoute =
-  MokrayaIliPolusuhayaStyazhkaRouteImport.update({
-    id: '/mokraya-ili-polusuhaya-styazhka',
-    path: '/mokraya-ili-polusuhaya-styazhka',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MnogokvartirnyeDomaRoute = MnogokvartirnyeDomaRouteImport.update({
-  id: '/mnogokvartirnye-doma',
-  path: '/mnogokvartirnye-doma',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MekhanizirovannayaShtukaturkaRoute =
-  MekhanizirovannayaShtukaturkaRouteImport.update({
-    id: '/mekhanizirovannaya-shtukaturka',
-    path: '/mekhanizirovannaya-shtukaturka',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KrovelnyeRabotyRoute = KrovelnyeRabotyRouteImport.update({
-  id: '/krovelnye-raboty',
-  path: '/krovelnye-raboty',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KosmeticheskiyRemontRoute = KosmeticheskiyRemontRouteImport.update({
-  id: '/kosmeticheskiy-remont',
-  path: '/kosmeticheskiy-remont',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KontrolKachestvaRoute = KontrolKachestvaRouteImport.update({
-  id: '/kontrol-kachestva',
-  path: '/kontrol-kachestva',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KombinirovannyeDomaRoute = KombinirovannyeDomaRouteImport.update({
-  id: '/kombinirovannye-doma',
-  path: '/kombinirovannye-doma',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KladochnyeRabotyRoute = KladochnyeRabotyRouteImport.update({
-  id: '/kladochnye-raboty',
-  path: '/kladochnye-raboty',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KirpichnyeDomaRoute = KirpichnyeDomaRouteImport.update({
-  id: '/kirpichnye-doma',
-  path: '/kirpichnye-doma',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KarkasnyeDomaRoute = KarkasnyeDomaRouteImport.update({
-  id: '/karkasnye-doma',
-  path: '/karkasnye-doma',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KalkulyatorStoimostiRoute = KalkulyatorStoimostiRouteImport.update({
-  id: '/kalkulyator-stoimosti',
-  path: '/kalkulyator-stoimosti',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InzhenernyeSistemyRoute = InzhenernyeSistemyRouteImport.update({
-  id: '/inzhenernye-sistemy',
-  path: '/inzhenernye-sistemy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HowWeWorkRoute = HowWeWorkRouteImport.update({
-  id: '/how-we-work',
-  path: '/how-we-work',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GeneralnyyPodryadRoute = GeneralnyyPodryadRouteImport.update({
-  id: '/generalnyy-podryad',
-  path: '/generalnyy-podryad',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FundamentyRoute = FundamentyRouteImport.update({
-  id: '/fundamenty',
-  path: '/fundamenty',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FasadnyeRabotyRoute = FasadnyeRabotyRouteImport.update({
-  id: '/fasadnye-raboty',
-  path: '/fasadnye-raboty',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EvroremontRoute = EvroremontRouteImport.update({
-  id: '/evroremont',
-  path: '/evroremont',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ElektromontazhRoute = ElektromontazhRouteImport.update({
-  id: '/elektromontazh',
-  path: '/elektromontazh',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EkonomRemontRoute = EkonomRemontRouteImport.update({
-  id: '/ekonom-remont',
-  path: '/ekonom-remont',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DomaIzSipPaneleyRoute = DomaIzSipPaneleyRouteImport.update({
-  id: '/doma-iz-sip-paneley',
-  path: '/doma-iz-sip-paneley',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DomaIzKleenogoBrusaRoute = DomaIzKleenogoBrusaRouteImport.update({
-  id: '/doma-iz-kleenogo-brusa',
-  path: '/doma-iz-kleenogo-brusa',
+const DomaIzGazobetonaRoute = DomaIzGazobetonaRouteImport.update({
+  id: '/doma-iz-gazobetona',
+  path: '/doma-iz-gazobetona',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DomaIzKeramicheskihBlokovRoute =
@@ -359,119 +160,263 @@ const DomaIzKeramicheskihBlokovRoute =
     path: '/doma-iz-keramicheskih-blokov',
     getParentRoute: () => rootRouteImport,
   } as any)
-const DomaIzGazobetonaRoute = DomaIzGazobetonaRouteImport.update({
-  id: '/doma-iz-gazobetona',
-  path: '/doma-iz-gazobetona',
+const DomaIzKleenogoBrusaRoute = DomaIzKleenogoBrusaRouteImport.update({
+  id: '/doma-iz-kleenogo-brusa',
+  path: '/doma-iz-kleenogo-brusa',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DomaIzBrusaRoute = DomaIzBrusaRouteImport.update({
-  id: '/doma-iz-brusa',
-  path: '/doma-iz-brusa',
+const DomaIzSipPaneleyRoute = DomaIzSipPaneleyRouteImport.update({
+  id: '/doma-iz-sip-paneley',
+  path: '/doma-iz-sip-paneley',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CookiesRoute = CookiesRouteImport.update({
-  id: '/cookies',
-  path: '/cookies',
+const EkonomRemontRoute = EkonomRemontRouteImport.update({
+  id: '/ekonom-remont',
+  path: '/ekonom-remont',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactsRoute = ContactsRouteImport.update({
-  id: '/contacts',
-  path: '/contacts',
+const ElektromontazhRoute = ElektromontazhRouteImport.update({
+  id: '/elektromontazh',
+  path: '/elektromontazh',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ChistovayaOtdelkaRoute = ChistovayaOtdelkaRouteImport.update({
-  id: '/chistovaya-otdelka',
-  path: '/chistovaya-otdelka',
+const EvroremontRoute = EvroremontRouteImport.update({
+  id: '/evroremont',
+  path: '/evroremont',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ChernovoyRemontRoute = ChernovoyRemontRouteImport.update({
-  id: '/chernovoy-remont',
-  path: '/chernovoy-remont',
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CatalogRoute = CatalogRouteImport.update({
-  id: '/catalog',
-  path: '/catalog',
+const FasadnyeRabotyRoute = FasadnyeRabotyRouteImport.update({
+  id: '/fasadnye-raboty',
+  path: '/fasadnye-raboty',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BiznesRemontRoute = BiznesRemontRouteImport.update({
-  id: '/biznes-remont',
-  path: '/biznes-remont',
+const FundamentyRoute = FundamentyRouteImport.update({
+  id: '/fundamenty',
+  path: '/fundamenty',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminRoute = AdminRouteImport.update({
-  id: '/admin',
-  path: '/admin',
+const GeneralnyyPodryadRoute = GeneralnyyPodryadRouteImport.update({
+  id: '/generalnyy-podryad',
+  path: '/generalnyy-podryad',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const HowWeWorkRoute = HowWeWorkRouteImport.update({
+  id: '/how-we-work',
+  path: '/how-we-work',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const InzhenernyeSistemyRoute = InzhenernyeSistemyRouteImport.update({
+  id: '/inzhenernye-sistemy',
+  path: '/inzhenernye-sistemy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProektyIndexRoute = ProektyIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => ProektyRoute,
+const KalkulyatorStoimostiRoute = KalkulyatorStoimostiRouteImport.update({
+  id: '/kalkulyator-stoimosti',
+  path: '/kalkulyator-stoimosti',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const CatalogIndexRoute = CatalogIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => CatalogRoute,
+const KarkasnyeDomaRoute = KarkasnyeDomaRouteImport.update({
+  id: '/karkasnye-doma',
+  path: '/karkasnye-doma',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ProektySlugRoute = ProektySlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ProektyRoute,
+const KirpichnyeDomaRoute = KirpichnyeDomaRouteImport.update({
+  id: '/kirpichnye-doma',
+  path: '/kirpichnye-doma',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => PortfolioRoute,
+const KladochnyeRabotyRoute = KladochnyeRabotyRouteImport.update({
+  id: '/kladochnye-raboty',
+  path: '/kladochnye-raboty',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const CatalogCategoryRoute = CatalogCategoryRouteImport.update({
-  id: '/$category',
-  path: '/$category',
-  getParentRoute: () => CatalogRoute,
+const KombinirovannyeDomaRoute = KombinirovannyeDomaRouteImport.update({
+  id: '/kombinirovannye-doma',
+  path: '/kombinirovannye-doma',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AdminSitePricesRoute = AdminSitePricesRouteImport.update({
-  id: '/site-prices',
-  path: '/site-prices',
-  getParentRoute: () => AdminRoute,
+const KontrolKachestvaRoute = KontrolKachestvaRouteImport.update({
+  id: '/kontrol-kachestva',
+  path: '/kontrol-kachestva',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AdminSiteImagesRoute = AdminSiteImagesRouteImport.update({
-  id: '/site-images',
-  path: '/site-images',
-  getParentRoute: () => AdminRoute,
+const KosmeticheskiyRemontRoute = KosmeticheskiyRemontRouteImport.update({
+  id: '/kosmeticheskiy-remont',
+  path: '/kosmeticheskiy-remont',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AdminSettingsRoute = AdminSettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
-  getParentRoute: () => AdminRoute,
+const KrovelnyeRabotyRoute = KrovelnyeRabotyRouteImport.update({
+  id: '/krovelnye-raboty',
+  path: '/krovelnye-raboty',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AdminProjectsRoute = AdminProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
-  getParentRoute: () => AdminRoute,
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AdminPagesRoute = AdminPagesRouteImport.update({
-  id: '/pages',
-  path: '/pages',
-  getParentRoute: () => AdminRoute,
+const MekhanizirovannayaShtukaturkaRoute =
+  MekhanizirovannayaShtukaturkaRouteImport.update({
+    id: '/mekhanizirovannaya-shtukaturka',
+    path: '/mekhanizirovannaya-shtukaturka',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MnogokvartirnyeDomaRoute = MnogokvartirnyeDomaRouteImport.update({
+  id: '/mnogokvartirnye-doma',
+  path: '/mnogokvartirnye-doma',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AdminMediaRoute = AdminMediaRouteImport.update({
-  id: '/media',
-  path: '/media',
-  getParentRoute: () => AdminRoute,
+const MokrayaIliPolusuhayaStyazhkaRoute =
+  MokrayaIliPolusuhayaStyazhkaRouteImport.update({
+    id: '/mokraya-ili-polusuhaya-styazhka',
+    path: '/mokraya-ili-polusuhaya-styazhka',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MonolitnyeDomaRoute = MonolitnyeDomaRouteImport.update({
+  id: '/monolitnye-doma',
+  path: '/monolitnye-doma',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AdminDashboardRoute = AdminDashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
+const MonolitnyeRabotyRoute = MonolitnyeRabotyRouteImport.update({
+  id: '/monolitnye-raboty',
+  path: '/monolitnye-raboty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OtoplenieRoute = OtoplenieRouteImport.update({
+  id: '/otoplenie',
+  path: '/otoplenie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PersonalDataConsentRoute = PersonalDataConsentRouteImport.update({
+  id: '/personal-data-consent',
+  path: '/personal-data-consent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PolusuhayaStyazhkaRoute = PolusuhayaStyazhkaRouteImport.update({
+  id: '/polusuhaya-styazhka',
+  path: '/polusuhaya-styazhka',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PremialnyyRemontRoute = PremialnyyRemontRouteImport.update({
+  id: '/premialnyy-remont',
+  path: '/premialnyy-remont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricesRoute = PricesRouteImport.update({
+  id: '/prices',
+  path: '/prices',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProektyRoute = ProektyRouteImport.update({
+  id: '/proekty',
+  path: '/proekty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RazvodkaElektrikiRoute = RazvodkaElektrikiRouteImport.update({
+  id: '/razvodka-elektriki',
+  path: '/razvodka-elektriki',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RazvodkaSantehnikiRoute = RazvodkaSantehnikiRouteImport.update({
+  id: '/razvodka-santehniki',
+  path: '/razvodka-santehniki',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemontRoute = RemontRouteImport.update({
+  id: '/remont',
+  path: '/remont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemontPodKlyuchRoute = RemontPodKlyuchRouteImport.update({
+  id: '/remont-pod-klyuch',
+  path: '/remont-pod-klyuch',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SantehnikaRoute = SantehnikaRouteImport.update({
+  id: '/santehnika',
+  path: '/santehnika',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StandartnyyRemontRoute = StandartnyyRemontRouteImport.update({
+  id: '/standartnyy-remont',
+  path: '/standartnyy-remont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StroitelstvoRoute = StroitelstvoRouteImport.update({
+  id: '/stroitelstvo',
+  path: '/stroitelstvo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StroitelstvoDomovPodKlyuchRoute =
+  StroitelstvoDomovPodKlyuchRouteImport.update({
+    id: '/stroitelstvo-domov-pod-klyuch',
+    path: '/stroitelstvo-domov-pod-klyuch',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const StyazhkaPolaRoute = StyazhkaPolaRouteImport.update({
+  id: '/styazhka-pola',
+  path: '/styazhka-pola',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeplyyPolRoute = TeplyyPolRouteImport.update({
+  id: '/teplyy-pol',
+  path: '/teplyy-pol',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UkladkaPlitkiRoute = UkladkaPlitkiRouteImport.update({
+  id: '/ukladka-plitki',
+  path: '/ukladka-plitki',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VodosnabzhenieKanalizatsiyaRoute =
+  VodosnabzhenieKanalizatsiyaRouteImport.update({
+    id: '/vodosnabzhenie-kanalizatsiya',
+    path: '/vodosnabzhenie-kanalizatsiya',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdminApplicationsRoute = AdminApplicationsRouteImport.update({
+  id: '/applications',
+  path: '/applications',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminClientsRoute = AdminClientsRouteImport.update({
@@ -479,29 +424,74 @@ const AdminClientsRoute = AdminClientsRouteImport.update({
   path: '/clients',
   getParentRoute: () => AdminRoute,
 } as any)
-const AdminApplicationsRoute = AdminApplicationsRouteImport.update({
-  id: '/applications',
-  path: '/applications',
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => AdminRoute,
 } as any)
-const CatalogCategoryServiceRoute = CatalogCategoryServiceRouteImport.update({
-  id: '/$service',
-  path: '/$service',
-  getParentRoute: () => CatalogCategoryRoute,
+const AdminMediaRoute = AdminMediaRouteImport.update({
+  id: '/media',
+  path: '/media',
+  getParentRoute: () => AdminRoute,
 } as any)
-const AdminProjectsIdRoute = AdminProjectsIdRouteImport.update({
+const AdminPagesRoute = AdminPagesRouteImport.update({
+  id: '/pages',
+  path: '/pages',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminProjectsRoute = AdminProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSiteImagesRoute = AdminSiteImagesRouteImport.update({
+  id: '/site-images',
+  path: '/site-images',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSitePricesRoute = AdminSitePricesRouteImport.update({
+  id: '/site-prices',
+  path: '/site-prices',
+  getParentRoute: () => AdminRoute,
+} as any)
+const CatalogIndexRoute = CatalogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CatalogRoute,
+} as any)
+const CatalogCategoryRoute = CatalogCategoryRouteImport.update({
+  id: '/$category',
+  path: '/$category',
+  getParentRoute: () => CatalogRoute,
+} as any)
+const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => PortfolioRoute,
+} as any)
+const ProektyIndexRoute = ProektyIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProektyRoute,
+} as any)
+const ProektySlugRoute = ProektySlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ProektyRoute,
+} as any)
+const AdminApplicationsIdRoute = AdminApplicationsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
-  getParentRoute: () => AdminProjectsRoute,
+  getParentRoute: () => AdminApplicationsRoute,
 } as any)
-const AdminClientsIdRoute = AdminClientsIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => AdminClientsRoute,
-} as any)
-const AdminCatalogServicesRoute = AdminCatalogServicesRouteImport.update({
-  id: '/catalog/services',
-  path: '/catalog/services',
+const AdminCatalogCategoriesRoute = AdminCatalogCategoriesRouteImport.update({
+  id: '/catalog/categories',
+  path: '/catalog/categories',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminCatalogPricesRoute = AdminCatalogPricesRouteImport.update({
@@ -509,34 +499,29 @@ const AdminCatalogPricesRoute = AdminCatalogPricesRouteImport.update({
   path: '/catalog/prices',
   getParentRoute: () => AdminRoute,
 } as any)
-const AdminCatalogCategoriesRoute = AdminCatalogCategoriesRouteImport.update({
-  id: '/catalog/categories',
-  path: '/catalog/categories',
+const AdminCatalogServicesRoute = AdminCatalogServicesRouteImport.update({
+  id: '/catalog/services',
+  path: '/catalog/services',
   getParentRoute: () => AdminRoute,
 } as any)
-const AdminApplicationsIdRoute = AdminApplicationsIdRouteImport.update({
+const AdminClientsIdRoute = AdminClientsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
-  getParentRoute: () => AdminApplicationsRoute,
+  getParentRoute: () => AdminClientsRoute,
 } as any)
-const ApiPublicSiteImageKeyRoute = ApiPublicSiteImageKeyRouteImport.update({
-  id: '/api/public/site-image/$key',
-  path: '/api/public/site-image/$key',
-  getParentRoute: () => rootRouteImport,
+const AdminProjectsIdRoute = AdminProjectsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => AdminProjectsRoute,
 } as any)
-const AdminProjectsIdReportsRoute = AdminProjectsIdReportsRouteImport.update({
-  id: '/reports',
-  path: '/reports',
-  getParentRoute: () => AdminProjectsIdRoute,
+const CatalogCategoryServiceRoute = CatalogCategoryServiceRouteImport.update({
+  id: '/$service',
+  path: '/$service',
+  getParentRoute: () => CatalogCategoryRoute,
 } as any)
-const AdminProjectsIdPaymentsRoute = AdminProjectsIdPaymentsRouteImport.update({
-  id: '/payments',
-  path: '/payments',
-  getParentRoute: () => AdminProjectsIdRoute,
-} as any)
-const AdminProjectsIdMessagesRoute = AdminProjectsIdMessagesRouteImport.update({
-  id: '/messages',
-  path: '/messages',
+const AdminProjectsIdCamerasRoute = AdminProjectsIdCamerasRouteImport.update({
+  id: '/cameras',
+  path: '/cameras',
   getParentRoute: () => AdminProjectsIdRoute,
 } as any)
 const AdminProjectsIdDocumentsRoute =
@@ -545,10 +530,25 @@ const AdminProjectsIdDocumentsRoute =
     path: '/documents',
     getParentRoute: () => AdminProjectsIdRoute,
   } as any)
-const AdminProjectsIdCamerasRoute = AdminProjectsIdCamerasRouteImport.update({
-  id: '/cameras',
-  path: '/cameras',
+const AdminProjectsIdMessagesRoute = AdminProjectsIdMessagesRouteImport.update({
+  id: '/messages',
+  path: '/messages',
   getParentRoute: () => AdminProjectsIdRoute,
+} as any)
+const AdminProjectsIdPaymentsRoute = AdminProjectsIdPaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => AdminProjectsIdRoute,
+} as any)
+const AdminProjectsIdReportsRoute = AdminProjectsIdReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AdminProjectsIdRoute,
+} as any)
+const ApiPublicSiteImageKeyRoute = ApiPublicSiteImageKeyRouteImport.update({
+  id: '/api/public/site-image/$key',
+  path: '/api/public/site-image/$key',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -1165,424 +1165,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/vodosnabzhenie-kanalizatsiya': {
-      id: '/vodosnabzhenie-kanalizatsiya'
-      path: '/vodosnabzhenie-kanalizatsiya'
-      fullPath: '/vodosnabzhenie-kanalizatsiya'
-      preLoaderRoute: typeof VodosnabzhenieKanalizatsiyaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ukladka-plitki': {
-      id: '/ukladka-plitki'
-      path: '/ukladka-plitki'
-      fullPath: '/ukladka-plitki'
-      preLoaderRoute: typeof UkladkaPlitkiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/teplyy-pol': {
-      id: '/teplyy-pol'
-      path: '/teplyy-pol'
-      fullPath: '/teplyy-pol'
-      preLoaderRoute: typeof TeplyyPolRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/team': {
-      id: '/team'
-      path: '/team'
-      fullPath: '/team'
-      preLoaderRoute: typeof TeamRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/styazhka-pola': {
-      id: '/styazhka-pola'
-      path: '/styazhka-pola'
-      fullPath: '/styazhka-pola'
-      preLoaderRoute: typeof StyazhkaPolaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/stroitelstvo-domov-pod-klyuch': {
-      id: '/stroitelstvo-domov-pod-klyuch'
-      path: '/stroitelstvo-domov-pod-klyuch'
-      fullPath: '/stroitelstvo-domov-pod-klyuch'
-      preLoaderRoute: typeof StroitelstvoDomovPodKlyuchRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/stroitelstvo': {
-      id: '/stroitelstvo'
-      path: '/stroitelstvo'
-      fullPath: '/stroitelstvo'
-      preLoaderRoute: typeof StroitelstvoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/standartnyy-remont': {
-      id: '/standartnyy-remont'
-      path: '/standartnyy-remont'
-      fullPath: '/standartnyy-remont'
-      preLoaderRoute: typeof StandartnyyRemontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/santehnika': {
-      id: '/santehnika'
-      path: '/santehnika'
-      fullPath: '/santehnika'
-      preLoaderRoute: typeof SantehnikaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/robots.txt': {
-      id: '/robots.txt'
-      path: '/robots.txt'
-      fullPath: '/robots.txt'
-      preLoaderRoute: typeof RobotsDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reviews': {
-      id: '/reviews'
-      path: '/reviews'
-      fullPath: '/reviews'
-      preLoaderRoute: typeof ReviewsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/remont-pod-klyuch': {
-      id: '/remont-pod-klyuch'
-      path: '/remont-pod-klyuch'
-      fullPath: '/remont-pod-klyuch'
-      preLoaderRoute: typeof RemontPodKlyuchRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/remont': {
-      id: '/remont'
-      path: '/remont'
-      fullPath: '/remont'
-      preLoaderRoute: typeof RemontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/razvodka-santehniki': {
-      id: '/razvodka-santehniki'
-      path: '/razvodka-santehniki'
-      fullPath: '/razvodka-santehniki'
-      preLoaderRoute: typeof RazvodkaSantehnikiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/razvodka-elektriki': {
-      id: '/razvodka-elektriki'
-      path: '/razvodka-elektriki'
-      fullPath: '/razvodka-elektriki'
-      preLoaderRoute: typeof RazvodkaElektrikiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/proekty': {
-      id: '/proekty'
-      path: '/proekty'
-      fullPath: '/proekty'
-      preLoaderRoute: typeof ProektyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/prices': {
-      id: '/prices'
-      path: '/prices'
-      fullPath: '/prices'
-      preLoaderRoute: typeof PricesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/premialnyy-remont': {
-      id: '/premialnyy-remont'
-      path: '/premialnyy-remont'
-      fullPath: '/premialnyy-remont'
-      preLoaderRoute: typeof PremialnyyRemontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/portfolio': {
-      id: '/portfolio'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof PortfolioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/polusuhaya-styazhka': {
-      id: '/polusuhaya-styazhka'
-      path: '/polusuhaya-styazhka'
-      fullPath: '/polusuhaya-styazhka'
-      preLoaderRoute: typeof PolusuhayaStyazhkaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/personal-data-consent': {
-      id: '/personal-data-consent'
-      path: '/personal-data-consent'
-      fullPath: '/personal-data-consent'
-      preLoaderRoute: typeof PersonalDataConsentRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/otoplenie': {
-      id: '/otoplenie'
-      path: '/otoplenie'
-      fullPath: '/otoplenie'
-      preLoaderRoute: typeof OtoplenieRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/monolitnye-raboty': {
-      id: '/monolitnye-raboty'
-      path: '/monolitnye-raboty'
-      fullPath: '/monolitnye-raboty'
-      preLoaderRoute: typeof MonolitnyeRabotyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/monolitnye-doma': {
-      id: '/monolitnye-doma'
-      path: '/monolitnye-doma'
-      fullPath: '/monolitnye-doma'
-      preLoaderRoute: typeof MonolitnyeDomaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mokraya-ili-polusuhaya-styazhka': {
-      id: '/mokraya-ili-polusuhaya-styazhka'
-      path: '/mokraya-ili-polusuhaya-styazhka'
-      fullPath: '/mokraya-ili-polusuhaya-styazhka'
-      preLoaderRoute: typeof MokrayaIliPolusuhayaStyazhkaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mnogokvartirnye-doma': {
-      id: '/mnogokvartirnye-doma'
-      path: '/mnogokvartirnye-doma'
-      fullPath: '/mnogokvartirnye-doma'
-      preLoaderRoute: typeof MnogokvartirnyeDomaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mekhanizirovannaya-shtukaturka': {
-      id: '/mekhanizirovannaya-shtukaturka'
-      path: '/mekhanizirovannaya-shtukaturka'
-      fullPath: '/mekhanizirovannaya-shtukaturka'
-      preLoaderRoute: typeof MekhanizirovannayaShtukaturkaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/krovelnye-raboty': {
-      id: '/krovelnye-raboty'
-      path: '/krovelnye-raboty'
-      fullPath: '/krovelnye-raboty'
-      preLoaderRoute: typeof KrovelnyeRabotyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/kosmeticheskiy-remont': {
-      id: '/kosmeticheskiy-remont'
-      path: '/kosmeticheskiy-remont'
-      fullPath: '/kosmeticheskiy-remont'
-      preLoaderRoute: typeof KosmeticheskiyRemontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/kontrol-kachestva': {
-      id: '/kontrol-kachestva'
-      path: '/kontrol-kachestva'
-      fullPath: '/kontrol-kachestva'
-      preLoaderRoute: typeof KontrolKachestvaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/kombinirovannye-doma': {
-      id: '/kombinirovannye-doma'
-      path: '/kombinirovannye-doma'
-      fullPath: '/kombinirovannye-doma'
-      preLoaderRoute: typeof KombinirovannyeDomaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/kladochnye-raboty': {
-      id: '/kladochnye-raboty'
-      path: '/kladochnye-raboty'
-      fullPath: '/kladochnye-raboty'
-      preLoaderRoute: typeof KladochnyeRabotyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/kirpichnye-doma': {
-      id: '/kirpichnye-doma'
-      path: '/kirpichnye-doma'
-      fullPath: '/kirpichnye-doma'
-      preLoaderRoute: typeof KirpichnyeDomaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/karkasnye-doma': {
-      id: '/karkasnye-doma'
-      path: '/karkasnye-doma'
-      fullPath: '/karkasnye-doma'
-      preLoaderRoute: typeof KarkasnyeDomaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/kalkulyator-stoimosti': {
-      id: '/kalkulyator-stoimosti'
-      path: '/kalkulyator-stoimosti'
-      fullPath: '/kalkulyator-stoimosti'
-      preLoaderRoute: typeof KalkulyatorStoimostiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/inzhenernye-sistemy': {
-      id: '/inzhenernye-sistemy'
-      path: '/inzhenernye-sistemy'
-      fullPath: '/inzhenernye-sistemy'
-      preLoaderRoute: typeof InzhenernyeSistemyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/how-we-work': {
-      id: '/how-we-work'
-      path: '/how-we-work'
-      fullPath: '/how-we-work'
-      preLoaderRoute: typeof HowWeWorkRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/generalnyy-podryad': {
-      id: '/generalnyy-podryad'
-      path: '/generalnyy-podryad'
-      fullPath: '/generalnyy-podryad'
-      preLoaderRoute: typeof GeneralnyyPodryadRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fundamenty': {
-      id: '/fundamenty'
-      path: '/fundamenty'
-      fullPath: '/fundamenty'
-      preLoaderRoute: typeof FundamentyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fasadnye-raboty': {
-      id: '/fasadnye-raboty'
-      path: '/fasadnye-raboty'
-      fullPath: '/fasadnye-raboty'
-      preLoaderRoute: typeof FasadnyeRabotyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/evroremont': {
-      id: '/evroremont'
-      path: '/evroremont'
-      fullPath: '/evroremont'
-      preLoaderRoute: typeof EvroremontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/elektromontazh': {
-      id: '/elektromontazh'
-      path: '/elektromontazh'
-      fullPath: '/elektromontazh'
-      preLoaderRoute: typeof ElektromontazhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ekonom-remont': {
-      id: '/ekonom-remont'
-      path: '/ekonom-remont'
-      fullPath: '/ekonom-remont'
-      preLoaderRoute: typeof EkonomRemontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/doma-iz-sip-paneley': {
-      id: '/doma-iz-sip-paneley'
-      path: '/doma-iz-sip-paneley'
-      fullPath: '/doma-iz-sip-paneley'
-      preLoaderRoute: typeof DomaIzSipPaneleyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/doma-iz-kleenogo-brusa': {
-      id: '/doma-iz-kleenogo-brusa'
-      path: '/doma-iz-kleenogo-brusa'
-      fullPath: '/doma-iz-kleenogo-brusa'
-      preLoaderRoute: typeof DomaIzKleenogoBrusaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/doma-iz-keramicheskih-blokov': {
-      id: '/doma-iz-keramicheskih-blokov'
-      path: '/doma-iz-keramicheskih-blokov'
-      fullPath: '/doma-iz-keramicheskih-blokov'
-      preLoaderRoute: typeof DomaIzKeramicheskihBlokovRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/doma-iz-gazobetona': {
-      id: '/doma-iz-gazobetona'
-      path: '/doma-iz-gazobetona'
-      fullPath: '/doma-iz-gazobetona'
-      preLoaderRoute: typeof DomaIzGazobetonaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/doma-iz-brusa': {
-      id: '/doma-iz-brusa'
-      path: '/doma-iz-brusa'
-      fullPath: '/doma-iz-brusa'
-      preLoaderRoute: typeof DomaIzBrusaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cookies': {
-      id: '/cookies'
-      path: '/cookies'
-      fullPath: '/cookies'
-      preLoaderRoute: typeof CookiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contacts': {
-      id: '/contacts'
-      path: '/contacts'
-      fullPath: '/contacts'
-      preLoaderRoute: typeof ContactsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/chistovaya-otdelka': {
-      id: '/chistovaya-otdelka'
-      path: '/chistovaya-otdelka'
-      fullPath: '/chistovaya-otdelka'
-      preLoaderRoute: typeof ChistovayaOtdelkaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/chernovoy-remont': {
-      id: '/chernovoy-remont'
-      path: '/chernovoy-remont'
-      fullPath: '/chernovoy-remont'
-      preLoaderRoute: typeof ChernovoyRemontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/catalog': {
-      id: '/catalog'
-      path: '/catalog'
-      fullPath: '/catalog'
-      preLoaderRoute: typeof CatalogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/biznes-remont': {
-      id: '/biznes-remont'
-      path: '/biznes-remont'
-      fullPath: '/biznes-remont'
-      preLoaderRoute: typeof BiznesRemontRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin': {
-      id: '/admin'
-      path: '/admin'
-      fullPath: '/admin'
-      preLoaderRoute: typeof AdminRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -1592,95 +1179,431 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/proekty/': {
-      id: '/proekty/'
-      path: '/'
-      fullPath: '/proekty/'
-      preLoaderRoute: typeof ProektyIndexRouteImport
-      parentRoute: typeof ProektyRoute
+    '/biznes-remont': {
+      id: '/biznes-remont'
+      path: '/biznes-remont'
+      fullPath: '/biznes-remont'
+      preLoaderRoute: typeof BiznesRemontRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/catalog/': {
-      id: '/catalog/'
-      path: '/'
-      fullPath: '/catalog/'
-      preLoaderRoute: typeof CatalogIndexRouteImport
-      parentRoute: typeof CatalogRoute
+    '/catalog': {
+      id: '/catalog'
+      path: '/catalog'
+      fullPath: '/catalog'
+      preLoaderRoute: typeof CatalogRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/proekty/$slug': {
-      id: '/proekty/$slug'
-      path: '/$slug'
-      fullPath: '/proekty/$slug'
-      preLoaderRoute: typeof ProektySlugRouteImport
-      parentRoute: typeof ProektyRoute
+    '/chernovoy-remont': {
+      id: '/chernovoy-remont'
+      path: '/chernovoy-remont'
+      fullPath: '/chernovoy-remont'
+      preLoaderRoute: typeof ChernovoyRemontRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/portfolio/$slug': {
-      id: '/portfolio/$slug'
-      path: '/$slug'
-      fullPath: '/portfolio/$slug'
-      preLoaderRoute: typeof PortfolioSlugRouteImport
-      parentRoute: typeof PortfolioRoute
+    '/chistovaya-otdelka': {
+      id: '/chistovaya-otdelka'
+      path: '/chistovaya-otdelka'
+      fullPath: '/chistovaya-otdelka'
+      preLoaderRoute: typeof ChistovayaOtdelkaRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/catalog/$category': {
-      id: '/catalog/$category'
-      path: '/$category'
-      fullPath: '/catalog/$category'
-      preLoaderRoute: typeof CatalogCategoryRouteImport
-      parentRoute: typeof CatalogRoute
+    '/contacts': {
+      id: '/contacts'
+      path: '/contacts'
+      fullPath: '/contacts'
+      preLoaderRoute: typeof ContactsRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/admin/site-prices': {
-      id: '/admin/site-prices'
-      path: '/site-prices'
-      fullPath: '/admin/site-prices'
-      preLoaderRoute: typeof AdminSitePricesRouteImport
-      parentRoute: typeof AdminRoute
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/admin/site-images': {
-      id: '/admin/site-images'
-      path: '/site-images'
-      fullPath: '/admin/site-images'
-      preLoaderRoute: typeof AdminSiteImagesRouteImport
-      parentRoute: typeof AdminRoute
+    '/doma-iz-brusa': {
+      id: '/doma-iz-brusa'
+      path: '/doma-iz-brusa'
+      fullPath: '/doma-iz-brusa'
+      preLoaderRoute: typeof DomaIzBrusaRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/admin/settings': {
-      id: '/admin/settings'
-      path: '/settings'
-      fullPath: '/admin/settings'
-      preLoaderRoute: typeof AdminSettingsRouteImport
-      parentRoute: typeof AdminRoute
+    '/doma-iz-gazobetona': {
+      id: '/doma-iz-gazobetona'
+      path: '/doma-iz-gazobetona'
+      fullPath: '/doma-iz-gazobetona'
+      preLoaderRoute: typeof DomaIzGazobetonaRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/admin/projects': {
-      id: '/admin/projects'
-      path: '/projects'
-      fullPath: '/admin/projects'
-      preLoaderRoute: typeof AdminProjectsRouteImport
-      parentRoute: typeof AdminRoute
+    '/doma-iz-keramicheskih-blokov': {
+      id: '/doma-iz-keramicheskih-blokov'
+      path: '/doma-iz-keramicheskih-blokov'
+      fullPath: '/doma-iz-keramicheskih-blokov'
+      preLoaderRoute: typeof DomaIzKeramicheskihBlokovRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/admin/pages': {
-      id: '/admin/pages'
-      path: '/pages'
-      fullPath: '/admin/pages'
-      preLoaderRoute: typeof AdminPagesRouteImport
-      parentRoute: typeof AdminRoute
+    '/doma-iz-kleenogo-brusa': {
+      id: '/doma-iz-kleenogo-brusa'
+      path: '/doma-iz-kleenogo-brusa'
+      fullPath: '/doma-iz-kleenogo-brusa'
+      preLoaderRoute: typeof DomaIzKleenogoBrusaRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/admin/media': {
-      id: '/admin/media'
-      path: '/media'
-      fullPath: '/admin/media'
-      preLoaderRoute: typeof AdminMediaRouteImport
-      parentRoute: typeof AdminRoute
+    '/doma-iz-sip-paneley': {
+      id: '/doma-iz-sip-paneley'
+      path: '/doma-iz-sip-paneley'
+      fullPath: '/doma-iz-sip-paneley'
+      preLoaderRoute: typeof DomaIzSipPaneleyRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/admin/dashboard': {
-      id: '/admin/dashboard'
-      path: '/dashboard'
-      fullPath: '/admin/dashboard'
-      preLoaderRoute: typeof AdminDashboardRouteImport
+    '/ekonom-remont': {
+      id: '/ekonom-remont'
+      path: '/ekonom-remont'
+      fullPath: '/ekonom-remont'
+      preLoaderRoute: typeof EkonomRemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/elektromontazh': {
+      id: '/elektromontazh'
+      path: '/elektromontazh'
+      fullPath: '/elektromontazh'
+      preLoaderRoute: typeof ElektromontazhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/evroremont': {
+      id: '/evroremont'
+      path: '/evroremont'
+      fullPath: '/evroremont'
+      preLoaderRoute: typeof EvroremontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fasadnye-raboty': {
+      id: '/fasadnye-raboty'
+      path: '/fasadnye-raboty'
+      fullPath: '/fasadnye-raboty'
+      preLoaderRoute: typeof FasadnyeRabotyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fundamenty': {
+      id: '/fundamenty'
+      path: '/fundamenty'
+      fullPath: '/fundamenty'
+      preLoaderRoute: typeof FundamentyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/generalnyy-podryad': {
+      id: '/generalnyy-podryad'
+      path: '/generalnyy-podryad'
+      fullPath: '/generalnyy-podryad'
+      preLoaderRoute: typeof GeneralnyyPodryadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-we-work': {
+      id: '/how-we-work'
+      path: '/how-we-work'
+      fullPath: '/how-we-work'
+      preLoaderRoute: typeof HowWeWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/inzhenernye-sistemy': {
+      id: '/inzhenernye-sistemy'
+      path: '/inzhenernye-sistemy'
+      fullPath: '/inzhenernye-sistemy'
+      preLoaderRoute: typeof InzhenernyeSistemyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kalkulyator-stoimosti': {
+      id: '/kalkulyator-stoimosti'
+      path: '/kalkulyator-stoimosti'
+      fullPath: '/kalkulyator-stoimosti'
+      preLoaderRoute: typeof KalkulyatorStoimostiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/karkasnye-doma': {
+      id: '/karkasnye-doma'
+      path: '/karkasnye-doma'
+      fullPath: '/karkasnye-doma'
+      preLoaderRoute: typeof KarkasnyeDomaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kirpichnye-doma': {
+      id: '/kirpichnye-doma'
+      path: '/kirpichnye-doma'
+      fullPath: '/kirpichnye-doma'
+      preLoaderRoute: typeof KirpichnyeDomaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kladochnye-raboty': {
+      id: '/kladochnye-raboty'
+      path: '/kladochnye-raboty'
+      fullPath: '/kladochnye-raboty'
+      preLoaderRoute: typeof KladochnyeRabotyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kombinirovannye-doma': {
+      id: '/kombinirovannye-doma'
+      path: '/kombinirovannye-doma'
+      fullPath: '/kombinirovannye-doma'
+      preLoaderRoute: typeof KombinirovannyeDomaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontrol-kachestva': {
+      id: '/kontrol-kachestva'
+      path: '/kontrol-kachestva'
+      fullPath: '/kontrol-kachestva'
+      preLoaderRoute: typeof KontrolKachestvaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kosmeticheskiy-remont': {
+      id: '/kosmeticheskiy-remont'
+      path: '/kosmeticheskiy-remont'
+      fullPath: '/kosmeticheskiy-remont'
+      preLoaderRoute: typeof KosmeticheskiyRemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/krovelnye-raboty': {
+      id: '/krovelnye-raboty'
+      path: '/krovelnye-raboty'
+      fullPath: '/krovelnye-raboty'
+      preLoaderRoute: typeof KrovelnyeRabotyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mekhanizirovannaya-shtukaturka': {
+      id: '/mekhanizirovannaya-shtukaturka'
+      path: '/mekhanizirovannaya-shtukaturka'
+      fullPath: '/mekhanizirovannaya-shtukaturka'
+      preLoaderRoute: typeof MekhanizirovannayaShtukaturkaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mnogokvartirnye-doma': {
+      id: '/mnogokvartirnye-doma'
+      path: '/mnogokvartirnye-doma'
+      fullPath: '/mnogokvartirnye-doma'
+      preLoaderRoute: typeof MnogokvartirnyeDomaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mokraya-ili-polusuhaya-styazhka': {
+      id: '/mokraya-ili-polusuhaya-styazhka'
+      path: '/mokraya-ili-polusuhaya-styazhka'
+      fullPath: '/mokraya-ili-polusuhaya-styazhka'
+      preLoaderRoute: typeof MokrayaIliPolusuhayaStyazhkaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/monolitnye-doma': {
+      id: '/monolitnye-doma'
+      path: '/monolitnye-doma'
+      fullPath: '/monolitnye-doma'
+      preLoaderRoute: typeof MonolitnyeDomaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/monolitnye-raboty': {
+      id: '/monolitnye-raboty'
+      path: '/monolitnye-raboty'
+      fullPath: '/monolitnye-raboty'
+      preLoaderRoute: typeof MonolitnyeRabotyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/otoplenie': {
+      id: '/otoplenie'
+      path: '/otoplenie'
+      fullPath: '/otoplenie'
+      preLoaderRoute: typeof OtoplenieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/personal-data-consent': {
+      id: '/personal-data-consent'
+      path: '/personal-data-consent'
+      fullPath: '/personal-data-consent'
+      preLoaderRoute: typeof PersonalDataConsentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/polusuhaya-styazhka': {
+      id: '/polusuhaya-styazhka'
+      path: '/polusuhaya-styazhka'
+      fullPath: '/polusuhaya-styazhka'
+      preLoaderRoute: typeof PolusuhayaStyazhkaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/premialnyy-remont': {
+      id: '/premialnyy-remont'
+      path: '/premialnyy-remont'
+      fullPath: '/premialnyy-remont'
+      preLoaderRoute: typeof PremialnyyRemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prices': {
+      id: '/prices'
+      path: '/prices'
+      fullPath: '/prices'
+      preLoaderRoute: typeof PricesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proekty': {
+      id: '/proekty'
+      path: '/proekty'
+      fullPath: '/proekty'
+      preLoaderRoute: typeof ProektyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/razvodka-elektriki': {
+      id: '/razvodka-elektriki'
+      path: '/razvodka-elektriki'
+      fullPath: '/razvodka-elektriki'
+      preLoaderRoute: typeof RazvodkaElektrikiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/razvodka-santehniki': {
+      id: '/razvodka-santehniki'
+      path: '/razvodka-santehniki'
+      fullPath: '/razvodka-santehniki'
+      preLoaderRoute: typeof RazvodkaSantehnikiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/remont': {
+      id: '/remont'
+      path: '/remont'
+      fullPath: '/remont'
+      preLoaderRoute: typeof RemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/remont-pod-klyuch': {
+      id: '/remont-pod-klyuch'
+      path: '/remont-pod-klyuch'
+      fullPath: '/remont-pod-klyuch'
+      preLoaderRoute: typeof RemontPodKlyuchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/santehnika': {
+      id: '/santehnika'
+      path: '/santehnika'
+      fullPath: '/santehnika'
+      preLoaderRoute: typeof SantehnikaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/standartnyy-remont': {
+      id: '/standartnyy-remont'
+      path: '/standartnyy-remont'
+      fullPath: '/standartnyy-remont'
+      preLoaderRoute: typeof StandartnyyRemontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stroitelstvo': {
+      id: '/stroitelstvo'
+      path: '/stroitelstvo'
+      fullPath: '/stroitelstvo'
+      preLoaderRoute: typeof StroitelstvoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stroitelstvo-domov-pod-klyuch': {
+      id: '/stroitelstvo-domov-pod-klyuch'
+      path: '/stroitelstvo-domov-pod-klyuch'
+      fullPath: '/stroitelstvo-domov-pod-klyuch'
+      preLoaderRoute: typeof StroitelstvoDomovPodKlyuchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/styazhka-pola': {
+      id: '/styazhka-pola'
+      path: '/styazhka-pola'
+      fullPath: '/styazhka-pola'
+      preLoaderRoute: typeof StyazhkaPolaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teplyy-pol': {
+      id: '/teplyy-pol'
+      path: '/teplyy-pol'
+      fullPath: '/teplyy-pol'
+      preLoaderRoute: typeof TeplyyPolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ukladka-plitki': {
+      id: '/ukladka-plitki'
+      path: '/ukladka-plitki'
+      fullPath: '/ukladka-plitki'
+      preLoaderRoute: typeof UkladkaPlitkiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vodosnabzhenie-kanalizatsiya': {
+      id: '/vodosnabzhenie-kanalizatsiya'
+      path: '/vodosnabzhenie-kanalizatsiya'
+      fullPath: '/vodosnabzhenie-kanalizatsiya'
+      preLoaderRoute: typeof VodosnabzhenieKanalizatsiyaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/applications': {
+      id: '/admin/applications'
+      path: '/applications'
+      fullPath: '/admin/applications'
+      preLoaderRoute: typeof AdminApplicationsRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/clients': {
@@ -1690,39 +1613,102 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminClientsRouteImport
       parentRoute: typeof AdminRoute
     }
-    '/admin/applications': {
-      id: '/admin/applications'
-      path: '/applications'
-      fullPath: '/admin/applications'
-      preLoaderRoute: typeof AdminApplicationsRouteImport
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
       parentRoute: typeof AdminRoute
     }
-    '/catalog/$category/$service': {
-      id: '/catalog/$category/$service'
-      path: '/$service'
-      fullPath: '/catalog/$category/$service'
-      preLoaderRoute: typeof CatalogCategoryServiceRouteImport
-      parentRoute: typeof CatalogCategoryRoute
+    '/admin/media': {
+      id: '/admin/media'
+      path: '/media'
+      fullPath: '/admin/media'
+      preLoaderRoute: typeof AdminMediaRouteImport
+      parentRoute: typeof AdminRoute
     }
-    '/admin/projects/$id': {
-      id: '/admin/projects/$id'
+    '/admin/pages': {
+      id: '/admin/pages'
+      path: '/pages'
+      fullPath: '/admin/pages'
+      preLoaderRoute: typeof AdminPagesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/projects': {
+      id: '/admin/projects'
+      path: '/projects'
+      fullPath: '/admin/projects'
+      preLoaderRoute: typeof AdminProjectsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/site-images': {
+      id: '/admin/site-images'
+      path: '/site-images'
+      fullPath: '/admin/site-images'
+      preLoaderRoute: typeof AdminSiteImagesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/site-prices': {
+      id: '/admin/site-prices'
+      path: '/site-prices'
+      fullPath: '/admin/site-prices'
+      preLoaderRoute: typeof AdminSitePricesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/catalog/': {
+      id: '/catalog/'
+      path: '/'
+      fullPath: '/catalog/'
+      preLoaderRoute: typeof CatalogIndexRouteImport
+      parentRoute: typeof CatalogRoute
+    }
+    '/catalog/$category': {
+      id: '/catalog/$category'
+      path: '/$category'
+      fullPath: '/catalog/$category'
+      preLoaderRoute: typeof CatalogCategoryRouteImport
+      parentRoute: typeof CatalogRoute
+    }
+    '/portfolio/$slug': {
+      id: '/portfolio/$slug'
+      path: '/$slug'
+      fullPath: '/portfolio/$slug'
+      preLoaderRoute: typeof PortfolioSlugRouteImport
+      parentRoute: typeof PortfolioRoute
+    }
+    '/proekty/': {
+      id: '/proekty/'
+      path: '/'
+      fullPath: '/proekty/'
+      preLoaderRoute: typeof ProektyIndexRouteImport
+      parentRoute: typeof ProektyRoute
+    }
+    '/proekty/$slug': {
+      id: '/proekty/$slug'
+      path: '/$slug'
+      fullPath: '/proekty/$slug'
+      preLoaderRoute: typeof ProektySlugRouteImport
+      parentRoute: typeof ProektyRoute
+    }
+    '/admin/applications/$id': {
+      id: '/admin/applications/$id'
       path: '/$id'
-      fullPath: '/admin/projects/$id'
-      preLoaderRoute: typeof AdminProjectsIdRouteImport
-      parentRoute: typeof AdminProjectsRoute
+      fullPath: '/admin/applications/$id'
+      preLoaderRoute: typeof AdminApplicationsIdRouteImport
+      parentRoute: typeof AdminApplicationsRoute
     }
-    '/admin/clients/$id': {
-      id: '/admin/clients/$id'
-      path: '/$id'
-      fullPath: '/admin/clients/$id'
-      preLoaderRoute: typeof AdminClientsIdRouteImport
-      parentRoute: typeof AdminClientsRoute
-    }
-    '/admin/catalog/services': {
-      id: '/admin/catalog/services'
-      path: '/catalog/services'
-      fullPath: '/admin/catalog/services'
-      preLoaderRoute: typeof AdminCatalogServicesRouteImport
+    '/admin/catalog/categories': {
+      id: '/admin/catalog/categories'
+      path: '/catalog/categories'
+      fullPath: '/admin/catalog/categories'
+      preLoaderRoute: typeof AdminCatalogCategoriesRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/catalog/prices': {
@@ -1732,46 +1718,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminCatalogPricesRouteImport
       parentRoute: typeof AdminRoute
     }
-    '/admin/catalog/categories': {
-      id: '/admin/catalog/categories'
-      path: '/catalog/categories'
-      fullPath: '/admin/catalog/categories'
-      preLoaderRoute: typeof AdminCatalogCategoriesRouteImport
+    '/admin/catalog/services': {
+      id: '/admin/catalog/services'
+      path: '/catalog/services'
+      fullPath: '/admin/catalog/services'
+      preLoaderRoute: typeof AdminCatalogServicesRouteImport
       parentRoute: typeof AdminRoute
     }
-    '/admin/applications/$id': {
-      id: '/admin/applications/$id'
+    '/admin/clients/$id': {
+      id: '/admin/clients/$id'
       path: '/$id'
-      fullPath: '/admin/applications/$id'
-      preLoaderRoute: typeof AdminApplicationsIdRouteImport
-      parentRoute: typeof AdminApplicationsRoute
+      fullPath: '/admin/clients/$id'
+      preLoaderRoute: typeof AdminClientsIdRouteImport
+      parentRoute: typeof AdminClientsRoute
     }
-    '/api/public/site-image/$key': {
-      id: '/api/public/site-image/$key'
-      path: '/api/public/site-image/$key'
-      fullPath: '/api/public/site-image/$key'
-      preLoaderRoute: typeof ApiPublicSiteImageKeyRouteImport
-      parentRoute: typeof rootRouteImport
+    '/admin/projects/$id': {
+      id: '/admin/projects/$id'
+      path: '/$id'
+      fullPath: '/admin/projects/$id'
+      preLoaderRoute: typeof AdminProjectsIdRouteImport
+      parentRoute: typeof AdminProjectsRoute
     }
-    '/admin/projects/$id/reports': {
-      id: '/admin/projects/$id/reports'
-      path: '/reports'
-      fullPath: '/admin/projects/$id/reports'
-      preLoaderRoute: typeof AdminProjectsIdReportsRouteImport
-      parentRoute: typeof AdminProjectsIdRoute
+    '/catalog/$category/$service': {
+      id: '/catalog/$category/$service'
+      path: '/$service'
+      fullPath: '/catalog/$category/$service'
+      preLoaderRoute: typeof CatalogCategoryServiceRouteImport
+      parentRoute: typeof CatalogCategoryRoute
     }
-    '/admin/projects/$id/payments': {
-      id: '/admin/projects/$id/payments'
-      path: '/payments'
-      fullPath: '/admin/projects/$id/payments'
-      preLoaderRoute: typeof AdminProjectsIdPaymentsRouteImport
-      parentRoute: typeof AdminProjectsIdRoute
-    }
-    '/admin/projects/$id/messages': {
-      id: '/admin/projects/$id/messages'
-      path: '/messages'
-      fullPath: '/admin/projects/$id/messages'
-      preLoaderRoute: typeof AdminProjectsIdMessagesRouteImport
+    '/admin/projects/$id/cameras': {
+      id: '/admin/projects/$id/cameras'
+      path: '/cameras'
+      fullPath: '/admin/projects/$id/cameras'
+      preLoaderRoute: typeof AdminProjectsIdCamerasRouteImport
       parentRoute: typeof AdminProjectsIdRoute
     }
     '/admin/projects/$id/documents': {
@@ -1781,12 +1760,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminProjectsIdDocumentsRouteImport
       parentRoute: typeof AdminProjectsIdRoute
     }
-    '/admin/projects/$id/cameras': {
-      id: '/admin/projects/$id/cameras'
-      path: '/cameras'
-      fullPath: '/admin/projects/$id/cameras'
-      preLoaderRoute: typeof AdminProjectsIdCamerasRouteImport
+    '/admin/projects/$id/messages': {
+      id: '/admin/projects/$id/messages'
+      path: '/messages'
+      fullPath: '/admin/projects/$id/messages'
+      preLoaderRoute: typeof AdminProjectsIdMessagesRouteImport
       parentRoute: typeof AdminProjectsIdRoute
+    }
+    '/admin/projects/$id/payments': {
+      id: '/admin/projects/$id/payments'
+      path: '/payments'
+      fullPath: '/admin/projects/$id/payments'
+      preLoaderRoute: typeof AdminProjectsIdPaymentsRouteImport
+      parentRoute: typeof AdminProjectsIdRoute
+    }
+    '/admin/projects/$id/reports': {
+      id: '/admin/projects/$id/reports'
+      path: '/reports'
+      fullPath: '/admin/projects/$id/reports'
+      preLoaderRoute: typeof AdminProjectsIdReportsRouteImport
+      parentRoute: typeof AdminProjectsIdRoute
+    }
+    '/api/public/site-image/$key': {
+      id: '/api/public/site-image/$key'
+      path: '/api/public/site-image/$key'
+      fullPath: '/api/public/site-image/$key'
+      preLoaderRoute: typeof ApiPublicSiteImageKeyRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -1996,3 +1996,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
