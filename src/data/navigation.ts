@@ -27,6 +27,7 @@ export const NAV_USLUGI: NavDropdown = {
   items: [
     { label: "Механизированная штукатурка", to: "/mekhanizirovannaya-shtukaturka" },
     { label: "Мокрая стяжка пола", to: "/styazhka-pola" },
+    { label: "Полусухая стяжка пола", to: "/polusuhaya-styazhka" },
     { label: "Тёплый пол", to: "/teplyy-pol" },
     { label: "Разводка электрики", to: "/razvodka-elektriki" },
     { label: "Разводка сантехники", to: "/razvodka-santehniki" },

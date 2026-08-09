@@ -23,6 +23,7 @@ export const ROUTES: RouteEntry[] = [
   // Профильные услуги
   { path: "/mekhanizirovannaya-shtukaturka", title: "Механизированная штукатурка стен", shortTitle: "Штукатурка", group: "inzhenernye" },
   { path: "/styazhka-pola", title: "Мокрая стяжка пола", shortTitle: "Стяжка пола", group: "inzhenernye" },
+  { path: "/polusuhaya-styazhka", title: "Полусухая стяжка пола", shortTitle: "Полусухая стяжка", group: "inzhenernye" },
   { path: "/razvodka-elektriki", title: "Разводка электрики в квартире", shortTitle: "Электрика", group: "inzhenernye" },
   { path: "/razvodka-santehniki", title: "Разводка сантехники в квартире", shortTitle: "Сантехника", group: "inzhenernye" },
   { path: "/mokraya-ili-polusuhaya-styazhka", title: "Мокрая или полусухая стяжка", group: "info" },

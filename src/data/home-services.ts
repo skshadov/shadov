@@ -22,9 +22,16 @@ export const HOME_DIRECTIONS: DirectionCard[] = [
   },
   {
     title: "Мокрая стяжка пола",
-    description: "Классическая цементно-песчаная стяжка — надёжнее полусухой",
+    description: "Классическая цементно-песчаная стяжка по маякам под любое покрытие",
     startPrice: "810 ₽/м² под ключ",
     to: "/styazhka-pola",
+    Icon: Layers,
+  },
+  {
+    title: "Полусухая стяжка пола",
+    description: "Механизированная укладка с фиброй — ходить через сутки",
+    startPrice: "690 ₽/м² под ключ",
+    to: "/polusuhaya-styazhka",
     Icon: Layers,
   },
   {

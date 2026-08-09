@@ -20,6 +20,7 @@ const STATIC_PATHS = [
   // Профильные услуги
   "/mekhanizirovannaya-shtukaturka",
   "/styazhka-pola",
+  "/polusuhaya-styazhka",
   "/teplyy-pol",
   "/razvodka-elektriki",
   "/razvodka-santehniki",
