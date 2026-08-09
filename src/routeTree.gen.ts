@@ -31,6 +31,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricesRouteImport } from './routes/prices'
 import { Route as PremialnyyRemontRouteImport } from './routes/premialnyy-remont'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as PolusuhayaStyazhkaRouteImport } from './routes/polusuhaya-styazhka'
 import { Route as PersonalDataConsentRouteImport } from './routes/personal-data-consent'
 import { Route as OtoplenieRouteImport } from './routes/otoplenie'
 import { Route as MonolitnyeRabotyRouteImport } from './routes/monolitnye-raboty'
@@ -205,6 +206,11 @@ const PremialnyyRemontRoute = PremialnyyRemontRouteImport.update({
 const PortfolioRoute = PortfolioRouteImport.update({
   id: '/portfolio',
   path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PolusuhayaStyazhkaRoute = PolusuhayaStyazhkaRouteImport.update({
+  id: '/polusuhaya-styazhka',
+  path: '/polusuhaya-styazhka',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PersonalDataConsentRoute = PersonalDataConsentRouteImport.update({
@@ -567,6 +573,7 @@ export interface FileRoutesByFullPath {
   '/monolitnye-raboty': typeof MonolitnyeRabotyRoute
   '/otoplenie': typeof OtoplenieRoute
   '/personal-data-consent': typeof PersonalDataConsentRoute
+  '/polusuhaya-styazhka': typeof PolusuhayaStyazhkaRoute
   '/portfolio': typeof PortfolioRouteWithChildren
   '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
@@ -653,6 +660,7 @@ export interface FileRoutesByTo {
   '/monolitnye-raboty': typeof MonolitnyeRabotyRoute
   '/otoplenie': typeof OtoplenieRoute
   '/personal-data-consent': typeof PersonalDataConsentRoute
+  '/polusuhaya-styazhka': typeof PolusuhayaStyazhkaRoute
   '/portfolio': typeof PortfolioRouteWithChildren
   '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
@@ -740,6 +748,7 @@ export interface FileRoutesById {
   '/monolitnye-raboty': typeof MonolitnyeRabotyRoute
   '/otoplenie': typeof OtoplenieRoute
   '/personal-data-consent': typeof PersonalDataConsentRoute
+  '/polusuhaya-styazhka': typeof PolusuhayaStyazhkaRoute
   '/portfolio': typeof PortfolioRouteWithChildren
   '/premialnyy-remont': typeof PremialnyyRemontRoute
   '/prices': typeof PricesRoute
@@ -829,6 +838,7 @@ export interface FileRouteTypes {
     | '/monolitnye-raboty'
     | '/otoplenie'
     | '/personal-data-consent'
+    | '/polusuhaya-styazhka'
     | '/portfolio'
     | '/premialnyy-remont'
     | '/prices'
@@ -915,6 +925,7 @@ export interface FileRouteTypes {
     | '/monolitnye-raboty'
     | '/otoplenie'
     | '/personal-data-consent'
+    | '/polusuhaya-styazhka'
     | '/portfolio'
     | '/premialnyy-remont'
     | '/prices'
@@ -1001,6 +1012,7 @@ export interface FileRouteTypes {
     | '/monolitnye-raboty'
     | '/otoplenie'
     | '/personal-data-consent'
+    | '/polusuhaya-styazhka'
     | '/portfolio'
     | '/premialnyy-remont'
     | '/prices'
@@ -1089,6 +1101,7 @@ export interface RootRouteChildren {
   MonolitnyeRabotyRoute: typeof MonolitnyeRabotyRoute
   OtoplenieRoute: typeof OtoplenieRoute
   PersonalDataConsentRoute: typeof PersonalDataConsentRoute
+  PolusuhayaStyazhkaRoute: typeof PolusuhayaStyazhkaRoute
   PortfolioRoute: typeof PortfolioRouteWithChildren
   PremialnyyRemontRoute: typeof PremialnyyRemontRoute
   PricesRoute: typeof PricesRoute
@@ -1267,6 +1280,13 @@ declare module '@tanstack/react-router' {
       path: '/portfolio'
       fullPath: '/portfolio'
       preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/polusuhaya-styazhka': {
+      id: '/polusuhaya-styazhka'
+      path: '/polusuhaya-styazhka'
+      fullPath: '/polusuhaya-styazhka'
+      preLoaderRoute: typeof PolusuhayaStyazhkaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/personal-data-consent': {
@@ -1886,6 +1906,7 @@ const rootRouteChildren: RootRouteChildren = {
   MonolitnyeRabotyRoute: MonolitnyeRabotyRoute,
   OtoplenieRoute: OtoplenieRoute,
   PersonalDataConsentRoute: PersonalDataConsentRoute,
+  PolusuhayaStyazhkaRoute: PolusuhayaStyazhkaRoute,
   PortfolioRoute: PortfolioRouteWithChildren,
   PremialnyyRemontRoute: PremialnyyRemontRoute,
   PricesRoute: PricesRoute,
@@ -1912,3 +1933,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
