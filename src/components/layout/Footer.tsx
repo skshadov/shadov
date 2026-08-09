@@ -5,9 +5,7 @@
  */
 import { Link } from "@tanstack/react-router";
 import {
-  NAV_STROITELSTVO,
-  NAV_REMONT,
-  NAV_INZHENERNYE,
+  NAV_USLUGI,
   FOOTER_INFO_LINKS,
   FOOTER_LEGAL_LINKS,
 } from "@/data/navigation";
@@ -17,9 +15,13 @@ import { PlaceholderNotice } from "@/components/common/PlaceholderNotice";
 import { MessengerLinks } from "@/components/common/MessengerLinks";
 
 const SERVICE_COLUMNS = [
-  { title: "Строительство", items: NAV_STROITELSTVO.items, hub: NAV_STROITELSTVO.to },
-  { title: "Ремонт", items: NAV_REMONT.items, hub: NAV_REMONT.to },
-  { title: "Инженерные системы", items: NAV_INZHENERNYE.items, hub: NAV_INZHENERNYE.to },
+  { title: "Услуги", items: NAV_USLUGI.items.slice(0, 3), hub: NAV_USLUGI.to },
+  { title: "Черновая инженерия", items: NAV_USLUGI.items.slice(3, 5), hub: NAV_USLUGI.to },
+  { title: "Полезное", items: [
+      { label: "Мокрая или полусухая стяжка", to: "/mokraya-ili-polusuhaya-styazhka" },
+      { label: "Калькулятор стоимости", to: "/kalkulyator-stoimosti" },
+      { label: "Цены", to: "/prices" },
+    ], hub: NAV_USLUGI.to },
 ];
 
 export function Footer() {
@@ -36,7 +38,7 @@ export function Footer() {
         <div className="md:col-span-4">
           <Logo variant="full" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            {company.brandFull}. Генеральный подрядчик с допуском СРО. Строительство и ремонт под ключ в Москве и Московской области.
+            {company.brandFull}. Механизированная штукатурка, мокрая стяжка пола, тёплый пол, черновая электрика и сантехника в Москве и Московской области.
           </p>
           <p className="mt-4 inline-flex rounded-md border border-border bg-card/40 px-3 py-1.5 text-xs uppercase tracking-wider text-muted-foreground">
             Прямой договор. Без посредников.

@@ -6,7 +6,7 @@ import { SHOWCASE_PROJECTS } from "@/data/showcase-projects";
 
 const PATH = "/portfolio";
 const TITLE = "Наши работы — Шадов и партнёры";
-const DESC = "Раздел наполняется подтверждёнными материалами выполненных объектов. Фотографии и описание публикуются только после проверки и согласия на размещение.";
+const DESC = "Выполненные объекты: механизированная штукатурка, мокрая стяжка пола, тёплый пол, черновая электрика и сантехника в Москве и Московской области.";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => buildInfoHead({
@@ -29,8 +29,8 @@ function Page() {
       h1="Наши работы"
       intro={
         <p>
-          Реализованные объекты в Москве и Московской области:
-          строительство загородных домов, ремонт квартир, инженерные системы.
+          Реализованные объекты в Москве и Московской области: механизированная
+          штукатурка, мокрая стяжка пола, тёплый пол и черновая инженерия.
           Ниже — подборка сданных работ с фотографиями, площадью и сроком завершения.
         </p>
       }
@@ -68,9 +68,9 @@ function Page() {
         </InfoSection>
       ) : (
       <>
-        {(["construction", "repair", "engineering"] as const).map((cat) => {
+        {(["repair", "engineering"] as const).map((cat) => {
           const list = SHOWCASE_PROJECTS.filter((p) => p.category === cat);
-          const titles = { construction: "Строительство домов", repair: "Ремонт и отделка", engineering: "Инженерные системы" };
+          const titles = { repair: "Штукатурка и стяжка пола", engineering: "Черновая инженерия и тёплый пол" };
           return (
             <InfoSection key={cat} title={titles[cat]}>
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

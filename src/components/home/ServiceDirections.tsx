@@ -8,32 +8,20 @@ import { Illustration } from "@/components/common/Illustration";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { HOME_DIRECTIONS } from "@/data/home-services";
 import {
-  housesPicture,
   renovationPicture,
   monolithPicture,
   engineeringPicture,
-  apartmentsPicture,
-  generalPicture,
-  masonryPicture,
-  roofPicture,
   plumbingPicture,
   heatingPicture,
-  tilePicture,
 } from "@/assets/illustrations/sources";
 
-type PicBundle = typeof housesPicture;
+type PicBundle = typeof renovationPicture;
 const ILLUSTRATIONS: Record<string, { pic: PicBundle; description: string } | undefined> = {
-  "Строительство домов": { pic: housesPicture, description: "современный двухэтажный частный дом из газобетона с фальцевой кровлей" },
-  "Ремонт под ключ": { pic: renovationPicture, description: "интерьер квартиры на этапе подготовки под чистовую отделку" },
-  "Монолитные работы": { pic: monolithPicture, description: "монолитное перекрытие с армированием и бетонированием" },
-  "Электрика": { pic: engineeringPicture, description: "инженерное помещение с коллектором, электрощитом и трассами" },
-  "Многоквартирное строительство": { pic: apartmentsPicture, description: "монолитный жилой комплекс с башенным краном" },
-  "Генеральный подряд": { pic: generalPicture, description: "инженеры с чертежами на стройплощадке" },
-  "Кладочные работы": { pic: masonryPicture, description: "каменщик кладёт стену из газобетонных блоков" },
-  "Кровля": { pic: roofPicture, description: "монтаж фальцевой кровли на частном доме" },
-  "Сантехника": { pic: plumbingPicture, description: "монтаж сантехники в санузле" },
-  "Отопление": { pic: heatingPicture, description: "укладка водяного тёплого пола с коллектором" },
-  "Плитка": { pic: tilePicture, description: "укладка крупноформатного керамогранита" },
+  "Механизированная штукатурка": { pic: renovationPicture, description: "оштукатуренные стены квартиры на этапе подготовки под чистовую отделку" },
+  "Мокрая стяжка пола": { pic: monolithPicture, description: "заливка и выравнивание цементно-песчаной стяжки пола" },
+  "Тёплый пол": { pic: heatingPicture, description: "укладка водяного тёплого пола с коллектором" },
+  "Разводка электрики": { pic: engineeringPicture, description: "черновая электрика: штробы, кабельные трассы и электрощит" },
+  "Разводка сантехники": { pic: plumbingPicture, description: "черновая разводка водоснабжения и канализации в санузле" },
 };
 
 export function ServiceDirections() {
@@ -41,9 +29,9 @@ export function ServiceDirections() {
     <section className="surface-light border-b border-border">
       <div className="container-page py-16 md:py-24">
         <SectionHeading
-          eyebrow="Основные направления"
-          title="Что мы делаем для частных и корпоративных заказчиков"
-          description="Полный цикл — от обследования объекта и инженерных решений до чистовой отделки и сдачи. По каждому направлению назначается ответственный руководитель проекта."
+          eyebrow="Наши направления"
+          title="Пять работ чернового цикла, на которых мы специализируемся"
+          description="Штукатурка, мокрая стяжка, тёплый пол и черновая инженерия в квартирах и домах Москвы и области. Цена работы и материала фиксируется в смете до старта."
         />
         <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {HOME_DIRECTIONS.map((d) => {

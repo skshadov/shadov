@@ -17,7 +17,7 @@ export function HeroSection() {
           sources={heroPicture.sources}
           imgSrcSet={heroPicture.imgSrcSet}
           imgSizes={heroPicture.imgSizes}
-          description="туманное утро на стройплощадке частного многоквартирного дома, монолитный каркас, бригада в касках"
+          description="бригада наносит механизированную штукатурку на стены квартиры в новостройке"
           width={heroPicture.width}
           height={heroPicture.height}
           priority

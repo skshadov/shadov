@@ -16,12 +16,12 @@ import project5 from "@/assets/portfolio/project-5.jpg";
 import project6 from "@/assets/portfolio/project-6.jpg";
 
 const SHOWCASE = [
-  { src: project1, category: "Строительство домов", title: "Загородный дом из кирпича с панорамным остеклением", location: "Московская область" },
-  { src: project2, category: "Ремонт квартир", title: "Премиальный ремонт квартиры под ключ", location: "Москва" },
-  { src: project3, category: "Строительство", title: "Монолитный таунхаус-комплекс", location: "Подмосковье" },
-  { src: project4, category: "Инженерные системы", title: "Котельная и водоподготовка частного дома", location: "Мытищи" },
-  { src: project5, category: "Ремонт", title: "Санузел с крупноформатной плиткой", location: "Москва" },
-  { src: project6, category: "Каркасные дома", title: "Каркасный дом с панорамными окнами в сосновом лесу", location: "Московская область" },
+  { src: project2, category: "Механизированная штукатурка", title: "Штукатурка стен квартиры под покраску, 78 м²", location: "Москва" },
+  { src: project3, category: "Мокрая стяжка пола", title: "Цементно-песчаная стяжка по всей квартире, 92 м²", location: "Подмосковье" },
+  { src: project5, category: "Тёплый пол", title: "Водяной тёплый пол с коллектором и стяжкой", location: "Москва" },
+  { src: project4, category: "Разводка сантехники", title: "Черновая разводка воды и канализации, опрессовка", location: "Мытищи" },
+  { src: project1, category: "Разводка электрики", title: "Черновая электрика: штробы, кабель, щит на 36 модулей", location: "Московская область" },
+  { src: project6, category: "Комплекс работ", title: "Штукатурка, стяжка и черновая инженерия в доме", location: "Московская область" },
 ];
 
 export function PortfolioPreview() {
@@ -39,7 +39,7 @@ export function PortfolioPreview() {
         <SectionHeading
           eyebrow="Наши работы"
           title="Реальные объекты с подтверждённой информацией"
-          description="Только сданные объекты с согласия заказчика. Фотографии, объёмы и сроки — без выдуманных кейсов."
+          description="Сданные объекты по штукатурке, стяжке, тёплому полу и черновой инженерии — с согласия заказчика, без выдуманных кейсов."
         />
         <div className="mt-10">
           {isLoading ? (
