@@ -82,6 +82,13 @@ import plumbingWebp800 from "./direction-plumbing-800.webp";
 import plumbingAvif from "./direction-plumbing.avif";
 import plumbingAvif800 from "./direction-plumbing-800.avif";
 
+import semidryJpg from "./direction-semidry.jpg";
+import semidryJpg800 from "./direction-semidry-800.jpg";
+import semidryWebp from "./direction-semidry.webp";
+import semidryWebp800 from "./direction-semidry-800.webp";
+import semidryAvif from "./direction-semidry.avif";
+import semidryAvif800 from "./direction-semidry-800.avif";
+
 import heatingJpg from "./direction-heating.jpg";
 import heatingJpg800 from "./direction-heating-800.jpg";
 import heatingWebp from "./direction-heating.webp";
@@ -160,4 +167,5 @@ export const masonryPicture = card(masonryAvif, masonryAvif800, masonryWebp, mas
 export const roofPicture = card(roofAvif, roofAvif800, roofWebp, roofWebp800, roofJpg, roofJpg800);
 export const plumbingPicture = card(plumbingAvif, plumbingAvif800, plumbingWebp, plumbingWebp800, plumbingJpg, plumbingJpg800);
 export const heatingPicture = card(heatingAvif, heatingAvif800, heatingWebp, heatingWebp800, heatingJpg, heatingJpg800);
+export const semidryPicture = card(semidryAvif, semidryAvif800, semidryWebp, semidryWebp800, semidryJpg, semidryJpg800);
 export const tilePicture = card(tileAvif, tileAvif800, tileWebp, tileWebp800, tileJpg, tileJpg800);

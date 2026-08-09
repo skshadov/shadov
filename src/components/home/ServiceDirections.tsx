@@ -13,12 +13,14 @@ import {
   engineeringPicture,
   plumbingPicture,
   heatingPicture,
+  semidryPicture,
 } from "@/assets/illustrations/sources";
 
 type PicBundle = typeof renovationPicture;
 const ILLUSTRATIONS: Record<string, { pic: PicBundle; description: string } | undefined> = {
   "Механизированная штукатурка": { pic: renovationPicture, description: "оштукатуренные стены квартиры на этапе подготовки под чистовую отделку" },
   "Мокрая стяжка пола": { pic: monolithPicture, description: "заливка и выравнивание цементно-песчаной стяжки пола" },
+  "Полусухая стяжка пола": { pic: semidryPicture, description: "механизированная укладка полусухой стяжки пола с затиркой шлифовальной машиной" },
   "Тёплый пол": { pic: heatingPicture, description: "укладка водяного тёплого пола с коллектором" },
   "Разводка электрики": { pic: engineeringPicture, description: "черновая электрика: штробы, кабельные трассы и электрощит" },
   "Разводка сантехники": { pic: plumbingPicture, description: "черновая разводка водоснабжения и канализации в санузле" },
