@@ -6,7 +6,7 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
 export interface SitePricingRow {
   slug: string;
-  data: unknown;
+  data: Record<string, unknown>;
   updated_at: string;
 }
 export interface SiteImageRow {
@@ -38,11 +38,11 @@ export const listPricingOverrides = createServerFn({ method: "GET" })
 
 export const savePricingOverride = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((input: { slug: string; data: unknown }) => {
+  .inputValidator((input: { slug: string; data: Record<string, unknown> }) => {
     const slug = String(input?.slug ?? "").trim();
     if (!slug) throw new Error("slug_required");
     if (!input?.data || typeof input.data !== "object") throw new Error("data_required");
-    return { slug, data: input.data };
+    return { slug, data: input.data as Record<string, unknown> };
   })
   .handler(async ({ data, context }): Promise<{ ok: true }> => {
     await ensurePerm(context, "admin.catalog.write");
