@@ -23,15 +23,12 @@ export function ServiceCalculator({ calc, serviceName }: Props) {
       calc.smallVolume && safeQty > 0 && safeQty < calc.smallVolume.threshold
         ? calc.smallVolume.add
         : 0;
-    const perUnitWork = calc.baseWork + small;
-    const perUnitTurnkey = calc.baseWork + calc.baseMaterial + optionsSum + small;
+    const perUnitWork = calc.baseWork + optionsSum + small;
     return {
       qty: safeQty,
       perUnitWork,
-      perUnitTurnkey,
       work: Math.round(perUnitWork * safeQty),
-      material: Math.round((perUnitTurnkey - perUnitWork) * safeQty),
-      total: Math.round(perUnitTurnkey * safeQty),
+      total: Math.round(perUnitWork * safeQty),
       small,
     };
   }, [qty, active, calc]);
@@ -51,7 +48,7 @@ export function ServiceCalculator({ calc, serviceName }: Props) {
           unit: calc.unit,
           options: labels,
           work: result.work,
-          material: result.material,
+          material: 0,
           total: result.total,
           savedAt: new Date().toISOString(),
         }),
@@ -67,7 +64,8 @@ export function ServiceCalculator({ calc, serviceName }: Props) {
         Посчитайте стоимость за 10 секунд
       </h2>
       <p className="mt-1 text-sm text-muted-foreground">
-        Расчёт по тому же прайсу, что ниже на странице. Инженер уточнит цифры на замере — но порядок суммы вы видите уже сейчас.
+        Расчёт по тому же прайсу, что ниже на странице: только стоимость работ, без материалов. Инженер уточнит цифры на
+        замере — но порядок суммы вы видите уже сейчас.
       </p>
 
       <label className="mt-5 block text-sm font-medium text-foreground" htmlFor="calc-qty">
@@ -113,20 +111,16 @@ export function ServiceCalculator({ calc, serviceName }: Props) {
 
       <dl className="mt-6 grid gap-2 rounded-lg bg-muted/40 p-4 text-sm">
         <div className="flex items-baseline justify-between gap-4">
-          <dt className="text-muted-foreground">Работа</dt>
-          <dd className="font-medium text-foreground">{formatRub(result.work)}</dd>
-        </div>
-        <div className="flex items-baseline justify-between gap-4">
-          <dt className="text-muted-foreground">Материал</dt>
-          <dd className="font-medium text-foreground">{formatRub(result.material)}</dd>
-        </div>
-        <div className="mt-1 flex items-baseline justify-between gap-4 border-t border-border pt-3">
-          <dt className="font-medium text-foreground">Итого под ключ</dt>
+          <dt className="font-medium text-foreground">Итого за работу</dt>
           <dd className="font-display text-xl font-semibold text-primary">{formatRub(result.total)}</dd>
         </div>
         <div className="text-xs text-muted-foreground">
-          {formatRub(result.perUnitTurnkey)} за {calc.unit === "м²" ? "м²" : "точку"}
+          {formatRub(result.perUnitWork)} за {calc.unit === "м²" ? "м²" : "точку"}
           {result.small > 0 ? " · учтена надбавка за малый объём" : ""}
+        </div>
+        <div className="text-xs text-muted-foreground">
+          Материалы в расчёт не входят — их покупает заказчик. Закупку и доставку можем взять на себя, обсуждается
+          отдельно.
         </div>
       </dl>
 

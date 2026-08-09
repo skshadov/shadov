@@ -1,7 +1,7 @@
 import type { PriceGroup } from "@/data/pricing/types";
 
 function cell(value: number | null) {
-  if (value === null) return <span className="text-muted-foreground">—</span>;
+  if (value === null) return <span className="text-muted-foreground">по расчёту</span>;
   return <>{value.toLocaleString("ru-RU")} ₽</>;
 }
 
@@ -13,6 +13,10 @@ export function PriceTable({ group }: { group: PriceGroup }) {
         {group.caption ? (
           <p className="mt-1 text-sm text-muted-foreground">{group.caption}</p>
         ) : null}
+        <p className="mt-1 text-xs text-muted-foreground">
+          Все цены — только за работу. Материалы покупает заказчик; закупку и доставку можем взять на себя, стоимость
+          обсуждается отдельно.
+        </p>
       </header>
 
       {/* Desktop */}
@@ -22,9 +26,7 @@ export function PriceTable({ group }: { group: PriceGroup }) {
             <tr className="border-b border-border text-left text-xs uppercase tracking-wider text-muted-foreground">
               <th scope="col" className="px-6 py-3 font-medium">Позиция</th>
               <th scope="col" className="px-3 py-3 font-medium">Ед.</th>
-              <th scope="col" className="px-3 py-3 text-right font-medium">Работа</th>
-              <th scope="col" className="px-3 py-3 text-right font-medium">Материал</th>
-              <th scope="col" className="px-6 py-3 text-right font-medium">Под ключ</th>
+              <th scope="col" className="px-6 py-3 text-right font-medium">Цена за работу</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-border">
@@ -35,12 +37,8 @@ export function PriceTable({ group }: { group: PriceGroup }) {
                   {r.note ? <div className="mt-1 text-xs text-muted-foreground">{r.note}</div> : null}
                 </td>
                 <td className="whitespace-nowrap px-3 py-4 align-top text-muted-foreground">{r.unit}</td>
-                <td className="whitespace-nowrap px-3 py-4 text-right align-top">{cell(r.work)}</td>
-                <td className="whitespace-nowrap px-3 py-4 text-right align-top">{cell(r.material)}</td>
                 <td className="whitespace-nowrap px-6 py-4 text-right align-top font-semibold text-primary">
-                  {r.work === null && r.material === null
-                    ? "—"
-                    : `${((r.work ?? 0) + (r.material ?? 0)).toLocaleString("ru-RU")} ₽`}
+                  {cell(r.work)}
                 </td>
               </tr>
             ))}
@@ -54,23 +52,9 @@ export function PriceTable({ group }: { group: PriceGroup }) {
           <li key={r.name} className="px-5 py-4">
             <div className="font-medium text-foreground">{r.name}</div>
             {r.note ? <div className="mt-1 text-xs text-muted-foreground">{r.note}</div> : null}
-            <dl className="mt-3 grid grid-cols-3 gap-2 text-xs">
-              <div>
-                <dt className="text-muted-foreground">Работа</dt>
-                <dd className="mt-0.5 text-sm text-foreground">{cell(r.work)}</dd>
-              </div>
-              <div>
-                <dt className="text-muted-foreground">Материал</dt>
-                <dd className="mt-0.5 text-sm text-foreground">{cell(r.material)}</dd>
-              </div>
-              <div>
-                <dt className="text-muted-foreground">Под ключ, за {r.unit}</dt>
-                <dd className="mt-0.5 text-sm font-semibold text-primary">
-                  {r.work === null && r.material === null
-                    ? "—"
-                    : `${((r.work ?? 0) + (r.material ?? 0)).toLocaleString("ru-RU")} ₽`}
-                </dd>
-              </div>
+            <dl className="mt-3 flex items-baseline justify-between gap-3 text-xs">
+              <dt className="text-muted-foreground">Работа, за {r.unit}</dt>
+              <dd className="text-sm font-semibold text-primary">{cell(r.work)}</dd>
             </dl>
           </li>
         ))}
