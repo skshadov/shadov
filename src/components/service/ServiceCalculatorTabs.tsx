@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { SERVICE_PRICING } from "@/data/pricing";
+import { useLivePricingList } from "@/lib/site-content/store";
 import { ServiceCalculator } from "./ServiceCalculator";
 
 export function ServiceCalculatorTabs({ initialSlug }: { initialSlug?: string }) {
+  const services = useLivePricingList();
   const [slug, setSlug] = useState<string>(
     SERVICE_PRICING.some((s) => s.slug === initialSlug) ? (initialSlug as string) : SERVICE_PRICING[0]!.slug,
   );
-  const active = SERVICE_PRICING.find((s) => s.slug === slug) ?? SERVICE_PRICING[0]!;
+  const active = services.find((s) => s.slug === slug) ?? services[0]!;
 
   return (
     <div className="space-y-5">
       <div role="tablist" aria-label="Услуга для расчёта" className="flex flex-wrap gap-2">
-        {SERVICE_PRICING.map((s) => (
+        {services.map((s) => (
           <button
             key={s.slug}
             type="button"

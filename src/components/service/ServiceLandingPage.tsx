@@ -8,9 +8,11 @@ import { ServiceCalculator } from "./ServiceCalculator";
 import type { ServicePricing } from "@/data/pricing/types";
 import { formatRub } from "@/data/pricing/types";
 import { SERVICE_PRICING } from "@/data/pricing";
+import { useLivePricing } from "@/lib/site-content/store";
 import { EstimateForm } from "@/components/forms/EstimateForm";
 
-export function ServiceLandingPage({ data }: { data: ServicePricing }) {
+export function ServiceLandingPage({ data: staticData }: { data: ServicePricing }) {
+  const data = useLivePricing(staticData);
   const others = SERVICE_PRICING.filter((s) => s.slug !== data.slug);
 
   return (

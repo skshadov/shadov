@@ -37,6 +37,8 @@ const NAV_ITEMS: NavItem[] = [
   { to: "/admin/catalog/categories", label: "Категории",    icon: ListChecks,      permission: "admin.catalog.read" },
   { to: "/admin/catalog/services",   label: "Услуги",       icon: Briefcase,       permission: "admin.catalog.read" },
   { to: "/admin/catalog/prices",     label: "Прайс",        icon: Tag,             permission: "admin.catalog.read" },
+  { to: "/admin/site-prices",   label: "Прайс сайта",       icon: Tag,             permission: "admin.catalog.read" },
+  { to: "/admin/site-images",   label: "Фото сайта",        icon: ImageIcon,       permission: "admin.media.read" },
   { to: "/admin/calculator",    label: "Калькулятор",       icon: CalcIcon,        permission: "admin.calculator.read" },
   { to: "/admin/pages",         label: "Контентные блоки",  icon: FileEdit,        permission: "admin.content.read" },
   { to: "/admin/media",         label: "Медиатека",         icon: Images,          permission: "admin.media.read" },

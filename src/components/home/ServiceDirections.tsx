@@ -4,7 +4,7 @@
  */
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import { Illustration } from "@/components/common/Illustration";
+import { SlotImage } from "@/components/common/SlotImage";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { HOME_DIRECTIONS } from "@/data/home-services";
 import {
@@ -17,13 +17,13 @@ import {
 } from "@/assets/illustrations/sources";
 
 type PicBundle = typeof renovationPicture;
-const ILLUSTRATIONS: Record<string, { pic: PicBundle; description: string } | undefined> = {
-  "Механизированная штукатурка": { pic: renovationPicture, description: "оштукатуренные стены квартиры на этапе подготовки под чистовую отделку" },
-  "Мокрая стяжка пола": { pic: monolithPicture, description: "заливка и выравнивание цементно-песчаной стяжки пола" },
-  "Полусухая стяжка пола": { pic: semidryPicture, description: "механизированная укладка полусухой стяжки пола с затиркой шлифовальной машиной" },
-  "Тёплый пол": { pic: heatingPicture, description: "укладка водяного тёплого пола с коллектором" },
-  "Разводка электрики": { pic: engineeringPicture, description: "черновая электрика: штробы, кабельные трассы и электрощит" },
-  "Разводка сантехники": { pic: plumbingPicture, description: "черновая разводка водоснабжения и канализации в санузле" },
+const ILLUSTRATIONS: Record<string, { pic: PicBundle; description: string; slotKey: string } | undefined> = {
+  "Механизированная штукатурка": { pic: renovationPicture, description: "оштукатуренные стены квартиры на этапе подготовки под чистовую отделку" , slotKey: "direction.shtukaturka" },
+  "Мокрая стяжка пола": { pic: monolithPicture, description: "заливка и выравнивание цементно-песчаной стяжки пола" , slotKey: "direction.styazhka" },
+  "Полусухая стяжка пола": { pic: semidryPicture, description: "механизированная укладка полусухой стяжки пола с затиркой шлифовальной машиной" , slotKey: "direction.polusuhaya" },
+  "Тёплый пол": { pic: heatingPicture, description: "укладка водяного тёплого пола с коллектором" , slotKey: "direction.teplyy-pol" },
+  "Разводка электрики": { pic: engineeringPicture, description: "черновая электрика: штробы, кабельные трассы и электрощит" , slotKey: "direction.elektrika" },
+  "Разводка сантехники": { pic: plumbingPicture, description: "черновая разводка водоснабжения и канализации в санузле" , slotKey: "direction.santehnika" },
 };
 
 export function ServiceDirections() {
@@ -46,17 +46,12 @@ export function ServiceDirections() {
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                     {ill ? (
-                      <Illustration
-                        src={ill.pic.src}
-                        sources={ill.pic.sources}
-                        imgSrcSet={ill.pic.imgSrcSet}
-                        imgSizes={ill.pic.imgSizes}
+                      <SlotImage
+                        slotKey={ill.slotKey}
+                        picture={ill.pic}
                         description={ill.description}
-                        width={ill.pic.width}
-                        height={ill.pic.height}
                         imgClassName="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                         className="h-full w-full"
-                        rounded={false}
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center bg-[color:var(--surface-medium)]">

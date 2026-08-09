@@ -1218,6 +1218,54 @@ export type Database = {
           },
         ]
       }
+      site_images: {
+        Row: {
+          height: number | null
+          key: string
+          updated_at: string
+          updated_by: string | null
+          url: string
+          width: number | null
+        }
+        Insert: {
+          height?: number | null
+          key: string
+          updated_at?: string
+          updated_by?: string | null
+          url: string
+          width?: number | null
+        }
+        Update: {
+          height?: number | null
+          key?: string
+          updated_at?: string
+          updated_by?: string | null
+          url?: string
+          width?: number | null
+        }
+        Relationships: []
+      }
+      site_pricing: {
+        Row: {
+          data: Json
+          slug: string
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          data: Json
+          slug: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          data?: Json
+          slug?: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
       submission_rate_limits: {
         Row: {
           attempt_count: number

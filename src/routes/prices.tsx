@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { InfoPageLayout, InfoSection, buildInfoHead } from "@/components/info/InfoPageLayout";
 import { PriceTable } from "@/components/service/PriceTable";
-import { SERVICE_PRICING, formatRub } from "@/data/pricing";
+import { formatRub } from "@/data/pricing";
+import { useLivePricingList } from "@/lib/site-content/store";
 import { PRICES_ACTUAL_DATE } from "@/data/home-prices";
 
 const TITLE = "Цены на штукатурку, стяжку, тёплый пол, электрику и сантехнику | Шадов и партнёры";
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/prices")({
 });
 
 function PricesPage() {
+  const services = useLivePricingList();
   return (
     <InfoPageLayout
       breadcrumbs={[{ label: "Главная", to: "/" }, { label: "Цены" }]}
@@ -37,7 +39,7 @@ function PricesPage() {
           </p>
         </header>
         <ul className="divide-y divide-border">
-          {SERVICE_PRICING.map((s) => (
+          {services.map((s) => (
             <li key={s.slug} className="flex flex-col gap-2 px-5 py-4 sm:flex-row sm:items-center sm:justify-between md:px-6">
               <div>
                 <Link to={s.path as never} className="font-medium text-foreground underline-offset-4 hover:text-primary hover:underline">
@@ -51,7 +53,7 @@ function PricesPage() {
         </ul>
       </section>
 
-      {SERVICE_PRICING.map((s) => (
+      {services.map((s) => (
         <section key={s.slug} className="space-y-4">
           <div className="flex flex-wrap items-baseline justify-between gap-3">
             <h2 className="font-display text-2xl font-semibold">{s.shortName}</h2>
