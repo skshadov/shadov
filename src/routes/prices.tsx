@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { InfoPageLayout, InfoSection, buildInfoHead } from "@/components/info/InfoPageLayout";
 import { PriceTable } from "@/components/service/PriceTable";
-import { SERVICE_PRICING, formatRub } from "@/data/pricing";
+import { formatRub } from "@/data/pricing";
 import { useLivePricingList } from "@/lib/site-content/store";
 import { PRICES_ACTUAL_DATE } from "@/data/home-prices";
 
