@@ -40,9 +40,22 @@ export function EstimateBuilder({
 }) {
   const calc = pricing.calc;
   const entries = useMemo(() => collectRows(pricing), [pricing]);
+  const variants = useMemo(() => {
+    const keys = calc.baseVariantKeys?.length
+      ? calc.baseVariantKeys
+      : calc.baseRowKey
+        ? [calc.baseRowKey]
+        : [];
+    const list = keys.map((k) => entries.find((e) => e.key === k)).filter(Boolean) as Entry[];
+    return list.length ? list : entries.slice(0, 1);
+  }, [entries, calc.baseVariantKeys, calc.baseRowKey]);
+
+  const [baseKey, setBaseKey] = useState<string>(
+    () => variants[0]?.key ?? calc.baseRowKey ?? "",
+  );
   const baseEntry = useMemo(
-    () => entries.find((e) => e.key === calc.baseRowKey) ?? entries[0],
-    [entries, calc.baseRowKey],
+    () => variants.find((v) => v.key === baseKey) ?? variants[0],
+    [variants, baseKey],
   );
 
   const [qty, setQty] = useState<number>(calc.defaultQty);
@@ -53,8 +66,8 @@ export function EstimateBuilder({
   const safeQty = Number.isFinite(qty) && qty > 0 ? qty : 0;
 
   const addons = useMemo(
-    () => entries.filter((e) => e.key !== baseEntry?.key),
-    [entries, baseEntry],
+    () => entries.filter((e) => !variants.some((v) => v.key === e.key)),
+    [entries, variants],
   );
 
   const filtered = useMemo(() => {
@@ -81,13 +94,13 @@ export function EstimateBuilder({
 
   const lines = useMemo(
     () =>
-      entries
+      addons
         .filter((e) => (picked[e.key] ?? 0) > 0)
         .map((e) => {
           const n = picked[e.key]!;
           return { ...e, qty: n, sum: Math.round((e.row.work as number) * n) };
         }),
-    [entries, picked],
+    [addons, picked],
   );
 
   const total = baseSum + smallAdd + lines.reduce((a, l) => a + l.sum, 0);
