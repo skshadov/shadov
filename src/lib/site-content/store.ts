@@ -18,6 +18,15 @@ export interface PricingOverride {
   calc?: CalcConfig;
 }
 
+const REMOVED_PRICE_GROUP_TITLES = ["расход материала"];
+
+function withoutRemovedPriceGroups(groups: PriceGroup[]): PriceGroup[] {
+  return groups.filter((group) => {
+    const title = group.title.trim().toLocaleLowerCase("ru-RU");
+    return !REMOVED_PRICE_GROUP_TITLES.some((removed) => title.startsWith(removed));
+  });
+}
+
 interface SiteContentState {
   pricing: Record<string, PricingOverride>;
   images: Record<string, string>;
@@ -89,7 +98,7 @@ export function mergePricing(base: ServicePricing, ov?: PricingOverride): Servic
     ...(ov.priceHeadlineNote ? { priceHeadlineNote: ov.priceHeadlineNote } : {}),
     ...(ov.lead ? { lead: ov.lead } : {}),
     ...(Array.isArray(ov.baseConditions) ? { baseConditions: ov.baseConditions } : {}),
-    ...(Array.isArray(ov.groups) ? { groups: ov.groups } : {}),
+    ...(Array.isArray(ov.groups) ? { groups: withoutRemovedPriceGroups(ov.groups) } : {}),
     ...(ov.calc ? { calc: { ...base.calc, ...ov.calc } } : {}),
   });
 }
