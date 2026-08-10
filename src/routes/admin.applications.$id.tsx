@@ -1,12 +1,11 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useAdminSession, hasPermission } from "@/lib/admin/use-admin-session";
 import { AdminLayout } from "@/components/admin/AdminLayout";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
-  getApplication, updateApplicationStatus, convertApplicationToProject,
+  getApplication, updateApplicationStatus,
   type ApplicationDetail, type ApplicationStatus,
 } from "@/lib/admin/applications.functions";
 import { StatusBadge } from "./admin.applications";
@@ -25,21 +24,19 @@ const STATUS_LABEL: Record<ApplicationStatus, string> = {
 function ApplicationDetailPage() {
   const { id } = Route.useParams();
   const session = useAdminSession();
-  const navigate = useNavigate();
   const [app, setApp] = useState<ApplicationDetail | null | "loading">("loading");
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [statusDraft, setStatusDraft] = useState<ApplicationStatus | null>(null);
   const [note, setNote] = useState("");
-  const [convertOpen, setConvertOpen] = useState(false);
-  const [projectTitle, setProjectTitle] = useState("");
-  const [projectDesc, setProjectDesc] = useState("");
+  const [adminNote, setAdminNote] = useState("");
+  const [savedMsg, setSavedMsg] = useState<string | null>(null);
 
   useEffect(() => {
     if (session.status !== "authenticated") return;
     let active = true;
     getApplication({ data: { id } })
-      .then((r) => { if (active) { setApp(r); setStatusDraft(r?.status ?? null); setProjectTitle(r ? `Проект по заявке ${r.request_number}` : ""); } })
+      .then((r) => { if (active) { setApp(r); setStatusDraft(r?.status ?? null); setAdminNote(r?.admin_note ?? ""); } })
       .catch((e: unknown) => { if (active) { setApp(null); setError(e instanceof Error ? e.message : "Ошибка"); } });
     return () => { active = false; };
   }, [session.status, id]);
@@ -50,25 +47,16 @@ function ApplicationDetailPage() {
   }
 
   const canWrite = hasPermission(session, "admin.applications.write");
-  const canConvert = canWrite && hasPermission(session, "admin.projects.write");
 
-  async function onSaveStatus() {
+  async function onSave() {
     if (!statusDraft || app === "loading" || !app) return;
-    setSaving(true); setError(null);
+    setSaving(true); setError(null); setSavedMsg(null);
     try {
-      await updateApplicationStatus({ data: { id, status: statusDraft, note: note || undefined } });
+      await updateApplicationStatus({ data: { id, status: statusDraft, note: note || undefined, adminNote } });
       const fresh = await getApplication({ data: { id } });
-      setApp(fresh); setNote("");
+      setApp(fresh); setNote(""); setAdminNote(fresh?.admin_note ?? ""); setSavedMsg("Сохранено");
     } catch (e) { setError(e instanceof Error ? e.message : "Ошибка"); }
     finally { setSaving(false); }
-  }
-
-  async function onConvert() {
-    setSaving(true); setError(null);
-    try {
-      const r = await convertApplicationToProject({ data: { id, title: projectTitle, description: projectDesc || undefined } });
-      navigate({ to: "/admin/projects" as never, search: { highlight: r.projectId } as never });
-    } catch (e) { setError(e instanceof Error ? e.message : "Ошибка"); setSaving(false); }
   }
 
   const breadcrumbs = [
@@ -122,11 +110,23 @@ function ApplicationDetailPage() {
                 </pre>
               </div>
             ) : null}
+
+            <div className="rounded-lg border border-border bg-card p-4">
+              <h3 className="text-sm font-semibold">Описание / комментарий менеджера</h3>
+              <Textarea
+                className="mt-2 min-h-32"
+                placeholder="Опишите договорённости, детали объекта, итоги звонка…"
+                value={adminNote}
+                onChange={(e) => setAdminNote(e.target.value.slice(0, 4000))}
+                disabled={!canWrite || saving}
+              />
+              <p className="mt-1 text-xs text-muted-foreground">{adminNote.length}/4000</p>
+            </div>
           </section>
 
           <aside className="space-y-4">
             <div className="rounded-lg border border-border bg-card p-4">
-              <h3 className="text-sm font-semibold">Смена статуса</h3>
+              <h3 className="text-sm font-semibold">Статус и сохранение</h3>
               <select
                 className="mt-2 h-9 w-full rounded-md border border-input bg-background px-3 text-sm disabled:opacity-50"
                 value={statusDraft ?? app.status}
@@ -136,39 +136,15 @@ function ApplicationDetailPage() {
                 {STATUS_OPTS.map((s) => <option key={s} value={s}>{STATUS_LABEL[s]}</option>)}
               </select>
               <Textarea
-                className="mt-2" placeholder="Комментарий (необязательно, до 500 символов)"
+                className="mt-2" placeholder="Причина изменения (в журнал, до 500 символов)"
                 value={note} onChange={(e) => setNote(e.target.value.slice(0, 500))}
                 disabled={!canWrite || saving}
               />
-              <Button className="mt-3 w-full" disabled={!canWrite || saving || statusDraft === app.status} onClick={onSaveStatus}>
-                {saving ? "Сохранение…" : "Сохранить статус"}
+              <Button className="mt-3 w-full" disabled={!canWrite || saving} onClick={onSave}>
+                {saving ? "Сохранение…" : "Сохранить"}
               </Button>
+              {savedMsg ? <p className="mt-2 text-xs text-emerald-600 dark:text-emerald-400">{savedMsg}</p> : null}
               {!canWrite ? <p className="mt-2 text-xs text-muted-foreground">Требуется право admin.applications.write</p> : null}
-            </div>
-
-            <div className="rounded-lg border border-border bg-card p-4">
-              <h3 className="text-sm font-semibold">Конвертация в проект</h3>
-              {!canConvert ? (
-                <p className="mt-2 text-xs text-muted-foreground">Нужны права admin.applications.write и admin.projects.write.</p>
-              ) : !convertOpen ? (
-                <Button className="mt-2 w-full" variant="outline" onClick={() => setConvertOpen(true)}>Создать проект</Button>
-              ) : (
-                <div className="mt-2 space-y-2">
-                  <Input value={projectTitle} onChange={(e) => setProjectTitle(e.target.value)} placeholder="Название проекта" />
-                  <Textarea value={projectDesc} onChange={(e) => setProjectDesc(e.target.value)} placeholder="Описание (необязательно)" />
-                  <div className="flex gap-2">
-                    <Button className="flex-1" disabled={saving || projectTitle.trim().length < 3} onClick={onConvert}>
-                      {saving ? "Создание…" : "Создать"}
-                    </Button>
-                    <Button variant="outline" onClick={() => setConvertOpen(false)}>Отмена</Button>
-                  </div>
-                  {app.user_id ? (
-                    <p className="text-xs text-muted-foreground">Клиент будет автоматически добавлен в проект.</p>
-                  ) : (
-                    <p className="text-xs text-amber-700 dark:text-amber-300">У заявки нет привязанного пользователя — клиента добавите вручную.</p>
-                  )}
-                </div>
-              )}
             </div>
 
             {app.user_id ? (
