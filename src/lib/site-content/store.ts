@@ -18,7 +18,7 @@ export interface PricingOverride {
   calc?: CalcConfig;
 }
 
-const REMOVED_PRICE_GROUP_TITLES = ["расход материала"];
+const REMOVED_PRICE_GROUP_TITLES = ["расход материала", "что такое «точка»", "что такое \"точка\""];
 
 function withoutRemovedPriceGroups(groups: PriceGroup[]): PriceGroup[] {
   return groups.filter((group) => {
