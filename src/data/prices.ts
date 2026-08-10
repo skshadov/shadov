@@ -420,6 +420,8 @@ const FINISHING_FLOORS: PriceItem[] = [
 
 // ── 22. ОТДЕЛОЧНЫЕ РАБОТЫ — ПОТОЛКИ (6) ───────────────────────────────────
 const FINISHING_CEILINGS: PriceItem[] = [
+  make("finishing_ceilings", "shtukaturka-gips",   "Штукатурка потолка гипсом по маякам", { unit: "м²", from: 1100, slug: "mekhanizirovannaya-shtukaturka", sort: 0 }),
+  make("finishing_ceilings", "shtukaturka-cement", "Штукатурка потолка цементом по маякам", { unit: "м²", from: 1300, slug: "mekhanizirovannaya-shtukaturka", sort: 0 }),
   make("finishing_ceilings", "gkl-odin",          "Потолок из ГКЛ в один уровень",   { unit: "м²", from: 2200, slug: "chistovaya-otdelka", sort: 1 }),
   make("finishing_ceilings", "mnogourovnevyy",    "Многоуровневый потолок",          { unit: "м²", from: 3500, slug: "chistovaya-otdelka", sort: 2 }),
   make("finishing_ceilings", "tenevoe",           "Теневое примыкание",              { unit: "пог. м", from: 1500, slug: "chistovaya-otdelka", sort: 3 }),
