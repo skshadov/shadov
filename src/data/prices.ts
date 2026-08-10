@@ -407,9 +407,9 @@ const FINISHING_WALLS: PriceItem[] = [
 
 // ── 21. ОТДЕЛОЧНЫЕ РАБОТЫ — ПОЛЫ (9) ──────────────────────────────────────
 const FINISHING_FLOORS: PriceItem[] = [
-  make("finishing_floors", "polusukhaya",        "Полусухая стяжка",                 { unit: "м²", from: 900,  slug: "chistovaya-otdelka", sort: 1 }),
-  make("finishing_floors", "csp-styazka",        "Цементно-песчаная стяжка",         { unit: "м²", from: 1100, slug: "chistovaya-otdelka", sort: 2 }),
-  make("finishing_floors", "nalivnoy",           "Наливной пол",                     { unit: "м²", from: 650,  slug: "chistovaya-otdelka", sort: 3 }),
+  make("finishing_floors", "polusukhaya",        "Полусухая стяжка пола",            { unit: "м²", from: 420,  slug: "polusuhaya-styazhka", sort: 1 }),
+  make("finishing_floors", "csp-styazka",        "Мокрая цементно-песчаная стяжка",  { unit: "м²", from: 500,  slug: "styazhka-pola", sort: 2 }),
+  make("finishing_floors", "nalivnoy",           "Наливной пол",                     { unit: "м²", from: 300,  slug: "chistovaya-otdelka", sort: 3 }),
   make("finishing_floors", "laminat",            "Укладка ламината",                 { unit: "м²", from: 850,  slug: "chistovaya-otdelka", sort: 4 }),
   make("finishing_floors", "kvartsvinil",        "Укладка кварцвинила",              { unit: "м²", from: 1000, slug: "chistovaya-otdelka", sort: 5 }),
   make("finishing_floors", "inzhenernaya",       "Укладка инженерной доски",         { unit: "м²", from: 1800, slug: "chistovaya-otdelka", sort: 6 }),
