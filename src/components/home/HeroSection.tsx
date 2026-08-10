@@ -6,8 +6,9 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, ShieldCheck, Wrench } from "lucide-react";
 import {
   engineeringPicture,
-  heatingPicture,
   monolithPicture,
+  plumbingPicture,
+  renovationPicture,
 } from "@/assets/illustrations/sources";
 import { SlotImage } from "@/components/common/SlotImage";
 import { Button } from "@/components/ui/button";
