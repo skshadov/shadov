@@ -74,7 +74,6 @@ import { Route as VodosnabzhenieKanalizatsiyaRouteImport } from './routes/vodosn
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
 import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
-import { Route as AdminMediaRouteImport } from './routes/admin.media'
 import { Route as AdminPagesRouteImport } from './routes/admin.pages'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminSiteImagesRouteImport } from './routes/admin.site-images'
@@ -85,7 +84,6 @@ import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as ProektyIndexRouteImport } from './routes/proekty.index'
 import { Route as ProektySlugRouteImport } from './routes/proekty.$slug'
 import { Route as AdminApplicationsIdRouteImport } from './routes/admin.applications.$id'
-import { Route as AdminCatalogPricesRouteImport } from './routes/admin.catalog.prices'
 import { Route as AdminClientsIdRouteImport } from './routes/admin.clients.$id'
 import { Route as CatalogCategoryServiceRouteImport } from './routes/catalog.$category.$service'
 import { Route as ApiPublicSiteImageKeyRouteImport } from './routes/api/public/site-image.$key'
@@ -420,11 +418,6 @@ const AdminDashboardRoute = AdminDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => AdminRoute,
 } as any)
-const AdminMediaRoute = AdminMediaRouteImport.update({
-  id: '/media',
-  path: '/media',
-  getParentRoute: () => AdminRoute,
-} as any)
 const AdminPagesRoute = AdminPagesRouteImport.update({
   id: '/pages',
   path: '/pages',
@@ -474,11 +467,6 @@ const AdminApplicationsIdRoute = AdminApplicationsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
   getParentRoute: () => AdminApplicationsRoute,
-} as any)
-const AdminCatalogPricesRoute = AdminCatalogPricesRouteImport.update({
-  id: '/catalog/prices',
-  path: '/catalog/prices',
-  getParentRoute: () => AdminRoute,
 } as any)
 const AdminClientsIdRoute = AdminClientsIdRouteImport.update({
   id: '/$id',
@@ -562,7 +550,6 @@ export interface FileRoutesByFullPath {
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
-  '/admin/media': typeof AdminMediaRoute
   '/admin/pages': typeof AdminPagesRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/site-images': typeof AdminSiteImagesRoute
@@ -573,7 +560,6 @@ export interface FileRoutesByFullPath {
   '/catalog/': typeof CatalogIndexRoute
   '/proekty/': typeof ProektyIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
-  '/admin/catalog/prices': typeof AdminCatalogPricesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
   '/api/public/site-image/$key': typeof ApiPublicSiteImageKeyRoute
@@ -642,7 +628,6 @@ export interface FileRoutesByTo {
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
-  '/admin/media': typeof AdminMediaRoute
   '/admin/pages': typeof AdminPagesRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/site-images': typeof AdminSiteImagesRoute
@@ -653,7 +638,6 @@ export interface FileRoutesByTo {
   '/catalog': typeof CatalogIndexRoute
   '/proekty': typeof ProektyIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
-  '/admin/catalog/prices': typeof AdminCatalogPricesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
   '/api/public/site-image/$key': typeof ApiPublicSiteImageKeyRoute
@@ -725,7 +709,6 @@ export interface FileRoutesById {
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
-  '/admin/media': typeof AdminMediaRoute
   '/admin/pages': typeof AdminPagesRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/site-images': typeof AdminSiteImagesRoute
@@ -736,7 +719,6 @@ export interface FileRoutesById {
   '/catalog/': typeof CatalogIndexRoute
   '/proekty/': typeof ProektyIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
-  '/admin/catalog/prices': typeof AdminCatalogPricesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
   '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
   '/api/public/site-image/$key': typeof ApiPublicSiteImageKeyRoute
@@ -809,7 +791,6 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/clients'
     | '/admin/dashboard'
-    | '/admin/media'
     | '/admin/pages'
     | '/admin/settings'
     | '/admin/site-images'
@@ -820,7 +801,6 @@ export interface FileRouteTypes {
     | '/catalog/'
     | '/proekty/'
     | '/admin/applications/$id'
-    | '/admin/catalog/prices'
     | '/admin/clients/$id'
     | '/catalog/$category/$service'
     | '/api/public/site-image/$key'
@@ -889,7 +869,6 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/clients'
     | '/admin/dashboard'
-    | '/admin/media'
     | '/admin/pages'
     | '/admin/settings'
     | '/admin/site-images'
@@ -900,7 +879,6 @@ export interface FileRouteTypes {
     | '/catalog'
     | '/proekty'
     | '/admin/applications/$id'
-    | '/admin/catalog/prices'
     | '/admin/clients/$id'
     | '/catalog/$category/$service'
     | '/api/public/site-image/$key'
@@ -971,7 +949,6 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/clients'
     | '/admin/dashboard'
-    | '/admin/media'
     | '/admin/pages'
     | '/admin/settings'
     | '/admin/site-images'
@@ -982,7 +959,6 @@ export interface FileRouteTypes {
     | '/catalog/'
     | '/proekty/'
     | '/admin/applications/$id'
-    | '/admin/catalog/prices'
     | '/admin/clients/$id'
     | '/catalog/$category/$service'
     | '/api/public/site-image/$key'
@@ -1511,13 +1487,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminDashboardRouteImport
       parentRoute: typeof AdminRoute
     }
-    '/admin/media': {
-      id: '/admin/media'
-      path: '/media'
-      fullPath: '/admin/media'
-      preLoaderRoute: typeof AdminMediaRouteImport
-      parentRoute: typeof AdminRoute
-    }
     '/admin/pages': {
       id: '/admin/pages'
       path: '/pages'
@@ -1588,13 +1557,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminApplicationsIdRouteImport
       parentRoute: typeof AdminApplicationsRoute
     }
-    '/admin/catalog/prices': {
-      id: '/admin/catalog/prices'
-      path: '/catalog/prices'
-      fullPath: '/admin/catalog/prices'
-      preLoaderRoute: typeof AdminCatalogPricesRouteImport
-      parentRoute: typeof AdminRoute
-    }
     '/admin/clients/$id': {
       id: '/admin/clients/$id'
       path: '/$id'
@@ -1646,24 +1608,20 @@ interface AdminRouteChildren {
   AdminApplicationsRoute: typeof AdminApplicationsRouteWithChildren
   AdminClientsRoute: typeof AdminClientsRouteWithChildren
   AdminDashboardRoute: typeof AdminDashboardRoute
-  AdminMediaRoute: typeof AdminMediaRoute
   AdminPagesRoute: typeof AdminPagesRoute
   AdminSettingsRoute: typeof AdminSettingsRoute
   AdminSiteImagesRoute: typeof AdminSiteImagesRoute
   AdminSitePricesRoute: typeof AdminSitePricesRoute
-  AdminCatalogPricesRoute: typeof AdminCatalogPricesRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
   AdminApplicationsRoute: AdminApplicationsRouteWithChildren,
   AdminClientsRoute: AdminClientsRouteWithChildren,
   AdminDashboardRoute: AdminDashboardRoute,
-  AdminMediaRoute: AdminMediaRoute,
   AdminPagesRoute: AdminPagesRoute,
   AdminSettingsRoute: AdminSettingsRoute,
   AdminSiteImagesRoute: AdminSiteImagesRoute,
   AdminSitePricesRoute: AdminSitePricesRoute,
-  AdminCatalogPricesRoute: AdminCatalogPricesRoute,
 }
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
