@@ -6,6 +6,7 @@
 import { useSyncExternalStore } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { SERVICE_PRICING } from "@/data/pricing";
+import { syncCalcWithPrices } from "@/data/pricing/derive";
 import type { CalcConfig, PriceGroup, ServicePricing } from "@/data/pricing/types";
 
 export interface PricingOverride {
@@ -81,8 +82,8 @@ export function useSiteContent(): SiteContentState {
 }
 
 export function mergePricing(base: ServicePricing, ov?: PricingOverride): ServicePricing {
-  if (!ov) return base;
-  return {
+  if (!ov) return syncCalcWithPrices(base);
+  return syncCalcWithPrices({
     ...base,
     ...(ov.priceHeadline ? { priceHeadline: ov.priceHeadline } : {}),
     ...(ov.priceHeadlineNote ? { priceHeadlineNote: ov.priceHeadlineNote } : {}),
@@ -90,7 +91,7 @@ export function mergePricing(base: ServicePricing, ov?: PricingOverride): Servic
     ...(Array.isArray(ov.baseConditions) ? { baseConditions: ov.baseConditions } : {}),
     ...(Array.isArray(ov.groups) ? { groups: ov.groups } : {}),
     ...(ov.calc ? { calc: { ...base.calc, ...ov.calc } } : {}),
-  };
+  });
 }
 
 /** Прайс одного направления с учётом правок админки. */

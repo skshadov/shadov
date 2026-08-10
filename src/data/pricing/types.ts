@@ -39,6 +39,8 @@ export interface CalcOption {
   /** Прибавка к цене под ключ, ₽ за единицу расчёта */
   addTurnkey: number;
   hint?: string;
+  /** Привязка к позиции прайса: надбавка = цена позиции − базовая цена */
+  priceRowKey?: string;
 }
 
 export interface CalcConfig {
@@ -50,6 +52,8 @@ export interface CalcConfig {
   maxQty: number;
   /** Базовая цена работы за единицу */
   baseWork: number;
+  /** Привязка базовой цены к позиции прайса */
+  baseRowKey?: string;
   /** Базовая цена материала за единицу */
   baseMaterial: number;
   options: CalcOption[];
