@@ -106,6 +106,7 @@ export function ServiceLandingPage({ data: staticData }: { data: ServicePricing 
           </section>
 
           {/* 4. Пакеты */}
+          {(data.packages?.length ?? 0) > 0 ? (
           <section className="mt-14" aria-labelledby="packages">
             <h2 id="packages" className="font-display text-2xl font-semibold sm:text-3xl">
               Готовые примеры с итоговой суммой
@@ -114,7 +115,7 @@ export function ServiceLandingPage({ data: staticData }: { data: ServicePricing 
               Люди считают не квадратные метры, а квартиру. Вот три типовых объекта с реальным итогом по нашему прайсу.
             </p>
             <div className="mt-6 grid gap-5 md:grid-cols-3">
-              {data.packages.map((p) => (
+              {data.packages!.map((p) => (
                 <article key={p.title} className="flex flex-col rounded-xl border border-border bg-card p-6">
                   <h3 className="font-display text-lg font-semibold">{p.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{p.subtitle}</p>
