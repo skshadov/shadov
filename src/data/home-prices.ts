@@ -9,8 +9,8 @@ export interface StartingPrice {
 
 export const HOME_STARTING_PRICES: StartingPrice[] = [
   { service: "Механизированная штукатурка", price: "750 ₽/м² гипс, 900 ₽/м² цемент", to: "/mekhanizirovannaya-shtukaturka" },
-  { service: "Мокрая стяжка пола", price: "500 ₽/м² за работу", to: "/styazhka-pola" },
-  { service: "Полусухая стяжка пола", price: "420 ₽/м² за работу", to: "/polusuhaya-styazhka" },
+  { service: "Мокрая стяжка пола", price: "700 ₽/м² за работу", to: "/styazhka-pola" },
+  { service: "Полусухая стяжка пола", price: "600 ₽/м² за работу", to: "/polusuhaya-styazhka" },
   { service: "Водяной тёплый пол", price: "700 ₽/м² за работу", to: "/teplyy-pol" },
   { service: "Электрика, проводка по полу", price: "300 ₽/м.п. за работу", to: "/razvodka-elektriki" },
   { service: "Сантехника, труба ХВС/ГВС", price: "650 ₽/м.п. за работу", to: "/razvodka-santehniki" },
