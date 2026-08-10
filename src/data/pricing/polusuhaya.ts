@@ -43,7 +43,6 @@ export const POLUSUHAYA: ServicePricing = {
         { name: "Нарезка деформационных швов", unit: "м.п.", work: 350, material: null, note: "Нарезаем на площадях от 40 м² в одном контуре и в проёмах" },
         { name: "Демонтаж старой стяжки", unit: "м²", work: 550, material: null },
         { name: "Объём менее 50 м²", unit: "м²", work: 150, material: null },
-        { name: "Подача материала без лифта", unit: "этаж", work: 1500, material: null, note: "За каждый этаж выше второго" },
       ],
     },
   ],

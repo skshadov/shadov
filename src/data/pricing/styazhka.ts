@@ -44,7 +44,6 @@ export const STYAZHKA: ServicePricing = {
         { name: "Деформационный шов", unit: "м.п.", work: 500, material: null, note: "Нужен на площадях от 40 м² в одном контуре и в дверных проёмах" },
         { name: "Демонтаж старой стяжки", unit: "м²", work: 550, material: null },
         { name: "Объём менее 30 м²", unit: "м²", work: 120, material: null },
-        { name: "Подача материала без лифта", unit: "этаж", work: 1500, material: null, note: "За каждый этаж выше второго" },
       ],
     },
   ],
