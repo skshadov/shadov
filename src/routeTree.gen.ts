@@ -43,7 +43,6 @@ import { Route as KrovelnyeRabotyRouteImport } from './routes/krovelnye-raboty'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as MekhanizirovannayaShtukaturkaRouteImport } from './routes/mekhanizirovannaya-shtukaturka'
 import { Route as MnogokvartirnyeDomaRouteImport } from './routes/mnogokvartirnye-doma'
-import { Route as MokrayaIliPolusuhayaStyazhkaRouteImport } from './routes/mokraya-ili-polusuhaya-styazhka'
 import { Route as MonolitnyeDomaRouteImport } from './routes/monolitnye-doma'
 import { Route as MonolitnyeRabotyRouteImport } from './routes/monolitnye-raboty'
 import { Route as OtoplenieRouteImport } from './routes/otoplenie'
@@ -259,12 +258,6 @@ const MnogokvartirnyeDomaRoute = MnogokvartirnyeDomaRouteImport.update({
   path: '/mnogokvartirnye-doma',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MokrayaIliPolusuhayaStyazhkaRoute =
-  MokrayaIliPolusuhayaStyazhkaRouteImport.update({
-    id: '/mokraya-ili-polusuhaya-styazhka',
-    path: '/mokraya-ili-polusuhaya-styazhka',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const MonolitnyeDomaRoute = MonolitnyeDomaRouteImport.update({
   id: '/monolitnye-doma',
   path: '/monolitnye-doma',
@@ -513,7 +506,6 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/mekhanizirovannaya-shtukaturka': typeof MekhanizirovannayaShtukaturkaRoute
   '/mnogokvartirnye-doma': typeof MnogokvartirnyeDomaRoute
-  '/mokraya-ili-polusuhaya-styazhka': typeof MokrayaIliPolusuhayaStyazhkaRoute
   '/monolitnye-doma': typeof MonolitnyeDomaRoute
   '/monolitnye-raboty': typeof MonolitnyeRabotyRoute
   '/otoplenie': typeof OtoplenieRoute
@@ -591,7 +583,6 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/mekhanizirovannaya-shtukaturka': typeof MekhanizirovannayaShtukaturkaRoute
   '/mnogokvartirnye-doma': typeof MnogokvartirnyeDomaRoute
-  '/mokraya-ili-polusuhaya-styazhka': typeof MokrayaIliPolusuhayaStyazhkaRoute
   '/monolitnye-doma': typeof MonolitnyeDomaRoute
   '/monolitnye-raboty': typeof MonolitnyeRabotyRoute
   '/otoplenie': typeof OtoplenieRoute
@@ -670,7 +661,6 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/mekhanizirovannaya-shtukaturka': typeof MekhanizirovannayaShtukaturkaRoute
   '/mnogokvartirnye-doma': typeof MnogokvartirnyeDomaRoute
-  '/mokraya-ili-polusuhaya-styazhka': typeof MokrayaIliPolusuhayaStyazhkaRoute
   '/monolitnye-doma': typeof MonolitnyeDomaRoute
   '/monolitnye-raboty': typeof MonolitnyeRabotyRoute
   '/otoplenie': typeof OtoplenieRoute
@@ -751,7 +741,6 @@ export interface FileRouteTypes {
     | '/login'
     | '/mekhanizirovannaya-shtukaturka'
     | '/mnogokvartirnye-doma'
-    | '/mokraya-ili-polusuhaya-styazhka'
     | '/monolitnye-doma'
     | '/monolitnye-raboty'
     | '/otoplenie'
@@ -829,7 +818,6 @@ export interface FileRouteTypes {
     | '/login'
     | '/mekhanizirovannaya-shtukaturka'
     | '/mnogokvartirnye-doma'
-    | '/mokraya-ili-polusuhaya-styazhka'
     | '/monolitnye-doma'
     | '/monolitnye-raboty'
     | '/otoplenie'
@@ -907,7 +895,6 @@ export interface FileRouteTypes {
     | '/login'
     | '/mekhanizirovannaya-shtukaturka'
     | '/mnogokvartirnye-doma'
-    | '/mokraya-ili-polusuhaya-styazhka'
     | '/monolitnye-doma'
     | '/monolitnye-raboty'
     | '/otoplenie'
@@ -987,7 +974,6 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   MekhanizirovannayaShtukaturkaRoute: typeof MekhanizirovannayaShtukaturkaRoute
   MnogokvartirnyeDomaRoute: typeof MnogokvartirnyeDomaRoute
-  MokrayaIliPolusuhayaStyazhkaRoute: typeof MokrayaIliPolusuhayaStyazhkaRoute
   MonolitnyeDomaRoute: typeof MonolitnyeDomaRoute
   MonolitnyeRabotyRoute: typeof MonolitnyeRabotyRoute
   OtoplenieRoute: typeof OtoplenieRoute
@@ -1256,13 +1242,6 @@ declare module '@tanstack/react-router' {
       path: '/mnogokvartirnye-doma'
       fullPath: '/mnogokvartirnye-doma'
       preLoaderRoute: typeof MnogokvartirnyeDomaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mokraya-ili-polusuhaya-styazhka': {
-      id: '/mokraya-ili-polusuhaya-styazhka'
-      path: '/mokraya-ili-polusuhaya-styazhka'
-      fullPath: '/mokraya-ili-polusuhaya-styazhka'
-      preLoaderRoute: typeof MokrayaIliPolusuhayaStyazhkaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/monolitnye-doma': {
@@ -1690,7 +1669,6 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   MekhanizirovannayaShtukaturkaRoute: MekhanizirovannayaShtukaturkaRoute,
   MnogokvartirnyeDomaRoute: MnogokvartirnyeDomaRoute,
-  MokrayaIliPolusuhayaStyazhkaRoute: MokrayaIliPolusuhayaStyazhkaRoute,
   MonolitnyeDomaRoute: MonolitnyeDomaRoute,
   MonolitnyeRabotyRoute: MonolitnyeRabotyRoute,
   OtoplenieRoute: OtoplenieRoute,
@@ -1723,3 +1701,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
