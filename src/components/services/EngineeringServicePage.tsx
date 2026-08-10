@@ -112,7 +112,7 @@ export function EngineeringServicePage({ slug }: Props) {
 
         {isOverview ? <EngineeringDirections /> : null}
 
-        {!isOverview && packages.length > 0 ? (
+        {false && !isOverview && packages.length > 0 ? (
           <section className="border-b border-border py-12">
             <div className="container-page">
               <h2 className="font-display text-2xl font-semibold">Пакетные решения</h2>

@@ -3,6 +3,8 @@ import { PricePackageCard } from "@/components/prices/PricePackageCard";
 
 interface ServicePackagesProps { packages: RepairPackage[] }
 export function ServicePackages({ packages }: ServicePackagesProps) {
+  return null;
+  // eslint-disable-next-line no-unreachable
   if (packages.length === 0) return null;
   return (
     <section className="border-b border-border py-10">
