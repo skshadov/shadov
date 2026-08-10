@@ -331,15 +331,25 @@ function AdminSitePricesPage() {
 
           <section className="space-y-4 rounded-xl border border-border bg-card p-5">
             <h2 className="font-display text-lg font-semibold">Калькулятор</h2>
+            <p className="text-sm text-muted-foreground">
+              Калькулятор считает по таблице прайса выше. Выберите, какая позиция прайса является базовой ценой и к какой
+              позиции привязана каждая опция — суммы пересчитаются автоматически после сохранения.
+            </p>
             <div className="grid gap-3 sm:grid-cols-3">
-              <Field label={`Базовая цена работы за ${draft.calc.unit}`}>
-                <Input
-                  inputMode="numeric"
-                  value={draft.calc.baseWork}
-                  onChange={(e) =>
-                    patch({ calc: { ...draft.calc, baseWork: Number(e.target.value.replace(/[^\d]/g, "")) || 0 } })
-                  }
-                />
+              <Field label={`Базовая позиция прайса (цена за ${draft.calc.unit})`}>
+                <select
+                  className="h-10 w-full rounded-md border border-border bg-background px-3 text-sm text-foreground"
+                  value={draft.calc.baseRowKey ?? ""}
+                  disabled={!canWrite}
+                  onChange={(e) => patch({ calc: { ...draft.calc, baseRowKey: e.target.value || undefined } })}
+                >
+                  <option value="">Первая позиция прайса ({draft.calc.baseWork} ₽)</option>
+                  {priceRowRefs.map((r) => (
+                    <option key={r.key} value={r.key}>
+                      {r.label} — {r.work} ₽
+                    </option>
+                  ))}
+                </select>
               </Field>
               <Field label="Объём по умолчанию">
                 <Input
@@ -383,9 +393,29 @@ function AdminSitePricesPage() {
                       }}
                     />
                   </Field>
+                  <Field label="Позиция прайса" className="min-w-60 flex-1">
+                    <select
+                      className="h-10 w-full rounded-md border border-border bg-background px-3 text-sm text-foreground"
+                      value={opt.priceRowKey ?? ""}
+                      disabled={!canWrite}
+                      onChange={(e) => {
+                        const options = clone(draft.calc.options);
+                        options[oi]!.priceRowKey = e.target.value || undefined;
+                        patch({ calc: { ...draft.calc, options } });
+                      }}
+                    >
+                      <option value="">Своя надбавка</option>
+                      {priceRowRefs.map((r) => (
+                        <option key={r.key} value={r.key}>
+                          {r.label} — {r.work} ₽
+                        </option>
+                      ))}
+                    </select>
+                  </Field>
                   <Field label="Надбавка, ₽/ед." className="w-40">
                     <Input
                       inputMode="numeric"
+                      disabled={Boolean(opt.priceRowKey)}
                       value={opt.addTurnkey}
                       onChange={(e) => {
                         const options = clone(draft.calc.options);
