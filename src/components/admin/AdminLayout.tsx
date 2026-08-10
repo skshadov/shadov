@@ -130,9 +130,9 @@ export function AdminLayout({ admin, title, breadcrumbs, children }: Props) {
           </div>
           <div className="flex shrink-0 items-center gap-2 text-sm">
             <span className="hidden text-xs text-muted-foreground sm:inline">
-              {admin.email}
+              {admin?.email}
             </span>
-            {admin.role ? (
+            {admin?.role ? (
               <span className="rounded border border-border bg-muted px-2 py-0.5 text-[11px] font-medium uppercase tracking-wider">
                 {ROLE_LABELS[admin.role] ?? admin.role}
               </span>
