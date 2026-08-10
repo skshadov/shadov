@@ -69,9 +69,9 @@ function PricesPage() {
             ))}
           </div>
 
-          {s.packages.length > 0 ? (
+          {(s.packages?.length ?? 0) > 0 ? (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {s.packages.map((p) => (
+              {s.packages!.map((p) => (
                 <article key={p.title} className="rounded-xl border border-border bg-card p-5">
                   <h3 className="font-display text-lg font-semibold">{p.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{p.subtitle}</p>

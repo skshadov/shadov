@@ -12,9 +12,9 @@ export const HOME_STARTING_PRICES: StartingPrice[] = [
   { service: "Мокрая стяжка пола", price: "550 ₽/м² за работу", to: "/styazhka-pola" },
   { service: "Полусухая стяжка пола", price: "450 ₽/м² за работу", to: "/polusuhaya-styazhka" },
   { service: "Водяной тёплый пол", price: "700 ₽/м² за работу", to: "/teplyy-pol" },
-  { service: "Электрика, точка", price: "1 100 ₽ за работу", to: "/razvodka-elektriki" },
-  { service: "Сантехника, точка воды", price: "2 400 ₽ за работу", to: "/razvodka-santehniki" },
-  { service: "Сантехника, точка канализации", price: "2 200 ₽ за работу", to: "/razvodka-santehniki" },
+  { service: "Электрика, кабель в гофре", price: "200 ₽/м.п. за работу", to: "/razvodka-elektriki" },
+  { service: "Сантехника, труба ХВС/ГВС", price: "700 ₽/м.п. за работу", to: "/razvodka-santehniki" },
+  { service: "Сантехника, канализация Ø40–50", price: "700 ₽/м.п. за работу", to: "/razvodka-santehniki" },
 ];
 
 /** Краткая оговорка по ценам. */
