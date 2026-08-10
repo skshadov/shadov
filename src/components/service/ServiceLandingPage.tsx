@@ -139,6 +139,7 @@ export function ServiceLandingPage({ data: staticData }: { data: ServicePricing 
               ))}
             </div>
           </section>
+          ) : null}
 
           {/* 5. Этапы */}
           <section className="mt-14" aria-labelledby="stages">
