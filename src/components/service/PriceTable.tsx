@@ -30,8 +30,8 @@ export function PriceTable({ group }: { group: PriceGroup }) {
             </tr>
           </thead>
           <tbody className="divide-y divide-border">
-            {group.rows.map((r) => (
-              <tr key={r.name}>
+            {group.rows.map((r, i) => (
+              <tr key={`${r.name}-${i}`}>
                 <td className="px-6 py-4 align-top">
                   <div className="font-medium text-foreground">{r.name}</div>
                   {r.note ? <div className="mt-1 text-xs text-muted-foreground">{r.note}</div> : null}
@@ -48,8 +48,8 @@ export function PriceTable({ group }: { group: PriceGroup }) {
 
       {/* Mobile */}
       <ul className="divide-y divide-border md:hidden">
-        {group.rows.map((r) => (
-          <li key={r.name} className="px-5 py-4">
+        {group.rows.map((r, i) => (
+          <li key={`${r.name}-${i}`} className="px-5 py-4">
             <div className="font-medium text-foreground">{r.name}</div>
             {r.note ? <div className="mt-1 text-xs text-muted-foreground">{r.note}</div> : null}
             <dl className="mt-3 flex items-baseline justify-between gap-3 text-xs">

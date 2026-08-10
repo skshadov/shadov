@@ -119,7 +119,7 @@ export const ELEKTRIKA: ServicePricing = {
     baseRowKey: "Монтаж кабеля и трасс::Монтаж проводки по полу (в стяжке, в гофре)",
     baseMaterial: 0,
     options: [
-      { id: "ceiling", label: "Монтаж по потолку вместо пола", addTurnkey: 50, priceRowKey: "Монтаж кабеля и трасс::Монтаж проводки по потолку" },
+      { id: "ceiling", label: "Монтаж по потолку вместо пола", addTurnkey: 50, priceMode: "delta", priceRowKey: "Монтаж кабеля и трасс::Монтаж проводки по потолку" },
       { id: "shtroba-concrete", label: "Штробление в бетоне", addTurnkey: 1700, priceRowKey: "Штробление и подрозетники::Штробление в бетоне" },
       { id: "shtroba-brick", label: "Штробление в кирпиче", addTurnkey: 1400, priceRowKey: "Штробление и подрозетники::Штробление в кирпиче" },
       { id: "shtroba-block", label: "Штробление в пеноблоке", addTurnkey: 850, priceRowKey: "Штробление и подрозетники::Штробление в пеноблоке и газоблоке" },
