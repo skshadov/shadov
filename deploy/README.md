@@ -5,16 +5,16 @@
 - `deploy.sh` — обновление приложения (запускается на каждый push в main через GitHub Actions).
 - `ecosystem.config.cjs` — конфиг PM2.
 - `nginx.shadov.pro.conf` — конфиг nginx (HTTP, certbot потом добавит HTTPS).
-- `env.production.example` — шаблон `.env.production` (заполняется на VPS, не коммитится).
+- `env.production.example` и PM2-конфиг оставлены только для архивной локальной схемы и при проксировании не используются.
 
 ## Архитектура
 ```
-Lovable правки ─push─▶ GitHub main ─Actions─▶ SSH deploy@VPS ─▶ deploy.sh
-                                                                    │
-                                          git pull → bun install → build → pm2 reload
-                                                                    │
-                                                            nginx :443 → node :3000
+Пользователь → shadov.pro → nginx VPS (TLS) → shadov.lovable.app
+                                                │
+                                                └→ приложение, backend и секреты в Lovable Cloud
 ```
+
+VPS не запускает копию приложения и не хранит закрытые ключи backend.
 
 ## Последовательность первого запуска
 См. `STAGE-6-VPS-DEPLOY-GUIDE.md` в корне проекта.

@@ -13,19 +13,7 @@ apt-get update -y
 apt-get upgrade -y
 apt-get install -y curl git unzip nginx ufw fail2ban ca-certificates gnupg lsb-release build-essential
 
-echo "==> [2/9] Node.js 20 LTS"
-curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-apt-get install -y nodejs
-node -v
-
-echo "==> [3/9] bun"
-curl -fsSL https://bun.sh/install | bash
-install -m 755 /root/.bun/bin/bun /usr/local/bin/bun
-bun -v
-
-echo "==> [4/9] pm2"
-npm install -g pm2
-pm2 -v
+echo "==> [2/9] VPS работает только как nginx reverse proxy"
 
 echo "==> [5/9] firewall (открыт 22, 80, 443)"
 ufw --force reset
@@ -57,10 +45,7 @@ chown -R "$DEPLOY_USER:$DEPLOY_USER" "$APP_DIR"
 
 install -d -m 755 -o "$DEPLOY_USER" -g "$DEPLOY_USER" /var/log/shadov
 
-echo "==> [8/9] PM2 автозапуск под deploy"
-sudo -u "$DEPLOY_USER" pm2 startup systemd -u "$DEPLOY_USER" --hp "/home/$DEPLOY_USER" >/tmp/pm2-startup.txt
-# выполнить команду, которую вывел pm2 startup
-grep "^sudo" /tmp/pm2-startup.txt | bash
+echo "==> [8/9] Локальный Node/PM2 не требуется"
 
 echo "==> [9/9] nginx (HTTP) + certbot"
 cp "$APP_DIR/deploy/nginx.shadov.pro.conf" /etc/nginx/sites-available/shadov.pro
@@ -78,16 +63,8 @@ cat <<EOF
 1) Скопируйте в /home/$DEPLOY_USER/.ssh/authorized_keys ваш публичный
    SSH-ключ (тот, что лежит в GitHub Secrets как VPS_SSH_KEY).
 
-2) Создайте /var/www/shadov/.env.production с production-переменными:
-   (см. deploy/env.production.example в репо)
-
-3) Первая сборка + старт:
-     sudo -iu $DEPLOY_USER
-     cd $APP_DIR
-     bun install --frozen-lockfile
-     NITRO_PRESET=node-server bun run build
-     pm2 start deploy/ecosystem.config.cjs
-     pm2 save
+2) Секреты и production-переменные на VPS не нужны: приложение работает
+   в Lovable Cloud, VPS только проксирует HTTPS-трафик.
 
 4) После того как DNS shadov.pro → этот VPS пропагируется
    (проверить: dig +short shadov.pro), выпустите SSL:
