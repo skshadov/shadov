@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/integrations/supabase/types";
+import { serverRealtimeOptions } from "@/lib/supabase-realtime-stub";
 
 const SITE_URL = "https://shadov.pro";
 
@@ -56,6 +57,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         if (url && key) {
           const sb = createClient<Database>(url, key, {
             auth: { storage: undefined, persistSession: false, autoRefreshToken: false },
+            realtime: serverRealtimeOptions,
           });
 
           const [cats, svcs] = await Promise.all([
