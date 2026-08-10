@@ -5,6 +5,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/integrations/supabase/types";
+import { serverRealtimeOptions } from "@/lib/supabase-realtime-stub";
 
 type CategoryRow = Database["public"]["Tables"]["service_categories"]["Row"];
 type ServiceRow = Database["public"]["Tables"]["services"]["Row"];
@@ -48,7 +49,10 @@ function publicClient() {
   return createClient<Database>(
     process.env.SUPABASE_URL!,
     process.env.SUPABASE_PUBLISHABLE_KEY!,
-    { auth: { storage: undefined, persistSession: false, autoRefreshToken: false } },
+    {
+      auth: { storage: undefined, persistSession: false, autoRefreshToken: false },
+      realtime: serverRealtimeOptions,
+    },
   );
 }
 
