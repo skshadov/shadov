@@ -1,0 +1,1 @@
+ALTER TABLE public.estimate_requests ADD COLUMN IF NOT EXISTS admin_note text;

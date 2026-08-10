@@ -299,6 +299,7 @@ export type Database = {
       }
       estimate_requests: {
         Row: {
+          admin_note: string | null
           calculator_mode: string | null
           calculator_snapshot: Json | null
           consent_accepted_at: string
@@ -319,6 +320,7 @@ export type Database = {
           user_id: string | null
         }
         Insert: {
+          admin_note?: string | null
           calculator_mode?: string | null
           calculator_snapshot?: Json | null
           consent_accepted_at: string
@@ -339,6 +341,7 @@ export type Database = {
           user_id?: string | null
         }
         Update: {
+          admin_note?: string | null
           calculator_mode?: string | null
           calculator_snapshot?: Json | null
           consent_accepted_at?: string
