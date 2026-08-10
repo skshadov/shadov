@@ -116,6 +116,11 @@ export const POLUSUHAYA: ServicePricing = {
     maxQty: 2000,
     baseWork: 420,
     baseRowKey: "Основные работы::Полусухая стяжка с фиброй, слой до 60 мм",
+    baseVariantLabel: "Тип стяжки",
+    baseVariantKeys: [
+      "Основные работы::Полусухая стяжка с фиброй, слой до 60 мм",
+      "Основные работы::Стяжка по утеплителю (плавающая)",
+    ],
     baseMaterial: 0,
     options: [
       { id: "grunt", label: "Грунтование основания", addTurnkey: 50, priceRowKey: "Подготовка основания::Грунтование основания" },
