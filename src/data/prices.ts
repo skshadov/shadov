@@ -392,6 +392,7 @@ const TILING: PriceItem[] = [
 const FINISHING_WALLS: PriceItem[] = [
   make("finishing_walls", "gruntovanie",         "Грунтование стен",                  { unit: "м²", from: 150, slug: "chistovaya-otdelka", sort: 1 }),
   make("finishing_walls", "shtukaturka-mayaki",  "Штукатурка стен по маякам (механизированная)", { unit: "м²", from: 750, slug: "chistovaya-otdelka", sort: 2 }),
+  make("finishing_walls", "shtukaturka-cement",  "Цементно-песчаная штукатурка (механизированная)", { unit: "м²", from: 900, slug: "mekhanizirovannaya-shtukaturka", sort: 2 }),
   make("finishing_walls", "shpaklevka-oboi",     "Шпаклевание под обои",              { unit: "м²", from: 1100, slug: "chistovaya-otdelka", sort: 3 }),
   make("finishing_walls", "shpaklevka-pokraska", "Шпаклевание под покраску",          { unit: "м²", from: 1800, slug: "chistovaya-otdelka", sort: 4 }),
   make("finishing_walls", "proyavochnyy-svet",   "Подготовка под проявочный свет",    { unit: "м²", from: 2500, slug: "chistovaya-otdelka", sort: 5 }),
