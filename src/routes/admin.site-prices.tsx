@@ -78,6 +78,8 @@ function AdminSitePricesPage() {
     setSaved(null);
   }
 
+  const priceRowRefs = useMemo(() => (draft ? listPriceRowRefs(draft) : []), [draft]);
+
   function patchGroups(fn: (groups: PriceGroup[]) => PriceGroup[]) {
     setDraft((d) => (d ? { ...d, groups: fn(clone(d.groups)) } : d));
     setSaved(null);
