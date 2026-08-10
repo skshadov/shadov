@@ -8,6 +8,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { createClient } from "@supabase/supabase-js";
 import { requireAdminAuth as requireSupabaseAuth } from "./require-auth";
 import type { Database } from "@/integrations/supabase/types";
+import { serverRealtimeOptions } from "@/lib/supabase-realtime-stub";
 
 type Row = Database["public"]["Tables"]["content_blocks"]["Row"];
 type Insert = Database["public"]["Tables"]["content_blocks"]["Insert"];
@@ -201,6 +202,7 @@ export const getPublicContentBlock = createServerFn({ method: "GET" })
     if (!url || !key) return null;
     const client = createClient<Database>(url, key, {
       auth: { storage: undefined, persistSession: false, autoRefreshToken: false },
+      realtime: serverRealtimeOptions,
     });
     const { data: row, error } = await client
       .from("content_blocks")
