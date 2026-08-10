@@ -9,7 +9,6 @@ import type { ServicePricing } from "@/data/pricing/types";
 import { formatRub } from "@/data/pricing/types";
 import { SERVICE_PRICING } from "@/data/pricing";
 import { useLivePricing } from "@/lib/site-content/store";
-import { EstimateForm } from "@/components/forms/EstimateForm";
 
 export function ServiceLandingPage({ data: staticData }: { data: ServicePricing }) {
   const data = useLivePricing(staticData);
@@ -174,19 +173,6 @@ export function ServiceLandingPage({ data: staticData }: { data: ServicePricing 
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
                 </details>
               ))}
-            </div>
-          </section>
-
-          {/* 8. Форма */}
-          <section className="mt-14" aria-labelledby="request">
-            <h2 id="request" className="font-display text-2xl font-semibold sm:text-3xl">
-              Получить смету с фиксированным итогом
-            </h2>
-            <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-              Инженер приедет на замер, посчитает по этому же прайсу и оставит вам смету. Итог в смете — это итог в акте.
-            </p>
-            <div className="mt-6 max-w-3xl">
-              <EstimateForm />
             </div>
           </section>
 
