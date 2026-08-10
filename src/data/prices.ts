@@ -258,7 +258,7 @@ const ELECTRICAL: PriceItem[] = [
   make("electrical", "sborka-shchita",           "Сборка щита: корпус, ввод, шины, маркировка",            { unit: "комплект", from: 8000, slug: "elektromontazh", sort: 14 }),
   make("electrical", "shchit-36",                "Щит на 36 модулей под ключ",                             { unit: "комплект", from: 80000, slug: "elektromontazh", sort: 15 }),
   make("electrical", "podklyuchenie-avtomata",   "Установка и подключение модуля (автомат — 1 модуль, УЗО или диф — 2)", { unit: "модуль", from: 2000, slug: "elektromontazh", sort: 16 }),
-  make("electrical", "raspredkorobka",           "Монтаж распределительной коробки с расключением",        { unit: "шт.", from: 3000, slug: "elektromontazh", sort: 17 }),
+  make("electrical", "raspredkorobka",           "Монтаж распределительной коробки с расключением",        { unit: "шт.", from: 3000, slug: "elektromontazh", sort: 23 }),
   make("electrical", "svetilnik",                "Монтаж светильника",                                     { unit: "шт.", from: 1000, slug: "elektromontazh", sort: 17 }),
   make("electrical", "lyustra",                  "Монтаж люстры",                                          { unit: "шт.", from: 2500, slug: "elektromontazh", sort: 18 }),
   make("electrical", "svetodiodnaya-lenta",      "Монтаж светодиодной ленты",                              { unit: "пог. м", from: 800, slug: "elektromontazh", sort: 19 }),
