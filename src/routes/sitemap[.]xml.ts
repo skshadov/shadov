@@ -24,7 +24,6 @@ const STATIC_PATHS = [
   "/teplyy-pol",
   "/razvodka-elektriki",
   "/razvodka-santehniki",
-  "/mokraya-ili-polusuhaya-styazhka",
   // Legal
   "/privacy",
   "/terms",

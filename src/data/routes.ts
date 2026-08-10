@@ -26,7 +26,6 @@ export const ROUTES: RouteEntry[] = [
   { path: "/polusuhaya-styazhka", title: "Полусухая стяжка пола", shortTitle: "Полусухая стяжка", group: "inzhenernye" },
   { path: "/razvodka-elektriki", title: "Разводка электрики в квартире", shortTitle: "Электрика", group: "inzhenernye" },
   { path: "/razvodka-santehniki", title: "Разводка сантехники в квартире", shortTitle: "Сантехника", group: "inzhenernye" },
-  { path: "/mokraya-ili-polusuhaya-styazhka", title: "Мокрая или полусухая стяжка", group: "info" },
 
   // Строительство
   { path: "/stroitelstvo", title: "Строительство", group: "stroitelstvo", stub: true },
