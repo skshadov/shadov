@@ -473,15 +473,22 @@ export type Database = {
           author_name: string
           author_role: string | null
           body: string
+          contact: string | null
           created_at: string
           id: string
           is_published: boolean
+          moderated_at: string | null
+          moderated_by: string | null
+          moderation_note: string | null
+          moderation_status: string
           project_id: string | null
           published_at: string | null
           rating: number
+          service_slug: string | null
           sort_order: number
           source: string | null
           source_url: string | null
+          submitted_at: string | null
           updated_at: string
           verified_at: string | null
         }
@@ -489,15 +496,22 @@ export type Database = {
           author_name: string
           author_role?: string | null
           body: string
+          contact?: string | null
           created_at?: string
           id?: string
           is_published?: boolean
+          moderated_at?: string | null
+          moderated_by?: string | null
+          moderation_note?: string | null
+          moderation_status?: string
           project_id?: string | null
           published_at?: string | null
           rating: number
+          service_slug?: string | null
           sort_order?: number
           source?: string | null
           source_url?: string | null
+          submitted_at?: string | null
           updated_at?: string
           verified_at?: string | null
         }
@@ -505,15 +519,22 @@ export type Database = {
           author_name?: string
           author_role?: string | null
           body?: string
+          contact?: string | null
           created_at?: string
           id?: string
           is_published?: boolean
+          moderated_at?: string | null
+          moderated_by?: string | null
+          moderation_note?: string | null
+          moderation_status?: string
           project_id?: string | null
           published_at?: string | null
           rating?: number
+          service_slug?: string | null
           sort_order?: number
           source?: string | null
           source_url?: string | null
+          submitted_at?: string | null
           updated_at?: string
           verified_at?: string | null
         }
