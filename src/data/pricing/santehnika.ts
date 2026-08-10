@@ -149,6 +149,11 @@ export const SANTEHNIKA: ServicePricing = {
     maxQty: 1000,
     baseWork: 650,
     baseRowKey: "Водоснабжение ХВС/ГВС::Монтаж трубы ХВС/ГВС открыто или в стяжке",
+    baseVariantLabel: "Основная трасса водоснабжения",
+    baseVariantKeys: [
+      "Водоснабжение ХВС/ГВС::Монтаж трубы ХВС/ГВС открыто или в стяжке",
+      "Водоснабжение ХВС/ГВС::Монтаж трубы ХВС/ГВС в теплоизоляции",
+    ],
     baseMaterial: 0,
     options: [
       { id: "insulation", label: "Труба в теплоизоляции", addTurnkey: 100, priceMode: "delta", priceRowKey: "Водоснабжение ХВС/ГВС::Монтаж трубы ХВС/ГВС в теплоизоляции" },

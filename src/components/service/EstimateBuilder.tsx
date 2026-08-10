@@ -40,9 +40,22 @@ export function EstimateBuilder({
 }) {
   const calc = pricing.calc;
   const entries = useMemo(() => collectRows(pricing), [pricing]);
+  const variants = useMemo(() => {
+    const keys = calc.baseVariantKeys?.length
+      ? calc.baseVariantKeys
+      : calc.baseRowKey
+        ? [calc.baseRowKey]
+        : [];
+    const list = keys.map((k) => entries.find((e) => e.key === k)).filter(Boolean) as Entry[];
+    return list.length ? list : entries.slice(0, 1);
+  }, [entries, calc.baseVariantKeys, calc.baseRowKey]);
+
+  const [baseKey, setBaseKey] = useState<string>(
+    () => variants[0]?.key ?? calc.baseRowKey ?? "",
+  );
   const baseEntry = useMemo(
-    () => entries.find((e) => e.key === calc.baseRowKey) ?? entries[0],
-    [entries, calc.baseRowKey],
+    () => variants.find((v) => v.key === baseKey) ?? variants[0],
+    [variants, baseKey],
   );
 
   const [qty, setQty] = useState<number>(calc.defaultQty);
@@ -53,8 +66,8 @@ export function EstimateBuilder({
   const safeQty = Number.isFinite(qty) && qty > 0 ? qty : 0;
 
   const addons = useMemo(
-    () => entries.filter((e) => e.key !== baseEntry?.key),
-    [entries, baseEntry],
+    () => entries.filter((e) => !variants.some((v) => v.key === e.key)),
+    [entries, variants],
   );
 
   const filtered = useMemo(() => {
@@ -81,13 +94,13 @@ export function EstimateBuilder({
 
   const lines = useMemo(
     () =>
-      entries
+      addons
         .filter((e) => (picked[e.key] ?? 0) > 0)
         .map((e) => {
           const n = picked[e.key]!;
           return { ...e, qty: n, sum: Math.round((e.row.work as number) * n) };
         }),
-    [entries, picked],
+    [addons, picked],
   );
 
   const total = baseSum + smallAdd + lines.reduce((a, l) => a + l.sum, 0);
@@ -155,7 +168,43 @@ export function EstimateBuilder({
       {/* Шаг 1 */}
       <div className="mt-5 rounded-lg border border-border bg-background p-4">
         <div className="text-xs font-semibold uppercase tracking-wider text-primary">Шаг 1 — основной объём</div>
-        <label className="mt-2 block text-sm font-medium text-foreground" htmlFor="calc-qty">
+        {variants.length > 1 ? (
+          <fieldset className="mt-3">
+            <legend className="text-sm font-medium text-foreground">
+              {calc.baseVariantLabel ?? "Вариант основной работы"}
+            </legend>
+            <div className="mt-2 space-y-1.5">
+              {variants.map((v) => (
+                <label
+                  key={v.key}
+                  className={`flex cursor-pointer items-start gap-2.5 rounded-md border p-2.5 ${
+                    v.key === baseEntry?.key ? "border-primary bg-primary/5" : "border-border"
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="calc-base-variant"
+                    checked={v.key === baseEntry?.key}
+                    onChange={() => setBaseKey(v.key)}
+                    className="mt-1 h-4 w-4 shrink-0 accent-[hsl(var(--primary))]"
+                  />
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm text-foreground">{v.row.name}</span>
+                    <span className="block text-xs text-muted-foreground">
+                      {formatRub(v.row.work as number)}/{v.row.unit}
+                      {v.row.note ? ` · ${v.row.note}` : ""}
+                    </span>
+                  </span>
+                </label>
+              ))}
+            </div>
+            <p className="mt-2 text-xs text-muted-foreground">
+              Варианты взаимоисключающие — считается только выбранный. Нужны обе технологии на объекте (например,
+              гипс в комнатах и цемент в санузле) — посчитайте двумя расчётами или скажите инженеру на замере.
+            </p>
+          </fieldset>
+        ) : null}
+        <label className="mt-4 block text-sm font-medium text-foreground" htmlFor="calc-qty">
           {calc.unitLabel}
         </label>
         <input
