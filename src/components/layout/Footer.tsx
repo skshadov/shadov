@@ -20,7 +20,6 @@ const SERVICE_COLUMNS = [
   {
     title: "Полезное",
     items: [
-      { label: "Мокрая или полусухая стяжка", to: "/mokraya-ili-polusuhaya-styazhka" },
       { label: "Цены", to: "/prices" },
       { label: "Калькулятор", to: "/kalkulyator-stoimosti" },
     ],

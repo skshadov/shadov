@@ -31,7 +31,6 @@ export const NAV_USLUGI: NavDropdown = {
     { label: "Тёплый пол", to: "/teplyy-pol" },
     { label: "Разводка электрики", to: "/razvodka-elektriki" },
     { label: "Разводка сантехники", to: "/razvodka-santehniki" },
-    { label: "Мокрая или полусухая стяжка", to: "/mokraya-ili-polusuhaya-styazhka" },
   ],
 };
 
