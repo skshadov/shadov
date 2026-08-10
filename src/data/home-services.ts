@@ -23,14 +23,14 @@ export const HOME_DIRECTIONS: DirectionCard[] = [
   {
     title: "Мокрая стяжка пола",
     description: "Классическая цементно-песчаная стяжка по маякам под любое покрытие",
-    startPrice: "550 ₽/м² за работу",
+    startPrice: "500 ₽/м² за работу",
     to: "/styazhka-pola",
     Icon: Layers,
   },
   {
     title: "Полусухая стяжка пола",
     description: "Механизированная укладка с фиброй — ходить через сутки",
-    startPrice: "450 ₽/м² за работу",
+    startPrice: "420 ₽/м² за работу",
     to: "/polusuhaya-styazhka",
     Icon: Layers,
   },
