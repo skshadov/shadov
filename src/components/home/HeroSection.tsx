@@ -56,29 +56,35 @@ export function HeroSection() {
 function HeroProcessVisual() {
   return (
     <div className="hidden lg:col-span-6 lg:block">
-      <div className="grid h-[440px] grid-cols-2 grid-rows-2 gap-4 sm:h-[520px] lg:h-[600px]">
+      <div className="grid aspect-square grid-cols-2 gap-4">
+        <ProcessImage
+          slotKey="home.hero.plaster"
+          picture={renovationPicture}
+          description="Механизированная штукатурка стен на строительном объекте"
+          index="01"
+          label="Штукатурка"
+        />
         <ProcessImage
           slotKey="home.hero.screed"
           picture={monolithPicture}
-          description="Рабочий процесс устройства бетонной стяжки на строительном объекте"
-          index="01"
-          label="Стяжка пола"
-          className="row-span-2"
-        />
-        <ProcessImage
-          slotKey="home.hero.heating"
-          picture={heatingPicture}
-          description="Монтаж контуров тёплого пола и коллекторного узла на объекте"
+          description="Рабочий процесс устройства стяжки пола на строительном объекте"
           index="02"
-          label="Тёплый пол"
+          label="Стяжка пола"
         />
         <ProcessImage
-          slotKey="home.hero.engineering"
+          slotKey="home.hero.electrical"
           picture={engineeringPicture}
-          description="Собранный узел черновой инженерии с трубами и электрикой"
+          description="Монтаж черновой электрики на строительном объекте"
           index="03"
-          label="Черновая инженерия"
+          label="Электрика"
           accent
+        />
+        <ProcessImage
+          slotKey="home.hero.plumbing"
+          picture={plumbingPicture}
+          description="Монтаж черновой сантехники на строительном объекте"
+          index="04"
+          label="Сантехника"
         />
       </div>
     </div>
