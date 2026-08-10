@@ -73,6 +73,7 @@ import { Route as VodosnabzhenieKanalizatsiyaRouteImport } from './routes/vodosn
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
 import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminReviewsRouteImport } from './routes/admin.reviews'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminSiteImagesRouteImport } from './routes/admin.site-images'
 import { Route as AdminSitePricesRouteImport } from './routes/admin.site-prices'
@@ -410,6 +411,11 @@ const AdminDashboardRoute = AdminDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminReviewsRoute = AdminReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminSettingsRoute = AdminSettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -536,6 +542,7 @@ export interface FileRoutesByFullPath {
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/reviews': typeof AdminReviewsRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/site-images': typeof AdminSiteImagesRoute
   '/admin/site-prices': typeof AdminSitePricesRoute
@@ -612,6 +619,7 @@ export interface FileRoutesByTo {
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/reviews': typeof AdminReviewsRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/site-images': typeof AdminSiteImagesRoute
   '/admin/site-prices': typeof AdminSitePricesRoute
@@ -691,6 +699,7 @@ export interface FileRoutesById {
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/reviews': typeof AdminReviewsRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/site-images': typeof AdminSiteImagesRoute
   '/admin/site-prices': typeof AdminSitePricesRoute
@@ -771,6 +780,7 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/clients'
     | '/admin/dashboard'
+    | '/admin/reviews'
     | '/admin/settings'
     | '/admin/site-images'
     | '/admin/site-prices'
@@ -847,6 +857,7 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/clients'
     | '/admin/dashboard'
+    | '/admin/reviews'
     | '/admin/settings'
     | '/admin/site-images'
     | '/admin/site-prices'
@@ -925,6 +936,7 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/clients'
     | '/admin/dashboard'
+    | '/admin/reviews'
     | '/admin/settings'
     | '/admin/site-images'
     | '/admin/site-prices'
@@ -1454,6 +1466,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminDashboardRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/reviews': {
+      id: '/admin/reviews'
+      path: '/reviews'
+      fullPath: '/admin/reviews'
+      preLoaderRoute: typeof AdminReviewsRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/settings': {
       id: '/admin/settings'
       path: '/settings'
@@ -1568,6 +1587,7 @@ interface AdminRouteChildren {
   AdminApplicationsRoute: typeof AdminApplicationsRouteWithChildren
   AdminClientsRoute: typeof AdminClientsRouteWithChildren
   AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminReviewsRoute: typeof AdminReviewsRoute
   AdminSettingsRoute: typeof AdminSettingsRoute
   AdminSiteImagesRoute: typeof AdminSiteImagesRoute
   AdminSitePricesRoute: typeof AdminSitePricesRoute
@@ -1577,6 +1597,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminApplicationsRoute: AdminApplicationsRouteWithChildren,
   AdminClientsRoute: AdminClientsRouteWithChildren,
   AdminDashboardRoute: AdminDashboardRoute,
+  AdminReviewsRoute: AdminReviewsRoute,
   AdminSettingsRoute: AdminSettingsRoute,
   AdminSiteImagesRoute: AdminSiteImagesRoute,
   AdminSitePricesRoute: AdminSitePricesRoute,
@@ -1701,3 +1722,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
