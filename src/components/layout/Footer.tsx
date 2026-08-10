@@ -42,7 +42,7 @@ export function Footer() {
         <div className="md:col-span-4">
           <Logo variant="full" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            {company.brandFull}. Механизированная штукатурка, мокрая стяжка пола, тёплый пол, черновая электрика и сантехника в Москве и Московской области.
+            {company.brandFull}. Механизированная штукатурка, мокрая и полусухая стяжка пола, тёплый пол, черновая электрика и сантехника в Москве и Московской области.
           </p>
           <p className="mt-4 inline-flex rounded-md border border-border bg-card/40 px-3 py-1.5 text-xs uppercase tracking-wider text-muted-foreground">
             Прямой договор. Без посредников.
