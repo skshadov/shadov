@@ -76,7 +76,6 @@ import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminMediaRouteImport } from './routes/admin.media'
 import { Route as AdminPagesRouteImport } from './routes/admin.pages'
-import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminSiteImagesRouteImport } from './routes/admin.site-images'
 import { Route as AdminSitePricesRouteImport } from './routes/admin.site-prices'
@@ -86,17 +85,9 @@ import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as ProektyIndexRouteImport } from './routes/proekty.index'
 import { Route as ProektySlugRouteImport } from './routes/proekty.$slug'
 import { Route as AdminApplicationsIdRouteImport } from './routes/admin.applications.$id'
-import { Route as AdminCatalogCategoriesRouteImport } from './routes/admin.catalog.categories'
 import { Route as AdminCatalogPricesRouteImport } from './routes/admin.catalog.prices'
-import { Route as AdminCatalogServicesRouteImport } from './routes/admin.catalog.services'
 import { Route as AdminClientsIdRouteImport } from './routes/admin.clients.$id'
-import { Route as AdminProjectsIdRouteImport } from './routes/admin.projects.$id'
 import { Route as CatalogCategoryServiceRouteImport } from './routes/catalog.$category.$service'
-import { Route as AdminProjectsIdCamerasRouteImport } from './routes/admin.projects.$id.cameras'
-import { Route as AdminProjectsIdDocumentsRouteImport } from './routes/admin.projects.$id.documents'
-import { Route as AdminProjectsIdMessagesRouteImport } from './routes/admin.projects.$id.messages'
-import { Route as AdminProjectsIdPaymentsRouteImport } from './routes/admin.projects.$id.payments'
-import { Route as AdminProjectsIdReportsRouteImport } from './routes/admin.projects.$id.reports'
 import { Route as ApiPublicSiteImageKeyRouteImport } from './routes/api/public/site-image.$key'
 
 const IndexRoute = IndexRouteImport.update({
@@ -439,11 +430,6 @@ const AdminPagesRoute = AdminPagesRouteImport.update({
   path: '/pages',
   getParentRoute: () => AdminRoute,
 } as any)
-const AdminProjectsRoute = AdminProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
-  getParentRoute: () => AdminRoute,
-} as any)
 const AdminSettingsRoute = AdminSettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -489,19 +475,9 @@ const AdminApplicationsIdRoute = AdminApplicationsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => AdminApplicationsRoute,
 } as any)
-const AdminCatalogCategoriesRoute = AdminCatalogCategoriesRouteImport.update({
-  id: '/catalog/categories',
-  path: '/catalog/categories',
-  getParentRoute: () => AdminRoute,
-} as any)
 const AdminCatalogPricesRoute = AdminCatalogPricesRouteImport.update({
   id: '/catalog/prices',
   path: '/catalog/prices',
-  getParentRoute: () => AdminRoute,
-} as any)
-const AdminCatalogServicesRoute = AdminCatalogServicesRouteImport.update({
-  id: '/catalog/services',
-  path: '/catalog/services',
   getParentRoute: () => AdminRoute,
 } as any)
 const AdminClientsIdRoute = AdminClientsIdRouteImport.update({
@@ -509,41 +485,10 @@ const AdminClientsIdRoute = AdminClientsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => AdminClientsRoute,
 } as any)
-const AdminProjectsIdRoute = AdminProjectsIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => AdminProjectsRoute,
-} as any)
 const CatalogCategoryServiceRoute = CatalogCategoryServiceRouteImport.update({
   id: '/$service',
   path: '/$service',
   getParentRoute: () => CatalogCategoryRoute,
-} as any)
-const AdminProjectsIdCamerasRoute = AdminProjectsIdCamerasRouteImport.update({
-  id: '/cameras',
-  path: '/cameras',
-  getParentRoute: () => AdminProjectsIdRoute,
-} as any)
-const AdminProjectsIdDocumentsRoute =
-  AdminProjectsIdDocumentsRouteImport.update({
-    id: '/documents',
-    path: '/documents',
-    getParentRoute: () => AdminProjectsIdRoute,
-  } as any)
-const AdminProjectsIdMessagesRoute = AdminProjectsIdMessagesRouteImport.update({
-  id: '/messages',
-  path: '/messages',
-  getParentRoute: () => AdminProjectsIdRoute,
-} as any)
-const AdminProjectsIdPaymentsRoute = AdminProjectsIdPaymentsRouteImport.update({
-  id: '/payments',
-  path: '/payments',
-  getParentRoute: () => AdminProjectsIdRoute,
-} as any)
-const AdminProjectsIdReportsRoute = AdminProjectsIdReportsRouteImport.update({
-  id: '/reports',
-  path: '/reports',
-  getParentRoute: () => AdminProjectsIdRoute,
 } as any)
 const ApiPublicSiteImageKeyRoute = ApiPublicSiteImageKeyRouteImport.update({
   id: '/api/public/site-image/$key',
@@ -619,7 +564,6 @@ export interface FileRoutesByFullPath {
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/media': typeof AdminMediaRoute
   '/admin/pages': typeof AdminPagesRoute
-  '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/site-images': typeof AdminSiteImagesRoute
   '/admin/site-prices': typeof AdminSitePricesRoute
@@ -629,17 +573,9 @@ export interface FileRoutesByFullPath {
   '/catalog/': typeof CatalogIndexRoute
   '/proekty/': typeof ProektyIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
-  '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
   '/admin/catalog/prices': typeof AdminCatalogPricesRoute
-  '/admin/catalog/services': typeof AdminCatalogServicesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
-  '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
   '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
-  '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
-  '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
-  '/admin/projects/$id/messages': typeof AdminProjectsIdMessagesRoute
-  '/admin/projects/$id/payments': typeof AdminProjectsIdPaymentsRoute
-  '/admin/projects/$id/reports': typeof AdminProjectsIdReportsRoute
   '/api/public/site-image/$key': typeof ApiPublicSiteImageKeyRoute
 }
 export interface FileRoutesByTo {
@@ -708,7 +644,6 @@ export interface FileRoutesByTo {
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/media': typeof AdminMediaRoute
   '/admin/pages': typeof AdminPagesRoute
-  '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/site-images': typeof AdminSiteImagesRoute
   '/admin/site-prices': typeof AdminSitePricesRoute
@@ -718,17 +653,9 @@ export interface FileRoutesByTo {
   '/catalog': typeof CatalogIndexRoute
   '/proekty': typeof ProektyIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
-  '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
   '/admin/catalog/prices': typeof AdminCatalogPricesRoute
-  '/admin/catalog/services': typeof AdminCatalogServicesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
-  '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
   '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
-  '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
-  '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
-  '/admin/projects/$id/messages': typeof AdminProjectsIdMessagesRoute
-  '/admin/projects/$id/payments': typeof AdminProjectsIdPaymentsRoute
-  '/admin/projects/$id/reports': typeof AdminProjectsIdReportsRoute
   '/api/public/site-image/$key': typeof ApiPublicSiteImageKeyRoute
 }
 export interface FileRoutesById {
@@ -800,7 +727,6 @@ export interface FileRoutesById {
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/media': typeof AdminMediaRoute
   '/admin/pages': typeof AdminPagesRoute
-  '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/site-images': typeof AdminSiteImagesRoute
   '/admin/site-prices': typeof AdminSitePricesRoute
@@ -810,17 +736,9 @@ export interface FileRoutesById {
   '/catalog/': typeof CatalogIndexRoute
   '/proekty/': typeof ProektyIndexRoute
   '/admin/applications/$id': typeof AdminApplicationsIdRoute
-  '/admin/catalog/categories': typeof AdminCatalogCategoriesRoute
   '/admin/catalog/prices': typeof AdminCatalogPricesRoute
-  '/admin/catalog/services': typeof AdminCatalogServicesRoute
   '/admin/clients/$id': typeof AdminClientsIdRoute
-  '/admin/projects/$id': typeof AdminProjectsIdRouteWithChildren
   '/catalog/$category/$service': typeof CatalogCategoryServiceRoute
-  '/admin/projects/$id/cameras': typeof AdminProjectsIdCamerasRoute
-  '/admin/projects/$id/documents': typeof AdminProjectsIdDocumentsRoute
-  '/admin/projects/$id/messages': typeof AdminProjectsIdMessagesRoute
-  '/admin/projects/$id/payments': typeof AdminProjectsIdPaymentsRoute
-  '/admin/projects/$id/reports': typeof AdminProjectsIdReportsRoute
   '/api/public/site-image/$key': typeof ApiPublicSiteImageKeyRoute
 }
 export interface FileRouteTypes {
@@ -893,7 +811,6 @@ export interface FileRouteTypes {
     | '/admin/dashboard'
     | '/admin/media'
     | '/admin/pages'
-    | '/admin/projects'
     | '/admin/settings'
     | '/admin/site-images'
     | '/admin/site-prices'
@@ -903,17 +820,9 @@ export interface FileRouteTypes {
     | '/catalog/'
     | '/proekty/'
     | '/admin/applications/$id'
-    | '/admin/catalog/categories'
     | '/admin/catalog/prices'
-    | '/admin/catalog/services'
     | '/admin/clients/$id'
-    | '/admin/projects/$id'
     | '/catalog/$category/$service'
-    | '/admin/projects/$id/cameras'
-    | '/admin/projects/$id/documents'
-    | '/admin/projects/$id/messages'
-    | '/admin/projects/$id/payments'
-    | '/admin/projects/$id/reports'
     | '/api/public/site-image/$key'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -982,7 +891,6 @@ export interface FileRouteTypes {
     | '/admin/dashboard'
     | '/admin/media'
     | '/admin/pages'
-    | '/admin/projects'
     | '/admin/settings'
     | '/admin/site-images'
     | '/admin/site-prices'
@@ -992,17 +900,9 @@ export interface FileRouteTypes {
     | '/catalog'
     | '/proekty'
     | '/admin/applications/$id'
-    | '/admin/catalog/categories'
     | '/admin/catalog/prices'
-    | '/admin/catalog/services'
     | '/admin/clients/$id'
-    | '/admin/projects/$id'
     | '/catalog/$category/$service'
-    | '/admin/projects/$id/cameras'
-    | '/admin/projects/$id/documents'
-    | '/admin/projects/$id/messages'
-    | '/admin/projects/$id/payments'
-    | '/admin/projects/$id/reports'
     | '/api/public/site-image/$key'
   id:
     | '__root__'
@@ -1073,7 +973,6 @@ export interface FileRouteTypes {
     | '/admin/dashboard'
     | '/admin/media'
     | '/admin/pages'
-    | '/admin/projects'
     | '/admin/settings'
     | '/admin/site-images'
     | '/admin/site-prices'
@@ -1083,17 +982,9 @@ export interface FileRouteTypes {
     | '/catalog/'
     | '/proekty/'
     | '/admin/applications/$id'
-    | '/admin/catalog/categories'
     | '/admin/catalog/prices'
-    | '/admin/catalog/services'
     | '/admin/clients/$id'
-    | '/admin/projects/$id'
     | '/catalog/$category/$service'
-    | '/admin/projects/$id/cameras'
-    | '/admin/projects/$id/documents'
-    | '/admin/projects/$id/messages'
-    | '/admin/projects/$id/payments'
-    | '/admin/projects/$id/reports'
     | '/api/public/site-image/$key'
   fileRoutesById: FileRoutesById
 }
@@ -1634,13 +1525,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminPagesRouteImport
       parentRoute: typeof AdminRoute
     }
-    '/admin/projects': {
-      id: '/admin/projects'
-      path: '/projects'
-      fullPath: '/admin/projects'
-      preLoaderRoute: typeof AdminProjectsRouteImport
-      parentRoute: typeof AdminRoute
-    }
     '/admin/settings': {
       id: '/admin/settings'
       path: '/settings'
@@ -1704,25 +1588,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminApplicationsIdRouteImport
       parentRoute: typeof AdminApplicationsRoute
     }
-    '/admin/catalog/categories': {
-      id: '/admin/catalog/categories'
-      path: '/catalog/categories'
-      fullPath: '/admin/catalog/categories'
-      preLoaderRoute: typeof AdminCatalogCategoriesRouteImport
-      parentRoute: typeof AdminRoute
-    }
     '/admin/catalog/prices': {
       id: '/admin/catalog/prices'
       path: '/catalog/prices'
       fullPath: '/admin/catalog/prices'
       preLoaderRoute: typeof AdminCatalogPricesRouteImport
-      parentRoute: typeof AdminRoute
-    }
-    '/admin/catalog/services': {
-      id: '/admin/catalog/services'
-      path: '/catalog/services'
-      fullPath: '/admin/catalog/services'
-      preLoaderRoute: typeof AdminCatalogServicesRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/clients/$id': {
@@ -1732,54 +1602,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminClientsIdRouteImport
       parentRoute: typeof AdminClientsRoute
     }
-    '/admin/projects/$id': {
-      id: '/admin/projects/$id'
-      path: '/$id'
-      fullPath: '/admin/projects/$id'
-      preLoaderRoute: typeof AdminProjectsIdRouteImport
-      parentRoute: typeof AdminProjectsRoute
-    }
     '/catalog/$category/$service': {
       id: '/catalog/$category/$service'
       path: '/$service'
       fullPath: '/catalog/$category/$service'
       preLoaderRoute: typeof CatalogCategoryServiceRouteImport
       parentRoute: typeof CatalogCategoryRoute
-    }
-    '/admin/projects/$id/cameras': {
-      id: '/admin/projects/$id/cameras'
-      path: '/cameras'
-      fullPath: '/admin/projects/$id/cameras'
-      preLoaderRoute: typeof AdminProjectsIdCamerasRouteImport
-      parentRoute: typeof AdminProjectsIdRoute
-    }
-    '/admin/projects/$id/documents': {
-      id: '/admin/projects/$id/documents'
-      path: '/documents'
-      fullPath: '/admin/projects/$id/documents'
-      preLoaderRoute: typeof AdminProjectsIdDocumentsRouteImport
-      parentRoute: typeof AdminProjectsIdRoute
-    }
-    '/admin/projects/$id/messages': {
-      id: '/admin/projects/$id/messages'
-      path: '/messages'
-      fullPath: '/admin/projects/$id/messages'
-      preLoaderRoute: typeof AdminProjectsIdMessagesRouteImport
-      parentRoute: typeof AdminProjectsIdRoute
-    }
-    '/admin/projects/$id/payments': {
-      id: '/admin/projects/$id/payments'
-      path: '/payments'
-      fullPath: '/admin/projects/$id/payments'
-      preLoaderRoute: typeof AdminProjectsIdPaymentsRouteImport
-      parentRoute: typeof AdminProjectsIdRoute
-    }
-    '/admin/projects/$id/reports': {
-      id: '/admin/projects/$id/reports'
-      path: '/reports'
-      fullPath: '/admin/projects/$id/reports'
-      preLoaderRoute: typeof AdminProjectsIdReportsRouteImport
-      parentRoute: typeof AdminProjectsIdRoute
     }
     '/api/public/site-image/$key': {
       id: '/api/public/site-image/$key'
@@ -1814,51 +1642,16 @@ const AdminClientsRouteWithChildren = AdminClientsRoute._addFileChildren(
   AdminClientsRouteChildren,
 )
 
-interface AdminProjectsIdRouteChildren {
-  AdminProjectsIdCamerasRoute: typeof AdminProjectsIdCamerasRoute
-  AdminProjectsIdDocumentsRoute: typeof AdminProjectsIdDocumentsRoute
-  AdminProjectsIdMessagesRoute: typeof AdminProjectsIdMessagesRoute
-  AdminProjectsIdPaymentsRoute: typeof AdminProjectsIdPaymentsRoute
-  AdminProjectsIdReportsRoute: typeof AdminProjectsIdReportsRoute
-}
-
-const AdminProjectsIdRouteChildren: AdminProjectsIdRouteChildren = {
-  AdminProjectsIdCamerasRoute: AdminProjectsIdCamerasRoute,
-  AdminProjectsIdDocumentsRoute: AdminProjectsIdDocumentsRoute,
-  AdminProjectsIdMessagesRoute: AdminProjectsIdMessagesRoute,
-  AdminProjectsIdPaymentsRoute: AdminProjectsIdPaymentsRoute,
-  AdminProjectsIdReportsRoute: AdminProjectsIdReportsRoute,
-}
-
-const AdminProjectsIdRouteWithChildren = AdminProjectsIdRoute._addFileChildren(
-  AdminProjectsIdRouteChildren,
-)
-
-interface AdminProjectsRouteChildren {
-  AdminProjectsIdRoute: typeof AdminProjectsIdRouteWithChildren
-}
-
-const AdminProjectsRouteChildren: AdminProjectsRouteChildren = {
-  AdminProjectsIdRoute: AdminProjectsIdRouteWithChildren,
-}
-
-const AdminProjectsRouteWithChildren = AdminProjectsRoute._addFileChildren(
-  AdminProjectsRouteChildren,
-)
-
 interface AdminRouteChildren {
   AdminApplicationsRoute: typeof AdminApplicationsRouteWithChildren
   AdminClientsRoute: typeof AdminClientsRouteWithChildren
   AdminDashboardRoute: typeof AdminDashboardRoute
   AdminMediaRoute: typeof AdminMediaRoute
   AdminPagesRoute: typeof AdminPagesRoute
-  AdminProjectsRoute: typeof AdminProjectsRouteWithChildren
   AdminSettingsRoute: typeof AdminSettingsRoute
   AdminSiteImagesRoute: typeof AdminSiteImagesRoute
   AdminSitePricesRoute: typeof AdminSitePricesRoute
-  AdminCatalogCategoriesRoute: typeof AdminCatalogCategoriesRoute
   AdminCatalogPricesRoute: typeof AdminCatalogPricesRoute
-  AdminCatalogServicesRoute: typeof AdminCatalogServicesRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
@@ -1867,13 +1660,10 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminDashboardRoute: AdminDashboardRoute,
   AdminMediaRoute: AdminMediaRoute,
   AdminPagesRoute: AdminPagesRoute,
-  AdminProjectsRoute: AdminProjectsRouteWithChildren,
   AdminSettingsRoute: AdminSettingsRoute,
   AdminSiteImagesRoute: AdminSiteImagesRoute,
   AdminSitePricesRoute: AdminSitePricesRoute,
-  AdminCatalogCategoriesRoute: AdminCatalogCategoriesRoute,
   AdminCatalogPricesRoute: AdminCatalogPricesRoute,
-  AdminCatalogServicesRoute: AdminCatalogServicesRoute,
 }
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
@@ -1996,13 +1786,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
