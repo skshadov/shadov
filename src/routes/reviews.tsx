@@ -3,6 +3,7 @@ import { Star } from "lucide-react";
 import { InfoPageLayout, InfoSection, buildInfoHead } from "@/components/info/InfoPageLayout";
 import { listPublishedReviews, type PublicReview } from "@/lib/portfolio-public.functions";
 import { SHOWCASE_REVIEWS } from "@/data/showcase-reviews";
+import { ReviewForm } from "@/components/reviews/ReviewForm";
 
 const PATH = "/reviews";
 const TITLE = "Отзывы — Шадов и партнёры";
@@ -93,6 +94,14 @@ function Page() {
           })}
         </>
       )}
+
+      <InfoSection title="Оставить отзыв">
+        <p className="mb-4 max-w-3xl text-sm text-muted-foreground">
+          Отзыв можно оставить без регистрации. Перед публикацией мы сверяем объект и работы
+          по своей базе — на сайт попадают только проверенные отзывы.
+        </p>
+        <ReviewForm />
+      </InfoSection>
     </InfoPageLayout>
   );
 }
