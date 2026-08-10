@@ -54,7 +54,7 @@ export function HeroSection() {
 
 function HeroProcessVisual() {
   return (
-    <div className="lg:col-span-6">
+    <div className="hidden lg:col-span-6 lg:block">
       <div className="grid h-[440px] grid-cols-2 grid-rows-2 gap-4 sm:h-[520px] lg:h-[600px]">
         <ProcessImage
           slotKey="home.hero.screed"
