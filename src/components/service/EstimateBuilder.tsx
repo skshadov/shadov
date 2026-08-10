@@ -174,6 +174,24 @@ export function EstimateBuilder({
           </span>
           <span className="font-medium text-foreground">{formatRub(baseSum)}</span>
         </div>
+        {pricing.baseIncludes?.length ? (
+          <details className="mt-3 rounded-lg bg-muted/40 p-3">
+            <summary className="cursor-pointer list-none text-xs font-semibold uppercase tracking-wider text-primary marker:hidden">
+              Что входит в базовую цену
+            </summary>
+            <ul className="mt-2 space-y-1.5 text-xs text-muted-foreground">
+              {pricing.baseIncludes.map((c) => (
+                <li key={c} className="flex gap-2">
+                  <span aria-hidden="true" className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary/60" />
+                  <span>{c}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-2 text-xs text-muted-foreground">
+              Подготовка основания, усиление, изоляция и узлы в базу не входят — добавьте их шагом 2.
+            </p>
+          </details>
+        ) : null}
       </div>
 
       {/* Шаг 2 */}

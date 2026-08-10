@@ -89,6 +89,8 @@ export interface ServicePricing {
   priceHeadlineNote: string;
   /** Условия, при которых действует базовая цена */
   baseConditions: string[];
+  /** Что конкретно входит в базовую цену за единицу — построчно, без «и т. д.» */
+  baseIncludes?: string[];
   groups: PriceGroup[];
   included: string[];
   excluded: string[];

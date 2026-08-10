@@ -357,15 +357,18 @@ const HEATING: PriceItem[] = [
 // ── 18. ТЁПЛЫЙ ПОЛ (10) ───────────────────────────────────────────────────
 const UNDERFLOOR_HEATING: PriceItem[] = [
   make("underfloor_heating", "proekt-vodyanogo",    "Проект водяного тёплого пола", { unit: "м²", from: 150, slug: "teplyy-pol", sort: 1 }),
-  make("underfloor_heating", "utepl",               "Укладка утеплителя",           { unit: "м²", from: 400, slug: "teplyy-pol", sort: 2 }),
-  make("underfloor_heating", "dempferka",           "Монтаж демпферной ленты",      { unit: "пог. м", from: 150, slug: "teplyy-pol", sort: 3 }),
-  make("underfloor_heating", "setka",               "Монтаж армирующей сетки",      { unit: "м²", from: 300, slug: "teplyy-pol", sort: 4 }),
-  make("underfloor_heating", "truba-tp",            "Монтаж трубы водяного тёплого пола", { unit: "м²", from: 1200, slug: "teplyy-pol", sort: 5 }),
-  make("underfloor_heating", "kollektor",           "Монтаж коллектора",            { unit: "шт.", from: 8000, slug: "teplyy-pol", sort: 6 }),
-  make("underfloor_heating", "kollektornyy-shkaf", "Монтаж коллекторного шкафа",    { unit: "шт.", from: 5000, slug: "teplyy-pol", sort: 7 }),
-  make("underfloor_heating", "opressovka",          "Опрессовка",                   { unit: "контур", from: 2000, slug: "teplyy-pol", sort: 8 }),
-  make("underfloor_heating", "elektricheskiy",      "Монтаж электрического тёплого пола", { unit: "м²", from: 1200, slug: "teplyy-pol", sort: 9 }),
-  make("underfloor_heating", "termoregulyator",     "Установка терморегулятора",    { unit: "шт.", from: 2500, slug: "teplyy-pol", sort: 10 }),
+  make("underfloor_heating", "utepl",               "Укладка теплоизоляции ЭППС 30–50 мм", { unit: "м²", from: 180, slug: "teplyy-pol", sort: 2 }),
+  make("underfloor_heating", "podlozhka",           "Укладка отражающей фольгированной подложки", { unit: "м²", from: 100, slug: "teplyy-pol", sort: 3 }),
+  make("underfloor_heating", "dempferka",           "Монтаж демпферной ленты",      { unit: "пог. м", from: 90, slug: "teplyy-pol", sort: 4 }),
+  make("underfloor_heating", "setka",               "Монтаж армирующей сетки под трубу", { unit: "м²", from: 200, slug: "teplyy-pol", sort: 5 }),
+  make("underfloor_heating", "truba-tp",            "Укладка контура водяного тёплого пола, шаг 150 мм", { unit: "м²", from: 700, slug: "teplyy-pol", sort: 6 }),
+  make("underfloor_heating", "podklyuchenie-kontura", "Подключение контура к коллектору", { unit: "контур", from: 700, slug: "teplyy-pol", sort: 7 }),
+  make("underfloor_heating", "kollektor",           "Монтаж коллектора со смесительной группой", { unit: "шт.", from: 9500, slug: "teplyy-pol", sort: 8 }),
+  make("underfloor_heating", "kollektornyy-shkaf", "Монтаж коллекторного шкафа",    { unit: "шт.", from: 4500, slug: "teplyy-pol", sort: 9 }),
+  make("underfloor_heating", "opressovka",          "Опрессовка контуров с протоколом", { unit: "комплект", from: 4000, slug: "teplyy-pol", sort: 10 }),
+  make("underfloor_heating", "elektricheskiy",      "Укладка нагревательного кабеля в стяжку", { unit: "м²", from: 750, slug: "teplyy-pol", sort: 11 }),
+  make("underfloor_heating", "maty",                "Укладка нагревательных матов под плитку", { unit: "м²", from: 500, slug: "teplyy-pol", sort: 12 }),
+  make("underfloor_heating", "termoregulyator",     "Установка терморегулятора с датчиком", { unit: "шт.", from: 1500, slug: "teplyy-pol", sort: 13 }),
 ];
 
 // ── 19. ПЛИТОЧНЫЕ РАБОТЫ (20) ─────────────────────────────────────────────
