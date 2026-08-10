@@ -6,8 +6,8 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { LogOut, ExternalLink, ShieldAlert } from "lucide-react";
 import {
-  LayoutDashboard, Inbox, Users, Images, Tag, Calculator as CalcIcon,
-  FileEdit, ImageIcon, Star, HelpCircle, Globe, Scale, UserCog, Bell, Settings, History, Activity,
+  LayoutDashboard, Inbox, Users, Tag, Calculator as CalcIcon,
+  FileEdit, ImageIcon, Star, HelpCircle, Globe, Settings,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -25,22 +25,14 @@ const NAV_ITEMS: NavItem[] = [
   { to: "/admin/dashboard",     label: "Дашборд",           icon: LayoutDashboard, permission: "admin.dashboard.read" },
   { to: "/admin/applications",  label: "Заявки",            icon: Inbox,           permission: "admin.applications.read" },
   { to: "/admin/clients",       label: "Клиенты",           icon: Users,           permission: "admin.clients.read" },
-  { to: "/admin/catalog/prices",     label: "Прайс",        icon: Tag,             permission: "admin.catalog.read" },
   { to: "/admin/site-prices",   label: "Прайс сайта",       icon: Tag,             permission: "admin.catalog.read" },
   { to: "/admin/site-images",   label: "Фото сайта",        icon: ImageIcon,       permission: "admin.media.read" },
   { to: "/admin/calculator",    label: "Калькулятор",       icon: CalcIcon,        permission: "admin.calculator.read" },
   { to: "/admin/pages",         label: "Контентные блоки",  icon: FileEdit,        permission: "admin.content.read" },
-  { to: "/admin/media",         label: "Медиатека",         icon: Images,          permission: "admin.media.read" },
-  { to: "/admin/portfolio",     label: "Портфолио",         icon: ImageIcon,       permission: "admin.portfolio.read" },
   { to: "/admin/reviews",       label: "Отзывы",            icon: Star,            permission: "admin.reviews.read" },
   { to: "/admin/faq",           label: "FAQ",               icon: HelpCircle,      permission: "admin.faq.read" },
   { to: "/admin/seo",           label: "SEO",               icon: Globe,           permission: "admin.seo.read" },
-  { to: "/admin/legal",         label: "Юридические",       icon: Scale,           permission: "admin.legal.read" },
-  { to: "/admin/employees",     label: "Сотрудники",        icon: UserCog,         permission: "admin.employees.read" },
-  { to: "/admin/notifications", label: "Уведомления",       icon: Bell,            permission: "admin.notifications.read" },
   { to: "/admin/settings",      label: "Настройки",         icon: Settings,        permission: "admin.settings.read" },
-  { to: "/admin/audit",         label: "Журнал аудита",     icon: History,         permission: "admin.audit.read" },
-  { to: "/admin/system",        label: "Состояние системы", icon: Activity,        permission: "admin.system.read" },
 ];
 
 export const ADMIN_NAV_ITEMS = NAV_ITEMS;
