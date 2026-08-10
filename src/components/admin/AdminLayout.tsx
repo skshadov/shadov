@@ -6,8 +6,7 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { LogOut, ExternalLink, ShieldAlert } from "lucide-react";
 import {
-  LayoutDashboard, Inbox, Users, Building2, ListChecks, FileText, FolderOpen, Camera, Images,
-  MessageSquare, CreditCard, ClipboardCheck, Briefcase, Tag, Calculator as CalcIcon,
+  LayoutDashboard, Inbox, Users, Images, Tag, Calculator as CalcIcon,
   FileEdit, ImageIcon, Star, HelpCircle, Globe, Scale, UserCog, Bell, Settings, History, Activity,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
