@@ -59,7 +59,11 @@ export function syncCalcWithPrices(pricing: ServicePricing): ServicePricing {
   const options = pricing.calc.options.map((o) => {
     const row = findRow(pricing, o.priceRowKey);
     if (!row || typeof row.work !== "number") return o;
-    return { ...o, addTurnkey: Math.max(0, row.work - baseWork) };
+    const add =
+      o.priceMode === "delta"
+        ? Math.max(0, row.work - baseWork)
+        : Math.round(row.work * (o.priceMultiplier ?? 1));
+    return { ...o, addTurnkey: add };
   });
 
   return { ...pricing, calc: { ...pricing.calc, baseWork, options } };
