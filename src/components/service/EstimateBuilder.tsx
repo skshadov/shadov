@@ -168,7 +168,43 @@ export function EstimateBuilder({
       {/* Шаг 1 */}
       <div className="mt-5 rounded-lg border border-border bg-background p-4">
         <div className="text-xs font-semibold uppercase tracking-wider text-primary">Шаг 1 — основной объём</div>
-        <label className="mt-2 block text-sm font-medium text-foreground" htmlFor="calc-qty">
+        {variants.length > 1 ? (
+          <fieldset className="mt-3">
+            <legend className="text-sm font-medium text-foreground">
+              {calc.baseVariantLabel ?? "Вариант основной работы"}
+            </legend>
+            <div className="mt-2 space-y-1.5">
+              {variants.map((v) => (
+                <label
+                  key={v.key}
+                  className={`flex cursor-pointer items-start gap-2.5 rounded-md border p-2.5 ${
+                    v.key === baseEntry?.key ? "border-primary bg-primary/5" : "border-border"
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="calc-base-variant"
+                    checked={v.key === baseEntry?.key}
+                    onChange={() => setBaseKey(v.key)}
+                    className="mt-1 h-4 w-4 shrink-0 accent-[hsl(var(--primary))]"
+                  />
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm text-foreground">{v.row.name}</span>
+                    <span className="block text-xs text-muted-foreground">
+                      {formatRub(v.row.work as number)}/{v.row.unit}
+                      {v.row.note ? ` · ${v.row.note}` : ""}
+                    </span>
+                  </span>
+                </label>
+              ))}
+            </div>
+            <p className="mt-2 text-xs text-muted-foreground">
+              Варианты взаимоисключающие — считается только выбранный. Нужны обе технологии на объекте (например,
+              гипс в комнатах и цемент в санузле) — посчитайте двумя расчётами или скажите инженеру на замере.
+            </p>
+          </fieldset>
+        ) : null}
+        <label className="mt-4 block text-sm font-medium text-foreground" htmlFor="calc-qty">
           {calc.unitLabel}
         </label>
         <input
