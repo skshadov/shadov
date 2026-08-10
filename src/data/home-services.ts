@@ -16,7 +16,7 @@ export const HOME_DIRECTIONS: DirectionCard[] = [
   {
     title: "Механизированная штукатурка",
     description: "Стены и потолки под покраску и обои, маяки, углы, откосы",
-    startPrice: "550 ₽/м² за работу",
+    startPrice: "750 ₽/м² за работу",
     to: "/mekhanizirovannaya-shtukaturka",
     Icon: PaintRoller,
   },
@@ -44,14 +44,14 @@ export const HOME_DIRECTIONS: DirectionCard[] = [
   {
     title: "Разводка электрики",
     description: "Черновая электрика: штробы, кабель, подрозетники, щит",
-    startPrice: "1 100 ₽ за точку — работа",
+    startPrice: "от 300 ₽/м.п. за работу",
     to: "/razvodka-elektriki",
     Icon: Plug,
   },
   {
     title: "Разводка сантехники",
     description: "Черновая сантехника: вода, канализация, коллектор, опрессовка",
-    startPrice: "2 400 ₽ за точку — работа",
+    startPrice: "от 650 ₽/м.п. за работу",
     to: "/razvodka-santehniki",
     Icon: Droplets,
   },
