@@ -48,7 +48,7 @@ function ClientsListPage() {
           <label htmlFor="search" className="mb-1 block text-xs text-muted-foreground">Поиск</label>
           <Input id="search" placeholder="Имя или телефон" value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
-        {!canPii ? <p className="text-xs text-muted-foreground">PII скрыты — нет права admin.clients.pii</p> : null}
+        {!canPii ? <p className="text-xs text-muted-foreground">Телефоны скрыты — нет права admin.clients.pii</p> : null}
       </div>
 
       {error ? <div role="alert" className="mt-4 rounded-md border border-destructive/40 bg-destructive/10 p-3 text-sm">{error}</div> : null}
@@ -57,34 +57,20 @@ function ClientsListPage() {
         <table className="w-full text-sm">
           <thead className="bg-muted/50 text-left text-xs uppercase tracking-wider text-muted-foreground">
             <tr>
-              <th className="px-3 py-2">Клиент</th>
-              <th className="px-3 py-2">Контакты</th>
-              <th className="px-3 py-2">Роли</th>
-              <th className="px-3 py-2">Проекты</th>
-              <th className="px-3 py-2">Заявки</th>
-              <th className="px-3 py-2">Регистрация</th>
+              <th className="px-3 py-2">Имя</th>
+              <th className="px-3 py-2">Телефон</th>
               <th className="px-3 py-2"></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-border">
             {items === null ? (
-              <tr><td colSpan={7} className="px-3 py-8 text-center text-muted-foreground">Загрузка…</td></tr>
+              <tr><td colSpan={3} className="px-3 py-8 text-center text-muted-foreground">Загрузка…</td></tr>
             ) : items.length === 0 ? (
-              <tr><td colSpan={7} className="px-3 py-8 text-center text-muted-foreground">Ничего не найдено.</td></tr>
+              <tr><td colSpan={3} className="px-3 py-8 text-center text-muted-foreground">Ничего не найдено.</td></tr>
             ) : items.map((c) => (
               <tr key={c.id}>
-                <td className="px-3 py-2">
-                  <div className="font-medium">{c.display_name || "—"}</div>
-                  <div className="font-mono text-[10px] text-muted-foreground">{c.id.slice(0, 8)}</div>
-                </td>
-                <td className="px-3 py-2 text-xs">
-                  <div>{c.phone || "—"}</div>
-                  <div className="text-muted-foreground">{c.email || (canPii ? "—" : "скрыт")}</div>
-                </td>
-                <td className="px-3 py-2 text-xs">{c.roles.length ? c.roles.join(", ") : "—"}</td>
-                <td className="px-3 py-2 tabular-nums">{c.projects_count}</td>
-                <td className="px-3 py-2 tabular-nums">{c.applications_count}</td>
-                <td className="px-3 py-2 text-xs text-muted-foreground">{new Date(c.created_at).toLocaleDateString("ru-RU")}</td>
+                <td className="px-3 py-2 font-medium">{c.display_name || "—"}</td>
+                <td className="px-3 py-2">{c.phone || (canPii ? "—" : "скрыт")}</td>
                 <td className="px-3 py-2 text-right">
                   <Button asChild size="sm" variant="outline">
                     <Link to="/admin/clients/$id" params={{ id: c.id }}>Открыть</Link>
