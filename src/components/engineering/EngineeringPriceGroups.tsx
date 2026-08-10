@@ -31,7 +31,7 @@ export function EngineeringPriceGroups({ packageCategoryIds = [], priceCategoryI
     .flatMap((c) => getPricesByCategory(c));
 
   const sections: Array<{ title: string; items: typeof packages }> = [];
-  if (packages.length) sections.push({ title: "Пакетные решения", items: packages });
+  // Пакетные решения убраны с сайта — показываем только отдельные работы
   if (separate.length) sections.push({ title: "Отдельные работы", items: separate });
 
   return (

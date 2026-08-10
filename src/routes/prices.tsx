@@ -69,35 +69,6 @@ function PricesPage() {
             ))}
           </div>
 
-          {(s.packages?.length ?? 0) > 0 ? (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {s.packages!.map((p) => (
-                <article key={p.title} className="rounded-xl border border-border bg-card p-5">
-                  <h3 className="font-display text-lg font-semibold">{p.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{p.subtitle}</p>
-                  <ul className="mt-3 space-y-1 text-sm text-foreground/90">
-                    {p.scope.map((item) => (
-                      <li key={item}>• {item}</li>
-                    ))}
-                  </ul>
-                  <dl className="mt-4 space-y-1 border-t border-border pt-3 text-sm">
-                    <div className="flex justify-between">
-                      <dt className="text-muted-foreground">Стоимость работ</dt>
-                      <dd className="font-semibold text-primary">{formatRub(p.workTotal)}</dd>
-                    </div>
-                    <div className="flex justify-between">
-                      <dt className="text-muted-foreground">Материалы</dt>
-                      <dd className="text-muted-foreground">покупает заказчик</dd>
-                    </div>
-                    <div className="flex justify-between">
-                      <dt className="text-muted-foreground">Срок</dt>
-                      <dd>{p.term}</dd>
-                    </div>
-                  </dl>
-                </article>
-              ))}
-            </div>
-          ) : null}
         </section>
       ))}
 

@@ -105,42 +105,6 @@ export function ServiceLandingPage({ data: staticData }: { data: ServicePricing 
             </div>
           </section>
 
-          {/* 4. Пакеты */}
-          {(data.packages?.length ?? 0) > 0 ? (
-          <section className="mt-14" aria-labelledby="packages">
-            <h2 id="packages" className="font-display text-2xl font-semibold sm:text-3xl">
-              Готовые примеры с итоговой суммой
-            </h2>
-            <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-              Люди считают не квадратные метры, а квартиру. Вот три типовых объекта с реальным итогом по нашему прайсу.
-            </p>
-            <div className="mt-6 grid gap-5 md:grid-cols-3">
-              {data.packages!.map((p) => (
-                <article key={p.title} className="flex flex-col rounded-xl border border-border bg-card p-6">
-                  <h3 className="font-display text-lg font-semibold">{p.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{p.subtitle}</p>
-                  <ul className="mt-4 flex-1 space-y-2 text-sm text-foreground/90">
-                    {p.scope.map((s) => (
-                      <li key={s} className="flex gap-2">
-                        <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                        <span>{s}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <dl className="mt-5 space-y-1 border-t border-border pt-4 text-sm">
-                    <div className="flex justify-between gap-4">
-                      <dt className="font-medium text-foreground">Стоимость работ</dt>
-                      <dd className="font-display text-xl font-semibold text-primary">{formatRub(p.workTotal)}</dd>
-                    </div>
-                    <div className="pt-1 text-xs text-muted-foreground">Без материалов — их покупает заказчик</div>
-                    <div className="pt-1 text-xs text-muted-foreground">Срок: {p.term}</div>
-                  </dl>
-                </article>
-              ))}
-            </div>
-          </section>
-          ) : null}
-
           {/* 5. Этапы */}
           <section className="mt-14" aria-labelledby="stages">
             <h2 id="stages" className="font-display text-2xl font-semibold sm:text-3xl">Как проходит работа</h2>
