@@ -68,7 +68,7 @@ const ROLE_LABELS: Record<string, string> = {
 };
 
 interface Props {
-  admin: AdminContext;
+  admin: AdminContext | null | undefined;
   title: string;
   breadcrumbs: BreadcrumbItem[];
   children: React.ReactNode;
@@ -77,7 +77,7 @@ interface Props {
 export function AdminLayout({ admin, title, breadcrumbs, children }: Props) {
   const navigate = useNavigate();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const visibleItems = NAV_ITEMS.filter((it) => admin.permissions.includes(it.permission));
+  const visibleItems = NAV_ITEMS.filter((it) => (admin?.permissions ?? []).includes(it.permission));
 
   async function onLogout() {
     await supabase.auth.signOut();
