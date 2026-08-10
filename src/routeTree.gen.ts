@@ -74,7 +74,6 @@ import { Route as VodosnabzhenieKanalizatsiyaRouteImport } from './routes/vodosn
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
 import { Route as AdminClientsRouteImport } from './routes/admin.clients'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
-import { Route as AdminPagesRouteImport } from './routes/admin.pages'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminSiteImagesRouteImport } from './routes/admin.site-images'
 import { Route as AdminSitePricesRouteImport } from './routes/admin.site-prices'
@@ -418,11 +417,6 @@ const AdminDashboardRoute = AdminDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => AdminRoute,
 } as any)
-const AdminPagesRoute = AdminPagesRouteImport.update({
-  id: '/pages',
-  path: '/pages',
-  getParentRoute: () => AdminRoute,
-} as any)
 const AdminSettingsRoute = AdminSettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -550,7 +544,6 @@ export interface FileRoutesByFullPath {
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
-  '/admin/pages': typeof AdminPagesRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/site-images': typeof AdminSiteImagesRoute
   '/admin/site-prices': typeof AdminSitePricesRoute
@@ -628,7 +621,6 @@ export interface FileRoutesByTo {
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
-  '/admin/pages': typeof AdminPagesRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/site-images': typeof AdminSiteImagesRoute
   '/admin/site-prices': typeof AdminSitePricesRoute
@@ -709,7 +701,6 @@ export interface FileRoutesById {
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/clients': typeof AdminClientsRouteWithChildren
   '/admin/dashboard': typeof AdminDashboardRoute
-  '/admin/pages': typeof AdminPagesRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/site-images': typeof AdminSiteImagesRoute
   '/admin/site-prices': typeof AdminSitePricesRoute
@@ -791,7 +782,6 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/clients'
     | '/admin/dashboard'
-    | '/admin/pages'
     | '/admin/settings'
     | '/admin/site-images'
     | '/admin/site-prices'
@@ -869,7 +859,6 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/clients'
     | '/admin/dashboard'
-    | '/admin/pages'
     | '/admin/settings'
     | '/admin/site-images'
     | '/admin/site-prices'
@@ -949,7 +938,6 @@ export interface FileRouteTypes {
     | '/admin/applications'
     | '/admin/clients'
     | '/admin/dashboard'
-    | '/admin/pages'
     | '/admin/settings'
     | '/admin/site-images'
     | '/admin/site-prices'
@@ -1487,13 +1475,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminDashboardRouteImport
       parentRoute: typeof AdminRoute
     }
-    '/admin/pages': {
-      id: '/admin/pages'
-      path: '/pages'
-      fullPath: '/admin/pages'
-      preLoaderRoute: typeof AdminPagesRouteImport
-      parentRoute: typeof AdminRoute
-    }
     '/admin/settings': {
       id: '/admin/settings'
       path: '/settings'
@@ -1608,7 +1589,6 @@ interface AdminRouteChildren {
   AdminApplicationsRoute: typeof AdminApplicationsRouteWithChildren
   AdminClientsRoute: typeof AdminClientsRouteWithChildren
   AdminDashboardRoute: typeof AdminDashboardRoute
-  AdminPagesRoute: typeof AdminPagesRoute
   AdminSettingsRoute: typeof AdminSettingsRoute
   AdminSiteImagesRoute: typeof AdminSiteImagesRoute
   AdminSitePricesRoute: typeof AdminSitePricesRoute
@@ -1618,7 +1598,6 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminApplicationsRoute: AdminApplicationsRouteWithChildren,
   AdminClientsRoute: AdminClientsRouteWithChildren,
   AdminDashboardRoute: AdminDashboardRoute,
-  AdminPagesRoute: AdminPagesRoute,
   AdminSettingsRoute: AdminSettingsRoute,
   AdminSiteImagesRoute: AdminSiteImagesRoute,
   AdminSitePricesRoute: AdminSitePricesRoute,
