@@ -12,6 +12,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { createClient } from "@supabase/supabase-js";
 import { requireAdminAuth as requireSupabaseAuth } from "./require-auth";
 import type { Database } from "@/integrations/supabase/types";
+import { serverRealtimeOptions } from "@/lib/supabase-realtime-stub";
 
 type Row = Database["public"]["Tables"]["company_settings"]["Row"];
 type Update = Database["public"]["Tables"]["company_settings"]["Update"];
@@ -63,6 +64,7 @@ export const getPublicCompanyRequisites = createServerFn({ method: "GET" })
     if (!url || !key) return null;
     const client = createClient<Database>(url, key, {
       auth: { storage: undefined, persistSession: false, autoRefreshToken: false },
+      realtime: serverRealtimeOptions,
     });
     const { data, error } = await client
       .from("company_settings")
