@@ -7,7 +7,7 @@ import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { LogOut, ExternalLink, ShieldAlert } from "lucide-react";
 import {
   LayoutDashboard, Inbox, Users, Tag, Calculator as CalcIcon,
-  FileEdit, ImageIcon, Star, HelpCircle, Globe, Settings,
+  ImageIcon, Star, HelpCircle, Globe, Settings,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -28,7 +28,6 @@ const NAV_ITEMS: NavItem[] = [
   { to: "/admin/site-prices",   label: "Прайс сайта",       icon: Tag,             permission: "admin.catalog.read" },
   { to: "/admin/site-images",   label: "Фото сайта",        icon: ImageIcon,       permission: "admin.media.read" },
   { to: "/admin/calculator",    label: "Калькулятор",       icon: CalcIcon,        permission: "admin.calculator.read" },
-  { to: "/admin/pages",         label: "Контентные блоки",  icon: FileEdit,        permission: "admin.content.read" },
   { to: "/admin/reviews",       label: "Отзывы",            icon: Star,            permission: "admin.reviews.read" },
   { to: "/admin/faq",           label: "FAQ",               icon: HelpCircle,      permission: "admin.faq.read" },
   { to: "/admin/seo",           label: "SEO",               icon: Globe,           permission: "admin.seo.read" },
