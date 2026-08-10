@@ -127,7 +127,7 @@ function AdminSitePricesPage() {
 
   return (
     <AdminLayout
-      admin={session.status === "authenticated" ? session.admin : null!}
+      admin={session.status === "authenticated" ? session.admin : null}
       title="Прайс сайта"
       breadcrumbs={[{ label: "Админ", to: "/admin/dashboard" }, { label: "Прайс сайта" }]}
     >

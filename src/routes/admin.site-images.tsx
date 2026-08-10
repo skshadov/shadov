@@ -109,7 +109,7 @@ function AdminSiteImagesPage() {
 
   return (
     <AdminLayout
-      admin={session.status === "authenticated" ? session.admin : null!}
+      admin={session.status === "authenticated" ? session.admin : null}
       title="Фото сайта"
       breadcrumbs={[{ label: "Админ", to: "/admin/dashboard" }, { label: "Фото сайта" }]}
     >

@@ -68,7 +68,7 @@ const ROLE_LABELS: Record<string, string> = {
 };
 
 interface Props {
-  admin: AdminContext;
+  admin: AdminContext | null | undefined;
   title: string;
   breadcrumbs: BreadcrumbItem[];
   children: React.ReactNode;
@@ -77,7 +77,7 @@ interface Props {
 export function AdminLayout({ admin, title, breadcrumbs, children }: Props) {
   const navigate = useNavigate();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const visibleItems = NAV_ITEMS.filter((it) => admin.permissions.includes(it.permission));
+  const visibleItems = NAV_ITEMS.filter((it) => (admin?.permissions ?? []).includes(it.permission));
 
   async function onLogout() {
     await supabase.auth.signOut();
@@ -130,9 +130,9 @@ export function AdminLayout({ admin, title, breadcrumbs, children }: Props) {
           </div>
           <div className="flex shrink-0 items-center gap-2 text-sm">
             <span className="hidden text-xs text-muted-foreground sm:inline">
-              {admin.email}
+              {admin?.email}
             </span>
-            {admin.role ? (
+            {admin?.role ? (
               <span className="rounded border border-border bg-muted px-2 py-0.5 text-[11px] font-medium uppercase tracking-wider">
                 {ROLE_LABELS[admin.role] ?? admin.role}
               </span>
