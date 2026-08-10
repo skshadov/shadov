@@ -8,6 +8,7 @@ import { createMiddleware } from "@tanstack/react-start";
 import { getRequest } from "@tanstack/react-start/server";
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/integrations/supabase/types";
+import { serverRealtimeOptions } from "@/lib/supabase-realtime-stub";
 
 export const requireAdminAuth = createMiddleware({ type: "function" }).server(async ({ next }) => {
   const url =
@@ -29,6 +30,7 @@ export const requireAdminAuth = createMiddleware({ type: "function" }).server(as
   const supabase = createClient<Database>(url, key, {
     global: { headers: { Authorization: `Bearer ${token}` } },
     auth: { storage: undefined, persistSession: false, autoRefreshToken: false },
+    realtime: serverRealtimeOptions,
   });
 
   const { data, error } = await supabase.auth.getClaims(token);
