@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { SERVICE_PRICING } from "@/data/pricing";
 import type { PriceGroup, ServicePricing } from "@/data/pricing/types";
+import { listPriceRowRefs } from "@/data/pricing/derive";
 import { mergePricing, type PricingOverride } from "@/lib/site-content/store";
 import {
   listPricingOverrides,
