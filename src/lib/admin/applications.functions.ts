@@ -28,6 +28,7 @@ export interface ApplicationListItem {
 export interface ApplicationDetail extends ApplicationListItem {
   submission_id: string;
   message: string | null;
+  admin_note: string | null;
   calculator_snapshot: Json;
   calculator_mode: string | null;
   price_version: string | null;
@@ -93,21 +94,29 @@ export const getApplication = createServerFn({ method: "GET" })
 
 export const updateApplicationStatus = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((input: { id: string; status: ApplicationStatus; note?: string }) => {
+  .inputValidator((input: { id: string; status: ApplicationStatus; note?: string; adminNote?: string }) => {
     if (!input?.id) throw new Error("id_required");
     if (!ALLOWED_STATUSES.includes(input.status)) throw new Error("invalid_status");
-    return { id: input.id, status: input.status, note: input.note?.slice(0, 500) ?? null };
+    return {
+      id: input.id,
+      status: input.status,
+      note: input.note?.slice(0, 500) ?? null,
+      adminNote: typeof input.adminNote === "string" ? input.adminNote.slice(0, 4000) : undefined,
+    };
   })
   .handler(async ({ data, context }): Promise<{ ok: true; status: ApplicationStatus }> => {
     await ensurePerm(context, "admin.applications.write");
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { data: prev, error: readErr } = await supabaseAdmin
-      .from("estimate_requests").select("status").eq("id", data.id).maybeSingle();
+      .from("estimate_requests").select("status, admin_note").eq("id", data.id).maybeSingle();
     if (readErr) throw new Error(readErr.message);
     if (!prev) throw new Error("not_found");
     const { error } = await supabaseAdmin
       .from("estimate_requests")
-      .update({ status: data.status })
+      .update({
+        status: data.status,
+        ...(data.adminNote === undefined ? {} : { admin_note: data.adminNote || null }),
+      })
       .eq("id", data.id);
     if (error) throw new Error(error.message);
     const { logAdminAction } = await import("./audit.server");
@@ -116,51 +125,9 @@ export const updateApplicationStatus = createServerFn({ method: "POST" })
       action: "application.status_change",
       entityType: "estimate_request",
       entityId: data.id,
-      oldValue: { status: prev.status },
-      newValue: { status: data.status },
+      oldValue: { status: prev.status, admin_note: prev.admin_note ?? null },
+      newValue: { status: data.status, admin_note: data.adminNote ?? prev.admin_note ?? null },
       metadata: data.note ? { note: data.note } : null,
     });
     return { ok: true, status: data.status };
-  });
-
-export const convertApplicationToProject = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
-  .inputValidator((input: { id: string; title: string; description?: string }) => {
-    if (!input?.id) throw new Error("id_required");
-    const title = (input.title ?? "").trim();
-    if (title.length < 3) throw new Error("title_too_short");
-    return { id: input.id, title: title.slice(0, 200), description: input.description?.slice(0, 2000) ?? null };
-  })
-  .handler(async ({ data, context }): Promise<{ projectId: string }> => {
-    await ensurePerm(context, "admin.applications.write");
-    await ensurePerm(context, "admin.projects.write");
-    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { data: app, error: appErr } = await supabaseAdmin
-      .from("estimate_requests").select("id, user_id, contact_name").eq("id", data.id).maybeSingle();
-    if (appErr) throw new Error(appErr.message);
-    if (!app) throw new Error("not_found");
-
-    const { data: project, error: projErr } = await supabaseAdmin
-      .from("projects")
-      .insert({ title: data.title, description: data.description, status: "draft" })
-      .select("id").single();
-    if (projErr) throw new Error(projErr.message);
-
-    if (app.user_id) {
-      await supabaseAdmin
-        .from("project_members")
-        .upsert({ project_id: project.id, user_id: app.user_id, member_role: "client" }, { onConflict: "project_id,user_id" });
-    }
-
-    await supabaseAdmin.from("estimate_requests").update({ status: "quoted" }).eq("id", data.id);
-
-    const { logAdminAction } = await import("./audit.server");
-    await logAdminAction({
-      actorUserId: context.userId,
-      action: "application.convert_to_project",
-      entityType: "estimate_request",
-      entityId: data.id,
-      newValue: { project_id: project.id, title: data.title },
-    });
-    return { projectId: project.id };
   });

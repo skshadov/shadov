@@ -6,8 +6,7 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { LogOut, ExternalLink, ShieldAlert } from "lucide-react";
 import {
-  LayoutDashboard, Inbox, Users, Building2, ListChecks, FileText, FolderOpen, Camera, Images,
-  MessageSquare, CreditCard, ClipboardCheck, Briefcase, Tag, Calculator as CalcIcon,
+  LayoutDashboard, Inbox, Users, Images, Tag, Calculator as CalcIcon,
   FileEdit, ImageIcon, Star, HelpCircle, Globe, Scale, UserCog, Bell, Settings, History, Activity,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -26,16 +25,6 @@ const NAV_ITEMS: NavItem[] = [
   { to: "/admin/dashboard",     label: "Дашборд",           icon: LayoutDashboard, permission: "admin.dashboard.read" },
   { to: "/admin/applications",  label: "Заявки",            icon: Inbox,           permission: "admin.applications.read" },
   { to: "/admin/clients",       label: "Клиенты",           icon: Users,           permission: "admin.clients.read" },
-  { to: "/admin/projects",      label: "Проекты",           icon: Building2,       permission: "admin.projects.read" },
-  { to: "/admin/project-stages",label: "Этапы",             icon: ListChecks,      permission: "admin.stages.read" },
-  { to: "/admin/daily-reports", label: "Отчёты",            icon: FileText,        permission: "admin.reports.read" },
-  { to: "/admin/project-documents", label: "Документы",     icon: FolderOpen,      permission: "admin.documents.read" },
-  { to: "/admin/cameras",       label: "Камеры",            icon: Camera,          permission: "admin.cameras.read" },
-  { to: "/admin/messages",      label: "Сообщения",         icon: MessageSquare,   permission: "admin.messages.read" },
-  { to: "/admin/payments",      label: "Оплаты",            icon: CreditCard,      permission: "admin.payments.read" },
-  { to: "/admin/acceptances",   label: "Приёмка",           icon: ClipboardCheck,  permission: "admin.acceptances.read" },
-  { to: "/admin/catalog/categories", label: "Категории",    icon: ListChecks,      permission: "admin.catalog.read" },
-  { to: "/admin/catalog/services",   label: "Услуги",       icon: Briefcase,       permission: "admin.catalog.read" },
   { to: "/admin/catalog/prices",     label: "Прайс",        icon: Tag,             permission: "admin.catalog.read" },
   { to: "/admin/site-prices",   label: "Прайс сайта",       icon: Tag,             permission: "admin.catalog.read" },
   { to: "/admin/site-images",   label: "Фото сайта",        icon: ImageIcon,       permission: "admin.media.read" },

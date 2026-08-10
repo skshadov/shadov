@@ -28,11 +28,6 @@ interface Widget {
 
 const WIDGETS: Widget[] = [
   { key: "newApplications",    label: "Новые заявки",                   icon: Inbox,          hint: "статус: new",                          requires: "admin.applications.read" },
-  { key: "activeProjects",     label: "Активные проекты",               icon: Building2,      hint: "статус: active",                       requires: "admin.projects.read" },
-  { key: "pendingAcceptances", label: "Этапы на приёмке",               icon: ClipboardCheck, hint: "ожидают решения клиента",              requires: "admin.acceptances.read" },
-  { key: "recentMessages",     label: "Сообщения за 7 дней",            icon: MessageSquare,  hint: "по всем доступным проектам",           requires: "admin.messages.read" },
-  { key: "unpaidPayments",     label: "Неоплаченные платежи",           icon: CreditCard,     hint: "planned / pending / overdue",          requires: "admin.payments.read" },
-  { key: "recentReports",      label: "Отчёты за 7 дней",               icon: FileText,       hint: "созданные за неделю",                  requires: "admin.reports.read" },
   { key: "recentAuditEntries", label: "Действий в журнале за 7 дней",   icon: History,        hint: "административные события",             requires: "admin.audit.read" },
 ];
 

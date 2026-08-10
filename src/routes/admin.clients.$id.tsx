@@ -73,36 +73,12 @@ function ClientDetailPage() {
                 <Field label={`Телефон${canPii ? "" : " (скрыт)"}`}>
                   <Input value={phone} onChange={(e) => { setPhone(e.target.value); setDirty(true); }} disabled={!canWrite || !canPii} />
                 </Field>
-                <Field label="Email">
-                  <div className="text-sm">{client.email || (canPii ? "—" : "скрыт")}</div>
-                </Field>
-                <Field label="Роли">
-                  <div className="text-sm">{client.roles.length ? client.roles.join(", ") : "—"}</div>
-                </Field>
-                <Field label="Зарегистрирован">
-                  <div className="text-sm">{new Date(client.created_at).toLocaleString("ru-RU")}</div>
-                </Field>
               </div>
               {canWrite ? (
                 <div className="mt-4 flex justify-end">
                   <Button onClick={onSave} disabled={!dirty || saving}>{saving ? "Сохранение…" : "Сохранить"}</Button>
                 </div>
               ) : null}
-            </div>
-
-            <div className="rounded-lg border border-border bg-card p-4">
-              <h3 className="text-sm font-semibold">Проекты ({client.projects.length})</h3>
-              <ul className="mt-2 divide-y divide-border">
-                {client.projects.length === 0 ? <li className="py-3 text-sm text-muted-foreground">Нет проектов.</li>
-                  : client.projects.map((p) => (
-                    <li key={p.id} className="flex items-center justify-between py-2 text-sm">
-                      <div>
-                        <div className="font-medium">{p.title}</div>
-                        <div className="text-xs text-muted-foreground">{p.status} · {new Date(p.created_at).toLocaleDateString("ru-RU")}</div>
-                      </div>
-                    </li>
-                  ))}
-              </ul>
             </div>
 
             <div className="rounded-lg border border-border bg-card p-4">
@@ -129,9 +105,6 @@ function ClientDetailPage() {
               <h3 className="text-sm font-semibold">Информация</h3>
               <p className="mt-2 text-muted-foreground">
                 ID: <span className="font-mono text-xs">{client.id}</span>
-              </p>
-              <p className="mt-2 text-muted-foreground">
-                Управление ролями выполняется в разделе «Сотрудники» (Stage 5.3).
               </p>
             </div>
           </aside>
