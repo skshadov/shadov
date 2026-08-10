@@ -36,7 +36,7 @@ export const HOME_DIRECTIONS: DirectionCard[] = [
   },
   {
     title: "Тёплый пол",
-    description: "Водяной и электрический контур со стяжкой и опрессовкой",
+    description: "Водяной и электрический контур: подложка, укладка, опрессовка",
     startPrice: "700 ₽/м² за работу",
     to: "/teplyy-pol",
     Icon: Flame,
