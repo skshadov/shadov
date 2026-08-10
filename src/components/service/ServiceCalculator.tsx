@@ -118,7 +118,7 @@ export function ServiceCalculator({ calc, serviceName, withLead = false }: Props
           <dd className="font-display text-xl font-semibold text-primary">{formatRub(result.total)}</dd>
         </div>
         <div className="text-xs text-muted-foreground">
-          {formatRub(result.perUnitWork)} за {calc.unit === "м²" ? "м²" : "точку"}
+          {formatRub(result.perUnitWork)} за {calc.unit}
           {result.small > 0 ? " · учтена надбавка за малый объём" : ""}
         </div>
         <div className="text-xs text-muted-foreground">

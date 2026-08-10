@@ -44,8 +44,8 @@ export interface CalcOption {
 }
 
 export interface CalcConfig {
-  /** Что считаем: площадь в м² или количество точек */
-  unit: "м²" | "точка";
+  /** Что считаем: площадь в м², метраж трасс или штуки */
+  unit: "м²" | "м.п." | "шт.";
   unitLabel: string;
   defaultQty: number;
   minQty: number;
@@ -84,7 +84,7 @@ export interface ServicePricing {
   groups: PriceGroup[];
   included: string[];
   excluded: string[];
-  packages: PackageOffer[];
+  packages?: PackageOffer[];
   stages: Array<{ title: string; text: string; term: string }>;
   conditions: string[];
   guarantee: string;
