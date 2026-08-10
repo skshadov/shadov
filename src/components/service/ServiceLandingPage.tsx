@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { PriceTable } from "./PriceTable";
-import { ServiceCalculator } from "./ServiceCalculator";
+import { EstimateBuilder } from "./EstimateBuilder";
 import type { ServicePricing } from "@/data/pricing/types";
 import { formatRub } from "@/data/pricing/types";
 import { SERVICE_PRICING } from "@/data/pricing";
@@ -56,7 +56,7 @@ export function ServiceLandingPage({ data: staticData }: { data: ServicePricing 
               </div>
             </div>
 
-            <ServiceCalculator calc={data.calc} serviceName={data.shortName} />
+            <EstimateBuilder pricing={data} />
           </div>
 
           {/* 2. Прайс */}

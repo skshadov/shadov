@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SERVICE_PRICING } from "@/data/pricing";
 import { useLivePricingList } from "@/lib/site-content/store";
-import { ServiceCalculator } from "./ServiceCalculator";
+import { EstimateBuilder } from "./EstimateBuilder";
 
 export function ServiceCalculatorTabs({
   initialSlug,
@@ -37,12 +37,7 @@ export function ServiceCalculatorTabs({
           </button>
         ))}
       </div>
-      <ServiceCalculator
-        key={active.slug}
-        calc={active.calc}
-        serviceName={active.shortName}
-        withLead={withLead}
-      />
+      <EstimateBuilder key={active.slug} pricing={active} withLead={withLead} />
     </div>
   );
 }
