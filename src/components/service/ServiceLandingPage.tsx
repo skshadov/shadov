@@ -54,6 +54,26 @@ export function ServiceLandingPage({ data: staticData }: { data: ServicePricing 
                   ))}
                 </ul>
               </div>
+
+              {data.baseIncludes?.length ? (
+                <div className="mt-4 rounded-xl border border-border bg-card p-5">
+                  <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                    Что входит в базовую цену
+                  </h2>
+                  <ul className="mt-3 space-y-2 text-sm text-foreground/90">
+                    {data.baseIncludes.map((c) => (
+                      <li key={c} className="flex gap-2">
+                        <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/50" />
+                        <span>{c}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-3 text-xs text-muted-foreground">
+                    Всё остальное — подготовка, усиление, изоляция, узлы — отдельные строки прайса. Так вы платите
+                    только за те работы, которые действительно нужны на вашем объекте.
+                  </p>
+                </div>
+              ) : null}
             </div>
 
             <EstimateBuilder pricing={data} />
