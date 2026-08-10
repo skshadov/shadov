@@ -365,7 +365,7 @@ const UNDERFLOOR_HEATING: PriceItem[] = [
   make("underfloor_heating", "podklyuchenie-kontura", "Подключение контура к коллектору", { unit: "контур", from: 700, slug: "teplyy-pol", sort: 7 }),
   make("underfloor_heating", "kollektor",           "Монтаж коллектора со смесительной группой", { unit: "шт.", from: 9500, slug: "teplyy-pol", sort: 8 }),
   make("underfloor_heating", "kollektornyy-shkaf", "Монтаж коллекторного шкафа",    { unit: "шт.", from: 4500, slug: "teplyy-pol", sort: 9 }),
-  make("underfloor_heating", "opressovka",          "Опрессовка контуров с протоколом", { unit: "объект", from: 4000, slug: "teplyy-pol", sort: 10 }),
+  make("underfloor_heating", "opressovka",          "Опрессовка контуров с протоколом", { unit: "комплект", from: 4000, slug: "teplyy-pol", sort: 10 }),
   make("underfloor_heating", "elektricheskiy",      "Укладка нагревательного кабеля в стяжку", { unit: "м²", from: 750, slug: "teplyy-pol", sort: 11 }),
   make("underfloor_heating", "maty",                "Укладка нагревательных матов под плитку", { unit: "м²", from: 500, slug: "teplyy-pol", sort: 12 }),
   make("underfloor_heating", "termoregulyator",     "Установка терморегулятора с датчиком", { unit: "шт.", from: 1500, slug: "teplyy-pol", sort: 13 }),
