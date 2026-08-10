@@ -25,9 +25,9 @@ export function DesktopNavigation() {
       <NavigationMenuList className="gap-0">
         {MAIN_NAV.map((item) =>
           isDropdown(item) ? (
-            <DropdownItem key={item.to} item={item} />
+            <DropdownItem key={item.label} item={item} />
           ) : (
-            <NavigationMenuItem key={item.to}>
+            <NavigationMenuItem key={item.label}>
               <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                 <Link
                   to={item.to}

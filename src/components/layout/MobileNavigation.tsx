@@ -109,7 +109,7 @@ export function MobileNavigation() {
               if (isDropdown(item)) {
                 return (
                   <AccordionItem
-                    key={item.to}
+                    key={item.label}
                     value={item.to}
                     className="border-b border-border last:border-b-0"
                   >
@@ -145,7 +145,7 @@ export function MobileNavigation() {
               }
               return (
                 <Link
-                  key={item.to}
+                  key={item.label}
                   to={item.to}
                   onClick={() => setOpen(false)}
                   className="flex min-h-11 items-center border-b border-border px-3 py-3 text-base font-medium"
