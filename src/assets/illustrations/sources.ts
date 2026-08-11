@@ -130,6 +130,18 @@ import photoPbWebp1600 from "@/assets/photos/plumbing-1600.webp.asset.json";
 import photoPbWebp800 from "@/assets/photos/plumbing-800.webp.asset.json";
 import photoPbJpg1600 from "@/assets/photos/plumbing-1600.jpg.asset.json";
 import photoPbJpg800 from "@/assets/photos/plumbing-800.jpg.asset.json";
+import photoWsAvif1600 from "@/assets/photos/wetscreed-1600.avif.asset.json";
+import photoWsAvif800 from "@/assets/photos/wetscreed-800.avif.asset.json";
+import photoWsWebp1600 from "@/assets/photos/wetscreed-1600.webp.asset.json";
+import photoWsWebp800 from "@/assets/photos/wetscreed-800.webp.asset.json";
+import photoWsJpg1600 from "@/assets/photos/wetscreed-1600.jpg.asset.json";
+import photoWsJpg800 from "@/assets/photos/wetscreed-800.jpg.asset.json";
+import photoWfAvif1600 from "@/assets/photos/warmfloor-1600.avif.asset.json";
+import photoWfAvif800 from "@/assets/photos/warmfloor-800.avif.asset.json";
+import photoWfWebp1600 from "@/assets/photos/warmfloor-1600.webp.asset.json";
+import photoWfWebp800 from "@/assets/photos/warmfloor-800.webp.asset.json";
+import photoWfJpg1600 from "@/assets/photos/warmfloor-1600.jpg.asset.json";
+import photoWfJpg800 from "@/assets/photos/warmfloor-800.jpg.asset.json";
 
 export const heroPicture = {
   src: heroJpg1280,
@@ -227,4 +239,20 @@ export const photoPlumbingPicture = card(
   photoPbWebp800.url,
   photoPbJpg1600.url,
   photoPbJpg800.url,
+);
+export const photoWetScreedPicture = card(
+  photoWsAvif1600.url,
+  photoWsAvif800.url,
+  photoWsWebp1600.url,
+  photoWsWebp800.url,
+  photoWsJpg1600.url,
+  photoWsJpg800.url,
+);
+export const photoWarmFloorPicture = card(
+  photoWfAvif1600.url,
+  photoWfAvif800.url,
+  photoWfWebp1600.url,
+  photoWfWebp800.url,
+  photoWfJpg1600.url,
+  photoWfJpg800.url,
 );

@@ -9,19 +9,20 @@ import { SectionHeading } from "@/components/common/SectionHeading";
 import { HOME_DIRECTIONS } from "@/data/home-services";
 import {
   monolithPicture,
-  heatingPicture,
   photoPlasterPicture,
   photoScreedPicture,
   photoElectricalPicture,
   photoPlumbingPicture,
+  photoWetScreedPicture,
+  photoWarmFloorPicture,
 } from "@/assets/illustrations/sources";
 
 type PicBundle = typeof monolithPicture;
 const ILLUSTRATIONS: Record<string, { pic: PicBundle; description: string; slotKey: string } | undefined> = {
   "Механизированная штукатурка": { pic: photoPlasterPicture, description: "штукатурная станция и подготовленные стены на объекте механизированной штукатурки" , slotKey: "direction.shtukaturka" },
-  "Мокрая стяжка пола": { pic: monolithPicture, description: "заливка и выравнивание цементно-песчаной стяжки пола" , slotKey: "direction.styazhka" },
+  "Мокрая стяжка пола": { pic: photoWetScreedPicture, description: "залитая и выровненная цементно-песчаная стяжка пола на объекте" , slotKey: "direction.styazhka" },
   "Полусухая стяжка пола": { pic: photoScreedPicture, description: "затирка полусухой стяжки пола шлифовальной машиной в квартире" , slotKey: "direction.polusuhaya" },
-  "Тёплый пол": { pic: heatingPicture, description: "укладка водяного тёплого пола с коллектором" , slotKey: "direction.teplyy-pol" },
+  "Тёплый пол": { pic: photoWarmFloorPicture, description: "уложенный контур водяного тёплого пола на армирующей сетке перед стяжкой" , slotKey: "direction.teplyy-pol" },
   "Разводка электрики": { pic: photoElectricalPicture, description: "черновая электрика: кабельные трассы в гофре по полу и собранный электрощит" , slotKey: "direction.elektrika" },
   "Разводка сантехники": { pic: photoPlumbingPicture, description: "смонтированный узел водоснабжения: коллекторы, фильтры и бойлер" , slotKey: "direction.santehnika" },
 };
