@@ -8,21 +8,14 @@ import { useServerFn } from "@tanstack/react-start";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { listPublishedPortfolioProjects } from "@/lib/portfolio-public.functions";
-import project1 from "@/assets/portfolio/generated/w01.jpg";
-import project2 from "@/assets/portfolio/generated/w02.jpg";
-import project3 from "@/assets/portfolio/generated/w03.jpg";
-import project4 from "@/assets/portfolio/generated/w07.jpg";
-import project5 from "@/assets/portfolio/generated/w05.jpg";
-import project6 from "@/assets/portfolio/generated/w06.jpg";
+import { SHOWCASE_PROJECTS } from "@/data/showcase-projects";
 
-const SHOWCASE = [
-  { src: project1, category: "Механизированная штукатурка", title: "Штукатурка стен квартиры под покраску, 78 м²", location: "Москва" },
-  { src: project3, category: "Мокрая стяжка пола", title: "Цементно-песчаная стяжка по всей квартире, 92 м²", location: "Подмосковье" },
-  { src: project5, category: "Тёплый пол", title: "Водяной тёплый пол с коллектором и стяжкой", location: "Москва" },
-  { src: project4, category: "Разводка сантехники", title: "Черновая разводка воды и канализации, опрессовка", location: "Мытищи" },
-  { src: project6, category: "Разводка электрики", title: "Черновая электрика: штробы, кабель, щит на 36 модулей", location: "Московская область" },
-  { src: project2, category: "Комплекс работ", title: "Штукатурка, стяжка и черновая инженерия в доме", location: "Московская область" },
-];
+const SHOWCASE = SHOWCASE_PROJECTS.slice(0, 6).map((p) => ({
+  src: p.image,
+  category: p.tag,
+  title: p.title,
+  location: p.location,
+}));
 
 export function PortfolioPreview() {
   const fetchProjects = useServerFn(listPublishedPortfolioProjects);
