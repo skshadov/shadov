@@ -10,7 +10,31 @@ import { SectionHeading } from "@/components/common/SectionHeading";
 import { listPublishedPortfolioProjects } from "@/lib/portfolio-public.functions";
 import { SHOWCASE_PROJECTS } from "@/data/showcase-projects";
 
-const SHOWCASE = SHOWCASE_PROJECTS.slice(0, 6).map((p) => ({
+/** Берём по одному объекту из каждого направления, чтобы на главной было разнообразие. */
+function pickDiverse(limit: number) {
+  const byTag = new Map<string, typeof SHOWCASE_PROJECTS>();
+  for (const p of SHOWCASE_PROJECTS) {
+    const list = byTag.get(p.tag) ?? [];
+    list.push(p);
+    byTag.set(p.tag, list);
+  }
+  const groups = [...byTag.values()];
+  const out: typeof SHOWCASE_PROJECTS = [];
+  for (let round = 0; out.length < limit; round++) {
+    let added = false;
+    for (const g of groups) {
+      const item = g[round];
+      if (!item) continue;
+      out.push(item);
+      added = true;
+      if (out.length === limit) break;
+    }
+    if (!added) break;
+  }
+  return out;
+}
+
+const SHOWCASE = pickDiverse(6).map((p) => ({
   src: p.image,
   category: p.tag,
   title: p.title,
