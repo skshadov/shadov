@@ -8,18 +8,15 @@ import { SlotImage } from "@/components/common/SlotImage";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { HOME_DIRECTIONS } from "@/data/home-services";
 import {
-  renovationPicture,
   monolithPicture,
-  engineeringPicture,
   heatingPicture,
-  semidryPicture,
   photoPlasterPicture,
   photoScreedPicture,
   photoElectricalPicture,
   photoPlumbingPicture,
 } from "@/assets/illustrations/sources";
 
-type PicBundle = typeof renovationPicture;
+type PicBundle = typeof monolithPicture;
 const ILLUSTRATIONS: Record<string, { pic: PicBundle; description: string; slotKey: string } | undefined> = {
   "Механизированная штукатурка": { pic: photoPlasterPicture, description: "штукатурная станция и подготовленные стены на объекте механизированной штукатурки" , slotKey: "direction.shtukaturka" },
   "Мокрая стяжка пола": { pic: monolithPicture, description: "заливка и выравнивание цементно-песчаной стяжки пола" , slotKey: "direction.styazhka" },
