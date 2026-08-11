@@ -12,6 +12,14 @@ import wf06 from "@/assets/photos/warmfloor/wf06.jpg.asset.json";
 import wf07 from "@/assets/photos/warmfloor/wf07.jpg.asset.json";
 import wf08 from "@/assets/photos/warmfloor/wf08.jpg.asset.json";
 
+import el01 from "@/assets/photos/electric/el01.jpg.asset.json";
+import el02 from "@/assets/photos/electric/el02.jpg.asset.json";
+import el03 from "@/assets/photos/electric/el03.jpg.asset.json";
+import el04 from "@/assets/photos/electric/el04.jpg.asset.json";
+import el05 from "@/assets/photos/electric/el05.jpg.asset.json";
+import el06 from "@/assets/photos/electric/el06.jpg.asset.json";
+import el07 from "@/assets/photos/electric/el07.jpg.asset.json";
+
 import type { ServiceCategory } from "@/types/services";
 
 export type ShowcaseProject = {
@@ -35,6 +43,15 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   { id: "p17", category: "engineering", tag: "Тёплый пол", title: "Контуры по армирующей сетке под мокрую стяжку, 88 м²", location: "Люберцы", area: "88 м²", year: 2025, image: wf06.url },
   { id: "p18", category: "engineering", tag: "Тёплый пол", title: "Заливка стяжки поверх готовых контуров тёплого пола, 76 м²", location: "Подольск", area: "76 м²", year: 2025, image: wf07.url },
   { id: "p19", category: "engineering", tag: "Тёплый пол", title: "Раскладка контуров улиткой с шагом 150 мм, 62 м²", location: "Москва, ЮЗАО", area: "62 м²", year: 2026, image: wf08.url },
+
+  // ——— Черновая электрика (реальные объекты) ———
+  { id: "e01", category: "engineering", tag: "Черновая электрика", title: "Сборка квартирного щита с реле напряжения и УЗО, 24 модуля", location: "Москва, СВАО", area: "72 м²", year: 2026, image: el01.url },
+  { id: "e02", category: "engineering", tag: "Черновая электрика", title: "Щит на 4 ряда: вводной автомат 63А, УЗО 40А, группы освещения и розеток", location: "Москва", area: "112 м²", year: 2026, image: el02.url },
+  { id: "e03", category: "engineering", tag: "Черновая электрика", title: "Разводка кабельных трасс по полу от щита, гофра и крепёж", location: "Красногорск", area: "86 м²", year: 2025, image: el03.url },
+  { id: "e04", category: "engineering", tag: "Черновая электрика", title: "Трассы по потолку в гофре с креплением каждые 30 см", location: "Мытищи", area: "64 м²", year: 2025, image: el04.url },
+  { id: "e05", category: "engineering", tag: "Черновая электрика", title: "Штробление газоблока под кабель и подрозетники", location: "Одинцовский округ", area: "96 м²", year: 2025, image: el05.url },
+  { id: "e06", category: "engineering", tag: "Черновая электрика", title: "Разводка под розеточные группы с выводами в подрозетники", location: "Люберцы", area: "78 м²", year: 2026, image: el06.url },
+  { id: "e07", category: "engineering", tag: "Черновая электрика", title: "Электрика в каркасном доме: трассы по перекрытию и распредкоробки", location: "Пушкинский округ", area: "134 м²", year: 2025, image: el07.url },
 ];
 
 export function getShowcaseByCategory(category: ServiceCategory, limit = 6): ShowcaseProject[] {
