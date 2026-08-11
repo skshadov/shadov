@@ -5,10 +5,11 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, ShieldCheck, Wrench } from "lucide-react";
 import {
-  engineeringPicture,
   monolithPicture,
   plumbingPicture,
   renovationPicture,
+  photoElectricalPicture,
+  photoScreedPicture,
 } from "@/assets/illustrations/sources";
 import { SlotImage } from "@/components/common/SlotImage";
 import { Button } from "@/components/ui/button";
@@ -66,15 +67,15 @@ function HeroProcessVisual() {
         />
         <ProcessImage
           slotKey="home.hero.screed"
-          picture={monolithPicture}
-          description="Рабочий процесс устройства стяжки пола на строительном объекте"
+          picture={photoScreedPicture}
+          description="Затирка стяжки пола шлифовальной машиной в квартире новостройки"
           index="02"
           label="Стяжка пола"
         />
         <ProcessImage
           slotKey="home.hero.electrical"
-          picture={engineeringPicture}
-          description="Монтаж черновой электрики на строительном объекте"
+          picture={photoElectricalPicture}
+          description="Черновая электрика: кабельные трассы по полу и собранный электрощит"
           index="03"
           label="Электрика"
           accent

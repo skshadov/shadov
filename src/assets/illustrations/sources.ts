@@ -105,6 +105,20 @@ import tileAvif800 from "./direction-tile-800.avif";
 
 import type { IllustrationSource } from "@/components/common/Illustration";
 
+// Реальные фото с объектов (CDN-ассеты)
+import photoElAvif1600 from "@/assets/photos/electrical-1600.avif.asset.json";
+import photoElAvif800 from "@/assets/photos/electrical-800.avif.asset.json";
+import photoElWebp1600 from "@/assets/photos/electrical-1600.webp.asset.json";
+import photoElWebp800 from "@/assets/photos/electrical-800.webp.asset.json";
+import photoElJpg1600 from "@/assets/photos/electrical-1600.jpg.asset.json";
+import photoElJpg800 from "@/assets/photos/electrical-800.jpg.asset.json";
+import photoScAvif1600 from "@/assets/photos/screed-1600.avif.asset.json";
+import photoScAvif800 from "@/assets/photos/screed-800.avif.asset.json";
+import photoScWebp1600 from "@/assets/photos/screed-1600.webp.asset.json";
+import photoScWebp800 from "@/assets/photos/screed-800.webp.asset.json";
+import photoScJpg1600 from "@/assets/photos/screed-1600.jpg.asset.json";
+import photoScJpg800 from "@/assets/photos/screed-800.jpg.asset.json";
+
 export const heroPicture = {
   src: heroJpg1280,
   width: 1920,
@@ -169,3 +183,20 @@ export const plumbingPicture = card(plumbingAvif, plumbingAvif800, plumbingWebp,
 export const heatingPicture = card(heatingAvif, heatingAvif800, heatingWebp, heatingWebp800, heatingJpg, heatingJpg800);
 export const semidryPicture = card(semidryAvif, semidryAvif800, semidryWebp, semidryWebp800, semidryJpg, semidryJpg800);
 export const tilePicture = card(tileAvif, tileAvif800, tileWebp, tileWebp800, tileJpg, tileJpg800);
+
+export const photoElectricalPicture = card(
+  photoElAvif1600.url,
+  photoElAvif800.url,
+  photoElWebp1600.url,
+  photoElWebp800.url,
+  photoElJpg1600.url,
+  photoElJpg800.url,
+);
+export const photoScreedPicture = card(
+  photoScAvif1600.url,
+  photoScAvif800.url,
+  photoScWebp1600.url,
+  photoScWebp800.url,
+  photoScJpg1600.url,
+  photoScJpg800.url,
+);
