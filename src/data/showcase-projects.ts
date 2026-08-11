@@ -6,7 +6,6 @@ import img_w01 from "@/assets/portfolio/generated/w01.jpg";
 import img_w02 from "@/assets/portfolio/generated/w02.jpg";
 import img_w03 from "@/assets/portfolio/generated/w03.jpg";
 import img_w04 from "@/assets/portfolio/generated/w04.jpg";
-import img_w05 from "@/assets/portfolio/generated/w05.jpg";
 import img_w06 from "@/assets/portfolio/generated/w06.jpg";
 import img_w07 from "@/assets/portfolio/generated/w07.jpg";
 import img_w08 from "@/assets/portfolio/generated/w08.jpg";
