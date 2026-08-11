@@ -6,9 +6,9 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, ShieldCheck, Wrench } from "lucide-react";
 import {
   monolithPicture,
-  plumbingPicture,
   photoElectricalPicture,
   photoPlasterPicture,
+  photoPlumbingPicture,
   photoScreedPicture,
 } from "@/assets/illustrations/sources";
 import { SlotImage } from "@/components/common/SlotImage";
@@ -82,8 +82,8 @@ function HeroProcessVisual() {
         />
         <ProcessImage
           slotKey="home.hero.plumbing"
-          picture={plumbingPicture}
-          description="Монтаж черновой сантехники на строительном объекте"
+          picture={photoPlumbingPicture}
+          description="Смонтированный узел водоснабжения: коллекторы, фильтры и бойлер на объекте"
           index="04"
           label="Сантехника"
         />
