@@ -27,6 +27,17 @@ import pl04 from "@/assets/photos/plumbing/pl04.jpg.asset.json";
 import pl05 from "@/assets/photos/plumbing/pl05.jpg.asset.json";
 import pl06 from "@/assets/photos/plumbing/pl06.jpg.asset.json";
 
+import ph01 from "@/assets/photos/plaster/ph01.jpg.asset.json";
+import ph02 from "@/assets/photos/plaster/ph02.jpg.asset.json";
+import ph03 from "@/assets/photos/plaster/ph03.jpg.asset.json";
+import ph04 from "@/assets/photos/plaster/ph04.jpg.asset.json";
+import ph05 from "@/assets/photos/plaster/ph05.jpg.asset.json";
+import ph06 from "@/assets/photos/plaster/ph06.jpg.asset.json";
+import ph07 from "@/assets/photos/plaster/ph07.jpg.asset.json";
+import ph08 from "@/assets/photos/plaster/ph08.jpg.asset.json";
+import ph09 from "@/assets/photos/plaster/ph09.jpg.asset.json";
+import ph10 from "@/assets/photos/plaster/ph10.jpg.asset.json";
+
 import type { ServiceCategory } from "@/types/services";
 
 export type ShowcaseProject = {
@@ -67,6 +78,18 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   { id: "s04", category: "engineering", tag: "Черновая сантехника", title: "Разводка канализации Ø50/110 с ревизией и выводами под приборы", location: "Балашиха", area: "68 м²", year: 2025, image: pl04.url },
   { id: "s05", category: "engineering", tag: "Черновая сантехника", title: "Коллекторная разводка и монтаж инсталляции Grohe в новостройке", location: "Москва, ТиНАО", area: "82 м²", year: 2026, image: pl05.url },
   { id: "s06", category: "engineering", tag: "Черновая сантехника", title: "Водорозетки в штробе и вывод канализации под подвесной унитаз", location: "Одинцово", area: "54 м²", year: 2025, image: pl06.url },
+
+  // ——— Механизированная штукатурка (реальные объекты) ———
+  { id: "m01", category: "repair", tag: "Механизированная штукатурка", title: "Штукатурка стен по маякам в новостройке, гипсовая смесь", location: "Москва, ЮАО", area: "68 м²", year: 2026, image: ph01.url },
+  { id: "m02", category: "repair", tag: "Механизированная штукатурка", title: "Выравнивание стен под покраску, слой до 20 мм", location: "Химки", area: "54 м²", year: 2025, image: ph02.url },
+  { id: "m03", category: "repair", tag: "Механизированная штукатурка", title: "Штукатурка станцией PFT в загородном доме", location: "Одинцовский округ", area: "180 м²", year: 2025, image: ph03.url },
+  { id: "m04", category: "repair", tag: "Механизированная штукатурка", title: "Штукатурка всего этажа дома с откосами и углами", location: "Пушкинский округ", area: "240 м²", year: 2026, image: ph04.url },
+  { id: "m05", category: "repair", tag: "Механизированная штукатурка", title: "Ниши и внутренние углы 90° под чистовую отделку", location: "Москва, ЗАО", area: "96 м²", year: 2026, image: ph05.url },
+  { id: "m06", category: "repair", tag: "Механизированная штукатурка", title: "Ровные откосы и наружные углы в квартире-студии", location: "Красногорск", area: "42 м²", year: 2025, image: ph06.url },
+  { id: "m07", category: "repair", tag: "Механизированная штукатурка", title: "Стены под обои, глянцевание поверхности", location: "Люберцы", area: "72 м²", year: 2025, image: ph07.url },
+  { id: "m08", category: "repair", tag: "Механизированная штукатурка", title: "Контроль плоскости правилом 2 м: отклонение до 1 мм", location: "Москва, СЗАО", area: "88 м²", year: 2026, image: ph08.url },
+  { id: "m09", category: "repair", tag: "Механизированная штукатурка", title: "Приёмка стен по правилу после механизированной штукатурки", location: "Мытищи", area: "64 м²", year: 2026, image: ph09.url },
+  { id: "m10", category: "repair", tag: "Механизированная штукатурка", title: "Штукатурка стен в новостройке по газоблоку и бетону", location: "Балашиха", area: "58 м²", year: 2025, image: ph10.url },
 ];
 
 export function getShowcaseByCategory(category: ServiceCategory, limit = 6): ShowcaseProject[] {
