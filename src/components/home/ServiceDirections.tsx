@@ -8,22 +8,22 @@ import { SlotImage } from "@/components/common/SlotImage";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { HOME_DIRECTIONS } from "@/data/home-services";
 import {
-  renovationPicture,
   monolithPicture,
-  engineeringPicture,
-  plumbingPicture,
   heatingPicture,
-  semidryPicture,
+  photoPlasterPicture,
+  photoScreedPicture,
+  photoElectricalPicture,
+  photoPlumbingPicture,
 } from "@/assets/illustrations/sources";
 
-type PicBundle = typeof renovationPicture;
+type PicBundle = typeof monolithPicture;
 const ILLUSTRATIONS: Record<string, { pic: PicBundle; description: string; slotKey: string } | undefined> = {
-  "Механизированная штукатурка": { pic: renovationPicture, description: "оштукатуренные стены квартиры на этапе подготовки под чистовую отделку" , slotKey: "direction.shtukaturka" },
+  "Механизированная штукатурка": { pic: photoPlasterPicture, description: "штукатурная станция и подготовленные стены на объекте механизированной штукатурки" , slotKey: "direction.shtukaturka" },
   "Мокрая стяжка пола": { pic: monolithPicture, description: "заливка и выравнивание цементно-песчаной стяжки пола" , slotKey: "direction.styazhka" },
-  "Полусухая стяжка пола": { pic: semidryPicture, description: "механизированная укладка полусухой стяжки пола с затиркой шлифовальной машиной" , slotKey: "direction.polusuhaya" },
+  "Полусухая стяжка пола": { pic: photoScreedPicture, description: "затирка полусухой стяжки пола шлифовальной машиной в квартире" , slotKey: "direction.polusuhaya" },
   "Тёплый пол": { pic: heatingPicture, description: "укладка водяного тёплого пола с коллектором" , slotKey: "direction.teplyy-pol" },
-  "Разводка электрики": { pic: engineeringPicture, description: "черновая электрика: штробы, кабельные трассы и электрощит" , slotKey: "direction.elektrika" },
-  "Разводка сантехники": { pic: plumbingPicture, description: "черновая разводка водоснабжения и канализации в санузле" , slotKey: "direction.santehnika" },
+  "Разводка электрики": { pic: photoElectricalPicture, description: "черновая электрика: кабельные трассы в гофре по полу и собранный электрощит" , slotKey: "direction.elektrika" },
+  "Разводка сантехники": { pic: photoPlumbingPicture, description: "смонтированный узел водоснабжения: коллекторы, фильтры и бойлер" , slotKey: "direction.santehnika" },
 };
 
 export function ServiceDirections() {
