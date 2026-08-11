@@ -48,7 +48,7 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   { id: "e01", category: "engineering", tag: "Черновая электрика", title: "Сборка квартирного щита с реле напряжения и УЗО, 24 модуля", location: "Москва, СВАО", area: "72 м²", year: 2026, image: el01.url },
   { id: "e02", category: "engineering", tag: "Черновая электрика", title: "Щит на 4 ряда: вводной автомат 63А, УЗО 40А, группы освещения и розеток", location: "Москва", area: "112 м²", year: 2026, image: el02.url },
   { id: "e03", category: "engineering", tag: "Черновая электрика", title: "Разводка кабельных трасс по полу от щита, гофра и крепёж", location: "Красногорск", area: "86 м²", year: 2025, image: el03.url },
-  { id: "e04", category: "электрика" as never, tag: "Черновая электрика", title: "Трассы по потолку в гофре с креплением каждые 30 см", location: "Мытищи", area: "64 м²", year: 2025, image: el04.url },
+  { id: "e04", category: "engineering", tag: "Черновая электрика", title: "Трассы по потолку в гофре с креплением каждые 30 см", location: "Мытищи", area: "64 м²", year: 2025, image: el04.url },
   { id: "e05", category: "engineering", tag: "Черновая электрика", title: "Штробление газоблока под кабель и подрозетники", location: "Одинцовский округ", area: "96 м²", year: 2025, image: el05.url },
   { id: "e06", category: "engineering", tag: "Черновая электрика", title: "Разводка под розеточные группы с выводами в подрозетники", location: "Люберцы", area: "78 м²", year: 2026, image: el06.url },
   { id: "e07", category: "engineering", tag: "Черновая электрика", title: "Электрика в каркасном доме: трассы по перекрытию и распредкоробки", location: "Пушкинский округ", area: "134 м²", year: 2025, image: el07.url },
