@@ -38,6 +38,17 @@ import ph08 from "@/assets/photos/plaster/ph08.jpg.asset.json";
 import ph09 from "@/assets/photos/plaster/ph09.jpg.asset.json";
 import ph10 from "@/assets/photos/plaster/ph10.jpg.asset.json";
 
+import sc01 from "@/assets/photos/screed/sc01.jpg.asset.json";
+import sc02 from "@/assets/photos/screed/sc02.jpg.asset.json";
+import sc03 from "@/assets/photos/screed/sc03.jpg.asset.json";
+import sc04 from "@/assets/photos/screed/sc04.jpg.asset.json";
+import sc05 from "@/assets/photos/screed/sc05.jpg.asset.json";
+import sc06 from "@/assets/photos/screed/sc06.jpg.asset.json";
+import sc07 from "@/assets/photos/screed/sc07.jpg.asset.json";
+import sc08 from "@/assets/photos/screed/sc08.jpg.asset.json";
+import sc09 from "@/assets/photos/screed/sc09.jpg.asset.json";
+import sc10 from "@/assets/photos/screed/sc10.jpg.asset.json";
+
 import type { ServiceCategory } from "@/types/services";
 
 export type ShowcaseProject = {
@@ -90,6 +101,18 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   { id: "m08", category: "repair", tag: "Механизированная штукатурка", title: "Контроль плоскости правилом 2 м: отклонение до 1 мм", location: "Москва, СЗАО", area: "88 м²", year: 2026, image: ph08.url },
   { id: "m09", category: "repair", tag: "Механизированная штукатурка", title: "Приёмка стен по правилу после механизированной штукатурки", location: "Мытищи", area: "64 м²", year: 2026, image: ph09.url },
   { id: "m10", category: "repair", tag: "Механизированная штукатурка", title: "Штукатурка стен в новостройке по газоблоку и бетону", location: "Балашиха", area: "58 м²", year: 2025, image: ph10.url },
+
+  // ——— Стяжка пола (реальные объекты) ———
+  { id: "t01", category: "repair", tag: "Стяжка пола", title: "Мокрая стяжка поверх тёплого пола по армосетке, слой 70 мм", location: "Москва, ТиНАО", area: "62 м²", year: 2026, image: sc01.url },
+  { id: "t02", category: "repair", tag: "Стяжка пола", title: "Плавающая стяжка по демпферной ленте в кирпичном доме", location: "Одинцовский округ", area: "110 м²", year: 2025, image: sc02.url },
+  { id: "t03", category: "repair", tag: "Стяжка пола", title: "Заливка по контурам тёплого пола с выходом на ноль у окна", location: "Красногорск", area: "48 м²", year: 2026, image: sc03.url },
+  { id: "t04", category: "repair", tag: "Стяжка пола", title: "Стяжка по армирующей сетке с гидроизоляцией примыканий", location: "Химки", area: "56 м²", year: 2025, image: sc04.url },
+  { id: "t05", category: "repair", tag: "Стяжка пола", title: "Полусухая стяжка с подачей растворонасосом, вытяжка по маякам", location: "Москва, СВАО", area: "84 м²", year: 2026, image: sc05.url },
+  { id: "t06", category: "repair", tag: "Стяжка пола", title: "Затирка полусухой стяжки шлифмашиной в новостройке", location: "Люберцы", area: "44 м²", year: 2025, image: sc06.url },
+  { id: "t07", category: "стяжка-плейсхолдер" as never, tag: "Стяжка пола", title: "", location: "", area: "", year: 2025, image: sc07.url },
+  { id: "t08", category: "repair", tag: "Стяжка пола", title: "Стяжка коридора с лазерным нивелиром и подачей по шлангу", location: "Мытищи", area: "38 м²", year: 2025, image: sc08.url },
+  { id: "t09", category: "repair", tag: "Стяжка пола", title: "Финишная затирка стяжки вертолётом до гладкой поверхности", location: "Балашиха", area: "52 м²", year: 2026, image: sc09.url },
+  { id: "t10", category: "repair", tag: "Стяжка пола", title: "Стяжка по тёплому полу на матах с бобышками в загородном доме", location: "Пушкинский округ", area: "126 м²", year: 2025, image: sc10.url },
 ];
 
 export function getShowcaseByCategory(category: ServiceCategory, limit = 6): ShowcaseProject[] {
