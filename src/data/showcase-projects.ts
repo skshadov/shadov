@@ -20,6 +20,13 @@ import el05 from "@/assets/photos/electric/el05.jpg.asset.json";
 import el06 from "@/assets/photos/electric/el06.jpg.asset.json";
 import el07 from "@/assets/photos/electric/el07.jpg.asset.json";
 
+import pl01 from "@/assets/photos/plumbing/pl01.jpg.asset.json";
+import pl02 from "@/assets/photos/plumbing/pl02.jpg.asset.json";
+import pl03 from "@/assets/photos/plumbing/pl03.jpg.asset.json";
+import pl04 from "@/assets/photos/plumbing/pl04.jpg.asset.json";
+import pl05 from "@/assets/photos/plumbing/pl05.jpg.asset.json";
+import pl06 from "@/assets/photos/plumbing/pl06.jpg.asset.json";
+
 import type { ServiceCategory } from "@/types/services";
 
 export type ShowcaseProject = {
@@ -52,6 +59,14 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   { id: "e05", category: "engineering", tag: "Черновая электрика", title: "Штробление газоблока под кабель и подрозетники", location: "Одинцовский округ", area: "96 м²", year: 2025, image: el05.url },
   { id: "e06", category: "engineering", tag: "Черновая электрика", title: "Разводка под розеточные группы с выводами в подрозетники", location: "Люберцы", area: "78 м²", year: 2026, image: el06.url },
   { id: "e07", category: "engineering", tag: "Черновая электрика", title: "Электрика в каркасном доме: трассы по перекрытию и распредкоробки", location: "Пушкинский округ", area: "134 м²", year: 2025, image: el07.url },
+
+  // ——— Черновая сантехника (реальные объекты) ———
+  { id: "s01", category: "engineering", tag: "Черновая сантехника", title: "Коллекторный узел ХВС/ГВС на 12 линий с фильтрами и редукторами", location: "Москва, ЗАО", area: "104 м²", year: 2026, image: pl01.url },
+  { id: "s02", category: "engineering", tag: "Черновая сантехника", title: "Санузел под ключ: коллекторы, счётчики и инсталляция Geberit", location: "Химки", area: "58 м²", year: 2026, image: pl02.url },
+  { id: "s03", category: "engineering", tag: "Черновая сантехника", title: "Узел ввода в нише за стояками, разводка в теплоизоляции", location: "Москва, САО", area: "46 м²", year: 2025, image: pl03.url },
+  { id: "s04", category: "engineering", tag: "Черновая сантехника", title: "Разводка канализации Ø50/110 с ревизией и выводами под приборы", location: "Балашиха", area: "68 м²", year: 2025, image: pl04.url },
+  { id: "s05", category: "engineering", tag: "Черновая сантехника", title: "Коллекторная разводка и монтаж инсталляции Grohe в новостройке", location: "Москва, ТиНАО", area: "82 м²", year: 2026, image: pl05.url },
+  { id: "s06", category: "engineering", tag: "Черновая сантехника", title: "Водорозетки в штробе и вывод канализации под подвесной унитаз", location: "Одинцово", area: "54 м²", year: 2025, image: pl06.url },
 ];
 
 export function getShowcaseByCategory(category: ServiceCategory, limit = 6): ShowcaseProject[] {
