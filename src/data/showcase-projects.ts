@@ -109,7 +109,7 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   { id: "t04", category: "repair", tag: "Стяжка пола", title: "Стяжка по армирующей сетке с гидроизоляцией примыканий", location: "Химки", area: "56 м²", year: 2025, image: sc04.url },
   { id: "t05", category: "repair", tag: "Стяжка пола", title: "Полусухая стяжка с подачей растворонасосом, вытяжка по маякам", location: "Москва, СВАО", area: "84 м²", year: 2026, image: sc05.url },
   { id: "t06", category: "repair", tag: "Стяжка пола", title: "Затирка полусухой стяжки шлифмашиной в новостройке", location: "Люберцы", area: "44 м²", year: 2025, image: sc06.url },
-  { id: "t07", category: "стяжка-плейсхолдер" as never, tag: "Стяжка пола", title: "", location: "", area: "", year: 2025, image: sc07.url },
+  { id: "t07", category: "repair", tag: "Стяжка пола", title: "Полусухая стяжка в общественном помещении, слой 60 мм", location: "Москва, ЮВАО", area: "140 м²", year: 2025, image: sc07.url },
   { id: "t08", category: "repair", tag: "Стяжка пола", title: "Стяжка коридора с лазерным нивелиром и подачей по шлангу", location: "Мытищи", area: "38 м²", year: 2025, image: sc08.url },
   { id: "t09", category: "repair", tag: "Стяжка пола", title: "Финишная затирка стяжки вертолётом до гладкой поверхности", location: "Балашиха", area: "52 м²", year: 2026, image: sc09.url },
   { id: "t10", category: "repair", tag: "Стяжка пола", title: "Стяжка по тёплому полу на матах с бобышками в загородном доме", location: "Пушкинский округ", area: "126 м²", year: 2025, image: sc10.url },
