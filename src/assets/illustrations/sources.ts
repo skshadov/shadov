@@ -118,6 +118,12 @@ import photoScWebp1600 from "@/assets/photos/screed-1600.webp.asset.json";
 import photoScWebp800 from "@/assets/photos/screed-800.webp.asset.json";
 import photoScJpg1600 from "@/assets/photos/screed-1600.jpg.asset.json";
 import photoScJpg800 from "@/assets/photos/screed-800.jpg.asset.json";
+import photoPlAvif1600 from "@/assets/photos/plaster-1600.avif.asset.json";
+import photoPlAvif800 from "@/assets/photos/plaster-800.avif.asset.json";
+import photoPlWebp1600 from "@/assets/photos/plaster-1600.webp.asset.json";
+import photoPlWebp800 from "@/assets/photos/plaster-800.webp.asset.json";
+import photoPlJpg1600 from "@/assets/photos/plaster-1600.jpg.asset.json";
+import photoPlJpg800 from "@/assets/photos/plaster-800.jpg.asset.json";
 
 export const heroPicture = {
   src: heroJpg1280,
@@ -199,4 +205,12 @@ export const photoScreedPicture = card(
   photoScWebp800.url,
   photoScJpg1600.url,
   photoScJpg800.url,
+);
+export const photoPlasterPicture = card(
+  photoPlAvif1600.url,
+  photoPlAvif800.url,
+  photoPlWebp1600.url,
+  photoPlWebp800.url,
+  photoPlJpg1600.url,
+  photoPlJpg800.url,
 );

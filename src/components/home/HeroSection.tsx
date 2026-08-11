@@ -7,8 +7,8 @@ import { ArrowRight, Building2, ShieldCheck, Wrench } from "lucide-react";
 import {
   monolithPicture,
   plumbingPicture,
-  renovationPicture,
   photoElectricalPicture,
+  photoPlasterPicture,
   photoScreedPicture,
 } from "@/assets/illustrations/sources";
 import { SlotImage } from "@/components/common/SlotImage";
@@ -60,8 +60,8 @@ function HeroProcessVisual() {
       <div className="grid aspect-square grid-cols-2 gap-4">
         <ProcessImage
           slotKey="home.hero.plaster"
-          picture={renovationPicture}
-          description="Механизированная штукатурка стен на строительном объекте"
+          picture={photoPlasterPicture}
+          description="Штукатурная станция и подготовленные стены на объекте механизированной штукатурки"
           index="01"
           label="Штукатурка"
         />
