@@ -5,7 +5,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, ShieldCheck, Wrench } from "lucide-react";
 import {
-  engineeringPicture,
   monolithPicture,
   plumbingPicture,
   renovationPicture,
